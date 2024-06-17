@@ -1,0 +1,158 @@
+{
+	"key": "group_641cfb3b3989b",
+	"title": "Single Map Directory",
+	"fields": [
+		{
+			"key": "field_641cfb3b3ec7a",
+			"label": "Information",
+			"name": "",
+			"aria-label": "",
+			"type": "accordion",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"open": 1,
+			"multi_expand": 1,
+			"endpoint": 0
+		},
+		{
+			"key": "field_641cfb3b427d9",
+			"label": "Location",
+			"name": "location",
+			"aria-label": "",
+			"type": "google_map",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"center_lat": "",
+			"center_lng": "",
+			"zoom": "",
+			"height": ""
+		},
+		{
+			"key": "field_64b44f6bc8a9f",
+			"label": "Latitude",
+			"name": "map_latitude",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_64b44f83c8aa0",
+			"label": "Longitude",
+			"name": "map_longitude",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_64aecfee871ae",
+			"label": "Email",
+			"name": "email",
+			"aria-label": "",
+			"type": "email",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_64aed00f871af",
+			"label": "Phone",
+			"name": "phone",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_64aed033871b0",
+			"label": "Website",
+			"name": "website",
+			"aria-label": "",
+			"type": "url",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "map"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1712675429
+}

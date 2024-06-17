@@ -1,0 +1,17 @@
+.component__timeline-horizontal .row-gap-50{
+  flex-direction: column;
+  .swiper__container--timeline{
+    overflow: visible;
+  }
+  .card{
+    min-width: unset;
+    max-width: unset;
+    padding: 0;
+    margin-right: 15px;
+  }
+  .card__social-color .social-network li a span.visually-hidden{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "elevation/template-cards",
+  "title": "Media Mentions Cards",
+  "category": "elevation-template",
+  "icon": "block-default",
+  "keywords": [
+    "media",
+    "mentions",
+    "cards",
+    "template",
+    "elevation"
+  ],
+  "description": "Template Media Center",
+  "acf": {
+    "mode": "edit",
+    "renderCallback": "template_cards_render_callback"
+  },
+  "supports": {
+    "anchor": true
+  },
+  "style": [
+    "file:./style-index.css"
+  ],
+  "script": "file:./index.js",
+  "editorStyle": [
+    "file:./index.css"
+  ]
+}

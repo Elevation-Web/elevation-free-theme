@@ -1,0 +1,27 @@
+{
+  "name": "elevation/feed-directory",
+  "title": "Feed Directory",
+  "category": "elevation-template",
+  "icon": "block-default",
+  "keywords": [
+    "feed",
+    "resources",
+    "directory",
+    "elevation"
+  ],
+  "description": "",
+  "acf": {
+    "mode": "edit",
+    "renderCallback": "feed_directory_block_render_callback"
+  },
+  "supports": {
+    "anchor": true
+  },
+  "style": [
+    "file:./style-index.css"
+  ],
+  "script": "file:./index.js",
+  "editorStyle": [
+    "file:./index.css"
+  ]
+}

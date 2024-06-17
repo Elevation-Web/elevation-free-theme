@@ -1,0 +1,382 @@
+/*
+*  Colors
+*/
+
+$primary: #b53a2a;
+$on-primary: #ffffff;
+$container-primary: #fcddd9;
+
+$light-primary: #cb4b3b;
+
+$secondary: #163f7b;
+$on-secondary: #ffffff;
+$container-secondary: #b4d2d8;
+
+$light-secondary: #26476b;
+
+$tertiary: #211f1f;
+$on-tertiary: #ffffff;
+$container-tertiary: #9c9c9c;
+
+$light-grey: #f5f5f5;
+
+$accesible-background: $secondary;
+
+$error: #ff2400;
+
+$dark: #000000;
+$black: #000000;
+$grey: #d7d7d7;
+$white: #ffffff;
+$link: #cb4b3b;
+$hover-link: #211f1f;
+
+$text: #211f1f;
+$strong: #211f1f;
+
+$header-height-desktop: 107px;
+$header-height-mobile: 80px;
+
+$line-border-color: #eae8e6;
+$focus-color: #b53a2a;
+
+/*
+*    Fonts Properties
+*/
+
+$font_size_text: 16px;
+$line_height_text: 1.6;
+$spacing_text: 0.03em;
+$font_weight_text: 400;
+$font_weight_strong: 700;
+
+$blockquote_sizeText: 16px;
+$blockquote_lineHeight: 27px;
+$blockquote_letterSpacing: 0.03em;
+$blockquote_fontWeight: 700;
+
+$title_weight: 500;
+$title_spacing: 0.04em;
+
+$selector_color: darken($tertiary, 10);
+
+$font_size_subheading: 24px;
+$line_height_subheading: 32px;
+
+/*
+*    Headings Sizes
+*/
+
+$h1_size_desktop: 41px;
+$h2_size_desktop: 35px;
+$h3_size_desktop: 27px;
+$h4_size_desktop: 22px;
+$h5_size_desktop: 20px;
+$h6_size_desktop: 18px;
+
+$h1_size_tablet: 38px;
+$h2_size_tablet: 30px;
+$h3_size_tablet: 25px;
+$h4_size_tablet: 18px;
+$h5_size_tablet: 16px;
+$h6_size_tablet: 14px;
+
+$h1_size_mobile: 28px;
+$h2_size_mobile: 26px;
+$h3_size_mobile: 22px;
+$h4_size_mobile: 18px;
+$h5_size_mobile: 16px;
+$h6_size_mobile: 14px;
+
+/*
+*    Headings Line Heights
+*/
+
+$h1_line_height_desktop: 45px;
+$h2_line_height_desktop: 42px;
+$h3_line_height_desktop: 35px;
+$h4_line_height_desktop: 32px;
+$h5_line_height_desktop: 28px;
+$h6_line_height_desktop: 26px;
+
+$h1_line_height_tablet: 40px;
+$h2_line_height_tablet: 32px;
+$h3_line_height_tablet: 30px;
+$h4_line_height_tablet: 28px;
+$h5_line_height_tablet: 24px;
+$h6_line_height_tablet: 22px;
+
+$h1_line_height_mobile: 40px;
+$h2_line_height_mobile: 32px;
+$h3_line_height_mobile: 30px;
+$h4_line_height_mobile: 28px;
+$h5_line_height_mobile: 24px;
+$h6_line_height_mobile: 22px;
+
+/*
+*    Buttons Properties
+*/
+
+$btn1_font_size: 14px;
+$btn1_font_weight: 600;
+$btn1_line_height: 16px;
+$btn1_letter-spacing: 0.15em;
+$btn1_border_radius: 0;
+$btn1_transform: uppercase;
+$btn1_min_width: 125px;
+$btn1_min_height: 60px;
+$btn1_min_padding: 20px 25px;
+
+$btn2_font_size: 14px;
+$btn2_font_weight: 700;
+$btn2_line_height: 16px;
+$btn2_letter-spacing: 0.15em;
+$btn2_border_radius: 0;
+$btn2_transform: uppercase;
+$btn2_min_height: 30px;
+$btn2_min_padding: 5px 0;
+
+$submit-size: 14px;
+$submit-weight: 500;
+$submit-line-height: 16px;
+$submit-letter-spacing: 0.15em;
+$submit-color: $light-grey;
+$submit-background: #211f1f;
+$submit-radius: 0;
+$submit-transform: uppercase;
+$submit-padding: 20px 25px;
+$submit-background-hover: #d4d2d2;
+$submit-color-hover: #8e8e8e;
+
+/*
+*    Header Properties
+*/
+
+$text-menu-parent-size: 14px;
+$text-menu-parent-color: #211f1f;
+$text-menu-parent-spacing: 0.2em;
+$text-menu-parent-font-weight: 500;
+
+$text-menu-child-color: #211f1f;
+$text-menu-child-size: 14px;
+$text-menu-child-font-weight: normal;
+$text-menu-child-spacing: normal;
+
+$active-menu-color: $light-primary;
+$bg-menu-child: rgba(255, 255, 255, 1);
+$bg-menu-grandchild: #ffffff;
+
+$logo_width: 235px;
+$header-width-mobile: 385px;
+
+/*
+*    Forms Properties
+*/
+
+/*Heading & Description*/
+$title-form-color: #211f1f;
+$title-form-size: 22px;
+$title-form-weight: 500;
+$title-form-letter-spacing: 1px;
+
+$description-form-color: #211f1f;
+$description-form-size: 14px;
+$description-form-weight: 500;
+$description-form-letter-spacing: 1px;
+
+/*Label & Input/Select/TextArea*/
+$label-color: #211f1f;
+$label-size: 14px;
+$label-weight: 500;
+$label-letter-spacing: 0.91px;
+$label-line-height: 1.2;
+
+$input-color: #211f1f;
+$input-color-placeholder: $container-tertiary;
+$input-size: 14px;
+$input-weight: 500;
+$input-letter-spacing: 1px;
+$input-border-radius: 0;
+
+$input-background: transparent;
+$input-border-color: #eae8e6;
+
+/*checkbox & radio buttons*/
+$choises-size: 14px;
+$choises-color: #211f1f;
+$choises-weight: 500;
+$choises-letter-spacing: 0.03em;
+$choises-background-selected: #254a40;
+$choises-background: #cdcdd5;
+
+/*Rules Message - Description*/
+
+$rules-size: 14px;
+$rules-weight: 400;
+$rules-letter-spacing: 0.03em;
+$rules-line-height: 25px;
+
+/*Error*/
+
+$error-color: #ff0000;
+$error-background: transparent;
+
+/*Error Main Message*/
+
+$error-main-size: 14px;
+$error-main-weight: 400;
+$error-main-letter-spacing: 0.03em;
+$error-main-line-height: 25px;
+$error-main-padding: 0;
+
+/*Error Box Message*/
+
+$error-box-size: 9px;
+$error-box-weight: 500;
+$error-box-letter-spacing: 0.06em;
+$error-box-line-height: 12px;
+$error-box-line-radius: 2px;
+$error-box-padding: 3px 14px 3px 4px;
+$error-box-transform: uppercase;
+
+/*Error Invested*/
+
+$error-invested-color: white;
+$error-invested-background: #ff0000;
+$error-main-padding-invested: 15px;
+
+/*Pagination*/
+
+$pagination-current: $primary;
+$pagination-numbers: $tertiary;
+$pagination-text-transform: uppercase;
+$pagination-font-size: 16px;
+$pagination-letter-spacing: 0.48px;
+$pagination-font-weight: 700;
+$pagination-line-height: 1.2;
+
+/* Foregrounds */
+$ui-foreground-primary-text-headings: var(
+	--wp--preset--color--ui-foreground-primary-text-headings
+);
+$ui-foreground-primary-text-body-text: var(
+	--wp--preset--color--ui-foreground-primary-text-body-text
+);
+$ui-foreground-primary-text-headings-span: var(
+	--wp--preset--color--ui-foreground-primary-text-headings-span
+);
+$ui-foreground-primary-text-links: var(
+	--wp--preset--color--ui-foreground-primary-text-links
+);
+$ui-foreground-primary-text-highlight-text: var(
+	--wp--preset--color--ui-foreground-primary-text-highlight-text
+);
+$ui-foreground-primary-text-date-text: var(
+	--wp--preset--color--ui-foreground-primary-text-date-text
+);
+$ui-foreground-primary-text-button_on-dark: var(
+	--wp--preset--color--ui-foreground-primary-text-button_on-dark
+);
+$ui-foreground-primary-accent-01: var(
+	--wp--preset--color--ui-foreground-primary-accent-01
+);
+$ui-foreground-primary-accent-02: var(
+	--wp--preset--color--ui-foreground-primary-accent-02
+);
+$ui-foreground-primary-accent-03: var(
+	--wp--preset--color--ui-foreground-primary-accent-03
+);
+$ui-foreground-primary-accent-04: var(
+	--wp--preset--color--ui-foreground-primary-accent-04
+);
+$ui-foreground-primary-accent-05: var(
+	--wp--preset--color--ui-foreground-primary-accent-05
+);
+$ui-foreground-secondary-indicator: var(
+	--wp--preset--color--ui-foreground-secondary-indicator
+);
+
+/* Backgrounds */
+$ui-background-primary: var(--wp--preset--color--ui-background-primary);
+$ui-background-secondary: var(--wp--preset--color--ui-background-secondary);
+$ui-background-tertiary: var(--wp--preset--color--ui-background-tertiary);
+$ui-background-fourth: var(--wp--preset--color--ui-background-fourth);
+$ui-background-light-01: var(--wp--preset--color--ui-background-light-01);
+$ui-background-light-02: var(--wp--preset--color--ui-background-light-02);
+$ui-background-light-03: var(--wp--preset--color--ui-background-light-03);
+
+/* Buttons */
+$ui-button-primary-color-01: var(
+	--wp--preset--color--ui-button-primary-color-01
+);
+$ui-button-primary-color-02: var(
+	--wp--preset--color--ui-button-primary-color-02
+);
+$ui-button-primary-color-03: var(
+	--wp--preset--color--ui-button-primary-color-03
+);
+$ui-button-primary-color-04: var(
+	--wp--preset--color--ui-button-primary-color-04
+);
+$ui-button-primary-hover: var(--wp--preset--color--ui-button-primary-hover);
+$ui-button-secondary-color-01: var(
+	--wp--preset--color--ui-button-secondary-color-01
+);
+$ui-button-secondary-hover: var(--wp--preset--color--ui-button-secondary-hover);
+$ui-button-tertiary-color-01: var(
+	--wp--preset--color--ui-button-tertiary-color-01
+);
+$ui-button-tertiary-hover: var(--wp--preset--color--ui-button-tertiary-hover);
+$ui-button-fourth-color-01: var(--wp--preset--color--ui-button-fourth-color-01);
+$ui-button-fourth-hover: var(--wp--preset--color--ui-button-fourth-hover);
+$ui-button-on-dark-hover: var(--wp--preset--color--ui-button-on-dark-hover);
+
+/* Borders */
+$ui-border-bounds: var(--wp--preset--color--ui-border-bounds);
+$ui-border-input-controls-active: var(
+	--wp--preset--color--ui-border-input-controls-active
+);
+$ui-border-input-controls-focus: var(
+	--wp--preset--color--ui-border-input-controls-focus
+);
+$ui-border-input-controls-disabled: var(
+	--wp--preset--color--ui-border-input-controls-disabled
+);
+$ui-border-system-success: var(--wp--preset--color--ui-border-system-success);
+$ui-border-system-warning: var(--wp--preset--color--ui-border-system-warning);
+$ui-border-line-divider-dots-divider: var(
+	--wp--preset--color--ui-border-line-divider-dots-divider
+);
+$ui-border-line-divider-on-light: var(
+	--wp--preset--color--ui-border-line-divider-on-light
+);
+$ui-border-line-divider-on-dark: var(
+	--wp--preset--color--ui-border-line-divider-on-dark
+);
+
+/* Base */
+$ui-base-white: var(--wp--preset--color--ui-base-white);
+$ui-base-black: var(--wp--preset--color--ui-base-black);
+$ui-base-controls-input-disabled: var(
+	--wp--preset--color--ui-base-controls-input-disabled
+);
+$ui-base-controls-input-warning: var(
+	--wp--preset--color--ui-base-controls-input-warning
+);
+$ui-base-controls-label-disabled: var(
+	--wp--preset--color--ui-base-controls-label-disabled
+);
+
+/* Review */
+$ux-sitemap-white: var(--wp--preset--color--ux-sitemap-white);
+$ux-sitemap-blue: var(--wp--preset--color--ux-sitemap-blue);
+$ux-sitemap-yellow: var(--wp--preset--color--ux-sitemap-yellow);
+$ux-sitemap-orange: var(--wp--preset--color--ux-sitemap-orange);
+$ux-sitemap-pink: var(--wp--preset--color--ux-sitemap-pink);
+$ux-sitemap-green: var(--wp--preset--color--ux-sitemap-green);
+$ux-sitemap-grey: var(--wp--preset--color--ux-sitemap-grey);
+$ux-wireframe-white: var(--wp--preset--color--ux-wireframe-white);
+$ux-wireframe-gray1: var(--wp--preset--color--ux-wireframe-gray1);
+$ux-wireframe-gray-2: var(--wp--preset--color--ux-wireframe-gray-2);
+$ux-wireframe-gray-3: var(--wp--preset--color--ux-wireframe-gray-3);
+$ux-wireframe-gray-4: var(--wp--preset--color--ux-wireframe-gray-4);

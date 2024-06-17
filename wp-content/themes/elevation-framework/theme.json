@@ -1,0 +1,421 @@
+{
+    "version": 2,
+    "settings": {
+        "appearanceTools": true,
+        "color": {
+            "defaultPalette": false,
+            "gradients": [],
+            "customGradient": false,
+            "palette": [
+                {
+                    "slug": "ui-foreground-primary-text-headings",
+                    "name": "Ui Foreground Primary Text Headings",
+                    "color": "rgb(33,0,68)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-body-text",
+                    "name": "Ui Foreground Primary Text Body Text",
+                    "color": "rgb(79,77,85)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-headings-span",
+                    "name": "Ui Foreground Primary Text Headings Span",
+                    "color": "rgb(71,18,126)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-links",
+                    "name": "Ui Foreground Primary Text Links",
+                    "color": "rgb(102,45,145)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-highlight-text",
+                    "name": "Ui Foreground Primary Text Highlight Text",
+                    "color": "rgb(223,1,65)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-date-text",
+                    "name": "Ui Foreground Primary Text Date Text",
+                    "color": "rgb(114,113,117)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-button_on-dark",
+                    "name": "Ui Foreground Primary Text Button_on Dark",
+                    "color": "rgb(33,0,68)"
+                },
+                {
+                    "slug": "ui-foreground-primary-accent-01",
+                    "name": "Ui Foreground Primary Accent 01",
+                    "color": "rgb(252,0,72)"
+                },
+                {
+                    "slug": "ui-foreground-primary-accent-02",
+                    "name": "Ui Foreground Primary Accent 02",
+                    "color": "rgb(0,244,237)"
+                },
+                {
+                    "slug": "ui-foreground-primary-accent-03",
+                    "name": "Ui Foreground Primary Accent 03",
+                    "color": "rgb(242,208,70)"
+                },
+                {
+                    "slug": "ui-foreground-primary-accent-04",
+                    "name": "Ui Foreground Primary Accent 04",
+                    "color": "rgb(71,18,126)"
+                },
+                {
+                    "slug": "ui-foreground-primary-accent-05",
+                    "name": "Ui Foreground Primary Accent 05",
+                    "color": "rgb(138,85,179)"
+                },
+                {
+                    "slug": "ui-foreground-secondary-indicator",
+                    "name": "Ui Foreground Secondary Indicator",
+                    "color": "rgb(102,45,145)"
+                },
+                {
+                    "slug": "ui-background-primary",
+                    "name": "Ui Background Primary",
+                    "color": "rgb(33,0,68)"
+                },
+                {
+                    "slug": "ui-background-secondary",
+                    "name": "Ui Background Secondary",
+                    "color": "rgb(102,45,145)"
+                },
+                {
+                    "slug": "ui-background-tertiary",
+                    "name": "Ui Background Tertiary",
+                    "color": "rgb(71,18,126)"
+                },
+                {
+                    "slug": "ui-background-fourth",
+                    "name": "Ui Background Fourth",
+                    "color": "rgb(138,85,179)"
+                },
+                {
+                    "slug": "ui-background-light-01",
+                    "name": "Ui Background Light 01",
+                    "color": "rgb(246,244,249)"
+                },
+                {
+                    "slug": "ui-background-light-02",
+                    "name": "Ui Background Light 02",
+                    "color": "rgba(79,77,85,0.15)"
+                },
+                {
+                    "slug": "ui-background-light-03",
+                    "name": "Ui Background Light 03",
+                    "color": "rgba(102,45,145,0.15)"
+                },
+                {
+                    "slug": "ui-button-primary-color-01",
+                    "name": "Ui Button Primary Color 01",
+                    "color": "rgb(33,0,68)"
+                },
+                {
+                    "slug": "ui-button-primary-color-02",
+                    "name": "Ui Button Primary Color 02",
+                    "color": "rgb(102,45,145)"
+                },
+                {
+                    "slug": "ui-button-primary-color-03",
+                    "name": "Ui Button Primary Color 03",
+                    "color": "rgb(229,216,237)"
+                },
+                {
+                    "slug": "ui-button-primary-color-04",
+                    "name": "Ui Button Primary Color 04",
+                    "color": "rgb(71,18,126)"
+                },
+                {
+                    "slug": "ui-button-primary-hover",
+                    "name": "Ui Button Primary Hover",
+                    "color": "rgb(138,85,179)"
+                },
+                {
+                    "slug": "ui-button-secondary-color-01",
+                    "name": "Ui Button Secondary Color 01",
+                    "color": "rgb(33,0,68)"
+                },
+                {
+                    "slug": "ui-button-secondary-hover",
+                    "name": "Ui Button Secondary Hover",
+                    "color": "rgb(102,45,145)"
+                },
+                {
+                    "slug": "ui-button-tertiary-color-01",
+                    "name": "Ui Button Tertiary Color 01",
+                    "color": "rgb(33,0,68)"
+                },
+                {
+                    "slug": "ui-button-tertiary-hover",
+                    "name": "Ui Button Tertiary Hover",
+                    "color": "rgb(102,45,145)"
+                },
+                {
+                    "slug": "ui-button-fourth-color-01",
+                    "name": "Ui Button Fourth Color 01",
+                    "color": "rgb(138,85,179)"
+                },
+                {
+                    "slug": "ui-button-fourth-hover",
+                    "name": "Ui Button Fourth Hover",
+                    "color": "rgb(102,45,145)"
+                },
+                {
+                    "slug": "ui-button-on-dark-hover",
+                    "name": "Ui Button On Dark Hover",
+                    "color": "rgb(229,216,237)"
+                },
+                {
+                    "slug": "ui-border-bounds",
+                    "name": "Ui Border Bounds",
+                    "color": "rgb(213,212,220)"
+                },
+                {
+                    "slug": "ui-border-input-controls-active",
+                    "name": "Ui Border Input Controls Active",
+                    "color": "rgb(102,45,145)"
+                },
+                {
+                    "slug": "ui-border-input-controls-focus",
+                    "name": "Ui Border Input Controls Focus",
+                    "color": "rgb(33,0,68)"
+                },
+                {
+                    "slug": "ui-border-input-controls-disabled",
+                    "name": "Ui Border Input Controls Disabled",
+                    "color": "rgb(229,229,235)"
+                },
+                {
+                    "slug": "ui-border-system-success",
+                    "name": "Ui Border System Success",
+                    "color": "rgb(63,197,92)"
+                },
+                {
+                    "slug": "ui-border-system-warning",
+                    "name": "Ui Border System Warning",
+                    "color": "rgb(255,5,0)"
+                },
+                {
+                    "slug": "ui-border-line-divider-dots-divider",
+                    "name": "Ui Border Line Divider Dots Divider",
+                    "color": "rgb(213,196,221)"
+                },
+                {
+                    "slug": "ui-border-line-divider-on-light",
+                    "name": "Ui Border Line Divider On Light",
+                    "color": "rgb(231,225,234)"
+                },
+                {
+                    "slug": "ui-border-line-divider-on-dark",
+                    "name": "Ui Border Line Divider On Dark",
+                    "color": "rgb(138,85,179)"
+                },
+                {
+                    "slug": "ui-base-white",
+                    "name": "Ui Base White",
+                    "color": "rgb(251,249,248)"
+                },
+                {
+                    "slug": "ui-base-black",
+                    "name": "Ui Base Black",
+                    "color": "rgb(17,17,17)"
+                },
+                {
+                    "slug": "ui-base-controls-input-disabled",
+                    "name": "Ui Base Controls Input Disabled",
+                    "color": "rgb(189,185,198)"
+                },
+                {
+                    "slug": "ui-base-controls-input-warning",
+                    "name": "Ui Base Controls Input Warning",
+                    "color": "rgb(251,239,239)"
+                },
+                {
+                    "slug": "ui-base-controls-label-disabled",
+                    "name": "Ui Base Controls Label Disabled",
+                    "color": "rgb(164,159,177)"
+                },
+                {
+                    "slug": "ux-sitemap-white",
+                    "name": "Ux Sitemap White",
+                    "color": "rgb(255,255,255)"
+                },
+                {
+                    "slug": "ux-sitemap-blue",
+                    "name": "Ux Sitemap Blue",
+                    "color": "rgb(240,248,253)"
+                },
+                {
+                    "slug": "ux-sitemap-yellow",
+                    "name": "Ux Sitemap Yellow",
+                    "color": "rgb(255,250,228)"
+                },
+                {
+                    "slug": "ux-sitemap-orange",
+                    "name": "Ux Sitemap Orange",
+                    "color": "rgb(255,238,228)"
+                },
+                {
+                    "slug": "ux-sitemap-pink",
+                    "name": "Ux Sitemap Pink",
+                    "color": "rgb(253,240,245)"
+                },
+                {
+                    "slug": "ux-sitemap-green",
+                    "name": "Ux Sitemap Green",
+                    "color": "rgb(240,253,242)"
+                },
+                {
+                    "slug": "ux-sitemap-grey",
+                    "name": "Ux Sitemap Grey",
+                    "color": "rgb(243,243,243)"
+                },
+                {
+                    "slug": "ux-wireframe-white",
+                    "name": "Ux Wireframe White",
+                    "color": "rgb(255,255,255)"
+                },
+                {
+                    "slug": "ux-wireframe-gray1",
+                    "name": "Ux Wireframe Gray1",
+                    "color": "rgb(229,230,233)"
+                },
+                {
+                    "slug": "ux-wireframe-gray-2",
+                    "name": "Ux Wireframe Gray 2",
+                    "color": "rgb(175,176,180)"
+                },
+                {
+                    "slug": "ux-wireframe-gray-3",
+                    "name": "Ux Wireframe Gray 3",
+                    "color": "rgb(125,126,129)"
+                },
+                {
+                    "slug": "ux-wireframe-gray-4",
+                    "name": "Ux Wireframe Gray 4",
+                    "color": "rgb(91,92,95)"
+                }
+            ]
+        },
+        "spacing": {
+            "units": [
+                "%",
+                "px",
+                "em",
+                "rem",
+                "vh",
+                "vw"
+            ]
+        },
+        "typography": {
+            "dropCap": false,
+            "fontWeight": false,
+            "fontStyle": false,
+            "textTransform": false,
+            "fontSizes": [
+                {
+                    "size": "clamp(52px, 6.770833333333333vw, 52px)",
+                    "slug": "h1",
+                    "name": "Heading 1"
+                },
+                {
+                    "size": "clamp(39px, 5.078125vw, 39px)",
+                    "slug": "h2",
+                    "name": "Heading 2"
+                },
+                {
+                    "size": "clamp(34px, 4.427083333333334vw, 34px)",
+                    "slug": "h3",
+                    "name": "Heading 3"
+                },
+                {
+                    "size": "clamp(30px, 3.90625vw, 30px)",
+                    "slug": "h4",
+                    "name": "Heading 4"
+                },
+                {
+                    "size": "clamp(24px, 3.125vw, 24px)",
+                    "slug": "h5",
+                    "name": "Heading 5"
+                },
+                {
+                    "size": "clamp(19px, 2.473958333333333vw, 19px)",
+                    "slug": "h6",
+                    "name": "Heading 6"
+                },
+                {
+                    "size": "clamp(16px, 2.083333333333333vw, 16px)",
+                    "slug": "body",
+                    "name": "Body Text"
+                },
+                {
+                    "size": "clamp(16px, 2.213541666666667vw, 18px)",
+                    "slug": "special-body",
+                    "name": "Special: Body Text"
+                }
+            ],
+            "fontFamilies": [
+                {
+                    "fontFamily": "\"Martel\", Arial, sans-serif",
+                    "name": "Martel",
+                    "slug": "martel",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Martel",
+                            "fontWeight": "normal",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "fontDisplay": "swap",
+                            "src": [
+                                "file:./src/assets/fonts/Martel-Regular.woff2"
+                            ]
+                        },
+                        {
+                            "fontFamily": "Martel",
+                            "fontWeight": "800",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "fontDisplay": "swap",
+                            "src": [
+                                "file:./src/assets/fonts/Martel-ExtraBold.woff2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "\"Inter\", Arial, sans-serif",
+                    "name": "Inter",
+                    "slug": "inter",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Inter",
+                            "fontWeight": "500",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "fontDisplay": "swap",
+                            "src": [
+                                "file:./src/assets/fonts/Inter-Medium.woff2"
+                            ]
+                        },
+                        {
+                            "fontFamily": "Inter",
+                            "fontWeight": "700",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "fontDisplay": "swap",
+                            "src": [
+                                "file:./src/assets/fonts/Inter-Bold.woff2"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "75%",
+            "wideSize": "90%"
+        }
+    }
+}

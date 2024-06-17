@@ -1,0 +1,37 @@
+.block__template-sponsors{
+  padding: 40px 0;
+  .block__container{
+    position: relative;
+    z-index: 1;
+  }
+  &::after {
+    z-index: 0;
+  }
+  .block__template-sponsors-row {
+    display: flex;
+  }
+  .sponsor {
+    height: auto;
+    .sponsor__image img{
+      mix-blend-mode: unset;
+    }
+    .sponsor__body {
+      text-align: center;
+    }
+  }
+  .block__template-sponsors--carousel{
+    .swiper-wrapper{
+      display: flex;
+      column-gap: 15px;
+    }
+    .swiper-slide{
+     width: auto;
+      .sponsor__image, a{
+        width: auto;
+      }
+      .sponsor__body{
+        text-align: center;
+      }
+    }
+  }
+}

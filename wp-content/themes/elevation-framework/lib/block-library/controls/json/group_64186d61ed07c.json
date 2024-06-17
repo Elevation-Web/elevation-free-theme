@@ -1,0 +1,581 @@
+{
+	"key": "group_64186d61ed07c",
+	"title": "Media Center - Media Contacts",
+	"fields": [
+		{
+			"key": "field_64186d61f285a",
+			"label": "Media Contacts",
+			"name": "",
+			"aria-label": "",
+			"type": "message",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "<h2>Media Contacts<h2>",
+			"new_lines": "wpautop",
+			"esc_html": 0
+		},
+		{
+			"key": "field_64186d62020b4",
+			"label": "Content",
+			"name": "",
+			"aria-label": "",
+			"type": "accordion",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"open": 0,
+			"multi_expand": 0,
+			"endpoint": 0
+		},
+		{
+			"key": "field_64186d6205c25",
+			"label": "Header",
+			"name": "teams_header",
+			"aria-label": "",
+			"type": "group",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"layout": "block",
+			"sub_fields": [
+				{
+					"key": "field_64186d623ca92",
+					"label": "Content",
+					"name": "content",
+					"aria-label": "",
+					"type": "clone",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"clone": ["group_63d97e7726c0e"],
+					"display": "seamless",
+					"layout": "block",
+					"prefix_label": 0,
+					"prefix_name": 0
+				}
+			]
+		},
+		{
+			"key": "field_64186d62096ba",
+			"label": "Teams",
+			"name": "teams_items",
+			"aria-label": "",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"layout": "block",
+			"pagination": 0,
+			"min": 0,
+			"max": 0,
+			"collapsed": "",
+			"button_label": "Add Team",
+			"rows_per_page": 20,
+			"sub_fields": [
+				{
+					"key": "field_64186d624458f",
+					"label": "Title",
+					"name": "title",
+					"aria-label": "",
+					"type": "textarea",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"maxlength": "",
+					"rows": 2,
+					"placeholder": "",
+					"new_lines": "br",
+					"parent_repeater": "field_64186d62096ba"
+				},
+				{
+					"key": "field_64186d624803a",
+					"label": "Position",
+					"name": "position",
+					"aria-label": "",
+					"type": "textarea",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"maxlength": "",
+					"rows": 2,
+					"placeholder": "",
+					"new_lines": "br",
+					"parent_repeater": "field_64186d62096ba"
+				},
+				{
+					"key": "field_64186d624bac1",
+					"label": "Description",
+					"name": "description",
+					"aria-label": "",
+					"type": "textarea",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"maxlength": "",
+					"rows": 4,
+					"placeholder": "",
+					"new_lines": "br",
+					"parent_repeater": "field_64186d62096ba"
+				},
+				{
+					"key": "field_64186d624f56b",
+					"label": "Email",
+					"name": "email",
+					"aria-label": "",
+					"type": "email",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"parent_repeater": "field_64186d62096ba"
+				},
+				{
+					"key": "field_64186d6252ffe",
+					"label": "Phone",
+					"name": "phone",
+					"aria-label": "",
+					"type": "textarea",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"maxlength": "",
+					"rows": 2,
+					"placeholder": "",
+					"new_lines": "br",
+					"parent_repeater": "field_64186d62096ba"
+				},
+				{
+					"key": "field_64186d6256a9a",
+					"label": "Image",
+					"name": "image",
+					"aria-label": "",
+					"type": "group",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"layout": "block",
+					"sub_fields": [
+						{
+							"key": "field_64186d626cc02",
+							"label": "Image",
+							"name": "image",
+							"aria-label": "",
+							"type": "clone",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"clone": ["group_61b02adf6fb88"],
+							"display": "seamless",
+							"layout": "block",
+							"prefix_label": 0,
+							"prefix_name": 0
+						}
+					],
+					"parent_repeater": "field_64186d62096ba"
+				},
+				{
+					"key": "field_64186d625a525",
+					"label": "Social network",
+					"name": "social_network",
+					"aria-label": "",
+					"type": "repeater",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"layout": "block",
+					"min": 0,
+					"max": 0,
+					"collapsed": "",
+					"button_label": "Add Social Network",
+					"rows_per_page": 20,
+					"sub_fields": [
+						{
+							"key": "field_64186d627453d",
+							"label": "Url",
+							"name": "url",
+							"aria-label": "",
+							"type": "url",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": [
+								[
+									{
+										"field": "field_64186d627baac",
+										"operator": "!=",
+										"value": "email"
+									}
+								]
+							],
+							"wrapper": {
+								"width": "60",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "",
+							"parent_repeater": "field_64186d625a525"
+						},
+						{
+							"key": "field_64186d6277ff2",
+							"label": "Email",
+							"name": "email",
+							"aria-label": "",
+							"type": "email",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": [
+								[
+									{
+										"field": "field_64186d627baac",
+										"operator": "==",
+										"value": "email"
+									}
+								]
+							],
+							"wrapper": {
+								"width": "60",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"parent_repeater": "field_64186d625a525"
+						},
+						{
+							"key": "field_64186d627baac",
+							"label": "Icon",
+							"name": "icon",
+							"aria-label": "",
+							"type": "select",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "40",
+								"class": "",
+								"id": ""
+							},
+							"choices": {
+								"facebook": "facebook",
+								"twitter": "twitter",
+								"email": "email",
+								"linkedin": "linkedin",
+								"instagram": "instagram",
+								"youtube": "youtube",
+								"tiktok": "tiktok"
+							},
+							"default_value": false,
+							"return_format": "value",
+							"multiple": 0,
+							"allow_null": 0,
+							"ui": 0,
+							"ajax": 0,
+							"placeholder": "",
+							"parent_repeater": "field_64186d625a525"
+						}
+					],
+					"parent_repeater": "field_64186d62096ba"
+				}
+			]
+		},
+		{
+			"key": "field_64186d620d14a",
+			"label": "Settings",
+			"name": "",
+			"aria-label": "",
+			"type": "accordion",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"open": 0,
+			"multi_expand": 0,
+			"endpoint": 0
+		},
+		{
+			"key": "field_64186d621468e",
+			"label": "Grid Layout",
+			"name": "teams_grid",
+			"aria-label": "",
+			"type": "range",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"default_value": 2,
+			"min": 1,
+			"max": 2,
+			"step": 1,
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_64186d621f64b",
+			"label": "Content Alignment",
+			"name": "content_alignment",
+			"aria-label": "",
+			"type": "button_group",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"choices": {
+				"left": "Left",
+				"center": "Center",
+				"right": "Right"
+			},
+			"default_value": "left",
+			"return_format": "value",
+			"allow_null": 0,
+			"layout": "horizontal"
+		},
+		{
+			"key": "field_64186d6223056",
+			"label": "Container Alignment",
+			"name": "container_alignment",
+			"aria-label": "",
+			"type": "button_group",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "33",
+				"class": "flex-3",
+				"id": ""
+			},
+			"choices": {
+				"start": "Start",
+				"center": "Center",
+				"end": "End"
+			},
+			"default_value": "start",
+			"return_format": "value",
+			"allow_null": 0,
+			"layout": "horizontal"
+		},
+		{
+			"key": "field_64186d6226b08",
+			"label": "Container Width",
+			"name": "container_width",
+			"aria-label": "",
+			"type": "range",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "33",
+				"class": "flex-3",
+				"id": ""
+			},
+			"default_value": 10,
+			"min": 6,
+			"max": 12,
+			"step": 1,
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_64186d622a5d0",
+			"label": "Offset Container Width",
+			"name": "offset_container_width",
+			"aria-label": "",
+			"type": "range",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "33",
+				"class": "flex-3",
+				"id": ""
+			},
+			"default_value": 0,
+			"min": 0,
+			"max": 6,
+			"step": 1,
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_64186d622e03f",
+			"label": "Padding Disable",
+			"name": "padding_disable",
+			"aria-label": "",
+			"type": "true_false",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "33",
+				"class": "flex-1",
+				"id": ""
+			},
+			"message": "",
+			"default_value": 0,
+			"ui_on_text": "",
+			"ui_off_text": "",
+			"ui": 1
+		},
+		{
+			"key": "field_64186d62319cd",
+			"label": "Padding Top",
+			"name": "padding_top",
+			"aria-label": "",
+			"type": "true_false",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": [
+				[
+					{
+						"field": "field_64186d622e03f",
+						"operator": "==",
+						"value": "1"
+					}
+				]
+			],
+			"wrapper": {
+				"width": "33",
+				"class": "flex-3",
+				"id": ""
+			},
+			"message": "",
+			"default_value": 1,
+			"ui_on_text": "",
+			"ui_off_text": "",
+			"ui": 1
+		},
+		{
+			"key": "field_64186d6235331",
+			"label": "Padding Bottom",
+			"name": "padding_bottom",
+			"aria-label": "",
+			"type": "true_false",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": [
+				[
+					{
+						"field": "field_64186d622e03f",
+						"operator": "==",
+						"value": "1"
+					}
+				]
+			],
+			"wrapper": {
+				"width": "33",
+				"class": "flex-3",
+				"id": ""
+			},
+			"message": "",
+			"default_value": 1,
+			"ui_on_text": "",
+			"ui_off_text": "",
+			"ui": 1
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "elevation/template-media-contacts"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1697747144
+}

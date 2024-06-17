@@ -1,0 +1,74 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "../../assets/styles/scss/utilities/_functions";
+@import "../../assets/styles/scss/utilities/_variables";
+@import "../../assets/styles/scss/utilities/_mixins";
+
+$section: ".block__template-presskit";
+#{$section} {
+	padding: 80px 0;
+
+	.block__template-presskit-container {
+		padding: 40px 0;
+		.line.hr-top {
+			margin-bottom: 47px;
+		}
+		.line.hr-bottom {
+			margin-top: 47px;
+		}
+		.block__template-presskit--row {
+			row-gap: 60px;
+		}
+	}
+
+	.card {
+		background-color: #fff;
+		overflow: hidden;
+		position: relative;
+		transition: all 0.4s ease;
+		&__body {
+			display: flex;
+			flex-direction: column;
+			padding: 0 0 0 50px;
+			position: relative;
+			row-gap: 15px;
+			> *,
+			* > * {
+				color: $text;
+				margin: 0;
+			}
+			&__icon {
+				height: 35px;
+				left: 0;
+				margin-bottom: 11px;
+				position: absolute;
+				top: 0;
+				width: 35px;
+				img {
+					object-fit: contain;
+					height: 100%;
+					transition-property: filter;
+					transition-duration: 0.4s;
+					transition-timing-function: ease-in-out;
+				}
+			}
+			&__title {
+				@include font-heading;
+				font-weight: 500;
+				font-size: px-to-rem(20px);
+				line-height: px-to-rem(28px);
+				letter-spacing: 0.04em;
+			}
+			&__excerpt,
+			&__excerpt > p {
+				@include font-body;
+				font-size: px-to-rem(14px);
+				font-weight: 400;
+				letter-spacing: 0.03em;
+				line-height: px-to-rem(25px);
+				margin-bottom: 14px;
+			}
+		}
+	}
+}

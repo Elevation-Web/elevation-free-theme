@@ -1,0 +1,88 @@
+@import "./mixins";
+
+$cta: ".cta";
+
+#{$cta} {
+	@include cta;
+
+	&--cta {
+		&-dark {
+			@include cta--cta-dark;
+		}
+		&-red {
+			@include cta--cta-red;
+		}
+		&-light {
+			@include cta--cta-light;
+		}
+		&-light-outline {
+			@include cta--cta-light-outline;
+		}
+		&-dark-download-left {
+			@include cta--cta-dark-downdload-left;
+		}
+		&-dark-arrow-left {
+			@include cta--cta-dark-arrow-left;
+		}
+		&-dark-arrow-right {
+			@include cta--cta-dark-arrow-right;
+		}
+		&-submit {
+			@include cta--cta-submit;
+		}
+		&-filter {
+			@include cta--cta-filter;
+		}
+		&-google-login {
+			@include cta--cta-google-login;
+		}
+	}
+
+	&--simple {
+		&-dark {
+			@include cta--simple-dark;
+		}
+		&-dark-arrow-left {
+			@include cta--simple-dark-arrow-left;
+		}
+		&-dark-arrow-right {
+			@include cta--simple-dark-arrow-right;
+		}
+		&-light {
+			@include cta--simple-light;
+		}
+		&-light-arrow-left {
+			@include cta-light-arrow-left;
+		}
+		&-light-arrow-right {
+			@include cta--simple-light-arrow-right;
+		}
+	}
+
+	&.active {
+		background-color: $dark;
+	}
+}
+
+.block__buttons {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-direction: row;
+	row-gap: 20px;
+	column-gap: 30px;
+	&.column {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	&.aligncenter,
+	&.center {
+		text-align: center !important;
+		justify-content: center;
+	}
+	&.alignright,
+	&.right {
+		text-align: right !important;
+		justify-content: end;
+	}
+}

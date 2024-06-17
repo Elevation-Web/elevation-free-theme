@@ -1,0 +1,27 @@
+{
+  "name": "elevation/timeline-horizontal",
+  "title": "Block Timeline Horizontal",
+  "category": "elevation-blocks",
+  "icon": "block-default",
+  "keywords": [
+    "timeline",
+    "horizontal",
+    "component",
+    "elevation"
+  ],
+  "description": "Timeline.",
+  "acf": {
+    "mode": "edit",
+    "renderCallback": "timeline_h_block_render_callback"
+  },
+  "supports": {
+    "anchor": true
+  },
+  "style": [
+    "file:./style-index.css"
+  ],
+  "script": "file:./index.js",
+  "editorStyle": [
+    "file:./index.css"
+  ]
+}

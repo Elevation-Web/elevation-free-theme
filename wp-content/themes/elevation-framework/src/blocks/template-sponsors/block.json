@@ -1,0 +1,18 @@
+{
+	"name": "elevation/template-sponsors",
+	"title": "Logo Block w/Background Color",
+	"category": "elevation-template",
+	"icon": "block-default",
+	"keywords": ["sponsors", "elevation"],
+	"description": "Template Media Center",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "template_sponsors_block_render_callback"
+	},
+	"supports": {
+		"anchor": true
+	},
+	"style": ["file:./style-index.css"],
+	"script": "file:./index.js",
+	"editorStyle": ["file:./index.css"]
+}

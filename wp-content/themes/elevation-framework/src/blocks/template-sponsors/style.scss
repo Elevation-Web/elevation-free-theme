@@ -1,0 +1,113 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "../../assets/styles/scss/utilities/_functions";
+@import "../../assets/styles/scss/utilities/_variables";
+@import "../../assets/styles/scss/utilities/_mixins";
+@import "../../assets/styles/scss/utilities/_swiper";
+
+@import "swiper/css/bundle";
+
+$section: ".block__template-sponsors";
+#{$section} {
+	padding: 80px 0;
+	position: relative;
+
+	&::after {
+		content: "";
+		background-color: $light-grey;
+		height: 100%;
+		left: calc(-50vw + 50%);
+		position: absolute;
+		top: 0;
+		width: 100vw;
+		z-index: -1;
+	}
+
+	&__content + &__sponsors {
+		margin-top: 30px;
+		@include media-breakpoint-up(xl) {
+			margin-top: 50px;
+		}
+	}
+
+	& + & {
+		.hr-top {
+			border-color: transparent;
+		}
+	}
+
+	&--tier {
+		.sponsor {
+			display: block;
+			height: 100px;
+			.sponsor__image,
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				img {
+					object-fit: contain;
+					object-position: center;
+					width: 100%;
+					height: 100%;
+					aspect-ratio: 3/2;
+					mix-blend-mode: color-burn;
+				}
+			}
+			a {
+				transition: all 0.4s ease;
+				transform: scale(1);
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+		}
+	}
+
+	&--carousel {
+		margin-top: 30px;
+		overflow: hidden;
+		@include media-breakpoint-up(xl) {
+			margin-top: 50px;
+		}
+		.swiper-slide {
+			opacity: 0.5;
+			transition: opacity 0.3s ease;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+		.swiper-slide {
+			height: 100px;
+			.sponsor__image,
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				img {
+					object-fit: contain;
+					object-position: center;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+		.sponsor__image img[src$=".jpg"],
+		.sponsor__image img[src$=".png"] {
+			mix-blend-mode: multiply;
+		}
+	}
+
+	line.hr-top {
+		margin-bottom: 35px;
+	}
+	line.hr-bottom {
+		margin-top: 35px;
+	}
+	.block__content + .block__template-sponsors--tier,
+	.block__content + line.hr-top {
+		margin-top: 45px;
+	}
+}
