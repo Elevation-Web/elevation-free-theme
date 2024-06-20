@@ -189,7 +189,7 @@ article {
 					@include media-breakpoint-up(xl) {
 						text-orientation: mixed;
 						writing-mode: vertical-rl;
-						@include rotate(180deg);
+						transform: rotate(180deg);
 					}
 					&::before {
 						content: none;

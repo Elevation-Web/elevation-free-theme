@@ -1,5 +1,7 @@
 import fs from 'fs';
 
+const excludeUX = 'UX';
+
 // Function to replace slash and dot with dash
 function replaceSlashAndDotWithDash(str) {
 	return str.replace(/[/. ]/g, '-').toLowerCase();
@@ -16,7 +18,7 @@ function traverse(obj) {
 	for (let prop in obj) {
 		if (typeof obj[prop] === 'object') {
 			result = result.concat(traverse(obj[prop]));
-		} else if (prop === 'name') {
+		} else if (prop === 'name' && !obj[prop].includes(excludeUX)) {
 			const slug = replaceSlashAndDotWithDash(obj[prop]);
 			result.push({
 				slug: slug,

@@ -126,7 +126,6 @@ header.header.mega-menu-active {
 				aside {
 					min-height: 350px;
 					.mega-menu__figure {
-
 						position: absolute;
 						top: 0;
 						left: 0;
@@ -361,7 +360,8 @@ header.header.mega-menu-active {
 			scroll-padding-right: 0;
 
 			@-moz-document url-prefix() {
-				scrollbar-color: rgba($color: $primary, $alpha: 1) rgba($color: $primary, $alpha: 0.15) ;
+				scrollbar-color: rgba($color: $primary, $alpha: 1)
+					rgba($color: $primary, $alpha: 0.15);
 				scrollbar-width: thin !important;
 			}
 
@@ -713,7 +713,7 @@ header.header.mega-menu-active {
 						color: $text;
 						margin: 0;
 					}
-					
+
 					&__date,
 					&__date > *,
 					&__date > * > *:not(.bold):not(font) {
@@ -837,7 +837,7 @@ header.header.mega-menu-active {
 				min-height: 350px;
 			}
 			img {
-				@include center(-50%, -50%);
+				transform: translate(-50%, -50%);
 				bottom: unset;
 				height: 100%;
 				left: 50%;
@@ -931,7 +931,7 @@ header.header.mega-menu-active {
 			text-transform: uppercase;
 			&::before {
 				content: "";
-				@include center(0%, -50%);
+				transform: translate(0%, -50%);
 				background-image: url("data:image/svg+xml,%3Csvg width='9' height='8' viewBox='0 0 9 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.374367 3.64645C0.179105 3.84171 0.179105 4.15829 0.374367 4.35355L3.55635 7.53553C3.75161 7.7308 4.06819 7.7308 4.26345 7.53553C4.45872 7.34027 4.45872 7.02369 4.26345 6.82843L1.43503 4L4.26345 1.17157C4.45872 0.976311 4.45872 0.659728 4.26345 0.464466C4.06819 0.269204 3.75161 0.269204 3.55635 0.464466L0.374367 3.64645ZM8.72792 3.5H0.727921V4.5H8.72792V3.5Z' fill='%23211F1F'/%3E%3C/svg%3E%0A");
 				background-position: center;
 				background-repeat: no-repeat;
@@ -962,8 +962,8 @@ header.header.mega-menu-active {
 		}
 	}
 
-	&.opened-search{
-		.mega-menu.active{
+	&.opened-search {
+		.mega-menu.active {
 			top: 40px;
 		}
 	}

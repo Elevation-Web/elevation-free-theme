@@ -1,5 +1,6 @@
 import { getPallete } from './utils/getPallete.mjs';
 import { typography } from './fonts/typography.mjs';
+import { fontStyles, headingFontStyles } from './fonts/fontFamilies.mjs';
 import fs from 'fs';
 
 const theme = {
@@ -10,7 +11,7 @@ const theme = {
 			defaultPalette: false,
 			gradients: [],
 			customGradient: false,
-			palette: getPallete('./figma/figmaTokens.json'),
+			palette: getPallete('./dev/figma/figmaTokens.json'),
 		},
 		spacing: {
 			units: ['%', 'px', 'em', 'rem', 'vh', 'vw'],
@@ -21,9 +22,11 @@ const theme = {
 			wideSize: '90%',
 		},
 	},
+	styles: fontStyles(),
+	blocks: headingFontStyles(),
 };
 
-fs.writeFile('../theme.json', JSON.stringify(theme, null, 4), (err) => {
+fs.writeFile('./theme.json', JSON.stringify(theme, null, 4), (err) => {
 	if (err) throw err;
 	console.log('theme.json created successfully!');
 });

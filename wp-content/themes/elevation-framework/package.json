@@ -37,7 +37,8 @@
 		"build": "yarn format & yarn wp-scripts build --webpack-copy-php",
 		"lint:scss": "wp-scripts lint-style 'blocks/**/*.scss' & wp-scripts lint-style 'assets/**/*.scss'",
 		"lint:js": "wp-scripts lint-js 'blocks/**/*.js' & wp-scripts lint-js 'assets/**/*.js'",
-		"check-engines": "wp-scripts check-engines"
+		"check-engines": "wp-scripts check-engines",
+		"themejson": "node ./dev/generateThemeJSON.mjs"
 	},
 	"dependencies": {
 		"@popperjs/core": "2.11.8",

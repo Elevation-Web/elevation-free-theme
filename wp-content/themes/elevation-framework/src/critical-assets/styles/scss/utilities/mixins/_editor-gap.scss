@@ -1,0 +1,92 @@
+@mixin editor-gap {
+	h1 + p {
+		margin-top: 15px;
+	}
+
+	h2 + p,
+	h3 + p,
+	h4 + p,
+	h5 + p,
+	h6 + p {
+		margin-top: 8px;
+	}
+
+	h2 + div,
+	h3 + div,
+	h4 + div,
+	h5 + div,
+	h6 + div,
+	p + div {
+		margin-top: 30px !important;
+	}
+
+	div:not(.bg-box) {
+		p + h2,
+		p + h3,
+		p + h4,
+		p + h5,
+		p + h6 {
+			margin-top: 30px;
+		}
+	}
+
+	p + h2,
+	p + h3,
+	p + h4,
+	p + h5,
+	p + h6 {
+		margin-top: 10px;
+	}
+
+	ul + h2,
+	ol + h2,
+	ul + h3,
+	ol + h3,
+	ul + h4,
+	ol + h4,
+	ul + h5,
+	ol + h5,
+	ul + h6,
+	ol + h6 {
+		margin-top: 30px;
+	}
+
+	p + blockquote,
+	blockquote + p,
+	p + div,
+	div + p {
+		margin-top: 30px;
+	}
+
+	ul + p,
+	ol + p {
+		margin-top: 15px;
+	}
+
+	h2 + ul,
+	h2 + ol,
+	p + ol,
+	p + ul,
+	h3 + ul,
+	h3 + ol,
+	p + ol,
+	p + ul,
+	h4 + ul,
+	h4 + ol,
+	p + ol,
+	p + ul,
+	h5 + ul,
+	h5 + ol,
+	p + ol,
+	p + ul,
+	h6 + ul,
+	h6 + ol,
+	p + ol,
+	p + ul {
+		margin-top: 15px;
+	}
+
+	p:not(:empty) + p:not(:empty) {
+		margin-top: 15px;
+	}
+}

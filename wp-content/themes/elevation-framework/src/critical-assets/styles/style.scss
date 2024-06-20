@@ -2,11 +2,6 @@
 	font-synthesis: none !important;
 }
 
-// BOOTSTRAP
-
-// @import 'bootstrap/scss/bootstrap';
-@import "bootstrap/scss/functions";
-
 // 2. Include any default variable overrides here
 $prefix: "elev-";
 $font-family-heading: "Inter", Arial, sans-serif;
@@ -34,107 +29,108 @@ $dropdown-link-active-bg: #cb4b3b;
 
 $link-color: #cb4b3b;
 
-// 3. Include remainder of required Bootstrap stylesheets
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
+// // 3. Include remainder of required Bootstrap stylesheets
+// @import "bootstrap/scss/variables";
+// @import "bootstrap/scss/variables-dark";
 
-$theme-colors: map-remove($theme-colors, "info", "light", "dark");
-// Custom Variables
+// $theme-colors: map-remove($theme-colors, "info", "light", "dark");
+// // Custom Variables
 
-@import "../../assets/styles/scss/utilities/_variables";
+@import "../../assets/styles/scss/utilities/variables";
 
-// 4. Include any default map overrides here
+// // 4. Include any default map overrides here
 
-$custom-colors: (
-	"primary": $primary,
-	"container-primary": $container-primary,
-	"light-primary": $light-primary,
-	"secondary": $secondary,
-	"container-secondary": $container-secondary,
-	"tertiary": $tertiary,
-	"container-tertiary": $container-tertiary,
-	"light-grey": $light-grey,
-	"error": $error,
-);
+// $custom-colors: (
+// 	"primary": $primary,
+// 	"container-primary": $container-primary,
+// 	"light-primary": $light-primary,
+// 	"secondary": $secondary,
+// 	"container-secondary": $container-secondary,
+// 	"tertiary": $tertiary,
+// 	"container-tertiary": $container-tertiary,
+// 	"light-grey": $light-grey,
+// 	"error": $error,
+// );
 
-$container-max-widths: (
-	sm: 540px,
-	md: 720px,
-	lg: 960px,
-	xl: 1204px,
-	xxl: 1384px,
-);
+// $container-max-widths: (
+// 	sm: 540px,
+// 	md: 720px,
+// 	lg: 960px,
+// 	xl: 1204px,
+// 	xxl: 1384px,
+// );
 
-// Merge the maps
-$theme-colors: map-merge($theme-colors, $custom-colors);
-// Remove from maps
+// // Merge the maps
+// $theme-colors: map-merge($theme-colors, $custom-colors);
+// // Remove from maps
 
-// 5. Include remainder of required parts
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/root";
+// // 5. Include remainder of required parts
+// @import "bootstrap/scss/maps";
+// @import "bootstrap/scss/mixins";
+// @import "bootstrap/scss/root";
 
-// 6. Optionally include any other parts as needed
-@import "bootstrap/scss/utilities";
-@import "bootstrap/scss/reboot";
-// @import "bootstrap/scss/type";
-@import "bootstrap/scss/images";
-@import "bootstrap/scss/containers";
-@import "bootstrap/scss/grid";
-// @import "bootstrap/scss/tables";
-@import "bootstrap/scss/forms";
-@import "bootstrap/scss/buttons";
-@import "bootstrap/scss/transitions";
-@import "bootstrap/scss/dropdown";
-@import "bootstrap/scss/button-group";
-@import "bootstrap/scss/nav";
-@import "bootstrap/scss/navbar";
-// @import "bootstrap/scss/card";
-@import "bootstrap/scss/accordion";
-// @import "bootstrap/scss/breadcrumb";
-// @import "bootstrap/scss/pagination";
-// @import "bootstrap/scss/badge";
-// @import "bootstrap/scss/alert";
-// @import "bootstrap/scss/progress";
-// @import "bootstrap/scss/list-group";
-// @import "bootstrap/scss/close";
-// @import "bootstrap/scss/toasts";
-@import "bootstrap/scss/modal";
-// @import "bootstrap/scss/tooltip";
-// @import "bootstrap/scss/popover";
-// @import "bootstrap/scss/carousel";
-// @import "bootstrap/scss/spinners";
-// @import "bootstrap/scss/offcanvas";
-// @import "bootstrap/scss/placeholders";
+// // 6. Optionally include any other parts as needed
+// @import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/reboot";
+// // @import "bootstrap/scss/type";
+// @import "bootstrap/scss/images";
+// @import "bootstrap/scss/containers";
+// @import "bootstrap/scss/grid";
+// // @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+// @import "bootstrap/scss/buttons";
+// @import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar";
+// // @import "bootstrap/scss/card";
+// @import "bootstrap/scss/accordion";
+// // @import "bootstrap/scss/breadcrumb";
+// // @import "bootstrap/scss/pagination";
+// // @import "bootstrap/scss/badge";
+// // @import "bootstrap/scss/alert";
+// // @import "bootstrap/scss/progress";
+// // @import "bootstrap/scss/list-group";
+// // @import "bootstrap/scss/close";
+// // @import "bootstrap/scss/toasts";
+// @import "bootstrap/scss/modal";
+// // @import "bootstrap/scss/tooltip";
+// // @import "bootstrap/scss/popover";
+// // @import "bootstrap/scss/carousel";
+// // @import "bootstrap/scss/spinners";
+// // @import "bootstrap/scss/offcanvas";
+// // @import "bootstrap/scss/placeholders";
 
 $component-active-bg: #000;
 $component-active-color: #000;
 $form-check-input-checked-bg-color: #000;
 
-// Helpers
-@import "bootstrap/scss/helpers";
-@import "bootstrap/scss/utilities/api";
+// // Helpers
+// @import "bootstrap/scss/helpers";
+// @import "bootstrap/scss/utilities/api";
 
-.container,
-.container-fluid,
-.container-sm,
-.container-md,
-.container-lg,
-.container-xl,
-.container-xxl {
-	--elev-gutter-x: 32px;
+// .container,
+// .container-fluid,
+// .container-sm,
+// .container-md,
+// .container-lg,
+// .container-xl,
+// .container-xxl {
+// 	--elev-gutter-x: 32px;
 
-	@include media-breakpoint-up(sm) {
-		--elev-gutter-x: 48px;
-	}
+// 	@include media-breakpoint-up(sm) {
+// 		--elev-gutter-x: 48px;
+// 	}
 
-	@include media-breakpoint-up(xxl) {
-		--elev-gutter-x: 64px;
-	}
-}
+// 	@include media-breakpoint-up(xxl) {
+// 		--elev-gutter-x: 64px;
+// 	}
+// }
 
 @import "../../assets/styles/scss/utilities/_functions";
 @import "../../assets/styles/scss/utilities/_mixins";
+@import "./scss/utilities/mixins";
 @import "./scss/base/_reset";
 @import "./scss/base/_typography";
 

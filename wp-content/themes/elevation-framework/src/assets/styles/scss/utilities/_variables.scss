@@ -1,4 +1,17 @@
 /*
+* Breakpoints
+*/
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
+
+/*
 *  Colors
 */
 
@@ -58,7 +71,7 @@ $blockquote_fontWeight: 700;
 $title_weight: 500;
 $title_spacing: 0.04em;
 
-$selector_color: darken($tertiary, 10);
+$selector_color: $tertiary;
 
 $font_size_subheading: 24px;
 $line_height_subheading: 32px;
