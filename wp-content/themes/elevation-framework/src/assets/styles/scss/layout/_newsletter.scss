@@ -28,7 +28,7 @@
 			}
 			.gform_title {
 				@include font-heading;
-				color: $white;
+				color: $ui-base-white;
 				font-size: px-to-rem(14px);
 				font-stretch: normal;
 				font-style: normal;
@@ -41,7 +41,7 @@
 				text-align: left;
 				text-transform: none !important;
 				&::selection {
-					background-color: $light-grey;
+					background-color: $ui-border-bounds;
 					color: $selector_color;
 				}
 			}
@@ -51,7 +51,7 @@
 			}
 			.gform_description {
 				@include font-heading;
-				color: $white;
+				color: $ui-base-white;
 				font-size: px-to-rem(14px);
 				font-stretch: normal;
 				font-style: normal;
@@ -63,7 +63,7 @@
 				text-align: left;
 				text-transform: none !important;
 				&::selection {
-					background-color: $light-grey;
+					background-color: $ui-border-bounds;
 					color: $selector_color;
 				}
 			}
@@ -116,9 +116,9 @@
 						.gfield_description {
 							@include font-heading;
 							align-items: center;
-							color: $white !important;
+							color: $ui-base-white !important;
 							display: flex;
-							font-size: $label-size;
+							font-size: 20px;
 							font-style: normal;
 							font-weight: 500;
 							letter-spacing: normal;
@@ -129,7 +129,7 @@
 							.gfield_required > span {
 								font-size: px-to-rem(9px);
 								line-height: px-to-rem(9px);
-								color: $white !important;
+								color: $ui-base-white !important;
 							}
 							> .gfield_required {
 								margin-left: 5px;
@@ -144,8 +144,8 @@
 									$alpha: 0
 								) !important;
 								border-radius: 1px !important;
-								border: 1px solid $white !important;
-								color: rgba($color: $white, $alpha: 1);
+								border: 1px solid$ui-base-white !important;
+								color: rgba($color: $ui-base-white, $alpha: 1);
 								font-size: px-to-rem(11px) !important;
 								font-stretch: normal;
 								font-style: normal;
@@ -160,15 +160,15 @@
 								text-transform: none;
 								width: 100% !important;
 								&::-webkit-input-placeholder {
-									color: $white;
+									color: $ui-base-white;
 									opacity: 1;
 								}
 								&::-moz-placeholder {
-									color: $white;
+									color: $ui-base-white;
 									opacity: 1;
 								} /* firefox 19+ */
 								&:-ms-input-placeholder {
-									color: $white;
+									color: $ui-base-white;
 									opacity: 1;
 								} /* ie */
 								&:-webkit-autofill,
@@ -181,13 +181,13 @@
 								&:-webkit-autofill:hover,
 								&:-webkit-autofill:focus {
 									-webkit-text-fill-color: rgba(
-										$color: $white,
+										$color: $ui-base-white,
 										$alpha: 1
 									) !important;
 									background: transparent !important;
 									border: none;
 									color: rgba(
-										$color: $white,
+										$color: $ui-base-white,
 										$alpha: 1
 									) !important;
 									transition: background-color 5000s
@@ -237,7 +237,7 @@
 									[type="checkbox"]:checked + label,
 									[type="checkbox"]:not(:checked) + label {
 										@include font-heading;
-										color: $white;
+										color: $ui-base-white;
 										cursor: pointer;
 										display: inline-block !important;
 										font-size: px-to-rem(9px);
@@ -256,7 +256,7 @@
 										&::after {
 											content: "";
 											-webkit-transition: all 0.2s ease;
-											background: $white;
+											background: $ui-base-white;
 											border-radius: 3px;
 											border: 0.4px solid
 												rgba(91, 92, 95, 0.8);
@@ -279,7 +279,7 @@
 										&::before {
 											content: "";
 											//background-image: url('');
-											color: $light-grey;
+											color: $ui-border-bounds;
 											font-size: px-to-rem(14px);
 											left: 2px;
 											position: absolute;
@@ -290,7 +290,7 @@
 										+ label:after {
 										content: "";
 										transition: all 0.2s ease;
-										background: $white;
+										background: $ui-base-white;
 										border-radius: 3px;
 										border: 0.4px solid
 											rgba(91, 92, 95, 0.8);
@@ -301,11 +301,11 @@
 					}
 					#field_submit > .gform-button {
 						background-color: transparent;
-						border-bottom: 1px solid $white !important;
-						border-radius: $btn1_border_radius !important;
+						border-bottom: 1px solid$ui-base-white !important;
+						border-radius: $button-border-radius !important;
 						border: none;
 						box-shadow: none;
-						color: $white;
+						color: $ui-base-white;
 						cursor: pointer;
 						display: inline-block;
 						@include font-heading;
@@ -334,28 +334,28 @@
 						.ginput_container {
 							&::after {
 								background-color: rgba(
-									$color: $error-color,
+									$color: $ui-border-system-warning,
 									$alpha: 1
 								) !important;
 							}
 							input {
-								color: $error-color !important;
+								color: $ui-border-system-warning !important;
 								background-color: rgba(
-									$color: $error-color,
+									$color: $ui-border-system-warning,
 									$alpha: 0
 								) !important;
-								border: 1px solid $error-color !important;
+								border: 1px solid $ui-border-system-warning !important;
 								max-width: 100% !important;
 								&::-webkit-input-placeholder {
-									color: $error-color !important;
+									color: $ui-border-system-warning !important;
 									opacity: 1;
 								}
 								&::-moz-placeholder {
-									color: $error-color !important;
+									color: $ui-border-system-warning !important;
 									opacity: 1;
 								} /* firefox 19+ */
 								&:-ms-input-placeholder {
-									color: $error-color;
+									color: $ui-border-system-warning;
 									opacity: 1;
 								} /* ie */
 								&:-webkit-autofill:focus,
@@ -368,11 +368,11 @@
 									background: transparent !important;
 									border: none;
 									color: rgba(
-										$color: $error-color,
+										$color: $ui-border-system-warning,
 										$alpha: 1
 									) !important;
 									-webkit-text-fill-color: rgba(
-										$color: $error-color,
+										$color: $ui-border-system-warning,
 										$alpha: 1
 									) !important;
 									transition: background-color 5000s
@@ -412,10 +412,10 @@
 				input.gform_button {
 					@include font-heading;
 					background-color: transparent;
-					border-radius: $btn1_border_radius !important;
+					border-radius: $button-border-radius !important;
 					border: none;
 					box-shadow: none;
-					color: $white;
+					color: $ui-base-white;
 					cursor: pointer;
 					display: inline-block;
 					font-size: px-to-rem(14px) !important;
@@ -450,27 +450,27 @@
 			}
 		}
 		.gform_validation_errors {
-			background-color: $error-color !important;
+			background-color: $ui-border-system-warning !important;
 			border: none;
 			margin: 0 0 10px;
 			h2 {
 				@include font-heading;
-				color: $white !important;
+				color: $ui-base-white !important;
 				font-size: px-to-rem(14px) !important;
 				font-style: normal;
 				font-weight: bold !important;
 				line-height: 1;
 				margin-bottom: 0 !important;
 				.gform-icon {
-					color: $white !important;
+					color: $ui-base-white !important;
 					font-size: px-to-rem(35px) !important;
 				}
 			}
 		}
 		.validation_message {
 			@include font-heading;
-			background-color: $error-color !important;
-			color: $white !important;
+			background-color: $ui-border-system-warning !important;
+			color: $ui-base-white !important;
 			border-radius: 5px;
 			font-size: px-to-rem(11px) !important;
 			font-style: normal;
@@ -492,7 +492,7 @@
 			@include font-heading;
 			background: transparent !important;
 			border-radius: 0;
-			color: $white !important;
+			color: $ui-base-white !important;
 			display: inline-block;
 			font-size: px-to-rem(15px);
 			font-stretch: normal;

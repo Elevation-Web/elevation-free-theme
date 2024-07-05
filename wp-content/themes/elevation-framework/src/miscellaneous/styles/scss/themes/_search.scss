@@ -1,4 +1,4 @@
-@import "../../../../critical-assets/styles/scss/utilities/mixins";
+@import "../../../../assets/styles/scss/utilities/mixins";
 
 body.search {
 	h1 {
@@ -27,7 +27,7 @@ body.search-results {
 			}
 		}
 		article {
-			border-bottom: 1px solid $primary;
+			border-bottom: 1px solid $ui-background-primary;
 			display: flex;
 			flex-direction: column;
 			padding-bottom: 20px;
@@ -51,8 +51,8 @@ body.search-results {
 				h2.entry-title {
 					a {
 						@include font-body;
-						border-bottom: 2px solid $primary;
-						color: $primary;
+						border-bottom: 2px solid $ui-background-primary;
+						color: $ui-background-primary;
 						display: inline;
 						line-height: initial;
 						padding-bottom: 2px;
@@ -71,7 +71,7 @@ body.search-results {
 								text-decoration: none;
 							}
 							time {
-								color: $link;
+								color: $ui-foreground-primary-text-links;
 							}
 						}
 					}
@@ -99,7 +99,7 @@ body.search-results {
 						background-color: transparent;
 						border-radius: 0;
 						border: none;
-						color: $secondary;
+						color: $ui-background-secondary;
 						column-gap: 10px;
 						display: inline-flex;
 						font-size: px-to-rem(13px);
@@ -135,7 +135,7 @@ body.search-results {
 				.cat-links {
 					a {
 						text-decoration: underline;
-						color: $link;
+						color: $ui-foreground-primary-text-links;
 						&:hover {
 							text-decoration: none;
 						}
@@ -150,7 +150,6 @@ body.search-results {
 				.nav-next {
 					a {
 						@include cta;
-						@include cta--cta-submit;
 					}
 				}
 			}
@@ -196,7 +195,6 @@ body.search-no-results {
 		}
 		.search-submit {
 			@include cta;
-			@include cta--cta-submit;
 		}
 	}
 }

@@ -1,50 +1,51 @@
 .buorg {
-  @include font-body;
-  background-color: $tertiary !important;
-  border: 1px solid $tertiary !important;
-  bottom: 0px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  color: #ffffff !important;
-  left: 0px;
-  text-align: center;
-  top: unset !important;
-  width: 100%;
-  z-index: 111111;
-  .buorg-buttons{
-    margin-top: 10px;
-    #buorgul, #buorgig{
-      background: transparent !important;
-      //font-family: 'Open Sans', sans-serif !important;
-      border-radius: 0;
-      border: 1px solid rgba($color: $white, $alpha: 0.32) !important;
-      font-weight: 600;
-      box-shadow: none !important;
-      padding: 10px 25px;
-      font-size: px-to-rem(14px);
-      line-height: 1;
-    }
-    #buorgul{
-      background-color: $tertiary;
-      color: $white !important;
-    }
-    #buorgig{
-      background-color: $tertiary;
-      color: $white !important;
-    }
-  }
-  .buorg-pad{
-    margin-top: 10px;
-    color: $white;
-    #buorgpermanent{
-      //font-family: 'Open Sans', sans-serif !important;
-      border-radius: 0;
-      border: none;
-      font-weight: 900;
-      box-shadow: none !important;
-      padding: 10px 15px;
-      font-size: px-to-rem(15px);
-      background-color: $tertiary !important;
-      color: $white !important;
-    }
-  }
+	@include font-body;
+	background-color: $ui-background-tertiary !important;
+	border: 1px solid $ui-background-tertiary !important;
+	bottom: 0px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	color: #ffffff !important;
+	left: 0px;
+	text-align: center;
+	top: unset !important;
+	width: 100%;
+	z-index: 111111;
+	.buorg-buttons {
+		margin-top: 10px;
+		#buorgul,
+		#buorgig {
+			background: transparent !important;
+			//font-family: 'Open Sans', sans-serif !important;
+			border-radius: 0;
+			border: 1px solid rgba($color: $ui-base-white, $alpha: 0.32) !important;
+			font-weight: 600;
+			box-shadow: none !important;
+			padding: 10px 25px;
+			font-size: px-to-rem(14px);
+			line-height: 1;
+		}
+		#buorgul {
+			background-color: $ui-background-tertiary;
+			color: $ui-base-white !important;
+		}
+		#buorgig {
+			background-color: $ui-background-tertiary;
+			color: $ui-base-white !important;
+		}
+	}
+	.buorg-pad {
+		margin-top: 10px;
+		color: $ui-base-white;
+		#buorgpermanent {
+			//font-family: 'Open Sans', sans-serif !important;
+			border-radius: 0;
+			border: none;
+			font-weight: 900;
+			box-shadow: none !important;
+			padding: 10px 15px;
+			font-size: px-to-rem(15px);
+			background-color: $ui-background-tertiary !important;
+			color: $ui-base-white !important;
+		}
+	}
 }

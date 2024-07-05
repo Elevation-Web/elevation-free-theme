@@ -1,5 +1,3 @@
-import '@popperjs/core';
-import 'bootstrap/dist/js/bootstrap.min.js';
 import '../assets/scripts/common/common.js';
 import './scripts/layout/mega-menu.js';
 // import './scripts/layout/menu.js';

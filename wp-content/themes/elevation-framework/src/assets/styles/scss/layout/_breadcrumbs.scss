@@ -36,7 +36,7 @@
 	span {
 		@include font-heading;
 		align-items: center;
-		color: rgba($color: $container-tertiary, $alpha: 1);
+		color: rgba($color: $ui-foreground-primary-text-links, $alpha: 1);
 		display: inline-flex;
 		font-size: px-to-rem(14px);
 		font-style: normal;
@@ -61,58 +61,8 @@
 		a {
 			&:hover {
 				text-decoration: underline;
-				color: $text;
+				color: $ui-foreground-primary-text-body-text;
 			}
 		}
 	}
 }
-
-// Yoast Breadcrumbs
-// ul.breadcrumbs{
-//   margin-bottom: 5px;
-//   padding: 0px;
-//   text-transform: none;
-//   li{
-//     display: inline-block;
-//     margin-right: 10px;
-//     strong{
-//       @include font1;
-//       color: $tertiary;
-//       font-size: px-to-rem(15px);
-//       font-weight: 300;
-//       margin-bottom:0;
-//     }
-//     &.separator{
-//       color:transparent;
-//       font-size: 0px;
-//       &::after{
-//         content: "\f054";
-//         font-family: "Font Awesome 5 Free";
-//         font-weight: 900;
-//         font-style: normal;
-//         font-variant: normal;
-//         text-rendering: auto;
-//         -webkit-font-smoothing: antialiased;
-//         /*--adjust as necessary--*/
-//         color: $tertiary;
-//         display: inline-block;
-//         font-size: 0.9rem;
-//         position: relative;
-//       }
-//     }
-//     a{
-//       @include font1;
-//       color: #292929;
-//       font-size: px-to-rem(15px);
-//       font-weight: normal;
-//       margin-bottom: 0;
-//       text-decoration: none;
-//       &:hover{
-//         text-decoration: underline;
-//       }
-//     }
-//     &.last-child{
-//       color: $tertiary;
-//     }
-//   }
-// }

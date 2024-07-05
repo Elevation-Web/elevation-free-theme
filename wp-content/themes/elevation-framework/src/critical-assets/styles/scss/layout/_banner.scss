@@ -4,7 +4,7 @@
 
 	&.category {
 		min-height: 500px;
-		background: $primary;
+		background: $ui-background-primary;
 
 		.banner-container {
 			min-height: 500px;
@@ -15,7 +15,7 @@
 			h2,
 			h3,
 			h4 {
-				color: $white;
+				color: $ui-base-white;
 			}
 		}
 	}
@@ -134,7 +134,7 @@
 		h1,
 		h2 {
 			@include font-heading;
-			color: $white !important;
+			color: $ui-base-white !important;
 			display: block;
 			font-size: px-to-rem($h1_size_desktop);
 			font-weight: $title_weight;
@@ -153,7 +153,7 @@
 			}
 
 			> * {
-				color: $white !important;
+				color: $ui-base-white !important;
 			}
 
 			span {
@@ -176,7 +176,7 @@
 
 		p {
 			@include font-body;
-			color: $white;
+			color: $ui-base-white;
 			font-size: px-to-rem($font_size_text);
 			font-weight: $font_weight_text;
 			letter-spacing: $spacing_text;
@@ -184,7 +184,7 @@
 			margin: 0;
 
 			> * {
-				color: $white !important;
+				color: $ui-base-white !important;
 			}
 
 			strong {

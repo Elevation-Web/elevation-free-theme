@@ -9,17 +9,15 @@ const loadBlocksCSSandJS = (excludedBlocks, exclude = false) => {
 		uniqueBlocksIds = excludedBlocks;
 	} else {
 		// Find all elements with the "block" class
-		const blocks = Array.from(
-			document.querySelectorAll('.dynamic-assets-load')
-		);
+		const blocks = Array.from(document.querySelectorAll('[data-block-id]'));
 
 		// Get unique block IDs array
 		uniqueBlocksIds = blocks
 			.filter((block, index, self) => {
-				const ids = self.map((elem) => elem.dataset.id);
-				return ids.indexOf(block.dataset.id) === index;
+				const ids = self.map((elem) => elem.dataset.blockId);
+				return ids.indexOf(block.dataset.blockId) === index;
 			})
-			.map((block) => block.dataset.id);
+			.map((block) => block.dataset.blockId);
 
 		// Remove excluded blocks
 		uniqueBlocksIds = uniqueBlocksIds.filter(

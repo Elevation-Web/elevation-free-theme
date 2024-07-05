@@ -49,8 +49,8 @@
 			row-gap: 15px;
 		}
 
-		>li,
-		>li.open {
+		> li,
+		> li.open {
 			float: none;
 			display: flex;
 			align-items: center;
@@ -60,7 +60,6 @@
 			vertical-align: middle;
 
 			@include media-breakpoint-up(xl) {
-
 				&:hover,
 				&:focus,
 				&:active {
@@ -97,10 +96,10 @@
 				}
 			}
 
-			&.active>a {
+			&.active > a {
 				background: transparent;
 				transition: all 0.2s ease;
-				color: $tertiary !important;
+				color: $ui-background-tertiary !important;
 
 				@include media-breakpoint-up(xl) {
 					&::after {
@@ -125,12 +124,14 @@
 				background: transparent;
 				border-radius: 0;
 				border: none;
-				color: $text-menu-parent-color;
-				font-size: px-to-rem($text-menu-parent-size);
+				color: $ui-foreground-primary-text-body-text-menu-parent-color;
+				font-size: px-to-rem(
+					$ui-foreground-primary-text-body-text-menu-parent-size
+				);
 				font-stretch: normal;
 				font-style: normal;
-				font-weight: $text-menu-parent-font-weight;
-				letter-spacing: $text-menu-parent-spacing;
+				font-weight: $ui-foreground-primary-text-body-text-menu-parent-font-weight;
+				letter-spacing: $ui-foreground-primary-text-body-text-menu-parent-spacing;
 				line-height: 1.2;
 				position: relative;
 				text-align: left;
@@ -147,7 +148,7 @@
 
 					&::before {
 						content: "";
-						background-color: $light-primary;
+						background-color: $ui-foreground-primary-text-body-text;
 						border-radius: 50%;
 						bottom: 8px;
 						height: 5px;
@@ -162,7 +163,7 @@
 
 					&::after {
 						content: "";
-						background: $light-primary;
+						background: $ui-foreground-primary-text-body-text;
 						border-radius: 0;
 						border: none;
 						bottom: 0;
@@ -216,7 +217,7 @@
 			&.cta-menu-1 {
 				padding: 6px 0;
 
-				>a {
+				> a {
 					@extend .cta;
 					@extend .cta--cta-dark;
 				}
@@ -229,7 +230,7 @@
 					width: 130px;
 				}
 
-				>a {
+				> a {
 					padding-right: 0;
 					padding-left: 30px;
 
@@ -258,11 +259,11 @@
 			&.cta-menu-1,
 			&.cta-menu-2 {
 				background-color: transparent;
-				border-radius: $btn1_border_radius;
+				border-radius: $button-border-radius;
 				padding: 0 !important;
 				transition: all 0.4s ease;
 
-				>a {
+				> a {
 					@include font-heading;
 					border: none;
 					font-size: px-to-rem(14px);
@@ -309,7 +310,7 @@
 
 						@include media-breakpoint-up(xl) {
 							&::after {
-								content: '';
+								content: "";
 								position: absolute;
 								top: calc(50% - 4px);
 								right: 30px;
@@ -321,7 +322,7 @@
 					}
 
 					&.dropdown {
-						>a {
+						> a {
 							&::before {
 								// content: "" !important;
 								// //background: transparent url('../img/icons/dropdown-arrow-menu.svg') no-repeat center;
@@ -360,7 +361,7 @@
 						border: none;
 
 						&::before {
-							content: '';
+							content: "";
 							position: absolute;
 							top: 0;
 							left: 0;
@@ -383,9 +384,9 @@
 						}
 					}
 
-					&.active>a {
-						background: $tertiary;
-						color: $white !important;
+					&.active > a {
+						background: $ui-background-tertiary;
+						color: $ui-base-white !important;
 
 						&::after {
 							opacity: 1;
@@ -402,7 +403,7 @@
 					a {
 						align-items: center;
 						border: none;
-						color: $text-menu-child-color !important;
+						color: $ui-foreground-primary-text-body-text-menu-child-color !important;
 						display: flex;
 						font-stretch: normal;
 						font-style: normal;
@@ -430,8 +431,8 @@
 						&:focus,
 						&:active {
 							text-decoration: none;
-							background-color: $tertiary !important;
-							color: $white !important;
+							background-color: $ui-background-tertiary !important;
+							color: $ui-base-white !important;
 						}
 					}
 
@@ -456,16 +457,18 @@
 								font-size: px-to-rem(15px);
 								padding: 16px 23px 17px !important;
 								text-align: left;
-								color: $tertiary;
+								color: $ui-background-tertiary;
 								text-transform: none;
 
 								&:hover,
 								&:focus,
 								&:active {
 									text-decoration: none;
-									background-color: rgba($color: $tertiary,
-											$alpha: 0.8) !important;
-									color: $tertiary !important;
+									background-color: rgba(
+										$color: $ui-background-tertiary,
+										$alpha: 0.8
+									) !important;
+									color: $ui-background-tertiary !important;
 								}
 							}
 						}
@@ -499,7 +502,8 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: px-to-rem(14px);
-			border: var(--elev-border-width) solid $navbar-dark-toggler-border-color;
+			border: var(--elev-border-width) solid
+				$navbar-dark-toggler-border-color;
 			border-radius: $navbar-toggler-border-radius;
 			flex: 0 0 45px;
 			height: 45px;

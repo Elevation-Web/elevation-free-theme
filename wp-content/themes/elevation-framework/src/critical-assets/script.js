@@ -2,7 +2,6 @@ import loadBlocksCSSandJS from './scripts/loadBlocksCSSandJS';
 import loadAssetsCSSandJS from './scripts/loadAssetsCSSandJS';
 import waitForUserInteraction from './scripts/waitForUserInteraction';
 import getFirstsBlock from './scripts/getFirstBlock';
-import showBody from './scripts/showBody';
 
 const excludedBlocks = [];
 

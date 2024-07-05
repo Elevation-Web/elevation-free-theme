@@ -18,7 +18,7 @@
 	justify-content: center;
 	.page-numbers.current,
 	.current {
-		color: $pagination-current;
+		color: $ui-foreground-primary-text-body-text;
 		position: relative;
 	}
 	.page-numbers.next,
@@ -27,9 +27,9 @@
 		align-items: center;
 		justify-content: space-between;
 		&:hover {
-			color: $pagination-current;
+			color: $ui-foreground-primary-text-body-text;
 			&::before {
-				color: $pagination-current;
+				color: $ui-foreground-primary-text-body-text;
 			}
 		}
 	}
@@ -41,13 +41,8 @@
 	.prev.page-numbers::before,
 	.next.page-numbers::before {
 		@include font-heading;
-		color: $pagination-numbers;
+		color: $ui-foreground-primary-accent-01;
 		display: inline-block;
-		font-size: px-to-rem($pagination-font-size);
-		font-weight: $pagination-font-weight;
-		letter-spacing: $pagination-letter-spacing;
-		line-height: px-to-rem($pagination-line-height);
-		text-transform: $pagination-text-transform;
 	}
 	.prev.page-numbers {
 		flex-direction: row-reverse;
@@ -70,21 +65,15 @@
 		@include font-heading;
 		background: transparent;
 		border: none;
-		color: $text;
+		color: $ui-foreground-primary-text-body-text;
 		display: inline-block;
-		font-size: px-to-rem($pagination-font-size);
-		font-weight: $pagination-font-weight;
-		letter-spacing: $pagination-letter-spacing;
-		line-height: px-to-rem($pagination-line-height);
 		min-height: 25px;
 		min-width: 25px;
 		text-align: center;
 		text-decoration: none;
-		text-transform: $pagination-text-transform;
 		transition: all 0.4s ease;
 		&:hover {
 			text-decoration: none;
-			color: $pagination-current;
 		}
 		&.prev,
 		&.next {
@@ -122,11 +111,11 @@
 			}
 		}
 		&.current {
-			color: $pagination-current;
+			color: $ui-foreground-primary-text-body-text;
 			position: relative;
 			&::after {
 				content: "";
-				background-color: $pagination-current;
+				background-color: $ui-foreground-primary-text-body-text;
 				width: 11px;
 				height: 2px;
 				transform: translate(-50%, 0%);

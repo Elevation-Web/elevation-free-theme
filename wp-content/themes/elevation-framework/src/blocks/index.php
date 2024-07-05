@@ -36,7 +36,7 @@ function load_blocks()
     foreach ($blocks as $block) {
         if (file_exists($block_path . $block . '/block.json')) {
 
-            register_block_type($block_path . $block . '/block.json');
+            register_block_type($block_path . $block);
 
             if (file_exists($block_path . $block . '/index.php')) {
                 include_once $block_path . $block . '/index.php';

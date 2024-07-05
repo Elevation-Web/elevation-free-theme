@@ -1,6 +1,7 @@
-function createFontFamily(name, fontFaces) {
+function createFontFamily(name, fontFaces, isSerif = false) {
 	const slug = name.toLowerCase();
-	const fontFamily = `"${name}", Arial, sans-serif`;
+	const serif = isSerif ? 'serif' : 'sans-serif';
+	const fontFamily = `"${name}", ${serif}`;
 
 	const formattedFontFaces = fontFaces.map((face) => ({
 		fontFamily: name,
@@ -21,47 +22,35 @@ function createFontFamily(name, fontFaces) {
 
 export const fontFamilies = () => {
 	// Usage:
-	const heading = createFontFamily('Martel', [
-		{
-			fontWeight: 'normal',
-			src: ['file:./src/assets/fonts/Martel-Regular.woff2'],
-		},
-		{
-			fontWeight: '800',
-			src: ['file:./src/assets/fonts/Martel-ExtraBold.woff2'],
-		},
-	]);
+	const heading = createFontFamily(
+		'Heading Font',
+		[
+			{
+				fontWeight: '500',
+				src: ['file:./src/assets/fonts/Inter-Medium.woff2'],
+			},
+			{
+				fontWeight: '700',
+				src: ['file:./src/assets/fonts/Inter-Bold.woff2'],
+			},
+		],
+		true
+	);
 
-	const body = createFontFamily('Inter', [
-		{
-			fontWeight: '500',
-			src: ['file:./src/assets/fonts/Inter-Medium.woff2'],
-		},
-		{
-			fontWeight: '700',
-			src: ['file:./src/assets/fonts/Inter-Bold.woff2'],
-		},
-	]);
+	const body = createFontFamily(
+		'Body Font',
+		[
+			{
+				fontWeight: '500',
+				src: ['file:./src/assets/fonts/Inter-Medium.woff2'],
+			},
+			{
+				fontWeight: '700',
+				src: ['file:./src/assets/fonts/Inter-Bold.woff2'],
+			},
+		],
+		false
+	);
 
 	return [heading, body];
-};
-
-export const fontStyles = () => {
-	return {
-		typography: {
-			fontFamily: '"Inter", sans-serif',
-		},
-	};
-};
-
-export const headingFontStyles = () => {
-	return {
-		'core/heading': {
-			styles: {
-				typography: {
-					fontFamily: '"Martel", serif',
-				},
-			},
-		},
-	};
 };

@@ -30,51 +30,54 @@ div[class^="swiper__container--"] {
 	/*
   * Paginador
   */
-  .swiper-pagination-bullets.swiper-pagination-horizontal:not(.swiper-pagination-bullets-dynamic),
-  .swiper-pagination:not(.swiper-pagination-bullets-dynamic) {
-	  bottom: 0;
-	  display: flex;
-	  gap: 12px;
-	  height: auto;
-	  justify-content: center;
-	  position: relative;
-	  text-align: center;
-	  transform: unset;
-	  width: auto;
-	  .swiper-pagination-bullet {
-		  background: $tertiary;
-		  border-radius: 50%;
-		  height: 8px;
-		  opacity: 0.4;
-		  width: 8px;
-		  &.swiper-pagination-bullet-active {
-			  background: $tertiary;
-			  opacity: 1;
-		  }
-	  }
-  }
+	.swiper-pagination-bullets.swiper-pagination-horizontal:not(
+			.swiper-pagination-bullets-dynamic
+		),
+	.swiper-pagination:not(.swiper-pagination-bullets-dynamic) {
+		bottom: 0;
+		display: flex;
+		gap: 12px;
+		height: auto;
+		justify-content: center;
+		position: relative;
+		text-align: center;
+		transform: unset;
+		width: auto;
+		.swiper-pagination-bullet {
+			background: $ui-background-tertiary;
+			border-radius: 50%;
+			height: 8px;
+			opacity: 0.4;
+			width: 8px;
+			&.swiper-pagination-bullet-active {
+				background: $ui-background-tertiary;
+				opacity: 1;
+			}
+		}
+	}
 
-		/*
+	/*
   * Paginador Dynamic
   */
-  .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
-  .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-	  bottom: unset;
-	  left: unset;
-	  position: relative;
-	  top: unset;
-	  transform: unset;
-	  padding: 5px 0;
-	  .swiper-pagination-bullet {
-		  background: $tertiary;
-		  opacity: 0.4;
-		  margin: 0 8px;
-		  &.swiper-pagination-bullet-active {
-			  background: $tertiary;
-			  opacity: 1;
-		  }
-	  }
-  }
+	.swiper-horizontal
+		> .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+	.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+		bottom: unset;
+		left: unset;
+		position: relative;
+		top: unset;
+		transform: unset;
+		padding: 5px 0;
+		.swiper-pagination-bullet {
+			background: $ui-background-tertiary;
+			opacity: 0.4;
+			margin: 0 8px;
+			&.swiper-pagination-bullet-active {
+				background: $ui-background-tertiary;
+				opacity: 1;
+			}
+		}
+	}
 	/*
   * Scrollbar
   */
@@ -93,12 +96,12 @@ div[class^="swiper__container--"] {
 			position: absolute;
 			left: 0;
 			top: 0;
-			background: $black;
+			background: $ui-base-black;
 		}
 	}
 	.swiper-scrollbar-drag {
 		height: 3px;
-		background: $black;
+		background: $ui-base-black;
 		z-index: 1;
 		top: -1px;
 	}

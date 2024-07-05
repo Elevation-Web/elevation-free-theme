@@ -1,10 +1,8 @@
 const getFirstsBlock = () => {
-	const blocks = Array.from(
-		document.querySelectorAll('.dynamic-assets-load')
-	);
+	const blocks = Array.from(document.querySelectorAll('[data-block-id]'));
 
 	const firstTwoBlockIds = blocks
-		.map((block) => block.dataset.id)
+		.map((block) => block.dataset.blockId)
 		.slice(0, 2);
 
 	return firstTwoBlockIds;

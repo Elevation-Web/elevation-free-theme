@@ -5,12 +5,12 @@ $form-check-input-checked-border-color: #211f1f;
 	margin-bottom: 0;
 
 	&.option-current {
-		outline: 2px solid $primary;
+		outline: 2px solid $ui-background-primary;
 	}
 }
 
 .form-check-input {
-	border: 2px solid $tertiary;
+	border: 2px solid $ui-background-tertiary;
 }
 
 .form-check-input:checked {
@@ -20,7 +20,7 @@ $form-check-input-checked-border-color: #211f1f;
 
 .form-check-label {
 	@include font-heading;
-	color: $tertiary;
+	color: $ui-background-tertiary;
 	font-size: 14px;
 	font-weight: 400;
 	letter-spacing: 0.04em;
@@ -62,11 +62,11 @@ $multiselect: ".multiselect";
 			padding: 10px 20px;
 
 			&:focus {
-				outline: 2px solid $primary;
+				outline: 2px solid $ui-background-primary;
 			}
 
 			&::before {
-				content: '';
+				content: "";
 				position: absolute;
 				top: calc(50% - 2px);
 				right: 10px;
@@ -86,7 +86,7 @@ $multiselect: ".multiselect";
 	// }
 
 	&__checkboxes {
-		background-color: $white;
+		background-color: $ui-base-white;
 		background: #ffffff;
 		border: 1px solid #d9d8d8;
 		border-radius: 1px;
@@ -133,9 +133,9 @@ $multiselect: ".multiselect";
 		.btn-clear-all-filters {
 			@include font-heading;
 			background-color: transparent;
-			border-bottom: 1px solid $light-primary;
+			border-bottom: 1px solid $ui-foreground-primary-text-body-text;
 			border: none;
-			color: $light-primary;
+			color: $ui-foreground-primary-text-body-text;
 			font-size: px-to-rem(11px);
 			font-weight: 600;
 			letter-spacing: 0.15em;
@@ -175,7 +175,7 @@ $multiselect: ".multiselect";
 					@include font-heading;
 					background-color: transparent;
 					border: none;
-					color: $container-tertiary;
+					color: $ui-foreground-primary-text-links;
 					font-size: px-to-rem(11px);
 					font-weight: 600;
 					letter-spacing: 0.15em;
@@ -231,8 +231,8 @@ $multiselect: ".multiselect";
 $filter: ".filter";
 
 #{$filter} {
-	border-bottom: 1px solid $line-border-color;
-	border-top: 1px solid $line-border-color;
+	border-bottom: 1px solid $ui-border-line-divider-on-light;
+	border-top: 1px solid $ui-border-line-divider-on-light;
 	padding-bottom: 40px;
 	padding-top: 40px;
 	position: relative;
@@ -259,7 +259,7 @@ $filter: ".filter";
 
 	&__label {
 		@include font-heading;
-		color: $text;
+		color: $ui-foreground-primary-text-body-text;
 		display: block;
 		font-size: px-to-rem(13px);
 		font-weight: 500;
@@ -294,7 +294,7 @@ $filter: ".filter";
 			background-color: transparent;
 			border-radius: 1px;
 			border: 1px solid #d7d7d7;
-			color: $tertiary;
+			color: $ui-background-tertiary;
 			font-size: px-to-rem(13px);
 			font-weight: 500;
 			letter-spacing: px-to-rem(1px);
@@ -304,18 +304,18 @@ $filter: ".filter";
 			width: 100%;
 
 			&::-webkit-input-placeholder {
-				color: $tertiary;
+				color: $ui-background-tertiary;
 				opacity: 1;
 			}
 
 			&::-moz-placeholder {
-				color: $tertiary;
+				color: $ui-background-tertiary;
 				opacity: 1;
 			}
 
 			/* firefox 19+ */
 			&:-ms-input-placeholder {
-				color: $tertiary;
+				color: $ui-background-tertiary;
 				opacity: 1;
 			}
 
@@ -364,7 +364,7 @@ $filter: ".filter";
 		@include font-heading;
 		border-radius: 1px;
 		border: 1px solid #d7d7d7;
-		color: $tertiary;
+		color: $ui-background-tertiary;
 		font-size: px-to-rem(13px);
 		font-weight: 500;
 		letter-spacing: px-to-rem(1px);
@@ -376,18 +376,18 @@ $filter: ".filter";
 		width: 100%;
 
 		&::-webkit-input-placeholder {
-			color: $tertiary;
+			color: $ui-background-tertiary;
 			opacity: 1;
 		}
 
 		&::-moz-placeholder {
-			color: $tertiary;
+			color: $ui-background-tertiary;
 			opacity: 1;
 		}
 
 		/* firefox 19+ */
 		&:-ms-input-placeholder {
-			color: $tertiary;
+			color: $ui-background-tertiary;
 			opacity: 1;
 		}
 
@@ -396,21 +396,21 @@ $filter: ".filter";
 		&:focus {
 			box-shadow: none;
 			outline: none;
-			color: $tertiary;
+			color: $ui-background-tertiary;
 
 			&::-webkit-input-placeholder {
-				color: $tertiary;
+				color: $ui-background-tertiary;
 				opacity: 1;
 			}
 
 			&::-moz-placeholder {
-				color: $tertiary;
+				color: $ui-background-tertiary;
 				opacity: 1;
 			}
 
 			/* firefox 19+ */
 			&:-ms-input-placeholder {
-				color: $tertiary;
+				color: $ui-background-tertiary;
 				opacity: 1;
 			}
 
@@ -440,7 +440,7 @@ $filter: ".filter";
 
 // /* Create a custom checkbox */
 // .checkmark {
-//   border: 2px solid $tertiary;
+//   border: 2px solid $ui-background-tertiary;
 //   height: 18px;
 //   width: 18px;
 //   border-radius: 2px;
@@ -458,7 +458,7 @@ $filter: ".filter";
 
 // /* When the checkbox is checked, add a blue background */
 // &__label input:checked ~ .checkmark {
-//   background-color: $tertiary;
+//   background-color: $ui-background-tertiary;
 // }
 
 // /* Create the checkmark/indicator (hidden when not checked) */
@@ -491,7 +491,7 @@ $filter: ".filter";
 
 // &__label {
 //   @include font-heading;
-//   color: $black;
+//   color:$ui-base-black;
 //   display: flex;
 //   flex-direction: row-reverse;
 //   justify-content: flex-end;
@@ -506,6 +506,6 @@ $filter: ".filter";
 //   transition: all 0.2s ease;
 //   &:hover{
 //     background-color: transparent;
-//     color: $black;
+//     color:$ui-base-black;
 //   }
 // }

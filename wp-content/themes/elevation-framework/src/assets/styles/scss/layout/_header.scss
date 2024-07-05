@@ -54,8 +54,11 @@ body:not(.logged-in) .not-logged {
 				// max-width: 100%;
 
 				@-moz-document url-prefix() {
-					scrollbar-color: rgba($color: $primary, $alpha: 1)
-						rgba($color: $primary, $alpha: 0.15);
+					scrollbar-color: rgba(
+							$color: $ui-background-primary,
+							$alpha: 1
+						)
+						rgba($color: $ui-background-primary, $alpha: 0.15);
 					scrollbar-width: thin !important;
 				}
 
@@ -71,11 +74,17 @@ body:not(.logged-in) .not-logged {
 				&::-webkit-scrollbar-thumb {
 					-webkit-border-radius: 0;
 					border-radius: 0;
-					background: rgba($color: $grey, $alpha: 0.4);
+					background: rgba(
+						$color: $ui-base-controls-label-disabled,
+						$alpha: 0.4
+					);
 				}
 
 				&::-webkit-scrollbar-thumb:window-inactive {
-					background: rgba($color: $grey, $alpha: 0.2);
+					background: rgba(
+						$color: $ui-base-controls-label-disabled,
+						$alpha: 0.2
+					);
 				}
 			}
 
@@ -100,7 +109,7 @@ body:not(.logged-in) .not-logged {
 		}
 
 		@include media-breakpoint-down(xl) {
-			background-color: $white;
+			background-color: $ui-base-white;
 			box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
 
 			.container,
@@ -290,7 +299,7 @@ body:not(.logged-in) .not-logged {
 
 			a {
 				@include font-heading;
-				color: $text;
+				color: $ui-foreground-primary-text-body-text;
 				letter-spacing: 0.99px;
 				text-transform: uppercase;
 
@@ -302,7 +311,7 @@ body:not(.logged-in) .not-logged {
 			/*Vertical divider line*/
 			&::after {
 				//content: "";
-				background-color: $tertiary;
+				background-color: $ui-background-tertiary;
 				bottom: unset;
 				height: 11px;
 				left: unset;
@@ -369,14 +378,14 @@ body:not(.logged-in) .not-logged {
 
 	&__section-search {
 		display: none;
-		background: $tertiary;
+		background: $ui-background-tertiary;
 		position: relative;
 		z-index: 2050;
 	}
 
 	&__search {
 		@include font-body;
-		background: $tertiary;
+		background: $ui-background-tertiary;
 		display: block;
 		position: relative;
 
@@ -384,7 +393,7 @@ body:not(.logged-in) .not-logged {
 		&::after {
 			content: "";
 			opacity: 0.5;
-			background: $tertiary;
+			background: $ui-background-tertiary;
 			position: absolute;
 			height: 100%;
 			top: 0;
@@ -421,7 +430,7 @@ body:not(.logged-in) .not-logged {
 		#searchInput {
 			background: transparent;
 			border: none;
-			color: $white;
+			color: $ui-base-white;
 			flex: 1;
 			font-size: 17px;
 			height: 40px;
@@ -438,7 +447,7 @@ body:not(.logged-in) .not-logged {
 			&::-moz-placeholder,
 			&::-ms-input-placeholder,
 			&::placeholder {
-				color: $white;
+				color: $ui-base-white;
 				opacity: 1;
 			}
 
@@ -446,8 +455,8 @@ body:not(.logged-in) .not-logged {
 			&:-webkit-autofill:hover,
 			&:-webkit-autofill:focus {
 				background: transparent !important;
-				color: $white !important;
-				-webkit-text-fill-color: $white !important;
+				color: $ui-base-white !important;
+				-webkit-text-fill-color: $ui-base-white !important;
 				transition: background-color 5000s ease-in-out 0s;
 			}
 		}

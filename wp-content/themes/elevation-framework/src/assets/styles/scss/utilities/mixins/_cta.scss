@@ -1,0 +1,15 @@
+@mixin cta {
+	@include font-heading;
+	background-color: transparent;
+	border: none;
+	align-items: center;
+	border-radius: $button-border-radius;
+	color: $ui-base-white;
+	column-gap: 10px;
+	display: inline-flex;
+	transition: all 0.2s ease;
+	&::selection {
+		background-color: $selector_color;
+		color: white;
+	}
+}

@@ -29,7 +29,8 @@
 		"node-sass": "^9.0.0",
 		"sass-loader": "^14.1.1",
 		"style-loader": "^3.3.4",
-		"webpack-assets-manifest": "^5.2.1"
+		"webpack-assets-manifest": "^5.2.1",
+		"prettier": "^3.2.4"
 	},
 	"scripts": {
 		"format": "wp-scripts format",
@@ -41,9 +42,6 @@
 		"themejson": "node ./dev/generateThemeJSON.mjs"
 	},
 	"dependencies": {
-		"@popperjs/core": "2.11.8",
-		"bootstrap": "5.3.2",
-		"prettier": "^3.2.4",
 		"sticky-sidebar": "3.3.1",
 		"swiper": "11.0.5"
 	},

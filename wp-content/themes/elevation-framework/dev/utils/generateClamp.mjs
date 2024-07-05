@@ -1,3 +1,4 @@
+import { pxToRem } from './pxToRem.mjs';
 /**
  * Generates a CSS `clamp()` function for responsive font sizes.
  *
@@ -9,10 +10,14 @@
  * between these breakpoints.
  */
 
-export const generateFontSize = (mobileSize, tabletSize, desktopSize) => {
-    const mobilePx = `${mobileSize}px`;
-    const tabletVw = (tabletSize / 768) * 100;
-    const desktopPx = `${desktopSize}px`;
+export const generateClamp = (mobileSize, tabletSize, desktopSize) => {
+	const mobileSizeWithOutUnit = mobileSize?.replace('px', '');
+	const tabletSizeWithOutUnit = tabletSize?.replace('px', '');
+	const desktopSizeWithOutUnit = desktopSize?.replace('px', '');
 
-    return `clamp(${mobilePx}, ${tabletVw}vw, ${desktopPx})`;
-}
+	const mobileRem = pxToRem(`${mobileSizeWithOutUnit}px`);
+	const tabletVw = (tabletSizeWithOutUnit / 768) * 100;
+	const desktopRem = pxToRem(`${desktopSizeWithOutUnit}px`);
+
+	return `clamp(${mobileRem}, ${tabletVw}vw, ${desktopRem})`;
+};

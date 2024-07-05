@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { removeDuplicateColors } from './removeDuplicateColors.mjs';
 
 const excludeUX = 'UX';
 
@@ -36,10 +37,29 @@ export const getPallete = (url) => {
 	const data = fs.readFileSync(url, 'utf8');
 
 	// Parse the JSON data
-	const tokens = JSON.parse(data);
+	const colors = JSON.parse(data);
 
 	// Create a new array of objects with the required format
-	const formattedTokens = traverse(tokens);
+	const formattedColors = traverse(colors);
 
-	return formattedTokens;
+	const uniqueColors = removeDuplicateColors(formattedColors);
+
+	const customColors = formattedColors.filter(
+		(color) => !uniqueColors.includes(color)
+	);
+	const formattedCustomColors = customColors.reduce((acc, color) => {
+		acc[`--wp--preset--color--${color.slug}`] = color.color;
+		return acc;
+	}, {});
+
+	let rootVariables = `:root{`;
+	for (const [key, value] of Object.entries(formattedCustomColors)) {
+		rootVariables += `${key}: ${value};`;
+	}
+	rootVariables += `}`;
+
+	return {
+		colors: uniqueColors,
+		customColors: rootVariables,
+	};
 };

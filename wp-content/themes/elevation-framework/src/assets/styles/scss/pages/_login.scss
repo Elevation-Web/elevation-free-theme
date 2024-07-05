@@ -77,8 +77,8 @@ body.page-template-login {
 						font-size: 11px;
 					}
 					input.input {
-						color: $container-tertiary;
-						border: 1px solid $line-border-color;
+						color: $ui-foreground-primary-text-links;
+						border: 1px solid $ui-border-line-divider-on-light;
 						font-family: var(--font-family-headings);
 						font-size: var(--font-size);
 						font-weight: var(--font-weight);
@@ -88,15 +88,15 @@ body.page-template-login {
 						padding: 10px 15px;
 						width: 356px;
 						&::-webkit-input-placeholder {
-							color: $container-tertiary;
+							color: $ui-foreground-primary-text-links;
 							opacity: 1;
 						}
 						&::-moz-placeholder {
-							color: $container-tertiary;
+							color: $ui-foreground-primary-text-links;
 							opacity: 1;
 						} /* firefox 19+ */
 						&:-ms-input-placeholder {
-							color: $container-tertiary;
+							color: $ui-foreground-primary-text-links;
 							opacity: 1;
 						} /* ie */
 						&:-webkit-autofill,
@@ -109,12 +109,12 @@ body.page-template-login {
 						&:-webkit-autofill:hover,
 						&:-webkit-autofill:focus {
 							-webkit-text-fill-color: rgba(
-								$color: $container-tertiary,
+								$color: $ui-foreground-primary-text-links,
 								$alpha: 1
 							) !important;
 							background: transparent !important;
 							color: rgba(
-								$color: $container-tertiary,
+								$color: $ui-foreground-primary-text-links,
 								$alpha: 1
 							) !important;
 							transition: background-color 5000s ease-in-out 0s;

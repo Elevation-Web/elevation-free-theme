@@ -1,7 +1,10 @@
 import { getPallete } from './utils/getPallete.mjs';
 import { typography } from './fonts/typography.mjs';
-import { fontStyles, headingFontStyles } from './fonts/fontFamilies.mjs';
+import { elementsStyles, bodyStyles } from './styles/styles.mjs';
+import { coreBlocks } from './core-blocks/coreBlocks.mjs';
 import fs from 'fs';
+
+const { colors, customColors } = getPallete('./dev/figma/figmaTokens.json');
 
 const theme = {
 	version: 2,
@@ -11,7 +14,7 @@ const theme = {
 			defaultPalette: false,
 			gradients: [],
 			customGradient: false,
-			palette: getPallete('./dev/figma/figmaTokens.json'),
+			palette: colors,
 		},
 		spacing: {
 			units: ['%', 'px', 'em', 'rem', 'vh', 'vw'],
@@ -22,11 +25,23 @@ const theme = {
 			wideSize: '90%',
 		},
 	},
-	styles: fontStyles(),
-	blocks: headingFontStyles(),
+	styles: {
+		...bodyStyles(),
+		...elementsStyles(),
+	},
+	blocks: coreBlocks(),
 };
 
 fs.writeFile('./theme.json', JSON.stringify(theme, null, 4), (err) => {
 	if (err) throw err;
 	console.log('theme.json created successfully!');
 });
+
+fs.writeFile(
+	'./src/assets/styles/scss/utilities/_default-variables.scss',
+	customColors,
+	(err) => {
+		if (err) throw err;
+		console.log('_default-variables.scss created successfully!');
+	}
+);

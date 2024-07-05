@@ -39,7 +39,7 @@
 	background-repeat: no-repeat;
 	background-size: px-to-rem(12px);
 	border: unset;
-	color: $text;
+	color: $ui-foreground-primary-text-body-text;
 	cursor: pointer;
 	font-size: px-to-rem(11px);
 	font-style: normal;
@@ -52,7 +52,7 @@
 	//min-width: 135px;
 	option {
 		white-space: normal;
-		color: $text;
+		color: $ui-foreground-primary-text-body-text;
 	}
 }
 
@@ -75,7 +75,7 @@ div[id*="gtranslate_menu_wrapper_"] {
 			> a {
 				@include font-heading;
 				border: none !important;
-				color: $text;
+				color: $ui-foreground-primary-text-body-text;
 				cursor: pointer;
 				font-size: px-to-rem(11px);
 				font-weight: 400;
@@ -115,10 +115,11 @@ div[id*="gtranslate_menu_wrapper_"] {
 			}
 
 			@-moz-document url-prefix() {
-				scrollbar-color: rgba($color: $primary, $alpha: 1) rgba($color: $primary, $alpha: 0.15) ;
+				scrollbar-color: rgba($color: $ui-background-primary, $alpha: 1)
+					rgba($color: $ui-background-primary, $alpha: 0.15);
 				scrollbar-width: thin !important;
 			}
-			
+
 			&::-webkit-scrollbar {
 				width: 8px;
 			}
@@ -129,14 +130,20 @@ div[id*="gtranslate_menu_wrapper_"] {
 			&::-webkit-scrollbar-thumb {
 				-webkit-border-radius: 0;
 				border-radius: 0;
-				background: rgba($color: $grey, $alpha: 0.4);
+				background: rgba(
+					$color: $ui-base-controls-label-disabled,
+					$alpha: 0.4
+				);
 			}
 			&::-webkit-scrollbar-thumb:window-inactive {
-				background: rgba($color: $grey, $alpha: 0.2);
+				background: rgba(
+					$color: $ui-base-controls-label-disabled,
+					$alpha: 0.2
+				);
 			}
 			> a {
 				@include font-heading;
-				color: $text;
+				color: $ui-foreground-primary-text-body-text;
 				font-size: px-to-rem(11px);
 				font-weight: 400;
 				letter-spacing: 0.99px;
