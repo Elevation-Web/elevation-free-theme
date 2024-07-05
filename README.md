@@ -30,8 +30,7 @@ $ yarn
 
 - `yarn build` : lavarage wp-script and compiles SASS files and js files in src folder
 - `yarn dev` : watches all SASS and JS files in src folders.
-- `yarn lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
-- `yarn lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
+- `yarn themejson` : create theme.json file.
 
 ## Files Required for Blocks
 
