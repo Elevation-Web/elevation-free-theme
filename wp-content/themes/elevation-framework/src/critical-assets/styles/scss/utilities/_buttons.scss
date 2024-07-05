@@ -2,4 +2,12 @@ $cta: ".cta";
 
 #{$cta} {
 	@include cta;
+
+	&--primary {
+		@include cta--primary;
+	}
+
+	&--secondary {
+		@include cta--secondary;
+	}
 }

@@ -13,7 +13,7 @@ class Load
 
     public function add_admin_styles()
     {
-        echo '<link rel="stylesheet" href="' . ELEVATION_THEME_URL . '/lib/admin/assets/admin.css' . '" media="all" />';
+        echo '<link rel="stylesheet" href="' . ELEVATION_THEME_URL . '/build/assets/index.css' . '" media="all" />';
     }
 
 

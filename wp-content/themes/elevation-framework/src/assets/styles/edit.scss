@@ -1,4 +1,9 @@
-@import "../../assets/styles/scss/utilities/_functions";
-@import "../../assets/styles/scss/utilities/_variables";
-@import "../../assets/styles/scss/utilities/_mixins";
+// THIS FILE WILL BE UPLOADED INTO THE EDITOR
+
+@import "./scss/utilities/_functions";
+@import "./scss/utilities/_variables";
+@import "./scss/utilities/_mixins";
 @import "../../critical-assets/styles/scss/utilities/_buttons";
+
+@import "./scss/admin/editor";
+@import "./scss/admin/admin";

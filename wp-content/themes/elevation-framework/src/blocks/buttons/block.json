@@ -1,22 +1,25 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"title": "Banner",
-	"name": "elevation/banner",
+	"title": "Buttons",
+	"name": "elevation/buttons",
 	"version": "1.0.0",
 	"category": "elevation-blocks",
-	"icon": "format-image",
-	"description": "banner with title and description.",
+	"icon": "button",
+	"description": "Buttons container.",
 	"textdomain": "elevation",
+	"allowedBlocks": ["elevation/button"],
 	"supports": {
 		"html": true,
 		"align": ["full"],
 		"alignWide": false,
 		"ariaLabel": true,
 		"color": {
-			"background": true,
+			"background": false,
 			"gradients": false,
-			"text": true
+			"text": false,
+			"link": false,
+			"border": false
 		},
 		"spacing": {
 			"margin": ["top", "bottom"]
@@ -27,28 +30,9 @@
 			"type": "array",
 			"default": "full"
 		},
-		"imgMobile": {
-			"type": "string",
-			"default": ""
-		},
-		"imgTablet": {
-			"type": "string",
-			"default": ""
-		},
-		"imgDesktop": {
-			"type": "string",
-			"default": ""
-		},
-		"imgAlt": {
-			"type": "string",
-			"default": ""
-		},
-		"focalPointDesktop": {
-			"type": "object",
-			"default": {
-				"x": 0.5,
-				"y": 0.5
-			}
+		"gap": {
+			"type": "number",
+			"default": 10
 		}
 	},
 	"script": ["file:index.js"],

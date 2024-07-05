@@ -1,12 +1,15 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "Banner",
-  "name": "elevation/banner",
+  "title": "Button",
+  "name": "elevation/button",
   "version": "1.0.0",
   "category": "elevation-blocks",
-  "icon": "format-image",
-  "description": "banner with title and description.",
+  "icon": "button",
+  "description": "Button with option styles",
+  "parent": [
+    "elevation/buttons"
+  ],
   "textdomain": "elevation",
   "supports": {
     "html": true,
@@ -16,9 +19,11 @@
     "alignWide": false,
     "ariaLabel": true,
     "color": {
-      "background": true,
+      "background": false,
       "gradients": false,
-      "text": true
+      "text": false,
+      "link": false,
+      "border": false
     },
     "spacing": {
       "margin": [
@@ -28,32 +33,21 @@
     }
   },
   "attributes": {
-    "align": {
-      "type": "array",
-      "default": "full"
+    "url": {
+      "type": "string",
+      "default": "#"
     },
-    "imgMobile": {
+    "text": {
+      "type": "string",
+      "default": "Button Label"
+    },
+    "btnStyle": {
+      "type": "string",
+      "default": "primary"
+    },
+    "ariaLabel": {
       "type": "string",
       "default": ""
-    },
-    "imgTablet": {
-      "type": "string",
-      "default": ""
-    },
-    "imgDesktop": {
-      "type": "string",
-      "default": ""
-    },
-    "imgAlt": {
-      "type": "string",
-      "default": ""
-    },
-    "focalPointDesktop": {
-      "type": "object",
-      "default": {
-        "x": 0.5,
-        "y": 0.5
-      }
     }
   },
   "script": [

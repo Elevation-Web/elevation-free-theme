@@ -3,7 +3,7 @@
 	background-color: transparent;
 	border: none;
 	align-items: center;
-	border-radius: $button-border-radius;
+	border-radius: $button-border-radius !important;
 	color: $ui-base-white;
 	column-gap: 10px;
 	display: inline-flex;
@@ -11,5 +11,21 @@
 	&::selection {
 		background-color: $selector_color;
 		color: white;
+	}
+}
+
+@mixin cta--primary {
+	background-color: $ui-button-primary-color-01 !important;
+	color: $ui-base-white !important;
+	&:hover {
+		background-color: $ui-button-primary-hover !important;
+	}
+}
+
+@mixin cta--secondary {
+	background-color: $ui-button-primary-color-02 !important;
+	color: $ui-base-white !important;
+	&:hover {
+		background-color: $ui-button-primary-hover !important;
 	}
 }

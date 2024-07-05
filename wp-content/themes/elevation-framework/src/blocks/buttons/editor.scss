@@ -1,0 +1,28 @@
+@import "../../assets/styles/scss/utilities/functions";
+@import "../../assets/styles/scss/utilities/variables";
+@import "../../assets/styles/scss/utilities/mixins";
+
+.buttons {
+	.components-text-control__input {
+		background-color: transparent;
+		border: none;
+		text-align: center;
+		width: 100%;
+	}
+	.components-base-control__field {
+		margin: 0;
+	}
+
+	.cta {
+		&--primary,
+		&--secondary {
+			input {
+				color: $ui-base-white !important;
+
+				&::placeholder {
+					color: $ui-base-white !important;
+				}
+			}
+		}
+	}
+}

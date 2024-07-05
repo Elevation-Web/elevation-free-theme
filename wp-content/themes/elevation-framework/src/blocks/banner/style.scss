@@ -15,6 +15,10 @@
 		min-height: 550px;
 	}
 
+	@include media-breakpoint-up(xxl) {
+		aspect-ratio: 144 / 55;
+	}
+
 	&:first-child {
 		padding-top: calc(var(--banner-padding) + $header-height-desktop);
 	}

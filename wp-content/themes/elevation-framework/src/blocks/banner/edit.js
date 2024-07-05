@@ -18,14 +18,12 @@ const Edit = (props) => {
 	const BANNER_TEMPLATE = [
 		['core/heading', { placeholder: 'Banner Title' }],
 		['core/paragraph', { placeholder: 'Banner Description' }],
-		['core/button', { placeholder: 'Button Text' }],
+		['elevation/buttons'],
 	];
 
 	const { attributes, setAttributes } = props;
 
 	const { imgMobile, imgTablet, imgDesktop, imgAlt, style } = attributes;
-
-	console.log('attributes', attributes);
 
 	const blockProps = useBlockProps({
 		className: name,
@@ -48,6 +46,7 @@ const Edit = (props) => {
 
 	const styleImgDesktop = {
 		backgroundImage: `url(${attributes.imgDesktop})`,
+		backgroundSize: 'cover',
 		backgroundPosition: `${focalPointDesktop.x * 100}% ${focalPointDesktop.y * 100}%`,
 	};
 
