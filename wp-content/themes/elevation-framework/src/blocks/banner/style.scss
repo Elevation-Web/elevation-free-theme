@@ -1,0 +1,47 @@
+@import "../../assets/styles/scss/utilities/functions";
+@import "../../assets/styles/scss/utilities/variables";
+@import "../../assets/styles/scss/utilities/mixins";
+
+.banner {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: var(--banner-padding) 0;
+	--banner-padding: 50px;
+	color: $ui-foreground-primary-text-headings;
+
+	@include media-breakpoint-up(xl) {
+		--banner-padding: 90px;
+		min-height: 550px;
+	}
+
+	&:first-child {
+		padding-top: calc(var(--banner-padding) + $header-height-desktop);
+	}
+
+	&__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		object-fit: cover;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__wrapper {
+		width: 530px;
+		max-width: 100%;
+	}
+
+	h1,
+	h2,
+	h3 {
+		margin-bottom: px-to-rem(12px);
+	}
+}
