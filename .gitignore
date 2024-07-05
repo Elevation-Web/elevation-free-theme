@@ -1,0 +1,53 @@
+# Ignore all files and folders except for: /wp-content/themes/elevation-framework
+*
+
+# Readme file
+!README.md
+
+# Gitignore file
+!.gitignore
+
+# Wordpress files
+!/wp-content/
+!/wp-content/themes/
+!/wp-content/themes/elevation-framework/
+!/wp-content/themes/elevation-framework/*
+!/wp-content/themes/elevation-framework/**/*
+
+# composer vendor folder and files
+/vendor
+composer.lock
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# mac ds_store file
+.DS_Store
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of `npm pack`
+*.tgz
+
+# # Output of `wp-scripts plugin-zip`
+# *.zip
+
+# dotenv environment variables file
+.env
