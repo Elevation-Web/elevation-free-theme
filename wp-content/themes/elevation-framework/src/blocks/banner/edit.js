@@ -11,6 +11,8 @@ import './editor.scss';
 import BackgroundPicture from '../components/BackgroundPicture';
 import { RemoveImageButton, UploadMedia } from '../components/UploadMedia';
 
+import previewImage from './preview.png';
+
 const Edit = (props) => {
 	const { name: blockName } = json;
 	const name = blockName.split('/')[1];
@@ -24,6 +26,7 @@ const Edit = (props) => {
 	const { attributes, setAttributes } = props;
 
 	const {
+		preview,
 		imgMobile,
 		imgTablet,
 		imgDesktop,
@@ -130,6 +133,14 @@ const Edit = (props) => {
 		</InspectorControls>
 	);
 
+	if (preview) {
+		return (
+			<div className="gutslider-preview">
+				<img src={previewImage} alt="Preview" />
+			</div>
+		);
+	}
+
 	return (
 		<>
 			{controls}
@@ -147,10 +158,12 @@ const Edit = (props) => {
 				<div className={`${withContainer}${name}__container`}>
 					<div className={`${name}__wrapper`}>
 						<InnerBlocks
-							allowedBlocks={BANNER_TEMPLATE}
-							// template={BANNER_TEMPLATE}
-							prioritizedInserterBlocks={BANNER_TEMPLATE}
-							templateLock={false}
+							template={BANNER_TEMPLATE}
+							allowedBlocks={[
+								'core/heading',
+								'core/paragraph',
+								'elevation/buttons',
+							]}
 						/>
 					</div>
 				</div>

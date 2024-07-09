@@ -17,6 +17,7 @@ class Disable
         add_action('admin_init', [$this, 'disable_comments_dashboard']);
         add_action('init', [$this, 'disable_comments_admin_bar']);
         add_filter('rest_endpoints', [$this, 'disable_default_endpoints']);
+        add_action('allowed_block_types_all', [$this, 'unregister_specific_core_blocks']);
     }
 
     public function disable_default_endpoints($endpoints)
@@ -93,5 +94,22 @@ class Disable
             self::$_instance = new self();
         }
         return self::$_instance;
+    }
+
+    public function unregister_specific_core_blocks()
+    {
+        $registry = \WP_Block_Type_Registry::get_instance();
+        $registerd_blocks = $registry->get_all_registered();
+        $registerd_blocks = array_keys($registerd_blocks);
+
+        $blocks_to_remove = [
+            'core/buttons',
+            'core/button'
+        ];
+
+        $allowed_block_types = array_diff($registerd_blocks, $blocks_to_remove);
+        $allowed_block_types = array_values($allowed_block_types);
+
+        return $allowed_block_types;
     }
 }

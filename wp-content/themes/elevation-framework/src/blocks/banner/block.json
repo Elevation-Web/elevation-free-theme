@@ -23,6 +23,10 @@
 		}
 	},
 	"attributes": {
+		"preview": {
+			"type": "boolean",
+			"default": false
+		},
 		"align": {
 			"type": "array",
 			"default": "full"
@@ -49,6 +53,11 @@
 				"x": 0.5,
 				"y": 0.5
 			}
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
 		}
 	},
 	"script": ["file:index.js"],

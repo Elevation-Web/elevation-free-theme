@@ -64,3 +64,15 @@ blockquote {
 	column-gap: 20px;
 	display: block;
 }
+
+@media (min-width: 782px) {
+	.block-editor-inserter__quick-inserter {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.block-editor-inserter__preview-container {
+	width: 100%;
+	max-width: 100%;
+}
