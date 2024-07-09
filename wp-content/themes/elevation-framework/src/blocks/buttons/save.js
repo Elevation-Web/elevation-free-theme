@@ -1,23 +1,19 @@
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import clsx from 'clsx';
+
+import { useInnerBlocksProps, useBlockProps } from '@wordpress/block-editor';
 import json from './block.json';
 
 const save = (props) => {
 	const { name: blockName } = json;
 	const name = blockName.split('/')[1];
 
-	const { attributes } = props;
-
-	const { align, gap, style } = attributes;
-
 	const blockProps = useBlockProps.save({
-		className: name + ' container',
+		className: clsx(name),
 	});
 
-	return (
-		<div data-block-id={name} {...blockProps} {...style}>
-			<InnerBlocks.Content />
-		</div>
-	);
+	const innerBlocksProps = useInnerBlocksProps.save(blockProps);
+
+	return <div {...innerBlocksProps} />;
 };
 
 export default save;

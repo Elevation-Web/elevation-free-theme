@@ -36,11 +36,15 @@
 		},
 		"btnStyle": {
 			"type": "string",
-			"default": "primary"
+			"default": "primary-1"
 		},
 		"ariaLabel": {
 			"type": "string",
 			"default": ""
+		},
+		"target": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"script": ["file:index.js"],

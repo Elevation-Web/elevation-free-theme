@@ -1,25 +1,30 @@
+@import "../utilities/functions";
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
 .container {
 	max-width: 100%;
+	width: 100%;
 	margin: 0 auto;
 	padding: 0 1.5rem;
 
-	@media (min-width: 575px) {
+	@include media-breakpoint-up(sm) {
 		width: 540px;
 	}
 
-	@media (min-width: 768px) {
+	@include media-breakpoint-up(md) {
 		width: 720px;
 	}
 
-	@media (min-width: 992) {
+	@include media-breakpoint-up(lg) {
 		width: 960px;
 	}
 
-	@media (min-width: 1200) {
+	@include media-breakpoint-up(xl) {
 		width: 1140px;
 	}
 
-	@media (min-width: 1440) {
+	@include media-breakpoint-up(xxl) {
 		width: 1320px;
 	}
 }

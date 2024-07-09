@@ -2,6 +2,10 @@
 @import "../../assets/styles/scss/utilities/variables";
 @import "../../assets/styles/scss/utilities/mixins";
 
+.wp-block-elevation-button * {
+	display: inline-flex;
+}
+
 .buttons {
 	.components-text-control__input {
 		background-color: transparent;
@@ -14,14 +18,98 @@
 	}
 
 	.cta {
-		&--primary,
-		&--secondary {
+		&--primary-1,
+		&--primary-2,
+		&--primary-3,
+		&--primary-4,
+		&--primary-inverse,
+		&--secondary,
+		&--secondary-inverse,
+		&--tertiary,
+		&--tertiary-inverse,
+		&--fourth,
+		&--fourth-inverse {
+			.button {
+				border: none !important;
+			}
 			input {
-				color: $ui-base-white !important;
+				@include cta;
 
 				&::placeholder {
 					color: $ui-base-white !important;
 				}
+			}
+		}
+
+		&--primary-1 {
+			input {
+				@include cta--primary;
+				@include cta--primary-1;
+			}
+		}
+
+		&--primary-2 {
+			input {
+				@include cta--primary;
+				@include cta--primary-2;
+			}
+		}
+
+		&--primary-3 {
+			input {
+				@include cta--primary;
+				@include cta--primary-3;
+			}
+		}
+
+		&--primary-4 {
+			input {
+				@include cta--primary;
+				@include cta--primary-4;
+			}
+		}
+
+		&--primary-inverse {
+			input {
+				@include cta--primary;
+				@include cta--primary-inverse;
+			}
+		}
+
+		&--secondary {
+			input {
+				border: none !important;
+				@include cta--secondary;
+			}
+		}
+
+		&--secondary-inverse {
+			input {
+				@include cta--secondary-inverse;
+			}
+		}
+
+		&--tertiary {
+			input {
+				@include cta--tertiary;
+			}
+		}
+
+		&--tertiary-inverse {
+			input {
+				@include cta--tertiary-inverse;
+			}
+		}
+
+		&--fourth {
+			input {
+				@include cta--fourth;
+			}
+		}
+
+		&--fourth-inverse {
+			input {
+				@include cta--fourth-inverse;
 			}
 		}
 	}

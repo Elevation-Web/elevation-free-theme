@@ -11,7 +11,6 @@
 	"allowedBlocks": ["elevation/button"],
 	"supports": {
 		"html": true,
-		"align": ["full"],
 		"alignWide": false,
 		"ariaLabel": true,
 		"color": {
@@ -22,7 +21,18 @@
 			"border": false
 		},
 		"spacing": {
-			"margin": ["top", "bottom"]
+			"margin": ["top", "bottom"],
+			"blockGap": true
+		},
+		"layout": {
+			"allowSwitching": false,
+			"allowInheriting": false,
+			"default": {
+				"type": "flex"
+			}
+		},
+		"interactivity": {
+			"clientNavigation": true
 		}
 	},
 	"attributes": {

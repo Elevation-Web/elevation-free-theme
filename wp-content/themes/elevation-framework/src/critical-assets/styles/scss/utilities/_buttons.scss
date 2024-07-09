@@ -3,11 +3,52 @@ $cta: ".cta";
 #{$cta} {
 	@include cta;
 
-	&--primary {
+	&--primary-1 {
 		@include cta--primary;
+		@include cta--primary-1;
+	}
+
+	&--primary-2 {
+		@include cta--primary;
+		@include cta--primary-2;
+	}
+
+	&--primary-3 {
+		@include cta--primary;
+		@include cta--primary-3;
+	}
+
+	&--primary-4 {
+		@include cta--primary;
+		@include cta--primary-4;
+	}
+
+	&--primary-inverse {
+		@include cta--primary;
+		@include cta--primary-inverse;
 	}
 
 	&--secondary {
 		@include cta--secondary;
+	}
+
+	&--secondary-inverse {
+		@include cta--secondary-inverse;
+	}
+
+	&--tertiary {
+		@include cta--tertiary;
+	}
+
+	&--tertiary-inverse {
+		@include cta--tertiary-inverse;
+	}
+
+	&--fourth {
+		@include cta--fourth;
+	}
+
+	&--fourth-inverse {
+		@include cta--fourth-inverse;
 	}
 }

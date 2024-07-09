@@ -23,7 +23,14 @@ const Edit = (props) => {
 
 	const { attributes, setAttributes } = props;
 
-	const { imgMobile, imgTablet, imgDesktop, imgAlt, style } = attributes;
+	const {
+		imgMobile,
+		imgTablet,
+		imgDesktop,
+		imgAlt,
+		style,
+		focalPointDesktop,
+	} = attributes;
 
 	const blockProps = useBlockProps({
 		className: name,
@@ -39,22 +46,23 @@ const Edit = (props) => {
 		});
 	}, [props]);
 
-	const [focalPointDesktop, setFocalPointDesktop] = useState({
-		x: 0.5,
-		y: 0.5,
+	const [newFocalPointDesktop, setNewFocalPointDesktop] = useState({
+		x: focalPointDesktop.x,
+		y: focalPointDesktop.y,
 	});
 
 	const styleImgDesktop = {
 		backgroundImage: `url(${attributes.imgDesktop})`,
 		backgroundSize: 'cover',
-		backgroundPosition: `${focalPointDesktop.x * 100}% ${focalPointDesktop.y * 100}%`,
+		backgroundPosition: `${newFocalPointDesktop.x * 100}% ${newFocalPointDesktop.y * 100}%`,
 	};
 
 	useEffect(() => {
 		setAttributes({
-			focalPointDesktop,
+			...attributes,
+			focalPointDesktop: newFocalPointDesktop,
 		});
-	}, [focalPointDesktop]);
+	}, [newFocalPointDesktop]);
 
 	const controls = (
 		<InspectorControls>
@@ -64,9 +72,9 @@ const Edit = (props) => {
 						<FocalPointPicker
 							url={attributes.imgDesktop}
 							value={focalPointDesktop}
-							onDragStart={setFocalPointDesktop}
-							onDrag={setFocalPointDesktop}
-							onChange={setFocalPointDesktop}
+							onDragStart={setNewFocalPointDesktop}
+							onDrag={setNewFocalPointDesktop}
+							onChange={setNewFocalPointDesktop}
 						/>
 						<div style={styleImgDesktop} />
 						<RemoveImageButton
@@ -140,8 +148,9 @@ const Edit = (props) => {
 					<div className={`${name}__wrapper`}>
 						<InnerBlocks
 							allowedBlocks={BANNER_TEMPLATE}
-							template={BANNER_TEMPLATE}
+							// template={BANNER_TEMPLATE}
 							prioritizedInserterBlocks={BANNER_TEMPLATE}
+							templateLock={false}
 						/>
 					</div>
 				</div>

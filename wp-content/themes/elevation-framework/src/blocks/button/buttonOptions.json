@@ -1,0 +1,48 @@
+{
+	"buttonOptions": [
+		{
+			"label": "Primary 1",
+			"value": "primary-1"
+		},
+		{
+			"label": "Primary 2",
+			"value": "primary-2"
+		},
+		{
+			"label": "Primary 3",
+			"value": "primary-3"
+		},
+		{
+			"label": "Primary 4",
+			"value": "primary-4"
+		},
+		{
+			"label": "Primary Inverse",
+			"value": "primary-inverse"
+		},
+		{
+			"label": "Secondary",
+			"value": "secondary"
+		},
+		{
+			"label": "Secondary Inverse",
+			"value": "secondary-inverse"
+		},
+		{
+			"label": "Tertiary",
+			"value": "tertiary"
+		},
+		{
+			"label": "Tertiary Inverse",
+			"value": "tertiary-inverse"
+		},
+		{
+			"label": "Fourth",
+			"value": "fourth"
+		},
+		{
+			"label": "Fourth Inverse",
+			"value": "fourth-inverse"
+		}
+	]
+}

@@ -8,16 +8,24 @@ const save = (props) => {
 
 	const { attributes } = props;
 
-	const { text, url, btnStyle, ariaLabel } = attributes;
+	const { text, url, btnStyle, ariaLabel, target } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: `${name} cta cta--${btnStyle}`,
 	});
 
 	const ariaLabelText = !!ariaLabel ? ariaLabel : text;
+	const actualTarget = target ? { target: '_blank' } : {};
+	const rel = target ? { rel: 'noopener noreferrer' } : {};
 
 	return (
-		<a {...blockProps} href={url} aria-label={ariaLabelText}>
+		<a
+			{...blockProps}
+			href={url}
+			aria-label={ariaLabelText}
+			{...actualTarget}
+			{...rel}
+		>
 			{text}
 		</a>
 	);
