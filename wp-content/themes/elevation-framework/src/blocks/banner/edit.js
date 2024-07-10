@@ -135,7 +135,7 @@ const Edit = (props) => {
 
 	if (preview) {
 		return (
-			<div className="gutslider-preview">
+			<div className={`${name}-preview`}>
 				<img src={previewImage} alt="Preview" />
 			</div>
 		);

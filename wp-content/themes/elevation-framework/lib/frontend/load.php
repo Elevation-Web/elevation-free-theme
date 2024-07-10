@@ -30,7 +30,7 @@ class Load
         wp_enqueue_script('elevation-scripts', get_template_directory_uri() . '/build/assets/script.js', array(), null, true);
 
         // Load single templates styles 
-        if (is_singular()) {
+        if (is_singular() && !is_front_page()) {
             wp_enqueue_style('elevation-style-single-post', get_template_directory_uri() . '/build/single/style-index.css', [], null);
         }
 

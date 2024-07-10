@@ -1,0 +1,1 @@
+.spacer{position:relative;width:100%}.spacer__small{height:25px}@media(min-width:768px){.spacer__small{height:50px}}.spacer__normal{height:40px}@media(min-width:768px){.spacer__normal{height:75px}}.spacer__large{height:50px}@media(min-width:768px){.spacer__large{height:100px}}.spacer__huge{height:100px}@media(min-width:768px){.spacer__huge{height:200px}}

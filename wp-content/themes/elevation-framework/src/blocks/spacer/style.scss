@@ -1,0 +1,33 @@
+@import "../../assets/styles/scss/utilities/functions";
+@import "../../assets/styles/scss/utilities/variables";
+@import "../../assets/styles/scss/utilities/mixins";
+
+.spacer {
+	position: relative;
+	width: 100%;
+
+	&__small {
+		height: 25px;
+		@include media-breakpoint-up(md) {
+			height: 50px;
+		}
+	}
+	&__normal {
+		height: 40px;
+		@include media-breakpoint-up(md) {
+			height: 75px;
+		}
+	}
+	&__large {
+		height: 50px;
+		@include media-breakpoint-up(md) {
+			height: 100px;
+		}
+	}
+	&__huge {
+		height: 100px;
+		@include media-breakpoint-up(md) {
+			height: 200px;
+		}
+	}
+}
