@@ -104,7 +104,8 @@ class Disable
 
         $blocks_to_remove = [
             'core/buttons',
-            'core/button'
+            'core/button',
+            'core/spacer'
         ];
 
         $allowed_block_types = array_diff($registerd_blocks, $blocks_to_remove);

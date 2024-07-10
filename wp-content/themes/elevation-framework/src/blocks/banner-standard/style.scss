@@ -1,0 +1,65 @@
+@import "../../assets/styles/scss/utilities/functions";
+@import "../../assets/styles/scss/utilities/variables";
+@import "../../assets/styles/scss/utilities/mixins";
+
+.banner-standard {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: var(--banner-standard-padding) 0;
+	--banner-standard-padding: 50px;
+	color: $ui-foreground-primary-text-headings;
+
+	@include media-breakpoint-up(xl) {
+		--banner-standard-padding: 90px;
+		min-height: 328px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		aspect-ratio: 144 / 41;
+	}
+
+	&:first-child {
+		padding-top: calc(
+			var(--banner-standard-padding) + $header-height-desktop
+		);
+	}
+
+	&__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		object-fit: cover;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__wrapper {
+		width: 100%;
+		display: flex;
+		column-gap: 40px;
+	}
+
+	h1,
+	h2,
+	h3 {
+		margin-bottom: px-to-rem(12px);
+	}
+
+	&__info {
+		max-width: 100%;
+		width: 530px;
+	}
+
+	&__image {
+		width: 644px;
+		max-width: 100%;
+		margin-bottom: -100px;
+	}
+}

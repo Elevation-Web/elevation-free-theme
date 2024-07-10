@@ -1,0 +1,13 @@
+{
+	"name": "elevation/banner-standard-image",
+	"version": "1.0.0",
+	"title": "Image",
+	"category": "elevation",
+	"icon": "format-image",
+	"description": "Image",
+	"supports": {
+		"html": false,
+		"anchor": false
+	},
+	"parent": ["elevation/banner-standard"]
+}
