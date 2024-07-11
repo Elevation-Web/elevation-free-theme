@@ -38,8 +38,8 @@ function load_blocks()
 
             register_block_type($block_path . $block);
 
-            if (file_exists($block_path . $block . '/index.php')) {
-                include_once $block_path . $block . '/index.php';
+            if (file_exists($block_path . $block . '/render.php')) {
+                include_once $block_path . $block . '/render.php';
             }
         }
     }

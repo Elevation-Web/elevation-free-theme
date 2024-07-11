@@ -7,7 +7,8 @@
   "description": "Image",
   "supports": {
     "html": false,
-    "anchor": false
+    "anchor": false,
+    "inserter": false
   },
   "parent": [
     "elevation/banner-standard"

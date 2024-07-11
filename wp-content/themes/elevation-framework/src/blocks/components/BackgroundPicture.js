@@ -6,7 +6,7 @@ const BackgroundPicture = ({
 	width,
 	height,
 	className,
-	lazyload,
+	lazyload = true,
 	focalPointDesktop,
 }) => {
 	if (!imgDesktop) {

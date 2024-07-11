@@ -192,16 +192,6 @@
 					"fontFace": [
 						{
 							"fontFamily": "Heading Font",
-							"fontWeight": "500",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"fontDisplay": "swap",
-							"src": [
-								"file:./src/assets/fonts/Inter-Medium.woff2"
-							]
-						},
-						{
-							"fontFamily": "Heading Font",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -217,12 +207,12 @@
 					"fontFace": [
 						{
 							"fontFamily": "Body Font",
-							"fontWeight": "500",
+							"fontWeight": "400",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"fontDisplay": "swap",
 							"src": [
-								"file:./src/assets/fonts/Inter-Medium.woff2"
+								"file:./src/assets/fonts/Inter-Regular.woff2"
 							]
 						},
 						{
@@ -246,7 +236,8 @@
 		"typography": {
 			"fontFamily": "\"Body Font\", sans-serif",
 			"lineHeight": "1.6em",
-			"fontSize": "clamp(0.875rem, 2.34375vw, 1.125rem)"
+			"fontSize": "clamp(0.875rem, 2.34375vw, 1.125rem)",
+			"letterSpacing": "-0.03em"
 		},
 		"elements": {
 			"button": {
@@ -262,37 +253,43 @@
 			"h1": {
 				"typography": {
 					"fontSize": "clamp(3.25rem, 6.770833333333333vw, 3.25rem)",
-					"lineHeight": "1.2em"
+					"lineHeight": "1.2em",
+					"letterSpacing": "-0.03em"
 				}
 			},
 			"h2": {
 				"typography": {
 					"fontSize": "clamp(2.4375rem, 5.078125vw, 2.4375rem)",
-					"lineHeight": "1.2em"
+					"lineHeight": "1.2em",
+					"letterSpacing": "-0.03em"
 				}
 			},
 			"h3": {
 				"typography": {
 					"fontSize": "clamp(2.125rem, 4.427083333333334vw, 2.125rem)",
-					"lineHeight": "1.2em"
+					"lineHeight": "1.2em",
+					"letterSpacing": "-0.02em"
 				}
 			},
 			"h4": {
 				"typography": {
 					"fontSize": "clamp(1.875rem, 3.90625vw, 1.875rem)",
-					"lineHeight": "1.4em"
+					"lineHeight": "1.4em",
+					"letterSpacing": "-0.02em"
 				}
 			},
 			"h5": {
 				"typography": {
 					"fontSize": "clamp(1.5rem, 3.125vw, 1.5rem)",
-					"lineHeight": "1.4em"
+					"lineHeight": "1.4em",
+					"letterSpacing": "-0.01em"
 				}
 			},
 			"h6": {
 				"typography": {
 					"fontSize": "clamp(1.1875rem, 2.473958333333333vw, 1.1875rem)",
-					"lineHeight": "1.6em"
+					"lineHeight": "1.6em",
+					"letterSpacing": "-0.01em"
 				}
 			}
 		}

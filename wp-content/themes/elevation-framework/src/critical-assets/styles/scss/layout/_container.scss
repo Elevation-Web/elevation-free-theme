@@ -4,23 +4,23 @@
 	margin: 0 auto;
 
 	@include media-breakpoint-up(sm) {
-		width: 540px;
+		width: 575px;
 		padding: 0 60px;
 	}
 
 	@include media-breakpoint-up(md) {
-		width: 720px;
+		width: 768px;
 	}
 
 	@include media-breakpoint-up(lg) {
-		width: 960px;
+		width: 992px;
 	}
 
 	@include media-breakpoint-up(xl) {
-		width: 1140px;
+		width: 1200px;
 	}
 
 	@include media-breakpoint-up(xxl) {
-		width: 1320px;
+		width: 1440px;
 	}
 }

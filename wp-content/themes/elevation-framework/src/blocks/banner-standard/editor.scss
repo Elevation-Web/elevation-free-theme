@@ -16,4 +16,30 @@
 			justify-content: space-between;
 		}
 	}
+
+	.block-editor-block-list__layout .wp-block {
+		max-width: none;
+	}
+	.block-editor-block-list__layout textarea {
+		all: inherit;
+	}
+
+	&__image {
+		width: 644px;
+		max-width: 100%;
+		height: 400px;
+
+		// .components-resizable-box__container {
+		// 	min-height: 400px !important;
+		// }
+
+		figure.wp-block-image {
+			position: relative;
+
+			img {
+				object-fit: cover;
+				position: relative;
+			}
+		}
+	}
 }

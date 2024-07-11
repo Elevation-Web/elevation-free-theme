@@ -61,7 +61,6 @@ const Edit = (props) => {
 
 	useEffect(() => {
 		setAttributes({
-			...attributes,
 			focalPointDesktop: newFocalPointDesktop,
 		});
 	}, [newFocalPointDesktop]);

@@ -26,10 +26,6 @@ export const fontFamilies = () => {
 		'Heading Font',
 		[
 			{
-				fontWeight: '500',
-				src: ['file:./src/assets/fonts/Inter-Medium.woff2'],
-			},
-			{
 				fontWeight: '700',
 				src: ['file:./src/assets/fonts/Inter-Bold.woff2'],
 			},
@@ -41,8 +37,8 @@ export const fontFamilies = () => {
 		'Body Font',
 		[
 			{
-				fontWeight: '500',
-				src: ['file:./src/assets/fonts/Inter-Medium.woff2'],
+				fontWeight: '400',
+				src: ['file:./src/assets/fonts/Inter-Regular.woff2'],
 			},
 			{
 				fontWeight: '700',

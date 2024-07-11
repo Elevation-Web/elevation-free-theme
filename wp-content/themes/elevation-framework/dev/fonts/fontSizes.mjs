@@ -9,6 +9,15 @@ export const headingsLineHeights = {
 	h6: '1.6em',
 };
 
+export const headingsLetterSpacing = {
+	h1: '-0.03em',
+	h2: '-0.03em',
+	h3: '-0.02em',
+	h4: '-0.02em',
+	h5: '-0.01em',
+	h6: '-0.01em',
+};
+
 export const fontSizes = () => {
 	return [
 		{

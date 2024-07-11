@@ -3,26 +3,29 @@
 @import "../../assets/styles/scss/utilities/mixins";
 
 .banner-standard {
+	--banner-standard-padding-top: 50px;
+	--banner-standard-padding-bottom: 70px;
 	position: relative;
 	display: flex;
 	align-items: center;
-	padding: var(--banner-standard-padding) 0;
-	--banner-standard-padding: 50px;
+	padding: var(--banner-standard-padding-top) 0
+		var(--banner-standard-padding-bottom);
 	color: $ui-foreground-primary-text-headings;
 
 	@include media-breakpoint-up(xl) {
-		--banner-standard-padding: 90px;
+		--banner-standard-padding-top: 80px;
+		--banner-standard-padding-bottom: 80px;
 		min-height: 328px;
 	}
 
-	@include media-breakpoint-up(xxl) {
-		aspect-ratio: 144 / 41;
-	}
-
 	&:first-child {
-		padding-top: calc(
-			var(--banner-standard-padding) + $header-height-desktop
-		);
+		padding-top: $header-height-mobile;
+
+		@include media-breakpoint-up(xl) {
+			padding-top: calc(
+				var(--banner-standard-padding-top) + $header-height-desktop
+			);
+		}
 	}
 
 	&__background {
@@ -43,7 +46,14 @@
 	&__wrapper {
 		width: 100%;
 		display: flex;
-		column-gap: 40px;
+		flex-direction: column;
+		row-gap: 40px;
+
+		@include media-breakpoint-up(xl) {
+			column-gap: 40px;
+			justify-content: space-between;
+			flex-direction: row;
+		}
 	}
 
 	h1,
@@ -55,11 +65,24 @@
 	&__info {
 		max-width: 100%;
 		width: 530px;
+		padding-top: 50px;
 	}
 
 	&__image {
+		position: relative;
 		width: 644px;
 		max-width: 100%;
-		margin-bottom: -100px;
+		aspect-ratio: 644/408;
+		margin-bottom: -150px;
+
+		figure,
+		.wp-block-image img {
+			width: 100% !important;
+			height: 100% !important;
+			object-fit: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
 	}
 }

@@ -1,5 +1,9 @@
 import { generateClamp } from '../utils/generateClamp.mjs';
-import { fontSizes, headingsLineHeights } from '../fonts/fontSizes.mjs';
+import {
+	fontSizes,
+	headingsLineHeights,
+	headingsLetterSpacing,
+} from '../fonts/fontSizes.mjs';
 
 export const bodyStyles = () => {
 	return {
@@ -7,6 +11,7 @@ export const bodyStyles = () => {
 			fontFamily: '"Body Font", sans-serif',
 			lineHeight: '1.6em',
 			fontSize: generateClamp('14px', '18px', '18px'),
+			letterSpacing: '-0.03em',
 		},
 	};
 };
@@ -18,6 +23,7 @@ const headingSizes = (fontSizes) => {
 			typography: {
 				fontSize: fontSize.size,
 				lineHeight: headingsLineHeights[fontSize.slug],
+				letterSpacing: headingsLetterSpacing[fontSize.slug],
 			},
 		};
 		return acc;
