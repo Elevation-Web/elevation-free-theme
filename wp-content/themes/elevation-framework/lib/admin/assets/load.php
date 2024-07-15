@@ -9,7 +9,7 @@ class Load
     public function __construct()
     {
         add_action('admin_head', [$this, 'add_admin_styles']);
-        add_action('enqueue_block_editor_assets', [$this, 'custom_gutenberg_scripts']);
+        // add_action('enqueue_block_editor_assets', [$this, 'custom_gutenberg_scripts']);
     }
 
     public function add_admin_styles()
