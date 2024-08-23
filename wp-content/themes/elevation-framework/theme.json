@@ -1,313 +1,330 @@
 {
-	"version": 2,
-	"settings": {
-		"appearanceTools": true,
-		"color": {
-			"defaultPalette": false,
-			"gradients": [],
-			"customGradient": false,
-			"palette": [
-				{
-					"slug": "ui-foreground-primary-text-headings",
-					"name": "Ui Foreground Primary Text Headings",
-					"color": "rgb(33,0,68)"
-				},
-				{
-					"slug": "ui-foreground-primary-text-body-text",
-					"name": "Ui Foreground Primary Text Body Text",
-					"color": "rgb(79,77,85)"
-				},
-				{
-					"slug": "ui-foreground-primary-text-headings-span",
-					"name": "Ui Foreground Primary Text Headings Span",
-					"color": "rgb(71,18,126)"
-				},
-				{
-					"slug": "ui-foreground-primary-text-links",
-					"name": "Ui Foreground Primary Text Links",
-					"color": "rgb(102,45,145)"
-				},
-				{
-					"slug": "ui-foreground-primary-text-highlight-text",
-					"name": "Ui Foreground Primary Text Highlight Text",
-					"color": "rgb(223,1,65)"
-				},
-				{
-					"slug": "ui-foreground-primary-text-date-text",
-					"name": "Ui Foreground Primary Text Date Text",
-					"color": "rgb(114,113,117)"
-				},
-				{
-					"slug": "ui-foreground-primary-accent-01",
-					"name": "Ui Foreground Primary Accent 01",
-					"color": "rgb(252,0,72)"
-				},
-				{
-					"slug": "ui-foreground-primary-accent-02",
-					"name": "Ui Foreground Primary Accent 02",
-					"color": "rgb(0,244,237)"
-				},
-				{
-					"slug": "ui-foreground-primary-accent-03",
-					"name": "Ui Foreground Primary Accent 03",
-					"color": "rgb(242,208,70)"
-				},
-				{
-					"slug": "ui-foreground-primary-accent-05",
-					"name": "Ui Foreground Primary Accent 05",
-					"color": "rgb(138,85,179)"
-				},
-				{
-					"slug": "ui-background-light-01",
-					"name": "Ui Background Light 01",
-					"color": "rgb(246,244,249)"
-				},
-				{
-					"slug": "ui-background-light-02",
-					"name": "Ui Background Light 02",
-					"color": "rgba(79,77,85,0.15)"
-				},
-				{
-					"slug": "ui-background-light-03",
-					"name": "Ui Background Light 03",
-					"color": "rgba(102,45,145,0.15)"
-				},
-				{
-					"slug": "ui-button-primary-color-03",
-					"name": "Ui Button Primary Color 03",
-					"color": "rgb(229,216,237)"
-				},
-				{
-					"slug": "ui-border-bounds",
-					"name": "Ui Border Bounds",
-					"color": "rgb(213,212,220)"
-				},
-				{
-					"slug": "ui-border-input-controls-disabled",
-					"name": "Ui Border Input Controls Disabled",
-					"color": "rgb(229,229,235)"
-				},
-				{
-					"slug": "ui-border-system-success",
-					"name": "Ui Border System Success",
-					"color": "rgb(63,197,92)"
-				},
-				{
-					"slug": "ui-border-system-warning",
-					"name": "Ui Border System Warning",
-					"color": "rgb(255,5,0)"
-				},
-				{
-					"slug": "ui-border-line-divider-dots-divider",
-					"name": "Ui Border Line Divider Dots Divider",
-					"color": "rgb(213,196,221)"
-				},
-				{
-					"slug": "ui-border-line-divider-on-light",
-					"name": "Ui Border Line Divider On Light",
-					"color": "rgb(231,225,234)"
-				},
-				{
-					"slug": "ui-base-white",
-					"name": "Ui Base White",
-					"color": "rgb(251,249,248)"
-				},
-				{
-					"slug": "ui-base-black",
-					"name": "Ui Base Black",
-					"color": "rgb(17,17,17)"
-				},
-				{
-					"slug": "ui-base-controls-input-disabled",
-					"name": "Ui Base Controls Input Disabled",
-					"color": "rgb(189,185,198)"
-				},
-				{
-					"slug": "ui-base-controls-input-warning",
-					"name": "Ui Base Controls Input Warning",
-					"color": "rgb(251,239,239)"
-				},
-				{
-					"slug": "ui-base-controls-label-disabled",
-					"name": "Ui Base Controls Label Disabled",
-					"color": "rgb(164,159,177)"
-				}
-			]
-		},
-		"spacing": {
-			"units": ["%", "px", "em", "rem", "vh", "vw"]
-		},
-		"typography": {
-			"dropCap": false,
-			"fontWeight": false,
-			"fontStyle": false,
-			"textTransform": false,
-			"fontSizes": [
-				{
-					"size": "clamp(3.25rem, 6.770833333333333vw, 3.25rem)",
-					"slug": "h1",
-					"name": "Heading 1"
-				},
-				{
-					"size": "clamp(2.4375rem, 5.078125vw, 2.4375rem)",
-					"slug": "h2",
-					"name": "Heading 2"
-				},
-				{
-					"size": "clamp(2.125rem, 4.427083333333334vw, 2.125rem)",
-					"slug": "h3",
-					"name": "Heading 3"
-				},
-				{
-					"size": "clamp(1.875rem, 3.90625vw, 1.875rem)",
-					"slug": "h4",
-					"name": "Heading 4"
-				},
-				{
-					"size": "clamp(1.5rem, 3.125vw, 1.5rem)",
-					"slug": "h5",
-					"name": "Heading 5"
-				},
-				{
-					"size": "clamp(1.1875rem, 2.473958333333333vw, 1.1875rem)",
-					"slug": "h6",
-					"name": "Heading 6"
-				},
-				{
-					"size": "clamp(1rem, 2.083333333333333vw, 1rem)",
-					"slug": "body",
-					"name": "Body Text"
-				},
-				{
-					"size": "clamp(1rem, 2.213541666666667vw, 1.125rem)",
-					"slug": "special-body",
-					"name": "Special: Body Text"
-				}
-			],
-			"fontFamilies": [
-				{
-					"fontFamily": "\"Heading Font\", serif",
-					"name": "Heading Font",
-					"slug": "heading font",
-					"fontFace": [
-						{
-							"fontFamily": "Heading Font",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"fontDisplay": "swap",
-							"src": ["file:./src/assets/fonts/Inter-Bold.woff2"]
-						}
-					]
-				},
-				{
-					"fontFamily": "\"Body Font\", sans-serif",
-					"name": "Body Font",
-					"slug": "body font",
-					"fontFace": [
-						{
-							"fontFamily": "Body Font",
-							"fontWeight": "400",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"fontDisplay": "swap",
-							"src": [
-								"file:./src/assets/fonts/Inter-Regular.woff2"
-							]
-						},
-						{
-							"fontFamily": "Body Font",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"fontDisplay": "swap",
-							"src": ["file:./src/assets/fonts/Inter-Bold.woff2"]
-						}
-					]
-				}
-			]
-		},
-		"layout": {
-			"contentSize": "75%",
-			"wideSize": "90%"
-		}
-	},
-	"styles": {
-		"typography": {
-			"fontFamily": "\"Body Font\", sans-serif",
-			"lineHeight": "1.6em",
-			"fontSize": "clamp(0.875rem, 2.34375vw, 1.125rem)",
-			"letterSpacing": "-0.03em"
-		},
-		"elements": {
-			"button": {
-				"typography": {
-					"fontFamily": "\"Body Font\", sans-serif"
-				}
-			},
-			"heading": {
-				"typography": {
-					"fontFamily": "\"Heading Font\", serif"
-				}
-			},
-			"h1": {
-				"typography": {
-					"fontSize": "clamp(3.25rem, 6.770833333333333vw, 3.25rem)",
-					"lineHeight": "1.2em",
-					"letterSpacing": "-0.03em"
-				}
-			},
-			"h2": {
-				"typography": {
-					"fontSize": "clamp(2.4375rem, 5.078125vw, 2.4375rem)",
-					"lineHeight": "1.2em",
-					"letterSpacing": "-0.03em"
-				}
-			},
-			"h3": {
-				"typography": {
-					"fontSize": "clamp(2.125rem, 4.427083333333334vw, 2.125rem)",
-					"lineHeight": "1.2em",
-					"letterSpacing": "-0.02em"
-				}
-			},
-			"h4": {
-				"typography": {
-					"fontSize": "clamp(1.875rem, 3.90625vw, 1.875rem)",
-					"lineHeight": "1.4em",
-					"letterSpacing": "-0.02em"
-				}
-			},
-			"h5": {
-				"typography": {
-					"fontSize": "clamp(1.5rem, 3.125vw, 1.5rem)",
-					"lineHeight": "1.4em",
-					"letterSpacing": "-0.01em"
-				}
-			},
-			"h6": {
-				"typography": {
-					"fontSize": "clamp(1.1875rem, 2.473958333333333vw, 1.1875rem)",
-					"lineHeight": "1.6em",
-					"letterSpacing": "-0.01em"
-				}
-			}
-		}
-	},
-	"blocks": {
-		"core/button": {
-			"variations": {
-				"Primary": {
-					"spacing": {
-						"padding": {
-							"bottom": "calc(0.6rem - 1px)",
-							"left": "calc(1rem - 1px)",
-							"right": "calc(1rem - 1px)",
-							"top": "calc(0.6rem - 1px)"
-						}
-					}
-				}
-			}
-		}
-	}
+    "version": 2,
+    "settings": {
+        "appearanceTools": true,
+        "color": {
+            "defaultPalette": false,
+            "gradients": [],
+            "customGradient": false,
+            "palette": [
+                {
+                    "slug": "ui-foreground-primary-text-headings",
+                    "name": "Ui Foreground Primary Text Headings",
+                    "color": "rgb(33,0,68)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-body-text",
+                    "name": "Ui Foreground Primary Text Body Text",
+                    "color": "rgb(79,77,85)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-headings-span",
+                    "name": "Ui Foreground Primary Text Headings Span",
+                    "color": "rgb(71,18,126)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-links",
+                    "name": "Ui Foreground Primary Text Links",
+                    "color": "rgb(102,45,145)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-highlight-text",
+                    "name": "Ui Foreground Primary Text Highlight Text",
+                    "color": "rgb(223,1,65)"
+                },
+                {
+                    "slug": "ui-foreground-primary-text-date-text",
+                    "name": "Ui Foreground Primary Text Date Text",
+                    "color": "rgb(114,113,117)"
+                },
+                {
+                    "slug": "ui-foreground-primary-accent-01",
+                    "name": "Ui Foreground Primary Accent 01",
+                    "color": "rgb(252,0,72)"
+                },
+                {
+                    "slug": "ui-foreground-primary-accent-02",
+                    "name": "Ui Foreground Primary Accent 02",
+                    "color": "rgb(0,244,237)"
+                },
+                {
+                    "slug": "ui-foreground-primary-accent-03",
+                    "name": "Ui Foreground Primary Accent 03",
+                    "color": "rgb(242,208,70)"
+                },
+                {
+                    "slug": "ui-foreground-primary-accent-05",
+                    "name": "Ui Foreground Primary Accent 05",
+                    "color": "rgb(138,85,179)"
+                },
+                {
+                    "slug": "ui-background-light-01",
+                    "name": "Ui Background Light 01",
+                    "color": "rgb(246,244,249)"
+                },
+                {
+                    "slug": "ui-background-light-02",
+                    "name": "Ui Background Light 02",
+                    "color": "rgba(79,77,85,0.15)"
+                },
+                {
+                    "slug": "ui-background-light-03",
+                    "name": "Ui Background Light 03",
+                    "color": "rgba(102,45,145,0.15)"
+                },
+                {
+                    "slug": "ui-button-primary-color-03",
+                    "name": "Ui Button Primary Color 03",
+                    "color": "rgb(229,216,237)"
+                },
+                {
+                    "slug": "ui-border-bounds",
+                    "name": "Ui Border Bounds",
+                    "color": "rgb(213,212,220)"
+                },
+                {
+                    "slug": "ui-border-input-controls-disabled",
+                    "name": "Ui Border Input Controls Disabled",
+                    "color": "rgb(229,229,235)"
+                },
+                {
+                    "slug": "ui-border-system-success",
+                    "name": "Ui Border System Success",
+                    "color": "rgb(63,197,92)"
+                },
+                {
+                    "slug": "ui-border-system-warning",
+                    "name": "Ui Border System Warning",
+                    "color": "rgb(255,5,0)"
+                },
+                {
+                    "slug": "ui-border-line-divider-dots-divider",
+                    "name": "Ui Border Line Divider Dots Divider",
+                    "color": "rgb(213,196,221)"
+                },
+                {
+                    "slug": "ui-border-line-divider-on-light",
+                    "name": "Ui Border Line Divider On Light",
+                    "color": "rgb(231,225,234)"
+                },
+                {
+                    "slug": "ui-base-white",
+                    "name": "Ui Base White",
+                    "color": "rgb(251,249,248)"
+                },
+                {
+                    "slug": "ui-base-black",
+                    "name": "Ui Base Black",
+                    "color": "rgb(17,17,17)"
+                },
+                {
+                    "slug": "ui-base-controls-input-disabled",
+                    "name": "Ui Base Controls Input Disabled",
+                    "color": "rgb(189,185,198)"
+                },
+                {
+                    "slug": "ui-base-controls-input-warning",
+                    "name": "Ui Base Controls Input Warning",
+                    "color": "rgb(251,239,239)"
+                },
+                {
+                    "slug": "ui-base-controls-label-disabled",
+                    "name": "Ui Base Controls Label Disabled",
+                    "color": "rgb(164,159,177)"
+                }
+            ]
+        },
+        "spacing": {
+            "units": [
+                "%",
+                "px",
+                "em",
+                "rem",
+                "vh",
+                "vw"
+            ]
+        },
+        "typography": {
+            "dropCap": false,
+            "fontWeight": false,
+            "fontStyle": false,
+            "textTransform": false,
+            "fontSizes": [
+                {
+                    "size": "clamp(3.25rem, 6.770833333333333vw, 3.25rem)",
+                    "slug": "h1",
+                    "name": "Heading 1"
+                },
+                {
+                    "size": "clamp(2.4375rem, 5.078125vw, 2.4375rem)",
+                    "slug": "h2",
+                    "name": "Heading 2"
+                },
+                {
+                    "size": "clamp(2.125rem, 4.427083333333334vw, 2.125rem)",
+                    "slug": "h3",
+                    "name": "Heading 3"
+                },
+                {
+                    "size": "clamp(1.875rem, 3.90625vw, 1.875rem)",
+                    "slug": "h4",
+                    "name": "Heading 4"
+                },
+                {
+                    "size": "clamp(1.5rem, 3.125vw, 1.5rem)",
+                    "slug": "h5",
+                    "name": "Heading 5"
+                },
+                {
+                    "size": "clamp(1.1875rem, 2.473958333333333vw, 1.1875rem)",
+                    "slug": "h6",
+                    "name": "Heading 6"
+                },
+                {
+                    "size": "clamp(1rem, 2.083333333333333vw, 1rem)",
+                    "slug": "body",
+                    "name": "Body Text"
+                },
+                {
+                    "size": "clamp(1rem, 2.213541666666667vw, 1.125rem)",
+                    "slug": "special-body",
+                    "name": "Special: Body Text"
+                }
+            ],
+            "fontFamilies": [
+                {
+                    "fontFamily": "\"Heading Font\", serif",
+                    "name": "Heading Font",
+                    "slug": "heading font",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Heading Font",
+                            "fontWeight": "700",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "fontDisplay": "swap",
+                            "src": [
+                                "file:./src/assets/fonts/Inter-Bold.woff2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "\"Body Font\", sans-serif",
+                    "name": "Body Font",
+                    "slug": "body font",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Body Font",
+                            "fontWeight": "400",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "fontDisplay": "swap",
+                            "src": [
+                                "file:./src/assets/fonts/Inter-Regular.woff2"
+                            ]
+                        },
+                        {
+                            "fontFamily": "Body Font",
+                            "fontWeight": "700",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "fontDisplay": "swap",
+                            "src": [
+                                "file:./src/assets/fonts/Inter-Bold.woff2"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "clamp(320px,1440px,90%)",
+            "wideSize": null
+        }
+    },
+    "styles": {
+        "typography": {
+            "fontFamily": "\"Body Font\", sans-serif",
+            "lineHeight": "1.6em",
+            "fontSize": "clamp(0.875rem, 2.34375vw, 1.125rem)",
+            "letterSpacing": "-0.03em"
+        },
+        "elements": {
+            "button": {
+                "typography": {
+                    "fontFamily": "\"Body Font\", sans-serif"
+                }
+            },
+            "heading": {
+                "typography": {
+                    "fontFamily": "\"Heading Font\", serif"
+                }
+            },
+            "h1": {
+                "typography": {
+                    "fontSize": "clamp(3.25rem, 6.770833333333333vw, 3.25rem)",
+                    "lineHeight": "1.2em",
+                    "letterSpacing": "-0.03em",
+                    "fontWeight": "700"
+                }
+            },
+            "h2": {
+                "typography": {
+                    "fontSize": "clamp(2.4375rem, 5.078125vw, 2.4375rem)",
+                    "lineHeight": "1.2em",
+                    "letterSpacing": "-0.03em",
+                    "fontWeight": "700"
+                }
+            },
+            "h3": {
+                "typography": {
+                    "fontSize": "clamp(2.125rem, 4.427083333333334vw, 2.125rem)",
+                    "lineHeight": "1.2em",
+                    "letterSpacing": "-0.02em",
+                    "fontWeight": "700"
+                }
+            },
+            "h4": {
+                "typography": {
+                    "fontSize": "clamp(1.875rem, 3.90625vw, 1.875rem)",
+                    "lineHeight": "1.4em",
+                    "letterSpacing": "-0.02em",
+                    "fontWeight": "700"
+                }
+            },
+            "h5": {
+                "typography": {
+                    "fontSize": "clamp(1.5rem, 3.125vw, 1.5rem)",
+                    "lineHeight": "1.4em",
+                    "letterSpacing": "-0.01em",
+                    "fontWeight": "700"
+                }
+            },
+            "h6": {
+                "typography": {
+                    "fontSize": "clamp(1.1875rem, 2.473958333333333vw, 1.1875rem)",
+                    "lineHeight": "1.6em",
+                    "letterSpacing": "-0.01em",
+                    "fontWeight": "700"
+                }
+            }
+        }
+    },
+    "blocks": {
+        "core/button": {
+            "variations": {
+                "Primary": {
+                    "spacing": {
+                        "padding": {
+                            "bottom": "calc(0.6rem - 1px)",
+                            "left": "calc(1rem - 1px)",
+                            "right": "calc(1rem - 1px)",
+                            "top": "calc(0.6rem - 1px)"
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

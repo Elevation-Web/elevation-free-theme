@@ -44,22 +44,18 @@ export const getPallete = (url) => {
 
 	const uniqueColors = removeDuplicateColors(formattedColors);
 
-	const customColors = formattedColors.filter(
-		(color) => !uniqueColors.includes(color)
-	);
-	const formattedCustomColors = customColors.reduce((acc, color) => {
-		acc[`--wp--preset--color--${color.slug}`] = color.color;
+	const formattedCustomColors = formattedColors.reduce((acc, color) => {
+		acc[`$${color.slug}`] = color.color;
 		return acc;
 	}, {});
 
-	let rootVariables = `:root{`;
+	let sassVariables = ``;
 	for (const [key, value] of Object.entries(formattedCustomColors)) {
-		rootVariables += `${key}: ${value};`;
+		sassVariables += `${key}: ${value};`;
 	}
-	rootVariables += `}`;
 
 	return {
 		colors: uniqueColors,
-		customColors: rootVariables,
+		sassVariables: sassVariables,
 	};
 };

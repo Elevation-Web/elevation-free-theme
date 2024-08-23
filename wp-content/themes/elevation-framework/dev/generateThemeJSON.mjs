@@ -4,7 +4,7 @@ import { elementsStyles, bodyStyles } from './styles/styles.mjs';
 import { coreBlocks } from './core-blocks/coreBlocks.mjs';
 import fs from 'fs';
 
-const { colors, customColors } = getPallete('./dev/figma/figmaTokens.json');
+const { colors, sassVariables } = getPallete('./dev/figma/figmaTokens.json');
 
 const theme = {
 	version: 2,
@@ -21,8 +21,8 @@ const theme = {
 		},
 		typography: typography(),
 		layout: {
-			contentSize: '75%',
-			wideSize: '90%',
+			contentSize: 'clamp(320px,1440px,90%)',
+			wideSize: null,
 		},
 	},
 	styles: {
@@ -39,7 +39,7 @@ fs.writeFile('./theme.json', JSON.stringify(theme, null, 4), (err) => {
 
 fs.writeFile(
 	'./src/assets/styles/scss/utilities/_default-variables.scss',
-	customColors,
+	sassVariables,
 	(err) => {
 		if (err) throw err;
 		console.log('_default-variables.scss created successfully!');

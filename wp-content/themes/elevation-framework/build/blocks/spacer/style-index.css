@@ -1,1 +1,91 @@
-.spacer{position:relative;width:100%}.spacer__small{height:25px}@media(min-width:768px){.spacer__small{height:50px}}.spacer__normal{height:40px}@media(min-width:768px){.spacer__normal{height:75px}}.spacer__large{height:50px}@media(min-width:768px){.spacer__large{height:100px}}.spacer__huge{height:100px}@media(min-width:768px){.spacer__huge{height:200px}}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/spacer/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header
+*/
+/* Selector */
+/*
+* Buttons Border Radius
+*/
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+*  Colors
+*/
+/* Foregrounds */
+/* Backgrounds */
+/* Buttons */
+/* Borders */
+/* Base */
+/*
+* Breakpoints
+*/
+/*
+* Header
+*/
+/* Selector */
+/*
+* Buttons Border Radius
+*/
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+*  Colors
+*/
+/* Foregrounds */
+/* Backgrounds */
+/* Buttons */
+/* Borders */
+/* Base */
+/*400;800*/
+/*500;700*/
+.spacer {
+  position: relative;
+  width: 100%;
+}
+.spacer__small {
+  height: 25px;
+}
+@media (min-width: 768px) {
+  .spacer__small {
+    height: 50px;
+  }
+}
+.spacer__normal {
+  height: 40px;
+}
+@media (min-width: 768px) {
+  .spacer__normal {
+    height: 75px;
+  }
+}
+.spacer__large {
+  height: 50px;
+}
+@media (min-width: 768px) {
+  .spacer__large {
+    height: 100px;
+  }
+}
+.spacer__huge {
+  height: 100px;
+}
+@media (min-width: 768px) {
+  .spacer__huge {
+    height: 200px;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

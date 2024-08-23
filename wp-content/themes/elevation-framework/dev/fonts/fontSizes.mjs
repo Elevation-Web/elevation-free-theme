@@ -18,6 +18,15 @@ export const headingsLetterSpacing = {
 	h6: '-0.01em',
 };
 
+export const headingsFontWeight = {
+	h1: '700',
+	h2: '700',
+	h3: '700',
+	h4: '700',
+	h5: '700',
+	h6: '700',
+};
+
 export const fontSizes = () => {
 	return [
 		{
