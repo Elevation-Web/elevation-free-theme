@@ -2,45 +2,24 @@ import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export const RemoveImageButton = ({ attributes, setAttributes, attrId }) => {
+export const RemoveImageButton = ({ onClick }) => {
 	return (
-		<Button
-			isDestructive
-			onClick={() => {
-				setAttributes({
-					...attributes,
-					[attrId]: '',
-				});
-			}}
-		>
-			{__('Remove Image', 'text-domain')}
+		<Button isDestructive variant={'secondary'} onClick={onClick}>
+			{__('Remove Image')}
 		</Button>
 	);
 };
 
-export const UploadMedia = ({ attributes, setAttributes, attrId }) => {
+export const UploadMedia = ({ value, onSelect }) => {
 	return (
 		<MediaUploadCheck>
 			<MediaUpload
-				onSelect={(media) => {
-					console.log(media);
-
-					const newAttrs =
-						attrId === 'imgDesktop'
-							? {
-									...attributes,
-									[attrId]: media.url,
-									imgAlt: media.alt,
-								}
-							: { ...attributes, [attrId]: media.url };
-
-					setAttributes(newAttrs);
-				}}
+				onSelect={onSelect}
 				allowedTypes={['image']}
-				value={attributes[attrId]}
+				value={value}
 				render={({ open }) => (
-					<Button onClick={open} primary isLarge>
-						{__('Select Background Image', 'text-domain')}
+					<Button onClick={open} variant="secondary">
+						{__('Select Image')}
 					</Button>
 				)}
 			/>

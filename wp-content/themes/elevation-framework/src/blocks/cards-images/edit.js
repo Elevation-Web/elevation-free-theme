@@ -9,59 +9,18 @@ import {
 	__experimentalInputControl,
 	FocalPointPicker,
 } from '@wordpress/components';
-import json from './block.json';
-import './editor.scss';
 import previewImage from './preview.webp';
-import { ImageWithFocalPoint } from '../components/ImageWithFocalPoint';
-import { RemoveImageButton, UploadMedia } from '../components/UploadMedia';
-import { getImageAttributes } from '../utils/getImageAttributes';
 import { useEffect } from '@wordpress/element';
 
-const Edit = (props) => {
-	const CARDS_ALLOWED_BLOCKS = [
-		'elevation/image-with-srcset',
-		'core/heading',
-		'core/paragraph',
-		'elevation/buttons',
-	];
-	const CARDS_TEMPLATE = [
-		[
-			'elevation/image-with-srcset',
-			{
-				img: {
-					url: `/wp-content/themes/elevation-framework/src/blocks/cards-images/images/icon-1.webp`,
-				},
-			},
-		],
-		[
-			'core/heading',
-			{
-				level: 6,
-				content:
-					'H6. Heading lorem ipsum maecenas sed enim ut sem viverra aliquet eget',
-			},
-		],
-		[
-			'core/paragraph',
-			{
-				content:
-					'Maximum 10 words. Tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur.',
-			},
-		],
-		[
-			'elevation/buttons',
-			{},
-			[
-				[
-					'elevation/button',
-					{
-						btnStyle: 'primary-inverse',
-					},
-				],
-			],
-		],
-	];
+/* Internal Dependencies */
+import { getImageAttributes } from '../utils/getImageAttributes';
+import { RemoveImageButton, UploadMedia } from '../components/UploadMedia';
+import { ImageWithFocalPoint } from '../components/ImageWithFocalPoint';
+import './editor.scss';
+import json from './block.json';
+import { allowedBlocks, template } from './template';
 
+const Edit = (props) => {
 	const { name: blockName } = json;
 	const name = blockName.split('/')[1];
 	const { clientId, attributes, setAttributes } = props;
@@ -73,13 +32,13 @@ const Edit = (props) => {
 	}, [clientId, name, setAttributes]);
 
 	const blockProps = useBlockProps({
-		className: `${name} swiper-slide`,
+		className: `${name}`,
 	});
 
 	const styleImg = {
 		backgroundImage: `url(${img.url})`,
 		backgroundSize: 'cover',
-		backgroundPosition: `${img.focalPoint.x * 100}% ${img.focalPoint.y * 100}%`,
+		backgroundPosition: `${img.focalPoint?.x * 100}% ${img.focalPoint?.y * 100}%`,
 	};
 
 	const setNewFocalPoint = (value) => {
@@ -173,11 +132,10 @@ const Edit = (props) => {
 					className={`${name}__img`}
 					selectorId={anchor || id}
 				/>
-
 				<div className={`${name}__container`}>
 					<InnerBlocks
-						template={CARDS_TEMPLATE}
-						allowedBlocks={CARDS_ALLOWED_BLOCKS}
+						template={template}
+						allowedBlocks={allowedBlocks}
 						templateLock={'all'}
 					/>
 				</div>

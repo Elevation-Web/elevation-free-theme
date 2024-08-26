@@ -19,8 +19,6 @@ const Edit = (props) => {
 
 	const { text, url, btnStyle, ariaLabel, target } = attributes;
 
-	// console.log('attributes', attributes);
-
 	const blockProps = useBlockProps({
 		className: `${name} cta cta--${btnStyle}`,
 	});

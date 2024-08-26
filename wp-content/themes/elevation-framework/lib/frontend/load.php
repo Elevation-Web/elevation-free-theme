@@ -26,8 +26,8 @@ class Load
 
         wp_enqueue_style('elevation-critical-css', get_template_directory_uri() . '/build/critical-assets/style-index.css', [], null);
         wp_enqueue_script('elevation-critical-scripts', get_template_directory_uri() . '/build/critical-assets/script.js', array(), null, true);
-        wp_enqueue_style('elevation-style', get_template_directory_uri() . '/build/assets/style-index.css', [], null);
-        wp_enqueue_script('elevation-scripts', get_template_directory_uri() . '/build/assets/script.js', array(), null, true);
+        // wp_enqueue_style('elevation-style', get_template_directory_uri() . '/build/assets/style-index.css', [], null);
+        // wp_enqueue_script('elevation-scripts', get_template_directory_uri() . '/build/assets/script.js', array(), null, true);
 
         // Load single templates styles 
         if (is_singular() && !is_front_page()) {

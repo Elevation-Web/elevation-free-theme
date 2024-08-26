@@ -1,22 +1,20 @@
-import clsx from 'clsx';
-
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import json from './block.json';
 
 const save = (props) => {
 	const { attributes } = props;
-	const { anchor, id, is_slider } = attributes;
+	const { anchor, id, grid_column } = attributes;
 	const { name: blockName } = json;
 	const name = blockName.split('/')[1];
 
 	const blockProps = useBlockProps.save({
-		className: clsx(name, [is_slider ? `${name}__swiper` : '']),
+		className: `${name} alignfull row-${grid_column}`,
 	});
 
 	return (
 		<div
 			data-block-id={name}
-			data-block-js="true"
+			data-block-js="false"
 			id={anchor || id}
 			{...blockProps}
 		>

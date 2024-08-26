@@ -15,9 +15,9 @@
 		"alignWide": false,
 		"ariaLabel": false,
 		"color": {
-			"background": false,
+			"background": true,
 			"gradients": false,
-			"text": false,
+			"text": true,
 			"link": false,
 			"border": false
 		},
@@ -28,9 +28,12 @@
 		"layout": {
 			"allowSwitching": false,
 			"allowInheriting": false,
+			"allowOrientation": false,
+			"allowVerticalAlignment": false,
 			"default": {
 				"type": "flex",
-				"verticalAlignment": "stretch"
+				"verticalAlignment": "stretch",
+				"justifyContent": "center"
 			}
 		},
 		"interactivity": {
@@ -46,9 +49,9 @@
 			"type": "array",
 			"default": "full"
 		},
-		"is_slider": {
-			"type": "boolean",
-			"default": true
+		"grid_column": {
+			"type": "string",
+			"default": "cards-3"
 		},
 		"preview": {
 			"type": "boolean",
@@ -62,6 +65,5 @@
 	},
 	"editorScript": ["file:index.js"],
 	"style": ["file:style-index.css"],
-	"editorStyle": ["file:index.css"],
-	"viewScript": ["file:./view.js"]
+	"editorStyle": ["file:index.css"]
 }

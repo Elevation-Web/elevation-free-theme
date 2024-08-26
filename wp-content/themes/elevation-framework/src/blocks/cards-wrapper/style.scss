@@ -5,84 +5,96 @@
 .cards-wrapper {
 	opacity: 1;
 	position: relative;
-}
+	gap: 0px !important;
 
-.cards-wrapper
-	.cards-background-images-plus-icons:not(
-		.cards-wrapper__swiper .cards-background-images-plus-icons
-	) {
-	flex-basis: 100%;
-
-	@include media-breakpoint-between(md, xl) {
-		&:first-of-type {
-			flex-basis: 100%;
+	&.row-cards-3 {
+		.cards-images {
+			@include media-breakpoint-up(xl) {
+				width: calc(33.33% - 20px);
+			}
 		}
 	}
 
-	@include media-breakpoint-up(md) {
-		flex: 1;
+	&.row-cards-2 {
+		.cards-images {
+			&__img {
+				height: 438px;
+			}
+
+			@include media-breakpoint-up(xl) {
+				width: calc(50% - 20px);
+			}
+
+			margin-bottom: 30px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
 
-.cards-background-images-plus-icons {
+.cards-images {
 	opacity: 1;
 	position: relative;
-	border-radius: 6px;
+	border-radius: 0px;
 	overflow: hidden;
-	color: $ui-base-white;
 	background-color: $ui-background-fourth;
 	display: flex !important;
 	align-items: flex-end;
 	min-height: 443px;
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	@include media-breakpoint-down(xl) {
+		margin-bottom: 30px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
 
 	@include media-breakpoint-up(sm) {
-		width: 420px !important;
+		width: 100%;
+	}
+
+	@include media-breakpoint-up(md) {
+		width: calc(50% - 20px);
 	}
 
 	@include media-breakpoint-up(xl) {
-		width: calc(33.33% - 20px) !important;
+		width: calc(33.33% - 20px);
 	}
 
-	&::after,
-	&::before {
-		content: "";
-		display: block;
-		position: absolute;
-		opacity: 0.2;
-		background: linear-gradient(
-			180deg,
-			#000 16.18%,
-			rgba(0, 0, 0, 0) 41.08%
-		);
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 2;
+	@include media-breakpoint-up(xl) {
+		margin-bottom: 0px;
 	}
 
 	&::before {
 		opacity: 0.3;
-		// background: $ui-foreground-primary-text-text-button_on-dark;
 	}
 
 	&__img {
-		position: absolute;
-		top: 0;
-		left: 0;
 		width: 100%;
-		height: 100%;
+		height: 284px;
 		object-fit: cover;
 		z-index: 1;
 	}
+
+	&__custom-container {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 30px;
+	}
+
 	&__container {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		flex-direction: column;
 		z-index: 3;
-		padding: 30px 35px;
+		padding: 0;
 		margin-top: auto;
 
 		img {
@@ -91,53 +103,47 @@
 			margin-bottom: 10px;
 		}
 
+		.wp-block-heading {
+			margin-top: 20px;
+			margin-bottom: 12px;
+			transition: all .2s;
+			color: $ui-foreground-primary-text-headings;
+			// line-height: px-to-rem(26.6px); check
+		}
+
 		p {
 			overflow: hidden;
 			margin-bottom: 0;
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
 			overflow: hidden;
+			font-size: px-to-rem(16px);
+			line-height: px-to-rem(25.6px);
+			color: $ui-foreground-primary-text-body-text;
+		}
+	}
 
-			@include media-breakpoint-up(xl) {
-				max-height: 0;
-			}
+	.cta {
+		@include stretched-link;
+		position: initial;
+
+		&::after {
+			height: 101%;
+			width: 101%;
 		}
 	}
 
 	.wp-block-elevation-buttons {
-		margin-top: 20px;
-	}
-
-	.cta {
-		// @include stretched-link;
+		margin-top: 24px;
 	}
 
 	@include media-breakpoint-up(xl) {
 		&:hover {
-			p {
-				animation: slideOpen 0.5s forwards linear;
-
-				@media (prefers-reduced-motion) {
-					animation: slideOpen 0s forwards linear;
-				}
+			.wp-block-heading {
+				color: $ui-foreground-primary-text-headings;
+				text-decoration: underline;
 			}
 		}
 	}
 
-	@keyframes slideOpen {
-		from {
-			max-height: 0;
-		}
-		to {
-			max-height: 443px;
-		}
-	}
-	@keyframes slideClose {
-		from {
-			max-height: 443px;
-		}
-		to {
-			max-height: 0;
-		}
-	}
 }

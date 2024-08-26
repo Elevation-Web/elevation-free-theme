@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+/* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
 import {
 	InspectorControls,
@@ -8,33 +8,30 @@ import {
 import {
 	PanelBody,
 	__experimentalInputControl,
-	ToggleControl,
+	SelectControl,
 } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
-import json from './block.json';
+
+/* Internal Dependencies */
 import './editor.scss';
+import json from './block.json';
 import previewImage from './preview.webp';
+import TEMPLATE from './template';
 
 const Edit = (props) => {
 	const { clientId, attributes, setAttributes } = props;
 
-	const { anchor, id, is_slider, preview } = attributes;
-
-	const CARDS_WRAPPER_TEMPLATE = [
-		['elevation/cards-background-images-plus-icons'],
-		['elevation/cards-background-images-plus-icons'],
-		['elevation/cards-background-images-plus-icons'],
-	];
+	const { anchor, id, grid_column, preview } = attributes;
 
 	const { name: blockName } = json;
 	const name = blockName.split('/')[1];
 
 	const blockProps = useBlockProps({
-		className: clsx(name, [is_slider ? `${name}__swiper` : '']),
+		className: `${name} alignfull row-${grid_column}`,
 	});
 
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
-		template: CARDS_WRAPPER_TEMPLATE,
+		template: TEMPLATE,
 		templateInsertUpdatesSelection: true,
 		orientation: 'horizontal',
 	});
@@ -43,14 +40,28 @@ const Edit = (props) => {
 		setAttributes({ id: `${name}-${clientId}` });
 	}, [clientId, name, setAttributes]);
 
+	const optionsGridLayout = [
+		{
+			label: '2',
+			value: 'cards-2',
+		},
+		{
+			label: '3',
+			value: 'cards-3',
+		},
+	];
+
 	const controls = (
 		<InspectorControls>
 			<PanelBody title={__('Cards options')}>
-				<ToggleControl
-					label="Layout slider"
-					checked={is_slider}
-					onChange={(newValue) => {
-						setAttributes({ is_slider: newValue });
+				<SelectControl
+					label="Grid Layout"
+					value={grid_column}
+					options={optionsGridLayout}
+					onChange={(selectedGridLayout) => {
+						setAttributes({
+							grid_column: selectedGridLayout,
+						});
 					}}
 				/>
 			</PanelBody>
