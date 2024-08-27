@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"title": "Card : with Border, image, Title and Links.",
-	"name": "elevation/cards-border-images",
+	"title": "Card: With Background Image, Title and subtitle.",
+	"name": "elevation/cards-background-images",
 	"version": "1.0.0",
 	"category": "elevation-blocks",
-	"description": "Cards with title, background and images",
+	"description": "Cards with title, subtitle and background images",
 	"textdomain": "elevation",
 	"supports": {
 		"html": true,
