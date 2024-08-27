@@ -1,0 +1,80 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Cards With Border",
+  "name": "elevation/cards-border-wrapper",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "icon": "button",
+  "description": "Cards container.",
+  "textdomain": "elevation",
+  "allowedBlocks": [
+    "elevation/cards-border-images"
+  ],
+  "supports": {
+    "html": true,
+    "anchor": true,
+    "alignWide": false,
+    "ariaLabel": false,
+    "color": {
+      "background": true,
+      "gradients": false,
+      "text": true,
+      "link": false,
+      "border": false
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "blockGap": false
+    },
+    "layout": {
+      "allowSwitching": false,
+      "allowInheriting": false,
+      "allowOrientation": false,
+      "allowVerticalAlignment": false,
+      "default": {
+        "type": "flex",
+        "verticalAlignment": "stretch",
+        "justifyContent": "center"
+      }
+    },
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "align": {
+      "type": "array",
+      "default": "full"
+    },
+    "grid_column": {
+      "type": "string",
+      "default": "cards-3"
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "style": [
+    "file:style-index.css"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ]
+}
