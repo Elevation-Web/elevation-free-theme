@@ -4,12 +4,14 @@ import {
 	InnerBlocks,
 	InspectorControls,
 	URLInputButton,
+	RichText,
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
 	__experimentalInputControl,
 	FocalPointPicker,
 	ToggleControl,
+	SelectControl,
 } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
@@ -27,7 +29,8 @@ const Edit = (props) => {
 	const name = blockName.split('/')[1];
 	const { clientId, attributes, setAttributes } = props;
 
-	const { id, anchor, preview, img, url, target, ariaLabel } = attributes;
+	const { id, anchor, preview, img, link, tagName } = attributes;
+	const { url, text, target, ariaLabel } = link;
 
 	useEffect(() => {
 		setAttributes({ id: `${name}-${clientId}` });
@@ -36,6 +39,33 @@ const Edit = (props) => {
 	const blockProps = useBlockProps({
 		className: `${name}`,
 	});
+
+	const headingOptions = [
+		{
+			label: 'h1',
+			value: '1',
+		},
+		{
+			label: 'h2',
+			value: '2',
+		},
+		{
+			label: 'h3',
+			value: '3',
+		},
+		{
+			label: 'h4',
+			value: '4',
+		},
+		{
+			label: 'h5',
+			value: '5',
+		},
+		{
+			label: 'h6',
+			value: '6',
+		},
+	];
 
 	const styleImg = {
 		backgroundImage: `url(${img.url})`,
@@ -121,23 +151,52 @@ const Edit = (props) => {
 						<URLInputButton
 							url={url}
 							placeholder={__('Card Link URL...', 'elevation')}
-							onChange={(value) => setAttributes({ url: value })}
+							onChange={(newValue) =>
+								setAttributes({
+									link: {
+										...link,
+										url: newValue,
+									},
+								})
+							}
 						/>
 					</div>
 					<ToggleControl
 						label="Open in new tab"
 						checked={target}
 						onChange={(newValue) => {
-							setAttributes({ target: newValue });
+							setAttributes({
+								link: {
+									...link,
+									target: newValue,
+								},
+							});
 						}}
 					/>
 				</>
-			</PanelBody>
-			<PanelBody title={__('Card Link Aria Label', 'elevation')}>
 				<__experimentalInputControl
 					value={ariaLabel}
 					placeholder="Button Aria Label..."
-					onChange={(value) => setAttributes({ ariaLabel: value })}
+					onChange={(newValue) => {
+						setAttributes({
+							link: {
+								...link,
+								ariaLabel: newValue,
+							},
+						});
+					}}
+				/>
+			</PanelBody>
+			<PanelBody title={__('Heading Options', 'elevation')}>
+				<SelectControl
+					label="label options"
+					value={tagName}
+					options={headingOptions}
+					onChange={(newValue) => {
+						setAttributes({
+							tagName: newValue,
+						});
+					}}
 				/>
 			</PanelBody>
 		</InspectorControls>
@@ -175,6 +234,25 @@ const Edit = (props) => {
 						template={template}
 						allowedBlocks={allowedBlocks}
 						templateLock={'all'}
+					/>
+					<RichText
+						style={{
+							maxWidth: '100%',
+							textWrap: 'wrap',
+							margin: '0px',
+						}}
+						tagName={'h' + tagName}
+						value={text}
+						allowedFormats={false}
+						onChange={(newValue) => {
+							setAttributes({
+								link: {
+									...link,
+									text: newValue,
+								},
+							});
+						}}
+						placeholder={__('Heading...')}
 					/>
 				</div>
 			</div>

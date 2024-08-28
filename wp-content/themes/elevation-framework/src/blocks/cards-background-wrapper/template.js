@@ -53,7 +53,12 @@ export const TEMPLATE = [
 				{
 					img: {
 						url: `/wp-content/themes/elevation-framework/src/blocks/cards-background-wrapper/images/image-1.webp`,
+						alt: '',
 					},
+					link: {
+						text: 'Heading lorem ipsum',
+					},
+					textColor: '$ui-base-white',
 				},
 			],
 			[
@@ -61,7 +66,12 @@ export const TEMPLATE = [
 				{
 					img: {
 						url: `/wp-content/themes/elevation-framework/src/blocks/cards-background-wrapper/images/image-2.webp`,
+						alt: '',
 					},
+					link: {
+						text: 'Heading lorem ipsum',
+					},
+					textColor: '$ui-base-white',
 				},
 			],
 			[
@@ -69,7 +79,12 @@ export const TEMPLATE = [
 				{
 					img: {
 						url: `/wp-content/themes/elevation-framework/src/blocks/cards-background-wrapper/images/image-3.webp`,
+						alt: '',
 					},
+					link: {
+						text: 'Heading lorem ipsum',
+					},
+					textColor: '$ui-base-white',
 				},
 			],
 			[

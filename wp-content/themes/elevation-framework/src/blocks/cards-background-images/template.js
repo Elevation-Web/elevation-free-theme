@@ -9,12 +9,4 @@ export const template = [
 			textColor: '$ui-base-white',
 		},
 	],
-	[
-		'core/heading',
-		{
-			level: 5,
-			textColor: '$ui-base-white',
-			content: 'Heading lorem ipsum',
-		},
-	],
 ];

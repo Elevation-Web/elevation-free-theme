@@ -152,13 +152,17 @@
 			margin-top: 5px;
 			margin-bottom: 0px;
 			transition: all .2s;
-			color: $ui-foreground-primary-text-headings;
+			text-decoration: none;
+			font-weight: 700;
+			color: inherit;
+			line-height: inherit;
 		}
 	}
 
 	.stretched-link {
 		@include stretched-link;
 		z-index: 3;
+
 	}
 
 	@include media-breakpoint-up(xl) {
@@ -168,8 +172,10 @@
 			}
 
 			.wp-block-heading {
+				color: inherit !important;
+
 				&::after {
-					background-image: url('data:image/svg+xml,<svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.7071 9.20711C14.0976 8.81658 14.0976 8.18342 13.7071 7.79289L7.34315 1.42893C6.95262 1.03841 6.31946 1.03841 5.92893 1.42893C5.53841 1.81946 5.53841 2.45262 5.92893 2.84315L11.5858 8.5L5.92893 14.1569C5.53841 14.5474 5.53841 15.1805 5.92893 15.5711C6.31946 15.9616 6.95262 15.9616 7.34315 15.5711L13.7071 9.20711ZM-8.74228e-08 9.5L13 9.5L13 7.5L8.74228e-08 7.5L-8.74228e-08 9.5Z" fill="%238A55B3"/></svg>');
+					background-image: none;
 				}
 			}
 		}

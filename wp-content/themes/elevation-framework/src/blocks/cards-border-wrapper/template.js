@@ -7,7 +7,7 @@ const TEMPLATE = [
 		},
 		[
 			[
-				'core/group',
+				'elevation/group',
 				{
 					className: '',
 				},
@@ -42,6 +42,13 @@ const TEMPLATE = [
 						'elevation/spacer',
 						{
 							space: 'spacer__extra-small',
+							line: false,
+						},
+					],
+					[
+						'elevation/spacer',
+						{
+							space: 'spacer__extra-small',
 							line: true,
 							lineType: 'dots',
 						},
@@ -53,7 +60,12 @@ const TEMPLATE = [
 				{
 					img: {
 						url: `/wp-content/themes/elevation-framework/src/blocks/cards-border-wrapper/images/image-1.webp`,
+						alt: '',
 					},
+					link: {
+						text: 'H6. Heading lorem ipsum maecenas sed enim ut sem viverra aliquet eget sit',
+					},
+					textColor: '$ui-foreground-primary-text-headings',
 				},
 			],
 			[
@@ -61,7 +73,12 @@ const TEMPLATE = [
 				{
 					img: {
 						url: `/wp-content/themes/elevation-framework/src/blocks/cards-border-wrapper/images/image-2.webp`,
+						alt: '',
 					},
+					link: {
+						text: 'H6. Heading lorem ipsum maecenas sed enim ut sem viverra aliquet eget sit',
+					},
+					textColor: '$ui-foreground-primary-text-headings',
 				},
 			],
 			[
@@ -69,7 +86,12 @@ const TEMPLATE = [
 				{
 					img: {
 						url: `/wp-content/themes/elevation-framework/src/blocks/cards-border-wrapper/images/image-3.webp`,
+						alt: '',
 					},
+					link: {
+						text: 'H6. Heading lorem ipsum maecenas sed enim ut sem viverra aliquet eget sit',
+					},
+					textColor: '$ui-foreground-primary-text-headings',
 				},
 			],
 			[

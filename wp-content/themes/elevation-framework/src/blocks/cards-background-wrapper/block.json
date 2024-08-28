@@ -25,17 +25,7 @@
 			"margin": ["top", "bottom"],
 			"blockGap": false
 		},
-		"layout": {
-			"allowSwitching": false,
-			"allowInheriting": false,
-			"allowOrientation": false,
-			"allowVerticalAlignment": false,
-			"default": {
-				"type": "flex",
-				"verticalAlignment": "stretch",
-				"justifyContent": "center"
-			}
-		},
+		"layout": false,
 		"interactivity": {
 			"clientNavigation": true
 		}

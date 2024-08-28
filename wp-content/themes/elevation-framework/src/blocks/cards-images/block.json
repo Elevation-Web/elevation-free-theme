@@ -7,6 +7,7 @@
 	"category": "elevation-blocks",
 	"description": "Cards with title, description, background images and icons",
 	"textdomain": "elevation",
+	"parent": ["elevation/custom-container"],
 	"supports": {
 		"html": true,
 		"align": false,

@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "Cards",
+  "title": "Cards, Layout: Images w/Heading+Description+Link.",
   "name": "elevation/cards-wrapper",
   "version": "1.0.0",
   "category": "elevation-blocks",
@@ -30,17 +30,7 @@
       ],
       "blockGap": false
     },
-    "layout": {
-      "allowSwitching": false,
-      "allowInheriting": false,
-      "allowOrientation": false,
-      "allowVerticalAlignment": false,
-      "default": {
-        "type": "flex",
-        "verticalAlignment": "stretch",
-        "justifyContent": "center"
-      }
-    },
+    "layout": false,
     "interactivity": {
       "clientNavigation": true
     }

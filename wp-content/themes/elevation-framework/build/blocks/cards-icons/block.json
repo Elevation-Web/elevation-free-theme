@@ -1,0 +1,88 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Card: With Icon, title, description and button.",
+  "name": "elevation/cards-icons",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "description": "Cards with title, subtitle and background images",
+  "textdomain": "elevation",
+  "supports": {
+    "html": true,
+    "align": false,
+    "alignWide": false,
+    "color": {
+      "background": true,
+      "gradients": false,
+      "text": false,
+      "link": false,
+      "border": false
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ]
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "icon": {
+      "type": "object",
+      "default": {
+        "url": "",
+        "alt": "",
+        "id": 0,
+        "srcset": "",
+        "width": 0,
+        "height": 0,
+        "sizes": "",
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "rgba(71, 18, 126, 1)"
+    },
+    "hasIconHover": {
+      "type": "boolean",
+      "default": false
+    },
+    "iconHover": {
+      "type": "object",
+      "default": {
+        "url": "",
+        "alt": "",
+        "id": 0,
+        "srcset": "",
+        "width": 0,
+        "height": 0,
+        "sizes": "",
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
+    },
+    "backgroundColorHover": {
+      "type": "string",
+      "default": "$ui-foreground-primary-accent-04"
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ]
+}

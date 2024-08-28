@@ -7,6 +7,7 @@
 	"category": "elevation-blocks",
 	"description": "Cards with title, background and images",
 	"textdomain": "elevation",
+	"parent": ["elevation/custom-container"],
 	"supports": {
 		"html": true,
 		"align": false,
@@ -14,7 +15,7 @@
 		"color": {
 			"background": true,
 			"gradients": false,
-			"text": false,
+			"text": true,
 			"link": false,
 			"border": false
 		},
@@ -31,17 +32,18 @@
 			"type": "boolean",
 			"default": false
 		},
-		"url": {
+		"tagName": {
 			"type": "string",
-			"default": "#"
+			"default": "6"
 		},
-		"ariaLabel": {
-			"type": "string",
-			"default": ""
-		},
-		"target": {
-			"type": "boolean",
-			"default": false
+		"link": {
+			"type": "object",
+			"default": {
+				"text": "",
+				"url": "",
+				"target": false,
+				"ariaLabel": ""
+			}
 		},
 		"img": {
 			"type": "object",

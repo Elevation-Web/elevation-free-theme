@@ -1,15 +1,16 @@
 import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
-	InnerBlocks,
 	InspectorControls,
 	URLInputButton,
+	RichText,
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
 	__experimentalInputControl,
 	FocalPointPicker,
 	ToggleControl,
+	SelectControl,
 } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
@@ -20,15 +21,16 @@ import { RemoveImageButton, UploadMedia } from '../components/UploadMedia';
 import { ImageWithFocalPoint } from '../components/ImageWithFocalPoint';
 import './editor.scss';
 import json from './block.json';
-import { allowedBlocks, template } from './template';
 
 const Edit = (props) => {
+	// get attrbitutes from props
 	const { name: blockName } = json;
 	const name = blockName.split('/')[1];
 	const { clientId, attributes, setAttributes } = props;
+	const { id, anchor, preview, img, link, tagName } = attributes;
+	const { url, text, target, ariaLabel } = link;
 
-	const { id, anchor, preview, img, url, target, ariaLabel } = attributes;
-
+	// Set Block name
 	useEffect(() => {
 		setAttributes({ id: `${name}-${clientId}` });
 	}, [clientId, name, setAttributes]);
@@ -42,6 +44,33 @@ const Edit = (props) => {
 		backgroundSize: 'cover',
 		backgroundPosition: `${img.focalPoint?.x * 100}% ${img.focalPoint?.y * 100}%`,
 	};
+
+	const headingOptions = [
+		{
+			label: 'h1',
+			value: '1',
+		},
+		{
+			label: 'h2',
+			value: '2',
+		},
+		{
+			label: 'h3',
+			value: '3',
+		},
+		{
+			label: 'h4',
+			value: '4',
+		},
+		{
+			label: 'h5',
+			value: '5',
+		},
+		{
+			label: 'h6',
+			value: '6',
+		},
+	];
 
 	const setNewFocalPoint = (value) => {
 		setAttributes({
@@ -121,23 +150,52 @@ const Edit = (props) => {
 						<URLInputButton
 							url={url}
 							placeholder={__('Card Link URL...', 'elevation')}
-							onChange={(value) => setAttributes({ url: value })}
+							onChange={(newValue) =>
+								setAttributes({
+									link: {
+										...link,
+										url: newValue,
+									},
+								})
+							}
 						/>
 					</div>
 					<ToggleControl
 						label="Open in new tab"
 						checked={target}
 						onChange={(newValue) => {
-							setAttributes({ target: newValue });
+							setAttributes({
+								link: {
+									...link,
+									target: newValue,
+								},
+							});
 						}}
 					/>
 				</>
-			</PanelBody>
-			<PanelBody title={__('Card Link Aria Label', 'elevation')}>
 				<__experimentalInputControl
 					value={ariaLabel}
 					placeholder="Button Aria Label..."
-					onChange={(value) => setAttributes({ ariaLabel: value })}
+					onChange={(newValue) => {
+						setAttributes({
+							link: {
+								...link,
+								ariaLabel: newValue,
+							},
+						});
+					}}
+				/>
+			</PanelBody>
+			<PanelBody title={__('Heading Options', 'elevation')}>
+				<SelectControl
+					label="label options"
+					value={tagName}
+					options={headingOptions}
+					onChange={(newValue) => {
+						setAttributes({
+							tagName: newValue,
+						});
+					}}
 				/>
 			</PanelBody>
 		</InspectorControls>
@@ -169,10 +227,24 @@ const Edit = (props) => {
 					selectorId={anchor || id}
 				/>
 				<div className={`${name}__container`}>
-					<InnerBlocks
-						template={template}
-						allowedBlocks={allowedBlocks}
-						templateLock={'all'}
+					<RichText
+						style={{
+							maxWidth: '100%',
+							textWrap: 'wrap',
+							marginBottom: '0px',
+						}}
+						tagName={'h' + tagName}
+						value={text}
+						allowedFormats={[]}
+						onChange={(newValue) => {
+							setAttributes({
+								link: {
+									...link,
+									text: newValue,
+								},
+							});
+						}}
+						placeholder={__('Heading...')}
 					/>
 				</div>
 			</div>
