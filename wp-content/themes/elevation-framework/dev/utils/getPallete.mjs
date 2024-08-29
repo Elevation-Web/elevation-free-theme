@@ -24,7 +24,7 @@ function traverse(obj) {
 			result.push({
 				slug: slug,
 				name: slugToTitle(slug),
-				color: obj['rgb'],
+				color: obj['hex8'],
 			});
 		}
 	}

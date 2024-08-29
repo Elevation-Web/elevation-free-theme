@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Card: With Icon, title, description and button.",
+	"name": "elevation/cards-long-description-icons-card",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"description": "Cards with title, subtitle and background images",
+	"textdomain": "elevation",
+	"parent": ["elevation/group"],
+	"supports": {
+		"html": true,
+		"align": false,
+		"alignWide": false,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": false,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"]
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"preview": {
+			"type": "boolean",
+			"default": false
+		},
+		"icon": {
+			"type": "object",
+			"default": {
+				"url": "/wp-content/themes/elevation-framework/src/blocks/cards-long-description-icons/images/icon-1.webp",
+				"alt": "",
+				"id": 0,
+				"srcset": "",
+				"width": "auto",
+				"height": "auto",
+				"sizes": ""
+			}
+		},
+		"iconBackgroundColor": {
+			"type": "string",
+			"default": "ui-foreground-primary-text-headings-span"
+		},
+		"hasIconHover": {
+			"type": "boolean",
+			"default": false
+		},
+		"iconHover": {
+			"type": "object",
+			"default": {
+				"url": "",
+				"alt": "",
+				"id": 0,
+				"srcset": "",
+				"width": 0,
+				"height": 0,
+				"sizes": ""
+			}
+		},
+		"backgroundColorHover": {
+			"type": "string",
+			"default": "ui-foreground-primary-text-headings-span"
+		}
+	},
+	"editorScript": ["file:index.js"],
+	"editorStyle": ["file:index.css"]
+}

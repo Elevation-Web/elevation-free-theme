@@ -5,12 +5,8 @@ const save = (props) => {
 	const { name: blockName } = json;
 	const name = blockName.split('/')[1];
 
-	const { attributes } = props;
-
-	const { containerWidth } = attributes;
-
 	const blockProps = useBlockProps.save({
-		className: `${name} custom-container--${containerWidth}`,
+		className: `${name} wp-block-group is-layout-flow wp-block-group-is-layout-flow`,
 	});
 
 	return (

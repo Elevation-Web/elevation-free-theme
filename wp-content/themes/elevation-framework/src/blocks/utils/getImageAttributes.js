@@ -16,8 +16,6 @@ export function getImageAttributes(imageObject, size = 'full') {
 		})
 		.join(', ');
 
-	console.log('size', imageObject.sizes[size]);
-
 	const fullSize = imageObject.sizes[size];
 
 	return {

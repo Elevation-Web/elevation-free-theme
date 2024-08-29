@@ -29,9 +29,11 @@ export const ImageWithFocalPoint = ({
 				sizes={sizes}
 				loading={lazyload ? 'lazy' : 'eager'}
 			/>
-			<style>
-				{`#${selectorId} .${className} {object-position: ${objectPosition};}`}
-			</style>
+			{!!focalPoint && (
+				<style>
+					{`#${selectorId} .${className} {object-position: ${objectPosition};}`}
+				</style>
+			)}
 		</>
 	);
 };
