@@ -1,0 +1,16 @@
+{
+	"customContainerOptions": [
+		{
+			"label": "Default",
+			"value": "default"
+		},
+		{
+			"label": "Medium",
+			"value": "medium"
+		},
+		{
+			"label": "Small",
+			"value": "small"
+		}
+	]
+}

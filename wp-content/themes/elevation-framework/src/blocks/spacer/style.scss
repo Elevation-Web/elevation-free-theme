@@ -1,33 +1,122 @@
 @import "../../assets/styles/scss/utilities/functions";
 @import "../../assets/styles/scss/utilities/variables";
 @import "../../assets/styles/scss/utilities/mixins";
+@import "../../assets/styles/scss/utilities/default-variables"; // check
+
+$p-mb: 20px;
 
 .spacer {
+	opacity: 1;
 	position: relative;
 	width: 100%;
 
-	&__small {
-		height: 25px;
-		@include media-breakpoint-up(md) {
-			height: 50px;
+	&.line-enable {
+		&.position-top {
+			&.line-type-solid {
+				border-top: 1px solid $ui-button-primary-color-01;
+			}
+
+			&.line-type-dash {
+				border-top: 1px dashed $ui-button-primary-color-01;
+			}
+
+			&.line-type-dots {
+				border-top: 1px dotted $ui-button-primary-color-01;
+			}
+		}
+
+		&.position-bottom {
+			&.line-type-solid {
+				border-bottom: 1px solid $ui-button-primary-color-01;
+			}
+
+			&.line-type-dash {
+				border-bottom: 1px dashed $ui-button-primary-color-01;
+			}
+
+			&.line-type-dots {
+				border-bottom: 1px dotted $ui-button-primary-color-01;
+			}
 		}
 	}
-	&__normal {
+
+	&__extra-small {
+		height: 20px;
+
+		@include media-breakpoint-up(md) {
+			height: 30px;
+		}
+	}
+
+	&__small {
 		height: 40px;
+
+		@include media-breakpoint-up(md) {
+			height: 60px;
+		}
+	}
+
+	&__normal {
+		height: 50px;
+
 		@include media-breakpoint-up(md) {
 			height: 75px;
 		}
 	}
+
 	&__large {
-		height: 50px;
+		height: 80px;
+
 		@include media-breakpoint-up(md) {
-			height: 100px;
+			height: 110px;
 		}
 	}
+
 	&__huge {
-		height: 100px;
+		height: 120px;
+
 		@include media-breakpoint-up(md) {
 			height: 200px;
 		}
+	}
+}
+
+p+.spacer__extra-small {
+	height: 0;
+
+	@include media-breakpoint-up(md) {
+		height: 30px - $p-mb;
+	}
+}
+
+p+.spacer__small {
+	height: 20px - $p-mb;
+
+	@include media-breakpoint-up(md) {
+		height: 60px - $p-mb;
+	}
+}
+
+p+.spacer__normal {
+	height: 50px - $p-mb;
+
+	@include media-breakpoint-up(md) {
+		height: 75px - $p-mb;
+	}
+}
+
+p+.spacer__large {
+	height: 80px - $p-mb;
+
+	@include media-breakpoint-up(md) {
+		height: 110px - $p-mb;
+	}
+}
+
+p+.spacer__huge {
+	height: 120px - $p-mb;
+
+	@include media-breakpoint-up(md) {
+		height: 200px - $p-mb;
 	}
 }

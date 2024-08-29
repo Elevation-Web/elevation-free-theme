@@ -3,6 +3,7 @@ import {
 	fontSizes,
 	headingsLineHeights,
 	headingsLetterSpacing,
+	headingsFontWeight,
 } from '../fonts/fontSizes.mjs';
 
 export const bodyStyles = () => {
@@ -24,6 +25,7 @@ const headingSizes = (fontSizes) => {
 				fontSize: fontSize.size,
 				lineHeight: headingsLineHeights[fontSize.slug],
 				letterSpacing: headingsLetterSpacing[fontSize.slug],
+				fontWeight: headingsFontWeight[fontSize.slug],
 			},
 		};
 		return acc;

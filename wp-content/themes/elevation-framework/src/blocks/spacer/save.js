@@ -6,10 +6,10 @@ const save = (props) => {
 
 	const { attributes } = props;
 
-	const { anchor, space } = attributes;
+	const { anchor, space, line, lineType, linePosition } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `${name} ${space}`,
+		className: `${name} ${space} line-${line ? 'enable' : 'disable'} line-type-${lineType} position-${linePosition}`,
 	});
 
 	return (

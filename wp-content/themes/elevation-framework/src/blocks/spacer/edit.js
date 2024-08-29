@@ -1,37 +1,20 @@
+/* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, SelectControl } from '@wordpress/components';
-import { useState, useEffect } from '@wordpress/element';
+import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
+
+/* Internal Dependencies */
 import json from './block.json';
 import './editor.scss';
+import { options, lineOptions, linePositionOptions } from './options';
 
-const options = [
-	{
-		label: 'Small',
-		value: 'spacer__small',
-	},
-	{
-		label: 'Normal',
-		value: 'spacer__normal',
-	},
-	{
-		label: 'Large',
-		value: 'spacer__large',
-	},
-	{
-		label: 'Huge',
-		value: 'spacer__huge',
-	},
-];
-
-const HeightSelectControl = ({ space, attributes, setAttributes }) => {
+const HeightSelectControl = ({ space, setAttributes }) => {
 	return (
 		<SelectControl
 			label="Spacer Height"
 			value={space}
 			options={options}
 			onChange={(selectedItem) => {
-				console.log('selectedItem', selectedItem);
 				setAttributes({
 					space: selectedItem,
 				});
@@ -45,10 +28,10 @@ const Edit = (props) => {
 
 	const name = json.name.split('/')[1];
 
-	const { anchor, space } = attributes;
+	const { anchor, space, line, lineType, linePosition } = attributes;
 
 	const blockProps = useBlockProps({
-		className: `${name} ${space}`,
+		className: `${name} ${space} line-${line ? 'enable' : 'disable'} line-type-${lineType} position-${linePosition}`,
 	});
 
 	const controls = (
@@ -56,9 +39,39 @@ const Edit = (props) => {
 			<PanelBody title={__('Spacer Settings')}>
 				<HeightSelectControl
 					space={space}
-					attributes={attributes}
 					setAttributes={setAttributes}
 				/>
+				<ToggleControl
+					label="Show line division."
+					checked={line}
+					onChange={(newValue) => {
+						setAttributes({ line: newValue });
+					}}
+				/>
+				{line && (
+					<>
+						<SelectControl
+							label="Type Line Division."
+							value={lineType}
+							options={lineOptions}
+							onChange={(selectedItem) => {
+								setAttributes({
+									lineType: selectedItem,
+								});
+							}}
+						/>
+						<SelectControl
+							label="Line Position."
+							value={linePosition}
+							options={linePositionOptions}
+							onChange={(selectedItem) => {
+								setAttributes({
+									linePosition: selectedItem,
+								});
+							}}
+						/>
+					</>
+				)}
 			</PanelBody>
 		</InspectorControls>
 	);

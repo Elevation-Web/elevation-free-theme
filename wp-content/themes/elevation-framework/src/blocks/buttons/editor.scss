@@ -1,6 +1,8 @@
 @import "../../assets/styles/scss/utilities/functions";
 @import "../../assets/styles/scss/utilities/variables";
 @import "../../assets/styles/scss/utilities/mixins";
+@import "../../assets/styles/scss/utilities/default-variables"; // check
+@import "../../assets/styles/scss/utilities/mixins/cta"; // check
 
 .wp-block-elevation-button * {
 	display: inline-flex;
@@ -13,11 +15,13 @@
 		text-align: center;
 		width: 100%;
 	}
+
 	.components-base-control__field {
 		margin: 0;
 	}
 
 	.cta {
+
 		&--primary-1,
 		&--primary-2,
 		&--primary-3,
@@ -32,6 +36,7 @@
 			.button {
 				border: none !important;
 			}
+
 			input {
 				@include cta;
 
@@ -90,12 +95,16 @@
 		}
 
 		&--tertiary {
+			display: flex;
+
 			input {
 				@include cta--tertiary;
 			}
 		}
 
 		&--tertiary-inverse {
+			display: flex;
+
 			input {
 				@include cta--tertiary-inverse;
 			}
