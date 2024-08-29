@@ -1,15 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "Cards | Layout: Background images + icons",
+  "title": "Card : with image, title and description. ",
   "name": "elevation/cards-images",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "description": "Cards with title, description, background images and icons",
   "textdomain": "elevation",
-  "parent": [
-    "elevation/cards-wrapper"
-  ],
   "supports": {
     "html": true,
     "align": false,
