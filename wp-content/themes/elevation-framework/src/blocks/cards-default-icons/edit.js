@@ -17,13 +17,13 @@ import { TEMPLATE, allowedBlocks } from './template';
 const Edit = (props) => {
 	const { clientId, attributes, setAttributes } = props;
 
-	const { anchor, id, preview } = attributes;
+	const { anchor, id, grid_column, preview } = attributes;
 
 	const { name: blockName } = json;
 	const name = blockName.split('/')[1];
 
 	const blockProps = useBlockProps({
-		className: `${name} alignfull`,
+		className: `${name} alignfull row-${grid_column}`,
 	});
 
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {

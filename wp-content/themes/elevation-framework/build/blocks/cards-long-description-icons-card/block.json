@@ -72,6 +72,10 @@
     "backgroundColorHover": {
       "type": "string",
       "default": "ui-foreground-primary-text-headings-span"
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "ui-foreground-primary-text-headings-span"
     }
   },
   "editorScript": [

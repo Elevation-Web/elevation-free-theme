@@ -1,8 +1,8 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"title": "Card, Layout: Default.",
-	"name": "elevation/cards-default-card",
+	"title": "Card : Default+Icons.",
+	"name": "elevation/cards-default-icons-card",
 	"version": "1.0.0",
 	"category": "elevation-blocks",
 	"description": "Cards with title, subtitle.",
@@ -32,22 +32,50 @@
 			"type": "boolean",
 			"default": false
 		},
+		"icon": {
+			"type": "object",
+			"default": {
+				"url": "/wp-content/themes/elevation-framework/src/blocks/cards-default-icons/images/icon-1.webp",
+				"alt": "",
+				"id": 0,
+				"srcset": "",
+				"width": "auto",
+				"height": "auto",
+				"sizes": ""
+			}
+		},
+		"hasIconHover": {
+			"type": "boolean",
+			"default": false
+		},
+		"iconHover": {
+			"type": "object",
+			"default": {
+				"url": "",
+				"alt": "",
+				"id": 0,
+				"srcset": "",
+				"width": 0,
+				"height": 0,
+				"sizes": ""
+			}
+		},
 		"tagName": {
 			"type": "string",
-			"default": "5"
+			"default": "6"
 		},
 		"link": {
 			"type": "object",
 			"default": {
-				"text": "H5. Subheading lorem",
+				"text": "H6. Subheading lorem ipsum felis eget nunc",
 				"url": "",
 				"target": false,
 				"ariaLabel": ""
 			}
 		},
-		"headingColor": {
-			"type": "string",
-			"default": "ui-foreground-primary-text-headings"
+		"hasColorHover": {
+			"type": "boolean",
+			"default": false
 		},
 		"backgroundColorHover": {
 			"type": "string",
@@ -56,6 +84,10 @@
 		"textColorHover": {
 			"type": "string",
 			"default": "ui-base-white"
+		},
+		"headingColor": {
+			"type": "string",
+			"default": "ui-foreground-primary-text-headings-span"
 		}
 	},
 	"editorScript": ["file:index.js"],
