@@ -16,8 +16,9 @@ export const TEMPLATE = [
 					[
 						'core/heading',
 						{
-							level: 3,
-							content: 'H3. Heading lorem ipsum euismod',
+							level: 4,
+							content: 'H4. Heading lorem ipsum euismod',
+							textColor: '$ui-foreground-primary-text-headings',
 						},
 					],
 					[

@@ -79,7 +79,11 @@ export const Controls = (props) => {
 	};
 
 	const changeColor = (key, newValue) => {
-		setAttributes({ [key]: newValue });
+		if (!newValue) {
+			setAttributes({ [key]: '#000' });
+		} else {
+			setAttributes({ [key]: newValue });
+		}
 	};
 
 	return (

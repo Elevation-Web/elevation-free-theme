@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Card, Layout: Default.",
+  "name": "elevation/cards-default-card",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "description": "Cards with title, subtitle.",
+  "textdomain": "elevation",
+  "parent": [
+    "elevation/group"
+  ],
+  "supports": {
+    "html": true,
+    "align": false,
+    "alignWide": false,
+    "color": {
+      "background": true,
+      "gradients": false,
+      "text": false,
+      "link": false,
+      "border": false
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ]
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "tagName": {
+      "type": "string",
+      "default": "6"
+    },
+    "link": {
+      "type": "object",
+      "default": {
+        "text": "",
+        "url": "",
+        "target": false,
+        "ariaLabel": ""
+      }
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "ui-foreground-primary-text-headings"
+    },
+    "backgroundColorHover": {
+      "type": "string",
+      "default": "ui-foreground-primary-text-headings-span"
+    },
+    "textColorHover": {
+      "type": "string",
+      "default": "ui-base-white"
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ]
+}
