@@ -1,0 +1,1 @@
+{"version":3,"file":"blocks/spacer/index.css","mappings":";;;AAAA;EACC;EACA;AACD,C","sources":["webpack://elevation-framework/./src/blocks/spacer/editor.scss"],"sourcesContent":[".spacer {\r\n\tposition: relative;\r\n\tbackground-color: rgb(230, 230, 230);\r\n}\r\n"],"names":[],"sourceRoot":""}
