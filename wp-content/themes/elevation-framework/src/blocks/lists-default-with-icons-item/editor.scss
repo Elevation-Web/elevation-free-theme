@@ -18,16 +18,11 @@
 
 	.wp-block-heading {
 		margin-top: 0px;
-		color: var(--default-editor-color) !important;
 
 		&::after {
 			content: none;
 		}
 	}
 
-	&:hover {
-		.wp-block-heading {
-			color: var(--default-editor-color) !important;
-		}
-	}
+
 }

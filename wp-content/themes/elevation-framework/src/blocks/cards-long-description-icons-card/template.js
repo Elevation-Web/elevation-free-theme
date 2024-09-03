@@ -11,7 +11,7 @@ export const template = [
 		{
 			level: 6,
 			content: 'Strong Text. Subheading lorem ipsum',
-			textColor: 'ui-foreground-primary-text-headings-span',
+			textColor: 'ui-foreground-primary-text-headings',
 		},
 	],
 	[

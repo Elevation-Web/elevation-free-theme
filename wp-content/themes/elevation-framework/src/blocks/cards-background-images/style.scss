@@ -140,6 +140,10 @@
 		height: 100%;
 		justify-content: flex-end;
 
+		p {
+			margin-bottom: 5px;
+		}
+
 		.wp-block-heading {
 			margin-top: 5px;
 			margin-bottom: 0px;
@@ -148,6 +152,7 @@
 			font-weight: 700;
 			color: inherit;
 			line-height: inherit;
+			text-decoration: none;
 		}
 	}
 

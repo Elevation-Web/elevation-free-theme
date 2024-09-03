@@ -5,8 +5,7 @@ export const template = [
 		'core/heading',
 		{
 			level: 6,
-			content:
-				'H6. Subheading lorem ipsum felis eget nunc',
+			content: 'H6. Subheading lorem ipsum felis eget nunc',
 		},
 	],
 	[

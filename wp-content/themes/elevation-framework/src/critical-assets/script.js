@@ -2,6 +2,7 @@ import loadBlocksCSSandJS from './scripts/loadBlocksCSSandJS';
 import loadAssetsCSSandJS from './scripts/loadAssetsCSSandJS';
 import waitForUserInteraction from './scripts/waitForUserInteraction';
 import getFirstsBlock from './scripts/getFirstBlock';
+import { globalAnimations } from './scripts/global-animations';
 
 const excludedBlocks = [];
 
@@ -10,6 +11,8 @@ const firstTwoBlockIds = getFirstsBlock();
 if (firstTwoBlockIds) {
 	excludedBlocks.push(...firstTwoBlockIds);
 }
+
+globalAnimations();
 
 // Add more blocks to the excludedBlocks array if needed
 // excludedBlocks.push('BLOCK_ID_1');

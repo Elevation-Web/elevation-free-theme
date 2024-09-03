@@ -1,12 +1,15 @@
 @use "sass:math";
+@use "sass:string";
+
 // Remove the unit of a length
 @function strip-unit($number) {
-	@if type-of($number) == "number" and not unitless($number) {
+	@if type-of($number)=="number" and not unitless($number) {
 		@return math.div($number, ($number * 0 + 1));
 	}
 
 	@return $number;
 }
+
 // Used to transform px to rem
 @function px-to-rem($px, $base: 16) {
 	// force values to px so that they cancel units
@@ -22,4 +25,37 @@
 	$aspectRatio: $height * 100 / $width;
 
 	@return $aspectRatio * 1vw;
+}
+
+
+// Generate CSS rules from a map of selectors and values
+@function generate-css($selectors-map, $property) {
+	$result: (
+	); // Initialize an empty list to hold the result
+
+// Iterate over each selector in the map
+@each $selector, $value in $selectors-map {
+	// Append the generated CSS rule to the result list
+	$result: append($result,
+			(selector: $selector,
+				property: $property,
+				value: $value,
+			),
+			comma);
+}
+
+// Return the generated CSS rules
+@return $result;
+}
+
+// Change the opacity of a color
+@function rgb-to-rgba($color, $alpha) {
+	@if (type-of($color)=="color" and type-of($alpha)=="number" and $alpha >=0 and $alpha <=1) {
+		@return rgba(red($color), green($color), blue($color), $alpha);
+	}
+
+	@else {
+		@warn "Invalid arguments for `rgb-to-rgba`: #{inspect($color)} and #{inspect($alpha)}.";
+		@return $color;
+	}
 }

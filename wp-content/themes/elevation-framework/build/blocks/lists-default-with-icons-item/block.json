@@ -40,7 +40,7 @@
     "icon": {
       "type": "object",
       "default": {
-        "url": "/wp-content/themes/elevation-framework/src/blocks/cards-default-icons/images/icon-1.webp",
+        "url": "/wp-content/themes/elevation-framework/src/blocks/lists-default-with-icons/images/icon-1.webp",
         "alt": "",
         "id": 0,
         "srcset": "",

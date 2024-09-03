@@ -18,7 +18,6 @@ export const TEMPLATE = [
 						{
 							level: 4,
 							content: 'H4. Heading lorem ipsum euismod',
-							textColor: '$ui-foreground-primary-text-headings',
 						},
 					],
 					[

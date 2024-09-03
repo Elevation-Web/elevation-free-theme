@@ -1,0 +1,58 @@
+#primary {
+	ul:not(.tribe-events ul):not(#tribe-events ul),
+	ol:not(.tribe-events ol):not(#tribe-events ol) {
+		margin-bottom: $p-mb;
+		padding-left: 17px;
+		position: relative;
+
+		& ul {
+			margin-top: 15px;
+		}
+
+		li {
+			padding: 0;
+			list-style-type: none;
+			position: relative;
+			margin-bottom: 15px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	ul:not(.tribe-events ul):not(#tribe-events ul) {
+		li {
+			&::before {
+				content: "";
+				background-color: $ui-foreground-primary-accent-02;
+				margin-right: 10px;
+				font-size: 16px;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				display: inline-flex;
+				position: absolute;
+				left: -17px;
+				margin-top: 0.5em;
+			}
+		}
+	}
+
+	ol:not(.tribe-events ol):not(#tribe-events ol) {
+		counter-reset: item;
+		li {
+			&::before {
+				content: counter(item) ".";
+				counter-increment: item;
+				margin-right: 10px;
+				font-size: 16px;
+				font-weight: 700;
+				border-radius: 50%;
+				display: inline-flex;
+				position: absolute;
+				left: -17px;
+			}
+		}
+	}
+}

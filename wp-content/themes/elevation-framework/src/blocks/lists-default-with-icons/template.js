@@ -18,7 +18,7 @@ export const TEMPLATE = [
 						{
 							level: 4,
 							content: 'H4. Heading lorem ipsum felis eget',
-							textColor: '$ui-foreground-primary-text-headings',
+							// textColor: '$ui-foreground-primary-text-headings',
 						},
 					],
 				],
@@ -33,7 +33,7 @@ export const TEMPLATE = [
 						'elevation/lists-default-with-icons-item',
 						{
 							icon: {
-								url: `/wp-content/themes/elevation-framework/src/blocks/cards-default-icons/images/icon-1.webp`,
+								url: `/wp-content/themes/elevation-framework/src/blocks/lists-default-with-icons/images/icon-1.webp`,
 							},
 						},
 					],
@@ -41,7 +41,7 @@ export const TEMPLATE = [
 						'elevation/lists-default-with-icons-item',
 						{
 							icon: {
-								url: `/wp-content/themes/elevation-framework/src/blocks/cards-default-icons/images/icon-2.webp`,
+								url: `/wp-content/themes/elevation-framework/src/blocks/lists-default-with-icons/images/icon-2.webp`,
 							},
 						},
 					],
@@ -49,7 +49,7 @@ export const TEMPLATE = [
 						'elevation/lists-default-with-icons-item',
 						{
 							icon: {
-								url: `/wp-content/themes/elevation-framework/src/blocks/cards-default-icons/images/icon-3.webp`,
+								url: `/wp-content/themes/elevation-framework/src/blocks/lists-default-with-icons/images/icon-3.webp`,
 							},
 						},
 					],
@@ -64,5 +64,4 @@ export const allowedBlocks = [
 	'core/heading',
 	'core/paragraph',
 	'elevation/buttons',
-	'elevation/cards-icons',
 ];
