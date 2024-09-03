@@ -1,0 +1,23 @@
+@import "../../assets/styles/scss/utilities/functions";
+@import "../../assets/styles/scss/utilities/variables";
+@import "../../assets/styles/scss/utilities/mixins";
+@import "../../critical-assets/styles/scss/layout/custom-container";
+
+.cards-images-with-heading-card {
+	&>img {
+		height: 100% !important;
+	}
+
+	&__container {
+		width: 100%;
+	}
+
+	.wp-block-heading {
+		margin-bottom: 12px;
+		margin-top: 20px;
+	}
+
+	p {
+		max-height: 500px !important;
+	}
+}

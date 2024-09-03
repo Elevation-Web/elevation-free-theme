@@ -1,25 +1,33 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"title": "Card: With Background Image, Title and subtitle.",
+	"title": "Cards, Layout: Background Images",
 	"name": "elevation/cards-background-images",
 	"version": "1.0.0",
 	"category": "elevation-blocks",
-	"description": "Cards with title, subtitle and background images",
+	"icon": "button",
+	"description": "Cards container.",
 	"textdomain": "elevation",
+	"allowedBlocks": ["elevation/cards-background-images"],
 	"supports": {
 		"html": true,
-		"align": false,
+		"anchor": true,
 		"alignWide": false,
+		"ariaLabel": false,
 		"color": {
 			"background": true,
 			"gradients": false,
-			"text": false,
+			"text": true,
 			"link": false,
 			"border": false
 		},
 		"spacing": {
-			"margin": ["top", "bottom"]
+			"margin": ["top", "bottom"],
+			"blockGap": false
+		},
+		"layout": false,
+		"interactivity": {
+			"clientNavigation": true
 		}
 	},
 	"attributes": {
@@ -27,39 +35,25 @@
 			"type": "string",
 			"default": ""
 		},
+		"align": {
+			"type": "array",
+			"default": "full"
+		},
+		"grid_column": {
+			"type": "string",
+			"default": "cards-3"
+		},
 		"preview": {
 			"type": "boolean",
 			"default": false
-		},
-		"url": {
-			"type": "string",
-			"default": "#"
-		},
-		"ariaLabel": {
-			"type": "string",
-			"default": ""
-		},
-		"target": {
-			"type": "boolean",
-			"default": false
-		},
-		"img": {
-			"type": "object",
-			"default": {
-				"url": "",
-				"alt": "",
-				"id": 0,
-				"srcset": "",
-				"width": 0,
-				"height": 0,
-				"sizes": "",
-				"focalPoint": {
-					"x": 0.5,
-					"y": 0.5
-				}
-			}
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
 		}
 	},
 	"editorScript": ["file:index.js"],
+	"style": ["file:style-index.css"],
 	"editorStyle": ["file:index.css"]
 }

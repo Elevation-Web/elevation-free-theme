@@ -1,0 +1,67 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Card: With Background Image, Title and subtitle.",
+	"name": "elevation/cards-background-images-card",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"description": "Cards with title, subtitle and background images",
+	"textdomain": "elevation",
+	"parent": ["elevation/group"],
+	"supports": {
+		"html": true,
+		"align": false,
+		"alignWide": false,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": true,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"]
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"preview": {
+			"type": "boolean",
+			"default": false
+		},
+		"tagName": {
+			"type": "string",
+			"default": "5"
+		},
+		"link": {
+			"type": "object",
+			"default": {
+				"text": "",
+				"url": "",
+				"target": false,
+				"ariaLabel": ""
+			}
+		},
+		"img": {
+			"type": "object",
+			"default": {
+				"url": "",
+				"alt": "",
+				"id": 0,
+				"srcset": "",
+				"width": 0,
+				"height": 0,
+				"sizes": "",
+				"focalPoint": {
+					"x": 0.5,
+					"y": 0.5
+				}
+			}
+		}
+	},
+	"editorScript": ["file:index.js"],
+	"editorStyle": ["file:index.css"]
+}
