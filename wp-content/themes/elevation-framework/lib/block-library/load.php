@@ -24,18 +24,42 @@ class Load
         }
     }
 
-    public function load_blocks()
+    // public function load_blocks()
+    // {
+    //     $blocks = $this->get_blocks();
+    //     $block_path = get_template_directory() . '/build/blocks/';
+
+    //     foreach ($blocks as $block) {
+    //         if (file_exists($block_path . $block . '/block.json')) {
+
+    //             register_block_type($block_path . $block . '/block.json');
+
+    //             if (file_exists($block_path . $block . '/index.php')) {
+    //                 include_once $block_path . $block . '/index.php';
+    //             }
+    //         }
+    //     }
+    // }
+
+    function load_blocks()
     {
-        $blocks = $this->get_blocks();
+        // Define la ruta del directorio donde se encuentran los bloques
         $block_path = get_template_directory() . '/build/blocks/';
 
-        foreach ($blocks as $block) {
-            if (file_exists($block_path . $block . '/block.json')) {
+        // Obtener una lista de todos los subdirectorios en el directorio de bloques
+        $directories = glob($block_path . '*/*', GLOB_ONLYDIR);
 
-                register_block_type($block_path . $block . '/block.json');
+        foreach ($directories as $dir) {
+            // Obtener el nombre del bloque a partir del nombre del directorio
+            $block = basename(rtrim($dir, '/'));
+            // Verificar si el archivo block.json existe en el directorio del bloque
+            if (file_exists($dir . '/' . 'block.json')) {
+                // Registrar el bloque
+                register_block_type($dir);
 
-                if (file_exists($block_path . $block . '/index.php')) {
-                    include_once $block_path . $block . '/index.php';
+                // Incluir el archivo render.php si existe
+                if (file_exists($dir . '/' . 'render.php')) {
+                    include_once $dir . '/' . 'render.php';
                 }
             }
         }

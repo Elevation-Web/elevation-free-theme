@@ -1,0 +1,34 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+
+.cards-background-images {
+	.cards-background-images-card__container-group {
+		border: none;
+
+		>.block-editor-inner-blocks {
+			>.block-editor-block-list__layout {
+				display: flex;
+				gap: 20px;
+				flex-wrap: wrap;
+			}
+		}
+	}
+
+	&.row-cards-3 {
+		.cards-background-images-card {
+			width: calc(33.3% - 15px) !important;
+		}
+	}
+
+	&.row-cards-2 {
+		.cards-background-images-card {
+			width: calc(50% - 15px) !important;
+
+			&__container {
+				width: calc(100% - 60px) !important;
+				height: calc(100% - 60px) !important;
+			}
+		}
+	}
+}

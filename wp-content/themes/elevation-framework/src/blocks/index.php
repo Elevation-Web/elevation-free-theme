@@ -28,20 +28,37 @@ function exclude_blocks($blocks)
 /**
  * Load Blocks
  */
-function load_blocks()
+function load_blocks($directory = null)
 {
-    $blocks = get_blocks();
-    $block_path = get_template_directory() . '/build/blocks/';
+    // Si no se proporciona un directorio, usar la ruta por defecto
+    if ($directory === null) {
+        $directory = get_template_directory() . '/build/blocks/';
+    }
 
-    foreach ($blocks as $block) {
-        if (file_exists($block_path . $block . '/block.json')) {
+    // Abrir el directorio
 
-            register_block_type($block_path . $block);
+    if ($handle = opendir($directory)) {
+        while (false !== ($entry = readdir($handle))) {
+            // Omitir los directorios '.' y '..'
+            if ($entry != "." && $entry != "..") {
+                $path = $directory . '/' . $entry;
 
-            if (file_exists($block_path . $block . '/render.php')) {
-                include_once $block_path . $block . '/render.php';
+                if (is_dir($path)) {
+                    // Si es un directorio, continuar la recursividad
+                    load_blocks($path);
+                } else {
+                    // Si es un archivo, procesar
+                    if (file_exists($path . '/block.json')) {
+                        register_block_type($path);
+
+                        if (file_exists($path . '/render.php')) {
+                            include_once $path . '/render.php';
+                        }
+                    }
+                }
             }
         }
+        closedir($handle);
     }
 }
 add_action('init', __NAMESPACE__ . '\load_blocks', 10);
