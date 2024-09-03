@@ -1,0 +1,232 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+	font-synthesis: none !important;
+	box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+
+	&::selection {
+		background-color: $selector_color;
+		color: white;
+	}
+}
+
+// /* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+
+	&::selection {
+		background-color: transparent;
+	}
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	//content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// main {
+// 	overflow: clip;
+// }
+
+/*end Reset default assets*/
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	opacity: 1 !important;
+	color: $ui-foreground-primary-text-body-text;
+	overflow-x: hidden;
+
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.has-h-1-font-size,
+.has-h-2-font-size,
+.has-h-3-font-size,
+.has-h-4-font-size,
+.has-h-5-font-size,
+.has-h-6-font-size,
+.wp-block-heading {
+	color: $ui-foreground-primary-text-headings;
+}
+
+[id] {
+	scroll-margin-top: $header-height-mobile;
+
+	@include media-breakpoint-up(xl) {
+		scroll-margin-top: $header-height-desktop;
+	}
+}
+
+body.logged-in {
+	// overflow-x: clip;
+
+	header.fixed-top {
+		margin-top: 0 !important;
+	}
+
+	.admin-view {
+		padding: 5px;
+		background-color: #000;
+		color: #fff;
+		display: inline-flex;
+		border-radius: 2px;
+		opacity: 0.4;
+		margin: 0 auto 30px;
+		position: relative;
+
+		&::after {
+			content: "[only admin can view this button]";
+			display: inline-block;
+			font-size: 11px;
+			margin-left: 5px;
+		}
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+
+	&[src$=".svg"] {
+		width: auto;
+	}
+
+	&::selection {
+		background-color: transparent;
+	}
+}
+
+button {
+	cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: inherit;
+}

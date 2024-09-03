@@ -36,7 +36,7 @@
 	padding: 36px 46px;
 }
 
-.important-text > * {
+.important-text>* {
 	color: #163f7b !important;
 }
 
@@ -75,4 +75,27 @@ blockquote {
 .block-editor-inserter__preview-container {
 	width: 100%;
 	max-width: 100%;
+}
+
+
+p {
+	color: $ui-foreground-primary-text-body-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.has-h-1-font-size,
+.has-h-2-font-size,
+.has-h-3-font-size,
+.has-h-4-font-size,
+.has-h-5-font-size,
+.has-h-6-font-size,
+.wp-block-heading {
+	&:not(.is-white) {
+		color: $ui-foreground-primary-text-headings;
+	}
 }

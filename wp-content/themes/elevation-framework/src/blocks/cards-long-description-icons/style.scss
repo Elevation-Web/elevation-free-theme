@@ -102,7 +102,6 @@
 			margin-top: 5px;
 			margin-bottom: 0px;
 			transition: all .2s;
-			color: $ui-foreground-primary-text-headings;
 		}
 	}
 
@@ -113,6 +112,7 @@
 	.cta {
 		@include stretched-link;
 		z-index: 3;
+		margin-top: 0px;
 		position: initial;
 	}
 

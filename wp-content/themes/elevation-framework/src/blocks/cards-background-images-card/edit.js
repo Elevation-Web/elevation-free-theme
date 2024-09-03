@@ -189,7 +189,7 @@ const Edit = (props) => {
 			</PanelBody>
 			<PanelBody title={__('Heading Options', 'elevation')}>
 				<SelectControl
-					label="label options"
+					label="Heading Size"
 					value={tagName}
 					options={headingOptions}
 					onChange={(newValue) => {
@@ -241,6 +241,7 @@ const Edit = (props) => {
 							textWrap: 'wrap',
 							margin: '0px',
 						}}
+						className="is-white"
 						tagName={'h' + tagName}
 						value={text}
 						allowedFormats={false}

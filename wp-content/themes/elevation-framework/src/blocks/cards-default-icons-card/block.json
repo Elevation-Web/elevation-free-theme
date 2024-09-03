@@ -87,7 +87,7 @@
 		},
 		"headingColor": {
 			"type": "string",
-			"default": "ui-foreground-primary-text-headings-span"
+			"default": "ui-foreground-primary-text-headings"
 		}
 	},
 	"editorScript": ["file:index.js"],

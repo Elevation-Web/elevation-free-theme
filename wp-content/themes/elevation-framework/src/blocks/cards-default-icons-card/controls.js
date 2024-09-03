@@ -178,7 +178,7 @@ export const Controls = (props) => {
 			</PanelBody>
 			<PanelBody title={__('Heading Settings', 'elevation')}>
 				<SelectControl
-					label="label options"
+					label="Heading Size"
 					value={tagName}
 					options={headingOptions}
 					onChange={(newValue) => {

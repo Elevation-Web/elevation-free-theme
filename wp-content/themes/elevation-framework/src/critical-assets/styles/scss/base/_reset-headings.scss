@@ -1,0 +1,37 @@
+$headingsMarginBottom: (
+	"h1": 14px,
+	"h2": 14px,
+	"h3": 12px,
+	"h4": 8px,
+	"h5": 8px,
+	"h6": 8px,
+	"p": 20px,
+);
+
+$headingsLineHeight: (
+	".has-h-1-font-size": 95%,
+	".has-h-2-font-size": 96%,
+	".has-h-3-font-size": 120%,
+	".has-h-4-font-size": 130%,
+	".has-h-5-font-size": 150%,
+	".has-h-6-font-size": 125%,
+);
+
+// Generate CSS for marginBottom using the selectors map
+$margin-bottom: generate-css($headingsMarginBottom, "margin-bottom");
+$line-height: generate-css($headingsLineHeight, "line-height");
+
+// Output the generated CSS
+@at-root {
+	@each $rule in $margin-bottom {
+		#{map-get($rule, selector)} {
+			#{map-get($rule, property)}: #{map-get($rule, value)};
+		}
+	}
+
+	@each $rule in $line-height {
+		#{map-get($rule, selector)} {
+			#{map-get($rule, property)}: #{map-get($rule, value)};
+		}
+	}
+}
