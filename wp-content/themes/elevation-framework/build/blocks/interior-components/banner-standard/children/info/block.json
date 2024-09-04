@@ -1,0 +1,15 @@
+{
+  "name": "elevation/banner-standard-info",
+  "version": "1.0.0",
+  "title": "Info",
+  "category": "elevation",
+  "icon": "format-image",
+  "description": "Info",
+  "supports": {
+    "html": false,
+    "anchor": false
+  },
+  "parent": [
+    "elevation/interior-components--banner-standard"
+  ]
+}

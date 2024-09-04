@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Elevation Group",
+	"name": "elevation/interior-components--group",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"description": "Container with option styles",
+	"textdomain": "elevation",
+	"supports": {
+		"html": true,
+		"align": ["full"],
+		"alignWide": false,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": false,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"]
+		}
+	},
+	"editorScript": ["file:index.js"],
+	"editorStyle": ["file:index.css"]
+}

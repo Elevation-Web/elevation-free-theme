@@ -1,0 +1,66 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Banner w/ Full Image",
+	"name": "elevation/interior-components--banner-full-img",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"icon": "format-image",
+	"description": "banner-full-img with title and description.",
+	"textdomain": "elevation",
+	"supports": {
+		"html": true,
+		"align": ["full"],
+		"alignWide": false,
+		"ariaLabel": true,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": true
+		},
+		"spacing": {
+			"margin": ["top", "bottom"]
+		}
+	},
+	"attributes": {
+		"preview": {
+			"type": "boolean",
+			"default": false
+		},
+		"align": {
+			"type": "array",
+			"default": "full"
+		},
+		"imgMobile": {
+			"type": "string",
+			"default": ""
+		},
+		"imgTablet": {
+			"type": "string",
+			"default": ""
+		},
+		"imgDesktop": {
+			"type": "string",
+			"default": ""
+		},
+		"imgAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"focalPointDesktop": {
+			"type": "object",
+			"default": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"script": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"]
+}

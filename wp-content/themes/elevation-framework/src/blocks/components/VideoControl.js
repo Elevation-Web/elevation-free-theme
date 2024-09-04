@@ -6,7 +6,7 @@ import {
 	SelectControl,
 	TextControl,
 } from '@wordpress/components';
-import { GetVideo } from '../utils/video';
+import { GetVideo } from '../../utils/video';
 
 const RemoveButton = ({ onRemove }) => {
 	return (
