@@ -1,10 +1,15 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import BackgroundPicture from '../../components/BackgroundPicture';
+
+/* Internal Dependencies */
+import { getBlockName } from '../../utils/helpers';
+
+/* Block */
 import json from './block.json';
 
 const save = (props) => {
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { blockId, name } = getBlockName(blockName);
 
 	const { attributes } = props;
 

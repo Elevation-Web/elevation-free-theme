@@ -9,6 +9,9 @@ import { PanelBody, __experimentalInputControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
 /* Internal Dependencies */
+import { getBlockName } from '../../utils/helpers';
+
+/* Block */
 import './editor.scss';
 import json from './block.json';
 import previewImage from './preview.webp';
@@ -20,7 +23,7 @@ const Edit = (props) => {
 	const { anchor, id, preview } = attributes;
 
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { blockId, name } = getBlockName(blockName);
 
 	const blockProps = useBlockProps({
 		className: `${name} alignfull`,
@@ -56,7 +59,7 @@ const Edit = (props) => {
 	return (
 		<>
 			<div
-				data-block-id={name}
+				data-block-id={blockId}
 				data-block-js="true"
 				id={anchor || id}
 				{...innerBlocksProps}
