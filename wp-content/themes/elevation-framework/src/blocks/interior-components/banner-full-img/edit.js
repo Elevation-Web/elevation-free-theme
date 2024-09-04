@@ -12,6 +12,7 @@ import { useEffect, useState } from '@wordpress/element';
 import BackgroundPicture from '../../components/BackgroundPicture';
 import { RemoveImageButton, UploadMedia } from '../../components/UploadMedia';
 import { getBlockName } from '../../utils/helpers';
+import { getImageAttributes } from '../../utils/getImageAttributes';
 
 /* Blocks */
 import json from './block.json';
@@ -53,82 +54,122 @@ const Edit = (props) => {
 		});
 	}, [props]);
 
-	const [newFocalPointDesktop, setNewFocalPointDesktop] = useState({
-		x: focalPointDesktop.x,
-		y: focalPointDesktop.y,
-	});
-
 	const styleImgDesktop = {
-		backgroundImage: `url(${attributes.imgDesktop})`,
+		backgroundImage: `url(${imgDesktop.url})`,
 		backgroundSize: 'cover',
-		backgroundPosition: `${newFocalPointDesktop.x * 100}% ${newFocalPointDesktop.y * 100}%`,
+		backgroundPosition: `${imgDesktop.focalPoint?.x * 100}% ${imgDesktop.focalPoint?.y * 100}%`,
 	};
 
-	useEffect(() => {
+	const setNewFocalPoint = (key, value) => {
 		setAttributes({
-			focalPointDesktop: newFocalPointDesktop,
+			[key]: {
+				...attributes[key],
+				focalPoint: value,
+			},
 		});
-	}, [newFocalPointDesktop]);
+	};
+	const removeImage = (key) => {
+		setAttributes({
+			[key]: {
+				url: '',
+				alt: '',
+				id: 0,
+				srcset: '',
+				width: 0,
+				height: 0,
+			},
+		});
+	};
+
+	const addMedia = (key, media) => {
+		const { fullSize, srcset, sizes, alt, id } = getImageAttributes(media);
+
+		setAttributes({
+			[key]: {
+				...attributes[key],
+				url: fullSize.url,
+				alt,
+				id,
+				srcset,
+				width: fullSize.width,
+				height: fullSize.height,
+				sizes,
+			},
+		});
+	};
 
 	const controls = (
 		<InspectorControls>
 			<PanelBody title={__('Background Image Desktop')}>
-				{attributes?.imgDesktop ? (
+				{imgDesktop.url ? (
 					<>
 						<FocalPointPicker
-							url={attributes.imgDesktop}
-							value={focalPointDesktop}
-							onDragStart={setNewFocalPointDesktop}
-							onDrag={setNewFocalPointDesktop}
-							onChange={setNewFocalPointDesktop}
+							url={imgDesktop.url}
+							value={imgDesktop.focalPoint}
+							onDragStart={(newValue) => {
+								setNewFocalPoint('imgDesktop', newValue);
+							}}
+							onDrag={(newValue) => {
+								setNewFocalPoint('imgDesktop', newValue);
+							}}
+							onChange={(newValue) => {
+								setNewFocalPoint('imgDesktop', newValue);
+							}}
 						/>
 						<div style={styleImgDesktop} />
 						<RemoveImageButton
-							attributes={attributes}
-							setAttributes={setAttributes}
-							attrId={'imgDesktop'}
+							onClick={(newValue) => {
+								removeImage('imgDesktop', newValue);
+							}}
 						/>
 					</>
 				) : (
 					<UploadMedia
-						attributes={attributes}
-						setAttributes={setAttributes}
-						attrId={'imgDesktop'}
+						value={imgDesktop.url}
+						onSelect={(newValue) => {
+							addMedia('imgDesktop', newValue);
+						}}
 					/>
 				)}
 			</PanelBody>
 			<PanelBody title={__('Background Image Tablet')}>
-				{attributes?.imgTablet ? (
+				{imgTablet ? (
 					<>
-						<img src={attributes.imgTablet} />
+						<img src={imgTablet} />
 						<RemoveImageButton
-							attributes={attributes}
-							setAttributes={setAttributes}
+							onClick={() => {
+								setAttributes({ imgTablet: '' });
+							}}
 							attrId={'imgTablet'}
 						/>
 					</>
 				) : (
 					<UploadMedia
-						attributes={attributes}
-						setAttributes={setAttributes}
+						value={imgTablet}
+						onSelect={({ url }) => {
+							setAttributes({ imgTablet: url });
+						}}
 						attrId={'imgTablet'}
 					/>
 				)}
 			</PanelBody>
 			<PanelBody title={__('Background Image Mobile')}>
-				{attributes?.imgMobile ? (
+				{imgMobile ? (
 					<>
-						<img src={attributes.imgMobile} />
+						<img src={imgMobile} />
 						<RemoveImageButton
-							attributes={attributes}
-							setAttributes={setAttributes}
+							onClick={() => {
+								setAttributes({ imgMobile: '' });
+							}}
 							attrId={'imgMobile'}
 						/>
 					</>
 				) : (
 					<UploadMedia
-						attributes={attributes}
-						setAttributes={setAttributes}
+						value={imgMobile}
+						onSelect={({ url }) => {
+							setAttributes({ imgMobile: url });
+						}}
 						attrId={'imgMobile'}
 					/>
 				)}

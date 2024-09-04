@@ -40,18 +40,19 @@
 			"default": ""
 		},
 		"imgDesktop": {
-			"type": "string",
-			"default": ""
-		},
-		"imgAlt": {
-			"type": "string",
-			"default": ""
-		},
-		"focalPointDesktop": {
 			"type": "object",
 			"default": {
-				"x": 0.5,
-				"y": 0.5
+				"url": "",
+				"alt": "",
+				"id": 0,
+				"srcset": "",
+				"width": 0,
+				"height": 0,
+				"sizes": "",
+				"focalPoint": {
+					"x": 0.5,
+					"y": 0.5
+				}
 			}
 		}
 	},

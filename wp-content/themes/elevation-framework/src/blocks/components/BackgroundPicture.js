@@ -7,14 +7,13 @@ const BackgroundPicture = ({
 	height,
 	className,
 	lazyload = true,
-	focalPointDesktop,
 }) => {
-	if (!imgDesktop) {
+	if (!imgDesktop?.url) {
 		return;
 	}
 
 	// Calculate object-position from focal point
-	const objectPositionDesktop = `${focalPointDesktop.x * 100}% ${focalPointDesktop.y * 100}%`;
+	const objectPositionDesktop = `${imgDesktop.focalPoint.x * 100}% ${imgDesktop.focalPoint.y * 100}%`;
 
 	return (
 		<picture className={className}>
@@ -27,7 +26,7 @@ const BackgroundPicture = ({
 			<img
 				decoding="async"
 				lazyload={lazyload ? 'lazy' : 'eager'}
-				src={imgDesktop}
+				src={imgDesktop.url}
 				alt={imgAlt}
 				width={width}
 				height={height}

@@ -1,0 +1,38 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "../../../critical-assets/styles/scss/layout/custom-container";
+
+.lists-intro-text-with-content-boxes-icons-item {
+	margin: 1px;
+	position: relative;
+	padding-top: 40px;
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 98%;
+		height: 98%;
+		border: 1px solid $ui-border-bounds;
+	}
+
+	&__container {
+		width: 100%;
+		border: none;
+	}
+
+	&__container {
+		justify-content: flex-start;
+	}
+
+	.wp-block-heading {
+		margin-top: 0px;
+
+		&::after {
+			content: none;
+		}
+	}
+
+
+}
