@@ -3,6 +3,7 @@
 use ElevationFramework\Lib\BlockLibrary\Helpers;
 
 $imgId = 0;
+
 if (isset($attributes['img']['id']) || isset($attributes['img']['url'])) :
     $imgId = isset($attributes['img']['id']) ? $attributes['img']['id'] : site_url() . $attributes['img']['url'];
     $imgInheritClassName = '';

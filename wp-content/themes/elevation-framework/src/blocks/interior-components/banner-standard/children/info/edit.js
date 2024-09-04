@@ -5,7 +5,7 @@ const Edit = (props) => {
 	const BANNER_STANDARD_INFO_ALLOWED_BLOCKS = [
 		'core/heading',
 		'core/paragraph',
-		'elevation/buttons',
+		'elevation/interior-components--buttons',
 	];
 	const BANNER_STANDARD_INFO_TEMPLATE = [
 		['core/heading', { level: 1 }],

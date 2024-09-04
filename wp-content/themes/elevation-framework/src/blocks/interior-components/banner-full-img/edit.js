@@ -1,3 +1,4 @@
+/* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
 import {
 	InnerBlocks,
@@ -6,16 +7,20 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, FocalPointPicker } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
-import json from './block.json';
-import './editor.scss';
+
+/* Internal Dependencies */
 import BackgroundPicture from '../../components/BackgroundPicture';
 import { RemoveImageButton, UploadMedia } from '../../components/UploadMedia';
+import { getBlockName } from '../../utils/helpers';
 
+/* Blocks */
+import json from './block.json';
+import './editor.scss';
 import previewImage from './preview.webp';
 
 const Edit = (props) => {
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { name, blockId } = getBlockName(blockName);
 
 	const BANNER_FULL_IMAGE_TEMPLATE = [
 		['core/heading', { level: 1 }],
@@ -150,7 +155,7 @@ const Edit = (props) => {
 	return (
 		<>
 			{controls}
-			<div data-block-id={name} {...blockProps} {...style}>
+			<div data-block-id={blockId} {...blockProps} {...style}>
 				<BackgroundPicture
 					imgMobile={imgMobile}
 					imgTablet={imgTablet}
@@ -168,7 +173,7 @@ const Edit = (props) => {
 							allowedBlocks={[
 								'core/heading',
 								'core/paragraph',
-								'elevation/buttons',
+								'elevation/interior-components--buttons',
 							]}
 						/>
 					</div>

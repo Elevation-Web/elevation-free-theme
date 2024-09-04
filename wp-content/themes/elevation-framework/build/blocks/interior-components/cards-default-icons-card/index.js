@@ -469,14 +469,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _preview_webp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./preview.webp */ "./src/blocks/interior-components/cards-default-icons-card/preview.webp");
 /* harmony import */ var _template__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./template */ "./src/blocks/interior-components/cards-default-icons-card/template.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-default-icons-card/block.json");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/cards-default-icons-card/editor.scss");
-/* harmony import */ var _controls__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controls */ "./src/blocks/interior-components/cards-default-icons-card/controls.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-default-icons-card/block.json");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/cards-default-icons-card/editor.scss");
+/* harmony import */ var _controls__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./controls */ "./src/blocks/interior-components/cards-default-icons-card/controls.js");
 
+
+/* Gutenberg Dependencies */
 
 
 
 /* Internal Dependencies */
+
 
 
 
@@ -489,8 +493,11 @@ __webpack_require__.r(__webpack_exports__);
 const Edit = props => {
   const {
     name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_6__;
-  const name = blockName.split('/')[1];
+  } = _block_json__WEBPACK_IMPORTED_MODULE_7__;
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_6__.getBlockName)(blockName);
   const {
     clientId,
     attributes,
@@ -531,9 +538,9 @@ const Edit = props => {
     }));
   }
 
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls__WEBPACK_IMPORTED_MODULE_8__.Controls, { ...props
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls__WEBPACK_IMPORTED_MODULE_9__.Controls, { ...props
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     id: anchor || id,
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -655,18 +662,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-default-icons-card/block.json");
-/* harmony import */ var _components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ImageWithFocalPoint */ "./src/blocks/components/ImageWithFocalPoint.js");
+/* harmony import */ var _components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/ImageWithFocalPoint */ "./src/blocks/components/ImageWithFocalPoint.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-default-icons-card/block.json");
 
 
+/* Gutenberg Dependencies */
+
+/* Internal Dependencies */
+
+
+
+/* Block */
 
 
 
 const save = props => {
   const {
     name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_2__;
-  const name = blockName.split('/')[1];
+  } = _block_json__WEBPACK_IMPORTED_MODULE_4__;
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_3__.getBlockName)(blockName);
   const {
     attributes
   } = props;
@@ -705,17 +723,17 @@ const save = props => {
     rel: 'noopener noreferrer'
   } : {};
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     id: anchor || id,
     ...blockProps,
     style: style
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${name}__container ${hasIconHover ? 'has-icon-hover' : ''}`
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_3__.ImageWithFocalPoint, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_2__.ImageWithFocalPoint, {
     img: icon,
     className: `${name}__icon `,
     selectorId: anchor || id
-  }), hasIconHover && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_3__.ImageWithFocalPoint, {
+  }), hasIconHover && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_2__.ImageWithFocalPoint, {
     img: iconHover,
     className: `${name}__icon hover`,
     selectorId: anchor || id
@@ -782,6 +800,27 @@ function getImageAttributes(imageObject, size = 'full') {
     id: imageObject.id
   };
 }
+
+/***/ }),
+
+/***/ "./src/blocks/utils/helpers.js":
+/*!*************************************!*\
+  !*** ./src/blocks/utils/helpers.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBlockName: () => (/* binding */ getBlockName)
+/* harmony export */ });
+const getBlockName = blockName => {
+  const newName = blockName.split('/')[1];
+  const className = newName.split('--');
+  return {
+    blockId: className.join('/'),
+    name: className[1]
+  };
+};
 
 /***/ }),
 
@@ -900,7 +939,7 @@ function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else i
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Card : Default+Icons.","name":"elevation/cards-default-icons-card","version":"1.0.0","category":"elevation-blocks","description":"Cards with title, subtitle.","textdomain":"elevation","parent":["elevation/group"],"supports":{"html":true,"align":false,"alignWide":false,"color":{"background":true,"gradients":false,"text":false,"link":false,"border":false},"spacing":{"margin":["top","bottom"]}},"attributes":{"id":{"type":"string","default":""},"preview":{"type":"boolean","default":false},"icon":{"type":"object","default":{"url":"/wp-content/themes/elevation-framework/src/blocks/cards-default-icons/images/icon-1.webp","alt":"","id":0,"srcset":"","width":"auto","height":"auto","sizes":""}},"hasIconHover":{"type":"boolean","default":false},"iconHover":{"type":"object","default":{"url":"","alt":"","id":0,"srcset":"","width":0,"height":0,"sizes":""}},"tagName":{"type":"string","default":"6"},"link":{"type":"object","default":{"text":"H6. Subheading lorem ipsum felis eget nunc","url":"","target":false,"ariaLabel":""}},"hasColorHover":{"type":"boolean","default":false},"backgroundColorHover":{"type":"string","default":"ui-foreground-primary-text-headings-span"},"textColorHover":{"type":"string","default":"ui-base-white"},"headingColor":{"type":"string","default":"ui-foreground-primary-text-headings"}},"editorScript":["file:index.js"],"editorStyle":["file:index.css"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Card : Default+Icons.","name":"elevation/interior-components--cards-default-icons-card","version":"1.0.0","category":"elevation-blocks","description":"Cards with title, subtitle.","textdomain":"elevation","parent":["elevation/interior-components--group"],"supports":{"html":true,"align":false,"alignWide":false,"color":{"background":true,"gradients":false,"text":false,"link":false,"border":false},"spacing":{"margin":["top","bottom"]}},"attributes":{"id":{"type":"string","default":""},"preview":{"type":"boolean","default":false},"icon":{"type":"object","default":{"url":"/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-default-icons/images/icon-1.webp","alt":"","id":0,"srcset":"","width":"auto","height":"auto","sizes":""}},"hasIconHover":{"type":"boolean","default":false},"iconHover":{"type":"object","default":{"url":"","alt":"","id":0,"srcset":"","width":0,"height":0,"sizes":""}},"tagName":{"type":"string","default":"6"},"link":{"type":"object","default":{"text":"H6. Subheading lorem ipsum felis eget nunc","url":"","target":false,"ariaLabel":""}},"hasColorHover":{"type":"boolean","default":false},"backgroundColorHover":{"type":"string","default":"ui-foreground-primary-text-headings-span"},"textColorHover":{"type":"string","default":"ui-base-white"},"headingColor":{"type":"string","default":"ui-foreground-primary-text-headings"}},"editorScript":["file:index.js"],"editorStyle":["file:index.css"]}');
 
 /***/ })
 

@@ -20,13 +20,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _customContainerOptions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./customContainerOptions */ "./src/blocks/interior-components/custom-container/customContainerOptions.json");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/custom-container/block.json");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/custom-container/editor.scss");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/custom-container/editor.scss");
+/* harmony import */ var _customContainerOptions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./customContainerOptions */ "./src/blocks/interior-components/custom-container/customContainerOptions.json");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/custom-container/block.json");
+
+
+/* Gutenberg Dependencies */
 
 
 
+/* Internal Dependencies */
 
+
+/* Block */
 
 
 
@@ -35,8 +42,10 @@ __webpack_require__.r(__webpack_exports__);
 const Edit = props => {
   const {
     name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_5__;
-  const name = blockName.split('/')[1];
+  } = _block_json__WEBPACK_IMPORTED_MODULE_7__;
+  const {
+    name
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_4__.getBlockName)(blockName);
   const {
     attributes,
     setAttributes
@@ -48,7 +57,7 @@ const Edit = props => {
     className: `${name} custom-container--${containerWidth}`
   }); // Process options from customContainerOptions.js
 
-  const customContainerOptionsArray = Object.values(_customContainerOptions__WEBPACK_IMPORTED_MODULE_4__.customContainerOptions).map(entry => {
+  const customContainerOptionsArray = Object.values(_customContainerOptions__WEBPACK_IMPORTED_MODULE_6__.customContainerOptions).map(entry => {
     return {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(entry.label),
       value: entry.value
@@ -150,16 +159,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/custom-container/block.json");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/custom-container/block.json");
 
+
+/* Gutenberg Dependencies */
+
+/* Internal Dependencies */
+
+
+/* Block */
 
 
 
 const save = props => {
   const {
     name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_2__;
-  const name = blockName.split('/')[1];
+  } = _block_json__WEBPACK_IMPORTED_MODULE_3__;
+  const {
+    name
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_2__.getBlockName)(blockName);
   const {
     attributes
   } = props;
@@ -174,6 +193,27 @@ const save = props => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (save);
+
+/***/ }),
+
+/***/ "./src/blocks/utils/helpers.js":
+/*!*************************************!*\
+  !*** ./src/blocks/utils/helpers.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBlockName: () => (/* binding */ getBlockName)
+/* harmony export */ });
+const getBlockName = blockName => {
+  const newName = blockName.split('/')[1];
+  const className = newName.split('--');
+  return {
+    blockId: className.join('/'),
+    name: className[1]
+  };
+};
 
 /***/ }),
 
@@ -257,7 +297,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Custom Container","name":"elevation/custom-container","version":"1.0.0","category":"elevation-blocks","description":"Container with option styles","textdomain":"elevation","supports":{"html":true,"align":["full"],"alignWide":false,"color":{"background":true,"gradients":false,"text":false,"link":false,"border":false},"spacing":{"margin":["top","bottom"]}},"attributes":{"containerWidth":{"type":"string","default":"default"}},"editorScript":["file:index.js"],"editorStyle":["file:index.css"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Custom Container","name":"elevation/interior-components--custom-container","version":"1.0.0","category":"elevation-blocks","description":"Container with option styles","textdomain":"elevation","supports":{"html":true,"align":["full"],"alignWide":false,"color":{"background":true,"gradients":false,"text":false,"link":false,"border":false},"spacing":{"margin":["top","bottom"]}},"attributes":{"containerWidth":{"type":"string","default":"default"}},"editorScript":["file:index.js"],"editorStyle":["file:index.css"]}');
 
 /***/ }),
 

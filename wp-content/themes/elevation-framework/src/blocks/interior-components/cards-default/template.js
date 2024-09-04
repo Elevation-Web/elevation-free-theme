@@ -1,14 +1,14 @@
 export const TEMPLATE = [
-	['elevation/spacer'],
+	['elevation/interior-components--spacer'],
 	[
-		'elevation/custom-container',
+		'elevation/interior-components--custom-container',
 		{
 			className: 'cards-icons__custom-container',
 			containerWidth: 'medium',
 		},
 		[
 			[
-				'elevation/group',
+				'elevation/interior-components--group',
 				{
 					className: '',
 				},
@@ -27,7 +27,7 @@ export const TEMPLATE = [
 						},
 					],
 					[
-						'elevation/spacer',
+						'elevation/interior-components--spacer',
 						{
 							space: 'spacer__extra-small',
 							line: false,
@@ -36,13 +36,13 @@ export const TEMPLATE = [
 				],
 			],
 			[
-				'elevation/group',
+				'elevation/interior-components--group',
 				{
 					className: 'cards-default-card__container-group',
 				},
 				[
 					[
-						'elevation/cards-default-card',
+						'elevation/interior-components--cards-default-card',
 						{
 							tagName: '5',
 							link: {
@@ -51,7 +51,7 @@ export const TEMPLATE = [
 						},
 					],
 					[
-						'elevation/cards-default-card',
+						'elevation/interior-components--cards-default-card',
 						{
 							tagName: '5',
 							link: {
@@ -63,12 +63,12 @@ export const TEMPLATE = [
 			],
 		],
 	],
-	['elevation/spacer'],
+	['elevation/interior-components--spacer'],
 ];
 
 export const allowedBlocks = [
 	'core/heading',
 	'core/paragraph',
-	'elevation/buttons',
-	'elevation/cards-icons',
+	'elevation/interior-components--buttons',
+	'elevation/interior-components--cards-icons',
 ];

@@ -4,9 +4,12 @@ import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 
 /* Internal Dependencies */
+import { getBlockName } from '../../utils/helpers';
+
+/* Block */
+import { options, lineOptions, linePositionOptions } from './options';
 import json from './block.json';
 import './editor.scss';
-import { options, lineOptions, linePositionOptions } from './options';
 
 const HeightSelectControl = ({ space, setAttributes }) => {
 	return (
@@ -25,11 +28,10 @@ const HeightSelectControl = ({ space, setAttributes }) => {
 
 const Edit = (props) => {
 	const { attributes, setAttributes } = props;
-
-	const name = json.name.split('/')[1];
+	const { name: blockName } = json;
+	const { name, blockId } = getBlockName(blockName);
 
 	const { anchor, space, line, lineType, linePosition } = attributes;
-
 	const blockProps = useBlockProps({
 		className: `${name} ${space} line-${line ? 'enable' : 'disable'} line-type-${lineType} position-${linePosition}`,
 	});
@@ -80,10 +82,10 @@ const Edit = (props) => {
 		<>
 			{controls}
 			<div
-				id={anchor}
 				{...blockProps}
+				data-block-id={blockId}
 				aria-hidden="true"
-				data-block-id={name}
+				id={anchor}
 			></div>
 		</>
 	);

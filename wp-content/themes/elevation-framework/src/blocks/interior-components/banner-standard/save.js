@@ -1,10 +1,15 @@
+/* Gutenberg Dependencies */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import BackgroundPicture from '../../components/BackgroundPicture';
+
+/* Internal Dependencies */
+import { getBlockName } from '../../utils/helpers';
+
+/* Block */
 import json from './block.json';
 
 const save = (props) => {
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes } = props;
 
@@ -19,7 +24,7 @@ const save = (props) => {
 		: '';
 
 	return (
-		<div data-block-id={name} {...blockProps} {...style}>
+		<div data-block-id={blockId} {...blockProps} {...style}>
 			<div className={`${withContainer}${name}__container`}>
 				<div className={`${name}__wrapper`}>
 					<InnerBlocks.Content />

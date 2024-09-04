@@ -26,6 +26,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-images-with-heading-description/block.json");
 /* harmony import */ var _preview_webp__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./preview.webp */ "./src/blocks/interior-components/cards-images-with-heading-description/preview.webp");
 /* harmony import */ var _template__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./template */ "./src/blocks/interior-components/cards-images-with-heading-description/template.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
 
 
 /* Gutenberg Dependencies */
@@ -40,7 +41,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const Edit = props => {
+  const {
+    name: blockName
+  } = _block_json__WEBPACK_IMPORTED_MODULE_6__;
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_9__.getBlockName)(blockName);
   const {
     clientId,
     attributes,
@@ -52,10 +61,6 @@ const Edit = props => {
     grid_column,
     preview
   } = attributes;
-  const {
-    name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_6__;
-  const name = blockName.split('/')[1];
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: `${name} alignfull row-${grid_column}`
   });
@@ -104,7 +109,7 @@ const Edit = props => {
   }
 
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, controls, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     "data-block-js": "true",
     id: anchor || id,
     ...innerBlocksProps
@@ -212,6 +217,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-images-with-heading-description/block.json");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+
+
+/* Gutenberg Dependencies */
+
+/* Internal Dependencies */
 
 
 
@@ -228,12 +239,15 @@ const save = props => {
   const {
     name: blockName
   } = _block_json__WEBPACK_IMPORTED_MODULE_2__;
-  const name = blockName.split('/')[1];
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_3__.getBlockName)(blockName);
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
     className: `${name} alignfull row-${grid_column}`
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     "data-block-js": "false",
     id: anchor || id,
     ...blockProps
@@ -254,47 +268,68 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const TEMPLATE = [['elevation/spacer'], ['elevation/custom-container', {
+const TEMPLATE = [['elevation/interior-components--spacer'], ['elevation/interior-components--custom-container', {
   className: 'cards-images__custom-container',
   containerWidth: 'medium'
-}, [['elevation/group', {
+}, [['elevation/interior-components--group', {
   className: ''
 }, [['core/heading', {
   level: 3,
   content: 'H3. Heading lorem ipsum euismod'
 }], ['core/paragraph', {
   content: `Maximum 50 words per paragraph. Libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum.`
-}], ['elevation/buttons', {}, [['elevation/button', {
+}], ['elevation/interior-components--buttons', {}, [['elevation/interior-components--button', {
   btnStyle: 'primary-1',
   text: 'Read More'
-}]]], ['elevation/spacer', {
+}]]], ['elevation/interior-components--spacer', {
   space: 'spacer__extra-small',
   line: true,
   lineType: 'dots'
-}]]], ['elevation/group', {
+}]]], ['elevation/interior-components--group', {
   className: 'cards-images-with-heading-description-card__container-group'
-}, [['elevation/cards-images-with-heading-description-card', {
+}, [['elevation/interior-components--cards-images-with-heading-description-card', {
   img: {
-    url: `/wp-content/themes/elevation-framework/src/blocks/cards-images-with-heading-description/images/image-1.webp`,
+    url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-images-with-heading-description/images/image-1.webp`,
     alt: ''
   }
-}], ['elevation/cards-images-with-heading-description-card', {
+}], ['elevation/interior-components--cards-images-with-heading-description-card', {
   img: {
-    url: `/wp-content/themes/elevation-framework/src/blocks/cards-images-with-heading-description/images/image-2.webp`,
+    url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-images-with-heading-description/images/image-2.webp`,
     alt: ''
   }
-}], ['elevation/cards-images-with-heading-description-card', {
+}], ['elevation/interior-components--cards-images-with-heading-description-card', {
   img: {
-    url: `/wp-content/themes/elevation-framework/src/blocks/cards-images-with-heading-description/images/image-3.webp`,
+    url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-images-with-heading-description/images/image-3.webp`,
     alt: ''
   }
-}]]], ['elevation/spacer', {
+}]]], ['elevation/interior-components--spacer', {
   space: 'spacer__extra-small',
   line: true,
   lineType: 'dots',
   linePosition: 'bottom'
-}]]], ['elevation/spacer']];
+}]]], ['elevation/interior-components--spacer']];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TEMPLATE);
+
+/***/ }),
+
+/***/ "./src/blocks/utils/helpers.js":
+/*!*************************************!*\
+  !*** ./src/blocks/utils/helpers.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBlockName: () => (/* binding */ getBlockName)
+/* harmony export */ });
+const getBlockName = blockName => {
+  const newName = blockName.split('/')[1];
+  const className = newName.split('--');
+  return {
+    blockId: className.join('/'),
+    name: className[1]
+  };
+};
 
 /***/ }),
 
@@ -398,7 +433,7 @@ module.exports = window["wp"]["i18n"];
   \*****************************************************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Cards, Layout: Images w/Heading+Description+Link","name":"elevation/cards-images-with-heading-description","version":"1.0.0","category":"elevation-blocks","icon":"button","description":"Cards container.","textdomain":"elevation","allowedBlocks":["elevation/cards-images"],"supports":{"html":true,"anchor":true,"alignWide":false,"ariaLabel":false,"color":{"background":true,"gradients":false,"text":true,"link":false,"border":false},"spacing":{"margin":["top","bottom"],"blockGap":false},"layout":false,"interactivity":{"clientNavigation":true}},"attributes":{"id":{"type":"string","default":""},"align":{"type":"array","default":"full"},"grid_column":{"type":"string","default":"cards-3"},"preview":{"type":"boolean","default":false}},"example":{"attributes":{"preview":true}},"editorScript":["file:index.js"],"style":["file:style-index.css"],"editorStyle":["file:index.css"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Cards, Layout: Images w/Heading+Description+Link","name":"elevation/interior-components--cards-images-with-heading-description","version":"1.0.0","category":"elevation-blocks","icon":"button","description":"Cards container.","textdomain":"elevation","allowedBlocks":["elevation/interior-components--cards-images"],"supports":{"html":true,"anchor":true,"alignWide":false,"ariaLabel":false,"color":{"background":true,"gradients":false,"text":true,"link":false,"border":false},"spacing":{"margin":["top","bottom"],"blockGap":false},"layout":false,"interactivity":{"clientNavigation":true}},"attributes":{"id":{"type":"string","default":""},"align":{"type":"array","default":"full"},"grid_column":{"type":"string","default":"cards-3"},"preview":{"type":"boolean","default":false}},"example":{"attributes":{"preview":true}},"editorScript":["file:index.js"],"style":["file:style-index.css"],"editorStyle":["file:index.css"]}');
 
 /***/ })
 

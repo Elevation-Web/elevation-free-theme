@@ -2,14 +2,14 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "title": "Buttons",
-  "name": "elevation/buttons",
+  "name": "elevation/interior-components--buttons",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "icon": "button",
   "description": "Buttons container.",
   "textdomain": "elevation",
   "allowedBlocks": [
-    "elevation/button"
+    "elevation/interior-components--button"
   ],
   "supports": {
     "html": true,

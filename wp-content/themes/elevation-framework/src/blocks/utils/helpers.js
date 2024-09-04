@@ -1,5 +1,6 @@
-export const getName = (name) => {
-	const newName = name.split('/');
+export const getBlockName = (blockName) => {
+	const newName = blockName.split('/')[1];
+	const className = newName.split('--');
 
-	return newName[1] + newName[2];
+	return { blockId: className.join('/'), name: className[1] };
 };

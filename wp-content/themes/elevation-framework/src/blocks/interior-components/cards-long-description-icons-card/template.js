@@ -1,8 +1,8 @@
 export const allowedBlocks = [
 	'core/heading',
 	'core/paragraph',
-	'elevation/card-icon-cotainer',
-	'elevation/buttons',
+	'elevation/interior-components--card-icon-cotainer',
+	'elevation/interior-components--buttons',
 ];
 
 export const template = [
@@ -23,11 +23,11 @@ export const template = [
 		},
 	],
 	[
-		'elevation/buttons',
+		'elevation/interior-components--buttons',
 		{},
 		[
 			[
-				'elevation/button',
+				'elevation/interior-components--button',
 				{
 					btnStyle: 'tertiary',
 				},

@@ -2,13 +2,13 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "title": "Card, Layout: Default.",
-  "name": "elevation/cards-default-card",
+  "name": "elevation/interior-components--cards-default-card",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "description": "Cards with title, subtitle.",
   "textdomain": "elevation",
   "parent": [
-    "elevation/group"
+    "elevation/interior-components--group"
   ],
   "supports": {
     "html": true,

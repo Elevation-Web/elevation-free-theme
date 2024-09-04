@@ -3,11 +3,7 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 
 .cards-default {
-	.components-popover__content {
-		width: 216px;
-	}
-
-	.cards-default-card__container-group {
+	&-card__container-group {
 		border: none;
 
 		>.block-editor-inner-blocks {

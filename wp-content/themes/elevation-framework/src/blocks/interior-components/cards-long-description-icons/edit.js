@@ -17,6 +17,7 @@ import './editor.scss';
 import json from './block.json';
 import previewImage from './preview.webp';
 import { TEMPLATE, allowedBlocks } from './template';
+import { getBlockName } from '../../utils/helpers';
 
 const Edit = (props) => {
 	const { clientId, attributes, setAttributes } = props;
@@ -24,7 +25,7 @@ const Edit = (props) => {
 	const { anchor, id, grid_column, preview } = attributes;
 
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { name, blockId } = getBlockName(blockName);
 
 	const blockProps = useBlockProps({
 		className: `${name} alignfull row-${grid_column}`,
@@ -89,7 +90,7 @@ const Edit = (props) => {
 		<>
 			{controls}
 			<div
-				data-block-id={name}
+				data-block-id={blockId}
 				data-block-js="true"
 				id={anchor || id}
 				{...innerBlocksProps}

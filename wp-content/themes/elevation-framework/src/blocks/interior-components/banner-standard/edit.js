@@ -1,13 +1,19 @@
+/* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { useEffect, useState } from '@wordpress/element';
+
+/* Interior Dependencies */
+import { getBlockName } from '../../utils/helpers';
+
+/* Block */
 import json from './block.json';
 import './editor.scss';
 import previewImage from './preview.webp';
 
 const Edit = (props) => {
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { name, blockId } = getBlockName(blockName);
 
 	const BANNER_STANDARD_ALLOWED_BLOCKS = [
 		'elevation/banner-standard-info',
@@ -20,7 +26,6 @@ const Edit = (props) => {
 	];
 
 	const { attributes } = props;
-
 	const { preview, style } = attributes;
 
 	const blockProps = useBlockProps({
@@ -55,7 +60,7 @@ const Edit = (props) => {
 
 	return (
 		<>
-			<div data-block-id={name} {...blockProps} {...style}>
+			<div data-block-id={blockId} {...blockProps} {...style}>
 				<div className={`${withContainer}${name}__container`}>
 					<div className={`${name}__wrapper`}>
 						<InnerBlocks

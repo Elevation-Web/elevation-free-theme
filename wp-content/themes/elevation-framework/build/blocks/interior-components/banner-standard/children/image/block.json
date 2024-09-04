@@ -11,6 +11,6 @@
     "inserter": false
   },
   "parent": [
-    "elevation/banner-standard"
+    "elevation/interior-components--banner-standard"
   ]
 }

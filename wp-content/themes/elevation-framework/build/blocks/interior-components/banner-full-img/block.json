@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "title": "Banner w/ Full Image",
-  "name": "elevation/banner-full-img",
+  "name": "elevation/interior-components--banner-full-img",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "icon": "format-image",

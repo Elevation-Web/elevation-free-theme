@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "title": "Banner Standard",
-  "name": "elevation/banner-standard",
+  "name": "elevation/interior-components--banner-standard",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "icon": "format-image",

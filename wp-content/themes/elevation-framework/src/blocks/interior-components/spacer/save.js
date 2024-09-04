@@ -1,8 +1,15 @@
+/* Gutenberg Dependencies */
 import { useBlockProps } from '@wordpress/block-editor';
+
+/* Internal Depencies */
+import { getBlockName } from '../../utils/helpers';
+
+/* Block */
 import json from './block.json';
 
 const save = (props) => {
-	const name = json.name.split('/')[1];
+	const { name: blockName } = json;
+	const { blockId, name } = getBlockName(blockName);
 
 	const { attributes } = props;
 
@@ -15,7 +22,7 @@ const save = (props) => {
 	return (
 		<div
 			id={anchor}
-			data-block-id={name}
+			data-block-id={blockId}
 			aria-hidden="true"
 			{...blockProps}
 		/>

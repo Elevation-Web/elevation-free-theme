@@ -192,8 +192,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-default/block.json");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-default/block.json");
 
+
+/* Gutenberg Dependencies */
+
+/* Internal Dependencies */
+
+
+/* Block */
 
 
 
@@ -208,13 +216,16 @@ const save = props => {
   } = attributes;
   const {
     name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_2__;
-  const name = 'interior-components/' + blockName.split('/')[1];
+  } = _block_json__WEBPACK_IMPORTED_MODULE_3__;
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_2__.getBlockName)(blockName);
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
     className: `${name} alignfull row-${grid_column}`
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     "data-block-js": "false",
     id: anchor || id,
     ...blockProps
@@ -236,33 +247,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   TEMPLATE: () => (/* binding */ TEMPLATE),
 /* harmony export */   allowedBlocks: () => (/* binding */ allowedBlocks)
 /* harmony export */ });
-const TEMPLATE = [['elevation/spacer'], ['elevation/custom-container', {
+const TEMPLATE = [['elevation/interior-components--spacer'], ['elevation/interior-components--custom-container', {
   className: 'cards-icons__custom-container',
   containerWidth: 'medium'
-}, [['elevation/group', {
+}, [['elevation/interior-components--group', {
   className: ''
 }, [['core/heading', {
   level: 2,
   content: 'H2. Heading lorem ipsum dolor sit amet'
 }], ['core/paragraph', {
   content: `Maximum 20 words. Viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac.`
-}], ['elevation/spacer', {
+}], ['elevation/interior-components--spacer', {
   space: 'spacer__extra-small',
   line: false
-}]]], ['elevation/group', {
+}]]], ['elevation/interior-components--group', {
   className: 'cards-default-card__container-group'
-}, [['elevation/cards-default-card', {
+}, [['elevation/interior-components--cards-default-card', {
   tagName: '5',
   link: {
     text: 'H5. Subheading lorem'
   }
-}], ['elevation/cards-default-card', {
+}], ['elevation/interior-components--cards-default-card', {
   tagName: '5',
   link: {
     text: 'H5. Subheading lorem'
   }
-}]]]]], ['elevation/spacer']];
-const allowedBlocks = ['core/heading', 'core/paragraph', 'elevation/buttons', 'elevation/cards-icons'];
+}]]]]], ['elevation/interior-components--spacer']];
+const allowedBlocks = ['core/heading', 'core/paragraph', 'elevation/interior-components--buttons', 'elevation/interior-components--cards-icons'];
+
+/***/ }),
+
+/***/ "./src/blocks/utils/helpers.js":
+/*!*************************************!*\
+  !*** ./src/blocks/utils/helpers.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBlockName: () => (/* binding */ getBlockName)
+/* harmony export */ });
+const getBlockName = blockName => {
+  const newName = blockName.split('/')[1];
+  const className = newName.split('--');
+  return {
+    blockId: className.join('/'),
+    name: className[1]
+  };
+};
 
 /***/ }),
 
@@ -366,7 +398,7 @@ module.exports = window["wp"]["i18n"];
   \*****************************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":" Cards, Layout: Default","name":"elevation/cards-default","version":"1.0.0","category":"elevation-blocks","icon":"button","description":"Cards container.","textdomain":"elevation","allowedBlocks":["elevation/cards-icons"],"supports":{"html":true,"anchor":true,"alignWide":false,"ariaLabel":false,"color":{"background":true,"gradients":false,"text":true,"link":false,"border":false},"spacing":{"margin":["top","bottom"],"blockGap":false},"layout":false,"interactivity":{"clientNavigation":true}},"attributes":{"id":{"type":"string","default":""},"align":{"type":"array","default":"full"},"preview":{"type":"boolean","default":false}},"example":{"attributes":{"preview":true}},"editorScript":["file:index.js"],"style":["file:style-index.css"],"editorStyle":["file:index.css"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":" Cards, Layout: Default","name":"elevation/interior-components--cards-default","version":"1.0.0","category":"elevation-blocks","icon":"button","description":"Cards container.","textdomain":"elevation","allowedBlocks":["elevation/interior-components--cards-icons"],"supports":{"html":true,"anchor":true,"alignWide":false,"ariaLabel":false,"color":{"background":true,"gradients":false,"text":true,"link":false,"border":false},"spacing":{"margin":["top","bottom"],"blockGap":false},"layout":false,"interactivity":{"clientNavigation":true}},"attributes":{"id":{"type":"string","default":""},"align":{"type":"array","default":"full"},"preview":{"type":"boolean","default":false}},"example":{"attributes":{"preview":true}},"editorScript":["file:index.js"],"style":["file:style-index.css"],"editorStyle":["file:index.css"]}');
 
 /***/ })
 

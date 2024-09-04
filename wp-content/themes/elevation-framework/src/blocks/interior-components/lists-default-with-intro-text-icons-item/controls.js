@@ -1,12 +1,11 @@
-/* External Dependencies */
 /* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
 import { PanelBody } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 
 /* Internal Dependencies */
-import { RemoveImageButton, UploadMedia } from '../components/UploadMedia';
-import { getImageAttributes } from '../utils/getImageAttributes';
+import { RemoveImageButton, UploadMedia } from '../../components/UploadMedia';
+import { getImageAttributes } from '../../utils/getImageAttributes';
 
 export const Controls = (props) => {
 	const { attributes, setAttributes } = props;

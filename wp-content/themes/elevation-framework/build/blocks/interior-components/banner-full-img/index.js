@@ -130,17 +130,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/banner-full-img/block.json");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/banner-full-img/editor.scss");
-/* harmony import */ var _components_BackgroundPicture__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/BackgroundPicture */ "./src/blocks/components/BackgroundPicture.js");
-/* harmony import */ var _components_UploadMedia__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/UploadMedia */ "./src/blocks/components/UploadMedia.js");
-/* harmony import */ var _preview_webp__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./preview.webp */ "./src/blocks/interior-components/banner-full-img/preview.webp");
+/* harmony import */ var _components_BackgroundPicture__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/BackgroundPicture */ "./src/blocks/components/BackgroundPicture.js");
+/* harmony import */ var _components_UploadMedia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/UploadMedia */ "./src/blocks/components/UploadMedia.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/banner-full-img/block.json");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/banner-full-img/editor.scss");
+/* harmony import */ var _preview_webp__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./preview.webp */ "./src/blocks/interior-components/banner-full-img/preview.webp");
+
+
+/* Gutenberg Dependencies */
 
 
 
 
+/* Internal Dependencies */
 
 
+
+
+/* Blocks */
 
 
 
@@ -149,8 +157,11 @@ __webpack_require__.r(__webpack_exports__);
 const Edit = props => {
   const {
     name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_5__;
-  const name = blockName.split('/')[1];
+  } = _block_json__WEBPACK_IMPORTED_MODULE_8__;
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_7__.getBlockName)(blockName);
   const BANNER_FULL_IMAGE_TEMPLATE = [['core/heading', {
     level: 1
   }], ['core/paragraph', {
@@ -202,11 +213,11 @@ const Edit = props => {
     onChange: setNewFocalPointDesktop
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: styleImgDesktop
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_8__.RemoveImageButton, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_6__.RemoveImageButton, {
     attributes: attributes,
     setAttributes: setAttributes,
     attrId: 'imgDesktop'
-  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_8__.UploadMedia, {
+  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_6__.UploadMedia, {
     attributes: attributes,
     setAttributes: setAttributes,
     attrId: 'imgDesktop'
@@ -214,11 +225,11 @@ const Edit = props => {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Background Image Tablet')
   }, attributes?.imgTablet ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: attributes.imgTablet
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_8__.RemoveImageButton, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_6__.RemoveImageButton, {
     attributes: attributes,
     setAttributes: setAttributes,
     attrId: 'imgTablet'
-  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_8__.UploadMedia, {
+  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_6__.UploadMedia, {
     attributes: attributes,
     setAttributes: setAttributes,
     attrId: 'imgTablet'
@@ -226,11 +237,11 @@ const Edit = props => {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Background Image Mobile')
   }, attributes?.imgMobile ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: attributes.imgMobile
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_8__.RemoveImageButton, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_6__.RemoveImageButton, {
     attributes: attributes,
     setAttributes: setAttributes,
     attrId: 'imgMobile'
-  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_8__.UploadMedia, {
+  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_UploadMedia__WEBPACK_IMPORTED_MODULE_6__.UploadMedia, {
     attributes: attributes,
     setAttributes: setAttributes,
     attrId: 'imgMobile'
@@ -240,7 +251,7 @@ const Edit = props => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: `${name}-preview`
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: _preview_webp__WEBPACK_IMPORTED_MODULE_9__,
+      src: _preview_webp__WEBPACK_IMPORTED_MODULE_10__,
       alt: "Preview",
       style: {
         objectFit: 'contain',
@@ -251,10 +262,10 @@ const Edit = props => {
   }
 
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, controls, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     ...blockProps,
     ...style
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_BackgroundPicture__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_BackgroundPicture__WEBPACK_IMPORTED_MODULE_5__["default"], {
     imgMobile: imgMobile,
     imgTablet: imgTablet,
     imgDesktop: imgDesktop,
@@ -269,7 +280,7 @@ const Edit = props => {
     className: `${name}__wrapper`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     template: BANNER_FULL_IMAGE_TEMPLATE,
-    allowedBlocks: ['core/heading', 'core/paragraph', 'elevation/buttons']
+    allowedBlocks: ['core/heading', 'core/paragraph', 'elevation/interior-components--buttons']
   })))));
 };
 
@@ -355,17 +366,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_BackgroundPicture__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/BackgroundPicture */ "./src/blocks/components/BackgroundPicture.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/banner-full-img/block.json");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/banner-full-img/block.json");
 
 
+/* Gutenberg Dependencies */
+
+/* Internal Dependencies */
+
+
+
+/* Block */
 
 
 
 const save = props => {
   const {
     name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_3__;
-  const name = blockName.split('/')[1];
+  } = _block_json__WEBPACK_IMPORTED_MODULE_4__;
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_3__.getBlockName)(blockName);
   const {
     attributes
   } = props;
@@ -382,7 +404,7 @@ const save = props => {
   });
   const withContainer = blockProps.className.includes('alignfull') ? 'container ' : '';
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     ...blockProps,
     ...style
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_BackgroundPicture__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -402,6 +424,27 @@ const save = props => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (save);
+
+/***/ }),
+
+/***/ "./src/blocks/utils/helpers.js":
+/*!*************************************!*\
+  !*** ./src/blocks/utils/helpers.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBlockName: () => (/* binding */ getBlockName)
+/* harmony export */ });
+const getBlockName = blockName => {
+  const newName = blockName.split('/')[1];
+  const className = newName.split('--');
+  return {
+    blockId: className.join('/'),
+    name: className[1]
+  };
+};
 
 /***/ }),
 
@@ -505,7 +548,7 @@ module.exports = window["wp"]["i18n"];
   \*******************************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Banner w/ Full Image","name":"elevation/banner-full-img","version":"1.0.0","category":"elevation-blocks","icon":"format-image","description":"banner-full-img with title and description.","textdomain":"elevation","supports":{"html":true,"align":["full"],"alignWide":false,"ariaLabel":true,"color":{"background":true,"gradients":false,"text":true},"spacing":{"margin":["top","bottom"]}},"attributes":{"preview":{"type":"boolean","default":false},"align":{"type":"array","default":"full"},"imgMobile":{"type":"string","default":""},"imgTablet":{"type":"string","default":""},"imgDesktop":{"type":"string","default":""},"imgAlt":{"type":"string","default":""},"focalPointDesktop":{"type":"object","default":{"x":0.5,"y":0.5}}},"example":{"attributes":{"preview":true}},"script":["file:index.js"],"style":["file:style-index.css"],"editorStyle":["file:index.css"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Banner w/ Full Image","name":"elevation/interior-components--banner-full-img","version":"1.0.0","category":"elevation-blocks","icon":"format-image","description":"banner-full-img with title and description.","textdomain":"elevation","supports":{"html":true,"align":["full"],"alignWide":false,"ariaLabel":true,"color":{"background":true,"gradients":false,"text":true},"spacing":{"margin":["top","bottom"]}},"attributes":{"preview":{"type":"boolean","default":false},"align":{"type":"array","default":"full"},"imgMobile":{"type":"string","default":""},"imgTablet":{"type":"string","default":""},"imgDesktop":{"type":"string","default":""},"imgAlt":{"type":"string","default":""},"focalPointDesktop":{"type":"object","default":{"x":0.5,"y":0.5}}},"example":{"attributes":{"preview":true}},"script":["file:index.js"],"style":["file:style-index.css"],"editorStyle":["file:index.css"]}');
 
 /***/ })
 

@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "title": "Cards, Layout: Images w/Heading",
-  "name": "elevation/cards-images-with-heading",
+  "name": "elevation/interior-components--cards-images-with-heading",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "icon": "button",

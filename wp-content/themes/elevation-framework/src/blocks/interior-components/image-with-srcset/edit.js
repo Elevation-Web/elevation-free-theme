@@ -1,3 +1,4 @@
+/* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
@@ -14,13 +15,21 @@ import {
 	PanelBody,
 } from '@wordpress/components';
 import { keyboardReturn } from '@wordpress/icons';
-import json from './block.json';
-import './editor.scss';
 import { useState, useEffect } from '@wordpress/element';
 
-const Edit = (props) => {
-	const { attributes, setAttributes, context } = props;
+/* Internal Dependencies */
+import { getBlockName } from '../../utils/helpers';
 
+/* Block */
+import json from './block.json';
+import './editor.scss';
+
+const Edit = (props) => {
+	const { name: blockName } = json;
+	const { name, blockId } = getBlockName(blockName);
+
+	const { attributes, setAttributes, context } = props;
+	const { img, link, isLazy } = attributes;
 	const inheritClassName = context['elevation/image-classname'];
 
 	useEffect(() => {
@@ -28,10 +37,6 @@ const Edit = (props) => {
 			inheritClassName: inheritClassName || 'media',
 		});
 	}, [inheritClassName, setAttributes]);
-
-	const name = json.name.split('/')[1];
-
-	const { img, link, isLazy } = attributes;
 
 	const blockProps = useBlockProps({
 		className: `${name} ${inheritClassName}`,

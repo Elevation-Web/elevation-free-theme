@@ -50,38 +50,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/keyboard-return.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/image-with-srcset/block.json");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/image-with-srcset/editor.scss");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/keyboard-return.js");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/image-with-srcset/block.json");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/image-with-srcset/editor.scss");
+
+
+/* Gutenberg Dependencies */
 
 
 
 
 
+/* Internal Dependencies */
+
+
+/* Block */
 
 
 
 
 const Edit = props => {
   const {
+    name: blockName
+  } = _block_json__WEBPACK_IMPORTED_MODULE_6__;
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_5__.getBlockName)(blockName);
+  const {
     attributes,
     setAttributes,
     context
   } = props;
-  const inheritClassName = context['elevation/image-classname'];
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useEffect)(() => {
-    setAttributes({
-      inheritClassName: inheritClassName || 'media'
-    });
-  }, [inheritClassName, setAttributes]);
-  const name = _block_json__WEBPACK_IMPORTED_MODULE_4__.name.split('/')[1];
   const {
     img,
     link,
     isLazy
   } = attributes;
+  const inheritClassName = context['elevation/image-classname'];
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
+    setAttributes({
+      inheritClassName: inheritClassName || 'media'
+    });
+  }, [inheritClassName, setAttributes]);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: `${name} ${inheritClassName}`
   });
@@ -99,7 +113,7 @@ const Edit = props => {
     });
   };
 
-  const [visible, setVisible] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)(false);
+  const [visible, setVisible] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
   const controls = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Image Settings')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
@@ -137,7 +151,7 @@ const Edit = props => {
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => setVisible(false),
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Apply'),
     type: "submit"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
@@ -206,6 +220,27 @@ const {
    */
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
+
+/***/ }),
+
+/***/ "./src/blocks/utils/helpers.js":
+/*!*************************************!*\
+  !*** ./src/blocks/utils/helpers.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBlockName: () => (/* binding */ getBlockName)
+/* harmony export */ });
+const getBlockName = blockName => {
+  const newName = blockName.split('/')[1];
+  const className = newName.split('--');
+  return {
+    blockId: className.join('/'),
+    name: className[1]
+  };
+};
 
 /***/ }),
 
@@ -309,7 +344,7 @@ module.exports = window["wp"]["primitives"];
   \*********************************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Image with Srcset","name":"elevation/image-with-srcset","version":"1.0.0","category":"elevation-blocks","icon":"format-image","description":"Image with Srcset for better performance.","textdomain":"elevation","supports":{"anchor":false,"align":false,"alignWide":false,"renaming":false,"inserter":true,"interactivity":{"clientNavigation":true},"lock":true},"attributes":{"img":{"type":"object","default":{"url":"","id":""}},"isLazy":{"type":"boolean","default":true},"link":{"type":"object","default":{"url":"","target":false}},"inheritClassName":{"type":"string","default":""}},"usesContext":["elevation/image-classname"],"editorScript":["file:index.js"],"editorStyle":["file:index.css"],"render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Image with Srcset","name":"elevation/interior-components--image-with-srcset","version":"1.0.0","category":"elevation-blocks","icon":"format-image","description":"Image with Srcset for better performance.","textdomain":"elevation","supports":{"anchor":false,"align":false,"alignWide":false,"renaming":false,"inserter":true,"interactivity":{"clientNavigation":true},"lock":true},"attributes":{"img":{"type":"object","default":{"url":"","id":""}},"isLazy":{"type":"boolean","default":true},"link":{"type":"object","default":{"url":"","target":false}},"inheritClassName":{"type":"string","default":""}},"usesContext":["elevation/image-classname"],"editorScript":["file:index.js"],"editorStyle":["file:index.css"],"render":"file:./render.php"}');
 
 /***/ })
 

@@ -2,13 +2,13 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "title": "List Item: Default w/Intro Text+Icons",
-  "name": "elevation/lists-default-with-intro-text-icons-item",
+  "name": "elevation/interior-components--lists-default-with-intro-text-icons-item",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "description": "Cards with title, subtitle.",
   "textdomain": "elevation",
   "parent": [
-    "elevation/group"
+    "elevation/interior-components--group"
   ],
   "supports": {
     "html": true,
@@ -40,7 +40,7 @@
     "icon": {
       "type": "object",
       "default": {
-        "url": "/wp-content/themes/elevation-framework/src/blocks/lists-default-with-icons/images/icon-1.webp",
+        "url": "/wp-content/themes/elevation-framework/src/blocks/interior-components/lists-default-with-icons/images/icon-1.webp",
         "alt": "",
         "id": 0,
         "srcset": "",

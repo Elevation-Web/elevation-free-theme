@@ -1,14 +1,14 @@
 const TEMPLATE = [
-	['elevation/spacer'],
+	['elevation/interior-components--spacer'],
 	[
-		'elevation/custom-container',
+		'elevation/interior-components--custom-container',
 		{
 			className: 'cards-images__custom-container',
 			containerWidth: 'medium',
 		},
 		[
 			[
-				'elevation/group',
+				'elevation/interior-components--group',
 				{
 					className: '',
 				},
@@ -27,11 +27,11 @@ const TEMPLATE = [
 						},
 					],
 					[
-						'elevation/buttons',
+						'elevation/interior-components--buttons',
 						{},
 						[
 							[
-								'elevation/button',
+								'elevation/interior-components--button',
 								{
 									btnStyle: 'primary-1',
 									text: 'Read More',
@@ -40,7 +40,7 @@ const TEMPLATE = [
 						],
 					],
 					[
-						'elevation/spacer',
+						'elevation/interior-components--spacer',
 						{
 							space: 'spacer__extra-small',
 							line: true,
@@ -50,35 +50,35 @@ const TEMPLATE = [
 				],
 			],
 			[
-				'elevation/group',
+				'elevation/interior-components--group',
 				{
 					className:
 						'cards-images-with-heading-description-card__container-group',
 				},
 				[
 					[
-						'elevation/cards-images-with-heading-description-card',
+						'elevation/interior-components--cards-images-with-heading-description-card',
 						{
 							img: {
-								url: `/wp-content/themes/elevation-framework/src/blocks/cards-images-with-heading-description/images/image-1.webp`,
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-images-with-heading-description/images/image-1.webp`,
 								alt: '',
 							},
 						},
 					],
 					[
-						'elevation/cards-images-with-heading-description-card',
+						'elevation/interior-components--cards-images-with-heading-description-card',
 						{
 							img: {
-								url: `/wp-content/themes/elevation-framework/src/blocks/cards-images-with-heading-description/images/image-2.webp`,
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-images-with-heading-description/images/image-2.webp`,
 								alt: '',
 							},
 						},
 					],
 					[
-						'elevation/cards-images-with-heading-description-card',
+						'elevation/interior-components--cards-images-with-heading-description-card',
 						{
 							img: {
-								url: `/wp-content/themes/elevation-framework/src/blocks/cards-images-with-heading-description/images/image-3.webp`,
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-images-with-heading-description/images/image-3.webp`,
 								alt: '',
 							},
 						},
@@ -87,7 +87,7 @@ const TEMPLATE = [
 			],
 
 			[
-				'elevation/spacer',
+				'elevation/interior-components--spacer',
 				{
 					space: 'spacer__extra-small',
 					line: true,
@@ -97,7 +97,7 @@ const TEMPLATE = [
 			],
 		],
 	],
-	['elevation/spacer'],
+	['elevation/interior-components--spacer'],
 ];
 
 export default TEMPLATE;

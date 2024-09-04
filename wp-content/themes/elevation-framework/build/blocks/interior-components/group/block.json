@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "title": "Elevation Group",
-  "name": "elevation/group",
+  "name": "elevation/interior-components--group",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "description": "Container with option styles",

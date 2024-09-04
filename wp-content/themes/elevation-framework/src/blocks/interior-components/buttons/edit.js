@@ -1,24 +1,20 @@
+/* Gutenberg Dependencies */
 import clsx from 'clsx';
 import { __ } from '@wordpress/i18n';
-import {
-	InnerBlocks,
-	useBlockProps,
-	useInnerBlocksProps,
-} from '@wordpress/block-editor';
-import {
-	PanelBody,
-	SelectControl,
-	TextControl,
-	__experimentalInputControl,
-} from '@wordpress/components';
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+
+/* Internal Dependencies */
+import { getBlockName } from '../../utils/helpers';
+
+/* Block */
 import json from './block.json';
 import './editor.scss';
 
 const Edit = (props) => {
-	const BUTTONS_TEMPLATE = [['elevation/button']];
+	const BUTTONS_TEMPLATE = [['elevation/interior-components--button']];
 
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { name } = getBlockName(blockName);
 
 	const blockProps = useBlockProps({
 		className: clsx(name),

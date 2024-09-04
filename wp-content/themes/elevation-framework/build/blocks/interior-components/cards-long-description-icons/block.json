@@ -2,14 +2,14 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "title": "Cards, Layout: Long Description+Icons",
-  "name": "elevation/cards-long-description-icons",
+  "name": "elevation/interior-components--cards-long-description-icons",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "icon": "button",
   "description": "Cards Icons container.",
   "textdomain": "elevation",
   "allowedBlocks": [
-    "elevation/cards-icons"
+    "elevation/interior-components--cards-icons"
   ],
   "supports": {
     "html": true,

@@ -1,10 +1,15 @@
+/* Gutenberg Dependencies */
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
-import json from './block.json';
+/* Internal Dependencies */
 import { ImageWithFocalPoint } from '../../components/ImageWithFocalPoint';
+import { getBlockName } from '../../utils/helpers';
+
+/* Block */
+import json from './block.json';
 
 const save = (props) => {
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes } = props;
 
@@ -28,7 +33,7 @@ const save = (props) => {
 	};
 
 	return (
-		<div data-block-id={name} id={anchor || id} {...blockProps}>
+		<div data-block-id={blockId} id={anchor || id} {...blockProps}>
 			<div
 				className={`${name}__icon-container ${hasIconHover ? 'has_icon-hover' : ''}`}
 				style={style}

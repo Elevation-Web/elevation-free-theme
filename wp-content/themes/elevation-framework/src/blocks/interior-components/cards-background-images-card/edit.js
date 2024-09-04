@@ -23,10 +23,12 @@ import { ImageWithFocalPoint } from '../../components/ImageWithFocalPoint';
 import './editor.scss';
 import json from './block.json';
 import { allowedBlocks, template } from './template';
+import { getBlockName } from '../../utils/helpers';
 
 const Edit = (props) => {
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { name, blockId } = getBlockName(blockName);
+
 	const { clientId, attributes, setAttributes } = props;
 
 	const { id, anchor, preview, img, link, tagName } = attributes;
@@ -221,7 +223,7 @@ const Edit = (props) => {
 	return (
 		<>
 			{controls}
-			<div data-block-id={name} id={anchor || id} {...blockProps}>
+			<div data-block-id={blockId} id={anchor || id} {...blockProps}>
 				<div className={`${name}__figure`}>
 					<ImageWithFocalPoint
 						img={img}

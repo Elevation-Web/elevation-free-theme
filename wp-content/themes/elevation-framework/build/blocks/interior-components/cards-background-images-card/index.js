@@ -134,6 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/cards-background-images-card/editor.scss");
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-background-images-card/block.json");
 /* harmony import */ var _template__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./template */ "./src/blocks/interior-components/cards-background-images-card/template.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
 
 
 
@@ -149,11 +150,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const Edit = props => {
   const {
     name: blockName
   } = _block_json__WEBPACK_IMPORTED_MODULE_10__;
-  const name = blockName.split('/')[1];
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_12__.getBlockName)(blockName);
   const {
     clientId,
     attributes,
@@ -337,7 +342,7 @@ const Edit = props => {
   }
 
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, controls, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     id: anchor || id,
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -462,6 +467,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-background-images-card/block.json");
 /* harmony import */ var _components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ImageWithFocalPoint */ "./src/blocks/components/ImageWithFocalPoint.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+
+
+/* Gutenberg Dependencies */
+
+/* Internal Dependencies */
 
 
 
@@ -471,7 +482,12 @@ const save = props => {
   const {
     name: blockName
   } = _block_json__WEBPACK_IMPORTED_MODULE_2__;
-  const name = blockName.split('/')[1];
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_4__.getBlockName)(blockName);
+  /*  */
+
   const {
     attributes
   } = props;
@@ -499,7 +515,7 @@ const save = props => {
     rel: 'noopener noreferrer'
   } : {};
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     id: anchor || id,
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -574,6 +590,27 @@ function getImageAttributes(imageObject, size = 'full') {
     id: imageObject.id
   };
 }
+
+/***/ }),
+
+/***/ "./src/blocks/utils/helpers.js":
+/*!*************************************!*\
+  !*** ./src/blocks/utils/helpers.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBlockName: () => (/* binding */ getBlockName)
+/* harmony export */ });
+const getBlockName = blockName => {
+  const newName = blockName.split('/')[1];
+  const className = newName.split('--');
+  return {
+    blockId: className.join('/'),
+    name: className[1]
+  };
+};
 
 /***/ }),
 
@@ -677,7 +714,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Card: With Background Image, Title and subtitle.","name":"elevation/cards-background-images-card","version":"1.0.0","category":"elevation-blocks","description":"Cards with title, subtitle and background images","textdomain":"elevation","parent":["elevation/group"],"supports":{"html":true,"align":false,"alignWide":false,"color":{"background":true,"gradients":false,"text":true,"link":false,"border":false},"spacing":{"margin":["top","bottom"]}},"attributes":{"id":{"type":"string","default":""},"preview":{"type":"boolean","default":false},"tagName":{"type":"string","default":"5"},"link":{"type":"object","default":{"text":"","url":"","target":false,"ariaLabel":""}},"img":{"type":"object","default":{"url":"","alt":"","id":0,"srcset":"","width":0,"height":0,"sizes":"","focalPoint":{"x":0.5,"y":0.5}}}},"editorScript":["file:index.js"],"editorStyle":["file:index.css"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Card: With Background Image, Title and subtitle.","name":"elevation/interior-components--cards-background-images-card","version":"1.0.0","category":"elevation-blocks","description":"Cards with title, subtitle and background images","textdomain":"elevation","parent":["elevation/interior-components--group"],"supports":{"html":true,"align":false,"alignWide":false,"color":{"background":true,"gradients":false,"text":true,"link":false,"border":false},"spacing":{"margin":["top","bottom"]}},"attributes":{"id":{"type":"string","default":""},"preview":{"type":"boolean","default":false},"tagName":{"type":"string","default":"5"},"link":{"type":"object","default":{"text":"","url":"","target":false,"ariaLabel":""}},"img":{"type":"object","default":{"url":"","alt":"","id":0,"srcset":"","width":0,"height":0,"sizes":"","focalPoint":{"x":0.5,"y":0.5}}}},"editorScript":["file:index.js"],"editorStyle":["file:index.css"]}');
 
 /***/ })
 

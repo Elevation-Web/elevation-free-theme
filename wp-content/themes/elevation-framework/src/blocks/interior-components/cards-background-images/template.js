@@ -1,14 +1,14 @@
 export const TEMPLATE = [
-	['elevation/spacer'],
+	['elevation/interior-components--spacer'],
 	[
-		'elevation/custom-container',
+		'elevation/interior-components--custom-container',
 		{
 			className: 'cards-background-images__custom-container',
 			containerWidth: 'medium',
 		},
 		[
 			[
-				'elevation/group',
+				'elevation/interior-components--group',
 				{
 					className: '',
 				},
@@ -27,11 +27,11 @@ export const TEMPLATE = [
 						},
 					],
 					[
-						'elevation/buttons',
+						'elevation/interior-components--buttons',
 						{},
 						[
 							[
-								'elevation/button',
+								'elevation/interior-components--button',
 								{
 									btnStyle: 'primary-1',
 									text: 'Read More',
@@ -40,7 +40,7 @@ export const TEMPLATE = [
 						],
 					],
 					[
-						'elevation/spacer',
+						'elevation/interior-components--spacer',
 						{
 							space: 'spacer__extra-small',
 							line: true,
@@ -50,16 +50,16 @@ export const TEMPLATE = [
 				],
 			],
 			[
-				'elevation/group',
+				'elevation/interior-components--group',
 				{
 					className: 'cards-background-images-card__container-group',
 				},
 				[
 					[
-						'elevation/cards-background-images-card',
+						'elevation/interior-components--cards-background-images-card',
 						{
 							img: {
-								url: `/wp-content/themes/elevation-framework/src/blocks/cards-background-images/images/image-1.webp`,
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-background-images/images/image-1.webp`,
 								alt: '',
 							},
 							link: {
@@ -69,10 +69,10 @@ export const TEMPLATE = [
 						},
 					],
 					[
-						'elevation/cards-background-images-card',
+						'elevation/interior-components--cards-background-images-card',
 						{
 							img: {
-								url: `/wp-content/themes/elevation-framework/src/blocks/cards-background-images/images/image-2.webp`,
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-background-images/images/image-2.webp`,
 								alt: '',
 							},
 							link: {
@@ -82,10 +82,10 @@ export const TEMPLATE = [
 						},
 					],
 					[
-						'elevation/cards-background-images-card',
+						'elevation/interior-components--cards-background-images-card',
 						{
 							img: {
-								url: `/wp-content/themes/elevation-framework/src/blocks/cards-background-images/images/image-3.webp`,
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-background-images/images/image-3.webp`,
 								alt: '',
 							},
 							link: {
@@ -98,7 +98,7 @@ export const TEMPLATE = [
 			],
 
 			[
-				'elevation/spacer',
+				'elevation/interior-components--spacer',
 				{
 					space: 'spacer__extra-small',
 					line: true,
@@ -108,12 +108,12 @@ export const TEMPLATE = [
 			],
 		],
 	],
-	['elevation/spacer'],
+	['elevation/interior-components--spacer'],
 ];
 
 export const allowedBlocks = [
 	'core/heading',
 	'core/paragraph',
-	'elevation/buttons',
-	'elevation/cards-background-images',
+	'elevation/interior-components--buttons',
+	'elevation/interior-components--cards-background-images',
 ];

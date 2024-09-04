@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "title": "Image with Srcset",
-  "name": "elevation/image-with-srcset",
+  "name": "elevation/interior-components--image-with-srcset",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "icon": "format-image",

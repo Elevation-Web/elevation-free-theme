@@ -222,17 +222,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _preview_webp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./preview.webp */ "./src/blocks/interior-components/lists-default-with-icons-item/preview.webp");
-/* harmony import */ var _template__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./template */ "./src/blocks/interior-components/lists-default-with-icons-item/template.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/lists-default-with-icons-item/block.json");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/lists-default-with-icons-item/editor.scss");
-/* harmony import */ var _controls__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controls */ "./src/blocks/interior-components/lists-default-with-icons-item/controls.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/lists-default-with-icons-item/block.json");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/lists-default-with-icons-item/editor.scss");
+/* harmony import */ var _controls__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controls */ "./src/blocks/interior-components/lists-default-with-icons-item/controls.js");
+/* harmony import */ var _preview_webp__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./preview.webp */ "./src/blocks/interior-components/lists-default-with-icons-item/preview.webp");
+/* harmony import */ var _template__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./template */ "./src/blocks/interior-components/lists-default-with-icons-item/template.js");
 
+
+/* Gutenberg Dependencies */
 
 
 
 /* Internal Dependencies */
-
 
 
 /* Block */
@@ -241,11 +243,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 const Edit = props => {
   const {
     name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_6__;
-  const name = blockName.split('/')[1];
+  } = _block_json__WEBPACK_IMPORTED_MODULE_5__;
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_4__.getBlockName)(blockName);
   const {
     clientId,
     attributes,
@@ -270,7 +277,7 @@ const Edit = props => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: `${name}-preview`
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: _preview_webp__WEBPACK_IMPORTED_MODULE_4__,
+      src: _preview_webp__WEBPACK_IMPORTED_MODULE_8__,
       alt: "Preview",
       style: {
         objectFit: 'contain',
@@ -280,9 +287,9 @@ const Edit = props => {
     }));
   }
 
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls__WEBPACK_IMPORTED_MODULE_8__.Controls, { ...props
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls__WEBPACK_IMPORTED_MODULE_7__.Controls, { ...props
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     id: anchor || id,
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -292,8 +299,8 @@ const Edit = props => {
     className: `${name}__icon`,
     selectorId: anchor || id
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
-    template: _template__WEBPACK_IMPORTED_MODULE_5__.template,
-    allowedBlocks: _template__WEBPACK_IMPORTED_MODULE_5__.allowedBlocks,
+    template: _template__WEBPACK_IMPORTED_MODULE_9__.template,
+    allowedBlocks: _template__WEBPACK_IMPORTED_MODULE_9__.allowedBlocks,
     templateLock: 'all'
   }))));
 };
@@ -385,18 +392,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/lists-default-with-icons-item/block.json");
-/* harmony import */ var _components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ImageWithFocalPoint */ "./src/blocks/components/ImageWithFocalPoint.js");
+/* harmony import */ var _components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/ImageWithFocalPoint */ "./src/blocks/components/ImageWithFocalPoint.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/lists-default-with-icons-item/block.json");
 
 
+/* Gutenberg Dependencies */
+
+/* Internal Dependencies */
+
+
+
+/* Block */
 
 
 
 const save = props => {
   const {
     name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_2__;
-  const name = blockName.split('/')[1];
+  } = _block_json__WEBPACK_IMPORTED_MODULE_4__;
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_3__.getBlockName)(blockName);
   const {
     attributes
   } = props;
@@ -409,12 +427,12 @@ const save = props => {
     className: `${name}`
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     id: anchor || id,
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${name}__container`
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_3__.ImageWithFocalPoint, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ImageWithFocalPoint__WEBPACK_IMPORTED_MODULE_2__.ImageWithFocalPoint, {
     img: icon,
     className: `${name}__icon `,
     selectorId: anchor || id
@@ -478,6 +496,27 @@ function getImageAttributes(imageObject, size = 'full') {
     id: imageObject.id
   };
 }
+
+/***/ }),
+
+/***/ "./src/blocks/utils/helpers.js":
+/*!*************************************!*\
+  !*** ./src/blocks/utils/helpers.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBlockName: () => (/* binding */ getBlockName)
+/* harmony export */ });
+const getBlockName = blockName => {
+  const newName = blockName.split('/')[1];
+  const className = newName.split('--');
+  return {
+    blockId: className.join('/'),
+    name: className[1]
+  };
+};
 
 /***/ }),
 
@@ -581,7 +620,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"List, Default w/Icon","name":"elevation/lists-default-with-icons-item","version":"1.0.0","category":"elevation-blocks","description":"Cards with title, subtitle.","textdomain":"elevation","parent":["elevation/group"],"supports":{"html":true,"align":false,"alignWide":false,"color":{"background":true,"gradients":false,"text":false,"link":false,"border":false},"spacing":{"margin":["top","bottom"]}},"attributes":{"id":{"type":"string","default":""},"preview":{"type":"boolean","default":false},"icon":{"type":"object","default":{"url":"/wp-content/themes/elevation-framework/src/blocks/lists-default-with-icons/images/icon-1.webp","alt":"","id":0,"srcset":"","width":"auto","height":"auto","sizes":""}}},"editorScript":["file:index.js"],"editorStyle":["file:index.css"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"List, Default w/Icon","name":"elevation/interior-components--lists-default-with-icons-item","version":"1.0.0","category":"elevation-blocks","description":"Cards with title, subtitle.","textdomain":"elevation","parent":["elevation/interior-components--group"],"supports":{"html":true,"align":false,"alignWide":false,"color":{"background":true,"gradients":false,"text":false,"link":false,"border":false},"spacing":{"margin":["top","bottom"]}},"attributes":{"id":{"type":"string","default":""},"preview":{"type":"boolean","default":false},"icon":{"type":"object","default":{"url":"/wp-content/themes/elevation-framework/src/blocks/interior-components/lists-default-with-icons/images/icon-1.webp","alt":"","id":0,"srcset":"","width":"auto","height":"auto","sizes":""}}},"editorScript":["file:index.js"],"editorStyle":["file:index.css"]}');
 
 /***/ })
 

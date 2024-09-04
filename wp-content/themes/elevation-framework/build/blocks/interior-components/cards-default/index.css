@@ -47,13 +47,10 @@
 */
 /*400;800*/
 /*500;700*/
-.cards-default .components-popover__content {
-  width: 216px;
-}
-.cards-default .cards-default-card__container-group {
+.cards-default-card__container-group {
   border: none;
 }
-.cards-default .cards-default-card__container-group > .block-editor-inner-blocks > .block-editor-block-list__layout {
+.cards-default-card__container-group > .block-editor-inner-blocks > .block-editor-block-list__layout {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;

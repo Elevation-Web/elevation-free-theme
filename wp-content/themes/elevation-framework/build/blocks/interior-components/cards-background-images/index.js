@@ -22,10 +22,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/cards-background-images/editor.scss");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-background-images/block.json");
-/* harmony import */ var _preview_webp__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./preview.webp */ "./src/blocks/interior-components/cards-background-images/preview.webp");
-/* harmony import */ var _template__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./template */ "./src/blocks/interior-components/cards-background-images/template.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/interior-components/cards-background-images/editor.scss");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-background-images/block.json");
+/* harmony import */ var _preview_webp__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./preview.webp */ "./src/blocks/interior-components/cards-background-images/preview.webp");
+/* harmony import */ var _template__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./template */ "./src/blocks/interior-components/cards-background-images/template.js");
 
 
 /* Gutenberg Dependencies */
@@ -34,6 +35,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* Internal Dependencies */
+
+
+/* Block */
 
 
 
@@ -54,15 +58,18 @@ const Edit = props => {
   } = attributes;
   const {
     name: blockName
-  } = _block_json__WEBPACK_IMPORTED_MODULE_6__;
-  const name = blockName.split('/')[1];
+  } = _block_json__WEBPACK_IMPORTED_MODULE_7__;
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_5__.getBlockName)(blockName);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: `${name} alignfull row-${grid_column}`
   });
   const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps)(blockProps, {
-    template: _template__WEBPACK_IMPORTED_MODULE_8__.TEMPLATE,
+    template: _template__WEBPACK_IMPORTED_MODULE_9__.TEMPLATE,
     templateInsertUpdatesSelection: true,
-    allowedBlocks: _template__WEBPACK_IMPORTED_MODULE_8__.allowedBlocks,
+    allowedBlocks: _template__WEBPACK_IMPORTED_MODULE_9__.allowedBlocks,
     orientation: 'horizontal'
   });
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
@@ -94,7 +101,7 @@ const Edit = props => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: `${name}-preview`
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: _preview_webp__WEBPACK_IMPORTED_MODULE_7__,
+      src: _preview_webp__WEBPACK_IMPORTED_MODULE_8__,
       alt: "Preview",
       style: {
         objectFit: 'contain',
@@ -105,7 +112,7 @@ const Edit = props => {
   }
 
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, controls, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     "data-block-js": "true",
     id: anchor || id,
     ...innerBlocksProps
@@ -213,6 +220,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/blocks/interior-components/cards-background-images/block.json");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/helpers */ "./src/blocks/utils/helpers.js");
+
+
+/* Gutenberg Dependencies */
+
+/* Internal Dependencies */
 
 
 
@@ -229,12 +242,15 @@ const save = props => {
   const {
     name: blockName
   } = _block_json__WEBPACK_IMPORTED_MODULE_2__;
-  const name = blockName.split('/')[1];
+  const {
+    name,
+    blockId
+  } = (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_3__.getBlockName)(blockName);
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
     className: `${name} alignfull row-${grid_column}`
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    "data-block-id": name,
+    "data-block-id": blockId,
     "data-block-js": "false",
     id: anchor || id,
     ...blockProps
@@ -256,59 +272,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   TEMPLATE: () => (/* binding */ TEMPLATE),
 /* harmony export */   allowedBlocks: () => (/* binding */ allowedBlocks)
 /* harmony export */ });
-const TEMPLATE = [['elevation/spacer'], ['elevation/custom-container', {
+const TEMPLATE = [['elevation/interior-components--spacer'], ['elevation/interior-components--custom-container', {
   className: 'cards-background-images__custom-container',
   containerWidth: 'medium'
-}, [['elevation/group', {
+}, [['elevation/interior-components--group', {
   className: ''
 }, [['core/heading', {
   level: 3,
   content: 'H3. Heading lorem ipsum euismod'
 }], ['core/paragraph', {
   content: `Maximum 50 words per paragraph. Libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum.`
-}], ['elevation/buttons', {}, [['elevation/button', {
+}], ['elevation/interior-components--buttons', {}, [['elevation/interior-components--button', {
   btnStyle: 'primary-1',
   text: 'Read More'
-}]]], ['elevation/spacer', {
+}]]], ['elevation/interior-components--spacer', {
   space: 'spacer__extra-small',
   line: true,
   lineType: 'dots'
-}]]], ['elevation/group', {
+}]]], ['elevation/interior-components--group', {
   className: 'cards-background-images-card__container-group'
-}, [['elevation/cards-background-images-card', {
+}, [['elevation/interior-components--cards-background-images-card', {
   img: {
-    url: `/wp-content/themes/elevation-framework/src/blocks/cards-background-images/images/image-1.webp`,
+    url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-background-images/images/image-1.webp`,
     alt: ''
   },
   link: {
     text: 'Heading lorem ipsum'
   },
   textColor: '$ui-base-white'
-}], ['elevation/cards-background-images-card', {
+}], ['elevation/interior-components--cards-background-images-card', {
   img: {
-    url: `/wp-content/themes/elevation-framework/src/blocks/cards-background-images/images/image-2.webp`,
+    url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-background-images/images/image-2.webp`,
     alt: ''
   },
   link: {
     text: 'Heading lorem ipsum'
   },
   textColor: '$ui-base-white'
-}], ['elevation/cards-background-images-card', {
+}], ['elevation/interior-components--cards-background-images-card', {
   img: {
-    url: `/wp-content/themes/elevation-framework/src/blocks/cards-background-images/images/image-3.webp`,
+    url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-background-images/images/image-3.webp`,
     alt: ''
   },
   link: {
     text: 'Heading lorem ipsum'
   },
   textColor: '$ui-base-white'
-}]]], ['elevation/spacer', {
+}]]], ['elevation/interior-components--spacer', {
   space: 'spacer__extra-small',
   line: true,
   lineType: 'dots',
   linePosition: 'bottom'
-}]]], ['elevation/spacer']];
-const allowedBlocks = ['core/heading', 'core/paragraph', 'elevation/buttons', 'elevation/cards-background-images'];
+}]]], ['elevation/interior-components--spacer']];
+const allowedBlocks = ['core/heading', 'core/paragraph', 'elevation/interior-components--buttons', 'elevation/interior-components--cards-background-images'];
+
+/***/ }),
+
+/***/ "./src/blocks/utils/helpers.js":
+/*!*************************************!*\
+  !*** ./src/blocks/utils/helpers.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBlockName: () => (/* binding */ getBlockName)
+/* harmony export */ });
+const getBlockName = blockName => {
+  const newName = blockName.split('/')[1];
+  const className = newName.split('--');
+  return {
+    blockId: className.join('/'),
+    name: className[1]
+  };
+};
 
 /***/ }),
 
@@ -412,7 +449,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Cards, Layout: Background Images","name":"elevation/cards-background-images","version":"1.0.0","category":"elevation-blocks","icon":"button","description":"Cards container.","textdomain":"elevation","allowedBlocks":["elevation/cards-background-images"],"supports":{"html":true,"anchor":true,"alignWide":false,"ariaLabel":false,"color":{"background":true,"gradients":false,"text":true,"link":false,"border":false},"spacing":{"margin":["top","bottom"],"blockGap":false},"layout":false,"interactivity":{"clientNavigation":true}},"attributes":{"id":{"type":"string","default":""},"align":{"type":"array","default":"full"},"grid_column":{"type":"string","default":"cards-3"},"preview":{"type":"boolean","default":false}},"example":{"attributes":{"preview":true}},"editorScript":["file:index.js"],"style":["file:style-index.css"],"editorStyle":["file:index.css"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"title":"Cards, Layout: Background Images","name":"elevation/interior-components--cards-background-images","version":"1.0.0","category":"elevation-blocks","icon":"button","description":"Cards container.","textdomain":"elevation","allowedBlocks":["elevation/interior-components--cards-background-images"],"supports":{"html":true,"anchor":true,"alignWide":false,"ariaLabel":false,"color":{"background":true,"gradients":false,"text":true,"link":false,"border":false},"spacing":{"margin":["top","bottom"],"blockGap":false},"layout":false,"interactivity":{"clientNavigation":true}},"attributes":{"id":{"type":"string","default":""},"align":{"type":"array","default":"full"},"grid_column":{"type":"string","default":"cards-3"},"preview":{"type":"boolean","default":false}},"example":{"attributes":{"preview":true}},"editorScript":["file:index.js"],"style":["file:style-index.css"],"editorStyle":["file:index.css"]}');
 
 /***/ })
 

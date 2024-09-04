@@ -2,13 +2,13 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "title": "Button",
-  "name": "elevation/button",
+  "name": "elevation/interior-components--button",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "icon": "button",
   "description": "Button with option styles",
   "parent": [
-    "elevation/buttons"
+    "elevation/interior-components--buttons"
   ],
   "textdomain": "elevation",
   "supports": {

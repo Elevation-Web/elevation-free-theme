@@ -21,11 +21,12 @@ import { RemoveImageButton, UploadMedia } from '../../components/UploadMedia';
 import { ImageWithFocalPoint } from '../../components/ImageWithFocalPoint';
 import './editor.scss';
 import json from './block.json';
+import { getBlockName } from '../../utils/helpers';
 
 const Edit = (props) => {
-	// get attrbitutes from props
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { name, blockId } = getBlockName(blockName);
+	/*  */
 	const { clientId, attributes, setAttributes } = props;
 	const { id, anchor, preview, img, link, tagName } = attributes;
 	const { url, text, target, ariaLabel } = link;
@@ -220,7 +221,7 @@ const Edit = (props) => {
 	return (
 		<>
 			{controls}
-			<div data-block-id={name} id={anchor || id} {...blockProps}>
+			<div data-block-id={blockId} id={anchor || id} {...blockProps}>
 				<ImageWithFocalPoint
 					img={img}
 					className={`${name}__img`}

@@ -9,5 +9,5 @@
 		"html": false,
 		"anchor": false
 	},
-	"parent": ["elevation/banner-standard"]
+	"parent": ["elevation/interior-components--banner-standard"]
 }
