@@ -1,3 +1,4 @@
+/* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import {
@@ -8,13 +9,19 @@ import {
 	__experimentalInputControl,
 } from '@wordpress/components';
 import { URLInputButton } from '@wordpress/block-editor';
+
+/* Internal Dependencies */
+import { getBlockName } from '../../utils/helpers';
+
+/* Block */
 import buttonOptions from './buttonOptions';
 import json from './block.json';
 import './editor.scss';
 
 const Edit = (props) => {
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { blockId, name } = getBlockName(blockName);
+
 	const { attributes, setAttributes } = props;
 
 	const { text, url, btnStyle, ariaLabel, target } = attributes;
