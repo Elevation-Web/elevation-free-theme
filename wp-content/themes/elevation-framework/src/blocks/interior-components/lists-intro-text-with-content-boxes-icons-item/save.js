@@ -20,7 +20,7 @@ const save = (props) => {
 	});
 
 	return (
-		<div data-block-id={blockId} id={anchor || id} {...blockProps}>
+		<li data-block-id={blockId} id={anchor || id} {...blockProps}>
 			<div className={`${name}__container`}>
 				<ImageWithFocalPoint
 					img={icon}
@@ -29,7 +29,7 @@ const save = (props) => {
 				/>
 				<InnerBlocks.Content />
 			</div>
-		</div>
+		</li>
 	);
 };
 

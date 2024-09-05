@@ -54,6 +54,7 @@ export const TEMPLATE = [
 				{
 					className:
 						'lists-intro-text-with-content-boxes-box__container-group',
+					tagName: 'ul',
 				},
 				[
 					[

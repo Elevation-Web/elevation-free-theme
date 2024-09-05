@@ -52,6 +52,7 @@ export const TEMPLATE = [
 				{
 					className:
 						'lists-default-with-intro-text-icons-item__container-group',
+					tagName: 'ul',
 				},
 				[
 					[

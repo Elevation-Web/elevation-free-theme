@@ -27,6 +27,7 @@ export const TEMPLATE = [
 				'elevation/interior-components--group',
 				{
 					className: 'lists-default-with-icons-item__container-group',
+					tagName: 'ul',
 				},
 				[
 					[

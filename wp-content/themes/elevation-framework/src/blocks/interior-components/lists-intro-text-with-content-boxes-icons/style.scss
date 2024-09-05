@@ -40,6 +40,7 @@
 	align-items: center;
 	transition: all .2s;
 	gap: 50px;
+	margin-bottom: 0px;
 
 	@include media-breakpoint-up(sm) {
 		width: 100%;
@@ -59,8 +60,9 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 30px;
+		padding: 0px !important;
+		margin: 0px !important;
 	}
-
 
 	&__icon {
 		margin-bottom: 19px;
