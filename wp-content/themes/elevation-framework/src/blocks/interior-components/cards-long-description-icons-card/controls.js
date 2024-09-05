@@ -21,7 +21,7 @@ export const Controls = (props) => {
 
 	const {
 		icon,
-		hasIconHover,
+		hasHover,
 		iconHover,
 		iconBackgroundColor,
 		backgroundColorHover,
@@ -117,14 +117,14 @@ export const Controls = (props) => {
 				</div>
 
 				<ToggleControl
-					label="Has Icon Hover"
-					help={hasIconHover ? 'Icon Hover in enable' : ''}
-					checked={hasIconHover}
+					label="Has Hover"
+					help={hasHover ? 'Icon Hover in enable' : ''}
+					checked={hasHover}
 					onChange={(newValue) =>
-						setAttributes({ hasIconHover: newValue })
+						setAttributes({ hasHover: newValue })
 					}
 				/>
-				{hasIconHover && (
+				{hasHover && (
 					<>
 						{iconHover.url ? (
 							<>
@@ -163,13 +163,15 @@ export const Controls = (props) => {
 							changeColor('iconBackgroundColor', newValue)
 						}
 					/>
-					<ColorPicker
-						color={backgroundColorHover}
-						label={'Background Color [Hover]'}
-						onChange={(newValue) =>
-							changeColor('backgroundColorHover', newValue)
-						}
-					/>
+					{hasHover && (
+						<ColorPicker
+							color={backgroundColorHover}
+							label={'Background Color [Hover]'}
+							onChange={(newValue) =>
+								changeColor('backgroundColorHover', newValue)
+							}
+						/>
+					)}
 				</VStack>
 			</PanelBody>
 		</InspectorControls>

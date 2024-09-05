@@ -19,7 +19,7 @@ const save = (props) => {
 		icon,
 		iconBackgroundColor,
 		backgroundColorHover,
-		hasIconHover,
+		hasHover,
 		iconHover,
 	} = attributes;
 
@@ -29,13 +29,15 @@ const save = (props) => {
 
 	const style = {
 		'background-color': iconBackgroundColor,
-		'--background-color': backgroundColorHover,
+		'--background-color': hasHover
+			? backgroundColorHover
+			: iconBackgroundColor,
 	};
 
 	return (
 		<div data-block-id={blockId} id={anchor || id} {...blockProps}>
 			<div
-				className={`${name}__icon-container ${hasIconHover ? 'has_icon-hover' : ''}`}
+				className={`${name}__icon-container ${hasHover ? 'has_icon-hover' : ''}`}
 				style={style}
 			>
 				<ImageWithFocalPoint
@@ -43,7 +45,7 @@ const save = (props) => {
 					className={`${name}__img`}
 					selectorId={anchor || id}
 				/>
-				{hasIconHover && (
+				{hasHover && (
 					<>
 						<ImageWithFocalPoint
 							img={iconHover}

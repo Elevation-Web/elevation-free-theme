@@ -1,7 +1,6 @@
 export const allowedBlocks = [
 	'core/heading',
 	'core/paragraph',
-	'elevation/interior-components--card-icon-cotainer',
 	'elevation/interior-components--buttons',
 ];
 

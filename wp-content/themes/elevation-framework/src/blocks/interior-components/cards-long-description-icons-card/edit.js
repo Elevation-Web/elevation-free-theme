@@ -64,7 +64,7 @@ const Edit = (props) => {
 					<InnerBlocks
 						template={template}
 						allowedBlocks={allowedBlocks}
-						templateLock={'all'}
+						templateLock={false}
 					/>
 				</div>
 			</div>
