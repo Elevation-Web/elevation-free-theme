@@ -1,17 +1,18 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "Elevation Group",
-  "name": "elevation/interior-components--group",
+  "title": "List Item: Link",
+  "name": "elevation/interior-components--lists-links-item",
   "version": "1.0.0",
   "category": "elevation-blocks",
-  "description": "Container with option styles",
+  "description": "List Item: Heading + Link.",
   "textdomain": "elevation",
+  "parent": [
+    "elevation/interior-components--group"
+  ],
   "supports": {
     "html": true,
-    "align": [
-      "full"
-    ],
+    "align": false,
     "alignWide": false,
     "color": {
       "background": true,
@@ -28,9 +29,13 @@
     }
   },
   "attributes": {
-    "tagName": {
+    "id": {
       "type": "string",
-      "default": "div"
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
     }
   },
   "editorScript": [
