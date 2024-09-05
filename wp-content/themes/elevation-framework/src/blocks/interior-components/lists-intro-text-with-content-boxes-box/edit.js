@@ -4,12 +4,12 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 
 /* Internal Dependencies */
-import previewImage from './preview.webp';
-import { allowedBlocks, template } from './template';
 import { getBlockName } from '../../utils/helpers';
 
 /* Block */
 import json from './block.json';
+import previewImage from './preview.webp';
+import { allowedBlocks, template } from './template';
 import './editor.scss';
 import { Controls } from './controls';
 
@@ -18,7 +18,7 @@ const Edit = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { clientId, attributes, setAttributes } = props;
-	const { id, anchor, preview, icon, iconBackgroundColor } = attributes;
+	const { id, anchor, preview, lineColor } = attributes;
 
 	useEffect(() => {
 		setAttributes({ id: `${name}-${clientId}` });
@@ -48,24 +48,17 @@ const Edit = (props) => {
 		<>
 			<Controls {...props} />
 			<div data-block-id={blockId} id={anchor || id} {...blockProps}>
-				<div
-					className={`${name}__icon-container no-hover`}
-					style={{ backgroundColor: iconBackgroundColor }}
-				>
-					{icon?.url && (
-						<img
-							src={icon.url}
-							className={`${name}__img`}
-							selectorId={anchor || id}
-						/>
-					)}
-				</div>
 				<div className={`${name}__container`}>
-					<InnerBlocks
-						template={template}
-						allowedBlocks={allowedBlocks}
-						templateLock={false}
-					/>
+					<div
+						className={`${name}__content`}
+						style={{ borderColor: lineColor }}
+					>
+						<InnerBlocks
+							template={template}
+							allowedBlocks={allowedBlocks}
+							templateLock={'all'}
+						/>
+					</div>
 				</div>
 			</div>
 		</>
