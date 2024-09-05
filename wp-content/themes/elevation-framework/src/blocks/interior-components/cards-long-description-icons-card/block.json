@@ -48,7 +48,7 @@
 			"type": "string",
 			"default": "ui-foreground-primary-text-headings-span"
 		},
-		"hasIconHover": {
+		"hasHover": {
 			"type": "boolean",
 			"default": false
 		},

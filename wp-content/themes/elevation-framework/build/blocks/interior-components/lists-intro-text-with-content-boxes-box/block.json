@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "List Box: Intro Text w/Content.",
+  "name": "elevation/interior-components--lists-intro-text-with-content-boxes-box",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "description": "Cards with title, subtitle.",
+  "textdomain": "elevation",
+  "parent": [
+    "elevation/interior-components--group"
+  ],
+  "supports": {
+    "html": true,
+    "align": false,
+    "alignWide": false,
+    "color": {
+      "background": true,
+      "gradients": false,
+      "text": false,
+      "link": false,
+      "border": false
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ]
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "lineColor": {
+      "type": "string",
+      "default": "ui-foreground-primary-accent-01"
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ]
+}
