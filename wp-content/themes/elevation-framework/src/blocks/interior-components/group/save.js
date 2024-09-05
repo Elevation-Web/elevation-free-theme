@@ -7,18 +7,23 @@ import { getBlockName } from '../../utils/helpers';
 /* Block */
 import json from './block.json';
 
-const save = (props) => {
+const save = ({ attributes }) => {
 	const { name: blockName } = json;
+
+	const { tagName } = attributes;
+
 	const { name } = getBlockName(blockName);
 
 	const blockProps = useBlockProps.save({
 		className: `${name} wp-block-group is-layout-flow wp-block-group-is-layout-flow`,
 	});
 
+	const CustomTag = `${tagName}`;
+
 	return (
-		<div {...blockProps}>
+		<CustomTag {...blockProps}>
 			<InnerBlocks.Content />
-		</div>
+		</CustomTag>
 	);
 };
 
