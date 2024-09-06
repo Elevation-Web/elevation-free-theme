@@ -1,0 +1,75 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "image-carousel-horizontal-centered",
+	"name": "elevation/interior-components--image-carousel-horizontal-centered",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"description": "Testimonials with title, description, Quote and Photo",
+	"textdomain": "elevation",
+	"supports": {
+		"html": true,
+		"align": false,
+		"alignWide": false,
+		"anchor": true,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": false,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"]
+		},
+		"interactivity": {
+			"clientNavigation": true
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"is_slider": {
+			"type": "boolean",
+			"default": true
+		},
+		"preview": {
+			"type": "boolean",
+			"default": false
+		},
+		"speed": {
+			"type": "string",
+			"default": "1000"
+		},
+		"pagination": {
+			"type": "string",
+			"default": "yes"
+		},
+		"navigation": {
+			"type": "string",
+			"default": "yes"
+		},
+		"scrollbar": {
+			"type": "string",
+			"default": "yes"
+		},
+		"keyboard": {
+			"type": "string",
+			"default": "yes"
+		},
+		"mousewheel": {
+			"type": "string",
+			"default": "yes"
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"script": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"]
+}

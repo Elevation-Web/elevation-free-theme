@@ -41,6 +41,10 @@
     "inheritClassName": {
       "type": "string",
       "default": ""
+    },
+    "showCaption": {
+      "type": "string",
+      "default": ""
     }
   },
   "usesContext": [

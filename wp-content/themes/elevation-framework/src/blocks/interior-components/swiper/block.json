@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Swiper Block",
+	"name": "elevation/interior-components--swiper",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"icon": "editor-expand",
+	"description": "Spacer block with responsive height",
+	"textdomain": "elevation",
+	"supports": {
+		"anchor": true,
+		"align": ["full"],
+		"alignWide": false,
+		"renaming": false
+	},
+	"attributes": {},
+	"script": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"viewScript": ["file:./view.js"],
+	"editorStyle": ["file:index.css"]
+}
