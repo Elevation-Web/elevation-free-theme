@@ -1,0 +1,48 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+
+.lists-bullets {
+	.wp-block-heading {
+		margin-top: 0px;
+	}
+
+	.lists-bullets__container {
+		border: none;
+
+		>.block-editor-inner-blocks {
+			width: 100%;
+
+			>.block-editor-block-list__layout {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 30px;
+			}
+		}
+	}
+
+	&-item {
+		position: relative;
+		padding-left: 15px;
+
+		@include media-breakpoint-up(xl) {
+			width: calc(33.3% - 55px);
+		}
+
+
+		&::before {
+			content: "";
+			margin-right: 10px;
+			font-size: 16px;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			display: inline-flex;
+			position: absolute;
+			margin-top: 0.5em;
+			background-color: $ui-foreground-primary-accent-01;
+		}
+	}
+}

@@ -51,7 +51,7 @@ export const TEMPLATE = [
 				'elevation/interior-components--group',
 				{
 					className:
-						'lists-default-with-intro-text-icons-item__container-group',
+						'lists-default-with-intro-text-icons__container-group',
 					tagName: 'ul',
 				},
 				[
