@@ -55,34 +55,10 @@ export const TEMPLATE = [
 					className: 'image-carousel-horizontal-centered__container',
 				},
 				[
-					[
-						'elevation/interior-components--image-with-srcset',
-						{
-							className: 'swiper-slide',
-							showCaption: true,
-						},
-					],
-					[
-						'elevation/interior-components--image-with-srcset',
-						{
-							className: 'swiper-slide',
-							showCaption: true,
-						},
-					],
-					[
-						'elevation/interior-components--image-with-srcset',
-						{
-							className: 'swiper-slide',
-							showCaption: true,
-						},
-					],
-					[
-						'elevation/interior-components--image-with-srcset',
-						{
-							className: 'swiper-slide',
-							showCaption: true,
-						},
-					],
+					['elevation/interior-components--image-carousel', {}],
+					['elevation/interior-components--image-carousel', {}],
+					['elevation/interior-components--image-carousel', {}],
+					['elevation/interior-components--image-carousel', {}],
 				],
 			],
 			[

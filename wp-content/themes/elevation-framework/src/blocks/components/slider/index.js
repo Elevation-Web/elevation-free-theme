@@ -9,7 +9,7 @@ function Slider(props, ref) {
 
 	const options = {
 		slidesPerView: 1,
-		speed: Number(speed),
+		speed: 1,
 		navigation: navigation == 'yes',
 		scrollbar: scrollbar == 'yes',
 		pagination: pagination == 'yes',

@@ -22,12 +22,6 @@ class SliderLayout extends Component {
 
 		this.sliderWrapper.classList.add('swiper-wrapper');
 
-		if (this.sliderWrapper.children.length > 0) {
-			Array.from(this.sliderWrapper.children).forEach((children) => {
-				children.classList.add('swiper-slide');
-			});
-		}
-
 		this.btnPrev =
 			this.sliderWrapper.parentNode.parentNode.querySelector(
 				'.prev-step'

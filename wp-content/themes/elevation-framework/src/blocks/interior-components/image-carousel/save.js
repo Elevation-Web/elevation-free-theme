@@ -14,7 +14,7 @@ const save = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const blockProps = useBlockProps.save({
-		className: `${name} `,
+		className: `${name} swiper-slide`,
 	});
 
 	return (

@@ -29,7 +29,7 @@ const Edit = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes, setAttributes, context } = props;
-	const { img, link, isLazy } = attributes;
+	const { img, link, isLazy, showCaption } = attributes;
 	const inheritClassName = context['elevation/image-classname'];
 
 	useEffect(() => {
@@ -43,11 +43,13 @@ const Edit = (props) => {
 	});
 
 	const setImageAttributes = (media) => {
-		const { url, id } = media;
+		const { url, id, caption } = media;
+
 		setAttributes({
 			img: {
 				url,
 				id,
+				caption,
 			},
 		});
 	};
@@ -128,11 +130,14 @@ const Edit = (props) => {
 			<div {...blockProps}>
 				{blockControls}
 				{img?.url ? (
-					<img
-						src={img?.url}
-						className={`${name}__img`}
-						loading={isLazy ? 'lazy' : 'eager'}
-					/>
+					<>
+						<img
+							src={img?.url}
+							className={`${name}__img`}
+							loading={isLazy ? 'lazy' : 'eager'}
+						/>
+						{true && img?.caption && <span>{img.caption}</span>}
+					</>
 				) : (
 					<MediaPlaceholder
 						onSelect={setImageAttributes}

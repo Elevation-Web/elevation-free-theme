@@ -35,7 +35,8 @@
       "type": "object",
       "default": {
         "url": "",
-        "target": false
+        "target": false,
+        "caption": ""
       }
     },
     "inheritClassName": {
@@ -43,8 +44,8 @@
       "default": ""
     },
     "showCaption": {
-      "type": "string",
-      "default": ""
+      "type": "boolean",
+      "default": false
     }
   },
   "usesContext": [

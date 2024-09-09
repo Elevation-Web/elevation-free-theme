@@ -1,30 +1,36 @@
 import clsx from 'clsx';
 /* Gutenberg Dependencies */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+
+/* Internal Dependencies */
+import { getBlockName } from '../../utils/helpers';
+
 /* Block */
 import swiperOptions from './swiper-options.json';
 import json from './block.json';
 
 const save = (props) => {
-	const { attributes } = props;
-	const { anchor, id, is_slider } = attributes;
 	const { name: blockName } = json;
-	const name = blockName.split('/')[1];
+	const { name, blockId } = getBlockName(blockName);
+
+	const { attributes } = props;
+	const { anchor, id } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: clsx(name, [is_slider ? `${name}__swiper` : '']),
+		className: clsx(name, 'alignfull'),
 	});
 
+	console.log('blockId', blockId);
 	return (
 		<div
-			data-block-id={name}
-			data-block-js="true"
 			id={anchor || id}
+			data-block-id={blockId}
+			data-block-js="true"
 			{...blockProps}
 		>
 			<div
 				id={'cotainer_' + id}
-				className="testimonials__swipper"
+				className={`${name}__container testimonials__swipper container`}
 				data-swiper-options={JSON.stringify(swiperOptions)}
 			>
 				<div className="swiper-wrapper">

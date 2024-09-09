@@ -144,6 +144,53 @@ class Helpers
         }
     }
 
+
+
+    /**
+     * Get the image from ACF.
+     * 
+     * @since 1.0.0
+     * 
+     * @param array $image The ACF field with the image.
+     * @param array $args The arguments to customize the image. Default is null.
+     *               Optional. Attributes for the image markup. Default is empty.
+     *              Supported keys:
+     *              - 'id'        (string|number) Image id to get caption. default null;
+     *              - 'echo'        (bool) Whether to echo the image HTML markup directly (true) or return it (false). Default is `true`
+     *              - 'class'       (string) The CSS class attribute for styling the figure tag, img will also get the class + "-image". Default is `media`
+     * 
+     * @return string This returns an image with the provided ACF. If there isn't one, it returns an empty string.
+     */
+    public static function global_caption($imageID = null, $args = null)
+    {
+        if (!$imageID) {
+            return;
+        }
+
+        $defaults = [
+            'echo' => true,
+            'class_name' => 'media',
+            'tag_name' => 'caption',
+        ];
+
+        $args = wp_parse_args($args, $defaults);
+
+        extract($args);
+
+        $image_data = wp_get_attachment_caption($imageID);
+        if (!$image_data) {
+            return;
+        }
+
+        $caption =   '<' . $tag_name . ' class="' . $class_name . '">' . $image_data .  '</' . $tag_name . '>';
+
+        if ($echo) {
+            echo $caption;
+        } else {
+            return $caption;
+        }
+    }
+
     public static function global_link($link)
     {
         if (is_array($link) && $link['link_text']) {

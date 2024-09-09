@@ -16,17 +16,26 @@
     "alignWide": false,
     "renaming": false
   },
-  "attributes": {},
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "is_slider": {
+      "type": "boolean",
+      "default": true
+    }
+  },
   "script": [
     "file:index.js"
   ],
   "style": [
     "file:style-index.css"
   ],
-  "viewScript": [
-    "file:./view.js"
-  ],
   "editorStyle": [
     "file:index.css"
+  ],
+  "viewScript": [
+    "file:./view.js"
   ]
 }

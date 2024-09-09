@@ -1,7 +1,7 @@
 /* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { __experimentalInputControl, Button } from '@wordpress/components';
+import { __experimentalInputControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
 /* Internal Dependencies */
@@ -26,7 +26,7 @@ const Edit = (props) => {
 	}, [clientId, name, setAttributes]);
 
 	const blockProps = useBlockProps({
-		className: `${name} `,
+		className: `${name} swiper-slide`,
 	});
 
 	if (preview) {
@@ -56,7 +56,7 @@ const Edit = (props) => {
 				<InnerBlocks
 					template={TEMPLATE}
 					allowedBlocks={allowedBlocks}
-					templateLock={false}
+					templateLock={'all'}
 				/>
 			</div>
 		</>
