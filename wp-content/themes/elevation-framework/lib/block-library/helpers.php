@@ -169,8 +169,8 @@ class Helpers
 
         $defaults = [
             'echo' => true,
-            'class_name' => 'media',
-            'tag_name' => 'caption',
+            'class_name' => 'media-caption',
+            'tag_name' => 'span',
         ];
 
         $args = wp_parse_args($args, $defaults);

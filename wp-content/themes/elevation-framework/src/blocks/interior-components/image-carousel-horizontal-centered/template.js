@@ -4,7 +4,7 @@ export const TEMPLATE = [
 		'elevation/interior-components--custom-container',
 		{
 			className: 'cards-icons__custom-container',
-			containerWidth: 'medium',
+			containerWidth: 'small',
 		},
 		[
 			[
@@ -16,35 +16,22 @@ export const TEMPLATE = [
 					[
 						'core/heading',
 						{
-							level: 4,
-							content: 'H4. Heading lorem ipsum euismod',
+							level: 2,
+							content: 'H2. Heading lorem ipsum',
+							textAlign: 'center',
 						},
 					],
 					[
 						'core/paragraph',
 						{
-							content: `Maximum 50 words per paragraph. Libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum.`,
+							content: `Maximum 30 words. Urna nunc id cursus metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget duis.`,
+							align: 'center',
 						},
-					],
-					[
-						'elevation/interior-components--buttons',
-						{},
-						[
-							[
-								'elevation/interior-components--button',
-								{
-									btnStyle: 'secondary',
-									text: 'Read More',
-								},
-							],
-						],
 					],
 					[
 						'elevation/interior-components--spacer',
 						{
-							space: 'spacer__extra-small',
-							line: true,
-							lineType: 'dots',
+							space: 'spacer__small',
 						},
 					],
 				],

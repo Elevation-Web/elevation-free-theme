@@ -6,7 +6,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { getBlockName } from '../../utils/helpers';
 
 /* Block */
-import swiperOptions from './swiper-options.json';
+import options from './swiper-options.json';
 import json from './block.json';
 
 const save = (props) => {
@@ -14,13 +14,44 @@ const save = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes } = props;
-	const { anchor, id } = attributes;
+	const {
+		anchor,
+		id,
+		loop,
+		spaceBetween,
+		slidesPerView,
+		centeredSlides,
+		grabCursor,
+		slideToClickSlide,
+		disableOnInteraction,
+		dynamicBullets,
+		slidesPerViewSm,
+		slidesPerViewMd,
+		slidesPerViewLg,
+		slidesPerViewXl,
+		slidesPerViewXxl,
+	} = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: clsx(name, 'alignfull'),
+		className: clsx(name),
 	});
 
-	console.log('blockId', blockId);
+	const swiperOptions = {
+		...options,
+		spaceBetween,
+		slidesPerView,
+		centeredSlides,
+		grabCursor,
+		slideToClickSlide,
+		disableOnInteraction,
+		dynamicBullets,
+		slidesPerViewSm,
+		slidesPerViewMd,
+		slidesPerViewLg,
+		slidesPerViewXl,
+		slidesPerViewXxl,
+	};
+
 	return (
 		<div
 			id={anchor || id}
@@ -36,10 +67,12 @@ const save = (props) => {
 				<div className="swiper-wrapper">
 					<InnerBlocks.Content />
 				</div>
-				<div className="swiper__container-controls center swiper-bottom">
+				<div className="swiper__container-actions">
 					<div className="swiper-button-prev"></div>
-					<div className="swiper-pagination"></div>
 					<div className="swiper-button-next"></div>
+				</div>
+				<div className="swiper__container-controls">
+					<div className="swiper-pagination"></div>
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "image-carousel-horizontal-centered",
+  "title": "Image Carousel, Layout: Horizontal Centered",
   "name": "elevation/interior-components--image-carousel-horizontal-centered",
   "version": "1.0.0",
   "category": "elevation-blocks",

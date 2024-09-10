@@ -1,12 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"title": "Image Item",
+	"title": "Image Carousel, Item",
 	"name": "elevation/interior-components--image-carousel",
 	"version": "1.0.0",
 	"category": "elevation-blocks",
 	"description": "Image Container",
 	"textdomain": "elevation",
+	"parent": ["elevation/interior-components--swiper"],
 	"supports": {
 		"html": true,
 		"align": false,

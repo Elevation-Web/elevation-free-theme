@@ -43,7 +43,13 @@ const Edit = (props) => {
 				{...blockProps}
 			>
 				<Slider ref={ref} attributes={props.attributes} {...props}>
-					<InnerBlocks templateLock={false} {...wrapperProps} />
+					<InnerBlocks
+						templateLock={false}
+						allowedBlocks={[
+							'elevation/interior-components--image-carousel',
+						]}
+						{...wrapperProps}
+					/>
 				</Slider>
 				<div className="swiper-controls__container">
 					<Button variant="secondary" className="prev-step">
