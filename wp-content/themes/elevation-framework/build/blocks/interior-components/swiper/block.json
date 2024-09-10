@@ -1,0 +1,89 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Swiper Block",
+  "name": "elevation/interior-components--swiper",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "icon": "editor-expand",
+  "description": "Spacer block with responsive height",
+  "textdomain": "elevation",
+  "supports": {
+    "anchor": true,
+    "align": [
+      "full"
+    ],
+    "alignWide": false,
+    "renaming": false
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "loop": {
+      "type": "boolean",
+      "default": true
+    },
+    "spaceBetween": {
+      "type": "number",
+      "default": 30
+    },
+    "slidesPerView": {
+      "type": "number",
+      "default": 1
+    },
+    "centeredSlides": {
+      "type": "boolean",
+      "default": false
+    },
+    "grabCursor": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideToClickSlide": {
+      "type": "boolean",
+      "default": true
+    },
+    "disableOnInteraction": {
+      "type": "boolean",
+      "default": true
+    },
+    "dynamicBullets": {
+      "type": "boolean",
+      "default": false
+    },
+    "slidesPerViewSm": {
+      "type": "number",
+      "default": 1
+    },
+    "slidesPerViewMd": {
+      "type": "number",
+      "default": 1
+    },
+    "slidesPerViewLg": {
+      "type": "number",
+      "default": 1
+    },
+    "slidesPerViewXl": {
+      "type": "number",
+      "default": 1
+    },
+    "slidesPerViewXxl": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "script": [
+    "file:index.js"
+  ],
+  "style": [
+    "file:style-index.css"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ],
+  "viewScript": [
+    "file:./view.js"
+  ]
+}

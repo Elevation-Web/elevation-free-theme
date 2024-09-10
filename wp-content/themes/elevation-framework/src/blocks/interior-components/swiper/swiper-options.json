@@ -1,0 +1,15 @@
+{
+	"loop": true,
+	"spaceBetween": 30,
+	"slidesPerView": 1,
+	"centeredSlides": false,
+	"grabCursor": false,
+	"slideToClickSlide": true,
+	"disableOnInteraction": true,
+	"dynamicBullets": false,
+	"slidesPerViewSm": 1,
+	"slidesPerViewMd": 1,
+	"slidesPerViewLg": 2,
+	"slidesPerViewXl": 2,
+	"slidesPerViewXxl": 2
+}

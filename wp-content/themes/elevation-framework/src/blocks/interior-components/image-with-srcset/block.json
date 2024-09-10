@@ -35,12 +35,17 @@
 			"type": "object",
 			"default": {
 				"url": "",
-				"target": false
+				"target": false,
+				"caption": ""
 			}
 		},
 		"inheritClassName": {
 			"type": "string",
 			"default": ""
+		},
+		"showCaption": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"usesContext": ["elevation/image-classname"],

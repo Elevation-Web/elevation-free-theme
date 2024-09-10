@@ -4,6 +4,14 @@ import { addCSS, addJS, base } from './utils';
 const loadBlocksCSSandJS = (excludedBlocks, exclude = false) => {
 	let uniqueBlocksIds = [];
 
+	const blocksWithJs = Array.from(
+		document.querySelectorAll('[data-block-js]')
+	);
+
+	const blocksWithJsArray = blocksWithJs.map(
+		(block) => block.dataset.blockId
+	);
+
 	if (exclude) {
 		if (excludedBlocks.length === 0) return;
 		uniqueBlocksIds = excludedBlocks;
@@ -31,8 +39,10 @@ const loadBlocksCSSandJS = (excludedBlocks, exclude = false) => {
 		// Load CSS file
 		addCSS(path);
 
-		// Load JS file
-		addJS(path);
+		if (blocksWithJsArray.includes(id)) {
+			// Load JS file
+			addJS(path, 'view');
+		}
 	});
 };
 
