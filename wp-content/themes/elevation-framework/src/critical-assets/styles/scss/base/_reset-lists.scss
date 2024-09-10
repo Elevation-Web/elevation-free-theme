@@ -1,6 +1,7 @@
 #primary {
-	ul:not(.tribe-events ul):not(#tribe-events ul),
-	ol:not(.tribe-events ol):not(#tribe-events ol) {
+
+	ul:not(.tribe-events ul):not(#tribe-events ul):not([class*="wp-block-elevation-interior-components"]),
+	ol:not(.tribe-events ol):not(#tribe-events ol):not([class*="wp-block-elevation-interior-components"]) {
 		margin-bottom: $p-mb;
 		padding-left: 17px;
 		position: relative;
@@ -21,11 +22,11 @@
 		}
 	}
 
-	ul:not(.tribe-events ul):not(#tribe-events ul) {
+	ul:not(.tribe-events ul):not(#tribe-events ul):not([class*="wp-block-elevation-interior-components"]) {
 		li {
 			&::before {
 				content: "";
-				background-color: $ui-foreground-primary-accent-02;
+				background-color: $ui-foreground-primary-accent-01;
 				margin-right: 10px;
 				font-size: 16px;
 				width: 6px;
@@ -39,8 +40,9 @@
 		}
 	}
 
-	ol:not(.tribe-events ol):not(#tribe-events ol) {
+	ol:not(.tribe-events ol):not(#tribe-events ol):not([class*="wp-block-elevation-interior-components"]) {
 		counter-reset: item;
+
 		li {
 			&::before {
 				content: counter(item) ".";

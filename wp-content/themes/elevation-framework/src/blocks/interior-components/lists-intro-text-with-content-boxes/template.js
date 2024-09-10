@@ -53,7 +53,8 @@ export const TEMPLATE = [
 				'elevation/interior-components--group',
 				{
 					className:
-						'lists-intro-text-with-content-boxes-box__container-group',
+						'lists-intro-text-with-content-boxes__container-group',
+					tagName: 'ul',
 				},
 				[
 					[
