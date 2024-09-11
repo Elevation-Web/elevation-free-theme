@@ -49,6 +49,7 @@ export const globalAnimations = () => {
 		'.team-bios-with-pop-up img',
 		'.team-bios-with-pop-up p',
 		'.team-bios-with-pop-up .cta',
+		'no-animate *',
 	];
 
 	function combineSelectors(base, exclusions) {

@@ -136,7 +136,11 @@ const Edit = (props) => {
 							className={`${name}__img`}
 							loading={isLazy ? 'lazy' : 'eager'}
 						/>
-						{true && img?.caption && <span>{img.caption}</span>}
+						{img?.caption && (
+							<span className={`${name}__img--caption`}>
+								{img.caption}
+							</span>
+						)}
 					</>
 				) : (
 					<MediaPlaceholder
