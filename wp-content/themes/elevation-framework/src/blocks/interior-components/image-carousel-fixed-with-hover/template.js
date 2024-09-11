@@ -40,6 +40,8 @@ export const TEMPLATE = [
 				'elevation/interior-components--swiper',
 				{
 					className: 'image-carousel-horizontal-centered__container',
+					slidesPerViewXl: 'auto',
+					slidesPerViewXxl: 'auto',
 				},
 				[
 					['elevation/interior-components--image-carousel', {}],
@@ -52,9 +54,6 @@ export const TEMPLATE = [
 				'elevation/interior-components--spacer',
 				{
 					space: 'spacer__extra-small',
-					line: true,
-					lineType: 'dots',
-					linePosition: 'bottom',
 				},
 			],
 		],

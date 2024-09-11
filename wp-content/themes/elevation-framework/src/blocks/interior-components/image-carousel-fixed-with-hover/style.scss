@@ -20,21 +20,19 @@
 				gap: 66px;
 			}
 
-
 			&-actions {
 				display: flex;
 				justify-content: flex-end;
-				position: absolute;
-				margin: 0 20px;
 				gap: 30px;
+				position: absolute;
 				top: 350px;
-				width: calc(100% - 40px);
+				width: 100vw;
+				left: calc(-50vw + 50%);
+				padding: 0 80px;
 
 				@include media-breakpoint-up(lg) {
-					top: 300px;
+					top: 200px;
 					justify-content: space-between;
-					margin: 0 40px;
-					width: calc(100% - 80px);
 				}
 
 				.swiper-pagination {
@@ -71,12 +69,28 @@
 				display: flex;
 				height: 10px;
 
+				@include media-breakpoint-up(xl) {
+					width: 100vw;
+					position: absolute;
+					bottom: 0;
+					left: calc(-50vw + 50%);
+				}
+
 				.swiper-pagination {
 					display: flex;
-					justify-content: center;
 					align-items: center;
+					justify-content: center;
 					top: unset;
+					padding: 0 20px;
 					bottom: unset;
+
+					@include media-breakpoint-up(xl) {
+						justify-content: flex-start;
+					}
+
+					@include media-breakpoint-up(xxl) {
+						padding: 0 80px;
+					}
 
 					.swiper-pagination-bullet {
 						background-color: $ui-button-primary-color-01;
@@ -95,36 +109,55 @@
 
 		.image-carousel {
 			transition: all .2s;
-			opacity: 0.5;
+			max-width: 100%;
+			width: 100%;
+
+			@include media-breakpoint-up(xl) {
+				width: auto;
+				padding-bottom: 50px;
+			}
 
 			&.swiper-slide-active {
-				opacity: 1;
+				.media {
+					&-image {
+						filter: none;
+					}
+
+					&-caption {
+						display: block;
+					}
+				}
 			}
 
 			.media {
-				width: 100%;
 				height: 100%;
 				display: block;
 
 				&-image {
-					width: 100%;
 					display: block;
 					object-fit: contain;
 					height: 380px;
 					background: rgba($color: $ui-background-secondary, $alpha : 0.2);
+					width: 100%;
 
 					@include media-breakpoint-up(xl) {
 						object-fit: cover;
-						height: 580px;
-						background: transparent;
+						height: 500px;
+						width: auto;
+						filter: grayscale(1);
 					}
 				}
 
 				&-caption {
 					font-size: 16px;
 					font-style: normal;
-					margin-top: 30px;
+					margin-top: 28px;
 					display: block;
+
+					@include media-breakpoint-up(xl) {
+						display: none;
+						position: absolute;
+					}
 				}
 			}
 		}

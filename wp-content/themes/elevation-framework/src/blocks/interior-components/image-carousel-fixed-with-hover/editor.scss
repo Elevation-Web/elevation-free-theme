@@ -13,31 +13,30 @@
         padding-top: 40px;
 
         .block-editor-inner-blocks {
-            max-width: 700px;
+            max-width: 600px;
         }
 
         .block-editor-inserter {
             position: initial;
-            height: 580px;
-
+            height: 500px;
         }
 
         .block-list-appender {
             position: static !important;
 
             .block-editor-default-block-appender {
-                height: 580px;
+                height: 500px;
             }
 
             &__toggle {
                 width: 65px !important;
-                height: 580px !important;
+                height: 500px !important;
                 opacity: 0.9;
             }
 
             .block-editor-inserter__toggle {
                 width: 65px !important;
-                height: 580px !important;
+                height: 500px !important;
                 opacity: 0.9;
             }
 
@@ -54,6 +53,10 @@
                 justify-content: center;
                 width: 150px;
             }
+        }
+
+        .image-carousel {
+            padding-bottom: 0px;
         }
     }
 }

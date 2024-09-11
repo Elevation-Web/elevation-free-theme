@@ -6,37 +6,50 @@ import Swiper from 'swiper/bundle';
  */
 
 const getSwiperParams = (dataset) => {
-	const loop = dataset.loop && dataset.loop !== '0' ? true : false;
+	if (!dataset) return;
+
+	const dataSet = JSON.parse(dataset);
+
+	const loop = dataSet?.loop && dataSet.loop !== '0' ? true : false;
 	const centeredSlides =
-		dataset.centeredSlides && dataset.centeredSlides !== '0' ? true : false;
-	const grabCursor =
-		dataset.grabCursor && dataset.grabCursor !== '0' ? true : false;
-	const spaceBetween = dataset.spaceBetween || 30;
-	const slidesPerView = dataset.slidesPerView || 1;
-	const spaceBetweenSm = dataset.spaceBetweenSm || spaceBetween;
-	const slidesPerViewSm = dataset.slidesPerViewSm || slidesPerView;
-	const spaceBetweenMd = dataset.spaceBetweenMd || spaceBetweenSm;
-	const slidesPerViewMd = dataset.slidesPerViewMd || slidesPerViewSm;
-	const spaceBetweenLg = dataset.spaceBetweenLg || spaceBetweenMd;
-	const slidesPerViewLg = dataset.slidesPerViewLg || slidesPerViewMd;
-	const spaceBetweenXl = dataset.spaceBetweenXl || spaceBetweenLg;
-	const slidesPerViewXl = dataset.slidesPerViewXl || slidesPerViewLg;
-	const spaceBetweenXxl = dataset.spaceBetweenXxl || spaceBetweenXl;
-	const slidesPerViewXxl = dataset.slidesPerViewXxl || slidesPerViewXl;
-
-	const perviewSlider = dataset.perview;
-
-	const slideToClickedSlide =
-		dataset.slideToClickedSlide && dataset.slideToClickedSlide !== '0'
+		dataSet?.centeredSlides && dataSet.centeredSlides !== '0'
 			? true
 			: false;
-	const delay = dataset.delay || 7000;
-	const disableOnInteraction = dataset['disable-on-interaction']
-		? true
-		: false;
+	const grabCursor =
+		dataSet?.grabCursor && dataSet.grabCursor !== '0' ? true : false;
+	const spaceBetween = dataSet?.spaceBetween || 30;
+	const slidesPerView = dataSet?.slidesPerView || 1;
+	const spaceBetweenSm = dataSet?.spaceBetweenSm || spaceBetween;
+	const slidesPerViewSm = dataSet?.slidesPerViewSm || slidesPerView;
+	const spaceBetweenMd = dataSet?.spaceBetweenMd || spaceBetweenSm;
+	const slidesPerViewMd = dataSet?.slidesPerViewMd || slidesPerViewSm;
+	const spaceBetweenLg = dataSet?.spaceBetweenLg || spaceBetweenMd;
+	const slidesPerViewLg = dataSet?.slidesPerViewLg || slidesPerViewMd;
+	const spaceBetweenXl = dataSet?.spaceBetweenXl || spaceBetweenLg;
+	const slidesPerViewXl = dataSet?.slidesPerViewXl || slidesPerViewLg;
+	const spaceBetweenXxl = dataSet?.spaceBetweenXxl || spaceBetweenXl;
+	const slidesPerViewXxl = dataSet?.slidesPerViewXxl || slidesPerViewXl;
+
+	const dynamicBullets =
+		dataSet?.dynamicBullets !== undefined &&
+		dataSet?.dynamicBullets === false
+			? false
+			: true;
+
+	const perviewSlider = dataSet?.perview || 1;
+
+	const slideToClickedSlide =
+		dataSet?.slideToClickedSlide && dataSet.slideToClickedSlide !== '0'
+			? true
+			: false;
+	const delay = dataSet?.delay || 7000;
+	const disableOnInteraction = dataSet?.disableOnInteraction ? true : false;
+
+	const loopAdditionalSlides = dataSet?.loopAdditionalSlides || undefined;
 
 	return {
 		loop,
+		loopAdditionalSlides,
 		centeredSlides,
 		grabCursor,
 		spaceBetween,
@@ -44,6 +57,7 @@ const getSwiperParams = (dataset) => {
 		slideToClickedSlide,
 		delay,
 		disableOnInteraction,
+		dynamicBullets,
 		breakpoints: {
 			576: {
 				spaceBetween: spaceBetweenSm,
@@ -59,14 +73,46 @@ const getSwiperParams = (dataset) => {
 			},
 			1200: {
 				spaceBetween: spaceBetweenXl,
-				slidesPerView: perviewSlider ?? slidesPerViewXl,
+				slidesPerView: slidesPerViewXl || perviewSlider,
 			},
 			1400: {
 				spaceBetween: spaceBetweenXxl,
-				slidesPerView: perviewSlider ?? slidesPerViewXxl,
+				slidesPerView: slidesPerViewXxl || perviewSlider,
 			},
 		},
 	};
+};
+
+function getLargestSlidesPerView(breakpoints) {
+	let largestSlidesPerView = null;
+
+	for (const key in breakpoints) {
+		const slidesPerView = breakpoints[key].slidesPerView;
+
+		if (slidesPerView === 'auto') {
+			largestSlidesPerView = 'auto';
+		} else if (
+			largestSlidesPerView !== 'auto' &&
+			(largestSlidesPerView === null ||
+				slidesPerView > largestSlidesPerView)
+		) {
+			largestSlidesPerView = slidesPerView;
+		}
+	}
+
+	return largestSlidesPerView;
+}
+
+const toggleControls = (swiper, action) => {
+	const carousel = swiper?.wrapperEl;
+	const bottom = carousel?.parentElement.querySelector('.swiper-bottom');
+	if (bottom) {
+		if (action === 'hide') {
+			bottom.style.display = 'none';
+		} else {
+			bottom.style.display = '';
+		}
+	}
 };
 
 export default function initSwiper(swiperSelector) {
@@ -94,6 +140,7 @@ export default function initSwiper(swiperSelector) {
 
 				const {
 					loop,
+					loopAdditionalSlides,
 					centeredSlides,
 					grabCursor,
 					spaceBetween,
@@ -102,11 +149,26 @@ export default function initSwiper(swiperSelector) {
 					breakpoints,
 					delay,
 					disableOnInteraction,
-				} = getSwiperParams(carousel.dataset);
+					dynamicBullets,
+				} = getSwiperParams(
+					carousel.getAttribute('data-swiper-options')
+				);
+				const slides = carousel.querySelectorAll('.swiper-slide');
+				const numberOfSlides = slides.length;
+				let rewind = false;
+
+				if (
+					getLargestSlidesPerView(breakpoints) === 'auto' ||
+					slidesPerView > numberOfSlides
+				) {
+					rewind = true;
+				}
 
 				const swiperCarousel = new Swiper(`#${id}`, {
 					// Optional parameters
-					loop,
+					loop: true,
+					// loopAdditionalSlides,
+					// rewind,
 					centeredSlides,
 					grabCursor,
 					spaceBetween,
@@ -125,6 +187,10 @@ export default function initSwiper(swiperSelector) {
 						disableOnInteraction,
 					},
 
+					keyboard: {
+						enabled: true,
+					},
+
 					// Navigation arrows
 					navigation: {
 						nextEl: nextButton,
@@ -134,13 +200,29 @@ export default function initSwiper(swiperSelector) {
 					// And if we need scrollbar
 					scrollbar: {
 						el: scrollBar,
+						draggable: true,
 					},
 
 					pagination: {
 						el: paginator,
 						clickable: true,
-						dynamicBullets: true,
-						dynamicMainBullets: window.innerWidth <= 768 ? 4 : 9,
+						dynamicBullets:
+							window.innerWidth <= 768 ? dynamicBullets : false,
+						dynamicMainBullets: 1,
+					},
+
+					on: {
+						init: function () {
+							if (this.isLocked) {
+								toggleControls(this, 'hide');
+							}
+						},
+						lock: function () {
+							toggleControls(this, 'hide');
+						},
+						unlock: function () {
+							toggleControls(this, 'show');
+						},
 					},
 				});
 
