@@ -61,7 +61,7 @@ const save = (props) => {
 		>
 			<div
 				id={'cotainer_' + id}
-				className={`${name}__container testimonials__swipper container`}
+				className={`${name}__container container`}
 				data-swiper-options={JSON.stringify(swiperOptions)}
 			>
 				<div className="swiper-wrapper">
