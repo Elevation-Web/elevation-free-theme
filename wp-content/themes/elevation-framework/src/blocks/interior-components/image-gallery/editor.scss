@@ -1,12 +1,14 @@
-@import "../../../assets/styles/scss/utilities/functions";
-@import "../../../assets/styles/scss/utilities/variables";
-@import "../../../assets/styles/scss/utilities/mixins";
-@import "swiper/css/bundle";
+.image-with-srcset {
+	&__form {
+		display: flex;
+		width: 300px;
 
-.image-gallery {
-    .components-placeholder.components-placeholder {
-        height: 300px;
-        align-items: center;
-        justify-content: center;
-    }
+		.block-editor-url-input {
+			width: calc(100% - 40px);
+
+			input[type="text"] {
+				width: 100% !important;
+			}
+		}
+	}
 }
