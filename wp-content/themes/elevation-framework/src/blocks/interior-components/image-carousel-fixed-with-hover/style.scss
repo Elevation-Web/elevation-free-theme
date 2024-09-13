@@ -1,0 +1,166 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "swiper/css/bundle";
+
+.image-carousel-fixed-with-hover {
+	opacity: 1;
+
+	.swiper {
+		overflow: visible;
+
+		&__container {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			padding: 0px;
+			gap: 30px;
+
+			@include media-breakpoint-up(xl) {
+				gap: 66px;
+			}
+
+			&-actions {
+				display: flex;
+				justify-content: flex-end;
+				gap: 30px;
+				position: absolute;
+				top: 350px;
+				width: 100vw;
+				left: calc(-50vw + 50%);
+				padding: 0 80px;
+
+				@include media-breakpoint-up(lg) {
+					top: 200px;
+					justify-content: space-between;
+				}
+
+				.swiper-pagination {
+					position: relative;
+				}
+
+				.swiper-button-next,
+				.swiper-button-prev {
+					position: initial;
+
+					&::after {
+						content: "";
+						width: 40px;
+						height: 40px;
+						flex-shrink: 0;
+						background-image: url('data:image/svg+xml,<svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="38" cy="38" r="37.5" fill="%23FBF9F8" stroke="%23D5D4DC"/><path d="M34.5199 31.8547C34.3262 31.6609 34.2174 31.3982 34.2174 31.1242C34.2174 30.8502 34.3262 30.5875 34.5199 30.3937C34.7137 30.2 34.9764 30.0911 35.2504 30.0911C35.5244 30.0911 35.7871 30.2 35.9809 30.3937L42.8559 37.2687C42.952 37.3645 43.0283 37.4784 43.0803 37.6037C43.1324 37.7291 43.1592 37.8635 43.1592 37.9992C43.1592 38.1349 43.1324 38.2693 43.0803 38.3947C43.0283 38.52 42.952 38.6339 42.8559 38.7297L35.9809 45.6047C35.7871 45.7984 35.5244 45.9072 35.2504 45.9072C34.9764 45.9072 34.7137 45.7984 34.5199 45.6047C34.3262 45.4109 34.2174 45.1482 34.2174 44.8742C34.2174 44.6002 34.3262 44.3375 34.5199 44.1437L40.6636 38L34.5199 31.8547Z" fill="%23210044"/></svg>');
+						background-size: cover;
+
+						@include media-breakpoint-up(lg) {
+							width: 76px;
+							height: 76px;
+						}
+					}
+				}
+
+				.swiper-button-prev {
+					&::after {
+						transform: rotate(180deg);
+					}
+				}
+			}
+
+			&-controls {
+				display: flex;
+				height: 10px;
+
+				@include media-breakpoint-up(xl) {
+					width: 100vw;
+					position: absolute;
+					bottom: 0;
+					left: calc(-50vw + 50%);
+				}
+
+				.swiper-pagination {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					top: unset;
+					padding: 0 20px;
+					bottom: unset;
+
+					@include media-breakpoint-up(xl) {
+						justify-content: flex-start;
+					}
+
+					@include media-breakpoint-up(xxl) {
+						padding: 0 80px;
+					}
+
+					.swiper-pagination-bullet {
+						background-color: $ui-button-primary-color-01;
+						opacity: 1;
+						transition: 200ms transform, 200ms left, .2s width !important;
+						position: initial;
+
+						&-active {
+							width: 27px;
+							border-radius: 3px;
+						}
+					}
+				}
+			}
+		}
+
+		.image-carousel {
+			transition: all .2s;
+			max-width: 100%;
+			width: 100%;
+
+			@include media-breakpoint-up(xl) {
+				width: auto;
+				padding-bottom: 50px;
+			}
+
+			&.swiper-slide-active {
+				.media {
+					&-image {
+						filter: none;
+					}
+
+					&-caption {
+						display: block;
+					}
+				}
+			}
+
+			.media {
+				height: 100%;
+				display: block;
+
+				&-image {
+					display: block;
+					object-fit: contain;
+					height: 380px;
+					background: rgba($color: $ui-background-secondary, $alpha : 0.2);
+					width: 100%;
+
+					@include media-breakpoint-up(xl) {
+						object-fit: cover;
+						height: 500px;
+						width: auto;
+						filter: grayscale(1);
+					}
+				}
+
+				&-caption {
+					font-size: 16px;
+					font-style: normal;
+					margin-top: 28px;
+					display: block;
+
+					@include media-breakpoint-up(xl) {
+						display: none;
+						position: absolute;
+					}
+				}
+			}
+		}
+
+	}
+}

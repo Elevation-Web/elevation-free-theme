@@ -52,24 +52,24 @@
 			"default": false
 		},
 		"slidesPerViewSm": {
-			"type": "number",
-			"default": 1
+			"type": "string",
+			"default": "1"
 		},
 		"slidesPerViewMd": {
-			"type": "number",
-			"default": 1
+			"type": "string",
+			"default": "1"
 		},
 		"slidesPerViewLg": {
-			"type": "number",
-			"default": 1
+			"type": "string",
+			"default": "1"
 		},
 		"slidesPerViewXl": {
-			"type": "number",
-			"default": 1
+			"type": "string",
+			"default": "1"
 		},
 		"slidesPerViewXxl": {
-			"type": "number",
-			"default": 1
+			"type": "string",
+			"default": "1"
 		}
 	},
 	"script": ["file:index.js"],
