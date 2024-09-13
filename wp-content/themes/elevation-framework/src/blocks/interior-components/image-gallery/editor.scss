@@ -1,0 +1,12 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "swiper/css/bundle";
+
+.image-gallery {
+    .components-placeholder.components-placeholder {
+        height: 300px;
+        align-items: center;
+        justify-content: center;
+    }
+}
