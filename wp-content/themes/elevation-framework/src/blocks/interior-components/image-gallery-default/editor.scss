@@ -12,9 +12,24 @@
                 flex-wrap: wrap;
                 gap: 20px;
 
-                >div {
+                >div:not(.image-gallery) {
+                    min-width: 30%;
                     width: 30%;
                 }
+            }
+        }
+    }
+
+    .image-gallery {
+
+        &__img {
+            height: 265px !important;
+            object-fit: contain;
+            background-color: rgb(230, 230, 230);
+            width: 100%;
+
+            &--caption {
+                display: none;
             }
         }
     }

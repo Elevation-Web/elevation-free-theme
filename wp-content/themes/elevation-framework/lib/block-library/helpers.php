@@ -147,6 +147,67 @@ class Helpers
 
 
     /**
+     * Get the image URL from ID|URL.
+     * 
+     * @since 1.0.0
+     * 
+     * @param array $image The ACF field with the image.
+     * @param array $args The arguments to customize the image. Default is null.
+     *               Optional. Attributes for the image markup. Default is empty.
+     *              Supported keys:
+     *              - 'echo'        (bool) Whether to echo the image HTML markup directly (true) or return it (false). Default is `true`
+     *              - 'size'        (string|array) Image size. Accepts any registered image size name, or an array containing width and height values in pixels (in that order). Default: `full`
+     * 
+     * @return string This returns an image with the provided ACF. If there isn't one, it returns an empty string.
+     */
+    public static function global_url_image($image, $args = null)
+    {
+        if (empty($image)) {
+            return '';
+        }
+
+        $is_url = false;
+        if (filter_var($image, FILTER_VALIDATE_URL)) {
+            $is_url = true;
+        } elseif (is_numeric($image)) {
+            $image_id = $image;
+        } elseif (isset($image['image']['ID'])) {
+            $image_id = $image['image']['ID'];
+        } else {
+            return '';
+        }
+
+
+        $defaults = [
+            'echo' => true,
+            'size' => 'full',
+        ];
+
+        // Combinar los argumentos proporcionados con los valores predeterminados
+        $args = wp_parse_args($args, $defaults);
+
+        // Extraer los argumentos como variables locales
+        extract($args);
+
+        if ($is_url) {
+            // If $attachment_id_or_url is a URL, directly print the image by URL
+            $img =  esc_url($image);
+        } else {
+            // Get the attachment image HTML markup
+            $img = wp_get_attachment_image_url($image_id, $size);
+            $imga = wp_get_attachment_image($image_id);
+        }
+
+        if ($echo) {
+            echo $img;
+        } else {
+            return $img;
+        }
+    }
+
+
+
+    /**
      * Get the image from ACF.
      * 
      * @since 1.0.0

@@ -41,12 +41,96 @@ export const TEMPLATE = [
 					className: 'image-gallery-default__grid',
 				},
 				[
-					['elevation/interior-components--image-gallery', {}],
-					['elevation/interior-components--image-gallery', {}],
-					['elevation/interior-components--image-gallery', {}],
-					['elevation/interior-components--image-gallery', {}],
-					['elevation/interior-components--image-gallery', {}],
-					['elevation/interior-components--image-gallery', {}],
+					[
+						'elevation/interior-components--image-gallery',
+						{
+							img: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-1.webp`,
+								alt: '',
+								caption: '',
+							},
+						},
+					],
+					[
+						'elevation/interior-components--image-gallery',
+						{
+							img: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-2.webp`,
+								alt: '',
+								caption: '',
+							},
+						},
+					],
+					[
+						'elevation/interior-components--image-gallery',
+						{
+							img: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-3.webp`,
+								alt: '',
+								caption: '',
+							},
+						},
+					],
+					[
+						'elevation/interior-components--image-gallery',
+						{
+							img: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-4.webp`,
+								alt: '',
+								caption: '',
+							},
+						},
+					],
+					[
+						'elevation/interior-components--image-gallery',
+						{
+							img: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-5.webp`,
+								alt: '',
+								caption: '',
+							},
+						},
+					],
+					[
+						'elevation/interior-components--image-gallery',
+						{
+							img: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-6.webp`,
+								alt: '',
+								caption: '',
+							},
+						},
+					],
+					[
+						'elevation/interior-components--image-gallery',
+						{
+							img: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-7.webp`,
+								alt: '',
+								caption: '',
+							},
+						},
+					],
+					[
+						'elevation/interior-components--image-gallery',
+						{
+							img: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-8.webp`,
+								alt: '',
+								caption: '',
+							},
+						},
+					],
+					[
+						'elevation/interior-components--image-gallery',
+						{
+							img: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-9.webp`,
+								alt: '',
+								caption: '',
+							},
+						},
+					],
 				],
 			],
 			[

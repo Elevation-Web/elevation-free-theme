@@ -24,7 +24,8 @@
 			"type": "object",
 			"default": {
 				"url": "",
-				"id": ""
+				"id": "",
+				"caption": ""
 			}
 		},
 		"isLazy": {
@@ -35,8 +36,7 @@
 			"type": "object",
 			"default": {
 				"url": "",
-				"target": false,
-				"caption": ""
+				"target": false
 			}
 		},
 		"inheritClassName": {

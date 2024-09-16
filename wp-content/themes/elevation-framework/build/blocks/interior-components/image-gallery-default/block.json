@@ -52,5 +52,8 @@
   ],
   "editorStyle": [
     "file:index.css"
+  ],
+  "viewScript": [
+    "file:./view.js"
   ]
 }

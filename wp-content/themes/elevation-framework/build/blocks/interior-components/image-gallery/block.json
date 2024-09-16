@@ -1,59 +1,61 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "Image Gallery, Item",
+  "title": "Image Gallery",
   "name": "elevation/interior-components--image-gallery",
   "version": "1.0.0",
   "category": "elevation-blocks",
-  "description": "Image Container",
+  "icon": "format-image",
+  "description": "Image with Srcset for better performance.",
   "textdomain": "elevation",
-  "parent": [
-    "elevation/interior-components--swiper"
-  ],
   "supports": {
-    "html": true,
+    "anchor": false,
     "align": false,
     "alignWide": false,
-    "anchor": true,
-    "color": {
-      "background": true,
-      "gradients": false,
-      "text": false,
-      "link": false,
-      "border": false
-    },
-    "spacing": {
-      "margin": [
-        "top",
-        "bottom"
-      ]
-    },
+    "renaming": false,
+    "inserter": true,
     "interactivity": {
       "clientNavigation": true
-    }
+    },
+    "lock": true
   },
   "attributes": {
-    "id": {
+    "img": {
+      "type": "object",
+      "default": {
+        "url": "",
+        "id": "",
+        "caption": ""
+      }
+    },
+    "isLazy": {
+      "type": "boolean",
+      "default": true
+    },
+    "link": {
+      "type": "object",
+      "default": {
+        "url": "",
+        "target": false
+      }
+    },
+    "inheritClassName": {
       "type": "string",
       "default": ""
     },
-    "preview": {
+    "showCaption": {
       "type": "boolean",
       "default": false
     }
   },
-  "example": {
-    "attributes": {
-      "preview": true
-    }
-  },
-  "script": [
-    "file:index.js"
+  "usesContext": [
+    "elevation/image-classname"
   ],
-  "style": [
-    "file:style-index.css"
+  "editorScript": [
+    "file:index.js"
   ],
   "editorStyle": [
     "file:index.css"
-  ]
+  ],
+  "render": "file:./render.php"
 }

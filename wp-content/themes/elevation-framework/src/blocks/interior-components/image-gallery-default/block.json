@@ -43,5 +43,6 @@
 	},
 	"script": ["file:index.js"],
 	"style": ["file:style-index.css"],
-	"editorStyle": ["file:index.css"]
+	"editorStyle": ["file:index.css"],
+	"viewScript": ["file:./view.js"]
 }
