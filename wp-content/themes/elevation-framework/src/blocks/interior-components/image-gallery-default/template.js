@@ -47,7 +47,8 @@ export const TEMPLATE = [
 							img: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-1.webp`,
 								alt: '',
-								caption: '',
+								caption:
+									'Caption. Maximum 10 words. Sem viverra aliquet eget sit amet tellus cras adipiscing enim.',
 							},
 						},
 					],
@@ -57,7 +58,8 @@ export const TEMPLATE = [
 							img: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-2.webp`,
 								alt: '',
-								caption: '',
+								caption:
+									'Caption. Maximum 10 words. Sem viverra aliquet eget sit amet tellus cras adipiscing enim.',
 							},
 						},
 					],
@@ -67,7 +69,8 @@ export const TEMPLATE = [
 							img: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-3.webp`,
 								alt: '',
-								caption: '',
+								caption:
+									'Caption. Maximum 10 words. Sem viverra aliquet eget sit amet tellus cras adipiscing enim.',
 							},
 						},
 					],
@@ -77,7 +80,8 @@ export const TEMPLATE = [
 							img: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-4.webp`,
 								alt: '',
-								caption: '',
+								caption:
+									'Caption. Maximum 10 words. Sem viverra aliquet eget sit amet tellus cras adipiscing enim.',
 							},
 						},
 					],
@@ -87,7 +91,8 @@ export const TEMPLATE = [
 							img: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-5.webp`,
 								alt: '',
-								caption: '',
+								caption:
+									'Caption. Maximum 10 words. Sem viverra aliquet eget sit amet tellus cras adipiscing enim.',
 							},
 						},
 					],
@@ -97,7 +102,8 @@ export const TEMPLATE = [
 							img: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-6.webp`,
 								alt: '',
-								caption: '',
+								caption:
+									'Caption. Maximum 10 words. Sem viverra aliquet eget sit amet tellus cras adipiscing enim.',
 							},
 						},
 					],
@@ -107,7 +113,8 @@ export const TEMPLATE = [
 							img: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-7.webp`,
 								alt: '',
-								caption: '',
+								caption:
+									'Caption. Maximum 10 words. Sem viverra aliquet eget sit amet tellus cras adipiscing enim.',
 							},
 						},
 					],
@@ -117,7 +124,8 @@ export const TEMPLATE = [
 							img: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-8.webp`,
 								alt: '',
-								caption: '',
+								caption:
+									'Caption. Maximum 10 words. Sem viverra aliquet eget sit amet tellus cras adipiscing enim.',
 							},
 						},
 					],
@@ -127,7 +135,8 @@ export const TEMPLATE = [
 							img: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/image-gallery-default/images/img-9.webp`,
 								alt: '',
-								caption: '',
+								caption:
+									'Caption. Maximum 10 words. Sem viverra aliquet eget sit amet tellus cras adipiscing enim.',
 							},
 						},
 					],

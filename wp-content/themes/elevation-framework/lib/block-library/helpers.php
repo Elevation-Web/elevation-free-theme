@@ -155,17 +155,15 @@ class Helpers
      * @param array $args The arguments to customize the image. Default is null.
      *               Optional. Attributes for the image markup. Default is empty.
      *              Supported keys:
-     *              - 'echo'        (bool) Whether to echo the image HTML markup directly (true) or return it (false). Default is `true`
      *              - 'size'        (string|array) Image size. Accepts any registered image size name, or an array containing width and height values in pixels (in that order). Default: `full`
      * 
      * @return string This returns an image with the provided ACF. If there isn't one, it returns an empty string.
      */
-    public static function global_url_image($image, $args = null)
+    public static function global_data_image($image, $size = 'full')
     {
         if (empty($image)) {
             return '';
         }
-
         $is_url = false;
         if (filter_var($image, FILTER_VALIDATE_URL)) {
             $is_url = true;
@@ -177,32 +175,17 @@ class Helpers
             return '';
         }
 
-
-        $defaults = [
-            'echo' => true,
-            'size' => 'full',
-        ];
-
-        // Combinar los argumentos proporcionados con los valores predeterminados
-        $args = wp_parse_args($args, $defaults);
-
-        // Extraer los argumentos como variables locales
-        extract($args);
-
         if ($is_url) {
-            // If $attachment_id_or_url is a URL, directly print the image by URL
             $img =  esc_url($image);
+            $attachment_id = attachment_url_to_postid($image);
+            $alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
         } else {
-            // Get the attachment image HTML markup
             $img = wp_get_attachment_image_url($image_id, $size);
-            $imga = wp_get_attachment_image($image_id);
+            $alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
         }
 
-        if ($echo) {
-            echo $img;
-        } else {
-            return $img;
-        }
+
+        return ['image' => $img, 'alt' => $alt ? $alt : ''];
     }
 
 

@@ -7,6 +7,7 @@ const getImages = (gallery) => {
 		gallery.querySelectorAll('.image-gallery')
 	).map((carouselItem) => {
 		const img = carouselItem.getAttribute('data-image');
+		const altImage = carouselItem.querySelector('img');
 		const captionElement = carouselItem.querySelector('.media-caption');
 		let name = '';
 		let caption = '';
@@ -19,7 +20,7 @@ const getImages = (gallery) => {
 
 		return {
 			url: img ? img : '',
-			alt: img ? img.alt : '',
+			alt: img ? altImage.alt : '',
 			name,
 			caption,
 		};
