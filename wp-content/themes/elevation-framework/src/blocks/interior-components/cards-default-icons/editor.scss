@@ -15,6 +15,10 @@
 				display: flex;
 				gap: 20px;
 				flex-wrap: wrap;
+
+				@include media-breakpoint-down(xl) {
+					flex-direction: column;
+				}
 			}
 		}
 	}
