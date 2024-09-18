@@ -14,42 +14,17 @@ export const globalAnimations = () => {
 		'#primary h6',
 	];
 	const exclusionSelectors = [
-		'.cards-background-images-plus-icons p',
 		'.accordion-item__item p',
 		'.banner-full-img img',
-		'.cards-background-images-plus-icons img',
 		'.video-full-screen-pop-up img',
 		'.accordion-item__item img',
-		'.callout-full-screen-img__image img',
-		'.cards-background-images-plus-icons .cta',
 		'.accordion-item__item .cta',
-		'img.home-ways-to-support__background',
-		'.home-ways-to-support-box img',
-		'.sb-wall img',
-		'.sb-wall p',
-		'.sb-wall .cta',
-		'.home-programs-box img',
-		'.programs-tabs img',
-		'.programs-tabs p',
-		'.programs-tabs .cta',
-		'.programs-tabs li',
-		'.programs-tabs h1',
-		'.programs-tabs h2',
-		'.programs-tabs h3',
-		'.programs-tabs h4',
-		'.programs-tabs h5',
-		'.programs-tabs h6',
-		'.orange-county-banner img',
-		'.programs-banner-top .media-image',
-		'.donate-banner__container .media-image',
-		'img.donate-banner__background',
-		'.home-banner .media-image',
-		'.home-impact__bottom-image',
 		'.team-bios-with-pop-up .title',
 		'.team-bios-with-pop-up img',
 		'.team-bios-with-pop-up p',
 		'.team-bios-with-pop-up .cta',
-		'no-animate *',
+		'.no-animate *',
+		'.no-animate',
 	];
 
 	function combineSelectors(base, exclusions) {
@@ -65,6 +40,7 @@ export const globalAnimations = () => {
 
 	const selectors = combineSelectors(baseSelectors, exclusionSelectors);
 
+	console.log('selectors',selectors);
 	const elements = document.querySelectorAll(selectors);
 
 	elements.forEach((element) => {
