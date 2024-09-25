@@ -1,0 +1,53 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "../../../assets/styles/scss/utilities/default-variables";
+
+
+.separator-three-images {
+	opacity: 1;
+	position: relative;
+	overflow: hidden;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		flex-wrap: wrap;
+
+		@include media-breakpoint-up(xl) {
+			gap: 20px;
+		}
+
+		.media {
+			margin-top: 0px;
+			height: 200px;
+			width: calc(50% - 10px);
+
+			@include media-breakpoint-down(sm) {
+				&:last-of-type {
+					display: none;
+				}
+			}
+
+			@include media-breakpoint-up(sm) {
+				width: calc(33.3% - 10px);
+				height: 250px;
+			}
+
+			@include media-breakpoint-up(xl) {
+				height: 350px;
+				width: calc(33.3% - 15px);
+			}
+
+			img {
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.media-caption {
+			display: none;
+		}
+	}
+}

@@ -95,7 +95,8 @@ class Helpers
             'loading' => null,
             'size' => 'full',
             'alt' => null,
-            'icon' => false
+            'icon' => false,
+            'caption' => true
         ];
 
         // Combinar los argumentos proporcionados con los valores predeterminados
@@ -135,7 +136,16 @@ class Helpers
             $img = wp_get_attachment_image($image_id, $size, $icon, $image_args);
         }
 
-        $image_component = '<' . $figure . ' class="' . $class . '">' . $img . '</' . $figure . '>';
+        $image_component = '<' . $figure . ' class="' . $class . '">' . $img;
+
+        if ($caption != false) {
+            $caption_tag = $is_figure ? 'figcaption' : 'span';
+            $caption_data = self::global_caption($image, $is_url);
+
+            $image_component .= '<' . $caption_tag . ' class="media-caption">' . $caption_data . '</' . $caption_tag . '>';
+        }
+
+        $image_component .= '</' . $figure . '>';
 
         if ($echo) {
             echo $image_component;
@@ -143,7 +153,6 @@ class Helpers
             return $image_component;
         }
     }
-
 
 
     /**
@@ -205,34 +214,21 @@ class Helpers
      * 
      * @return string This returns an image with the provided ACF. If there isn't one, it returns an empty string.
      */
-    public static function global_caption($imageID = null, $args = null)
+    public static function global_caption($imageID = null, $is_url)
     {
-        if (!$imageID) {
-            return;
-        }
-
-        $defaults = [
-            'echo' => true,
-            'class_name' => 'media-caption',
-            'tag_name' => 'span',
-        ];
-
-        $args = wp_parse_args($args, $defaults);
-
-        extract($args);
-
-        $image_data = wp_get_attachment_caption($imageID);
-        if (!$image_data) {
-            return;
-        }
-
-        $caption =   '<' . $tag_name . ' class="' . $class_name . '">' . $image_data .  '</' . $tag_name . '>';
-
-        if ($echo) {
-            echo $caption;
+        if ($is_url) {
+            $img =  esc_url($imageID);
+            $attachment_id = attachment_url_to_postid($img);
+            $image_caption = wp_get_attachment_caption($attachment_id);
         } else {
-            return $caption;
+            $image_caption = wp_get_attachment_caption($imageID);
         }
+
+        if (!$image_caption) {
+            return '';
+        }
+
+        return  $image_caption;
     }
 
     public static function global_link($link)
