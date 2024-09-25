@@ -26,7 +26,7 @@ const save = (props) => {
 		<div data-block-id={blockId} id={anchor || id} {...blockProps}>
 			<ImageWithFocalPoint
 				img={img}
-				className={`${name}__img`}
+				className={`${name}__img no-animate`}
 				selectorId={anchor || id}
 			/>
 			<div className={`${name}__container`}>

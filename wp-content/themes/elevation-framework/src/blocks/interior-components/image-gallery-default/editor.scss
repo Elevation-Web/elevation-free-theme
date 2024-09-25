@@ -1,0 +1,37 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "swiper/css/bundle";
+
+.image-gallery-default {
+
+    &__grid {
+        >.block-editor-inner-blocks {
+            width: 100%;
+            >.block-editor-block-list__layout {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                >div:not(.image-gallery) {
+                    min-width: 30%;
+                    width: 30%;
+                }
+            }
+        }
+    }
+
+    .image-gallery {
+
+        &__img {
+            height: 265px !important;
+            object-fit: contain;
+            background-color: rgb(230, 230, 230);
+            width: 100%;
+
+            &--caption {
+                display: none;
+            }
+        }
+    }
+}

@@ -15,6 +15,10 @@
 				display: flex;
 				gap: 20px;
 				flex-wrap: wrap;
+
+				@include media-breakpoint-down(xl) {
+					flex-direction: column;
+				}
 			}
 		}
 	}
@@ -22,12 +26,20 @@
 	&.row-cards-3 {
 		.cards-long-description-icons-card {
 			width: calc(33.3% - 15px) !important;
+
+			@include media-breakpoint-down(xl) {
+				width: 100% !important;
+			}
 		}
 	}
 
 	&.row-cards-2 {
 		.cards-long-description-icons-card {
 			width: calc(50% - 15px) !important;
+
+			@include media-breakpoint-down(xl) {
+				width: 100% !important;
+			}
 
 			&__container {
 				width: calc(100% - 60px) !important;
@@ -37,6 +49,6 @@
 	}
 
 	.wp-block-heading {
-		margin-top: 0px!important;
+		margin-top: 0px !important;
 	}
 }

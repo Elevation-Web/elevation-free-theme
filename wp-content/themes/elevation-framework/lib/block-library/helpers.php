@@ -95,7 +95,8 @@ class Helpers
             'loading' => null,
             'size' => 'full',
             'alt' => null,
-            'icon' => false
+            'icon' => false,
+            'caption' => true
         ];
 
         // Combinar los argumentos proporcionados con los valores predeterminados
@@ -135,13 +136,65 @@ class Helpers
             $img = wp_get_attachment_image($image_id, $size, $icon, $image_args);
         }
 
-        $image_component = '<' . $figure . ' class="' . $class . '">' . $img . '</' . $figure . '>';
+        $image_component = '<' . $figure . ' class="' . $class . '">' . $img;
+
+        if ($caption != false) {
+            $caption_tag = $is_figure ? 'figcaption' : 'span';
+            $caption_data = self::global_caption($image, $is_url);
+
+            $image_component .= '<' . $caption_tag . ' class="media-caption">' . $caption_data . '</' . $caption_tag . '>';
+        }
+
+        $image_component .= '</' . $figure . '>';
 
         if ($echo) {
             echo $image_component;
         } else {
             return $image_component;
         }
+    }
+
+
+    /**
+     * Get the image URL from ID|URL.
+     * 
+     * @since 1.0.0
+     * 
+     * @param array $image The ACF field with the image.
+     * @param array $args The arguments to customize the image. Default is null.
+     *               Optional. Attributes for the image markup. Default is empty.
+     *              Supported keys:
+     *              - 'size'        (string|array) Image size. Accepts any registered image size name, or an array containing width and height values in pixels (in that order). Default: `full`
+     * 
+     * @return string This returns an image with the provided ACF. If there isn't one, it returns an empty string.
+     */
+    public static function global_data_image($image, $size = 'full')
+    {
+        if (empty($image)) {
+            return '';
+        }
+        $is_url = false;
+        if (filter_var($image, FILTER_VALIDATE_URL)) {
+            $is_url = true;
+        } elseif (is_numeric($image)) {
+            $image_id = $image;
+        } elseif (isset($image['image']['ID'])) {
+            $image_id = $image['image']['ID'];
+        } else {
+            return '';
+        }
+
+        if ($is_url) {
+            $img =  esc_url($image);
+            $attachment_id = attachment_url_to_postid($image);
+            $alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
+        } else {
+            $img = wp_get_attachment_image_url($image_id, $size);
+            $alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+        }
+
+
+        return ['image' => $img, 'alt' => $alt ? $alt : ''];
     }
 
 
@@ -161,34 +214,21 @@ class Helpers
      * 
      * @return string This returns an image with the provided ACF. If there isn't one, it returns an empty string.
      */
-    public static function global_caption($imageID = null, $args = null)
+    public static function global_caption($imageID = null, $is_url)
     {
-        if (!$imageID) {
-            return;
-        }
-
-        $defaults = [
-            'echo' => true,
-            'class_name' => 'media-caption',
-            'tag_name' => 'span',
-        ];
-
-        $args = wp_parse_args($args, $defaults);
-
-        extract($args);
-
-        $image_data = wp_get_attachment_caption($imageID);
-        if (!$image_data) {
-            return;
-        }
-
-        $caption =   '<' . $tag_name . ' class="' . $class_name . '">' . $image_data .  '</' . $tag_name . '>';
-
-        if ($echo) {
-            echo $caption;
+        if ($is_url) {
+            $img =  esc_url($imageID);
+            $attachment_id = attachment_url_to_postid($img);
+            $image_caption = wp_get_attachment_caption($attachment_id);
         } else {
-            return $caption;
+            $image_caption = wp_get_attachment_caption($imageID);
         }
+
+        if (!$image_caption) {
+            return '';
+        }
+
+        return  $image_caption;
     }
 
     public static function global_link($link)

@@ -2,8 +2,8 @@
 @import "../../../assets/styles/scss/utilities/variables";
 @import "../../../assets/styles/scss/utilities/mixins";
 
-.cards-images-with-heading{
-	.cards-images-with-heading-card__container-group  {
+.cards-images-with-heading {
+	.cards-images-with-heading-card__container-group {
 		border: none;
 
 		>.block-editor-inner-blocks {
@@ -11,6 +11,10 @@
 				display: flex;
 				gap: 20px;
 				flex-wrap: wrap;
+
+				@include media-breakpoint-down(xl) {
+					flex-direction: column;
+				}
 			}
 		}
 	}
@@ -18,12 +22,20 @@
 	&.row-cards-3 {
 		.cards-images-with-heading-card {
 			width: calc(33.3% - 37px) !important;
+
+			@include media-breakpoint-down(xl) {
+				width: 100% !important;
+			}
 		}
 	}
 
 	&.row-cards-2 {
 		.cards-images-with-heading-card {
 			width: calc(50% - 37px) !important;
+
+			@include media-breakpoint-down(xl) {
+				width: 100% !important;
+			}
 		}
 	}
 }
