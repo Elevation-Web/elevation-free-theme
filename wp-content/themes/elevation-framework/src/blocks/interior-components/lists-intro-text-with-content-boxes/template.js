@@ -33,7 +33,7 @@ export const TEMPLATE = [
 							[
 								'elevation/interior-components--button',
 								{
-									btnStyle: 'primary-4',
+									btnStyle: 'primary-1',
 									text: 'Text Button',
 								},
 							],

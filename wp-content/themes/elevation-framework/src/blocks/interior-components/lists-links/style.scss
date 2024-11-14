@@ -40,6 +40,11 @@
 
 		.wp-block-heading {
 			margin: 0px;
+			word-wrap: break-word;
+
+			@include media-breakpoint-up(xl) {
+				max-width: 50%;
+			}
 		}
 	}
 }

@@ -1,0 +1,12 @@
+div[class^="wp-block-elevation"] {
+    &.has-background {
+        a:not(.cta) {
+            color: inherit !important;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

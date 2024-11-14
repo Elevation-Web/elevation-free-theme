@@ -17,10 +17,18 @@
 				display: flex;
 				gap: 80px;
 
+				@include media-breakpoint-down(xl) {
+					flex-direction: column;
+				}
+
 				>div {
 					&:first-child {
 						flex-shrink: 0;
 						max-width: 370px;
+
+						@include media-breakpoint-down(xl) {
+							max-width: 100%;
+						}
 					}
 				}
 			}
@@ -35,6 +43,16 @@
 				display: flex;
 				gap: 20px;
 				flex-wrap: wrap;
+
+				@include media-breakpoint-down(xl) {
+					flex-direction: column;
+				}
+			}
+		}
+
+		.lists-intro-text-with-content-boxes-box {
+			@include media-breakpoint-down(xl) {
+				width: 100%;
 			}
 		}
 	}

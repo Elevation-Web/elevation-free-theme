@@ -42,14 +42,14 @@ const save = (props) => {
 			>
 				<ImageWithFocalPoint
 					img={icon}
-					className={`${name}__img`}
+					className={`${name}__img no-animate`}
 					selectorId={anchor || id}
 				/>
 				{hasHover && (
 					<>
 						<ImageWithFocalPoint
 							img={iconHover}
-							className={`${name}__img hover`}
+							className={`${name}__img hover no-animate`}
 							selectorId={anchor || id}
 						/>
 					</>

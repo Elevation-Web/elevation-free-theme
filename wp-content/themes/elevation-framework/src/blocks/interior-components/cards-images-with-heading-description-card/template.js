@@ -23,7 +23,9 @@ export const template = [
 	],
 	[
 		'elevation/interior-components--buttons',
-		{},
+		{
+			className: 'no-animate',
+		},
 		[
 			[
 				'elevation/interior-components--button',
