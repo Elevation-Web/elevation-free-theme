@@ -147,6 +147,50 @@ class Helpers
 
 
     /**
+     * Get the image URL from ID|URL.
+     * 
+     * @since 1.0.0
+     * 
+     * @param array $image The ACF field with the image.
+     * @param array $args The arguments to customize the image. Default is null.
+     *               Optional. Attributes for the image markup. Default is empty.
+     *              Supported keys:
+     *              - 'size'        (string|array) Image size. Accepts any registered image size name, or an array containing width and height values in pixels (in that order). Default: `full`
+     * 
+     * @return string This returns an image with the provided ACF. If there isn't one, it returns an empty string.
+     */
+    public static function global_data_image($image, $size = 'full')
+    {
+        if (empty($image)) {
+            return '';
+        }
+        $is_url = false;
+        if (filter_var($image, FILTER_VALIDATE_URL)) {
+            $is_url = true;
+        } elseif (is_numeric($image)) {
+            $image_id = $image;
+        } elseif (isset($image['image']['ID'])) {
+            $image_id = $image['image']['ID'];
+        } else {
+            return '';
+        }
+
+        if ($is_url) {
+            $img =  esc_url($image);
+            $attachment_id = attachment_url_to_postid($image);
+            $alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
+        } else {
+            $img = wp_get_attachment_image_url($image_id, $size);
+            $alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+        }
+
+
+        return ['image' => $img, 'alt' => $alt ? $alt : ''];
+    }
+
+
+
+    /**
      * Get the image from ACF.
      * 
      * @since 1.0.0
