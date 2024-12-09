@@ -170,6 +170,10 @@ h6,
 	color: $ui-foreground-primary-text-headings;
 }
 
+.wp-block-heading + p{
+	margin-top: 12px;
+}
+
 [id] {
 	scroll-margin-top: $header-height-mobile;
 

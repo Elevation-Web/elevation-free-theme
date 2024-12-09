@@ -1,0 +1,22 @@
+
+.callout-background-content-box-left {
+	&__background {
+		height: 100% !important;
+		img{
+			height: 100% !important;
+		}
+	}
+	.wp-block-group-is-layout-flow{
+		.wp-block + .wp-block{
+			margin-top: 12px;
+		}
+		.wp-block-heading{
+			margin: 0;
+		}
+
+		.wp-block + .wp-block-elevation-interior-components--buttons{
+			margin-top: 24px;
+		}
+	}
+}
+
