@@ -1,0 +1,68 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "../../../assets/styles/scss/utilities/default-variables";
+
+$block: '.impact-default-with-icons';
+
+#{$block} {
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		@include media-breakpoint-up(xl) {
+			grid-template-columns: 440px 1fr;
+			column-gap: 145px;
+		}
+
+		.spacer {
+			@include media-breakpoint-up(xl) {
+				grid-column-start: 1;
+				grid-column-end: 3;
+			}
+
+			&:first-of-type {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	&-item {
+		opacity: 1;
+		position: relative;
+		border-radius: 2px;
+		overflow: hidden;
+		width: 100%;
+		border: none;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 15px;
+		margin-block-start: 0px !important;
+		padding-bottom: 15px;
+
+		&:not(:last-of-type) {
+			border-bottom: 1px solid $ui-border-line-divider-dots-divider;
+			border-bottom-style: dashed;
+		}
+
+		&:not(:first-of-type) {
+			padding-top: 25px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			gap: 32px;
+			grid-template-columns: 2fr 3fr;
+		}
+
+
+		&__value {
+			display: flex;
+			margin: 0px;
+			font-weight: 500;
+		}
+
+		&__content {
+			flex: 1;
+		}
+	}
+}
