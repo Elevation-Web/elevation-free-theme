@@ -8,11 +8,43 @@ import {
 	SelectControl,
 } from '@wordpress/components';
 /* Internal Dependencies */
+import { getImageAttributes } from '../../utils/getImageAttributes';
+import { RemoveImageButton, UploadMedia } from '../../components/UploadMedia';
 
 export const Controls = (props) => {
 	const { attributes, setAttributes } = props;
-	const { before_value, value, after_value, remove_comma, title_size } =
+	const { before_value, value, after_value, remove_comma, title_size, icon } =
 		attributes;
+
+	const removeImage = (key) => {
+		setAttributes({
+			[key]: {
+				url: '',
+				alt: '',
+				id: 0,
+				srcset: '',
+				width: 0,
+				height: 0,
+			},
+		});
+	};
+
+	const addMedia = (key, media) => {
+		const { fullSize, srcset, sizes, alt, id } = getImageAttributes(media);
+
+		setAttributes({
+			[key]: {
+				...attributes[key],
+				url: fullSize.url,
+				alt,
+				id,
+				srcset,
+				width: fullSize.width,
+				height: fullSize.height,
+				sizes,
+			},
+		});
+	};
 
 	return (
 		<InspectorControls>
@@ -59,6 +91,29 @@ export const Controls = (props) => {
 						setAttributes({ title_size: newValue })
 					}
 				/>
+			</PanelBody>
+			<PanelBody title={__('Icon')}>
+				<div className="cards-long-description-icons-card__control-icon">
+					{icon.url ? (
+						<>
+							<div className="cards-long-description-icons-card__control-icon-picker">
+								<img src={icon.url} />
+							</div>
+							<RemoveImageButton
+								onClick={() => {
+									removeImage('icon');
+								}}
+							/>
+						</>
+					) : (
+						<UploadMedia
+							value={icon.url}
+							onSelect={(newValue) => {
+								addMedia('icon', newValue);
+							}}
+						/>
+					)}
+				</div>
 			</PanelBody>
 		</InspectorControls>
 	);

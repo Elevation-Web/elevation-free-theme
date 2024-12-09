@@ -15,7 +15,7 @@ const save = (props) => {
 	const { anchor, id } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `${name} counter`,
+		className: `${name} counter alignfull`,
 	});
 
 	return (

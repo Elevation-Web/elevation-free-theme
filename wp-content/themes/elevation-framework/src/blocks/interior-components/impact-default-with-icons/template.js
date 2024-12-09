@@ -9,9 +9,7 @@ export const TEMPLATE = [
 			[
 				'elevation/interior-components--spacer',
 				{
-					line: true,
-					lineType: 'dash',
-					linePosition: 'bottom',
+					line: false,
 				},
 			],
 			[

@@ -59,6 +59,18 @@
     "title_size": {
       "type": "string",
       "default": "h-1"
+    },
+    "icon": {
+      "type": "object",
+      "default": {
+        "url": "/wp-content/themes/elevation-framework/src/blocks/interior-components/cards-long-description-icons/images/icon-1.webp",
+        "alt": "",
+        "id": 0,
+        "srcset": "",
+        "width": "auto",
+        "height": "auto",
+        "sizes": ""
+      }
     }
   },
   "example": {

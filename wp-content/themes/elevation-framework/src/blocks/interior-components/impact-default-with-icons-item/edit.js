@@ -26,6 +26,7 @@ const Edit = (props) => {
 		after_value,
 		remove_comma,
 		title_size,
+		icon,
 	} = attributes;
 
 	const blockProps = useBlockProps({
@@ -61,51 +62,62 @@ const Edit = (props) => {
 				id={id}
 				{...blockProps}
 			>
-				<div className={`${name}__header`}>
-					<h2
-						className={`${name}__value has-${title_size}-font-size`}
-					>
-						{before_value && (
-							<RichText
-								tagName="div"
-								className={`${name}__value-before`}
-								value={before_value}
-								onChange={(newValue) =>
-									setAttributes({ before_value: newValue })
-								}
-							/>
-						)}
-						{}
-						<RichText
-							tagName="div"
-							className={`${name}__value-value`}
-							value={
-								remove_comma
-									? value.toString()
-									: value
-											.toString()
-											.replace(
-												/(\d)(?=(\d{3})+(?!\d))/g,
-												'$1,'
-											)
-							}
-							onChange={(newValue) =>
-								setAttributes({ value: newValue })
-							}
+				<div className={`${name}__icon-container no-hover`}>
+					{icon?.url && (
+						<img
+							src={icon.url}
+							className={`${name}__img`}
+							// selectorId={anchor || id}
 						/>
-						{after_value && (
-							<RichText
-								tagName="div"
-								className={`${name}__value-after`}
-								value={after_value}
-								onChange={(newValue) =>
-									setAttributes({ after_value: newValue })
-								}
-							/>
-						)}
-					</h2>
+					)}
 				</div>
 				<div className={`${name}__content`}>
+					<div className={`${name}__header`}>
+						<h2
+							className={`${name}__value has-${title_size}-font-size`}
+						>
+							{before_value && (
+								<RichText
+									tagName="div"
+									className={`${name}__value-before`}
+									value={before_value}
+									onChange={(newValue) =>
+										setAttributes({
+											before_value: newValue,
+										})
+									}
+								/>
+							)}
+							{}
+							<RichText
+								tagName="div"
+								className={`${name}__value-value`}
+								value={
+									remove_comma
+										? value.toString()
+										: value
+												.toString()
+												.replace(
+													/(\d)(?=(\d{3})+(?!\d))/g,
+													'$1,'
+												)
+								}
+								onChange={(newValue) =>
+									setAttributes({ value: newValue })
+								}
+							/>
+							{after_value && (
+								<RichText
+									tagName="div"
+									className={`${name}__value-after`}
+									value={after_value}
+									onChange={(newValue) =>
+										setAttributes({ after_value: newValue })
+									}
+								/>
+							)}
+						</h2>
+					</div>
 					<InnerBlocks
 						template={template}
 						templateInsertUpdatesSelection={true}
