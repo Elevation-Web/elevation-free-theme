@@ -34,6 +34,7 @@
 		max-width: 100%;
 		background-color: $ui-base-white;
 		padding: 30px;
+		border-radius: 2px;
 
 		@include media-breakpoint-up(lg) {
 			width: 684px;
@@ -44,9 +45,15 @@
 	&:not(.alignfull){
 		max-width: 100%;
 		margin: 0 auto;
+
 		@include media-breakpoint-up(xl) {
+			width: 83.3333%;
+		}
+
+		@include media-breakpoint-up(xxl) {
 			width: 1095px;
 		}
+		
 		.callout-background-content-box-left__container{
 			padding: 0 40px;
 		}
