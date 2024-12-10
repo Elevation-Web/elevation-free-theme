@@ -41,17 +41,16 @@ $block: '.impact-default-with-icons';
 		padding-bottom: 15px;
 
 		&:not(:last-of-type) {
-			border-bottom: 1px solid $ui-border-line-divider-dots-divider;
-			border-bottom-style: dashed;
+			border-bottom: 1px solid $ui-border-line-divider-on-dark;
 		}
 
 		&:not(:first-of-type) {
-			padding-top: 25px;
+			padding-top: 30px;
 		}
 
 		@include media-breakpoint-up(lg) {
 			gap: 32px;
-			grid-template-columns: 2fr 3fr;
+			grid-template-columns: 1fr 4fr;
 		}
 
 
@@ -61,8 +60,23 @@ $block: '.impact-default-with-icons';
 			font-weight: 500;
 		}
 
+		&__header {
+			margin-bottom: 12px;
+		}
+
 		&__content {
 			flex: 1;
+		}
+
+		&__icon-container {
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+
+			img {
+				height: auto;
+				width: auto;
+			}
 		}
 	}
 }

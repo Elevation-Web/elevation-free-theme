@@ -11,16 +11,20 @@ import './editor.scss';
 import json from './block.json';
 import previewImage from './preview.webp';
 import { TEMPLATE, allowedBlocks } from './template';
+import Controls from './controls';
 
 const Edit = (props) => {
 	const { name: blockName } = json;
 	const { name, blockId } = getBlockName(blockName);
 
 	const { clientId, attributes, setAttributes } = props;
-	const { anchor, id, preview } = attributes;
+	const { anchor, id, preview, backgroundColor } = attributes;
 
 	const blockProps = useBlockProps({
 		className: `${name} alignfull`,
+		style: {
+			backgroundColor: backgroundColor,
+		},
 	});
 
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
@@ -52,6 +56,7 @@ const Edit = (props) => {
 
 	return (
 		<>
+			<Controls {...props} />
 			<div
 				data-block-id={blockId}
 				data-block-js="true"

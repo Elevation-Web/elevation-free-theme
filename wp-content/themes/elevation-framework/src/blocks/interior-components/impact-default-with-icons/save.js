@@ -12,10 +12,13 @@ const save = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes } = props;
-	const { anchor, id } = attributes;
+	const { anchor, id, backgroundColor } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: `${name} counter alignfull`,
+		style: {
+			backgroundColor: backgroundColor,
+		},
 	});
 
 	return (

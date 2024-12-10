@@ -21,14 +21,15 @@ export const TEMPLATE = [
 					[
 						'core/heading',
 						{
-							level: 3,
-							content: 'H3. Heading lorem',
+							level: 2,
+							content:
+								'H2. Heading lorem ipsum nunc scelerisque viverra mauris',
 						},
 					],
 					[
 						'core/paragraph',
 						{
-							content: `Name of Block: Impact, Layout: Default. Maximum 50 words per paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in aliquam lorem, in blandit mi. Duis non neque et neque vulputate aliquet vitae nec libero donec pulvinar vulputate.`,
+							content: `Maximum 50 words per paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in aliquam lorem, in blandit mi. Duis non neque et neque vulputate aliquet vitae nec libero donec pulvinar.`,
 						},
 					],
 					[
@@ -64,6 +65,9 @@ export const TEMPLATE = [
 						{
 							value: 8700,
 							after_value: '+',
+							icon: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/impact-default-with-icons/images/icon-1.svg`,
+							},
 						},
 					],
 					[
@@ -71,6 +75,9 @@ export const TEMPLATE = [
 						{
 							value: 45,
 							after_value: '%',
+							icon: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/impact-default-with-icons/images/icon-2.svg`,
+							},
 						},
 					],
 					[
@@ -78,6 +85,9 @@ export const TEMPLATE = [
 						{
 							value: 50,
 							after_value: '+',
+							icon: {
+								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/impact-default-with-icons/images/icon-3.svg`,
+							},
 						},
 					],
 				],
@@ -86,8 +96,9 @@ export const TEMPLATE = [
 				'elevation/interior-components--spacer',
 				{
 					line: true,
-					lineType: 'dash',
+					lineType: 'solid',
 					linePosition: 'top',
+					borderColor: '#8a55b3ff',
 				},
 			],
 		],

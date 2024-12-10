@@ -14,7 +14,7 @@
 		"alignWide": false,
 		"ariaLabel": false,
 		"color": {
-			"background": true,
+			"background": false,
 			"gradients": false,
 			"text": true,
 			"link": false,
@@ -41,6 +41,10 @@
 		"preview": {
 			"type": "boolean",
 			"default": false
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "ui-background-light-02"
 		}
 	},
 	"example": {
