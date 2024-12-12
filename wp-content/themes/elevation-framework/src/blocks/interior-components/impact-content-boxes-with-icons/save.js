@@ -1,5 +1,5 @@
 /* Gutenberg Dependencies */
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 /* Internal Dependencies */
 import { getBlockName } from '../../utils/helpers';
@@ -7,27 +7,29 @@ import { getBlockName } from '../../utils/helpers';
 /* Block */
 import json from './block.json';
 
-const save = ({ attributes }) => {
+const save = (props) => {
 	const { name: blockName } = json;
-
-	const { tagName, type } = attributes;
-
 	const { name, blockId } = getBlockName(blockName);
 
+	const { attributes } = props;
+	const { anchor, id, backgroundColor } = attributes;
+
 	const blockProps = useBlockProps.save({
-		className: `${name} elevation-interior-components--group wp-block-group is-layout-flow wp-block-group-is-layout-flow ${type}`,
+		className: `${name} counter alignfull`,
+		style: {
+			backgroundColor: backgroundColor,
+		},
 	});
 
-	const CustomTag = `${tagName}`;
-
 	return (
-		<CustomTag
+		<div
 			data-block-id={blockId}
 			data-block-js="false"
+			id={anchor || id}
 			{...blockProps}
 		>
 			<InnerBlocks.Content />
-		</CustomTag>
+		</div>
 	);
 };
 
