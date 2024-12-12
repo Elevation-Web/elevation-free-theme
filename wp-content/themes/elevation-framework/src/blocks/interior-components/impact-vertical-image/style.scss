@@ -1,0 +1,121 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "../../../assets/styles/scss/utilities/default-variables";
+
+$block: '.impact-vertical-image';
+
+#{$block} {
+	margin-block-start: 0px !important;
+
+	.wp-block-group {
+		margin-block-start: 0px !important;
+	}
+
+	&__container {
+		display: grid;
+
+		@include media-breakpoint-up(xl) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.media {
+			height: 100%;
+			width: 100%;
+			display: flex;
+
+			@include media-breakpoint-down(lg) {
+				max-height: 400px;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			&-caption {
+				display: none;
+			}
+		}
+	}
+
+	&__row {
+		display: grid;
+		gap: 15px;
+		margin-block-start: 0px !important;
+
+		@include media-breakpoint-up(md) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media-breakpoint-up(lg) {
+			gap: 20px;
+			grid-template-columns: repeat(2 1fr);
+		}
+	}
+
+	&__content-wrapper {
+		padding: 40px 25px 30px 25px;
+		margin-block-start: 0px !important;
+
+		*,
+		*>* {
+			text-align: center;
+		}
+
+		@include media-breakpoint-up(md) {
+			padding: 40px 30px 30px 30px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			padding: 80px 60px 60px 60px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			padding: 80px 83px 60px 83px;
+		}
+
+		.buttons {
+			margin-top: 0px;
+		}
+	}
+
+	&-item {
+		opacity: 1;
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		border: none;
+		margin-block-start: 0px !important;
+		padding-bottom: 15px;
+		border-radius: 2px;
+		padding: 30px;
+		background-color: var(--background-color);
+
+		@include media-breakpoint-up(lg) {
+			padding: 30px 15px;
+		}
+
+		&__value {
+			display: flex;
+			margin: 0px;
+			justify-content: flex-end;
+			font-weight: 500;
+		}
+
+		&__header {
+			display: flex;
+			margin-bottom: 12px;
+			justify-content: center;
+		}
+
+		&__content {
+			text-align: center;
+
+			*:last-of-type {
+				margin-bottom: 0px;
+			}
+		}
+	}
+}

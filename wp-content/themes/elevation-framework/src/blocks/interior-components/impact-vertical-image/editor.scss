@@ -1,0 +1,60 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+
+
+$block : '.impact-vertical-image';
+
+#{$block} {
+
+	&__container {
+		grid-template-columns: 1fr;
+		padding: 0px;
+
+		>.block-editor-inner-blocks {
+			width: 100%;
+
+			>.block-editor-block-list__layout {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 0px;
+			}
+		}
+	}
+
+	&__content-wrapper {
+		h3 {
+			margin-top: 0px;
+		}
+	}
+
+	&__row {
+		grid-template-columns: 1fr;
+		margin-top: 30px;
+
+		>.block-editor-inner-blocks {
+			width: 100%;
+
+			>.block-editor-block-list__layout {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 24px;
+			}
+		}
+	}
+
+	.image-with-srcset__img {
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&-item {
+		margin-top: 25px;
+		width: auto !important;
+
+		&__content {
+			margin-bottom: 25px;
+
+		}
+	}
+}

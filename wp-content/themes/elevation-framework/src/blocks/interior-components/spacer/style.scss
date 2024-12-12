@@ -9,6 +9,7 @@ $p-mb: 20px;
 	opacity: 1;
 	position: relative;
 	width: 100%;
+	margin-block-start: 0px !important;
 
 	&.line-enable {
 		&.position-top {
