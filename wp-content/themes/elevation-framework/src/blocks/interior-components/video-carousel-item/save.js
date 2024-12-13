@@ -9,26 +9,14 @@ const save = (props) => {
 
 	const { attributes } = props;
 
-	const {
-		anchor,
-		imgMobile,
-		imgTablet,
-		imgDesktop,
-		style,
-		id,
-		buttonLabel,
-		video,
-	} = attributes;
+	const { anchor, imgMobile, imgTablet, imgDesktop, id, buttonLabel, video } =
+		attributes;
 
 	const { url, videoType } = video;
 
 	const blockProps = useBlockProps.save({
 		className: `${name} swiper-slide no-animate`,
 	});
-
-	const withContainer = blockProps.className.includes('alignfull')
-		? 'container '
-		: '';
 
 	return (
 		<div
@@ -38,27 +26,21 @@ const save = (props) => {
 			data-video-url={url}
 			data-video-type={videoType}
 			{...blockProps}
-			{...style}
 		>
 			<BackgroundPicture
-				imgMobile={imgMobile.url}
-				imgTablet={imgTablet.url}
-				imgDesktop={imgDesktop.url}
+				imgMobile={imgMobile ? imgMobile.url : null}
+				imgTablet={imgTablet ? imgTablet.url : null}
+				imgDesktop={imgDesktop}
 				imgAlt={imgDesktop.alt}
 				className={`${name}__background`}
 				width={imgDesktop.width}
 				height={imgDesktop.height}
-				focalPointDesktop={imgDesktop.focalPoint}
-				focalPointTablet={imgTablet.focalPoint}
-				focalPointMobile={imgMobile.focalPoint}
 				selectorId={anchor || id}
 				lazyload={true}
 			/>
-			<div className={`${withContainer}${name}__container`}>
-				<div className={`${name}__wrapper`}>
-					<InnerBlocks.Content />
-					<button className={`${name}__button`}>{buttonLabel}</button>
-				</div>
+			<div className={`${name}__container`}>
+				<InnerBlocks.Content />
+				<button className={`${name}__button`}>{buttonLabel}</button>
 			</div>
 		</div>
 	);

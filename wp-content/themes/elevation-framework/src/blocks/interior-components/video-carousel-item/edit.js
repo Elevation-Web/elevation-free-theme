@@ -1,14 +1,9 @@
 /* External Dependencies */
 import { __ } from '@wordpress/i18n';
-import {
-	InnerBlocks,
-	useBlockProps,
-} from '@wordpress/block-editor';
-import { useEffect, useState } from '@wordpress/element';
+import { useBlockProps, MediaPlaceholder } from '@wordpress/block-editor';
 import Swal from 'sweetalert2';
 
 /* Internal Dependencies */
-import { template, allowedBlocks } from './template';
 import { closeIcon } from '../../components/images/icons';
 import { getVideo } from '../../utils/video';
 import Controls from './controls';
@@ -30,28 +25,16 @@ const Edit = (props) => {
 		imgMobile,
 		imgTablet,
 		imgDesktop,
-		style,
 		id,
 		buttonLabel,
 		video,
 	} = attributes;
 
-	setAttributes({ id: `video-full-screen-pop-up-${clientId}` });
+	setAttributes({ id: `${name}-${clientId}` });
 
 	const blockProps = useBlockProps({
 		className: `${name} swiper-slide`,
 	});
-
-	const [withContainer, setWithContainer] = useState('');
-
-	useEffect(() => {
-		setWithContainer(() => {
-			return blockProps.className.includes('alignfull')
-				? 'container '
-				: '';
-		});
-	}, [props]);
-
 
 	if (preview) {
 		return (
@@ -79,28 +62,39 @@ const Edit = (props) => {
 				data-video-url={video.url}
 				data-video-type={video.videoType}
 				{...blockProps}
-				{...style}
 			>
-				<BackgroundPicture
-					imgMobile={imgMobile.url}
-					imgTablet={imgTablet.url}
-					imgDesktop={imgDesktop.url}
-					imgAlt={imgDesktop.alt}
-					className={`${name}__background`}
-					width={imgDesktop.width}
-					height={imgDesktop.height}
-					focalPointDesktop={imgDesktop.focalPoint}
-					focalPointTablet={imgTablet.focalPoint}
-					focalPointMobile={imgMobile.focalPoint}
-					selectorId={anchor || id}
-					lazyload={true}
-				/>
-				<div className={`${withContainer}${name}__container`}>
-					<div className={`${name}__wrapper`}>
-						<InnerBlocks
-							template={template}
-							allowedBlocks={allowedBlocks}
-						/>
+				{imgDesktop.url ? (
+					<BackgroundPicture
+						imgMobile={imgMobile}
+						imgTablet={imgTablet}
+						imgDesktop={imgDesktop}
+						imgAlt={imgDesktop.alt}
+						className={`${name}__background`}
+						width={imgDesktop.width}
+						height={imgDesktop.height}
+						selectorId={anchor || id}
+						lazyload={true}
+					/>
+				) : (
+					<MediaPlaceholder
+						onSelect={(media) => {
+							setAttributes({
+								imgDesktop: {
+									focalPoint: { x: 0.5, y: 0.5 },
+									url: media.url,
+									alt: media.alt,
+									height: media.height,
+									width: media.width,
+								},
+							});
+						}}
+						allowedTypes={['image']}
+						multiple={false}
+						labels={{ title: 'Image' }}
+					/>
+				)}
+				<div className={`${name}__container`}>
+					{imgDesktop.url && (
 						<button
 							onClick={() => {
 								Swal.fire({
@@ -119,7 +113,7 @@ const Edit = (props) => {
 						>
 							{buttonLabel}
 						</button>
-					</div>
+					)}
 				</div>
 			</div>
 		</>

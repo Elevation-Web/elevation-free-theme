@@ -64,8 +64,10 @@ const save = (props) => {
 				className={`${name}__container container`}
 				data-swiper-options={JSON.stringify(swiperOptions)}
 			>
-				<div className="swiper-wrapper">
-					<InnerBlocks.Content />
+				<div className="swiper__container-wrapper">
+					<div className="swiper-wrapper">
+						<InnerBlocks.Content />
+					</div>
 				</div>
 				<div className="swiper__container-actions">
 					<div className="swiper-button-prev"></div>

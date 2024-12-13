@@ -3,7 +3,7 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 @import "swiper/css/bundle";
 
-.image-carousel-fixed-with-hover {
+.video-carousel {
 
     .wp-block-elevation-interior-components--swiper {
         overflow-x: hidden;
@@ -11,32 +11,33 @@
         display: flex;
         flex-direction: column;
         padding-top: 40px;
+        overflow-y: hidden;
 
         .block-editor-inner-blocks {
-            max-width: 600px;
+            max-width: 344px;
         }
 
         .block-editor-inserter {
             position: initial;
-            height: 500px;
+            height: 350px;
         }
 
         .block-list-appender {
             position: static !important;
 
             .block-editor-default-block-appender {
-                height: 500px;
+                height: 350px;
             }
 
             &__toggle {
                 width: 65px !important;
-                height: 500px !important;
+                height: 350px !important;
                 opacity: 0.9;
             }
 
             .block-editor-inserter__toggle {
                 width: 65px !important;
-                height: 500px !important;
+                height: 350px !important;
                 opacity: 0.9;
             }
 

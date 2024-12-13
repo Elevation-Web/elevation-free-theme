@@ -4,7 +4,7 @@ export const TEMPLATE = [
 		'elevation/interior-components--custom-container',
 		{
 			className: 'cards-icons__custom-container',
-			containerWidth: 'small',
+			containerWidth: 'medium',
 		},
 		[
 			[
@@ -18,14 +18,12 @@ export const TEMPLATE = [
 						{
 							level: 2,
 							content: 'H2. Heading lorem ipsum',
-							textAlign: 'center',
 						},
 					],
 					[
 						'core/paragraph',
 						{
-							content: `Maximum 30 words. Urna nunc id cursus metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget duis.`,
-							align: 'center',
+							content: `Name of Block: Video, Layout: Carousel. Maximum 50 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in aliquam lorem, in blandit mi. Duis non neque et neque vulputate aliquet vitae nec libero. Donec pulvinar vulputate tempor. Praesent orci velit, viverra non pulvinar in, pretium sit amet felis. Donec cursus tortor dolor. Vestibulum viverra gravida felis, in varius.`,
 						},
 					],
 					[
@@ -39,15 +37,16 @@ export const TEMPLATE = [
 			[
 				'elevation/interior-components--swiper',
 				{
-					className: 'image-carousel-horizontal-centered__container',
-					slidesPerViewXl: 'auto',
-					slidesPerViewXxl: 'auto',
+					className: 'video-carousel__container',
+					slidesPerViewLg: '2',
+					slidesPerViewXl: '3',
+					slidesPerViewXxl: '3',
 				},
 				[
-					['elevation/interior-components--image-carousel', {}],
-					['elevation/interior-components--image-carousel', {}],
-					['elevation/interior-components--image-carousel', {}],
-					['elevation/interior-components--image-carousel', {}],
+					['elevation/interior-components--video-carousel-item', {}],
+					['elevation/interior-components--video-carousel-item', {}],
+					['elevation/interior-components--video-carousel-item', {}],
+					['elevation/interior-components--video-carousel-item', {}],
 				],
 			],
 			[

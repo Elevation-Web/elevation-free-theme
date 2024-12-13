@@ -4,7 +4,7 @@ import { closeIcon } from '../components/images/icons';
 
 export const popUpVideo = (videoId, videoUrl, videoType, customClass) => {
 	const button = document.querySelector(
-		`#${videoId} .video-full-screen-pop-up__button`
+		`#${videoId} .video-carousel-item__button`
 	);
 
 	if (button) {
