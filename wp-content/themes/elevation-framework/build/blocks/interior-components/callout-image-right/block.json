@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "Background Callout - Content Box Left",
-  "name": "elevation/interior-components--callout-background-content-box-left",
+  "title": "Background Callout - Image Right",
+  "name": "elevation/interior-components--callout-image-right",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "icon": "format-image",
-  "description": "Background Callout, content box left, with title, ddescription and button.",
+  "description": "allout, content left, with title, description and button. Image Right.",
   "textdomain": "elevation",
   "supports": {
     "html": true,
@@ -63,6 +63,10 @@
           "y": 0.5
         }
       }
+    },
+    "isRowReverse": {
+      "type": "boolean",
+      "default": false
     }
   },
   "example": {
