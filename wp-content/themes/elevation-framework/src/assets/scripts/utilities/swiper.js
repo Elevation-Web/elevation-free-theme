@@ -115,11 +115,12 @@ const toggleControls = (swiper, action) => {
 	}
 };
 
-export default function initSwiper(swiperSelector) {
+export default function initSwiper(swiperSelector, childSelector = null) {
 	// Do not run if swiperSelector is not present
 	if (!swiperSelector) return;
 
 	const carousels = document.querySelectorAll(swiperSelector);
+
 	if (carousels) {
 		carousels.forEach((carousel) => {
 			// Get the id of the carousel
@@ -164,7 +165,11 @@ export default function initSwiper(swiperSelector) {
 					rewind = true;
 				}
 
-				const swiperCarousel = new Swiper(`#${id}`, {
+				const swiperContainer = childSelector
+					? `#${id} ${childSelector}`
+					: `#${id}`;
+
+				const swiperCarousel = new Swiper(swiperContainer, {
 					// Optional parameters
 					loop: true,
 					// loopAdditionalSlides,
