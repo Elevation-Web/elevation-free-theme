@@ -109,9 +109,10 @@ const Edit = (props) => {
 								});
 							}}
 							className={`${name}__button`}
-						>
+						></button>
+						<span className={`${name}__button-label`}>
 							{buttonLabel}
-						</button>
+						</span>
 					</div>
 				)}
 			</div>
