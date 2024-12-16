@@ -21,10 +21,16 @@ export const template = [
 			],
 			[
 				'elevation/interior-components--buttons',
-				{
-					btnStyle: 'tertiary',
-					text: 'Text Button',
-				},
+				{ layout: { type: 'flex', justifyContent: 'start' } },
+				[
+					[
+						'elevation/interior-components--button',
+						{
+							btnStyle: 'tertiary-inverse',
+							text: 'Text Button',
+						},
+					],
+				],
 			],
 		],
 	],
