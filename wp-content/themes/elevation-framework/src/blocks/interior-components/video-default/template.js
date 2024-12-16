@@ -14,6 +14,7 @@ export const TEMPLATE = [
 					className: 'video-default__content',
 				},
 				[
+					['elevation/interior-components--spacer'],
 					[
 						'core/heading',
 						{
@@ -28,16 +29,36 @@ export const TEMPLATE = [
 						},
 					],
 					[
-						'elevation/interior-components--spacer',
-						{
-							space: 'spacer__small',
-						},
+						'elevation/interior-components--buttons',
+						{},
+						[
+							[
+								'elevation/interior-components--button',
+								{
+									btnStyle: 'tertiary',
+									text: 'Text Button',
+								},
+							],
+						],
 					],
 				],
 			],
+			[
+				'elevation/interior-components--spacer',
+				{
+					line: true,
+					linePosition: 'bottom',
+					space: 'spacer__extra-small',
+				},
+			],
+			[
+				'elevation/interior-components--spacer',
+				{
+					space: 'spacer__large',
+				},
+			],
 		],
 	],
-	['elevation/interior-components--spacer'],
 ];
 
 export const allowedBlocks = [

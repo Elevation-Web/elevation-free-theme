@@ -104,8 +104,7 @@ const Edit = (props) => {
 									closeButtonHtml: closeIcon,
 									closeButtonAriaLabel: 'Close video',
 									customClass: {
-										container:
-											'video-full-screen-pop-up__popup',
+										container: 'video-default-item__popup',
 									},
 								});
 							}}

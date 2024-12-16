@@ -15,7 +15,7 @@ const save = (props) => {
 	const { url, videoType } = video;
 
 	const blockProps = useBlockProps.save({
-		className: `${name} swiper-slide no-animate`,
+		className: `${name} no-animate`,
 	});
 
 	return (

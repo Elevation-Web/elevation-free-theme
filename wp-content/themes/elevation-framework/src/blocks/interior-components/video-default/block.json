@@ -6,8 +6,8 @@
 	"version": "1.0.0",
 	"category": "elevation-blocks",
 	"description": "Video, Layout: Default.",
-		"textdomain": "elevation",
-		"supports": {
+	"textdomain": "elevation",
+	"supports": {
 		"html": true,
 		"align": false,
 		"alignWide": false,
