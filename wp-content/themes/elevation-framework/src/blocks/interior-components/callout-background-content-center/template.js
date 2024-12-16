@@ -22,11 +22,23 @@ export const template = [
 					],
 					[
 						'elevation/interior-components--buttons',
-						{
-							btnStyle: 'primary-inverse',
-							text: 'Text Button',
-							align: 'center',
-						},
+						{ layout: { type: 'flex', justifyContent: 'center' } },
+						[
+							[
+								'elevation/interior-components--button',
+								{
+									btnStyle: 'primary-inverse',
+									text: 'Text Button',
+								},
+							],
+							[
+								'elevation/interior-components--button',
+								{
+									btnStyle: 'secondary-inverse',
+									text: 'Text Button',
+								},
+							],
+						],
 					],
 				],
 			],
