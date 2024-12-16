@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Background Callout - Content Box Center w/ Icon",
+	"name": "elevation/interior-components--callout-background-content-center-icon",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"icon": "format-image",
+	"description": "Background Callout, content center with icon, with title, ddescription and button.",
+	"textdomain": "elevation",
+	"supports": {
+		"html": true,
+		"align": false,
+		"alignWide": false,
+		"ariaLabel": true,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"text": true
+		},
+		"spacing": {
+			"margin": ["top", "bottom"]
+		}
+	},
+
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"preview": {
+			"type": "boolean",
+			"default": false
+		},
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"script": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"]
+}
