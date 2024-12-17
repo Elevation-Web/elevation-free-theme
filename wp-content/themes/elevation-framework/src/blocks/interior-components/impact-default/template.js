@@ -30,7 +30,7 @@ export const TEMPLATE = [
 					[
 						'core/paragraph',
 						{
-							content: `Name of Block: Impact, Layout: Default. Maximum 50 words per paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in aliquam lorem, in blandit mi. Duis non neque et neque vulputate aliquet vitae nec libero donec pulvinar vulputate.`,
+							content: `Maximum 50 words per paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in aliquam lorem, in blandit mi. Duis non neque et neque vulputate aliquet vitae nec libero donec pulvinar vulputate.`,
 						},
 					],
 					[
