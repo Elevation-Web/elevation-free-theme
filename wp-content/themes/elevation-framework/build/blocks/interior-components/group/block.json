@@ -31,6 +31,10 @@
     "tagName": {
       "type": "string",
       "default": "div"
+    },
+    "type": {
+      "type": "string",
+      "default": "type-default"
     }
   },
   "editorScript": [
