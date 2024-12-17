@@ -42,7 +42,7 @@ export const TEMPLATE = [
 							[
 								'core/paragraph',
 								{
-									content: `Name of Block: Impact, Layout: Vertical Image. Maximum 20 words. Orci ac auctor augue mauris augue neque gravida in fermentum et sollicitudin ac orci.`,
+									content: `Maximum 20 words. Orci ac auctor augue mauris augue neque gravida in fermentum et sollicitudin ac orci.`,
 									align: 'center',
 								},
 							],
