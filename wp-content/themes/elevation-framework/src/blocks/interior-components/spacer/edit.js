@@ -1,6 +1,10 @@
 /* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	InspectorControls,
+	PanelColorSettings,
+} from '@wordpress/block-editor';
 import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 
 /* Internal Dependencies */
@@ -31,9 +35,13 @@ const Edit = (props) => {
 	const { name: blockName } = json;
 	const { name, blockId } = getBlockName(blockName);
 
-	const { anchor, space, line, lineType, linePosition } = attributes;
+	const { anchor, space, line, lineType, linePosition, borderColor } =
+		attributes;
 	const blockProps = useBlockProps({
 		className: `${name} ${space} line-${line ? 'enable' : 'disable'} line-type-${lineType} position-${linePosition}`,
+		style: {
+			'--border-color': borderColor,
+		},
 	});
 
 	const controls = (
@@ -75,6 +83,21 @@ const Edit = (props) => {
 					</>
 				)}
 			</PanelBody>
+			{line && (
+				<PanelColorSettings
+					title="Border Color"
+					initialOpen={false}
+					colorSettings={[
+						{
+							value: borderColor,
+							onChange: (value) => {
+								setAttributes({ borderColor: value });
+							},
+							label: 'Border Color',
+						},
+					]}
+				/>
+			)}
 		</InspectorControls>
 	);
 

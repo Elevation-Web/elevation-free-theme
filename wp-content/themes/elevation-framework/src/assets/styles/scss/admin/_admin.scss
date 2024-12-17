@@ -78,6 +78,19 @@ html :where(.editor-styles-wrapper) p,
 html :where(.editor-styles-wrapper) blockquote {
 	margin: 0;
 }
+
+.wp-block-heading{
+	margin: 0 !important;
+}
+
+.wp-block-heading + p{
+	margin-top: 12px;
+}
+
+.wp-block + .wp-block.buttons{
+	margin-top: 24px !important;
+}
+
 .editor-styles-wrapper .is-layout-flow > * + * {
 	margin-block-start: 3rem !important;
 }

@@ -13,29 +13,29 @@ $p-mb: 20px;
 	&.line-enable {
 		&.position-top {
 			&.line-type-solid {
-				border-top: 1px solid $ui-border-bounds;
+				border-top: 1px solid var(--border-color);
 			}
 
 			&.line-type-dash {
-				border-top: 1px dashed $ui-border-bounds;
+				border-top: 1px dashed var(--border-color);
 			}
 
 			&.line-type-dots {
-				border-top: 1px dotted $ui-border-bounds;
+				border-top: 1px dotted var(--border-color);
 			}
 		}
 
 		&.position-bottom {
 			&.line-type-solid {
-				border-bottom: 1px solid $ui-border-bounds;
+				border-bottom: 1px solid var(--border-color);
 			}
 
 			&.line-type-dash {
-				border-bottom: 1px dashed $ui-border-bounds;
+				border-bottom: 1px dashed var(--border-color);
 			}
 
 			&.line-type-dots {
-				border-bottom: 1px dotted $ui-border-bounds;
+				border-bottom: 1px dotted var(--border-color);
 			}
 		}
 	}

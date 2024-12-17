@@ -30,6 +30,10 @@
 		"linePosition": {
 			"type": "string",
 			"default": "top"
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "ui-border-bounds"
 		}
 	},
 	"script": ["file:index.js"],
