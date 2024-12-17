@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Feed, Layout: Default",
+  "name": "elevation/interior-components--feed-default-blog",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "description": "Feed, Layout: Default",
+  "textdomain": "elevation",
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "alignWide": false,
+    "renaming": false,
+    "inserter": true,
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "headingLevel": {
+      "type": "string",
+      "default": "h4"
+    },
+    "hasCategoryPrefilter": {
+      "type": "boolean",
+      "default": false
+    },
+    "categories": {
+      "type": "array",
+      "default": []
+    },
+    "selectedPost": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "style": [
+    "file:style-index.css"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ],
+  "render": "file:./render.php"
+}
