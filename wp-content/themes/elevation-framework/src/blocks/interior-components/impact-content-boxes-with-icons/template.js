@@ -9,6 +9,7 @@ export const TEMPLATE = [
 				'elevation/interior-components--spacer',
 				{
 					line: false,
+					space: 'spacer__large',
 				},
 			],
 			[
@@ -54,6 +55,7 @@ export const TEMPLATE = [
 					line: true,
 					lineType: 'solid',
 					linePosition: 'top',
+					borderColor: '#E7E1EA',
 					space: 'spacer__extra-small',
 				},
 			],
@@ -105,7 +107,15 @@ export const TEMPLATE = [
 					line: true,
 					lineType: 'solid',
 					linePosition: 'bottom',
-					borderColor: '#8a55b3ff',
+					borderColor: '#E7E1EA',
+					space: 'spacer__extra-small',
+				},
+			],
+			[
+				'elevation/interior-components--spacer',
+				{
+					line: false,
+					space: 'spacer__large',
 				},
 			],
 		],
