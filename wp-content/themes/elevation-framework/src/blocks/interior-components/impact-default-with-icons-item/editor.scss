@@ -24,4 +24,8 @@ $block: 'impact-default-with-icons-item';
 			}
 		}
 	}
+
+	.wp-block + .wp-block.buttons{
+		margin-top: 24px !important;
+	}
 }
