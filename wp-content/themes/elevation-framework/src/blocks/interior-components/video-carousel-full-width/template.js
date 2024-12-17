@@ -1,5 +1,10 @@
 export const TEMPLATE = [
-	['elevation/interior-components--spacer'],
+	[
+		'elevation/interior-components--spacer',
+		{
+			space: 'spacer__large',
+		},
+	],
 	[
 		'elevation/interior-components--custom-container',
 		{
@@ -23,7 +28,7 @@ export const TEMPLATE = [
 					[
 						'core/paragraph',
 						{
-							content: `Name of Block: Video, Layout: Carousel. Maximum 50 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in aliquam lorem, in blandit mi. Duis non neque et neque vulputate aliquet vitae nec libero. Donec pulvinar vulputate tempor. Praesent orci velit, viverra non pulvinar in, pretium sit amet felis. Donec cursus tortor dolor. Vestibulum viverra gravida felis, in varius.`,
+							content: `Maximum 50 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in aliquam lorem, in blandit mi. Duis non neque et neque vulputate aliquet vitae nec libero. Donec pulvinar vulputate tempor. Praesent orci velit, viverra non pulvinar in, pretium sit amet felis. Donec cursus tortor dolor. Vestibulum viverra gravida felis, in varius.`,
 						},
 					],
 					[
@@ -42,7 +47,7 @@ export const TEMPLATE = [
 					[
 						'elevation/interior-components--spacer',
 						{
-							space: 'spacer__small',
+							space: 'spacer__extra-small',
 						},
 					],
 				],
@@ -80,10 +85,9 @@ export const TEMPLATE = [
 	[
 		'elevation/interior-components--spacer',
 		{
-			space: 'spacer__extra-small',
+			space: 'spacer__large',
 		},
 	],
-	['elevation/interior-components--spacer'],
 ];
 
 export const allowedBlocks = [

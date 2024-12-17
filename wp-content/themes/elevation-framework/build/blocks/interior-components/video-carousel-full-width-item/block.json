@@ -48,7 +48,7 @@
     },
     "buttonLabel": {
       "type": "string",
-      "default": "Watch the Video"
+      "default": "Caption. Maximum 10 words. Sem viverra aliquet eget sit amet tellus cras adipiscing enim."
     },
     "imgMobile": {
       "type": "object",
