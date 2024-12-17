@@ -3,7 +3,7 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 @import "swiper/css/bundle";
 
-.video-carousel {
+.video-carousel-full-width {
 
     .wp-block-elevation-interior-components--swiper {
         overflow-x: hidden;
@@ -14,30 +14,30 @@
         overflow-y: hidden;
 
         .block-editor-inner-blocks {
-            max-width: 344px;
+            max-width: 500px;
         }
 
         .block-editor-inserter {
             position: initial;
-            height: 350px;
+            height: 500px;
         }
 
         .block-list-appender {
             position: static !important;
 
             .block-editor-default-block-appender {
-                height: 350px;
+                height: 500px;
             }
 
             &__toggle {
                 width: 65px !important;
-                height: 350px !important;
+                height: 500px !important;
                 opacity: 0.9;
             }
 
             .block-editor-inserter__toggle {
                 width: 65px !important;
-                height: 350px !important;
+                height: 500px !important;
                 opacity: 0.9;
             }
 
@@ -61,24 +61,28 @@
         }
     }
 
-
     &-item {
-        height: 323px !important;
+        height: 500px !important;
 
         .components-placeholder {
-            height: 323px !important;
-            max-height: 323px !important;
+            height: 500px !important;
+            max-height: 500px !important;
 
             &__fieldset {
                 height: 100%;
-                justify-content: center;
                 display: flex;
-                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
+
         }
 
-        &__container {
-            height: calc(100% - 60px);
+        &__background {
+            height: 100%;
+
+            img {
+                height: 100%;
+            }
         }
     }
 }
