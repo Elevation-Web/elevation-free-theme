@@ -10521,14 +10521,13 @@ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S.use(modules);
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*******************************************************!*\
-  !*** ./src/blocks/interior-components/swiper/view.js ***!
-  \*******************************************************/
+/*!****************************************************************************!*\
+  !*** ./src/blocks/interior-components/feed-default-blog-container/view.js ***!
+  \****************************************************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_scripts_utilities_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../assets/scripts/utilities/swiper */ "./src/assets/scripts/utilities/swiper.js");
- //
 
-(0,_assets_scripts_utilities_swiper__WEBPACK_IMPORTED_MODULE_0__["default"])('.swiper__container', '.swiper__container-wrapper');
+(0,_assets_scripts_utilities_swiper__WEBPACK_IMPORTED_MODULE_0__["default"])('.feed-default-blog-container__swiper');
 })();
 
 /******/ })()

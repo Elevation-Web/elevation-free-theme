@@ -39,8 +39,7 @@ export const globalAnimations = () => {
 	}
 
 	const selectors = combineSelectors(baseSelectors, exclusionSelectors);
-
-	console.log('selectors', selectors);
+	
 	const elements = document.querySelectorAll(selectors);
 
 	elements.forEach((element) => {

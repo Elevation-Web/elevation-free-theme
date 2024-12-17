@@ -18,9 +18,9 @@ import { registerBlockType } from '@wordpress/blocks';
  */
 import json from './block.json';
 import edit from './edit';
-import save from './save';
 import './style.scss';
 import { SVG, Path } from '@wordpress/components';
+import initSwiper from '../../../assets/scripts/utilities/swiper';
 
 const { name, title } = json;
 /**
@@ -50,9 +50,14 @@ registerBlockType(name, {
 	 * @see ./edit.js
 	 */
 	edit,
-
-	/**
-	 * @see ./save.js
-	 */
-	save,
 });
+
+getSwiper()
+
+const getSwiper = () => {
+	setTimeout(() => {
+		initSwiper('.feed-default-blog-container__swiper');
+	}, 1500);
+}
+
+

@@ -5,14 +5,26 @@
 	"name": "elevation/interior-components--feed-default-blog",
 	"version": "1.0.0",
 	"category": "elevation-blocks",
+	"icon": "button",
 	"description": "Feed, Layout: Default",
 	"textdomain": "elevation",
 	"supports": {
+		"html": true,
 		"anchor": true,
-		"align": false,
 		"alignWide": false,
-		"renaming": false,
-		"inserter": true,
+		"ariaLabel": false,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": true,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"blockGap": false
+		},
+		"layout": false,
 		"interactivity": {
 			"clientNavigation": true
 		}
@@ -22,25 +34,21 @@
 			"type": "string",
 			"default": ""
 		},
-		"headingLevel": {
-			"type": "string",
-			"default": "h4"
+		"align": {
+			"type": "array",
+			"default": "full"
 		},
-		"hasCategoryPrefilter": {
+		"preview": {
 			"type": "boolean",
 			"default": false
-		},
-		"categories": {
-			"type": "array",
-			"default": []
-		},
-		"selectedPost": {
-			"type": "array",
-			"default": []
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
 		}
 	},
 	"editorScript": ["file:index.js"],
 	"style": ["file:style-index.css"],
-	"editorStyle": ["file:index.css"],
-	"render": "file:./render.php"
+	"editorStyle": ["file:index.css"]
 }

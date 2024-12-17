@@ -1,41 +1,63 @@
-/* External Dependencies */
+/* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
-import { useBlockProps } from '@wordpress/block-editor';
-import { Spinner } from '@wordpress/components';
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import ServerSideRender from '@wordpress/server-side-render';
 
 /* Internal Dependencies */
+import { getBlockName } from '../../utils/helpers';
+
+/* Block */
 import './editor.scss';
 import json from './block.json';
-import { getBlockName } from '../../utils/helpers';
-import { Controls } from './controls';
+import previewImage from './preview.webp';
+import { TEMPLATE, allowedBlocks } from './template';
 
 const Edit = (props) => {
-	const { clientId, attributes, setAttributes } = props;
-	const { id, anchor, } = attributes;
-
 	const { name: blockName } = json;
-	const { name } = getBlockName(blockName);
+	const { name, blockId } = getBlockName(blockName);
 
-	// useEffect(() => {
-	// 	setAttributes({ id: `${name}-${clientId}` });
-	// }, [clientId, name, setAttributes]);
+	const { clientId, attributes, setAttributes } = props;
+	const { anchor, id, grid_column, preview } = attributes;
 
 	const blockProps = useBlockProps({
-		className: `${name}`,
+		className: `${name} alignfull row-${grid_column}`,
 	});
+
+	const innerBlocksProps = useInnerBlocksProps(blockProps, {
+		template: TEMPLATE,
+		templateInsertUpdatesSelection: true,
+		allowedBlocks: allowedBlocks,
+		orientation: 'horizontal',
+	});
+
+	useEffect(() => {
+		setAttributes({ id: `${name}-${clientId}` });
+	}, [clientId, name, setAttributes]);
+
+	if (preview) {
+		return (
+			<div className={`${name}-preview`}>
+				<img
+					src={previewImage}
+					alt="Preview"
+					style={{
+						objectFit: 'contain',
+						maxHeight: '100%',
+						maxWidth: '100%',
+					}}
+				/>
+			</div>
+		);
+	}
 
 	return (
 		<>
-			<Controls {...props} />
-			<div id={anchor || id} data-block-id={name} {...blockProps}>
-				{/* <ServerSideRender
-					block={blockName}
-					attributes={attributes}
-					loadingResponsePlaceholder={Spinner}
-				/> */}
-			</div>
+			<div
+				data-block-id={blockId}
+				data-block-js="true"
+				id={anchor || id}
+				{...innerBlocksProps}
+			/>
 		</>
 	);
 };
