@@ -9,6 +9,7 @@ export const TEMPLATE = [
 				'elevation/interior-components--spacer',
 				{
 					line: false,
+					space: 'spacer__large',
 				},
 			],
 			[
@@ -63,7 +64,7 @@ export const TEMPLATE = [
 					line: true,
 					lineType: 'dash',
 					linePosition: 'top',
-					space: 'spacer__small',
+					space: 'spacer__extra-small',
 				},
 			],
 			[
@@ -76,29 +77,29 @@ export const TEMPLATE = [
 					[
 						'elevation/interior-components--impact-default-content-centered-item',
 						{
-							value: 8700,
+							value: 45,
 							after_value: '+',
 						},
 					],
 					[
 						'elevation/interior-components--impact-default-content-centered-item',
 						{
-							value: 45,
+							value: 50,
 							after_value: '%',
 						},
 					],
 					[
 						'elevation/interior-components--impact-default-content-centered-item',
 						{
-							value: 50,
+							value: 870,
 							after_value: '+',
 						},
 					],
 					[
 						'elevation/interior-components--impact-default-content-centered-item',
 						{
-							value: 50,
-							after_value: '+',
+							before_value: '>',
+							value: 60,
 						},
 					],
 				],
@@ -110,13 +111,14 @@ export const TEMPLATE = [
 					lineType: 'dash',
 					linePosition: 'bottom',
 					borderColor: '#8a55b3ff',
+					space: 'spacer__extra-small',
 				},
 			],
 			[
 				'elevation/interior-components--spacer',
 				{
 					line: false,
-					space: 'spacer__huge',
+					space: 'spacer__large',
 				},
 			],
 		],
