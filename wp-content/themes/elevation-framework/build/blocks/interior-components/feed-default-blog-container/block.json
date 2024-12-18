@@ -7,6 +7,9 @@
   "category": "elevation-blocks",
   "description": "Feed, Layout: Default Container",
   "textdomain": "elevation",
+  "parent": [
+    "elevation/interior-components--custom-container"
+  ],
   "supports": {
     "anchor": true,
     "align": false,

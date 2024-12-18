@@ -7,6 +7,7 @@
 	"category": "elevation-blocks",
 	"description": "Feed, Layout: Default Container",
 	"textdomain": "elevation",
+	"parent": ["elevation/interior-components--custom-container"],
 	"supports": {
 		"anchor": true,
 		"align": false,
@@ -43,15 +44,9 @@
 			"default": 6
 		}
 	},
-	"editorScript": [
-		"file:index.js"
-	],
-	"style": [
-		"file:style-index.css"
-	],
-	"editorStyle": [
-		"file:index.css"
-	],
+	"editorScript": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"],
 	"render": "file:./render.php",
 	"viewScript": "file:./view.js"
 }

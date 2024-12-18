@@ -25,9 +25,9 @@ $postsPerPage = $attributes['postsPerPage'] ?? -1;
 $filterBy = $attributes['filterBy'] ?? 'latest';
 
 ?>
-<div data-block-id="interior-components/feed-default-blog-container" data-block-js="true" class="feed-default-blog-container">
+<div id="<?php echo esc_attr($attributes['id']); ?>" data-block-id="interior-components/feed-default-blog-container" data-block-js="true" class="feed-default-blog-container">
     <div class="feed-default-blog-container__container">
-        <div class="feed-default-blog-container__swiper" id="swiper" data-swiper-options="<?php echo esc_attr(json_encode($swiper_attrs)); ?>">
+        <div class="feed-default-blog-container__swiper" id="swiper-<?php echo esc_attr($attributes['id']); ?>" data-swiper-options="<?php echo esc_attr(json_encode($swiper_attrs)); ?>">
             <div class="swiper-wrapper">
                 <?php
                 $args = array(
@@ -53,16 +53,19 @@ $filterBy = $attributes['filterBy'] ?? 'latest';
                     $args['category__in'] = $cats;
                 }
 
-                if ($filterBy == 'posts' && $postsSelected) {
+                if ($filterBy == 'posts') {
                     $args['post__in'] = $postsSelected;
                 }
 
                 $the_query = new \WP_Query($args);
-                if ($the_query->have_posts()) :
+
+
+
+                if ($the_query->have_posts() && !($filterBy == 'posts' && empty($postsSelected)) && !($filterBy == 'category' && empty($categorySelected))) :
                     while ($the_query->have_posts()) : $the_query->the_post();
                         $permalink = get_permalink(get_the_ID());
                         $title = get_the_title(get_the_ID());
-                        $description = get_the_excerpt(get_the_ID());
+                        $description      = wp_strip_all_tags(Helpers::get_excerpt(20));
                         $categories = get_the_terms(get_the_ID(), 'category');
                         $date = get_the_date('M d. Y');
                         if (has_post_thumbnail()) {
@@ -83,7 +86,7 @@ $filterBy = $attributes['filterBy'] ?? 'latest';
                                             'size' => 'medium',
                                             'alt' => $alt_image,
                                             'echo' => false,
-                                            'class' => 'card__image'
+                                            'class' => 'no-animate card__image'
                                         ]
                                     ); ?>
                                 </div>
@@ -117,13 +120,19 @@ $filterBy = $attributes['filterBy'] ?? 'latest';
                 <?php
                         wp_reset_postdata();
                     endwhile;
+                else:
+                    echo '<div>
+                        <h3>No posts found</h3>
+                    </div>';
                 endif;
                 ?>
             </div>
-            <div class="swiper__container-controls center">
+            <div class="swiper__container-actions">
                 <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
+            </div>
+            <div class="swiper__container-controls">
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>

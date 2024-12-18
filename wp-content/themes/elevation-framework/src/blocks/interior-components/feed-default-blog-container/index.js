@@ -20,7 +20,6 @@ import json from './block.json';
 import edit from './edit';
 import './style.scss';
 import { SVG, Path } from '@wordpress/components';
-import initSwiper from '../../../assets/scripts/utilities/swiper';
 
 const { name, title } = json;
 /**
@@ -52,12 +51,43 @@ registerBlockType(name, {
 	edit,
 });
 
-getSwiper()
+// /// observer
+// document.addEventListener('DOMContentLoaded', () => {
+// 	const observer = new MutationObserver(() => swiper());
+// 	const editorContainer = document.querySelector('.feed-default-blog');
 
-const getSwiper = () => {
-	setTimeout(() => {
-		initSwiper('.feed-default-blog-container__swiper');
-	}, 1500);
-}
+// 	if (editorContainer) {
+// 		observer.observe(editorContainer, { childList: true, subtree: true });
+// 	}
+// 	// Inicializa Swiper al cargar la página
+// 	swiper();
+// });
 
+// document.addEventListener('DOMContentLoaded', () => {
+// 	const observer = new MutationObserver((mutationsList) => {
+// 		let structureChanged = false;
 
+// 		for (const mutation of mutationsList) {
+// 			if (
+// 				mutation.type === 'childList' || // Detect added/removed nodes
+// 				mutation.type === 'attributes'   // Detect attribute changes
+// 			) {
+// 				structureChanged = true;
+// 				break;
+// 			}
+// 		}
+
+// 		if (structureChanged) {
+// 			swiper(); // Reinitialize Swiper
+// 		}
+// 	});
+
+// 	setTimeout(() => {
+// 		// Start observing the target node
+// 		const targetNode = document.querySelector('.feed-default-blog');
+// 		const config = { attributes: true, childList: true, subtree: true };
+// 		observer.observe(targetNode, config);
+// 	}, 2000);
+
+// });
+//

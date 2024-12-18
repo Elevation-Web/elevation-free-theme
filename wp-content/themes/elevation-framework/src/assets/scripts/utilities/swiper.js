@@ -32,7 +32,7 @@ const getSwiperParams = (dataset) => {
 
 	const dynamicBullets =
 		dataSet?.dynamicBullets !== undefined &&
-			dataSet?.dynamicBullets === false
+		dataSet?.dynamicBullets === false
 			? false
 			: true;
 
@@ -120,8 +120,6 @@ export default function initSwiper(swiperSelector, childSelector = null) {
 	if (!swiperSelector) return;
 
 	const carousels = document.querySelectorAll(swiperSelector);
-
-	console.log('carousels', carousels);
 
 	if (carousels) {
 		carousels.forEach((carousel) => {

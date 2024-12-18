@@ -1,10 +1,9 @@
-// .feed-default-blog {
-// 	position: relative;
-// 	.swiper-wrapper {
-// 		display: flex;
-// 		gap: 30px;
-// 	}
-// 	.swiper-slide {
-// 		width: calc(33.33% - 20px);
-// 	}
-// }
+.feed-default-blog-container {
+
+    .card {
+
+        a {
+            pointer-events: none;
+        }
+    }
+}
