@@ -24,6 +24,7 @@ use ElevationFramework\Lib\Frontend\Settings\Helpers as SettingsHelpers;
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
+
 <?php
 $nav_class = '';
 $header_class = '';
@@ -35,6 +36,7 @@ if (get_field('header_mega_menu', 'option')) {
 } else {
 	$mega_menu_on = ' ';
 }
+
 
 $header_transparent = get_field('header_transparent', get_the_ID());
 $body_classes = $header_transparent == true || (isset($args['header_type']) && $args['header_type'] === 'transparent') ? ['header__transparent'] : '';

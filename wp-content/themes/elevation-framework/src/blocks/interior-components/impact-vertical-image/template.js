@@ -9,7 +9,6 @@ export const TEMPLATE = [
 				'elevation/interior-components--group',
 				{
 					className: '',
-					type: 'type-row',
 					color: 'ui-base-white',
 					className: 'impact-vertical-image__container',
 					backgroundColor: 'ui-background-light-01',
@@ -27,7 +26,6 @@ export const TEMPLATE = [
 						'elevation/interior-components--group',
 						{
 							className: '',
-							type: 'type-row',
 							color: 'ui-base-white',
 							className: 'impact-vertical-image__content-wrapper',
 						},
