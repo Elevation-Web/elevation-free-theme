@@ -170,8 +170,16 @@ h6,
 	color: $ui-foreground-primary-text-headings;
 }
 
+.wp-block-heading{
+	margin: 0 !important;
+}
+
 .wp-block-heading + p{
 	margin-top: 12px;
+}
+
+.wp-block + .wp-block.buttons{
+	margin-top: 24px !important;
 }
 
 [id] {

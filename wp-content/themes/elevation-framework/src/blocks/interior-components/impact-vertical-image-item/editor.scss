@@ -1,0 +1,17 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+
+
+$block: 'impact-vertical-image-item';
+
+#{$block} {
+	.wp-block-heading {
+		margin-top: 0px;
+	}
+
+	#{$block}__container {
+		border: none;
+	}
+
+}

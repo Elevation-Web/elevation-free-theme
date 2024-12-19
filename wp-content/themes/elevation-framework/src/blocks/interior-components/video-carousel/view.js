@@ -9,6 +9,6 @@ if (videosPopUp && videosPopUp.length > 0) {
 		const videoType = video.getAttribute('data-video-type');
 
 		console.log('video', video);
-		popUpVideo(videoId, videoUrl, videoType, 'video-carousel-item__popup');
+		popUpVideo(videoId, videoUrl, videoType, 'video-carousel-item');
 	});
 }

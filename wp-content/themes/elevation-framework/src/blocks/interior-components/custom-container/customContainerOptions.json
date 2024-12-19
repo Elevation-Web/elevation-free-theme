@@ -5,6 +5,10 @@
 			"value": "default"
 		},
 		{
+			"label": "Large",
+			"value": "large"
+		},
+		{
 			"label": "Medium",
 			"value": "medium"
 		},

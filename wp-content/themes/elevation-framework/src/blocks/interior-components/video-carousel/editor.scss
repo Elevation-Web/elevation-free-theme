@@ -60,4 +60,25 @@
             padding-bottom: 0px;
         }
     }
+
+
+    &-item {
+        height: 323px !important;
+
+        .components-placeholder {
+            height: 323px !important;
+            max-height: 323px !important;
+
+            &__fieldset {
+                height: 100%;
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        &__container {
+            height: calc(100% - 60px);
+        }
+    }
 }

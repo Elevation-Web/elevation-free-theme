@@ -106,7 +106,7 @@ $swal2-width: 100%;
 
 	&-item {
 		max-height: $height-video-item;
-		height: $height-video-item;
+		height: $height-video-item !important;
 		opacity: 1;
 		position: relative;
 		display: flex;
@@ -152,7 +152,7 @@ $swal2-width: 100%;
 			display: flex;
 			align-items: flex-end;
 			padding: 30px;
-			height: calc(100% - 60px);
+			height: 100%;
 			width: 100%;
 		}
 

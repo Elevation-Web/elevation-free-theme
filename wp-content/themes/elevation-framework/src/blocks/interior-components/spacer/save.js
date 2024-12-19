@@ -13,10 +13,14 @@ const save = (props) => {
 
 	const { attributes } = props;
 
-	const { anchor, space, line, lineType, linePosition } = attributes;
+	const { anchor, space, line, lineType, linePosition, borderColor } =
+		attributes;
 
 	const blockProps = useBlockProps.save({
 		className: `${name} ${space} line-${line ? 'enable' : 'disable'} line-type-${lineType} position-${linePosition}`,
+		style: {
+			'--border-color': borderColor,
+		},
 	});
 
 	return (

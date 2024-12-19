@@ -10,18 +10,22 @@ import json from './block.json';
 const save = ({ attributes }) => {
 	const { name: blockName } = json;
 
-	const { tagName } = attributes;
+	const { tagName, type } = attributes;
 
-	const { name } = getBlockName(blockName);
+	const { name, blockId } = getBlockName(blockName);
 
 	const blockProps = useBlockProps.save({
-		className: `${name} wp-block-group is-layout-flow wp-block-group-is-layout-flow`,
+		className: `${name} elevation-interior-components--group wp-block-group is-layout-flow wp-block-group-is-layout-flow ${type}`,
 	});
 
 	const CustomTag = `${tagName}`;
 
 	return (
-		<CustomTag {...blockProps}>
+		<CustomTag
+			data-block-id={blockId}
+			data-block-js="false"
+			{...blockProps}
+		>
 			<InnerBlocks.Content />
 		</CustomTag>
 	);
