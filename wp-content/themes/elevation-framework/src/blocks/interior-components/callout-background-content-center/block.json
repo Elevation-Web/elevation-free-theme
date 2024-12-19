@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"title": "Background Callout - Content Box Left",
-	"name": "elevation/interior-components--callout-background-content-box-left",
+	"title": "Background Callout - Content Center",
+	"name": "elevation/interior-components--callout-background-content-center",
 	"version": "1.0.0",
 	"category": "elevation-blocks",
 	"icon": "format-image",
-	"description": "Background Callout, content box left, with title, ddescription and button.",
+	"description": "Background Callout, content center, with title, ddescription and button.",
 	"textdomain": "elevation",
 	"supports": {
 		"html": true,
