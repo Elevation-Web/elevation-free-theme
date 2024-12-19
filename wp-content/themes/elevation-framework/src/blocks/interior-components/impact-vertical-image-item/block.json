@@ -1,0 +1,71 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Impact, Layout: Vertical Image Item.",
+	"name": "elevation/interior-components--impact-vertical-image-item",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"icon": "button",
+	"description": "Impact Layout: Vertical Image Item.",
+	"textdomain": "elevation",
+	"parent": ["elevation/interior-components--group"],
+	"supports": {
+		"html": true,
+		"anchor": true,
+		"alignWide": false,
+		"ariaLabel": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"text": true,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"blockGap": false
+		},
+		"layout": false,
+		"interactivity": {
+			"clientNavigation": true
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"before_value": {
+			"type": "string",
+			"default": ""
+		},
+		"value": {
+			"type": "number",
+			"default": 0
+		},
+		"after_value": {
+			"type": "string",
+			"default": ""
+		},
+		"remove_comma": {
+			"type": "boolean",
+			"default": false
+		},
+		"title_size": {
+			"type": "string",
+			"default": "h-1"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "ui-base-white"
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"editorScript": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"]
+}

@@ -22,8 +22,8 @@ export const template = [
 			[
 				'elevation/interior-components--buttons',
 				{
-					btnStyle: 'primary-1',
-					text: 'Read More',
+					btnStyle: 'tertiary',
+					text: 'Text Button',
 				},
 			],
 		],

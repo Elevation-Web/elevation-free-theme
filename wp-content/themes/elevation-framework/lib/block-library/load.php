@@ -58,9 +58,9 @@ class Load
                 register_block_type($dir);
 
                 // Incluir el archivo render.php si existe
-                if (file_exists($dir . '/' . 'render.php')) {
-                    include_once $dir . '/' . 'render.php';
-                }
+                // if (file_exists($dir . '/' . 'render.php')) {
+                //     include_once $dir . '/' . 'render.php';
+                // }
             }
         }
     }

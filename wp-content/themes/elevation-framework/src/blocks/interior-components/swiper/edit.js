@@ -47,6 +47,7 @@ const Edit = (props) => {
 						templateLock={false}
 						allowedBlocks={[
 							'elevation/interior-components--image-carousel',
+							'elevation/interior-components--video-carousel-item',
 						]}
 						{...wrapperProps}
 					/>
