@@ -8,8 +8,8 @@ export const template = [
 			[
 				'core/heading',
 				{
-					level: 4,
-					content: 'H4. Heading lorem ipsum euismod',
+					level: 2,
+					content: 'H2. Heading lorem ipsum sapien et',
 				},
 			],
 			[
@@ -21,10 +21,23 @@ export const template = [
 			],
 			[
 				'elevation/interior-components--buttons',
-				{
-					btnStyle: 'tertiary',
-					text: 'Text Button',
-				},
+				{ layout: { type: 'flex', justifyContent: 'center' } },
+				[
+					[
+						'elevation/interior-components--button',
+						{
+							btnStyle: 'primary-inverse',
+							text: 'Text Button',
+						},
+					],
+					[
+						'elevation/interior-components--button',
+						{
+							btnStyle: 'secondary-inverse',
+							text: 'Text Button',
+						},
+					],
+				],
 			],
 		],
 	],
