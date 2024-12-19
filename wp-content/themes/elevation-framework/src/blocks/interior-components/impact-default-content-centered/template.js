@@ -16,7 +16,6 @@ export const TEMPLATE = [
 				'elevation/interior-components--group',
 				{
 					className: '',
-					type: 'type-row',
 					color: 'ui-base-white',
 				},
 				[
