@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Video Default",
+	"name": "elevation/interior-components--video-default",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"description": "Video, Layout: Default.",
+	"textdomain": "elevation",
+	"supports": {
+		"html": true,
+		"align": false,
+		"alignWide": false,
+		"anchor": true,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": false,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"]
+		},
+		"interactivity": {
+			"clientNavigation": true
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"preview": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"script": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"],
+	"viewScript": ["file:./view.js"]
+}

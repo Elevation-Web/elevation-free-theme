@@ -1,0 +1,184 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "swiper/css/bundle";
+
+$height-video-item: 522px;
+$width-video-item: 645px;
+$swal2-width: 100%;
+
+.video-default {
+	opacity: 1;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		@include media-breakpoint-up(xl) {
+			column-gap: 32px;
+			flex-direction: row;
+		}
+	}
+
+	&__content {
+		flex: 1;
+
+		.wp-block-heading {
+			margin-top: 0px;
+		}
+	}
+
+	&-item {
+		opacity: 1;
+		position: relative;
+		width: 100%;
+		min-height: 300px;
+
+		@include media-breakpoint-up(md) {
+			min-height: 450px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			min-height: $height-video-item;
+			width: $width-video-item;
+		}
+
+		&__background {
+			height: 100%;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			z-index: 1;
+			object-fit: cover;
+			object-position: center;
+
+			img {
+				width: 100%;
+				object-fit: cover;
+
+				@include media-breakpoint-up(xl) {
+					height: $height-video-item;
+				}
+			}
+		}
+
+		&__container {
+			position: absolute;
+			top: calc(50% - 50px);
+			left: calc(50% - 50px);
+			z-index: 2;
+
+			@include media-breakpoint-up(xl) {
+				top: calc(50% - 100px);
+				left: calc(50% - 100px);
+			}
+		}
+
+		&__button {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			border: none;
+			background-color: transparent;
+			font-size: px-to-rem(16px);
+			font-weight: 700;
+			line-height: 1.1;
+			width: 100%;
+			padding: 0;
+			gap: 20px;
+			cursor: pointer;
+			color: $ui-base-white;
+			font-size: 0px;
+			transition: all 0.3s ease-in-out;
+
+			&::before {
+				content: "";
+				color: $ui-base-white;
+				background-image: url('data:image/svg+xml,<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(%23filter0_d_5847_1165)"><circle cx="100" cy="100" r="50" fill="%23FBF9F8"/><path d="M93 107.07V91.8449C93 91.051 93.8806 90.5737 94.5458 91.007L105.765 98.3152C106.357 98.701 106.373 99.5626 105.795 99.9701L94.5766 107.887C93.9142 108.355 93 107.881 93 107.07Z" fill="%23210044"/></g><defs><filter id="filter0_d_5847_1165" x="0" y="0" width="200" height="200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset/><feGaussianBlur stdDeviation="25"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5847_1165"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5847_1165" result="shape"/></filter></defs></svg>');
+				background-repeat: no-repeat;
+				background-size: cover;
+				width: 100px;
+				height: 100px;
+				flex-shrink: 0;
+
+				@include media-breakpoint-up(xl) {
+					width: 200px;
+					height: 200px;
+				}
+			}
+
+			@include media-breakpoint-up(xl) {
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
+
+
+		&__popup {
+			&.swal2-backdrop-show {
+				background-color: rgba($ui-base-black, 1);
+			}
+
+			.swal2-popup {
+				padding-bottom: 0;
+				border-radius: 3px;
+				width: 645px;
+				max-width: 90%;
+
+				@include media-breakpoint-up(xl) {
+					width: 1070px;
+					height: 661px;
+				}
+			}
+
+			.swal2-container,
+			.swal2-popup {
+				background-color: black;
+			}
+
+			.swal2-html-container {
+				padding: 0;
+				aspect-ratio: 16/9;
+				overflow: hidden;
+
+				iframe,
+				video {
+					aspect-ratio: 16/9;
+				}
+			}
+
+			.swal2-close {
+				width: 48px;
+				height: 48px;
+				margin-bottom: -48px;
+
+				@include media-breakpoint-up(xl) {
+					margin-top: -65px;
+					width: 50px;
+					height: 50px;
+
+					svg {
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+		}
+
+
+		&.swiper-slide-active {
+			.media {
+				&-image {
+					filter: none;
+				}
+
+				&-caption {
+					display: block;
+				}
+			}
+		}
+	}
+}
