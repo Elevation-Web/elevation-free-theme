@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Numbered Accordion Item",
+  "name": "elevation/interior-components--numbered-accordion-item",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "icon": "text",
+  "description": "Numbered Accordion item",
+  "parent": [
+    "elevation/interior-components--custom-container"
+  ],
+  "textdomain": "elevation",
+  "supports": {
+    "anchor": true,
+    "html": true,
+    "align": false,
+    "alignWide": false,
+    "color": {
+      "background": false,
+      "gradients": false,
+      "text": false,
+      "link": false,
+      "border": false
+    },
+    "inserter": true,
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": "H6. Question. Lorem ipsum sit amet risus nullam eget felis eget nunc lobortis? "
+    },
+    "itemNumber": {
+      "type": "string",
+      "default": "00"
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ]
+}

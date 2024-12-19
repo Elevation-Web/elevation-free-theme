@@ -1,0 +1,116 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "swiper/css/bundle";
+
+.numbered-accordion {
+	opacity: 1;
+	position: relative;
+
+	.custom-container {
+		display: flex;
+		flex-direction: column;
+		// gap: 6px;
+	}
+
+	&-item__item {
+		padding: 40px 35px;
+		border-bottom: 1px solid #E7E1EA;
+		background-color: white;
+		display: flex;
+		column-gap: 20px;
+
+		@include media-breakpoint-up(lg) {
+				column-gap: 64px;
+		}
+	}
+
+	&__number{
+		font-weight: 700;
+	}
+
+	&__button {
+		color: $ui-foreground-primary-text-headings;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+		text-align: left;
+		outline: none;
+		display: flex;
+		font-weight: 700;
+		justify-content: space-between;
+		align-items: center;
+		transition: 0.4s;
+
+		&::after {
+			content: "";
+			position: relative;
+			display: inline-block;
+			margin: 0 0 0 10px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 12px;
+			height: 13px;
+			background-position: center;
+			background-image: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1.5V11.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M11 6.5L1 6.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+			transition: 0.4s;
+			transform: rotate(0);
+			flex-shrink: 0;
+		}
+
+		// &.active{
+
+		// }
+		&[aria-expanded="true"] {
+			&::after{
+				transform: rotate(360deg);
+				background-image: url("data:image/svg+xml,%3Csvg width='12' height='3' viewBox='0 0 12 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 1.5L2 1.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+			}
+			
+		}
+		&[aria-expanded="false"] {
+			&::after{
+				background-image: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1.5V11.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M11 6.5L1 6.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+			}
+		}
+	}
+
+	&__panel {
+		padding: 0;
+		background-color: white;
+		max-height: 0;
+		overflow: hidden;
+		transition:
+		max-height 0.2s ease-out,
+		margin-bottom 0.2s ease-out;
+
+		&-wrapper{
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+			padding: 20px 0 0 0;
+
+			@include media-breakpoint-up(lg) {
+				flex-direction: row;
+			}
+
+			.media{
+				flex: 0 0 auto;
+
+				@include media-breakpoint-up(lg) {
+					width: 194px;
+				}
+
+				img{
+					border-radius: 2px;
+				}
+			}
+		}
+
+		&-content{
+			flex: 1;
+			margin-top: 0 !important;
+		}
+	}
+}
