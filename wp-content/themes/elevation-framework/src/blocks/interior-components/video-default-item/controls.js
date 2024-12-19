@@ -193,6 +193,7 @@ export default function Controls(props) {
 			<PanelBody title={__('Button Label')}>
 				<TextControl
 					value={buttonLabel}
+					help="For accessibility only"
 					onChange={(buttonLabel) => setAttributes({ buttonLabel })}
 				/>
 			</PanelBody>
