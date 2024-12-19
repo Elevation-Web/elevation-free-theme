@@ -12,10 +12,12 @@ import './editor.scss';
 
 const Edit = (props) => {
 	const { name: blockName } = json;
+	const { attributes } = props;
+	const { type } = attributes;
 	const { name } = getBlockName(blockName);
 
 	const blockProps = useBlockProps({
-		className: `${name} wp-block-group is-layout-flow wp-block-group-is-layout-flow`,
+		className: `elevation-interior-components--group ${name} wp-block-group is-layout-flow wp-block-group-is-layout-flow ${type}`,
 	});
 
 	return (

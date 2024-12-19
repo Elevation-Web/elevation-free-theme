@@ -93,8 +93,8 @@ const Edit = (props) => {
 						labels={{ title: 'Image' }}
 					/>
 				)}
-				<div className={`${name}__container`}>
-					{imgDesktop.url && (
+				{imgDesktop.url && (
+					<div className={`${name}__container`}>
 						<button
 							onClick={() => {
 								Swal.fire({
@@ -104,8 +104,7 @@ const Edit = (props) => {
 									closeButtonHtml: closeIcon,
 									closeButtonAriaLabel: 'Close video',
 									customClass: {
-										container:
-											'video-full-screen-pop-up__popup',
+										container: `${name}__popup`,
 									},
 								});
 							}}
@@ -113,8 +112,8 @@ const Edit = (props) => {
 						>
 							{buttonLabel}
 						</button>
-					)}
-				</div>
+					</div>
+				)}
 			</div>
 		</>
 	);
