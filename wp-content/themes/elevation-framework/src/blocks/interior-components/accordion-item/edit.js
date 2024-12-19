@@ -53,8 +53,8 @@ const Edit = (props) => {
 							<Path
 								d="M10 1.5L2 1.5"
 								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
+								strokeWidth="2"
+								strokeLinecap="round"
 							/>
 						</SVG>
 					) : (
@@ -68,14 +68,14 @@ const Edit = (props) => {
 							<Path
 								d="M6 1.5V11.5"
 								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
+								strokeWidth="2"
+								strokeLinecap="round"
 							/>
 							<Path
 								d="M11 6.5L1 6.5"
 								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
+								strokeWidth="2"
+								strokeLinecap="round"
 							/>
 						</SVG>
 					)}

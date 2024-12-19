@@ -31,7 +31,6 @@
 		font-weight: 700;
 		justify-content: space-between;
 		align-items: center;
-		transition: 0.4s;
 
 		&::after {
 			content: "";
@@ -43,26 +42,33 @@
 			width: 12px;
 			height: 13px;
 			background-position: center;
-			background-image: url("data:image/svg+xml,%3Csvg width='12' height='3' viewBox='0 0 12 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 1.5L2 1.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
-			transition: 0.4s;
-			transform: rotate(0);
+			background-image: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1.5V11.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M11 6.5L1 6.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");			
 		}
 
-		// &.active{
-
-		// }
 		&[aria-expanded="true"] {
 			&::after{
-				transform: rotate(360deg);
-				background-image: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1.5V11.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M11 6.5L1 6.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+				animation: rotateFullIn 0.3s forwards;
+
+				@media (prefers-reduced-motion) {
+					animation: rotateFullIn 0s forwards;
+				}
+
+				background-image: url("data:image/svg+xml,%3Csvg width='12' height='3' viewBox='0 0 12 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 1.5L2 1.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
 			}
 			
 		}
+
 		&[aria-expanded="false"] {
 			&::after{
-				background-image: url("data:image/svg+xml,%3Csvg width='12' height='3' viewBox='0 0 12 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 1.5L2 1.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+				animation: rotateFullOut 0.3s forwards;
+
+				@media (prefers-reduced-motion) {
+					animation: rotateFullOut 0s forwards;
+				}
+				background-image: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1.5V11.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M11 6.5L1 6.5' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
 			}
 		}
+
 	}
 
 	&__panel {

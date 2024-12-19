@@ -10,7 +10,7 @@ export const TEMPLATE = [
 		'elevation/interior-components--custom-container',
 		{
 			className: 'accordion__custom-container',
-			containerWidth: 'small',
+			containerWidth: 'medium',
 		},
 		[
 			[
