@@ -10,14 +10,20 @@
 	"textdomain": "elevation",
 	"supports": {
 		"anchor": false,
-		"align": false,
 		"alignWide": false,
 		"renaming": false,
 		"inserter": true,
 		"interactivity": {
 			"clientNavigation": true
 		},
-		"lock": true
+		"lock": true,
+		"layout": {
+			"allowSwitching": false,
+			"allowInheriting": false,
+			"default": {
+				"type": "flex"
+			}
+		}
 	},
 	"attributes": {
 		"img": {
@@ -46,6 +52,10 @@
 		"showCaption": {
 			"type": "boolean",
 			"default": false
+		},
+		"align": {
+			"type": "array",
+			"default": "full"
 		}
 	},
 	"usesContext": ["elevation/image-classname"],

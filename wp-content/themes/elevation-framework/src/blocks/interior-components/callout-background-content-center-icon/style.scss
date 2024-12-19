@@ -1,0 +1,51 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+
+.callout-background-content-center-icon {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		object-fit: cover;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 2;
+		margin: 0 auto;
+	}
+
+	.custom-container{
+
+		max-width: 100%;
+		--callout-background-content-center-icon-padding: 100px 15px;
+		padding: var(--callout-background-content-center-icon-padding);
+		margin: 0 auto;
+
+		@include media-breakpoint-up(xl) {
+			--callout-background-content-center-icon-padding: 100px 0;
+		}
+
+		&--medium{
+			@include media-breakpoint-up(xl) {
+				--callout-background-content-center-icon-padding: 100px 8.333%;
+			}
+		}
+
+		&--default{
+			@include media-breakpoint-up(xl) {
+				--callout-background-content-center-icon-padding: 100px 16.666%;
+			}
+		}
+
+	}
+
+}
