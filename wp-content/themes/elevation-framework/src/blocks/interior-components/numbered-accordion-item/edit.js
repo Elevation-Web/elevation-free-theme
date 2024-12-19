@@ -12,7 +12,7 @@ const Edit = (props) => {
 
 	const { clientId, attributes, setAttributes } = props;
 
-	const { id, anchor, heading, style, itemNumber } = attributes;
+	const { id, anchor, heading, style } = attributes;
 
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -25,17 +25,7 @@ const Edit = (props) => {
 	});
 
 	return (
-		<div data-block-id={blockId} {...blockProps} {...style}>
-			<span
-				className="wp-block-heading has-h-6-font-size numbered-accordion__number"
-				aria-controls={id}
-			>
-				<TextControl
-					label="Item Number"
-					value={itemNumber}
-					onChange={(value) => setAttributes({ itemNumber: value })}
-				/>
-			</span>
+		<li data-block-id={blockId} {...blockProps} {...style}>
 			<div className="numbered-accordion__item-body">
 				<TextControl
 					value={heading}
@@ -98,7 +88,7 @@ const Edit = (props) => {
 					/>
 				</div>
 			</div>
-		</div>
+		</li>
 	);
 };
 

@@ -50,7 +50,7 @@ const Edit = (props) => {
 
 	return (
 		<>
-			<div
+			<ul
 				data-block-id={blockId}
 				data-block-js="true"
 				id={anchor || id}

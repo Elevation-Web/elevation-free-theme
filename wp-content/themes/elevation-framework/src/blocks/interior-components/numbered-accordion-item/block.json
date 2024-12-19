@@ -34,10 +34,6 @@
 		"heading": {
 			"type": "string",
 			"default": "H6. Question. Lorem ipsum sit amet risus nullam eget felis eget nunc lobortis? "
-		},
-		"itemNumber": {
-			"type": "string",
-			"default": "00"
 		}
 	},
 	"editorScript": ["file:index.js"]

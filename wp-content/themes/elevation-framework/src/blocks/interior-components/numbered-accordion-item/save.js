@@ -8,7 +8,7 @@ const save = (props) => {
 
 	const { attributes } = props;
 
-	const { id, anchor, heading, style, itemNumber } = attributes;
+	const { id, anchor, heading, style } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: `${name}__item`,
@@ -16,10 +16,7 @@ const save = (props) => {
 
 	return (
 		<>
-			<div data-block-id={blockId} {...blockProps} {...style}>
-				<span className="has-h-6-font-size numbered-accordion__number">
-					{itemNumber}
-				</span>
+			<li data-block-id={blockId} {...blockProps} {...style}>
 				<div className="numbered-accordion__item-body">
 					<button
 						className="wp-block-heading has-h-6-font-size numbered-accordion__button"
@@ -34,7 +31,7 @@ const save = (props) => {
 						<InnerBlocks.Content />
 					</div>
 				</div>
-			</div>
+			</li>
 		</>
 	);
 };

@@ -15,14 +15,14 @@ const save = (props) => {
 	});
 
 	return (
-		<div
+		<ul
 			data-block-id={blockId}
 			{...blockProps}
 			{...style}
 			data-block-js="true"
 		>
 			<InnerBlocks.Content />
-		</div>
+		</ul>
 	);
 };
 

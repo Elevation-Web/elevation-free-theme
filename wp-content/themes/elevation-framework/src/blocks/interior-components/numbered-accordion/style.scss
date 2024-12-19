@@ -6,6 +6,7 @@
 .numbered-accordion {
 	opacity: 1;
 	position: relative;
+	counter-reset: item 0;
 
 	.custom-container {
 		display: flex;
@@ -19,14 +20,19 @@
 		background-color: white;
 		display: flex;
 		column-gap: 20px;
+		counter-increment: item;
+		color: $ui-foreground-primary-text-headings;
 
 		@include media-breakpoint-up(lg) {
 				column-gap: 64px;
 		}
-	}
 
-	&__number{
-		font-weight: 700;
+		&::before{
+			content: counter(item, decimal-leading-zero) " ";
+			color: currentColor;
+			font-weight: 700;
+			@include font-heading;
+		}
 	}
 
 	&__button {
@@ -59,9 +65,6 @@
 			flex-shrink: 0;
 		}
 
-		// &.active{
-
-		// }
 		&[aria-expanded="true"] {
 			&::after{
 				transform: rotate(360deg);
