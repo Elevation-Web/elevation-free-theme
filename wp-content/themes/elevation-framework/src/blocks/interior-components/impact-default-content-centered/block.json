@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Impact, Layout: Default Content Centered",
+	"name": "elevation/interior-components--impact-default-content-centered",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"icon": "button",
+	"description": "Impact, Layout: Default Content Centered.",
+	"textdomain": "elevation",
+	"supports": {
+		"html": true,
+		"anchor": true,
+		"alignWide": false,
+		"ariaLabel": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"text": true,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"blockGap": false
+		},
+		"layout": false,
+		"interactivity": {
+			"clientNavigation": true
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"align": {
+			"type": "array",
+			"default": "full"
+		},
+		"preview": {
+			"type": "boolean",
+			"default": false
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "ui-background-primary"
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "ui-foreground-primary-accent-05"
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"editorScript": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"],
+	"viewScript": ["file:./view.js"]
+}

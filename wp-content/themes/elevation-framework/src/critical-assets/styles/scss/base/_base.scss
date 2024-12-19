@@ -170,8 +170,16 @@ h6,
 	color: $ui-foreground-primary-text-headings;
 }
 
+.wp-block-heading{
+	margin: 0 !important;
+}
+
 .wp-block-heading + p{
 	margin-top: 12px;
+}
+
+.wp-block + .wp-block.buttons{
+	margin-top: 24px !important;
 }
 
 [id] {
@@ -233,4 +241,9 @@ textarea {
 	font-size: inherit;
 	line-height: inherit;
 	font-weight: inherit;
+}
+
+:root :where(.is-layout-flow)>*,
+:root :where(.is-layout-flow)> :last-child {
+	margin-block-start: 0px !important;
 }

@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Impact, Layout: Content Boxes w/Icons Item.",
+	"name": "elevation/interior-components--impact-content-boxes-with-icons-item",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"icon": "button",
+	"description": "Impact Layout: Content Boxes w/Icons Item.",
+	"textdomain": "elevation",
+	"parent": ["elevation/interior-components--group"],
+	"supports": {
+		"html": true,
+		"anchor": true,
+		"alignWide": false,
+		"ariaLabel": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"text": true,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"blockGap": false
+		},
+		"layout": false,
+		"interactivity": {
+			"clientNavigation": true
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"before_value": {
+			"type": "string",
+			"default": ""
+		},
+		"value": {
+			"type": "number",
+			"default": 0
+		},
+		"after_value": {
+			"type": "string",
+			"default": ""
+		},
+		"remove_comma": {
+			"type": "boolean",
+			"default": false
+		},
+		"title_size": {
+			"type": "string",
+			"default": "h-1"
+		},
+		"icon": {
+			"type": "object",
+			"default": {
+				"url": "/wp-content/themes/elevation-framework/src/blocks/interior-components/impact-content-boxes-with-icons/images/icon-1.svg",
+				"alt": "",
+				"id": 0,
+				"srcset": "",
+				"width": "auto",
+				"height": "auto",
+				"sizes": ""
+			}
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "ui-foreground-primary-accent-01"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "ui-background-light-01"
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"editorScript": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"]
+}

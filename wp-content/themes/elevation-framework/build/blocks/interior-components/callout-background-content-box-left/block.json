@@ -28,6 +28,10 @@
     }
   },
   "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
     "preview": {
       "type": "boolean",
       "default": false
