@@ -36,17 +36,12 @@
 				"class": "flex-2",
 				"id": ""
 			},
-			"choices": {
-				"cta-red": "Primary Red Button",
-				"cta-dark": "Primary Black Button",
-				"cta-light": "Primary White Button",
-				"simple-dark-arrow-right": "Secondary Black Button",
-				"simple-light-arrow-right": "Secondary White Button"
-			},
+			"choices": [],
 			"default_value": false,
 			"return_format": "value",
 			"multiple": 0,
 			"allow_null": 0,
+			"allow_in_bindings": 1,
 			"ui": 0,
 			"ajax": 0,
 			"placeholder": ""
@@ -238,5 +233,5 @@
 	"active": false,
 	"description": "",
 	"show_in_rest": 0,
-	"modified": 1718309555
+	"modified": 1734967613
 }

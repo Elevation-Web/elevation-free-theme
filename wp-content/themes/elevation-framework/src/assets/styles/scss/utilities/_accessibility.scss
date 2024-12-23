@@ -7,7 +7,7 @@
 }
 
 body {
-	:focus-visible {
+	:not(.cta):focus-visible {
 		outline: none;
 		box-shadow: 0 0 0 3px rgba($ui-foreground-primary-accent-01, 0.5);
 		border-radius: 0;
