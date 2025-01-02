@@ -45,8 +45,8 @@
 	"dependencies": {
 		"clsx": "^2.1.1",
 		"sticky-sidebar": "3.3.1",
-		"swiper": "11.0.5",
-		"sweetalert2": "^11.12.3"
+		"sweetalert2": "^11.12.3",
+		"swiper": "11.0.5"
 	},
 	"prettier": "@wordpress/prettier-config"
 }
