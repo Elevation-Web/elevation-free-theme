@@ -6,6 +6,13 @@
 $block: '.impact-default';
 
 #{$block} {
+	
+	&.has-background {
+        @include media-breakpoint-down(xxl) {
+            padding: 0 1rem;
+        }
+	}
+
 	&__row {
 		display: grid;
 		grid-template-columns: 1fr;

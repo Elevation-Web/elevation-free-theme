@@ -87,6 +87,10 @@ html :where(.editor-styles-wrapper) blockquote {
 	margin-top: 12px;
 }
 
+.wp-block-heading + .buttons, p + .buttons{
+	margin-top: 24px !important;
+}
+
 .wp-block + .wp-block.buttons{
 	margin-top: 24px !important;
 }
