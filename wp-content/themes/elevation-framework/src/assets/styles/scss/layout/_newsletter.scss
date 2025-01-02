@@ -302,7 +302,7 @@
 					#field_submit > .gform-button {
 						background-color: transparent;
 						border-bottom: 1px solid$ui-base-white !important;
-						border-radius: $button-border-radius !important;
+						border-radius: $cta_border_radius !important;
 						border: none;
 						box-shadow: none;
 						color: $ui-base-white;
@@ -412,7 +412,7 @@
 				input.gform_button {
 					@include font-heading;
 					background-color: transparent;
-					border-radius: $button-border-radius !important;
+					border-radius: $cta_border_radius !important;
 					border: none;
 					box-shadow: none;
 					color: $ui-base-white;

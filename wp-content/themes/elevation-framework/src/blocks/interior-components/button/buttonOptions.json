@@ -1,48 +1,52 @@
 {
 	"buttonOptions": [
 		{
-			"label": "Primary 1",
-			"value": "primary-1"
+			"label": "Primary 01",
+			"value": "primary--color-01"
 		},
 		{
-			"label": "Primary 2",
-			"value": "primary-2"
+			"label": "Primary 02",
+			"value": "primary--color-02"
 		},
 		{
-			"label": "Primary 3",
-			"value": "primary-3"
+			"label": "Primary 03",
+			"value": "primary--color-03"
 		},
 		{
-			"label": "Primary 4",
-			"value": "primary-4"
+			"label": "Primary 04",
+			"value": "primary--color-04"
 		},
 		{
 			"label": "Primary Inverse",
-			"value": "primary-inverse"
+			"value": "primary--inverse"
 		},
 		{
-			"label": "Secondary",
-			"value": "secondary"
+			"label": "Secondary Outline",
+			"value": "secondary--outline"
 		},
 		{
 			"label": "Secondary Inverse",
-			"value": "secondary-inverse"
+			"value": "secondary--inverse"
+		},
+		{
+			"label": "Secondary Download",
+			"value": "secondary--download"
 		},
 		{
 			"label": "Tertiary",
-			"value": "tertiary"
+			"value": "tertiary--color-01"
 		},
 		{
 			"label": "Tertiary Inverse",
-			"value": "tertiary-inverse"
+			"value": "tertiary--inverse"
 		},
 		{
 			"label": "Fourth",
-			"value": "fourth"
+			"value": "fourth--color-01"
 		},
 		{
 			"label": "Fourth Inverse",
-			"value": "fourth-inverse"
+			"value": "fourth--inverse"
 		}
 	]
 }

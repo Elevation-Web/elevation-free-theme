@@ -64,7 +64,7 @@
 		input#bbp_search_submit {
 			background-color: $ui-foreground-primary-text-body-text !important;
 			border-color: $ui-foreground-primary-text-body-text;
-			border-radius: $button-border-radius !important;
+			border-radius: $cta_border_radius !important;
 			border: 1px solid transparent;
 			box-shadow: none;
 			color: $ui-base-white !important;
@@ -255,7 +255,7 @@
 		button {
 			background-color: $ui-foreground-primary-text-body-text !important;
 			border-color: $ui-foreground-primary-text-body-text;
-			border-radius: $button-border-radius !important;
+			border-radius: $cta_border_radius !important;
 			border: 1px solid transparent;
 			box-shadow: none;
 			cursor: pointer;

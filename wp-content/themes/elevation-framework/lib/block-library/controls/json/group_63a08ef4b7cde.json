@@ -175,8 +175,8 @@
 		},
 		{
 			"key": "field_63a08f43eeea3",
-			"label": "Information - Title",
-			"name": "footer_information_title",
+			"label": "Address - Title",
+			"name": "footer_address_title",
 			"aria-label": "",
 			"type": "text",
 			"instructions": "",
@@ -189,14 +189,15 @@
 			},
 			"default_value": "",
 			"maxlength": "",
+			"allow_in_bindings": 1,
 			"placeholder": "",
 			"prepend": "",
 			"append": ""
 		},
 		{
 			"key": "field_63a08f30eeea2",
-			"label": "Information",
-			"name": "footer_information",
+			"label": "Address",
+			"name": "footer_address",
 			"aria-label": "",
 			"type": "wysiwyg",
 			"instructions": "",
@@ -208,10 +209,32 @@
 				"id": ""
 			},
 			"default_value": "",
+			"allow_in_bindings": 1,
 			"tabs": "all",
-			"toolbar": "full",
-			"media_upload": 1,
+			"toolbar": "basic",
+			"media_upload": 0,
 			"delay": 0
+		},
+		{
+			"key": "field_6765f850900f4",
+			"label": "Contact - Title",
+			"name": "footer_contact_title",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"allow_in_bindings": 1,
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
 		},
 		{
 			"key": "field_64e3e1160c93d",
@@ -251,6 +274,27 @@
 			"placeholder": "",
 			"prepend": "",
 			"append": ""
+		},
+		{
+			"key": "field_6765f82d900f3",
+			"label": "EIN",
+			"name": "footer_ein",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"allow_in_bindings": 0,
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
 		}
 	],
 	"location": [
@@ -271,5 +315,5 @@
 	"active": true,
 	"description": "",
 	"show_in_rest": 0,
-	"modified": 1692656551
+	"modified": 1734736543
 }

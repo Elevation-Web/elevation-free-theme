@@ -1,4 +1,13 @@
 @mixin editor-gap {
+
+	div[class*="subheading-"]+ h2,
+	div[class*="subheading-"]+ h3,
+	div[class*="subheading-"]+ h4,
+	div[class*="subheading-"]+ h5,
+	div[class*="subheading-"]+ h6 {
+		margin-top: 10px;
+	}
+
 	h1 + p {
 		margin-top: 15px;
 	}
@@ -20,6 +29,22 @@
 		margin-top: 30px !important;
 	}
 
+	p + h2 {
+		margin-top: 17px;
+	}
+
+	h2 + h3 {
+		margin-top: 20px;
+	}
+
+	h3 + p{
+		margin-top: 15px;
+	}
+
+	* + .important-text{
+		margin-top: 30px !important;
+	}
+	
 	div:not(.bg-box) {
 		p + h2,
 		p + h3,

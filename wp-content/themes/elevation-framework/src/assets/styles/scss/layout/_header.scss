@@ -173,7 +173,14 @@ body:not(.logged-in) .not-logged {
 	@include media-breakpoint-up(xl) {
 		&__nav {
 			display: grid;
-			grid-template-columns: $logo_width 1fr;
+			grid-template-columns: $logo-width-mobile 1fr 150px;
+			column-gap: 10px;
+			@include media-breakpoint-up(sm){
+				grid-template-columns: $logo-width-tablet 1fr;
+			}
+			@include media-breakpoint-up(xl){
+				grid-template-columns: $logo-width-desktop 1fr;
+			}
 		}
 
 		&__navbar {

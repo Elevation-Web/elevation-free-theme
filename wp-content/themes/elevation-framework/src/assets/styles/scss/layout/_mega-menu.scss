@@ -233,7 +233,7 @@ header.header.mega-menu-active {
 			background-color: transparent;
 			margin-left: auto;
 			@include media-breakpoint-up(xl) {
-				width: calc(100% - $logo_width);
+				width: calc(100% - $logo-width-desktop);
 			}
 			&__wrapper {
 				padding: 60px;

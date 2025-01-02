@@ -174,22 +174,22 @@
 			}
 		}
 
-		p {
-			@include font-body;
-			color: $ui-base-white;
-			font-size: px-to-rem($font_size_text);
-			font-weight: $font_weight_text;
-			letter-spacing: $spacing_text;
-			line-height: px-to-rem($line_height_text);
-			margin: 0;
+		// p {
+		// 	@include font-body;
+		// 	color: $ui-base-white;
+		// 	font-size: px-to-rem($font_size_text);
+		// 	font-weight: $font_weight_text;
+		// 	letter-spacing: $spacing_text;
+		// 	line-height: px-to-rem($line_height_text);
+		// 	margin: 0;
 
-			> * {
-				color: $ui-base-white !important;
-			}
+		// 	> * {
+		// 		color: $ui-base-white !important;
+		// 	}
 
-			strong {
-				font-weight: bold !important;
-			}
-		}
+		// 	strong {
+		// 		font-weight: bold !important;
+		// 	}
+		// }
 	}
 }
