@@ -1,1 +1,66 @@
-(()=>{function t(t,e,n=!1){var o=null;window.requestAnimationFrame((function r(l){o||(o=l);var u=l-o,c=Math.min(u/3e3,1)*e;t.textContent="full"!=n?c.toFixed(n).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g,"$1,"):c.toFixed(n),u<3e3&&window.requestAnimationFrame(r)}))}!function(){var e=document.querySelector(".counter");if(e){var n=e.getBoundingClientRect().top+window.scrollY,o=0;window.addEventListener("scroll",(function(){window.scrollY>n-500?0===o&&(document.querySelectorAll(".numscroller").forEach((function(e){var n=parseInt(e.getAttribute("data-num"));t(e,n,0)})),document.querySelectorAll(".numscrollerdec").forEach((function(e){var n=parseFloat(e.getAttribute("data-num")).toFixed(1);t(e,n,1)})),document.querySelectorAll(".numscrolleryears").forEach((function(e){t(e,parseInt(e.textContent),"full")})),o=1):o=0}))}}()})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!**************************************************************************!*\
+  !*** ./src/blocks/interior-components/impact-default-with-icons/view.js ***!
+  \**************************************************************************/
+/*
+ * To Reemplaze with Javascript Native
+ */
+function myOrientResizeFunction() {
+  var sectionImpact = document.querySelector('.counter');
+
+  if (sectionImpact) {
+    var dTop = sectionImpact.getBoundingClientRect().top + window.scrollY;
+    var once = 0;
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > dTop - 500) {
+        if (once === 0) {
+          document.querySelectorAll('.numscroller').forEach(function (element) {
+            var targetNum = parseInt(element.getAttribute('data-num'));
+            animateCounter(element, targetNum, 0);
+          });
+          document.querySelectorAll('.numscrollerdec').forEach(function (element) {
+            var targetNum = parseFloat(element.getAttribute('data-num')).toFixed(1);
+            animateCounter(element, targetNum, 1);
+          });
+          document.querySelectorAll('.numscrolleryears').forEach(function (element) {
+            var targetNum = parseInt(element.textContent);
+            animateCounter(element, targetNum, 'full');
+          });
+          once = 1;
+        }
+      } else {
+        once = 0;
+      }
+    });
+  }
+}
+
+function animateCounter(element, targetNum, decimalPlaces = false) {
+  var start = 0;
+  var duration = 3000;
+  var startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    var progress = timestamp - startTime;
+    var current = Math.min(progress / duration, 1) * targetNum;
+
+    if (decimalPlaces != 'full') {
+      element.textContent = current.toFixed(decimalPlaces).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+    } else {
+      element.textContent = current.toFixed(decimalPlaces);
+    }
+
+    if (progress < duration) {
+      window.requestAnimationFrame(step);
+    }
+  }
+
+  window.requestAnimationFrame(step);
+}
+
+myOrientResizeFunction();
+/******/ })()
+;
+//# sourceMappingURL=view.js.map

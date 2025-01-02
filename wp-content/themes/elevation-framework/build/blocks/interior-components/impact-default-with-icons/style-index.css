@@ -1,1 +1,140 @@
-.impact-default-with-icons__row{display:grid;grid-template-columns:1fr}@media(min-width:1200px){.impact-default-with-icons__row{-moz-column-gap:145px;column-gap:145px;grid-template-columns:440px 1fr}.impact-default-with-icons__row .spacer{grid-column-end:3;grid-column-start:1}}.impact-default-with-icons__row .spacer:first-of-type{margin-bottom:30px}.impact-default-with-icons-item{border:none;border-radius:2px;display:grid;gap:15px;grid-template-columns:1fr;margin-block-start:0!important;opacity:1;overflow:hidden;padding-bottom:15px;position:relative;width:100%}.impact-default-with-icons-item:not(:last-of-type){border-bottom:1px solid #8a55b3}.impact-default-with-icons-item:not(:first-of-type){padding-top:30px}@media(min-width:992px){.impact-default-with-icons-item{gap:32px;grid-template-columns:1fr 4fr}}.impact-default-with-icons-item__value{display:flex;font-weight:500;margin:0}.impact-default-with-icons-item__header{margin-bottom:12px}.impact-default-with-icons-item__content{flex:1}.impact-default-with-icons-item__icon-container{align-items:flex-start;display:flex;justify-content:flex-start}.impact-default-with-icons-item__icon-container img{height:auto;width:auto}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/interior-components/impact-default-with-icons/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.impact-default-with-icons__row {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1200px) {
+  .impact-default-with-icons__row {
+    grid-template-columns: 440px 1fr;
+    -moz-column-gap: 145px;
+         column-gap: 145px;
+  }
+}
+@media (min-width: 1200px) {
+  .impact-default-with-icons__row .spacer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+.impact-default-with-icons__row .spacer:first-of-type {
+  margin-bottom: 30px;
+}
+.impact-default-with-icons-item {
+  opacity: 1;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  width: 100%;
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-block-start: 0px !important;
+  padding-bottom: 15px;
+}
+.impact-default-with-icons-item:not(:last-of-type) {
+  border-bottom: 1px solid #8a55b3;
+}
+.impact-default-with-icons-item:not(:first-of-type) {
+  padding-top: 30px;
+}
+@media (min-width: 992px) {
+  .impact-default-with-icons-item {
+    gap: 32px;
+    grid-template-columns: 1fr 4fr;
+  }
+}
+.impact-default-with-icons-item__value {
+  display: flex;
+  margin: 0px;
+  font-weight: 500;
+}
+.impact-default-with-icons-item__header {
+  margin-bottom: 12px;
+}
+.impact-default-with-icons-item__content {
+  flex: 1;
+}
+.impact-default-with-icons-item__icon-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.impact-default-with-icons-item__icon-container img {
+  height: auto;
+  width: auto;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

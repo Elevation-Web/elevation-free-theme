@@ -1,1 +1,114 @@
-.callout-background-content-center-icon{align-items:center;display:flex;position:relative}.callout-background-content-center-icon__background{height:100%;right:0;-o-object-fit:cover;object-fit:cover;position:absolute;top:0;width:100%;z-index:1}.callout-background-content-center-icon__container{margin:0 auto;position:relative;z-index:2}.callout-background-content-center-icon .custom-container{max-width:100%;--callout-background-content-center-icon-padding:100px 15px;margin:0 auto;padding:var(--callout-background-content-center-icon-padding)}@media(min-width:1200px){.callout-background-content-center-icon .custom-container{--callout-background-content-center-icon-padding:100px 0}.callout-background-content-center-icon .custom-container--medium{--callout-background-content-center-icon-padding:100px 8.333%}.callout-background-content-center-icon .custom-container--default{--callout-background-content-center-icon-padding:100px 16.666%}}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/interior-components/callout-background-content-center-icon/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.callout-background-content-center-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.callout-background-content-center-icon__background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.callout-background-content-center-icon__container {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+.callout-background-content-center-icon .custom-container {
+  max-width: 100%;
+  --callout-background-content-center-icon-padding: 100px 15px;
+  padding: var(--callout-background-content-center-icon-padding);
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .callout-background-content-center-icon .custom-container {
+    --callout-background-content-center-icon-padding: 100px 0;
+  }
+}
+@media (min-width: 1200px) {
+  .callout-background-content-center-icon .custom-container--medium {
+    --callout-background-content-center-icon-padding: 100px 8.333%;
+  }
+}
+@media (min-width: 1200px) {
+  .callout-background-content-center-icon .custom-container--default {
+    --callout-background-content-center-icon-padding: 100px 16.666%;
+  }
+}

@@ -1,1 +1,111 @@
-.cards-background-images .cards-background-images-card__container-group{border:none}@media(max-width:1199.98px){.cards-background-images .cards-background-images-card__container-group>.block-editor-inner-blocks{width:100%}}.cards-background-images .cards-background-images-card__container-group>.block-editor-inner-blocks>.block-editor-block-list__layout{display:flex;flex-wrap:wrap;gap:20px}@media(max-width:1199.98px){.cards-background-images .cards-background-images-card__container-group>.block-editor-inner-blocks>.block-editor-block-list__layout{flex-direction:column}}.cards-background-images.row-cards-3 .cards-background-images-card{width:calc(33.3% - 15px)!important}@media(max-width:1199.98px){.cards-background-images.row-cards-3 .cards-background-images-card{width:100%!important}}.cards-background-images.row-cards-2 .cards-background-images-card{width:calc(50% - 15px)!important}@media(max-width:1199.98px){.cards-background-images.row-cards-2 .cards-background-images-card{width:100%!important}}.cards-background-images.row-cards-2 .cards-background-images-card__container{height:calc(100% - 60px)!important;width:calc(100% - 60px)!important}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/interior-components/cards-background-images/editor.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.cards-background-images .cards-background-images-card__container-group {
+  border: none;
+}
+@media (max-width: 1199.98px) {
+  .cards-background-images .cards-background-images-card__container-group > .block-editor-inner-blocks {
+    width: 100%;
+  }
+}
+.cards-background-images .cards-background-images-card__container-group > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+@media (max-width: 1199.98px) {
+  .cards-background-images .cards-background-images-card__container-group > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    flex-direction: column;
+  }
+}
+.cards-background-images.row-cards-3 .cards-background-images-card {
+  width: calc(33.3% - 15px) !important;
+}
+@media (max-width: 1199.98px) {
+  .cards-background-images.row-cards-3 .cards-background-images-card {
+    width: 100% !important;
+  }
+}
+.cards-background-images.row-cards-2 .cards-background-images-card {
+  width: calc(50% - 15px) !important;
+}
+@media (max-width: 1199.98px) {
+  .cards-background-images.row-cards-2 .cards-background-images-card {
+    width: 100% !important;
+  }
+}
+.cards-background-images.row-cards-2 .cards-background-images-card__container {
+  width: calc(100% - 60px) !important;
+  height: calc(100% - 60px) !important;
+}

@@ -6,11 +6,17 @@
 $block: '.impact-default';
 
 #{$block} {
-	
+
 	&.has-background {
-        @include media-breakpoint-down(xxl) {
-            padding: 0 1rem;
-        }
+		@include media-breakpoint-down(xl) {
+			width: 100vw;
+			left: calc(-50vw + 50%);
+			position: relative;
+		}
+
+		@include media-breakpoint-down(xxl) {
+			padding: 0 1rem;
+		}
 	}
 
 	&__row {

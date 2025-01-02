@@ -72,8 +72,7 @@ export const TEMPLATE = [
 					[
 						'elevation/interior-components--impact-content-boxes-with-icons-item',
 						{
-							value: 8700,
-							after_value: '+',
+							value: "+8700",
 							icon: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/impact-content-boxes-with-icons/images/icon-1.svg`,
 							},
@@ -83,8 +82,7 @@ export const TEMPLATE = [
 					[
 						'elevation/interior-components--impact-content-boxes-with-icons-item',
 						{
-							value: 45,
-							after_value: '%',
+							value: "45%",
 							icon: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/impact-content-boxes-with-icons/images/icon-2.svg`,
 							},
@@ -94,8 +92,7 @@ export const TEMPLATE = [
 					[
 						'elevation/interior-components--impact-content-boxes-with-icons-item',
 						{
-							value: 50,
-							after_value: '+',
+							value: "50+",
 							icon: {
 								url: `/wp-content/themes/elevation-framework/src/blocks/interior-components/impact-content-boxes-with-icons/images/icon-3.svg`,
 							},

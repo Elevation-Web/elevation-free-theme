@@ -34,17 +34,9 @@
 			"type": "string",
 			"default": ""
 		},
-		"before_value": {
-			"type": "string",
-			"default": ""
-		},
 		"value": {
 			"type": "number",
 			"default": 0
-		},
-		"after_value": {
-			"type": "string",
-			"default": ""
 		},
 		"remove_comma": {
 			"type": "boolean",

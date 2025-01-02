@@ -21,9 +21,7 @@ const Edit = (props) => {
 	const {
 		id,
 		preview,
-		before_value,
 		value,
-		after_value,
 		remove_comma,
 		title_size,
 		color,
@@ -69,19 +67,6 @@ const Edit = (props) => {
 					<h2
 						className={`${name}__value has-${title_size}-font-size`}
 					>
-						{before_value && (
-							<RichText
-								tagName="div"
-								className={`${name}__value-before`}
-								value={before_value}
-								onChange={(newValue) =>
-									setAttributes({
-										before_value: newValue,
-									})
-								}
-							/>
-						)}
-						{}
 						<RichText
 							tagName="div"
 							className={`${name}__value-value`}
@@ -99,16 +84,6 @@ const Edit = (props) => {
 								setAttributes({ value: newValue })
 							}
 						/>
-						{after_value && (
-							<RichText
-								tagName="div"
-								className={`${name}__value-after`}
-								value={after_value}
-								onChange={(newValue) =>
-									setAttributes({ after_value: newValue })
-								}
-							/>
-						)}
 					</h2>
 				</div>
 				<div className={`${name}__content`}>
