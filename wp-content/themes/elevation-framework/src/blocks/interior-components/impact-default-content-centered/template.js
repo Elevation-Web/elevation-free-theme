@@ -42,7 +42,7 @@ export const TEMPLATE = [
 							[
 								'elevation/interior-components--button',
 								{
-									btnStyle: 'secondary-inverse',
+									btnStyle: 'secondary--outline',
 									text: 'Text Button',
 								},
 							],

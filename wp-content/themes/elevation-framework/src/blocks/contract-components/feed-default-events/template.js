@@ -36,7 +36,7 @@ export const TEMPLATE = [
 							[
 								'elevation/interior-components--button',
 								{
-									btnStyle: 'primary-1',
+									btnStyle: 'primary--color-01',
 									text: 'Text Button',
 								},
 							],
@@ -61,7 +61,7 @@ export const TEMPLATE = [
 				],
 			],
 			[
-				'elevation/interior-components--feed-default-events-container',
+				'elevation/contract-components--feed-default-events-container',
 				{},
 			],
 		],
@@ -78,5 +78,5 @@ export const allowedBlocks = [
 	'core/heading',
 	'core/paragraph',
 	'elevation/interior-components--buttons',
-	'elevation/interior-components--feed-default-blog-with-content-boxes-container',
+	'elevation/contract-components--feed-default-blog-with-content-boxes-container',
 ];

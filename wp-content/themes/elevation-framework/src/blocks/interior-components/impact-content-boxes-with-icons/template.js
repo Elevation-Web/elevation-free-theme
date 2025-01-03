@@ -34,7 +34,7 @@ export const TEMPLATE = [
 							[
 								'elevation/interior-components--button',
 								{
-									btnStyle: 'secondary',
+									btnStyle: 'secondary--outline',
 									text: 'Text Button',
 								},
 							],

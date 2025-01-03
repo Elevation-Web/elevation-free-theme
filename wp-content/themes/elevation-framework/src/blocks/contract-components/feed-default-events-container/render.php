@@ -26,7 +26,7 @@ $postsPerPage = $attributes['postsPerPage'] ?? -1;
 $filterBy = $attributes['filterBy'] ?? 'latest';
 
 ?>
-<div id="<?php echo esc_attr($attributes['id']); ?>" data-block-id="interior-components/feed-default-events-container" data-block-js="true" class="feed-default-events-container">
+<div id="<?php echo esc_attr($attributes['id']); ?>" data-block-id="contract-components/feed-default-events-container" data-block-js="true" class="feed-default-events-container">
     <div class="feed-default-events-container__container">
         <?php if (function_exists('tribe_get_events')) : ?>
             <div class="feed-default-events-container__swiper" id="swiper-<?php echo esc_attr($attributes['id']); ?>" data-swiper-options="<?php echo esc_attr(json_encode($swiper_attrs)); ?>">
