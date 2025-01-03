@@ -26,6 +26,7 @@ export const globalAnimations = () => {
 		'.team-bios-with-pop-up .cta',
 		'.no-animate *',
 		'.no-animate',
+		'.logos-descriptions-item img',
 	];
 
 	function combineSelectors(base, exclusions) {
