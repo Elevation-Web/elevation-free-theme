@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Logos Descriptions Item",
+	"name": "elevation/contract-components--logos-descriptions-item",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"icon": "text",
+	"description": "Logos Descriptions Item",
+	"textdomain": "elevation",
+	"ancestor": ["elevation/contract-components--logos-descriptions"],
+	"supports": {
+		"html": true,
+		"anchor": true,
+		"align": false,
+		"alignWide": false,
+		"spacing": {
+			"padding": false,
+			"margin": false
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"editorScript": ["file:index.js"]
+}

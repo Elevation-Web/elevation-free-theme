@@ -10,8 +10,8 @@ export const bodyStyles = () => {
 	return {
 		typography: {
 			fontFamily: '"Body Font", sans-serif',
-			lineHeight: '1.6em',
-			fontSize: generateClamp('14px', '18px', '18px'),
+			lineHeight: '160%',
+			fontSize: generateClamp('16px', '16px', '16px'),
 			letterSpacing: '-0.03em',
 		},
 	};

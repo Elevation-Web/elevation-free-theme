@@ -13,17 +13,20 @@ import './editor.scss';
 const Edit = (props) => {
 	const { name: blockName } = json;
 	const { attributes } = props;
-	const { type } = attributes;
+	const { type, allowedBlocks } = attributes;
 	const { name } = getBlockName(blockName);
 
 	const blockProps = useBlockProps({
-		className: `elevation-interior-components--group ${name} wp-block-group is-layout-flow wp-block-group-is-layout-flow ${type}`,
+		className: `elevation-interior-components--group ${name} ${type}`,
 	});
+
+	const newAllowedBlocks =
+		allowedBlocks?.length > 0 ? allowedBlocks : undefined;
 
 	return (
 		<>
 			<div {...blockProps}>
-				<InnerBlocks />
+				<InnerBlocks allowedBlocks={newAllowedBlocks} />
 			</div>
 		</>
 	);

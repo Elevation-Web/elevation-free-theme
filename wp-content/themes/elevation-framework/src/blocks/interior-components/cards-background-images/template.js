@@ -53,6 +53,9 @@ export const TEMPLATE = [
 				'elevation/interior-components--group',
 				{
 					className: 'cards-background-images-card__container-group',
+					allowedBlocks: [
+						'elevation/interior-components--cards-background-images-card',
+					],
 				},
 				[
 					[

@@ -53,6 +53,9 @@ export const TEMPLATE = [
 					className:
 						'lists-default-with-intro-text-icons__container-group',
 					tagName: 'ul',
+					allowedBlocks: [
+						'elevation/interior-components--lists-default-with-intro-text-icons-item',
+					],
 				},
 				[
 					[

@@ -64,6 +64,9 @@ export const TEMPLATE = [
 				{
 					tagName: 'div',
 					className: 'impact-content-boxes-with-icons__row',
+					allowedBlocks: [
+						'elevation/interior-components--impact-content-boxes-with-icons-item',
+					],
 				},
 				[
 					[

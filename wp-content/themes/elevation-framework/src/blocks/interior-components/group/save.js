@@ -15,7 +15,7 @@ const save = ({ attributes }) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const blockProps = useBlockProps.save({
-		className: `${name} elevation-interior-components--group wp-block-group is-layout-flow wp-block-group-is-layout-flow ${type}`,
+		className: `elevation-interior-components--group ${name} ${type}`,
 	});
 
 	const CustomTag = `${tagName}`;

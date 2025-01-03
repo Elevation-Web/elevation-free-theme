@@ -235,8 +235,8 @@
 	"styles": {
 		"typography": {
 			"fontFamily": "\"Body Font\", sans-serif",
-			"lineHeight": "1.6em",
-			"fontSize": "clamp(0.875rem, 2.34375vw, 1.125rem)",
+			"lineHeight": "160%",
+			"fontSize": "clamp(1rem, 2.083333333333333vw, 1rem)",
 			"letterSpacing": "-0.03em"
 		},
 		"elements": {

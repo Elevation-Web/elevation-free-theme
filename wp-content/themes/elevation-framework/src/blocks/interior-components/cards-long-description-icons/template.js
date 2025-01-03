@@ -54,6 +54,9 @@ export const TEMPLATE = [
 				{
 					className:
 						'cards-long-description-icons-card__container-group',
+					allowedBlocks: [
+						'elevation/interior-components--cards-long-description-icons-card',
+					],
 				},
 				[
 					[

@@ -28,6 +28,9 @@ export const TEMPLATE = [
 				{
 					className: 'lists-default-with-icons__container-group',
 					tagName: 'ul',
+					allowedBlocks: [
+						'elevation/interior-components--lists-default-with-icons-item',
+					],
 				},
 				[
 					[
