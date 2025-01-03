@@ -30,6 +30,12 @@ $block: ".logos-descriptions";
 		}
 	}
 
+	p:not(#{$block}__items p),
+	.wp-block-heading:not(#{$block}__items .wp-block-heading) {
+		width: 100%;
+		max-width: 982px;
+	}
+
 	&__items {
 		display: flex;
 		flex-wrap: wrap;
@@ -40,7 +46,8 @@ $block: ".logos-descriptions";
 	&-item {
 		position: relative;
 		width: calc(
-			100% / var(--columns) - (var(--gap) * (var(--columns) - 1) / 2)
+			(100% / var(--columns)) -
+				(var(--gap) * (var(--columns) - 1) / var(--columns))
 		);
 		display: flex;
 		flex-direction: column;
