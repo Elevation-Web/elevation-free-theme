@@ -68,25 +68,25 @@ export const TEMPLATE = [
 											[
 												'elevation/interior-components--impact-vertical-image-item',
 												{
-													value: "50+",
+													value: '50+',
 												},
 											],
 											[
 												'elevation/interior-components--impact-vertical-image-item',
 												{
-													value: "45%",
+													value: '45%',
 												},
 											],
 											[
 												'elevation/interior-components--impact-vertical-image-item',
 												{
-													value: "8700+",
+													value: '8700+',
 												},
 											],
 											[
 												'elevation/interior-components--impact-vertical-image-item',
 												{
-													value: ">60",
+													value: '>60',
 												},
 											],
 										],

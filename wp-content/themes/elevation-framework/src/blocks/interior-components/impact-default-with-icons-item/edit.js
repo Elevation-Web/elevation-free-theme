@@ -18,14 +18,7 @@ const Edit = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { clientId, attributes, setAttributes } = props;
-	const {
-		id,
-		preview,
-		value,
-		remove_comma,
-		title_size,
-		icon,
-	} = attributes;
+	const { id, preview, value, remove_comma, title_size, icon } = attributes;
 
 	const blockProps = useBlockProps({
 		className: `${name}`,
@@ -77,16 +70,7 @@ const Edit = (props) => {
 							<RichText
 								tagName="div"
 								className={`${name}__value-value`}
-								value={
-									remove_comma
-										? value.toString()
-										: value
-												.toString()
-												.replace(
-													/(\d)(?=(\d{3})+(?!\d))/g,
-													'$1,'
-												)
-								}
+								value={value}
 								onChange={(newValue) =>
 									setAttributes({ value: newValue })
 								}

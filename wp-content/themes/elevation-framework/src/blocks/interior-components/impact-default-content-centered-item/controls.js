@@ -20,12 +20,7 @@ import { useEffect } from '@wordpress/element';
 
 export const Controls = (props) => {
 	const { attributes, setAttributes } = props;
-	const {
-		value,
-		remove_comma,
-		title_size,
-		color,
-	} = attributes;
+	const { value, remove_comma, title_size, color } = attributes;
 
 	const colorPalette = useSetting('color.palette');
 
@@ -65,6 +60,7 @@ export const Controls = (props) => {
 				<ToggleControl
 					label={__('Remove Comma', 'elevation')}
 					checked={remove_comma}
+					help={'This applies only to frontpage.'}
 					onChange={(newValue) =>
 						setAttributes({ remove_comma: newValue })
 					}

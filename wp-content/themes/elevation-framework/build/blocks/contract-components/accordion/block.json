@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Accordion",
+  "name": "elevation/contract-components--accordion",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "icon": "menu-alt3",
+  "description": "Accordion with arrow icons",
+  "textdomain": "elevation",
+  "supports": {
+    "html": true,
+    "anchor": true,
+    "align": false,
+    "alignWide": false,
+    "color": {
+      "background": false,
+      "gradients": false,
+      "text": false,
+      "link": false,
+      "border": false
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "blockGap": false
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "align": {
+      "type": "array",
+      "default": "full"
+    }
+  },
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "style": [
+    "file:style-index.css"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ],
+  "viewScript": [
+    "file:./view.js"
+  ]
+}

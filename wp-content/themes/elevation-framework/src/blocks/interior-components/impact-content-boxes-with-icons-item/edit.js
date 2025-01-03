@@ -79,16 +79,7 @@ const Edit = (props) => {
 							<RichText
 								tagName="div"
 								className={`${name}__value-value`}
-								value={
-									remove_comma
-										? value.toString()
-										: value
-												.toString()
-												.replace(
-													/(\d)(?=(\d{3})+(?!\d))/g,
-													'$1,'
-												)
-								}
+								value={value}
 								onChange={(newValue) =>
 									setAttributes({ value: newValue })
 								}

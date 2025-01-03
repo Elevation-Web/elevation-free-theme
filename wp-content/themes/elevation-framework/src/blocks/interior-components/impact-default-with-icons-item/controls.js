@@ -56,6 +56,7 @@ export const Controls = (props) => {
 				<ToggleControl
 					label={__('Remove Comma', 'elevation')}
 					checked={remove_comma}
+					help={'This applies only to frontpage.'}
 					onChange={(newValue) =>
 						setAttributes({ remove_comma: newValue })
 					}

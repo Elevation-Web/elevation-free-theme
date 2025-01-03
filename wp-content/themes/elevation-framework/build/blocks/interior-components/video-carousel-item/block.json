@@ -8,8 +8,8 @@
   "icon": "video-alt3",
   "description": "Video Carousel Item",
   "textdomain": "elevation",
-  "parent": [
-    "elevation/interior-components--swiper"
+  "ancestor": [
+    "elevation/interior-components--video-carousel"
   ],
   "supports": {
     "html": true,

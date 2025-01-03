@@ -79,7 +79,7 @@ export const TEMPLATE = [
 					[
 						'elevation/interior-components--impact-default-item',
 						{
-							value: "50+",
+							value: '50+',
 						},
 					],
 				],

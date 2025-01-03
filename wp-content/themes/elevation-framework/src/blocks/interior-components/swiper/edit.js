@@ -19,7 +19,7 @@ const Edit = (props) => {
 
 	const { clientId, attributes, setAttributes } = props;
 
-	const { id, anchor } = attributes;
+	const { id, anchor, allowedBlocks } = attributes;
 
 	useEffect(() => {
 		setAttributes({ id: `${name}-${clientId}` });
@@ -44,11 +44,7 @@ const Edit = (props) => {
 			>
 				<Slider ref={ref} attributes={props.attributes} {...props}>
 					<InnerBlocks
-						templateLock={false}
-						allowedBlocks={[
-							'elevation/interior-components--image-carousel',
-							'elevation/interior-components--video-carousel-item',
-						]}
+						allowedBlocks={allowedBlocks}
 						{...wrapperProps}
 					/>
 				</Slider>

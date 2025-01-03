@@ -12,13 +12,7 @@ const save = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes } = props;
-	const {
-		anchor,
-		id,
-		value,
-		remove_comma,
-		title_size,
-	} = attributes;
+	const { anchor, id, value, remove_comma, title_size } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: `${name}`,

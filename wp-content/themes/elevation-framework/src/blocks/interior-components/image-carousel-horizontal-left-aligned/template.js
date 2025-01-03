@@ -39,6 +39,9 @@ export const TEMPLATE = [
 				'elevation/interior-components--swiper',
 				{
 					className: 'image-carousel-horizontal-centered__container',
+					allowedBlocks: [
+						'elevation/interior-components--image-carousel',
+					],
 				},
 				[
 					['elevation/interior-components--image-carousel', {}],
