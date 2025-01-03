@@ -5,7 +5,7 @@ const loadBlocksCSSandJS = (excludedBlocks, exclude = false) => {
 	let uniqueBlocksIds = [];
 
 	const blocksWithJs = Array.from(
-		document.querySelectorAll('[data-block-js]')
+		document.querySelectorAll('[data-block-js="true"]')
 	);
 
 	const blocksWithJsArray = blocksWithJs.map(

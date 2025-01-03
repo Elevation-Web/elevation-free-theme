@@ -21,6 +21,9 @@ export const TEMPLATE = [
 				{
 					tagName: 'ul',
 					className: 'lists-bullets__container',
+					allowedBlocks: [
+						'elevation/interior-components--lists-bullets-item',
+					],
 				},
 				[
 					['elevation/interior-components--lists-bullets-item', {}],

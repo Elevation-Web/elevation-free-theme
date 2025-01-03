@@ -12,6 +12,7 @@ export const globalAnimations = () => {
 		'#primary h4',
 		'#primary h5',
 		'#primary h6',
+		'.fade-in-bottom',
 	];
 	const exclusionSelectors = [
 		'.accordion-item__item p',

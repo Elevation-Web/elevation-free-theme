@@ -12,6 +12,7 @@ import BackgroundPicture from '../../components/BackgroundPicture';
 import previewImage from './preview.webp';
 import './editor.scss';
 import { getBlockName } from '../../utils/helpers';
+import { useEffect } from 'react';
 
 const Edit = (props) => {
 	const { name: blockName } = json;
@@ -30,7 +31,9 @@ const Edit = (props) => {
 		video,
 	} = attributes;
 
-	setAttributes({ id: `${name}-${clientId}` });
+	useEffect(() => {
+		setAttributes({ id: `${name}-${clientId}` });
+	}, [clientId, name, setAttributes]);
 
 	const blockProps = useBlockProps({
 		className: `${name} swiper-slide`,

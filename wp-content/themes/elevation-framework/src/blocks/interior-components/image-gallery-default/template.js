@@ -39,6 +39,9 @@ export const TEMPLATE = [
 				'elevation/interior-components--group',
 				{
 					className: 'image-gallery-default__grid',
+					allowedBlocks: [
+						'elevation/interior-components--image-gallery',
+					],
 				},
 				[
 					[

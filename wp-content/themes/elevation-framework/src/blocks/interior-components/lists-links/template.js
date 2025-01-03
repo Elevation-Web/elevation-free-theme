@@ -11,6 +11,9 @@ export const TEMPLATE = [
 				'elevation/interior-components--group',
 				{
 					tagName: 'ul',
+					allowedBlocks: [
+						'elevation/interior-components--lists-links-item',
+					],
 				},
 				[
 					[

@@ -26,6 +26,9 @@ export const TEMPLATE = [
 					tagName: 'ul',
 					className:
 						'lists-heading-subheading-in-2-columns__container',
+					allowedBlocks: [
+						'elevation/interior-components--lists-heading-subheading-in-2-columns-item',
+					],
 				},
 				[
 					[

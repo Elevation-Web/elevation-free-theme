@@ -10,7 +10,11 @@ if (isset($attributes['img']['id']) || isset($attributes['img']['url'])) :
     $loading = $attributes['isLazy'] ? 'lazy' : 'eager';
 
     if (isset($attributes['className'])) {
-        $imgInheritClassName .= $attributes['className'];
+        $imgInheritClassName .= !empty($attributes['className']) ? $attributes['className'] : '';
+    }
+
+    if (isset($attributes['img']['inheritClassName'])) {
+        $imgInheritClassName .= ($imgInheritClassName ? ' ' : '') . $attributes['img']['inheritClassName'];
     }
 
     if (isset($attributes['inheritClassName'])) {

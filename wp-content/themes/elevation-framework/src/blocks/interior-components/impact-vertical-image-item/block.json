@@ -8,7 +8,6 @@
 	"icon": "button",
 	"description": "Impact Layout: Vertical Image Item.",
 	"textdomain": "elevation",
-	"parent": ["elevation/interior-components--group"],
 	"supports": {
 		"html": true,
 		"anchor": true,

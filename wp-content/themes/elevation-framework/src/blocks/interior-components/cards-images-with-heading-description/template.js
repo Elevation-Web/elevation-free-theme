@@ -54,6 +54,9 @@ const TEMPLATE = [
 				{
 					className:
 						'cards-images-with-heading-description-card__container-group',
+					allowedBlocks: [
+						'elevation/interior-components--cards-images-with-heading-description-card',
+					],
 				},
 				[
 					[

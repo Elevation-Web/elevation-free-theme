@@ -58,6 +58,9 @@ export const TEMPLATE = [
 				{
 					tagName: 'div',
 					className: '',
+					allowedBlocks: [
+						'elevation/interior-components--impact-default-with-icons-item',
+					],
 				},
 				[
 					[

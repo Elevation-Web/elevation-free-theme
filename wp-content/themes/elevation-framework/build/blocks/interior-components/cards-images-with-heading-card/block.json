@@ -7,9 +7,6 @@
   "category": "elevation-blocks",
   "description": "Cards with title, background and images",
   "textdomain": "elevation",
-  "parent": [
-    "elevation/interior-components--group"
-  ],
   "supports": {
     "html": true,
     "align": false,

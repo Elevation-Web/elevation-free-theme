@@ -71,6 +71,9 @@ export const TEMPLATE = [
 				{
 					tagName: 'div',
 					className: 'impact-default-content-centered__row',
+					allowedBlocks: [
+						'elevation/interior-components--impact-default-content-centered-item',
+					],
 				},
 				[
 					[

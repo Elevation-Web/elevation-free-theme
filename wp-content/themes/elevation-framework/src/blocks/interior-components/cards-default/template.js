@@ -39,6 +39,9 @@ export const TEMPLATE = [
 				'elevation/interior-components--group',
 				{
 					className: 'cards-default-card__container-group',
+					allowedBlocks: [
+						'elevation/interior-components--cards-default-card',
+					],
 				},
 				[
 					[

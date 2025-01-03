@@ -35,6 +35,10 @@
     "type": {
       "type": "string",
       "default": "type-default"
+    },
+    "allowedBlocks": {
+      "type": "array",
+      "default": []
     }
   },
   "editorScript": [

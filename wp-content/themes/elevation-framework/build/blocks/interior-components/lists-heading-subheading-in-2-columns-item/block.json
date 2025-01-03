@@ -7,9 +7,6 @@
   "category": "elevation-blocks",
   "description": "List Item: Heading + Description.",
   "textdomain": "elevation",
-  "parent": [
-    "elevation/interior-components--group"
-  ],
   "supports": {
     "html": true,
     "align": false,

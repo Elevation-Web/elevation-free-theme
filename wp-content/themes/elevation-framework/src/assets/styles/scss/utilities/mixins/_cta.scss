@@ -9,31 +9,30 @@
 	border: none;
 	color: $ui-foreground-primary-text-body-text;
 	column-gap: 10px;
-	display: inline-flex;
+	display: inline-flex !important;
 	font-size: px-to-rem($cta_font_size);
 	letter-spacing: px-to-rem($cta_letter-spacing);
 	line-height: $cta_line_height;
 	text-transform: $cta_transform;
 	transition: all 0.2s ease;
 	text-decoration: none;
-	
+
 	&::selection {
 		background-color: $selector_color;
 		color: white;
 	}
-
 }
 
 @mixin cta-primary-01($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: $cta_min_height;
@@ -44,8 +43,8 @@
 	justify-content: center;
 	padding: $cta_padding;
 
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
 		color: $hover-text-color;
 	}
@@ -53,21 +52,20 @@
 		background-color: $focus-bg-color;
 		color: $focus-text-color;
 		outline: none;
-		box-shadow: 0 0 0 5px $focus-border-color; 
+		box-shadow: 0 0 0 5px $focus-border-color;
 	}
-	
 }
 
 @mixin cta-primary-02($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: $cta_min_height;
@@ -78,8 +76,8 @@
 	justify-content: center;
 	padding: $cta_padding;
 
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
 		color: $hover-text-color;
 	}
@@ -87,20 +85,20 @@
 		background-color: $focus-bg-color;
 		color: $focus-text-color;
 		outline: none;
-		box-shadow: 0 0 0 5px $focus-border-color; 
+		box-shadow: 0 0 0 5px $focus-border-color;
 	}
 }
 
 @mixin cta-primary-03($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: $cta_min_height;
@@ -111,8 +109,8 @@
 	justify-content: center;
 	padding: $cta_padding;
 
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
 		color: $hover-text-color;
 	}
@@ -120,20 +118,20 @@
 		background-color: $focus-bg-color;
 		color: $focus-text-color;
 		outline: none;
-		box-shadow: 0 0 0 5px $focus-border-color; 
+		box-shadow: 0 0 0 5px $focus-border-color;
 	}
 }
 
 @mixin cta-primary-04($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: $cta_min_height;
@@ -144,8 +142,8 @@
 	justify-content: center;
 	padding: $cta_padding;
 
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
 		color: $hover-text-color;
 	}
@@ -153,32 +151,32 @@
 		background-color: $focus-bg-color;
 		color: $focus-text-color;
 		outline: none;
-		box-shadow: 0 0 0 5px $focus-border-color; 
+		box-shadow: 0 0 0 5px $focus-border-color;
 	}
 }
 
-@mixin cta-inverse-primary ($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+@mixin cta-inverse-primary($settings) {
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: $cta_min_height;
 	background-color: $bg-color;
-	border: 1px solid $border-color; 
+	border: 1px solid $border-color;
 	color: $text-color;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: $cta_padding;
 
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
 		color: $hover-text-color;
 	}
@@ -186,20 +184,20 @@
 		background-color: $focus-bg-color;
 		color: $focus-text-color;
 		outline: none;
-		box-shadow: 0 0 0 5px $focus-border-color; 
+		box-shadow: 0 0 0 5px $focus-border-color;
 	}
 }
 
 @mixin cta-secondary($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: $cta_min_height;
@@ -209,29 +207,29 @@
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: $cta_padding;
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color; 
+		color: $hover-text-color;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
 		color: $focus-text-color;
 		outline: none;
-		box-shadow: 0 0 0 5px $focus-border-color; 
+		box-shadow: 0 0 0 5px $focus-border-color;
 	}
 }
 
 @mixin cta-inverse-secondary($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: $cta_min_height;
@@ -241,29 +239,29 @@
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: $cta_padding;
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color; 
+		color: $hover-text-color;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
 		color: $focus-text-color;
 		outline: none;
-		box-shadow: 0 0 0 5px $focus-border-color; 
+		box-shadow: 0 0 0 5px $focus-border-color;
 	}
 }
 
 @mixin cta-secondary-download($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: $cta_min_height;
@@ -274,16 +272,16 @@
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: 21px 28px 21px 53px;
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color; 
+		color: $hover-text-color;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
 		color: $focus-text-color;
 		outline: none;
-		box-shadow: 0 0 0 5px $focus-border-color; 
+		box-shadow: 0 0 0 5px $focus-border-color;
 	}
 	&::before {
 		content: "";
@@ -304,15 +302,15 @@
 }
 
 @mixin cta-tertiary($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: 23px;
@@ -323,8 +321,10 @@
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: 3px 16px 3px 0;
-	position: relative;
-	&::after {
+	flex-direction: row-reverse;
+	align-items: center;
+
+	&::before {
 		content: "";
 		background-image: url("data:image/svg+xml,%3Csvg width='9' height='11' viewBox='0 0 9 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.82107 1.96446C8.82107 1.55024 8.48528 1.21445 8.07107 1.21446L1.32107 1.21445C0.906854 1.21445 0.571068 1.55024 0.571068 1.96445C0.571068 2.37867 0.906854 2.71445 1.32107 2.71445H7.32107V8.71445C7.32107 9.12867 7.65685 9.46445 8.07107 9.46445C8.48528 9.46445 8.82107 9.12867 8.82107 8.71445L8.82107 1.96446ZM1.53033 9.56585L8.6014 2.49478L7.54074 1.43412L0.46967 8.50519L1.53033 9.56585Z' fill='%23210044'/%3E%3C/svg%3E%0A");
 		background-repeat: no-repeat;
@@ -332,23 +332,17 @@
 		background-position: center;
 		bottom: unset;
 		display: block;
-		height: 10px;
-		left: unset;
-		position: absolute;
-		right: 0;
-		top: 50%;
-		transform: translate(0%, -50%);
-		transition: all 0.2s ease;
+		height: 12px;
 		width: 10px;
 	}
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-bottom-color: $border-color;
-		color: $hover-text-color; 
+		color: $hover-text-color;
 		text-decoration-line: underline;
 		text-underline-offset: 2px;
 		text-decoration-thickness: 1.5px;
-		&::after {
+		&::before {
 			background-image: url("data:image/svg+xml,%3Csvg width='9' height='11' viewBox='0 0 9 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.82107 1.96446C8.82107 1.55024 8.48528 1.21445 8.07107 1.21446L1.32107 1.21445C0.906854 1.21445 0.571068 1.55024 0.571068 1.96445C0.571068 2.37867 0.906854 2.71445 1.32107 2.71445H7.32107V8.71445C7.32107 9.12867 7.65685 9.46445 8.07107 9.46445C8.48528 9.46445 8.82107 9.12867 8.82107 8.71445L8.82107 1.96446ZM1.53033 9.56585L8.6014 2.49478L7.54074 1.43412L0.46967 8.50519L1.53033 9.56585Z' fill='%23662D91'/%3E%3C/svg%3E%0A");
 		}
 	}
@@ -365,15 +359,15 @@
 }
 
 @mixin cta-inverse-tertiary($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: 23px;
@@ -384,8 +378,10 @@
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: 3px 16px 3px 0;
-	position: relative;
-	&::after {
+	flex-direction: row-reverse;
+	align-items: center;
+
+	&::before {
 		content: "";
 		background-image: url("data:image/svg+xml,%3Csvg width='9' height='11' viewBox='0 0 9 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.82107 1.96446C8.82107 1.55024 8.48528 1.21445 8.07107 1.21446L1.32107 1.21445C0.906854 1.21445 0.571068 1.55024 0.571068 1.96445C0.571068 2.37867 0.906854 2.71445 1.32107 2.71445H7.32107V8.71445C7.32107 9.12867 7.65685 9.46445 8.07107 9.46445C8.48528 9.46445 8.82107 9.12867 8.82107 8.71445L8.82107 1.96446ZM1.53033 9.56585L8.6014 2.49478L7.54074 1.43412L0.46967 8.50519L1.53033 9.56585Z' fill='%23FBF9F8'/%3E%3C/svg%3E%0A");
 		background-repeat: no-repeat;
@@ -393,20 +389,14 @@
 		background-position: center;
 		bottom: unset;
 		display: block;
-		height: 10px;
-		left: unset;
-		position: absolute;
-		right: 0;
-		top: 50%;
-		transform: translate(0%, -50%);
-		transition: all 0.2s ease;
+		height: 12px;
 		width: 10px;
 		z-index: 5;
 	}
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-bottom-color: $border-color;
-		color: $hover-text-color; 
+		color: $hover-text-color;
 		text-decoration-line: underline;
 		text-underline-offset: 2px;
 		text-decoration-thickness: 1.5px;
@@ -424,15 +414,15 @@
 }
 
 @mixin cta-fourth($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: $cta_min_height;
@@ -461,30 +451,30 @@
 		width: 15px;
 		z-index: 5;
 	}
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-bottom-color: $border-color;
-		color: $hover-text-color; 
+		color: $hover-text-color;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
 		border-bottom-color: $focus-border-color;
-		box-shadow: 0 0 0 5px $focus-border-color; 
+		box-shadow: 0 0 0 5px $focus-border-color;
 		color: $focus-text-color;
 		outline: none;
 	}
 }
 
 @mixin cta-inverse-fourth($settings) {
-	$bg-color: map-get($settings, 'bg-color');
-	$border-color: map-get($settings, 'border-color');
-	$text-color: map-get($settings, 'text-color');
-	$hover-bg-color: map-get($settings, 'hover-bg-color');
-	$hover-border-color: map-get($settings, 'hover-border-color');
-	$hover-text-color: map-get($settings, 'hover-text-color');
-	$focus-bg-color: map-get($settings, 'focus-bg-color');
-	$focus-border-color: map-get($settings, 'focus-border-color');
-	$focus-text-color: map-get($settings, 'focus-text-color');
+	$bg-color: map-get($settings, "bg-color");
+	$border-color: map-get($settings, "border-color");
+	$text-color: map-get($settings, "text-color");
+	$hover-bg-color: map-get($settings, "hover-bg-color");
+	$hover-border-color: map-get($settings, "hover-border-color");
+	$hover-text-color: map-get($settings, "hover-text-color");
+	$focus-bg-color: map-get($settings, "focus-bg-color");
+	$focus-border-color: map-get($settings, "focus-border-color");
+	$focus-text-color: map-get($settings, "focus-text-color");
 
 	// min-width: $cta_min_width;
 	min-height: $cta_min_height;
@@ -514,15 +504,15 @@
 		width: 15px;
 		z-index: 5;
 	}
-	&:hover { 
-		background-color: $hover-bg-color; 
+	&:hover {
+		background-color: $hover-bg-color;
 		border-bottom-color: $border-color;
-		color: $hover-text-color; 
+		color: $hover-text-color;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
 		border-bottom-color: $focus-border-color;
-		box-shadow: 0 0 0 5px $focus-border-color; 
+		box-shadow: 0 0 0 5px $focus-border-color;
 		color: $focus-text-color;
 		outline: none;
 	}
