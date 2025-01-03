@@ -79,29 +79,25 @@ export const TEMPLATE = [
 					[
 						'elevation/interior-components--impact-default-content-centered-item',
 						{
-							value: 45,
-							after_value: '+',
+							value: '45+',
 						},
 					],
 					[
 						'elevation/interior-components--impact-default-content-centered-item',
 						{
-							value: 50,
-							after_value: '%',
+							value: '50%',
 						},
 					],
 					[
 						'elevation/interior-components--impact-default-content-centered-item',
 						{
-							value: 870,
-							after_value: '+',
+							value: '870+',
 						},
 					],
 					[
 						'elevation/interior-components--impact-default-content-centered-item',
 						{
-							before_value: '>',
-							value: 60,
+							value: '>60',
 						},
 					],
 				],

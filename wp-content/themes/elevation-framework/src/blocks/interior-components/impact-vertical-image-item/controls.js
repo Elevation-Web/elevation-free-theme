@@ -20,14 +20,7 @@ import { useEffect } from '@wordpress/element';
 
 export const Controls = (props) => {
 	const { attributes, setAttributes } = props;
-	const {
-		before_value,
-		value,
-		after_value,
-		remove_comma,
-		title_size,
-		backgroundColor,
-	} = attributes;
+	const { value, remove_comma, title_size, backgroundColor } = attributes;
 
 	const colorPalette = useSetting('color.palette');
 
@@ -60,28 +53,14 @@ export const Controls = (props) => {
 		<InspectorControls>
 			<PanelBody title={__('Impact Settings', 'elevation')}>
 				<TextControl
-					label={__('Before Value', 'elevation')}
-					value={before_value}
-					onChange={(newValue) =>
-						setAttributes({ before_value: newValue })
-					}
-				/>
-				<TextControl
 					label={__('Value', 'elevation')}
 					value={value}
 					onChange={(newValue) => setAttributes({ value: newValue })}
 				/>
-
-				<TextControl
-					label={__('After Value', 'elevation')}
-					value={after_value}
-					onChange={(newValue) =>
-						setAttributes({ after_value: newValue })
-					}
-				/>
 				<ToggleControl
 					label={__('Remove Comma', 'elevation')}
 					checked={remove_comma}
+					help={'This applies only to frontpage.'}
 					onChange={(newValue) =>
 						setAttributes({ remove_comma: newValue })
 					}

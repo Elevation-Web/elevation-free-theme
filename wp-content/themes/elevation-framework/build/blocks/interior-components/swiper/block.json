@@ -72,6 +72,10 @@
     "slidesPerViewXxl": {
       "type": "string",
       "default": "1"
+    },
+    "allowedBlocks": {
+      "type": "array",
+      "default": []
     }
   },
   "script": [

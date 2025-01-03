@@ -8,7 +8,7 @@
 	"icon": "video-alt3",
 	"description": "Video Carousel Full Width Item",
 	"textdomain": "elevation",
-	"parent": ["elevation/interior-components--swiper"],
+	"ancestor": ["elevation/interior-components--video-carousel-full-width"],
 	"supports": {
 		"html": true,
 		"anchor": true,

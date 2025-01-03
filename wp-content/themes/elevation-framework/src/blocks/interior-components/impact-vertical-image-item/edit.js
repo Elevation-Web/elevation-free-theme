@@ -18,16 +18,8 @@ const Edit = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { clientId, attributes, setAttributes } = props;
-	const {
-		id,
-		preview,
-		before_value,
-		value,
-		after_value,
-		remove_comma,
-		title_size,
-		backgroundColor,
-	} = attributes;
+	const { id, preview, value, remove_comma, title_size, backgroundColor } =
+		attributes;
 
 	const blockProps = useBlockProps({
 		className: `${name}`,
@@ -69,46 +61,14 @@ const Edit = (props) => {
 					<h2
 						className={`${name}__value has-${title_size}-font-size`}
 					>
-						{before_value && (
-							<RichText
-								tagName="div"
-								className={`${name}__value-before`}
-								value={before_value}
-								onChange={(newValue) =>
-									setAttributes({
-										before_value: newValue,
-									})
-								}
-							/>
-						)}
-						{}
 						<RichText
 							tagName="div"
 							className={`${name}__value-value`}
-							value={
-								remove_comma
-									? value.toString()
-									: value
-											.toString()
-											.replace(
-												/(\d)(?=(\d{3})+(?!\d))/g,
-												'$1,'
-											)
-							}
+							value={value}
 							onChange={(newValue) =>
 								setAttributes({ value: newValue })
 							}
 						/>
-						{after_value && (
-							<RichText
-								tagName="div"
-								className={`${name}__value-after`}
-								value={after_value}
-								onChange={(newValue) =>
-									setAttributes({ after_value: newValue })
-								}
-							/>
-						)}
 					</h2>
 				</div>
 				<div className={`${name}__content`}>

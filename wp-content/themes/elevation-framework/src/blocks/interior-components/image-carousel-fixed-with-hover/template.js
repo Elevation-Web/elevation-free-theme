@@ -42,6 +42,9 @@ export const TEMPLATE = [
 					className: 'image-carousel-horizontal-centered__container',
 					slidesPerViewXl: 'auto',
 					slidesPerViewXxl: 'auto',
+					allowedBlocks: [
+						'elevation/interior-components--image-carousel',
+					],
 				},
 				[
 					['elevation/interior-components--image-carousel', {}],

@@ -46,8 +46,13 @@ export const animateNumbers = (selector) => {
 			const now = new Date().getTime();
 			const remaining = Math.max((endTime - now) / duration, 0);
 			const value = Math.round(target - remaining * target);
-
-			element.innerText = formatNumber(value, prefix, suffix);
+			const removeComma = element.classList.contains('numscrolleryears');
+			element.innerText = formatNumber(
+				value,
+				prefix,
+				suffix,
+				removeComma
+			);
 
 			if (value < target) {
 				requestAnimationFrame(run);
@@ -57,8 +62,11 @@ export const animateNumbers = (selector) => {
 		requestAnimationFrame(run);
 	}
 
-	function formatNumber(number, prefix, suffix) {
+	function formatNumber(number, prefix, suffix, removeComma = false) {
 		let formattedNumber = number.toLocaleString();
+		if (removeComma) {
+			formattedNumber = formattedNumber.replace(/,/g, '');
+		}
 		return `${prefix}${formattedNumber}${suffix}`;
 	}
 };

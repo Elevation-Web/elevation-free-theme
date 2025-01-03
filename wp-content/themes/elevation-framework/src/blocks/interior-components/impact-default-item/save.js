@@ -12,15 +12,7 @@ const save = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes } = props;
-	const {
-		anchor,
-		id,
-		value,
-		before_value,
-		after_value,
-		remove_comma,
-		title_size,
-	} = attributes;
+	const { anchor, id, value, remove_comma, title_size } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: `${name}`,
@@ -35,9 +27,6 @@ const save = (props) => {
 		>
 			<div className={`${name}__header`}>
 				<h2 className={`${name}__value has-${title_size}-font-size`}>
-					<span className={`${name}__value-before`}>
-						{before_value}
-					</span>
 					{remove_comma ? (
 						<span
 							className={`${name}__value-value numscrolleryears`}
@@ -53,9 +42,6 @@ const save = (props) => {
 							{value}
 						</span>
 					)}
-					<span className={`${name}__value-after`}>
-						{after_value}
-					</span>
 				</h2>
 			</div>
 			<div className={`${name}__content`}>

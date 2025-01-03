@@ -62,6 +62,9 @@ export const TEMPLATE = [
 			slidesPerViewXl: '1',
 			slidesPerViewXxl: '1',
 			spaceBetween: 0,
+			allowedBlocks: [
+				'elevation/interior-components--video-carousel-full-width-item',
+			],
 		},
 		[
 			[

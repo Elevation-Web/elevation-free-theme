@@ -9,7 +9,7 @@
   "description": "Video Default Item",
   "textdomain": "elevation",
   "parent": [
-    "elevation/interior-components--swiper"
+    "elevation/interior-components--video-carousel-item"
   ],
   "supports": {
     "html": true,

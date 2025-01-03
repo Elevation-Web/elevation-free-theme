@@ -41,6 +41,9 @@ export const TEMPLATE = [
 					slidesPerViewLg: '2',
 					slidesPerViewXl: '3',
 					slidesPerViewXxl: '3',
+					allowedBlocks: [
+						'elevation/interior-components--video-carousel-item',
+					],
 				},
 				[
 					['elevation/interior-components--video-carousel-item', {}],
@@ -65,4 +68,7 @@ export const allowedBlocks = [
 	'core/paragraph',
 	'elevation/interior-components--buttons',
 	'elevation/interior-components--cards-icons',
+	'elevation/interior-components--spacer',
+	'elevation/interior-components--video-carousel-swiper',
+	'elevation/interior-components--video-carousel-item',
 ];

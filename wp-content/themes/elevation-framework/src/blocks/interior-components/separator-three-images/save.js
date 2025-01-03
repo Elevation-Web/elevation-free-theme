@@ -12,7 +12,6 @@ const save = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes } = props;
-	console.log(attributes);
 	const { anchor, id, grid_column } = attributes;
 
 	const blockProps = useBlockProps.save({
