@@ -26,7 +26,7 @@ export const template = [
 					[
 						'elevation/interior-components--button',
 						{
-							btnStyle: 'tertiary-inverse',
+							btnStyle: 'tertiary--inverse',
 							text: 'Text Button',
 						},
 					],

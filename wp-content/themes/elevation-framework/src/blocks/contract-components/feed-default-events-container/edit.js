@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		blocks.forEach((block) => {
 			if (
 				block.name ===
-				'elevation/interior-components--feed-default-events'
+				'elevation/contract-components--feed-default-events'
 			) {
 				swiper();
 			}

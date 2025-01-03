@@ -12,6 +12,10 @@
 			position: relative;
 			padding: 0px;
 		}
+
+		&__swiper{
+			overflow: hidden;
+		}
 	}
 
 	.swiper {

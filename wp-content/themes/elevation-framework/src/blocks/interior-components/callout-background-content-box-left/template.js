@@ -22,7 +22,7 @@ export const template = [
 			[
 				'elevation/interior-components--buttons',
 				{
-					btnStyle: 'tertiary',
+					btnStyle: 'tertiary--color-01',
 					text: 'Text Button',
 				},
 			],

@@ -40,7 +40,7 @@ export const TEMPLATE = [
 							[
 								'elevation/interior-components--button',
 								{
-									btnStyle: 'primary-1',
+									btnStyle: 'primary--color-01',
 									text: 'Text Button',
 								},
 							],
