@@ -1,0 +1,34 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "../../../assets/styles/scss/utilities/default-variables"; // check
+@import "../../../assets/styles/scss/utilities/mixins/cta"; // check
+
+
+.feed-events-horizontal-container {
+
+    .card {
+        a {
+            pointer-events: none;
+        }
+
+        &__buttons {
+
+            button {
+                border-radius: 100px;
+                padding: 21px 28px;
+                line-height: 1;
+                @include cta-secondary(("bg-color": $cta-secondary-bg-color,
+                        "border-color": $cta-secondary-border-color,
+                        "text-color": $cta-secondary-text-color,
+                        "hover-bg-color": $cta-secondary-hover-bg-color,
+                        "hover-border-color": $cta-secondary-hover-border-color,
+                        "hover-text-color": $cta-secondary-hover-text-color,
+                        "focus-bg-color": $cta-secondary-focus-bg-color,
+                        "focus-border-color": $cta-secondary-focus-border-color,
+                        "focus-text-color": $cta-secondary-focus-text-color,
+                    ));
+            }
+        }
+    }
+}

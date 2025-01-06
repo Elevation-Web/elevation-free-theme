@@ -25,7 +25,7 @@ const save = (props) => {
 	return (
 		<div
 			data-block-id={blockId}
-			data-block-js="false"
+			data-block-js="true"
 			id={anchor || id}
 			{...blockProps}
 		>
