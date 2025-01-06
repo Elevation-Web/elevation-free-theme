@@ -3,9 +3,10 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 @import "../../../assets/styles/scss/utilities/default-variables";
 
-$block: '.impact-default';
+$block: ".impact-default";
 
 #{$block} {
+	opacity: 1;
 
 	&.has-background {
 		@include media-breakpoint-down(xl) {
@@ -66,7 +67,6 @@ $block: '.impact-default';
 			gap: 32px;
 			grid-template-columns: 2fr 3fr;
 		}
-
 
 		&__value {
 			display: flex;

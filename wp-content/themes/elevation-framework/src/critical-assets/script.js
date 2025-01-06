@@ -4,25 +4,33 @@ import waitForUserInteraction from './scripts/waitForUserInteraction';
 import getFirstsBlock from './scripts/getFirstBlock';
 import { globalAnimations } from './scripts/global-animations';
 
-const excludedBlocks = ['interior-components/spacer'];
+const firstBlocks = [
+	'interior-components/spacer',
+	'interior-components/swiper',
+	'interior-components/group',
+];
 
-// Include the first block in the excludedBlocks array
-const firstTwoBlockIds = getFirstsBlock();
+// set to only add if exist
+const addIfExist = ['interior-components/swiper'];
+// set to exclude
+const excludedBlocks = ['interior-components/group'];
+// Include the first block in the firstBlocks array
+const firstTwoBlockIds = getFirstsBlock(firstBlocks);
 if (firstTwoBlockIds) {
-	excludedBlocks.push(...firstTwoBlockIds);
+	firstBlocks.push(...firstTwoBlockIds);
 }
 
 globalAnimations();
 
-// Add more blocks to the excludedBlocks array if needed
-// excludedBlocks.push('BLOCK_ID_1');
+// Add more blocks to the firstBlocks array if needed
+// firstBlocks.push('BLOCK_ID_1');
 
-loadBlocksCSSandJS(excludedBlocks, true);
+loadBlocksCSSandJS(firstBlocks, true, addIfExist, excludedBlocks);
 
 // showBody();
 
 // Wait for user interaction before loading CSS and JS files
 waitForUserInteraction(() => {
 	loadAssetsCSSandJS();
-	loadBlocksCSSandJS(excludedBlocks);
+	loadBlocksCSSandJS(firstBlocks, false, [], excludedBlocks);
 });

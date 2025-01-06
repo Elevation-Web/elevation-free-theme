@@ -98,7 +98,7 @@ video {
 	}
 }
 
-img{
+img {
 	vertical-align: middle;
 }
 
@@ -154,8 +154,6 @@ body {
 	opacity: 1 !important;
 	color: $ui-foreground-primary-text-body-text;
 	overflow-x: hidden;
-
-
 }
 
 h1,
@@ -174,15 +172,15 @@ h6,
 	color: $ui-foreground-primary-text-headings;
 }
 
-.wp-block-heading{
+.wp-block-heading {
 	margin: 0 !important;
 }
 
-.wp-block-heading + p{
+.wp-block-heading + p {
 	margin-top: 12px;
 }
 
-.wp-block + .wp-block.buttons{
+.wp-block + .wp-block.buttons {
 	margin-top: 24px !important;
 }
 

@@ -1,7 +1,6 @@
 @import "../../../assets/styles/scss/utilities/functions";
 @import "../../../assets/styles/scss/utilities/variables";
 @import "../../../assets/styles/scss/utilities/mixins";
-@import "swiper/css/bundle";
 
 .image-carousel-horizontal-centered {
 	opacity: 1;
@@ -19,7 +18,6 @@
 			@include media-breakpoint-up(xl) {
 				gap: 66px;
 			}
-
 
 			&-actions {
 				display: flex;
@@ -81,7 +79,10 @@
 					.swiper-pagination-bullet {
 						background-color: $ui-button-primary-color-01;
 						opacity: 1;
-						transition: 200ms transform, 200ms left, .2s width !important;
+						transition:
+							200ms transform,
+							200ms left,
+							0.2s width !important;
 						position: initial;
 
 						&-active {
@@ -94,7 +95,7 @@
 		}
 
 		.image-carousel {
-			transition: all .2s;
+			transition: all 0.2s;
 			opacity: 0.5;
 
 			&.swiper-slide-active {
@@ -111,7 +112,10 @@
 					display: block;
 					object-fit: contain;
 					height: 380px;
-					background: rgba($color: $ui-background-secondary, $alpha : 0.2);
+					background: rgba(
+						$color: $ui-background-secondary,
+						$alpha: 0.2
+					);
 
 					@include media-breakpoint-up(xl) {
 						object-fit: cover;
@@ -128,6 +132,5 @@
 				}
 			}
 		}
-
 	}
 }

@@ -1,84 +1,79 @@
 @import "../../../assets/styles/scss/utilities/functions";
 @import "../../../assets/styles/scss/utilities/variables";
 @import "../../../assets/styles/scss/utilities/mixins";
-@import "swiper/css/bundle";
 
 .image-carousel-horizontal-left-aligned {
+	.wp-block-elevation-interior-components--swiper {
+		overflow-x: hidden;
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+		padding-top: 40px;
 
-    .wp-block-elevation-interior-components--swiper {
-        overflow-x: hidden;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding-top: 40px;
+		.block-editor-inner-blocks {
+			max-width: 800px;
+		}
 
-        .block-editor-inner-blocks {
-            max-width: 800px;
-        }
+		.block-editor-inserter {
+			position: initial;
+			height: 620px;
+		}
 
-        .block-editor-inserter {
-            position: initial;
-            height: 620px;
-        }
+		.block-list-appender {
+			position: static !important;
 
-        .block-list-appender {
-            position: static !important;
+			.block-editor-default-block-appender {
+				height: 620px;
+			}
 
-            .block-editor-default-block-appender {
-                height: 620px;
-            }
+			&__toggle {
+				width: 65px !important;
+				height: 620px !important;
+				opacity: 0.9;
+			}
 
-            &__toggle {
-                width: 65px !important;
-                height: 620px !important;
-                opacity: 0.9;
-            }
+			.block-editor-inserter__toggle {
+				width: 65px !important;
+				height: 620px !important;
+				opacity: 0.9;
+			}
+		}
 
-            .block-editor-inserter__toggle {
-                width: 65px !important;
-                height: 620px !important;
-                opacity: 0.9;
-            }
+		.swiper-controls__container {
+			display: flex;
+			margin-top: 30px;
+			gap: 15px;
+			padding-bottom: 20px;
+			padding-left: 3px;
 
-        }
+			button {
+				justify-content: center;
+				width: 150px;
+			}
+		}
 
-        .swiper-controls__container {
-            display: flex;
-            margin-top: 30px;
-            gap: 15px;
-            padding-bottom: 20px;
-            padding-left: 3px;
+		.image-carousel {
+			padding-bottom: 0px;
+			position: relative;
 
-            button {
-                justify-content: center;
-                width: 150px;
-            }
-        }
+			.image-with-srcset {
+				height: 620px;
 
-        .image-carousel {
-            padding-bottom: 0px;
-            position: relative;
+				&__img {
+					height: 100%;
+				}
 
-            .image-with-srcset {
-                height: 620px;
-
-                &__img {
-                    height: 100%;
-                }
-
-                &__img--caption {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: calc(100% - 40px);
-                    padding: 20px;
-                    background: rgba(17, 17, 17, 0.50);
-                    color: $ui-base-white;
-                    font-weight: 700;
-                }
-            }
-        }
-
-
-    }
+				&__img--caption {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: calc(100% - 40px);
+					padding: 20px;
+					background: rgba(17, 17, 17, 0.5);
+					color: $ui-base-white;
+					font-weight: 700;
+				}
+			}
+		}
+	}
 }

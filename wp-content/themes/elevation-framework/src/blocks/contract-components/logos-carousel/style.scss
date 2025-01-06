@@ -1,7 +1,6 @@
 @import "../../../assets/styles/scss/utilities/functions";
 @import "../../../assets/styles/scss/utilities/variables";
 @import "../../../assets/styles/scss/utilities/mixins";
-@import "swiper/css/bundle";
 
 .logos-carousel {
 	opacity: 1;
@@ -137,6 +136,18 @@
 		}
 
 		a.media {
+			&:after {
+				content: "";
+				position: absolute;
+				top: 15px;
+				right: 14px;
+				color: #662d91;
+				background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M14.3491 7.09318C13.9948 7.09318 13.7067 7.38134 13.7067 7.73559V12.8218C13.7067 13.3144 13.3059 13.7152 12.8133 13.7152H2.17824C1.68562 13.7152 1.28483 13.3144 1.28483 12.8218V2.18674C1.28483 1.69412 1.68562 1.29332 2.17824 1.29332H7.26441C7.61865 1.29332 7.90682 1.00515 7.90682 0.650908C7.90682 0.296661 7.61865 0.00862122 7.26441 0.00862122H2.17824C0.977128 0.00862122 0 0.985749 0 2.18674V12.8218C0 14.0229 0.977128 15 2.17824 15H12.8133C14.0144 15 14.9915 14.0229 14.9915 12.8218V7.73559C14.9915 7.38134 14.7033 7.09318 14.3491 7.09318Z" fill="currentColor"/></svg>');
+				background-size: 15px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
 			img {
 				transition:
 					width 0.3s,

@@ -22,7 +22,6 @@ import { getBlockName } from '../../utils/helpers';
 
 /* Block */
 import json from './block.json';
-import './editor.scss';
 
 const Edit = (props) => {
 	const { name: blockName } = json;

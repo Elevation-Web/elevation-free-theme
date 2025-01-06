@@ -10,7 +10,6 @@ import { getBlockName } from '../../utils/helpers';
 import json from './block.json';
 import previewImage from './preview.webp';
 import { allowedBlocks, template } from './template';
-import './editor.scss';
 
 const Edit = (props) => {
 	const { name: blockName } = json;

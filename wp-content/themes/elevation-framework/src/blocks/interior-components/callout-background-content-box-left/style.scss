@@ -3,6 +3,7 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 
 .callout-background-content-box-left {
+	opacity: 1;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -42,7 +43,7 @@
 		}
 	}
 
-	&:not(.alignfull){
+	&:not(.alignfull) {
 		max-width: 100%;
 		margin: 0 auto;
 
@@ -53,10 +54,9 @@
 		@include media-breakpoint-up(xxl) {
 			width: 1095px;
 		}
-		
-		.callout-background-content-box-left__container{
+
+		.callout-background-content-box-left__container {
 			padding: 0 40px;
 		}
 	}
-
 }

@@ -3,9 +3,11 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 @import "../../../assets/styles/scss/utilities/default-variables";
 
-$block: '.impact-default-with-icons';
+$block: ".impact-default-with-icons";
 
 #{$block} {
+	opacity: 1;
+
 	&__row {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -52,7 +54,6 @@ $block: '.impact-default-with-icons';
 			gap: 32px;
 			grid-template-columns: 1fr 4fr;
 		}
-
 
 		&__value {
 			display: flex;
