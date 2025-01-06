@@ -27,6 +27,7 @@ export const globalAnimations = () => {
 		'.no-animate *',
 		'.no-animate',
 		'.logos-descriptions-item img',
+		'.logos-carousel-item img',
 	];
 
 	function combineSelectors(base, exclusions) {

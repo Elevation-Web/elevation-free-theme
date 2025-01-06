@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Logos Carousel Item",
+  "name": "elevation/contract-components--logos-carousel-item",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "icon": "text",
+  "description": "Logos Carousel Item",
+  "textdomain": "elevation",
+  "ancestor": [
+    "elevation/contract-components--logos-carousel"
+  ],
+  "supports": {
+    "html": true,
+    "anchor": true,
+    "align": false,
+    "alignWide": false,
+    "spacing": {
+      "padding": false,
+      "margin": false
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ]
+}

@@ -4,7 +4,7 @@ import waitForUserInteraction from './scripts/waitForUserInteraction';
 import getFirstsBlock from './scripts/getFirstBlock';
 import { globalAnimations } from './scripts/global-animations';
 
-const excludedBlocks = [];
+const excludedBlocks = ['interior-components/spacer'];
 
 // Include the first block in the excludedBlocks array
 const firstTwoBlockIds = getFirstsBlock();
