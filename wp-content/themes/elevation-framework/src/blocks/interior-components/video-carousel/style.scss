@@ -1,7 +1,6 @@
 @import "../../../assets/styles/scss/utilities/functions";
 @import "../../../assets/styles/scss/utilities/variables";
 @import "../../../assets/styles/scss/utilities/mixins";
-@import "swiper/css/bundle";
 
 $height-video-item: 323px;
 $width-video-item: 344px;
@@ -90,7 +89,10 @@ $swal2-width: 100%;
 					.swiper-pagination-bullet {
 						background-color: $ui-button-primary-color-01;
 						opacity: 1;
-						transition: 200ms transform, 200ms left, .2s width !important;
+						transition:
+							200ms transform,
+							200ms left,
+							0.2s width !important;
 						position: initial;
 
 						&-active {
@@ -101,7 +103,6 @@ $swal2-width: 100%;
 				}
 			}
 		}
-
 	}
 
 	&-item {
@@ -115,7 +116,6 @@ $swal2-width: 100%;
 		@include media-breakpoint-up(xl) {
 			max-width: $width-video-item;
 		}
-
 
 		&__background {
 			height: 100%;
@@ -141,7 +141,11 @@ $swal2-width: 100%;
 				top: 0;
 				left: 0;
 				opacity: 1;
-				background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.00) 49.85%);
+				background: linear-gradient(
+					0deg,
+					rgba(17, 17, 17, 0.5) 0%,
+					rgba(17, 17, 17, 0) 49.85%
+				);
 				z-index: 3;
 			}
 		}
@@ -155,7 +159,6 @@ $swal2-width: 100%;
 			height: 100%;
 			width: 100%;
 		}
-
 
 		&__button {
 			display: flex;
@@ -184,7 +187,6 @@ $swal2-width: 100%;
 				min-height: 24px;
 			}
 		}
-
 
 		&__popup {
 			&.swal2-backdrop-show {
@@ -236,7 +238,6 @@ $swal2-width: 100%;
 				}
 			}
 		}
-
 
 		&.swiper-slide-active {
 			.media {

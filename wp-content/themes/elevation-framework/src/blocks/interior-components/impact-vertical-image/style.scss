@@ -3,9 +3,10 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 @import "../../../assets/styles/scss/utilities/default-variables";
 
-$block: '.impact-vertical-image';
+$block: ".impact-vertical-image";
 
 #{$block} {
+	opacity: 1;
 	margin-block-start: 0px !important;
 
 	.wp-block-group {
@@ -60,7 +61,7 @@ $block: '.impact-vertical-image';
 		margin-block-start: 0px !important;
 
 		*,
-		*>* {
+		* > * {
 			text-align: center;
 		}
 

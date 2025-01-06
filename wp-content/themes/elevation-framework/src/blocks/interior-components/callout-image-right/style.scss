@@ -6,7 +6,7 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	
+	opacity: 1;
 
 	&__container {
 		position: relative;
@@ -18,18 +18,16 @@
 		flex-direction: column-reverse;
 
 		@include media-breakpoint-up(xl) {
-
-			&.row{
+			&.row {
 				flex-direction: row;
 			}
 
-			&.row-reverse{
+			&.row-reverse {
 				flex-direction: row-reverse;
 			}
-
 		}
 
-		.group{
+		.group {
 			--callout-image-right-padding: 80px 30px;
 			padding: var(--callout-image-right-padding);
 			background-color: $ui-background-secondary;
@@ -40,7 +38,8 @@
 			flex: 0 0 auto;
 			width: 100%;
 
-			>*:not(.cta), >*>*:not(.cta){
+			> *:not(.cta),
+			> * > *:not(.cta) {
 				color: $ui-base-white;
 			}
 
@@ -52,13 +51,10 @@
 			@include media-breakpoint-up(xxl) {
 				--callout-image-right-padding: 160px 113px 160px 129px;
 			}
-
 		}
-
 	}
 
-	&__background:not(img){
-
+	&__background:not(img) {
 		max-height: 600px;
 		overflow: hidden;
 
@@ -68,53 +64,44 @@
 			min-height: 590px;
 			max-height: unset;
 
-			img{
+			img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
 			}
-
 		}
-
 	}
 
-	&.alignfull{
-
-		.callout-image-right{
-
-			&__wrapper{
+	&.alignfull {
+		.callout-image-right {
+			&__wrapper {
 				position: relative;
 
-				&.row{
+				&.row {
 					justify-content: flex-start;
 
-					.group{
-						&::after{
-						
+					.group {
+						&::after {
 							@include media-breakpoint-up(xl) {
 								right: 0;
-    							left: unset;
+								left: unset;
 							}
-
 						}
 					}
 
-					.callout-image-right__background{
-
+					.callout-image-right__background {
 						@include media-breakpoint-up(xl) {
 							right: calc(-50vw + 50%);
 							left: unset;
 						}
-
 					}
-
 				}
 
-				&.row-reverse{
+				&.row-reverse {
 					justify-content: flex-start;
 
-					.group{
-						&::after{
+					.group {
+						&::after {
 							@include media-breakpoint-up(xl) {
 								right: unset;
 								left: 0;
@@ -122,17 +109,17 @@
 						}
 					}
 
-					.callout-image-right__background{
+					.callout-image-right__background {
 						@include media-breakpoint-up(xl) {
 							left: calc(-50vw + 50%);
 							right: unset;
 						}
 					}
 				}
-				
-				.group{
+
+				.group {
 					position: relative;
-	
+
 					@include media-breakpoint-down(sm) {
 						--callout-image-right-padding: 80px 0;
 					}
@@ -141,8 +128,8 @@
 						width: 50%;
 						flex: 0 0 auto;
 					}
-	
-					&::after{
+
+					&::after {
 						content: "";
 						left: calc(-50vw + 50%);
 						top: 0;
@@ -151,16 +138,15 @@
 						height: 100%;
 						background-color: $ui-background-secondary;
 						z-index: -1;
-	
+
 						@include media-breakpoint-up(xl) {
 							width: 50vw;
 						}
 					}
 				}
-
 			}
 
-			&__background:not(img){
+			&__background:not(img) {
 				width: 100vw;
 				position: relative;
 				left: calc(-50vw + 50%);
@@ -172,16 +158,12 @@
 					height: 100%;
 					top: 0;
 
-					img{
+					img {
 						height: 100%;
 						object-fit: cover;
 					}
 				}
-
 			}
-
 		}
-
 	}
-
 }

@@ -3,9 +3,10 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 @import "../../../assets/styles/scss/utilities/default-variables";
 
-$block: '.impact-default-content-centered';
+$block: ".impact-default-content-centered";
 
 #{$block} {
+	opacity: 1;
 	margin-bottom: 30px;
 
 	.wp-block-elevation-interior-components--group:not(#{$block}__row) {
@@ -89,7 +90,7 @@ $block: '.impact-default-content-centered';
 			justify-content: center;
 
 			*,
-			*>* {
+			* > * {
 				color: var(--color);
 			}
 		}

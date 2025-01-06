@@ -6,6 +6,8 @@
 $block: ".logos-descriptions";
 
 #{$block} {
+	opacity: 1;
+
 	// Define the default number of columns
 	--columns: 1;
 	--gap: 30px;

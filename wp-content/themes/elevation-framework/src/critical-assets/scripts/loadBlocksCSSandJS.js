@@ -1,7 +1,12 @@
 import { addCSS, addJS, base } from './utils';
 
 // Load CSS and JS files for each block
-const loadBlocksCSSandJS = (excludedBlocks, exclude = false) => {
+const loadBlocksCSSandJS = (
+	firstsBlocks = [],
+	exclude = false,
+	addIfExist = [],
+	excludedBlocks
+) => {
 	let uniqueBlocksIds = [];
 
 	const blocksWithJs = Array.from(
@@ -12,11 +17,27 @@ const loadBlocksCSSandJS = (excludedBlocks, exclude = false) => {
 		(block) => block.dataset.blockId
 	);
 
-	if (exclude) {
-		if (excludedBlocks.length === 0) return;
-		uniqueBlocksIds = excludedBlocks;
+	// Get all block IDs present in the DOM
+	const blocksInDOM = Array.from(
+		document.querySelectorAll('[data-block-id]')
+	).map((block) => block.dataset.blockId);
+
+	if (addIfExist.length > 0) {
+		// Filter addIfExist to only include IDs present in the DOM
+		const validAddIfExist = addIfExist.filter((id) =>
+			blocksInDOM.includes(id)
+		);
+
+		// Combine validAddIfExist and firstsBlocks (ensure no duplicates)
+		uniqueBlocksIds = Array.from(
+			new Set([...validAddIfExist, ...firstsBlocks])
+		);
+		console.log('uniqueBlocksIds', uniqueBlocksIds);
+	} else if (exclude) {
+		if (firstsBlocks.length === 0) return;
+		uniqueBlocksIds = firstsBlocks;
 	} else {
-		// Find all elements with the "block" class
+		// Find all elements with the "block-id" data attribute
 		const blocks = Array.from(document.querySelectorAll('[data-block-id]'));
 
 		// Get unique block IDs array
@@ -28,6 +49,13 @@ const loadBlocksCSSandJS = (excludedBlocks, exclude = false) => {
 			.map((block) => block.dataset.blockId);
 
 		// Remove excluded blocks
+		uniqueBlocksIds = uniqueBlocksIds.filter(
+			(id) => !firstsBlocks.includes(id)
+		);
+	}
+
+	// exclude blocks
+	if (excludedBlocks.length > 0) {
 		uniqueBlocksIds = uniqueBlocksIds.filter(
 			(id) => !excludedBlocks.includes(id)
 		);

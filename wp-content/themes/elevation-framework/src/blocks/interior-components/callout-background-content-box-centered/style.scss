@@ -3,6 +3,7 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 
 .callout-background-content-box-centered {
+	opacity: 1;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -40,23 +41,24 @@
 			padding: 80px 112px;
 		}
 
-		.wp-block-heading, p, strong{
+		.wp-block-heading,
+		p,
+		strong {
 			color: $ui-base-white;
 		}
 	}
 
-	&:not(.alignfull){
-
+	&:not(.alignfull) {
 		--callout-background-content-box-centered-padding: 300px 0 60px 0;
 
 		@include media-breakpoint-up(xl) {
 			--callout-background-content-box-centered-padding: 423px 0 60px 0;
 		}
 
-		.callout-background-content-box-centered__wrapper{
+		.callout-background-content-box-centered__wrapper {
 			max-width: 100%;
 			margin: 0 30px;
-			
+
 			@include media-breakpoint-up(xl) {
 				width: 83.3333%;
 				margin: 0 auto;
@@ -66,7 +68,5 @@
 				width: 1095px;
 			}
 		}
-
 	}
-
 }

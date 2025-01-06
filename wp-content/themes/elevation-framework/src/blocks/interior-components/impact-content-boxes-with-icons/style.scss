@@ -3,9 +3,10 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 @import "../../../assets/styles/scss/utilities/default-variables";
 
-$block: '.impact-content-boxes-with-icons';
+$block: ".impact-content-boxes-with-icons";
 
 #{$block} {
+	opacity: 1;
 	margin-bottom: 30px;
 
 	&__row {
@@ -20,7 +21,6 @@ $block: '.impact-content-boxes-with-icons';
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
-
 
 	&-item {
 		opacity: 1;
@@ -49,7 +49,7 @@ $block: '.impact-content-boxes-with-icons';
 			display: flex;
 			margin-bottom: 12px;
 			padding-bottom: 32px;
-			border-bottom: 3px solid var(--border-color, #E0E0E0);
+			border-bottom: 3px solid var(--border-color, #e0e0e0);
 			justify-content: space-between;
 			align-items: center;
 		}

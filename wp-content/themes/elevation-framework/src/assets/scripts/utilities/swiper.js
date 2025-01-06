@@ -218,6 +218,11 @@ export default function initSwiper(swiperSelector, childSelector = null) {
 
 					on: {
 						init: function () {
+							document
+								.querySelector(swiperContainer)
+								.closest('.swiper')
+								?.classList.add('swiper-opacity-1');
+
 							if (this.isLocked) {
 								toggleControls(this, 'hide');
 							}

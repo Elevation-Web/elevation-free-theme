@@ -3,11 +3,9 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 @import "../../../assets/styles/scss/utilities/default-variables";
 
-
 .lists-heading-subheading-in-2-columns {
 	padding: 0px;
-
-	&__container {}
+	opacity: 1;
 
 	&-item {
 		opacity: 1;
