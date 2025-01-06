@@ -12,16 +12,16 @@ const save = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes } = props;
-	const { anchor, id } = attributes;
+	const { anchor, id, grid_column } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `${name} counter`,
+		className: `${name} alignfull row-${grid_column}`,
 	});
 
 	return (
 		<div
 			data-block-id={blockId}
-			data-block-js="true"
+			data-block-js="false"
 			id={anchor || id}
 			{...blockProps}
 		>
