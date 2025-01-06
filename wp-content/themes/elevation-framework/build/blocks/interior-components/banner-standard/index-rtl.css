@@ -1,1 +1,34 @@
-.wp-block-elevation-banner-standard .banner-standard__background{aspect-ratio:unset;height:100%!important}.banner-standard .banner-standard__wrapper{width:100%}.banner-standard .banner-standard__wrapper>.block-editor-inner-blocks>.block-editor-block-list__layout{display:flex;justify-content:space-between}.banner-standard .block-editor-block-list__layout .wp-block{max-width:none}.banner-standard .block-editor-block-list__layout textarea{all:inherit}.banner-standard__image{height:400px;max-width:100%;width:644px}.banner-standard__image figure.wp-block-image{position:relative}.banner-standard__image figure.wp-block-image img{-o-object-fit:cover;object-fit:cover;position:relative}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/interior-components/banner-standard/editor.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-elevation-banner-standard .banner-standard__background {
+  aspect-ratio: unset;
+  height: 100% !important;
+}
+
+.banner-standard .banner-standard__wrapper {
+  width: 100%;
+}
+.banner-standard .banner-standard__wrapper > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: flex;
+  justify-content: space-between;
+}
+.banner-standard .block-editor-block-list__layout .wp-block {
+  max-width: none;
+}
+.banner-standard .block-editor-block-list__layout textarea {
+  all: inherit;
+}
+.banner-standard__image {
+  width: 644px;
+  max-width: 100%;
+  height: 400px;
+}
+.banner-standard__image figure.wp-block-image {
+  position: relative;
+}
+.banner-standard__image figure.wp-block-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+}

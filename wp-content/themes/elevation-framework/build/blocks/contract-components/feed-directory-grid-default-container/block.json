@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Feed, Layout: Directory Grid Default",
+  "name": "elevation/contract-components--feed-directory-grid-default-container",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "description": "Feed, Layout: Directory Grid Default",
+  "textdomain": "elevation",
+  "parent": [
+    "elevation/interior-components--custom-container"
+  ],
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "alignWide": false,
+    "renaming": false,
+    "inserter": true,
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "headingLevel": {
+      "type": "string",
+      "default": "h5"
+    },
+    "filterBy": {
+      "type": "string",
+      "default": "latest"
+    },
+    "categorySelected": {
+      "type": "array",
+      "default": []
+    },
+    "postsSelected": {
+      "type": "array",
+      "default": []
+    },
+    "postsPerPage": {
+      "type": "number",
+      "default": 3
+    },
+    "cardDirectory": {
+      "type": "boolean",
+      "default": true
+    },
+    "urlDirectory": {
+      "type": "string",
+      "default": "/directory"
+    },
+    "titleDirectory": {
+      "type": "string",
+      "default": "Title Page (Directory)"
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "style": [
+    "file:style-index.css"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ],
+  "render": "file:./render.php"
+}

@@ -1,0 +1,280 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/contract-components/feed-directory-grid-default-container/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.feed-directory-grid-default {
+  position: relative;
+  opacity: 1;
+}
+.feed-directory-grid-default-container__container {
+  display: flex;
+  position: relative;
+  padding: 0px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.feed-directory-grid-default .card {
+  position: relative;
+  transition: box-shadow 0.2s ease-in-out;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  height: auto;
+  gap: 20px;
+  width: auto;
+  padding: 0px;
+  box-shadow: none;
+  border-radius: 2px;
+  max-width: 100%;
+  flex-direction: column;
+  border: none;
+  background-color: transparent;
+}
+@media (min-width: 1200px) {
+  .feed-directory-grid-default .card {
+    max-width: calc(33.3% - 98.3333333333px);
+  }
+}
+.feed-directory-grid-default .card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  transition: all 0.2s;
+  background-image: url("data:image/svg+xml,<svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M19.8211 12.4645C19.8211 12.0502 19.4853 11.7145 19.0711 11.7145L12.3211 11.7145C11.9069 11.7145 11.5711 12.0502 11.5711 12.4645C11.5711 12.8787 11.9069 13.2145 12.3211 13.2145H18.3211V19.2145C18.3211 19.6287 18.6569 19.9645 19.0711 19.9645C19.4853 19.9645 19.8211 19.6287 19.8211 19.2145L19.8211 12.4645ZM12.5303 20.0659L19.6014 12.9948L18.5407 11.9341L11.4697 19.0052L12.5303 20.0659Z\" fill=\"%23FBF9F8\"/><circle cx=\"16\" cy=\"16\" r=\"15.5\" stroke=\"%23FBF9F8\"/></svg>");
+}
+.feed-directory-grid-default .card-directory {
+  width: 206px;
+  flex: unset;
+  background-color: #f6f4f9;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  min-height: 352px;
+}
+.feed-directory-grid-default .card-directory::before {
+  content: none;
+}
+.feed-directory-grid-default .card-directory .text {
+  color: #210044;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+.feed-directory-grid-default .card-directory h6 {
+  margin: 0px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 41px;
+}
+.feed-directory-grid-default .card-directory h6::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,<svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M11.066 6.53033C11.3589 6.23744 11.3589 5.76256 11.066 5.46967L6.293 0.696699C6.00011 0.403806 5.52524 0.403806 5.23234 0.696699C4.93945 0.989593 4.93945 1.46447 5.23234 1.75736L9.47498 6L5.23234 10.2426C4.93945 10.5355 4.93945 11.0104 5.23234 11.3033C5.52524 11.5962 6.00011 11.5962 6.293 11.3033L11.066 6.53033ZM0.535645 6.75L10.5356 6.75V5.25L0.535645 5.25V6.75Z\" fill=\"%23210044\"/></svg>");
+  background-size: cover;
+  flex-shrink: 0;
+}
+.feed-directory-grid-default .card__image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  height: 230px;
+  width: 100%;
+  display: flex;
+}
+.feed-directory-grid-default .card__image::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-180deg, rgba(17, 17, 17, 0.3) -2.82%, rgba(17, 17, 17, 0) 24.82%);
+}
+.feed-directory-grid-default .card__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+.feed-directory-grid-default .card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.feed-directory-grid-default .card__body * {
+  transform: none;
+}
+.feed-directory-grid-default .card__body__header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.feed-directory-grid-default .card__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+@media (max-width: 767.98px) {
+  .feed-directory-grid-default .card__category {
+    width: 100%;
+  }
+}
+.feed-directory-grid-default .card__category span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 142.857%;
+  letter-spacing: 0.00875rem;
+  color: #210044;
+  padding: 6px 10px;
+  border: 1px solid #d5d4dc;
+  border-radius: 4px;
+}
+.feed-directory-grid-default .card__title {
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  margin: 0px;
+  color: #210044;
+}
+.feed-directory-grid-default .card__title span,
+.feed-directory-grid-default .card__title a {
+  margin: 0px;
+  background-color: transparent;
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-width: 0.03125rem;
+  display: inline;
+  text-align: right;
+  transition-duration: 0.4s;
+  transition-property: border-bottom-color;
+  transition-timing-function: ease-in-out;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: break-word;
+  text-decoration: none !important;
+  color: #210044;
+}
+.feed-directory-grid-default .card .stretched-link-custom {
+  display: block;
+  height: 100%;
+  right: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.feed-directory-grid-default .card:focus-visible {
+  box-shadow: 0 0 0 0.25rem #210044;
+}
+@media (min-width: 1200px) {
+  .feed-directory-grid-default .card:active::before, .feed-directory-grid-default .card:hover::before {
+    background-image: url("data:image/svg+xml,<svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"16\" cy=\"16\" r=\"15.5\" fill=\"%23FBF9F8\" stroke=\"%23FBF9F8\"/><path d=\"M19.8211 12.4645C19.8211 12.0502 19.4853 11.7145 19.0711 11.7145L12.3211 11.7145C11.9069 11.7145 11.5711 12.0502 11.5711 12.4645C11.5711 12.8787 11.9069 13.2145 12.3211 13.2145H18.3211V19.2145C18.3211 19.6287 18.6569 19.9645 19.0711 19.9645C19.4853 19.9645 19.8211 19.6287 19.8211 19.2145L19.8211 12.4645ZM12.5303 20.0659L19.6014 12.9948L18.5407 11.9341L11.4697 19.0052L12.5303 20.0659Z\" fill=\"%23210044\"/></svg>");
+  }
+  .feed-directory-grid-default .card:active .card-directory h6, .feed-directory-grid-default .card:hover .card-directory h6 {
+    text-decoration: underline;
+  }
+  .feed-directory-grid-default .card:active .card__image-image, .feed-directory-grid-default .card:hover .card__image-image {
+    transform: scale(1.1);
+  }
+  .feed-directory-grid-default .card:active .card__title, .feed-directory-grid-default .card:hover .card__title {
+    text-decoration: none;
+  }
+  .feed-directory-grid-default .card:active .card__title span,
+.feed-directory-grid-default .card:active .card__title a, .feed-directory-grid-default .card:hover .card__title span,
+.feed-directory-grid-default .card:hover .card__title a {
+    text-decoration: none;
+    border-bottom-color: #662d91 !important;
+    color: #662d91 !important;
+  }
+}
+
+#primary .feed-event-carousel__card-title a {
+  text-decoration: none !important;
+}
+#primary .feed-event-carousel__card-title a:hover {
+  text-decoration: underline !important;
+}

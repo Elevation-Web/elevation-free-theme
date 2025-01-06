@@ -1,0 +1,85 @@
+export const TEMPLATE = [
+	[
+		'elevation/interior-components--spacer',
+		{
+			space: 'spacer__large',
+		},
+	],
+	[
+		'elevation/interior-components--custom-container',
+		{
+			className: '',
+			containerWidth: 'medium',
+		},
+		[
+			[
+				'elevation/interior-components--group',
+				{},
+				[
+					[
+						'core/heading',
+						{
+							level: 2,
+							content: 'H2. Heading lorem ipsum euismod',
+						},
+					],
+					[
+						'core/paragraph',
+						{
+							content: ` Maximum 30 words. Dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet nulla facilisi morbi tempus.`,
+						},
+					],
+					[
+						'elevation/interior-components--buttons',
+						{},
+						[
+							[
+								'elevation/interior-components--button',
+								{
+									btnStyle: 'primary--color-02',
+									text: 'Text Button',
+								},
+							],
+						],
+					],
+					[
+						'elevation/interior-components--spacer',
+						{
+							space: 'spacer__extra-small',
+							line: true,
+							linePosition: 'bottom',
+							lineType: 'dash',
+						},
+					],
+					[
+						'elevation/interior-components--spacer',
+						{
+							space: 'spacer__extra-small',
+							linePosition: 'top',
+						},
+					],
+				],
+			],
+			[
+				'elevation/contract-components--feed-directory-grid-default-container',
+				{},
+			],
+		],
+	],
+	[
+		'elevation/interior-components--spacer',
+		{
+			space: 'spacer__large',
+		},
+	],
+];
+
+export const allowedBlocks = [
+	'core/heading',
+	'core/paragraph',
+	'elevation/interior-components--custom-container',
+	'elevation/interior-components--buttons',
+	'elevation/contract-components--feed-directory-grid-default-container',
+	'elevation/interior-components--group',
+	'elevation/interior-components--spacer',
+];
