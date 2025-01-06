@@ -4,11 +4,19 @@ import SliderLayout from './layout';
 function Slider(props, ref) {
 	const { children, attributes } = props;
 
-	const { speed, pagination, navigation, scrollbar, keyboard, mousewheel } =
-		attributes;
+	const {
+		speed,
+		pagination,
+		navigation,
+		scrollbar,
+		keyboard,
+		mousewheel,
+		slidesPerViewXl,
+		slidesPerView,
+	} = attributes;
 
 	const options = {
-		slidesPerView: 1,
+		slidesPerView: slidesPerViewXl || slidesPerView,
 		speed: 1,
 		navigation: navigation == 'yes',
 		scrollbar: scrollbar == 'yes',

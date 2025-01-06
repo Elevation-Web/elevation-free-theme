@@ -23,7 +23,7 @@ export const TEMPLATE = [
 			[
 				'core/paragraph',
 				{
-					content: `Name of Block: Logos, Layout: Descriptions. Maximum 30 words. Dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet nulla facilisi morbi tempus.`,
+					content: `Name of Block: Logos, Layout: Carousel. Maximum 30 words. Dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet nulla facilisi morbi tempus.`,
 				},
 			],
 			[
@@ -42,9 +42,16 @@ export const TEMPLATE = [
 			[
 				'elevation/interior-components--spacer',
 				{
+					space: 'spacer__extra-small',
 					line: true,
-					lineType: 'dash',
+					lineType: 'dots',
 					linePosition: 'bottom',
+				},
+			],
+			[
+				'elevation/interior-components--spacer',
+				{
+					space: 'spacer__extra-small',
 				},
 			],
 			[
