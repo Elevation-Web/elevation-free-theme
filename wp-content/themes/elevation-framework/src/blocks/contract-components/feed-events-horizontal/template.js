@@ -19,8 +19,8 @@ export const TEMPLATE = [
 					[
 						'core/heading',
 						{
-							level: 3,
-							content: 'H3. Heading lorem ipsum euismod',
+							level: 2,
+							content: 'H2. Heading lorem ipsum euismod',
 						},
 					],
 					[
@@ -36,7 +36,7 @@ export const TEMPLATE = [
 							[
 								'elevation/interior-components--button',
 								{
-									btnStyle: 'primary-1',
+									btnStyle: 'primary--color-02',
 									text: 'Text Button',
 								},
 							],

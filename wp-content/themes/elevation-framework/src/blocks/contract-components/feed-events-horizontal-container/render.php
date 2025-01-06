@@ -10,7 +10,7 @@ $filterBy = $attributes['filterBy'] ?? 'latest';
 
 ?>
 <div id="<?php echo esc_attr($attributes['id']); ?>" data-block-id="contract-components/feed-events-horizontal-container" data-block-js="true" class="feed-events-horizontal-container">
-    <div class="feed-default-events-container__container">
+    <div class="feed-events-horizontal-container__container">
         <?php if (function_exists('tribe_get_events')) : ?>
             <?php
             $args = array(
@@ -33,7 +33,14 @@ $filterBy = $attributes['filterBy'] ?? 'latest';
                 $cats = array_map(function ($cat) {
                     return $cat['id'];
                 }, $categorySelected);
-                $args['category__in'] = $cats;
+                $args['tax_query'] = [
+                    [
+                        'taxonomy' => 'tribe_events_cat', // Taxonomía de categorías de eventos
+                        'field'    => 'term_id',         // Filtrar por ID de término
+                        'terms'    => $cats,             // IDs de las categorías seleccionadas
+                        'operator' => 'IN',              // Incluir términos coincidentes
+                    ],
+                ];
             }
 
             if ($filterBy == 'events') {
@@ -60,25 +67,15 @@ $filterBy = $attributes['filterBy'] ?? 'latest';
                         $alt_image = 'default image';
                     }
             ?>
-                    <div class="swiper-slide">
-                        <article class="card">
-                            <div class="card__header">
-                                <?= Helpers::global_image(
-                                    $image,
-                                    [
-                                        'is_figure' => false,
-                                        'size' => 'medium',
-                                        'alt' => $alt_image,
-                                        'echo' => false,
-                                        'class' => 'no-animate card__image'
-                                    ]
-                                ); ?>
-                            </div>
-                            <aside class="card__body">
-                                <?php if (isset($title) && !empty($title)) : ?>
-                                    <<?php echo $headingLevel; ?> class="card__title no-animate">
-                                        <a href="<?= esc_url($permalink); ?>" target="_self" class="wp-block-heading"><?= esc_html($title); ?></a>
-                                    </<?php echo $headingLevel; ?>>
+                    <article class="card">
+                        <aside class="card__body">
+                            <div class="card__body__header">
+                                <?php if (isset($categories) && !empty($categories)) : ?>
+                                    <div class="card__category">
+                                        <span class="category">
+                                            <?php echo $categories[0]->name; ?>
+                                        </span>
+                                    </div>
                                 <?php endif; ?>
                                 <div class="card__full-date">
                                     <?php if ($start_date) : ?>
@@ -92,17 +89,35 @@ $filterBy = $attributes['filterBy'] ?? 'latest';
                                         </span>
                                     <?php endif; ?>
                                 </div>
-                            </aside>
-                            <?php if (isset($categories) && !empty($categories)) : ?>
-                                <div class="card__category">
-                                    <span class="category">
-                                        <?php echo $categories[0]->name; ?>
-                                    </span>
-                                </div>
+                            </div>
+
+                            <?php if (isset($title) && !empty($title)) : ?>
+                                <<?php echo $headingLevel; ?> class="card__title no-animate">
+                                    <a href="<?= esc_url($permalink); ?>" target="_self" class="wp-block-heading"><?= esc_html($title); ?></a>
+                                </<?php echo $headingLevel; ?>>
                             <?php endif; ?>
-                            <a href="<?= esc_url($permalink); ?>" target="_self" class="stretched-link stretched-link-custom">Read Post <?= esc_html($title) ?></a>
-                        </article>
-                    </div>
+
+                            <div class="buttons card__buttons">
+                                <button aria-label="View <?= esc_html($title) ?>" class="button cta cta--secondary--outline">
+                                    View Event
+                                </button>
+                            </div>
+
+                        </aside>
+                        <div class="card__image">
+                            <?= Helpers::global_image(
+                                $image,
+                                [
+                                    'is_figure' => false,
+                                    'size' => 'medium',
+                                    'alt' => $alt_image,
+                                    'echo' => false,
+                                    'class' => 'no-animate card__image'
+                                ]
+                            ); ?>
+                        </div>
+                        <a href="<?= esc_url($permalink); ?>" target="_self" class="stretched-link stretched-link-custom">View <?= esc_html($title) ?></a>
+                    </article>
             <?php
                     wp_reset_postdata();
                 endwhile;

@@ -13,8 +13,11 @@ export const Controls = (props) => {
 	const { attributes, setAttributes } = props;
 	const { categorySelected, postsSelected, postsPerPage, filterBy } =
 		attributes;
-	const { records: categories } = useEntityRecords('taxonomy', 'category');
-	const { records: posts } = useEntityRecords('postType', 'post');
+	const { records: categories } = useEntityRecords(
+		'taxonomy',
+		'tribe_events_cat'
+	);
+	const { records: posts } = useEntityRecords('postType', 'tribe_events');
 	const [categorySuggestions, setCategorySuggestions] = useState({});
 	const [postSuggestions, setPostSuggestions] = useState([]);
 
@@ -58,8 +61,8 @@ export const Controls = (props) => {
 					options={[
 						{ label: 'Newest Oldest', value: 'latest' },
 						{ label: 'Oldest Newest', value: 'oldest' },
-						{ label: 'Category', value: 'category' },
-						{ label: 'Posts', value: 'posts' },
+						{ label: 'Event Categories', value: 'category' },
+						{ label: 'Events', value: 'events' },
 					]}
 					onChange={(newSize) => setAttributes({ filterBy: newSize })}
 				/>
@@ -89,7 +92,7 @@ export const Controls = (props) => {
 					max={21}
 				/>
 			</PanelBody>
-			{filterBy == 'posts' && postSuggestions && (
+			{filterBy == 'events' && postSuggestions && (
 				<PanelBody title={__('Select Posts')}>
 					<SearchByOptions
 						options={postSuggestions}

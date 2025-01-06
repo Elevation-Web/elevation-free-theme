@@ -1,11 +1,11 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "Feed, Layout: Default Blog w/Content Boxes Container",
+  "title": "Feed, Layout: Events Horizontal Container",
   "name": "elevation/contract-components--feed-events-horizontal-container",
   "version": "1.0.0",
   "category": "elevation-blocks",
-  "description": "Feed, Layout: Default Blog w/Content Boxes Container",
+  "description": "Feed, Layout: Events Horizontal Container",
   "textdomain": "elevation",
   "parent": [
     "elevation/interior-components--custom-container"
@@ -43,7 +43,7 @@
     },
     "postsPerPage": {
       "type": "number",
-      "default": 6
+      "default": 3
     }
   },
   "editorScript": [

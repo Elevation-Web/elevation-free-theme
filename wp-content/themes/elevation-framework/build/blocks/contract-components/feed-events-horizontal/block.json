@@ -44,6 +44,10 @@
     "preview": {
       "type": "boolean",
       "default": false
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "ui-background-light-01"
     }
   },
   "example": {
