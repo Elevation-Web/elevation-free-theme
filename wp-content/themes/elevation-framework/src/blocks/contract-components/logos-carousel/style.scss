@@ -6,11 +6,12 @@
 	opacity: 1;
 
 	.swiper {
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
 			width: calc(100% + 66px);
 			margin-left: -29px;
 			padding-left: 29px;
 			padding-right: 29px;
+			padding-top: 3px;
 		}
 
 		&__container {
@@ -25,7 +26,7 @@
 				gap: 30px;
 				position: absolute;
 				width: 100%;
-				height: 40px;
+				height: 0;
 				left: 0;
 				padding: 0;
 				display: none;
@@ -38,7 +39,6 @@
 				}
 
 				@include media-breakpoint-up(lg) {
-					height: 63px;
 					justify-content: space-between;
 				}
 
@@ -49,11 +49,17 @@
 				.swiper-button-next,
 				.swiper-button-prev {
 					--swiper-navigation-size: 40px;
-					--swiper-navigation-sides-offset: 0px;
+					--swiper-navigation-sides-offset: 10px;
+					width: var(--swiper-navigation-size);
+
 					@include media-breakpoint-up(lg) {
 						--swiper-navigation-size: 63px;
-						--swiper-navigation-sides-offset: -16px;
 					}
+
+					@include media-breakpoint-up(xl) {
+						--swiper-navigation-sides-offset: -29px;
+					}
+
 					&::after {
 						content: "";
 						width: 40px;
@@ -106,6 +112,10 @@
 							0.2s width !important;
 						position: initial;
 
+						@media (prefers-reduced-motion) {
+							transition: none;
+						}
+
 						&-active {
 							width: 27px;
 							border-radius: 3px;
@@ -139,10 +149,11 @@
 			&:after {
 				content: "";
 				position: absolute;
+				width: 15px;
+				height: 15px;
 				top: 15px;
 				right: 14px;
-				color: #662d91;
-				background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M14.3491 7.09318C13.9948 7.09318 13.7067 7.38134 13.7067 7.73559V12.8218C13.7067 13.3144 13.3059 13.7152 12.8133 13.7152H2.17824C1.68562 13.7152 1.28483 13.3144 1.28483 12.8218V2.18674C1.28483 1.69412 1.68562 1.29332 2.17824 1.29332H7.26441C7.61865 1.29332 7.90682 1.00515 7.90682 0.650908C7.90682 0.296661 7.61865 0.00862122 7.26441 0.00862122H2.17824C0.977128 0.00862122 0 0.985749 0 2.18674V12.8218C0 14.0229 0.977128 15 2.17824 15H12.8133C14.0144 15 14.9915 14.0229 14.9915 12.8218V7.73559C14.9915 7.38134 14.7033 7.09318 14.3491 7.09318Z" fill="currentColor"/></svg>');
+				background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none"><g clip-path="url(%23clip0_5867_14874)"><path d="M14.3491 7.09318C13.9948 7.09318 13.7067 7.38134 13.7067 7.73559V12.8218C13.7067 13.3144 13.3059 13.7152 12.8133 13.7152H2.17824C1.68562 13.7152 1.28483 13.3144 1.28483 12.8218V2.18674C1.28483 1.69412 1.68562 1.29332 2.17824 1.29332H7.26441C7.61865 1.29332 7.90682 1.00515 7.90682 0.650908C7.90682 0.296661 7.61865 0.00862122 7.26441 0.00862122H2.17824C0.977128 0.00862122 0 0.985749 0 2.18674V12.8218C0 14.0229 0.977128 15 2.17824 15H12.8133C14.0144 15 14.9915 14.0229 14.9915 12.8218V7.73559C14.9915 7.38134 14.7033 7.09318 14.3491 7.09318Z" fill="%23662d91"/><path d="M14.2689 0H10.657C10.4876 0 10.3278 0.0653194 10.2069 0.184036C10.0863 0.302499 10.018 0.460914 10.0147 0.629857C10.0114 0.800702 10.0767 0.963049 10.1984 1.08709C10.3215 1.21266 10.4926 1.2847 10.6675 1.2847H12.8095L7.04961 7.05906C6.79949 7.30969 6.79987 7.7172 7.05075 7.9677C7.17213 8.08857 7.33321 8.15516 7.50431 8.15516C7.67541 8.15516 7.83788 8.08806 7.95913 7.96643L13.7152 2.196V4.54877C13.7152 4.71822 13.7805 4.87803 13.8993 4.9989C14.0177 5.11952 14.1761 5.18776 14.3451 5.19105C14.5157 5.19448 14.6783 5.12916 14.8023 5.0074C14.9279 4.88424 14.9999 4.71314 14.9999 4.53824V0.731324C14.9999 0.328119 14.6718 0 14.2686 0H14.2689Z" fill="%23662d91"/></g><defs><clipPath id="clip0_5867_14874"><rect width="15" height="15" fill="white"/></clipPath></defs></svg>');
 				background-size: 15px;
 				background-repeat: no-repeat;
 				background-position: center;
@@ -152,11 +163,19 @@
 				transition:
 					width 0.3s,
 					height 0.3s;
+
+				@media (prefers-reduced-motion) {
+					transition: none;
+				}
 			}
 			&:hover {
 				img {
 					width: calc(100% - 80px);
 					height: calc(100% - 80px);
+				}
+
+				.media {
+					border-color: $ui-border-input-controls-active;
 				}
 			}
 		}
