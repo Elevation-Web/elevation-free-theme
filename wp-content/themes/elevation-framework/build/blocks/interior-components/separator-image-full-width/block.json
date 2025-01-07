@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "Separator Layout: Three Images",
-  "name": "elevation/interior-components--separator-three-images",
+  "title": "Separator Layout: Image Full Width",
+  "name": "elevation/interior-components--separator-image-full-width",
   "version": "1.0.0",
   "category": "elevation-blocks",
-  "icon": "button",
-  "description": "Separator Layout: Three Images.",
+  "icon": "align-full-width",
+  "description": "Separator Layout: Image Full Width.",
   "textdomain": "elevation",
   "supports": {
     "html": true,
@@ -43,7 +43,7 @@
     },
     "imagesRatio": {
       "type": "string",
-      "default": "4-3"
+      "default": "16-9"
     }
   },
   "example": {

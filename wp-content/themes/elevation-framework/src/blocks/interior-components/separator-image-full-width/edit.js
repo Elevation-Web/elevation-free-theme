@@ -35,7 +35,7 @@ const Edit = (props) => {
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
 		template: TEMPLATE,
 		templateInsertUpdatesSelection: true,
-		allowedBlocks: [],
+		allowedBlocks: ['elevation/interior-components--spacer'],
 		orientation: 'horizontal',
 		templateLock: true,
 	});
@@ -50,6 +50,7 @@ const Edit = (props) => {
 		{ label: 'Standard - 4:3', value: '4-3' },
 		{ label: 'Studio - 5:4', value: '5-4' },
 		{ label: 'Wide - 16:9', value: '16-9' },
+		{ label: 'Original', value: 'intrinsic' },
 	];
 
 	const controls = (

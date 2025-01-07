@@ -17,13 +17,7 @@
       "clientNavigation": true
     },
     "lock": true,
-    "layout": {
-      "allowSwitching": false,
-      "allowInheriting": false,
-      "default": {
-        "type": "flex"
-      }
-    }
+    "layout": false
   },
   "attributes": {
     "img": {
