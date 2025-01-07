@@ -75,7 +75,7 @@ const Edit = (props) => {
 	);
 
 	const blockControls = (
-		<BlockControls>
+		<BlockControls group={'inline'}>
 			<MediaReplaceFlow
 				mediaId={img?.id}
 				mediaUrl={img?.url}
