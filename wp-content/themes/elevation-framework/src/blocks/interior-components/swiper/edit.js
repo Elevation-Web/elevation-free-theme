@@ -26,7 +26,7 @@ const Edit = (props) => {
 	}, [clientId, name, setAttributes]);
 
 	const blockProps = useBlockProps({
-		className: `${name} slider-layout`,
+		className: `${name}`,
 	});
 
 	const wrapperProps = {
@@ -46,6 +46,7 @@ const Edit = (props) => {
 					<InnerBlocks
 						allowedBlocks={allowedBlocks}
 						{...wrapperProps}
+						orientation="horizontal"
 					/>
 				</Slider>
 				<div className="swiper-controls__container">
