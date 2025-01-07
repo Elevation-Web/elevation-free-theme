@@ -31,13 +31,21 @@
 			"type": "string",
 			"default": "latest"
 		},
+		"postType": {
+			"type": "string",
+			"default": "resources"
+		},
 		"categorySelected": {
 			"type": "array",
 			"default": []
 		},
-		"postsSelected": {
-			"type": "array",
-			"default": []
+		"taxonomy": {
+			"type": "string",
+			"default": "resources_categories"
+		},
+		"filterEnabled": {
+			"type": "boolean",
+			"default": true
 		},
 		"postsPerPage": {
 			"type": "number",
@@ -51,9 +59,17 @@
 			"type": "string",
 			"default": "/directory"
 		},
+		"textDirectory": {
+			"type": "string",
+			"default": "See more from"
+		},
 		"titleDirectory": {
 			"type": "string",
 			"default": "Title Page (Directory)"
+		},
+		"postExclude": {
+			"type": "array",
+			"default": []
 		}
 	},
 	"editorScript": ["file:index.js"],

@@ -19,28 +19,9 @@ export const TEMPLATE = [
 					[
 						'core/heading',
 						{
-							level: 2,
-							content: 'H2. Heading lorem ipsum euismod',
+							level: 3,
+							content: 'H3. Heading lorem ipsum euismod',
 						},
-					],
-					[
-						'core/paragraph',
-						{
-							content: ` Maximum 30 words. Dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet nulla facilisi morbi tempus.`,
-						},
-					],
-					[
-						'elevation/interior-components--buttons',
-						{},
-						[
-							[
-								'elevation/interior-components--button',
-								{
-									btnStyle: 'primary--color-02',
-									text: 'Text Button',
-								},
-							],
-						],
 					],
 					[
 						'elevation/interior-components--spacer',

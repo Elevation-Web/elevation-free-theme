@@ -32,9 +32,16 @@
 		flex-direction: column;
 		border: none;
 		background-color: transparent;
+		width: 100%;
 
-		@include media-breakpoint-up(xl) {
-			max-width: calc(33.3% - (295px  / 3)) ;
+		@include media-breakpoint-up(md) {
+			width: calc(33.3% - 20px);
+		}
+
+		&:not(.full-width) {
+			@include media-breakpoint-up(md) {
+				max-width: calc(33.3% - (295px / 3));
+			}
 		}
 
 		&::before {

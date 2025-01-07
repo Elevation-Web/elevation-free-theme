@@ -32,7 +32,7 @@ class ApiController extends \WP_REST_Posts_Controller
         parent::__construct($this->post_type);
 
         register_rest_route(
-            'wp/v2/' . $this->post_type,
+            'wp/v2/elevation/' . $this->post_type,
             'get_directory',
             array(
                 array(

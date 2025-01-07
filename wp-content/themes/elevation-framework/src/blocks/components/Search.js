@@ -3,7 +3,13 @@ import { CheckboxControl, SearchControl } from '@wordpress/components';
 import { useState, useRef } from '@wordpress/element';
 
 const SearchByOptions = (props) => {
-	const { onChange, options, selectedOptions, type = 'post' } = props;
+	const {
+		onChange,
+		options,
+		selectedOptions,
+		type = 'post',
+		max = 3,
+	} = props;
 
 	const [searchTerm, setSearchTerm] = useState('');
 	const [isVisible, setIsVisible] = useState(false);
@@ -67,6 +73,10 @@ const SearchByOptions = (props) => {
 										checked={selectedOptions.includes(
 											option.id
 										)}
+										disabled={
+											selectedOptions.length >= max &&
+											!selectedOptions.includes(option.id)
+										}
 										onChange={() => toggleOption(option)}
 									/>
 								))

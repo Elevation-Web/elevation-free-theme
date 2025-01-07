@@ -305,242 +305,33 @@
 		?>
 
 		<?php
-		$category_layout   = get_field('directory_layout', 'option');
-		$related_resources = get_field('related_resources', $id);
 
-		if ($related_resources) : ?>
-			<div class="row">
-				<div class="col-xl-10 offset-xl-1 position-relative">
+		$directory_url = get_field('sr_directory_url', 'option');
+		$directory_url_label = get_field('sr_directory_url_label', 'option');
+		if ($categories && !is_wp_error($categories)) {
+			$category_array = array_map(function ($category) {
+				return [
+					'id' => $category->term_id,
+					'name' => $category->name,
+				];
+			}, $categories);
 
-					<?php
-					$terms = get_the_terms($id, 'resources_categories', 'string');
-					$term_ids = wp_list_pluck($terms, 'term_id');
-					$second_query = new WP_Query(array(
-						'post_type' => 'resources',
-						'tax_query' => array(
-							array(
-								'taxonomy' => 'resources_categories',
-								'field'    => 'id',
-								'terms'    => $term_ids,
-								'operator' => 'IN'
-							)
-						),
-						'posts_per_page'      => 9,
-						'ignore_sticky_posts' => 1,
-						'orderby'             => 'date',
-						'post__not_in'        => array($id)
-					));
+			$category_json = json_encode($category_array);
+		} else {
+			$category_json = '[]';
+		}
 
-					$post_count = $second_query->post_count;
+		$related_resources = '<!-- wp:elevation/contract-components--feed-directory-grid-default --><div data-block-id="contract-components/feed-directory-grid-default" data-block-js="false" id="feed-directory-grid-default-72079e03-90bf-42c7-9839-043ca3f2d24b" class="wp-block-elevation-contract-components--feed-directory-grid-default feed-directory-grid-default alignfull row-undefined"><!-- wp:elevation/interior-components--spacer {"space":"spacer__large"} --><div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__large line-disable line-type-solid position-top" style="--border-color:ui-border-bounds"></div><!-- /wp:elevation/interior-components--spacer --><!-- wp:elevation/interior-components--custom-container {"containerWidth":"medium","className":""} --><div class="wp-block-elevation-interior-components--custom-container custom-container custom-container--medium"><!-- wp:elevation/interior-components--group --><div data-block-id="interior-components/group" data-block-js="false" class="wp-block-elevation-interior-components--group elevation-interior-components--group group type-default"><!-- wp:heading --><h2 class="wp-block-heading">H3. Heading lorem ipsum euismod</h2><!-- /wp:heading --><!-- wp:elevation/interior-components--spacer {"space":"spacer__extra-small","line":true,"lineType":"dash","linePosition":"bottom","borderColor":"#d5d4dcff"} --><div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__extra-small line-enable line-type-dash position-bottom" style="--border-color:#d5d4dcff"></div><!-- /wp:elevation/interior-components--spacer --><!-- wp:elevation/interior-components--spacer {"space":"spacer__extra-small"} --><div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__extra-small line-disable line-type-solid position-top" style="--border-color:ui-border-bounds"></div><!-- /wp:elevation/interior-components--spacer --></div><!-- /wp:elevation/interior-components--group --><!-- wp:elevation/contract-components--feed-directory-grid-default-container {"titleDirectory": "' . $directory_url_label . '",
+		"urlDirectory": "' . $directory_url . '","textDirectory":"See more from2", "postExclude" : [' . $id . '], "categorySelected": ' . $category_json . '} /--></div><!-- /wp:elevation/interior-components--custom-container --><!-- wp:elevation/interior-components--spacer {"space":"spacer__large"} --><div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__large line-disable line-type-solid position-top" style="--border-color:ui-border-bounds"></div><!-- /wp:elevation/interior-components--spacer --></div><!-- /wp:elevation/contract-components--feed-directory-grid-default -->';
 
-					if ($second_query->have_posts()) : ?>
+		$parsed_blocks = parse_blocks($related_resources);
 
-						<?php // if (is_user_logged_in()) :
-						?>
-						<div class="block__buttons options-views">
-							<button id="option1" class="cta cta--cta-red">Option 1</button>
-							<button id="option2" class="cta cta--cta-red">Option 2</button>
-							<button id="option3" class="cta cta--cta-red">Option 3</button>
-						</div>
-						<?php // endif; 
-						?>
-
-						<div class="block block__feed--carousel <?= $category_layout; ?>">
-							<div class="block__title">
-								<h2>More from the <?= esc_html($terms[0]->name); ?></h2>
-							</div>
-							<div class="swiper__feed" id="swiper-single-resource">
-
-
-
-								<div class="swiper-wrapper">
-									<?php
-									while ($second_query->have_posts()) : $second_query->the_post();
-										$permalink   = get_permalink($post->ID);
-										$title       = get_the_title($post->ID);
-										$description = get_the_excerpt($post->ID);
-										$categories  = get_the_terms($post->ID, 'resources_categories');
-										if (has_post_thumbnail()) {
-											$image = get_post_thumbnail_id($post->ID);
-											$alt_image = sanitize_text_field(get_post_meta($image, '_wp_attachment_image_alt', true));
-										} else {
-											$image = get_template_directory_uri() . '/src/assets/images/default.svg';
-											$alt_image = 'default image';
-										}
-										$card_image_change = ' ';
-										$downloadable = get_field('downloadable', $post->ID);
-										if (isset($downloadable['editor']) && !empty($downloadable['editor']) || isset($downloadable['file_url']) && !empty($downloadable['file_url'])) {
-											$card_image_change = ' card__image--pdf';
-										}
-										$video_youtube = get_field('youtube', $post->ID);
-										if (isset($video_youtube) && !empty($video_youtube)) {
-											$card_image_change = ' card__image--video';
-										}
-									?>
-
-										<article class="card swiper-slide">
-											<?php Helpers::global_image($image, ['size' => 'medium', 'class' => 'card__image card__image--hover-effect' . $card_image_change]); ?>
-
-											<div class="card__body">
-												<?php if (isset($title) && !empty($title)) : ?>
-													<div class="card__body__title h6 line-clamp-2">
-														<span>
-															<?= esc_html($title); ?>
-														</span>
-													</div>
-												<?php endif; ?>
-												<?php if (isset($description) && !empty($description)) : ?>
-													<div class="card__body__excerpt line-clamp-4">
-														<p><?= wp_kses_post($description); ?></p>
-													</div>
-												<?php endif; ?>
-											</div>
-
-											<?php if (isset($categories) && !empty($categories)) : ?>
-												<div class="card__footer">
-													<?php // foreach ($categories as $category) : 
-													?>
-													<span><?= esc_html($categories[0]->name); ?></span>
-													<?php // endforeach; 
-													?>
-												</div>
-											<?php endif; ?>
-
-											<a class="stretched-link stretched-link-custom" href="<?= esc_url($permalink); ?>" target="_self">Read More</a>
-
-										</article>
-
-									<?php endwhile; ?>
-
-								</div>
-								<div class="swiper__container-controls center">
-									<div class="swiper-button-prev"></div>
-									<div class="swiper-pagination"></div>
-									<div class="swiper-button-next"></div>
-
-									<?php if ($post_count > 3) { ?>
-										<button type="button" aria-label="play" class="swiper-button-play-pause">
-											<span class="icon" aria-hidden="true"></span>
-										</button>
-									<?php } ?>
-
-								</div>
-							</div>
-						</div>
-
-						<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-						<script>
-							const swiper = new Swiper('.swiper__feed', {
-								// Optional parameters
-								centeredSlides: false,
-								grabCursor: true,
-								spaceBetween: 30,
-								slideToClickedSlide: true,
-
-								// Rotation
-								autoplay: {
-									delay: 7000,
-									disableOnInteraction: false,
-								},
-
-								// Navigation arrows
-								navigation: {
-									nextEl: '.swiper-button-next',
-									prevEl: '.swiper-button-prev',
-								},
-
-								pagination: {
-									el: '.swiper-pagination',
-									clickable: true,
-								},
-
-								breakpoints: {
-									320: {
-										slidesPerView: 1,
-									},
-									576: {
-										slidesPerView: 1,
-									},
-									768: {
-										slidesPerView: 2,
-									},
-									992: {
-										slidesPerView: 3,
-									},
-								}
-							});
-
-							<?php if ($post_count > 3) { ?>
-
-								swiper.autoplay.stop();
-
-								const playPauseButton = swiper.el.querySelector('.swiper-button-play-pause');
-
-								if (playPauseButton) {
-									playPauseButton.addEventListener('click', function(e) {
-										const arialLabel = playPauseButton.getAttribute('aria-label');
-										if (arialLabel == 'play') {
-											swiper.autoplay.start();
-											playPauseButton.setAttribute('aria-label', 'pause');
-										} else {
-											swiper.autoplay.stop();
-											playPauseButton.setAttribute('aria-label', 'play');
-										}
-									});
-								}
-
-							<?php } ?>
-						</script>
-
-						<script>
-							// Obtiene los botones por sus identificadores
-							const option1Button = document.getElementById('option1');
-							const option2Button = document.getElementById('option2');
-							const option3Button = document.getElementById('option3');
-
-							function changeOption(option) {
-								const block = document.querySelector('.block__feed--carousel');
-								block.classList.remove('option-1', 'option-2', 'option-3');
-								block.classList.add(option);
-							}
-
-							document.addEventListener('DOMContentLoaded', function() {
-								const block = document.querySelector('.block__feed--carousel');
-								if (block.classList.contains('option-1')) {
-									option1Button.classList.add('active');
-								} else if (block.classList.contains('option-2')) {
-									option2Button.classList.add('active');
-								} else if (block.classList.contains('option-3')) {
-									option3Button.classList.add('active');
-								}
-							});
-							option1Button.addEventListener('click', function() {
-								changeOption('option-1');
-								option1Button.classList.toggle('active');
-								option2Button.classList.remove('active');
-								option3Button.classList.remove('active');
-							});
-
-							option2Button.addEventListener('click', function() {
-								changeOption('option-2');
-								option1Button.classList.remove('active');
-								option2Button.classList.toggle('active');
-								option3Button.classList.remove('active');
-							});
-
-							option3Button.addEventListener('click', function() {
-								changeOption('option-3');
-								option1Button.classList.remove('active');
-								option2Button.classList.remove('active');
-								option3Button.classList.toggle('active');
-							});
-						</script>
-					<?php endif; ?>
-
-				</div>
-			</div>
-		<?php endif; ?>
-
+		if ($parsed_blocks) {
+			foreach ($parsed_blocks as $block) {
+				echo render_block($block);
+			}
+		}
+		?>
 	</main> <!-- #main -->
 
 	<?php
