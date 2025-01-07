@@ -12,10 +12,11 @@ const save = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes } = props;
-	const { anchor, id, grid_column } = attributes;
+
+	const { anchor, id, imagesRatio } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `${name} alignfull row-${grid_column}`,
+		className: `${name} alignfull ratio-${imagesRatio}`,
 	});
 
 	return (
