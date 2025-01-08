@@ -28,7 +28,7 @@ class Directory extends ApiController
 
         if ($this->register) {
             add_action('after_switch_theme', [$this, 'rewrite_flush']);
-            add_action('init', [$this, 'add_post_type']);
+            add_action('init', [$this, 'add_post_type'], 0);
         }
 
         $this->set_directory();
@@ -417,9 +417,7 @@ class Directory extends ApiController
     }
 
 
-    public function after_content()
-    {
-    }
+    public function after_content() {}
 
     public function get_directory_loop($classname = '', $feature_posts = [], $posts_per_page = null)
     {

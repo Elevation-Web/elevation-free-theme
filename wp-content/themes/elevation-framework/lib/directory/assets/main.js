@@ -25,7 +25,7 @@ var curentPage = 1;
 var filters = [];
 var postType = '';
 var currentValues = {};
-var baseUrl = wp_site_url + '/wp-json/wp/v2/';
+var baseUrl = wp_site_url + '/wp-json/wp/v2/elevation/';
 const container = document.querySelector('#data-container-directory');
 
 document.addEventListener('DOMContentLoaded', function () {
