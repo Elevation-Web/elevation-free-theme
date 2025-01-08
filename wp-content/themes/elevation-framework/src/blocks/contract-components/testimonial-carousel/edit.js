@@ -26,7 +26,7 @@ const Edit = (props) => {
 	}, [clientId, name, setAttributes]);
 
 	const blockProps = useBlockProps({
-		className: `${name} alignfull`,
+		className: `${name}`,
 	});
 
 	if (preview) {

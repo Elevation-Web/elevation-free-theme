@@ -61,8 +61,8 @@ export const TEMPLATE = [
 				'elevation/interior-components--swiper',
 				{
 					className: 'testimonial-carousel__swiper',
-					slidesPerView: '1',
 					slidesPerViewXl: '1',
+					slidesPerViewXxl: '1',
 					allowedBlocks: [
 						'elevation/contract-components--testimonial-carousel-item',
 					],

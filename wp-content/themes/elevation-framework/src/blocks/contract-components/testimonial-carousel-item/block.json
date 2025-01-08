@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"title": "Logos Carousel Item",
+	"title": "Testimonial Carousel Item",
 	"name": "elevation/contract-components--testimonial-carousel-item",
 	"version": "1.0.0",
 	"category": "elevation-blocks",
 	"icon": "format-quote",
-	"description": "Logos Carousel Item",
+	"description": "Testimonial Carousel Item",
 	"textdomain": "elevation",
 	"ancestor": ["elevation/contract-components--testimonial-carousel"],
 	"supports": {
