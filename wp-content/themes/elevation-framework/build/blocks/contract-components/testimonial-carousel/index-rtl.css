@@ -1,1 +1,143 @@
-.testimonial-carousel .wp-block-quote{border:none;padding:0}.testimonial-carousel .wp-block-quote p{font-weight:400}.testimonial-carousel .wp-block-elevation-interior-components--swiper{display:flex;flex-direction:column;max-width:100%;overflow-x:hidden;padding-top:40px}.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-editor-inner-blocks{max-width:900px}.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-editor-inner-blocks.swiper-initialized{width:100%}.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-editor-inserter{height:200px;position:static}.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-list-appender{position:static!important}.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-default-block-appender{height:200px}.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-inserter__toggle,.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-list-appender__toggle{height:200px!important;opacity:.9;width:65px!important}.testimonial-carousel .wp-block-elevation-interior-components--swiper .swiper-controls__container{display:flex;gap:15px;margin-top:30px;padding-bottom:20px;padding-right:3px}.testimonial-carousel .wp-block-elevation-interior-components--swiper .swiper-controls__container button{justify-content:center;width:150px}.testimonial-carousel .wp-block-elevation-interior-components--swiper .image-carousel{padding-bottom:0}.testimonial-carousel .image-with-srcset{border:1px solid #d5d4dc;overflow:hidden;padding-top:100%;position:relative;width:100%}.testimonial-carousel-item{align-items:center;-moz-column-gap:50px;column-gap:50px;display:flex!important;padding:0 110px;row-gap:30px;width:calc(100% - 220px)!important}
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/contract-components/testimonial-carousel/editor.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.testimonial-carousel .wp-block-quote {
+  border: none;
+  padding: 0;
+}
+.testimonial-carousel .wp-block-quote p {
+  font-weight: normal;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper {
+  overflow-x: hidden;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-editor-inner-blocks {
+  max-width: 900px;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-editor-inner-blocks.swiper-initialized {
+  width: 100%;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-editor-inserter {
+  position: initial;
+  height: 200px;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-list-appender {
+  position: static !important;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-default-block-appender {
+  height: 200px;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-list-appender__toggle {
+  width: 65px !important;
+  height: 200px !important;
+  opacity: 0.9;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-inserter__toggle {
+  width: 65px !important;
+  height: 200px !important;
+  opacity: 0.9;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper .swiper-controls__container {
+  display: flex;
+  margin-top: 30px;
+  gap: 15px;
+  padding-bottom: 20px;
+  padding-right: 3px;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper .swiper-controls__container button {
+  justify-content: center;
+  width: 150px;
+}
+.testimonial-carousel .wp-block-elevation-interior-components--swiper .image-carousel {
+  padding-bottom: 0px;
+}
+.testimonial-carousel .image-with-srcset {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+  border: 1px solid #d5d4dc;
+}
+.testimonial-carousel-item {
+  display: flex !important;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  row-gap: 30px;
+  padding: 0 110px;
+  align-items: center;
+  width: calc(100% - 220px) !important;
+}

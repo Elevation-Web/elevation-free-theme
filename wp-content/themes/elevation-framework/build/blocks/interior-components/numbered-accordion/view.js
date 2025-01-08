@@ -1,1 +1,22 @@
-document.querySelectorAll(".numbered-accordion__button").forEach((e=>{e.addEventListener("click",(()=>{e.classList.toggle("active"),e.setAttribute("aria-expanded",e.classList.contains("active"));const t=e.nextElementSibling;t.style.maxHeight?t.style.maxHeight=null:t.style.maxHeight=t.scrollHeight+"px"}))}));
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!*******************************************************************!*\
+  !*** ./src/blocks/interior-components/numbered-accordion/view.js ***!
+  \*******************************************************************/
+const accordions = document.querySelectorAll('.numbered-accordion__button');
+accordions.forEach(accordion => {
+  accordion.addEventListener('click', () => {
+    accordion.classList.toggle('active');
+    accordion.setAttribute('aria-expanded', accordion.classList.contains('active'));
+    const panel = accordion.nextElementSibling;
+
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+  });
+});
+/******/ })()
+;
+//# sourceMappingURL=view.js.map

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Team Bios Carousel Container",
+  "name": "elevation/contract-components--team-bios-carousel-container",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "description": "Team Bios Carousel Container",
+  "textdomain": "elevation",
+  "parent": [
+    "elevation/interior-components--custom-container"
+  ],
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "alignWide": false,
+    "renaming": false,
+    "inserter": true,
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "headingLevel": {
+      "type": "string",
+      "default": "h5"
+    },
+    "selectedTeams": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "style": [
+    "file:style-index.css"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ],
+  "render": "file:./render.php"
+}

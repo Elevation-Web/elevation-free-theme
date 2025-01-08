@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Team Bios, Layout: Carousel",
+	"name": "elevation/contract-components--team-bios-carousel",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"icon": "button",
+	"description": "Team Bios, Layout: Carousel",
+	"textdomain": "elevation",
+	"supports": {
+		"html": true,
+		"anchor": true,
+		"alignWide": false,
+		"ariaLabel": false,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": true,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"blockGap": false
+		},
+		"layout": false,
+		"interactivity": {
+			"clientNavigation": true
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"align": {
+			"type": "array",
+			"default": "full"
+		},
+		"preview": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"editorScript": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"]
+}

@@ -11,6 +11,7 @@ class Load
         Post::instance();
         Resource::instance();
         Map::instance();
+        Team::instance();
 
         add_filter('request', [$this, 'elevation_change_term_request'], 1, 1);
         add_filter('term_link', [$this, 'elevation_term_permalink'], 10, 3);

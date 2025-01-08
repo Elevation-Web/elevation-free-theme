@@ -1,1 +1,124 @@
-.logos-carousel .wp-block-elevation-interior-components--swiper{display:flex;flex-direction:column;max-width:100%;overflow-x:hidden;padding-top:40px}.logos-carousel .wp-block-elevation-interior-components--swiper .block-editor-inner-blocks.swiper-initialized{width:calc(100% - 100px)}.logos-carousel .wp-block-elevation-interior-components--swiper .block-editor-inserter{height:250px;position:static}.logos-carousel .wp-block-elevation-interior-components--swiper .block-list-appender{position:static!important}.logos-carousel .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-default-block-appender{height:250px}.logos-carousel .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-inserter__toggle,.logos-carousel .wp-block-elevation-interior-components--swiper .block-list-appender__toggle{height:250px!important;opacity:.9;width:65px!important}.logos-carousel .wp-block-elevation-interior-components--swiper .swiper-controls__container{display:flex;gap:15px;margin-top:30px;padding-bottom:20px;padding-right:3px}.logos-carousel .wp-block-elevation-interior-components--swiper .swiper-controls__container button{justify-content:center;width:150px}.logos-carousel .wp-block-elevation-interior-components--swiper .image-carousel{padding-bottom:0}.logos-carousel .image-with-srcset{border:1px solid #d5d4dc;overflow:hidden;padding-top:100%;position:relative;width:100%}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/contract-components/logos-carousel/editor.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.logos-carousel .wp-block-elevation-interior-components--swiper {
+  overflow-x: hidden;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+.logos-carousel .wp-block-elevation-interior-components--swiper .block-editor-inner-blocks.swiper-initialized {
+  width: calc(100% - 100px);
+}
+.logos-carousel .wp-block-elevation-interior-components--swiper .block-editor-inserter {
+  position: initial;
+  height: 250px;
+}
+.logos-carousel .wp-block-elevation-interior-components--swiper .block-list-appender {
+  position: static !important;
+}
+.logos-carousel .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-default-block-appender {
+  height: 250px;
+}
+.logos-carousel .wp-block-elevation-interior-components--swiper .block-list-appender__toggle {
+  width: 65px !important;
+  height: 250px !important;
+  opacity: 0.9;
+}
+.logos-carousel .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-inserter__toggle {
+  width: 65px !important;
+  height: 250px !important;
+  opacity: 0.9;
+}
+.logos-carousel .wp-block-elevation-interior-components--swiper .swiper-controls__container {
+  display: flex;
+  margin-top: 30px;
+  gap: 15px;
+  padding-bottom: 20px;
+  padding-right: 3px;
+}
+.logos-carousel .wp-block-elevation-interior-components--swiper .swiper-controls__container button {
+  justify-content: center;
+  width: 150px;
+}
+.logos-carousel .wp-block-elevation-interior-components--swiper .image-carousel {
+  padding-bottom: 0px;
+}
+.logos-carousel .image-with-srcset {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+  border: 1px solid #d5d4dc;
+}

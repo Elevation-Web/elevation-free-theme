@@ -1,1 +1,143 @@
-.callout-background-content-box-centered{align-items:center;display:flex;opacity:1;position:relative;--callout-background-content-box-centered-padding:300px 0 0 0;color:#210044;padding:var(--callout-background-content-box-centered-padding)}@media(min-width:1200px){.callout-background-content-box-centered{--callout-background-content-box-centered-padding:483px 0 0 0;min-height:817px}}.callout-background-content-box-centered__background{height:100%;left:0;-o-object-fit:cover;object-fit:cover;position:absolute;top:0;width:100%;z-index:1}.callout-background-content-box-centered__container{margin:0 auto;position:relative;z-index:2}.callout-background-content-box-centered__wrapper{background-color:#210044;max-width:100%;padding:30px}@media(min-width:992px){.callout-background-content-box-centered__wrapper{padding:80px 112px}}.callout-background-content-box-centered__wrapper .wp-block-heading,.callout-background-content-box-centered__wrapper p,.callout-background-content-box-centered__wrapper strong{color:#fbf9f8}.callout-background-content-box-centered:not(.alignfull){--callout-background-content-box-centered-padding:300px 0 60px 0}@media(min-width:1200px){.callout-background-content-box-centered:not(.alignfull){--callout-background-content-box-centered-padding:423px 0 60px 0}}.callout-background-content-box-centered:not(.alignfull) .callout-background-content-box-centered__wrapper{margin:0 30px;max-width:100%}@media(min-width:1200px){.callout-background-content-box-centered:not(.alignfull) .callout-background-content-box-centered__wrapper{margin:0 auto;width:83.3333%}}@media(min-width:1400px){.callout-background-content-box-centered:not(.alignfull) .callout-background-content-box-centered__wrapper{width:1095px}}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/interior-components/callout-background-content-box-centered/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.callout-background-content-box-centered {
+  opacity: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  --callout-background-content-box-centered-padding: 300px 0 0 0;
+  padding: var(--callout-background-content-box-centered-padding);
+  color: #210044;
+}
+@media (min-width: 1200px) {
+  .callout-background-content-box-centered {
+    --callout-background-content-box-centered-padding: 483px 0 0 0;
+    min-height: 817px;
+  }
+}
+.callout-background-content-box-centered__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.callout-background-content-box-centered__container {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+.callout-background-content-box-centered__wrapper {
+  max-width: 100%;
+  background-color: #210044;
+  padding: 30px;
+}
+@media (min-width: 992px) {
+  .callout-background-content-box-centered__wrapper {
+    padding: 80px 112px;
+  }
+}
+.callout-background-content-box-centered__wrapper .wp-block-heading,
+.callout-background-content-box-centered__wrapper p,
+.callout-background-content-box-centered__wrapper strong {
+  color: #fbf9f8;
+}
+.callout-background-content-box-centered:not(.alignfull) {
+  --callout-background-content-box-centered-padding: 300px 0 60px 0;
+}
+@media (min-width: 1200px) {
+  .callout-background-content-box-centered:not(.alignfull) {
+    --callout-background-content-box-centered-padding: 423px 0 60px 0;
+  }
+}
+.callout-background-content-box-centered:not(.alignfull) .callout-background-content-box-centered__wrapper {
+  max-width: 100%;
+  margin: 0 30px;
+}
+@media (min-width: 1200px) {
+  .callout-background-content-box-centered:not(.alignfull) .callout-background-content-box-centered__wrapper {
+    width: 83.3333%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1400px) {
+  .callout-background-content-box-centered:not(.alignfull) .callout-background-content-box-centered__wrapper {
+    width: 1095px;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

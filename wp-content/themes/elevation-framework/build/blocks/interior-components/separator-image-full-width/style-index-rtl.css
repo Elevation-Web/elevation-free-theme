@@ -1,1 +1,121 @@
-.separator-image-full-width{opacity:1;overflow:hidden;position:relative}.separator-image-full-width .media{display:block;margin-top:0;width:100%}.separator-image-full-width .media img{height:100%;min-width:100%;-o-object-fit:cover;object-fit:cover}.separator-image-full-width .media-caption{height:1px!important;margin:-1px!important;overflow:hidden!important;padding:0!important;width:1px!important;clip:rect(0,0,0,0)!important;border:0!important;white-space:nowrap!important}.separator-image-full-width .media-caption:not(caption){position:absolute!important}.separator-image-full-width.ratio-1-1 .media{aspect-ratio:1/1}.separator-image-full-width.ratio-3-2 .media{aspect-ratio:3/2}.separator-image-full-width.ratio-4-3 .media{aspect-ratio:4/3}.separator-image-full-width.ratio-5-4 .media{aspect-ratio:5/4}.separator-image-full-width.ratio-16-9 .media{aspect-ratio:16/9}.separator-image-full-width.ratio-intrinsic .media img{height:auto;width:100%}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/interior-components/separator-image-full-width/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.separator-image-full-width {
+  opacity: 1;
+  position: relative;
+  overflow: hidden;
+}
+.separator-image-full-width .media {
+  margin-top: 0px;
+  width: 100%;
+  display: block;
+}
+.separator-image-full-width .media img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-width: 100%;
+}
+.separator-image-full-width .media-caption {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+.separator-image-full-width .media-caption:not(caption) {
+  position: absolute !important;
+}
+.separator-image-full-width.ratio-1-1 .media {
+  aspect-ratio: 1/1;
+}
+.separator-image-full-width.ratio-3-2 .media {
+  aspect-ratio: 3/2;
+}
+.separator-image-full-width.ratio-4-3 .media {
+  aspect-ratio: 4/3;
+}
+.separator-image-full-width.ratio-5-4 .media {
+  aspect-ratio: 5/4;
+}
+.separator-image-full-width.ratio-16-9 .media {
+  aspect-ratio: 16/9;
+}
+.separator-image-full-width.ratio-intrinsic .media img {
+  width: 100%;
+  height: auto;
+}

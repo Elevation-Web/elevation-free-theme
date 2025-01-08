@@ -1,1 +1,134 @@
-.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper{display:flex;flex-direction:column;max-width:100%;overflow-x:hidden;padding-top:40px}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-editor-inner-blocks{max-width:800px}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-editor-inserter{height:620px;position:static}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-list-appender{position:static!important}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-default-block-appender{height:620px}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-inserter__toggle,.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-list-appender__toggle{height:620px!important;opacity:.9;width:65px!important}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .swiper-controls__container{display:flex;gap:15px;margin-top:30px;padding-bottom:20px;padding-right:3px}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .swiper-controls__container button{justify-content:center;width:150px}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .image-carousel{padding-bottom:0;position:relative}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .image-carousel .image-with-srcset{height:620px}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .image-carousel .image-with-srcset__img{height:100%}.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .image-carousel .image-with-srcset__img--caption{background:hsla(0,0%,7%,.5);bottom:0;color:#fbf9f8;font-weight:700;right:0;padding:20px;position:absolute;width:calc(100% - 40px)}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/interior-components/image-carousel-horizontal-left-aligned/editor.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper {
+  overflow-x: hidden;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-editor-inner-blocks {
+  max-width: 800px;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-editor-inserter {
+  position: initial;
+  height: 620px;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-list-appender {
+  position: static !important;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-default-block-appender {
+  height: 620px;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-list-appender__toggle {
+  width: 65px !important;
+  height: 620px !important;
+  opacity: 0.9;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .block-list-appender .block-editor-inserter__toggle {
+  width: 65px !important;
+  height: 620px !important;
+  opacity: 0.9;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .swiper-controls__container {
+  display: flex;
+  margin-top: 30px;
+  gap: 15px;
+  padding-bottom: 20px;
+  padding-right: 3px;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .swiper-controls__container button {
+  justify-content: center;
+  width: 150px;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .image-carousel {
+  padding-bottom: 0px;
+  position: relative;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .image-carousel .image-with-srcset {
+  height: 620px;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .image-carousel .image-with-srcset__img {
+  height: 100%;
+}
+.image-carousel-horizontal-left-aligned .wp-block-elevation-interior-components--swiper .image-carousel .image-with-srcset__img--caption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: calc(100% - 40px);
+  padding: 20px;
+  background: rgba(17, 17, 17, 0.5);
+  color: #fbf9f8;
+  font-weight: 700;
+}
