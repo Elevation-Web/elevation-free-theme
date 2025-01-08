@@ -16,7 +16,9 @@ function Slider(props, ref) {
 	} = attributes;
 
 	const options = {
-		slidesPerView: slidesPerViewXl || slidesPerView,
+		slidesPerView: slidesPerViewXl
+			? String(slidesPerViewXl)
+			: String(slidesPerView),
 		speed: 1,
 		navigation: navigation == 'yes',
 		scrollbar: scrollbar == 'yes',

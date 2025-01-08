@@ -49,12 +49,12 @@ $ein = get_field('footer_ein', 'option');
 											<li>
 												<?php if (isset($social['email']) && !empty($social['email'])) : ?>
 													<a href="mailto:<?= esc_html($social['email']); ?>" target="_blank" class="light-icon" rel="noopener noreferrer">
-												<?php else : ?>
-													<a href="<?= esc_html($social['url']); ?>" target="_blank" class="light-icon" rel="noopener noreferrer">
-												<?php endif; ?>
+													<?php else : ?>
+														<a href="<?= esc_html($social['url']); ?>" target="_blank" class="light-icon" rel="noopener noreferrer">
+														<?php endif; ?>
 														<span class="icon--<?= esc_html($social['icon']); ?>"></span>
 														<span class="visually-hidden"><?= esc_html($social['icon']); ?></span>
-													</a>
+														</a>
 											</li>
 										<?php endif; ?>
 									<?php endforeach; ?>
@@ -83,13 +83,13 @@ $ein = get_field('footer_ein', 'option');
 						<?php else : ?>
 							<div class="footer__title">Address</div>
 						<?php endif; ?>
-	
+
 						<?php if ($address) : ?>
 							<div class="footer__address">
 								<?= wp_kses_post($address); ?>
 							</div>
 						<?php endif; ?>
-	
+
 						<?php if ($email || $phone) : ?>
 							<?php if ($address_title) : ?>
 								<div class="footer__title"><?= esc_html($address_title); ?></div>

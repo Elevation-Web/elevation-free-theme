@@ -40,8 +40,8 @@ export const TEMPLATE = [
 				'elevation/interior-components--swiper',
 				{
 					className: 'image-carousel-horizontal-centered__container',
-					slidesPerViewXl: 'auto',
-					slidesPerViewXxl: 'auto',
+					slidesPerViewXl: '1',
+					slidesPerViewXxl: '1',
 					allowedBlocks: [
 						'elevation/interior-components--image-carousel',
 					],
