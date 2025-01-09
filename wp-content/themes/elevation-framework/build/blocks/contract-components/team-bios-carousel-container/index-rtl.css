@@ -71,37 +71,12 @@
  */
 /*400;800*/
 /*500;700*/
-.feed-directory-grid-default-container__container {
-  flex-wrap: nowrap;
+.team-bios-carousel-container .card__body {
+  width: calc(100% - 40px);
 }
-.feed-directory-grid-default-container__container .card {
-  max-width: unset;
-  flex: 1;
-  min-width: auto;
+.team-bios-carousel-container__options .selected-option button {
+  transition: all 0.2s;
 }
-.feed-directory-grid-default-container__container .card a {
-  pointer-events: none;
-}
-.feed-directory-grid-default-container__container .card__buttons button {
-  border-radius: 100px;
-  padding: 21px 28px;
-  line-height: 1;
-  min-height: 60px;
-  background-color: transparent;
-  border: 1px solid #210044;
-  color: #210044;
-  font-weight: 600;
-  justify-content: center;
-  padding: 21px 28px;
-}
-.feed-directory-grid-default-container__container .card__buttons button:hover {
-  background-color: transparent;
-  border-color: #662d91;
-  color: #662d91;
-}
-.feed-directory-grid-default-container__container .card__buttons button:focus {
-  background-color: transparent;
-  color: #210044;
-  outline: none;
-  box-shadow: 0 0 0 5px rgba(33, 0, 68, 0.5);
+.team-bios-carousel-container__options .selected-option:hover button {
+  color: #DF0141;
 }

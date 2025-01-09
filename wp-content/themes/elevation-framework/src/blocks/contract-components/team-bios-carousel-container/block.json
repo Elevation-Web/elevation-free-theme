@@ -25,15 +25,20 @@
 		},
 		"headingLevel": {
 			"type": "string",
-			"default": "h5"
+			"default": "h6"
 		},
 		"selectedTeams": {
 			"type": "array",
 			"default": []
+		},
+		"modalEnable": {
+			"type": "boolean",
+			"default": true
 		}
 	},
 	"editorScript": ["file:index.js"],
 	"style": ["file:style-index.css"],
 	"editorStyle": ["file:index.css"],
-	"render": "file:./render.php"
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
 }

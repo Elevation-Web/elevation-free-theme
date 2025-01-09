@@ -10,6 +10,7 @@ import './editor.scss';
 import json from './block.json';
 import { getBlockName } from '../../utils/helpers';
 import { Controls } from './controls';
+import initSwiper from '../../../assets/scripts/utilities/swiper';
 
 const Edit = (props) => {
 	const { attributes, clientId, setAttributes } = props;
@@ -20,6 +21,45 @@ const Edit = (props) => {
 
 	const blockProps = useBlockProps({
 		className: `${name}`,
+	});
+
+	function swiper() {
+		const swiperTest = setInterval(() => {
+			if (document.querySelector(`.${name}__swiper`)) {
+				initSwiper(`.${name}__swiper`);
+				clearInterval(swiperTest);
+			}
+		}, 1000);
+	}
+
+	swiper();
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const { subscribe, select } = wp.data;
+
+		let previousBlocks = select('core/block-editor').getBlocks();
+
+		subscribe(() => {
+			const currentBlocks = select('core/block-editor').getBlocks();
+
+			if (
+				JSON.stringify(previousBlocks) !== JSON.stringify(currentBlocks)
+			) {
+				handleBlocksChange(currentBlocks);
+				previousBlocks = currentBlocks;
+			}
+		});
+
+		const handleBlocksChange = (blocks) => {
+			blocks.forEach((block) => {
+				if (
+					block.name ===
+					'elevation/contract-components--feed-default-events'
+				) {
+					swiper();
+				}
+			});
+		};
 	});
 
 	useEffect(() => {

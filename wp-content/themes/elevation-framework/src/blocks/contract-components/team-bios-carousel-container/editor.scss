@@ -5,36 +5,22 @@
 @import "../../../assets/styles/scss/utilities/mixins/cta"; // check
 
 
-.feed-directory-grid-default-container {
+.team-bios-carousel-container {
 
-    &__container {
-        flex-wrap: nowrap;
 
-        .card {
-            max-width: unset;
-            flex: 1;
-            min-width: auto;
+    .card__body {
+        width: calc(100% - 40px);
+    }
 
-            a {
-                pointer-events: none;
+    &__options {
+        .selected-option {
+            button {
+                transition: all .2s;
             }
 
-            &__buttons {
-
+            &:hover {
                 button {
-                    border-radius: 100px;
-                    padding: 21px 28px;
-                    line-height: 1;
-                    @include cta-secondary(("bg-color": $cta-secondary-bg-color,
-                            "border-color": $cta-secondary-border-color,
-                            "text-color": $cta-secondary-text-color,
-                            "hover-bg-color": $cta-secondary-hover-bg-color,
-                            "hover-border-color": $cta-secondary-hover-border-color,
-                            "hover-text-color": $cta-secondary-hover-text-color,
-                            "focus-bg-color": $cta-secondary-focus-bg-color,
-                            "focus-border-color": $cta-secondary-focus-border-color,
-                            "focus-text-color": $cta-secondary-focus-text-color,
-                        ));
+                    color: #DF0141;
                 }
             }
         }
