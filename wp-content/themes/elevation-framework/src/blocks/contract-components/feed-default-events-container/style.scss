@@ -8,12 +8,14 @@
 	opacity: 1;
 
 	&-container {
+		opacity: 1;
+
 		&__container {
 			position: relative;
 			padding: 0px;
 		}
 
-		&__swiper{
+		&__swiper {
 			overflow: hidden;
 		}
 	}
