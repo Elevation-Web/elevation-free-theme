@@ -16,14 +16,14 @@ const save = (props) => {
 
 	return (
 		<>
-			<div data-block-id={blockId} {...blockProps} {...style}>
+			<div id={anchor || id} {...blockProps} {...style}>
 				<button
 					className="wp-block-heading has-h-6-font-size accordion__button"
 					aria-controls={anchor || id}
 				>
 					{heading}
 				</button>
-				<div id={anchor || id} className="accordion__panel">
+				<div className="accordion__panel">
 					<InnerBlocks.Content />
 				</div>
 			</div>

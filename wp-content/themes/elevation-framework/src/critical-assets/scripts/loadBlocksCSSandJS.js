@@ -32,7 +32,6 @@ const loadBlocksCSSandJS = (
 		uniqueBlocksIds = Array.from(
 			new Set([...validAddIfExist, ...firstsBlocks])
 		);
-		console.log('uniqueBlocksIds', uniqueBlocksIds);
 	} else if (exclude) {
 		if (firstsBlocks.length === 0) return;
 		uniqueBlocksIds = firstsBlocks;
