@@ -29,6 +29,7 @@ export const globalAnimations = () => {
 		'.logos-descriptions-item img',
 		'.logos-carousel-item img',
 		'.testimonial-carousel-item__image img',
+		'.testimonial-single-item__image img',
 	];
 
 	function combineSelectors(base, exclusions) {
