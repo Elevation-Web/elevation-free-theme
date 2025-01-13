@@ -50,7 +50,7 @@
       "default": 10
     }
   },
-  "script": [
+  "editorScript": [
     "file:index.js"
   ],
   "style": [

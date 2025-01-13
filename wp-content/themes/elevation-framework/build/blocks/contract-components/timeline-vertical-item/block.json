@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Timeline Vertical Item",
+  "name": "elevation/contract-components--timeline-vertical-item",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "icon": "format-quote",
+  "description": "Timeline Vertical Item",
+  "textdomain": "elevation",
+  "ancestor": [
+    "elevation/contract-components--timeline-vertical-year"
+  ],
+  "supports": {
+    "html": true,
+    "anchor": true,
+    "align": false,
+    "alignWide": false,
+    "spacing": {
+      "padding": false,
+      "margin": false
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ]
+}

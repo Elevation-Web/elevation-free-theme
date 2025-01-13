@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Timeline, Layout: Vertical",
+  "name": "elevation/contract-components--timeline-vertical",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "description": "Timeline, Layout: Vertical",
+  "textdomain": "elevation",
+  "icon": "clock",
+  "supports": {
+    "html": true,
+    "align": false,
+    "alignWide": false,
+    "anchor": true,
+    "color": {
+      "background": true,
+      "gradients": false,
+      "text": true,
+      "link": false,
+      "border": false
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ]
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "style": [
+    "file:style-index.css"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ]
+}

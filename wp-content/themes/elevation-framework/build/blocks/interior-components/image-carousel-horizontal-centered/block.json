@@ -72,7 +72,7 @@
       "preview": true
     }
   },
-  "script": [
+  "editorScript": [
     "file:index.js"
   ],
   "style": [
