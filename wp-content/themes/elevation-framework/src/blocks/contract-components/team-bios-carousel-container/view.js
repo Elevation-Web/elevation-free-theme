@@ -1,16 +1,20 @@
 import initSwiper from '../../../assets/scripts/utilities/swiper';
 import Swal from 'sweetalert2';
-// import { closeIconGreen } from '../components/images/icons';
 
 initSwiper('.team-bios-carousel-container__swiper');
 
-const buttons = document.querySelectorAll(`.swiper-slide`);
+const cards = document.querySelectorAll(`.team-bios-carousel .swiper-slide`);
+var currentPopup;
 
-buttons.forEach((button) => {
-	button.addEventListener('click', (e) => {
-		let contentHtml = button.querySelector('.team-bios-carousel__popup');
+cards.forEach((card, idx) => {
+	card.addEventListener('click', (e) => {
+		let contentHtml = card.querySelector('.team-bios-carousel__popup');
 
 		if (!contentHtml) return;
+
+		contentHtml = contentHtml.cloneNode(true);
+		let id = contentHtml.getAttribute('data-modal-id');
+		currentPopup = id;
 
 		Swal.fire({
 			closeButtonHtml:
@@ -20,8 +24,30 @@ buttons.forEach((button) => {
 			showConfirmButton: false,
 			closeButtonAriaLabel: `Close popup of test`,
 			customClass: {
-				container: 'team-bios-carousel__popup-container',
+				container: `team-bios-carousel__popup-container ${id} `,
 			},
+		});
+		const next = document.querySelector(
+			`.${currentPopup} .team-bios-modal__footer__button.next`
+		);
+		const prev = document.querySelector(
+			`.${currentPopup} .team-bios-modal__footer__button.prev`
+		);
+
+		prev.addEventListener('click', function () {
+			if (idx - 1 < 0) {
+				cards[cards.length - 1].click();
+			} else {
+				cards[idx - 1].click();
+			}
+		});
+
+		next.addEventListener('click', function () {
+			if (idx + 1 >= cards.length) {
+				cards[0].click();
+			} else {
+				cards[idx + 1].click();
+			}
 		});
 	});
 });

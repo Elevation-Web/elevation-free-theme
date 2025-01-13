@@ -99,10 +99,10 @@ $modal_enable = $attributes['modalEnable'] ?? false;
                                 </article>
                                 <?php
                                 if ($modal_enable) : ?>
-                                    <div class="team-bios-carousel__popup">
-                                        <div class="modal-content">
-                                            <div class="modal-content__left">
-                                                <div class="modal-content__image">
+                                    <div class="team-bios-carousel__popup" data-modal-id="popup-<?= get_the_ID(); ?>">
+                                        <div class="team-bios-modal">
+                                            <div class="team-bios-modal__left">
+                                                <div class="team-bios-modal__image">
                                                     <?= Helpers::global_image(
                                                         $image,
                                                         [
@@ -147,16 +147,16 @@ $modal_enable = $attributes['modalEnable'] ?? false;
                                                     </div>
                                                 <?php endif; ?>
                                             </div>
-                                            <div class="modal-content__right ">
+                                            <div class="team-bios-modal__right no-animate">
                                                 <h5>
                                                     <?= esc_html($title) ?>
                                                 </h5>
                                                 <?= $content; ?>
                                             </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button class="modal-footer__button prev">Prev</button>
-                                            <button class="modal-footer__button next">Next</button>
+                                        <div class="team-bios-modal__footer">
+                                            <button class="team-bios-modal__footer__button prev">Prev</button>
+                                            <button class="team-bios-modal__footer__button next">Next</button>
                                         </div>
                                     </div>
                                 <?php endif; ?>

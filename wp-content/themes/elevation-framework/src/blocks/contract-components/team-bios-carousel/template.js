@@ -41,10 +41,7 @@ export const TEMPLATE = [
 					],
 				],
 			],
-			[
-				'elevation/contract-components--team-bios-carousel-container',
-				{},
-			],
+			['elevation/contract-components--team-bios-carousel-container', {}],
 		],
 	],
 	[

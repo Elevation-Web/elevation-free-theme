@@ -1,17 +1,16 @@
 /* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
 import { InspectorControls } from '@wordpress/block-editor';
-// import { SelectControl } from '@wordpress/components';
-import { PanelBody, ToggleControl } from '@wordpress/components';
+import { PanelBody, ToggleControl, SearchControl } from '@wordpress/components';
 import { useEntityRecords } from '@wordpress/core-data';
 import { useRef, useState } from '@wordpress/element';
 import { Draggable } from '@wordpress/components';
-import { Icon, more } from '@wordpress/icons';
+import { Icon, close } from '@wordpress/icons';
 
 export const Controls = (props) => {
 	const { attributes, setAttributes } = props;
 	const { selectedTeams, modalEnable } = attributes;
-
+	const [search, setSearch] = useState('');
 	const { records: options } = useEntityRecords('postType', 'team');
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const ref = useRef();
@@ -22,33 +21,39 @@ export const Controls = (props) => {
 		}
 	};
 
-	const handleRemove = (option) => {
+	const handleRemove = (id) => {
+		const newSelectedTeams = [];
+
+		selectedTeams.forEach((item) => {
+			if (item.id !== id) {
+				newSelectedTeams.push({
+					id:
+						newSelectedTeams.length > 0
+							? newSelectedTeams.length.toString()
+							: '0',
+					postId: item.postId,
+					title: item.title,
+				});
+			}
+		});
+
 		setAttributes({
-			selectedTeams: selectedTeams.filter((item) => item.id !== option),
+			selectedTeams: newSelectedTeams,
 		});
 	};
 
-	const [items, setItems] = useState([
-		{ id: '1', text: 'Elemento 1' },
-		{ id: '2', text: 'Elemento 2' },
-		{ id: '3', text: 'Elemento 3' },
-	]);
-
-	// console.log('selectedTeams',selectedTeams);
-
 	const handleDragStart = (e, draggedId) => {
-		e.dataTransfer.setData('draggedId', draggedId); // Pasar el ID del elemento arrastrado
+		e.dataTransfer.setData('draggedId', draggedId);
 	};
 
 	const handleDragOver = (e) => {
-		e.preventDefault(); // Permitir soltar
+		e.preventDefault();
 	};
 
 	const handleDrop = (e, droppedId) => {
 		const draggedId = e.dataTransfer.getData('draggedId');
-		console.log('draggedId', draggedId);
 		if (!draggedId || draggedId === droppedId) {
-			return; // Sin cambios si se suelta en el mismo lugar
+			return;
 		}
 
 		const draggedIndex = selectedTeams.findIndex(
@@ -59,10 +64,8 @@ export const Controls = (props) => {
 		);
 
 		if (draggedIndex === -1 || droppedIndex === -1) {
-			return; // Elementos no encontrados
+			return;
 		}
-		console.log('selectedTeams', selectedTeams);
-		// Reordenar la lista
 		const updatedItems = [...selectedTeams];
 		const [movedItem] = updatedItems.splice(draggedIndex, 1);
 		updatedItems.splice(droppedIndex, 0, movedItem);
@@ -72,34 +75,6 @@ export const Controls = (props) => {
 	return (
 		<InspectorControls>
 			<PanelBody title={__('')}>
-				<PanelBody>
-					<h3>Order: </h3>
-					<ul className="draggable-list">
-						{selectedTeams.map((item) => (
-							<Draggable key={item.id} elementId={item.id}>
-								{({ onDraggableStart, onDraggableEnd }) => (
-									<li
-										id={item.id}
-										className="draggable-item"
-										draggable
-										onDragStart={(e) => {
-											handleDragStart(e, item.id);
-											onDraggableStart(e);
-										}}
-										onDragOver={handleDragOver}
-										onDrop={(e) => handleDrop(e, item.id)}
-										onDragEnd={onDraggableEnd}
-									>
-										<span className="drag-handle">
-											<Icon icon={more} />
-										</span>
-										{item.title}
-									</li>
-								)}
-							</Draggable>
-						))}
-					</ul>
-				</PanelBody>
 				<div style={{ marginBottom: '20px' }}>
 					<label
 						className="block-editor-block-card__title"
@@ -110,65 +85,101 @@ export const Controls = (props) => {
 					{!!options && (
 						<div
 							style={{ position: 'relative', width: '100%' }}
-							ref={ref}
 							className="team-bios-carousel-container__options"
 						>
 							<div
 								onClick={() =>
 									setIsDropdownOpen(!isDropdownOpen)
 								}
-								style={{
-									border: '1px solid #ccc',
-									borderRadius: '4px',
-									padding: '8px',
-									display: 'flex',
-									flexWrap: 'wrap',
-									gap: '5px',
-									cursor: 'pointer',
-									marginTop: '10px',
-								}}
+								className="team-bios-carousel-container__options__selected"
 							>
-								<input
-									type="text"
-									placeholder="Selecciona opciones"
-									style={{
-										border: 'none',
-										flex: 1,
-										outline: 'none',
-										boxShadow: 'none',
-										minWidth: '50px',
+								<ul className="draggable-list">
+									{selectedTeams.map((item) => (
+										<Draggable
+											key={item.id}
+											elementId={item.id}
+										>
+											{({
+												onDraggableStart,
+												onDraggableEnd,
+											}) => (
+												<li
+													id={item.id}
+													className="draggable-item"
+													draggable
+													onDragStart={(e) => {
+														handleDragStart(
+															e,
+															item.id
+														);
+														onDraggableStart(e);
+													}}
+													onDragOver={handleDragOver}
+													onDrop={(e) =>
+														handleDrop(e, item.id)
+													}
+													onDragEnd={onDraggableEnd}
+												>
+													<div style={{ flex: 1 }}>
+														{item.title}
+													</div>
+													<span
+														className="drag-handle"
+														onClick={(e) => {
+															e.preventDefault();
+															handleRemove(
+																item.id
+															);
+														}}
+													>
+														<Icon icon={close} />
+													</span>
+												</li>
+											)}
+										</Draggable>
+									))}
+								</ul>
+								<SearchControl
+									value={search}
+									placeholder="Select tems"
+									onClick={() => setIsDropdownOpen(true)}
+									onChange={function noRefCheck(e) {
+										if (
+											ref?.current &&
+											document.activeElement ===
+												ref.current
+										) {
+											setIsDropdownOpen(true);
+										} else {
+											setIsDropdownOpen(false);
+										}
+										setSearch(e);
 									}}
+									className="team-bios-carousel-container__options__search"
+									ref={ref}
 								/>
 							</div>
-							{/* Dropdown de opciones */}
 							{isDropdownOpen && (
-								<ul
-									style={{
-										listStyle: 'none',
-										margin: 0,
-										padding: '10px',
-										border: '1px solid #ccc',
-										borderRadius: '0px',
-										position: 'absolute',
-										top: '100%',
-										left: 0,
-										right: 0,
-										maxHeight: '150px',
-										overflowY: 'auto',
-										background: 'white',
-										zIndex: 1000,
-									}}
-								>
+								<ul className="team-bios-carousel-container__options__dropdown">
 									{options
 										.filter((option) => {
 											const selectedTeamsIds =
 												selectedTeams.map(
-													(team) => team.postId // id => post ID
+													(team) => team.postId
 												);
 											return !selectedTeamsIds.includes(
 												option.id
 											);
 										})
+										.filter((option) =>
+											search === ''
+												? option
+												: option.title.rendered
+														.toLowerCase()
+														.includes(
+															search.toLowerCase()
+														)
+										)
 										.map((option) => (
 											<li
 												key={option.id}
@@ -184,13 +195,9 @@ export const Controls = (props) => {
 														postId: option.id,
 														title: option.title
 															.rendered,
-													}); 
-													// setIsDropdownOpen(false);
+													});
 												}}
-												style={{
-													padding: '5px',
-													cursor: 'pointer',
-												}}
+												className="team-bios-carousel-container__options__dropdown__item"
 											>
 												{option.title.rendered}
 											</li>

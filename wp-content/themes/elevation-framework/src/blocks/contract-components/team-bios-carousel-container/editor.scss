@@ -24,5 +24,78 @@
                 }
             }
         }
+
+        .draggable-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .draggable-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            cursor: grab;
+        }
+
+        .draggable-item:hover {
+            background: #f1f1f1;
+        }
+
+        .drag-handle {
+            margin-right: 10px;
+            cursor: grab;
+        }
+
+
+        &__selected {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        &__dropdown {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            border: 1px solid $ui-border-line-divider-on-light;
+            border-radius: 0px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            max-height: 150px;
+            overflow-y: auto;
+            background: $ui-base-white;
+            z-index: 1000;
+
+            &__item {
+                padding: 5px;
+                cursor: pointer;
+            }
+        }
+
+        &__search {
+            border: none;
+            flex: 1;
+            outline: none;
+            box-shadow: none;
+            min-width: 50px;
+            width: 100%;
+        }
+
+        .drag-handle {
+            cursor: auto;
+            margin-right: 0px;
+
+            &:hover {
+                color: #DF0141;
+                fill: #DF0141;
+            }
+        }
     }
 }
