@@ -13,6 +13,7 @@ export const globalAnimations = () => {
 		'#primary h5',
 		'#primary h6',
 		'.fade-in-bottom',
+		'.timeline-vertical-item',
 	];
 	const exclusionSelectors = [
 		'.accordion-item__item p',
@@ -30,6 +31,7 @@ export const globalAnimations = () => {
 		'.logos-carousel-item img',
 		'.testimonial-carousel-item__image img',
 		'.testimonial-single-item__image img',
+		'.timeline-vertical-item *',
 	];
 
 	function combineSelectors(base, exclusions) {

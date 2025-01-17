@@ -38,7 +38,7 @@
       "default": "ui-border-bounds"
     }
   },
-  "script": [
+  "editorScript": [
     "file:index.js"
   ],
   "style": [

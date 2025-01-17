@@ -24,7 +24,7 @@ const save = (props) => {
 	const rel = target ? { rel: 'noopener noreferrer' } : {};
 
 	return (
-		<div data-block-id={blockId} id={anchor || id} {...blockProps}>
+		<div id={anchor || id} {...blockProps}>
 			<div className={`${name}__figure no-animate`}>
 				<ImageWithFocalPoint
 					img={img}

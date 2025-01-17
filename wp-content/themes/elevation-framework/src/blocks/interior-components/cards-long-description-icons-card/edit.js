@@ -47,7 +47,7 @@ const Edit = (props) => {
 	return (
 		<>
 			<Controls {...props} />
-			<div data-block-id={blockId} id={anchor || id} {...blockProps}>
+			<div id={anchor || id} {...blockProps}>
 				<div
 					className={`${name}__icon-container no-hover`}
 					style={{ backgroundColor: iconBackgroundColor }}

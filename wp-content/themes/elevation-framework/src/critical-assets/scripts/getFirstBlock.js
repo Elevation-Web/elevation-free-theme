@@ -10,8 +10,6 @@ const getFirstsBlock = (firstBlocks = []) => {
 	// Get the first 2 unique block IDs
 	const firstTwoBlockIds = uniqueBlockIds.slice(0, 2);
 
-	console.log('firstTwoBlockIds', firstTwoBlockIds);
-
 	return firstTwoBlockIds;
 };
 

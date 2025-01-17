@@ -2,7 +2,7 @@
 	"name": "elevation/banner-standard-image",
 	"version": "1.0.0",
 	"title": "Image",
-	"category": "elevation",
+	"category": "elevation-blocks",
 	"icon": "format-image",
 	"description": "Image",
 	"supports": {

@@ -22,7 +22,7 @@ $p-mb: 20px;
 			}
 
 			&.line-type-dots {
-				border-top: 1px dotted var(--border-color);
+				border-bottom: 1px dotted var(--border-color);
 			}
 		}
 
@@ -37,6 +37,9 @@ $p-mb: 20px;
 
 			&.line-type-dots {
 				border-bottom: 1px dotted var(--border-color);
+				// border: 1px solid transparent;
+				// border-image: url("./images/dot.svg") 50 round;
+				// border-image-width: 2px;
 			}
 		}
 	}
@@ -82,7 +85,7 @@ $p-mb: 20px;
 	}
 }
 
-p+.spacer__extra-small {
+p + .spacer__extra-small {
 	height: 0;
 
 	@include media-breakpoint-up(md) {
@@ -90,7 +93,7 @@ p+.spacer__extra-small {
 	}
 }
 
-p+.spacer__small {
+p + .spacer__small {
 	height: 20px - $p-mb;
 
 	@include media-breakpoint-up(md) {
@@ -98,7 +101,7 @@ p+.spacer__small {
 	}
 }
 
-p+.spacer__normal {
+p + .spacer__normal {
 	height: 50px - $p-mb;
 
 	@include media-breakpoint-up(md) {
@@ -106,7 +109,7 @@ p+.spacer__normal {
 	}
 }
 
-p+.spacer__large {
+p + .spacer__large {
 	height: 80px - $p-mb;
 
 	@include media-breakpoint-up(md) {
@@ -114,7 +117,7 @@ p+.spacer__large {
 	}
 }
 
-p+.spacer__huge {
+p + .spacer__huge {
 	height: 120px - $p-mb;
 
 	@include media-breakpoint-up(md) {

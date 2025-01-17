@@ -3,6 +3,9 @@
 @import "../../../assets/styles/scss/utilities/mixins";
 @import "../../../assets/styles/scss/utilities/default-variables";
 
+.lists-links {
+	opacity: 1;
+}
 
 .lists-links-item {
 	opacity: 1;
@@ -14,7 +17,7 @@
 	border: none;
 	margin-block-start: 0px !important;
 	align-items: center;
-	transition: all .2s;
+	transition: all 0.2s;
 	gap: 50px;
 	margin-bottom: 0px;
 
@@ -36,7 +39,6 @@
 		flex-wrap: wrap;
 		gap: 20px;
 		row-gap: 0px;
-
 
 		.wp-block-heading {
 			margin: 0px;
