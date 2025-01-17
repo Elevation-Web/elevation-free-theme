@@ -47,7 +47,12 @@ const Edit = (props) => {
 
 	return (
 		<>
-			<div data-block-id={blockId} id={anchor || id} {...blockProps}>
+			<div
+				data-block-id={blockId}
+				data-block-js="true"
+				id={anchor || id}
+				{...blockProps}
+			>
 				<InnerBlocks
 					template={TEMPLATE}
 					allowedBlocks={allowedBlocks}

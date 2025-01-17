@@ -221,7 +221,7 @@ const Edit = (props) => {
 	return (
 		<>
 			{controls}
-			<div data-block-id={blockId} id={anchor || id} {...blockProps}>
+			<div id={anchor || id} {...blockProps}>
 				<ImageWithFocalPoint
 					img={img}
 					className={`${name}__img`}

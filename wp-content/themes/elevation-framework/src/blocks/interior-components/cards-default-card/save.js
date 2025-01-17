@@ -35,12 +35,7 @@ const save = (props) => {
 	const rel = target ? { rel: 'noopener noreferrer' } : {};
 
 	return (
-		<div
-			data-block-id={blockId}
-			id={anchor || id}
-			{...blockProps}
-			style={style}
-		>
+		<div id={anchor || id} {...blockProps} style={style}>
 			<div className={`${name}__container`}>
 				<a
 					className={`stretched-link wp-block-heading has-h-${tagName}-font-size`}

@@ -35,7 +35,7 @@ const save = (props) => {
 	};
 
 	return (
-		<div data-block-id={blockId} id={anchor || id} {...blockProps}>
+		<div id={anchor || id} {...blockProps}>
 			<div
 				className={`${name}__icon-container ${hasHover ? 'has_icon-hover' : ''}`}
 				style={style}
