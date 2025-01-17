@@ -32,6 +32,7 @@ export const globalAnimations = () => {
 		'.testimonial-carousel-item__image img',
 		'.testimonial-single-item__image img',
 		'.timeline-vertical-item *',
+		'.timeline-horizontal-item img',
 	];
 
 	function combineSelectors(base, exclusions) {

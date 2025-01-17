@@ -76,6 +76,18 @@
     "allowedBlocks": {
       "type": "array",
       "default": []
+    },
+    "noArrows": {
+      "type": "boolean",
+      "default": false
+    },
+    "noPagination": {
+      "type": "boolean",
+      "default": false
+    },
+    "className2": {
+      "type": "string",
+      "default": ""
     }
   },
   "editorScript": [
