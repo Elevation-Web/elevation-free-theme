@@ -8,7 +8,7 @@
 	"icon": "clock",
 	"description": "Timeline Horizontal Item",
 	"textdomain": "elevation",
-	"ancestor": ["elevation/contract-components--testimonial-carousel"],
+	"ancestor": ["elevation/contract-components--timeline-horizontal"],
 	"supports": {
 		"html": true,
 		"anchor": true,

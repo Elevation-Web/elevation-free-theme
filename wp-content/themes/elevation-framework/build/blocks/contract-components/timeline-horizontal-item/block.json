@@ -9,7 +9,7 @@
   "description": "Timeline Horizontal Item",
   "textdomain": "elevation",
   "ancestor": [
-    "elevation/contract-components--testimonial-carousel"
+    "elevation/contract-components--timeline-horizontal"
   ],
   "supports": {
     "html": true,

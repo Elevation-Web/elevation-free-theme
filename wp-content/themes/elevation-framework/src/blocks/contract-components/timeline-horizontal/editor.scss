@@ -11,7 +11,7 @@
 		padding-top: 40px;
 
 		.block-editor-inner-blocks {
-			max-width: 800px;
+			max-width: 660px;
 		}
 
 		.block-editor-inserter {
@@ -28,7 +28,7 @@
 
 			&__toggle {
 				width: 65px !important;
-				height: 620px !important;
+				height: 100% !important;
 				opacity: 0.9;
 			}
 
@@ -109,18 +109,19 @@
 	&-item {
 		width: 100%;
 		min-width: 100%;
+		display: flex !important;
 
 		&__image {
-			width: 400px;
+			width: 250px;
 		}
 		&__content {
-			width: calc(100% - 400px);
+			width: calc(100% - 220px);
 		}
 	}
 
 	.image-with-srcset {
 		position: relative;
-		width: 400px;
+		width: 250px;
 		padding-top: 100%;
 		overflow: hidden;
 		border: 1px solid $ui-border-bounds;

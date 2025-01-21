@@ -28,7 +28,7 @@ const Edit = (props) => {
 	}, [clientId, name, setAttributes]);
 
 	const blockProps = useBlockProps({
-		className: `${name}`,
+		className: `${name} swiper-slide`,
 	});
 
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
