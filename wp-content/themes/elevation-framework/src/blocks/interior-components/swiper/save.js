@@ -30,6 +30,9 @@ const save = (props) => {
 		slidesPerViewLg,
 		slidesPerViewXl,
 		slidesPerViewXxl,
+		noArrows,
+		noPagination,
+		className2,
 	} = attributes;
 
 	const blockProps = useBlockProps.save({
@@ -50,6 +53,9 @@ const save = (props) => {
 		slidesPerViewLg,
 		slidesPerViewXl,
 		slidesPerViewXxl,
+		noArrows,
+		noPagination,
+		className2,
 	};
 
 	return (
@@ -69,13 +75,17 @@ const save = (props) => {
 						<InnerBlocks.Content />
 					</div>
 				</div>
-				<div className="swiper__container-actions">
-					<div className="swiper-button-prev"></div>
-					<div className="swiper-button-next"></div>
-				</div>
-				<div className="swiper__container-controls">
-					<div className="swiper-pagination"></div>
-				</div>
+				{!noArrows && (
+					<div className="swiper__container-actions">
+						<div className="swiper-button-prev"></div>
+						<div className="swiper-button-next"></div>
+					</div>
+				)}
+				{!noPagination && (
+					<div className="swiper__container-controls">
+						<div className="swiper-pagination"></div>
+					</div>
+				)}
 			</div>
 		</div>
 	);

@@ -13,6 +13,8 @@ function Slider(props, ref) {
 		mousewheel,
 		slidesPerViewXl,
 		slidesPerView,
+		noArrows,
+		className2,
 	} = attributes;
 
 	const options = {
@@ -29,6 +31,8 @@ function Slider(props, ref) {
 		},
 		mousewheel: mousewheel == 'yes',
 		slideClass: 'swiper-slide',
+		noArrows,
+		className2,
 	};
 
 	const selectedSlide = 1;

@@ -47,6 +47,7 @@ const Edit = (props) => {
 						allowedBlocks={allowedBlocks}
 						{...wrapperProps}
 						orientation="horizontal"
+						templateLock={false}
 					/>
 				</Slider>
 				<div className="swiper-controls__container">

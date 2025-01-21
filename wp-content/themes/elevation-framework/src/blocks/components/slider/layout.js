@@ -31,6 +31,8 @@ class SliderLayout extends Component {
 				'.next-step'
 			);
 
+		// console.log(options);
+
 		this.slider = new Swiper(this.sliderWrapper.parentNode, {
 			...options,
 			initialSlide: this.initialSlide,

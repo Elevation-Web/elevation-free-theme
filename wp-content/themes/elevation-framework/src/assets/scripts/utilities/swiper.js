@@ -58,6 +58,9 @@ const getSwiperParams = (dataset) => {
 		delay,
 		disableOnInteraction,
 		dynamicBullets,
+		noArrows: dataSet?.noArrows,
+		noPagination: dataSet?.noPagination,
+		className2: dataSet?.className2,
 		breakpoints: {
 			576: {
 				spaceBetween: spaceBetweenSm,
@@ -83,25 +86,25 @@ const getSwiperParams = (dataset) => {
 	};
 };
 
-function getLargestSlidesPerView(breakpoints) {
-	let largestSlidesPerView = null;
+// function getLargestSlidesPerView(breakpoints) {
+// 	let largestSlidesPerView = null;
 
-	for (const key in breakpoints) {
-		const slidesPerView = breakpoints[key].slidesPerView;
+// 	for (const key in breakpoints) {
+// 		const slidesPerView = breakpoints[key].slidesPerView;
 
-		if (slidesPerView === 'auto') {
-			largestSlidesPerView = 'auto';
-		} else if (
-			largestSlidesPerView !== 'auto' &&
-			(largestSlidesPerView === null ||
-				slidesPerView > largestSlidesPerView)
-		) {
-			largestSlidesPerView = slidesPerView;
-		}
-	}
+// 		if (slidesPerView === 'auto') {
+// 			largestSlidesPerView = 'auto';
+// 		} else if (
+// 			largestSlidesPerView !== 'auto' &&
+// 			(largestSlidesPerView === null ||
+// 				slidesPerView > largestSlidesPerView)
+// 		) {
+// 			largestSlidesPerView = slidesPerView;
+// 		}
+// 	}
 
-	return largestSlidesPerView;
-}
+// 	return largestSlidesPerView;
+// }
 
 const toggleControls = (swiper, action) => {
 	const carousel = swiper?.wrapperEl;
@@ -151,29 +154,31 @@ export default function initSwiper(swiperSelector, childSelector = null) {
 					delay,
 					disableOnInteraction,
 					dynamicBullets,
+					noArrows,
+					noPagination,
+					className2,
 				} = getSwiperParams(
 					carousel.getAttribute('data-swiper-options')
 				);
-				const slides = carousel.querySelectorAll('.swiper-slide');
-				const numberOfSlides = slides.length;
-				let rewind = false;
+				// const slides = carousel.querySelectorAll('.swiper-slide');
+				// const numberOfSlides = slides.length;
+				// let rewind = false;
 
-				if (
-					getLargestSlidesPerView(breakpoints) === 'auto' ||
-					slidesPerView > numberOfSlides
-				) {
-					rewind = true;
-				}
+				// if (
+				// 	getLargestSlidesPerView(breakpoints) === 'auto' ||
+				// 	slidesPerView > numberOfSlides
+				// ) {
+				// 	rewind = true;
+				// }
 
 				const swiperContainer = childSelector
 					? `#${id} ${childSelector}`
 					: `#${id}`;
 
-				const swiperCarousel = new Swiper(swiperContainer, {
+				const swiperOptions = {
 					// Optional parameters
-					loop: true,
-					// loopAdditionalSlides,
 					// rewind,
+					loop: true,
 					centeredSlides,
 					grabCursor,
 					spaceBetween,
@@ -196,24 +201,10 @@ export default function initSwiper(swiperSelector, childSelector = null) {
 						enabled: true,
 					},
 
-					// Navigation arrows
-					navigation: {
-						nextEl: nextButton,
-						prevEl: prevButton,
-					},
-
 					// And if we need scrollbar
 					scrollbar: {
 						el: scrollBar,
 						draggable: true,
-					},
-
-					pagination: {
-						el: paginator,
-						clickable: true,
-						dynamicBullets:
-							window.innerWidth <= 768 ? dynamicBullets : false,
-						dynamicMainBullets: 1,
 					},
 
 					on: {
@@ -234,7 +225,30 @@ export default function initSwiper(swiperSelector, childSelector = null) {
 							toggleControls(this, 'show');
 						},
 					},
-				});
+				};
+
+				if (!noArrows) {
+					// Navigation arrows
+					swiperOptions.navigation = {
+						nextEl: nextButton,
+						prevEl: prevButton,
+					};
+				}
+
+				if (!noPagination) {
+					swiperOptions.pagination = {
+						el: paginator,
+						clickable: true,
+						dynamicBullets:
+							window.innerWidth <= 768 ? dynamicBullets : false,
+						dynamicMainBullets: 1,
+					};
+				}
+
+				const swiperCarousel = new Swiper(
+					swiperContainer,
+					swiperOptions
+				);
 
 				swiperCarousel.autoplay.stop();
 
@@ -261,6 +275,38 @@ export default function initSwiper(swiperSelector, childSelector = null) {
 							playPauseButton.setAttribute('aria-label', 'play');
 						}
 					});
+				}
+
+				if (className2) {
+					const swiperAInterval = setInterval(() => {
+						const nextButton = carousel.querySelector(
+							'.swiper-button-next'
+						);
+						const prevButton = carousel.querySelector(
+							'.swiper-button-prev'
+						);
+						const swiperA = new Swiper(`#${id} .${className2}`, {
+							// Optional parameters
+							centeredSlides: true,
+							freeMode: true,
+							slideToClickedSlide: true,
+							slidesPerView: 'auto',
+							navigation: {
+								nextEl: nextButton,
+								prevEl: prevButton,
+							},
+						});
+
+						if (
+							document
+								.querySelector(`#${id} .${className2}`)
+								?.classList.contains('swiper-initialized')
+						) {
+							clearInterval(swiperAInterval);
+							swiperCarousel.controller.control = swiperA;
+							swiperA.controller.control = swiperCarousel;
+						}
+					}, 500);
 				}
 			}
 		});
