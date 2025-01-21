@@ -1,0 +1,428 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "swiper/css/bundle";
+
+.team-bios-carousel {
+	position: relative;
+	opacity: 1;
+
+	&-container {
+		opacity: 1;
+
+		&__container {
+			position: relative;
+			padding: 0px;
+		}
+
+		&__swiper {
+			overflow: hidden;
+		}
+	}
+
+	.swiper {
+		overflow: visible;
+
+		&__container-wrapper {
+			overflow-x: hidden;
+		}
+
+		&__container {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			padding: 0px;
+			gap: 30px;
+
+			&-actions {
+				display: flex;
+				justify-content: center;
+				gap: 30px;
+				position: absolute;
+				width: 100%;
+				padding: 0;
+				bottom: 0;
+
+				@include media-breakpoint-up(lg) {
+					top: 142px;
+					bottom: unset;
+					justify-content: space-between;
+				}
+
+				.swiper-pagination {
+					position: relative;
+				}
+
+				.swiper-button-next,
+				.swiper-button-prev {
+					position: initial;
+
+					&::after {
+						content: "";
+						width: 40px;
+						height: 40px;
+						flex-shrink: 0;
+						background-image: url('data:image/svg+xml,<svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="38" cy="38" r="37.5" fill="%23FBF9F8" stroke="%23D5D4DC"/><path d="M34.5199 31.8547C34.3262 31.6609 34.2174 31.3982 34.2174 31.1242C34.2174 30.8502 34.3262 30.5875 34.5199 30.3937C34.7137 30.2 34.9764 30.0911 35.2504 30.0911C35.5244 30.0911 35.7871 30.2 35.9809 30.3937L42.8559 37.2687C42.952 37.3645 43.0283 37.4784 43.0803 37.6037C43.1324 37.7291 43.1592 37.8635 43.1592 37.9992C43.1592 38.1349 43.1324 38.2693 43.0803 38.3947C43.0283 38.52 42.952 38.6339 42.8559 38.7297L35.9809 45.6047C35.7871 45.7984 35.5244 45.9072 35.2504 45.9072C34.9764 45.9072 34.7137 45.7984 34.5199 45.6047C34.3262 45.4109 34.2174 45.1482 34.2174 44.8742C34.2174 44.6002 34.3262 44.3375 34.5199 44.1437L40.6636 38L34.5199 31.8547Z" fill="%23210044"/></svg>');
+						background-size: cover;
+
+						@include media-breakpoint-up(lg) {
+							width: 76px;
+							height: 76px;
+						}
+					}
+				}
+
+				.swiper-button-prev {
+					&::after {
+						transform: rotate(180deg);
+					}
+				}
+			}
+
+			&-controls {
+				display: flex;
+				height: auto;
+				padding-top: 30px;
+				border-top: 1px dashed $ui-border-line-divider-dots-divider;
+
+				.swiper-pagination {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 0 20px;
+
+					@include media-breakpoint-up(xl) {
+						justify-content: center;
+					}
+
+					@include media-breakpoint-up(xxl) {
+						padding: 0 80px;
+					}
+
+					.swiper-pagination-bullet {
+						background-color: $ui-button-primary-color-01;
+						opacity: 1;
+						transition: 200ms transform, 200ms left, .2s width !important;
+						position: initial;
+
+						&-active {
+							width: 27px;
+							border-radius: 3px;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	.card {
+		border-radius: 0 0 6px 6px;
+		transition: box-shadow 0.2s ease-in-out;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: stretch;
+		height: auto;
+		gap: 30px;
+		width: auto;
+		padding: 0px;
+		box-shadow: none;
+		min-height: 300px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 32px;
+			height: 32px;
+			z-index: 2;
+			transition: all .2s;
+			background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.8211 12.4646C19.8211 12.0504 19.4853 11.7146 19.0711 11.7146L12.3211 11.7146C11.9069 11.7146 11.5711 12.0504 11.5711 12.4646C11.5711 12.8788 11.9069 13.2146 12.3211 13.2146H18.3211V19.2146C18.3211 19.6288 18.6569 19.9646 19.0711 19.9646C19.4853 19.9646 19.8211 19.6288 19.8211 19.2146L19.8211 12.4646ZM12.5303 20.066L19.6014 12.9949L18.5407 11.9342L11.4697 19.0053L12.5303 20.066Z" fill="%23FBF9F8"/><circle cx="16" cy="16" r="15.5" stroke="%23FBF9F8"/></svg>');
+		}
+
+		&__header {
+			position: relative;
+			width: 100%;
+		}
+
+		&__image {
+			position: relative;
+			overflow: hidden;
+			border-radius: 2px;
+			height: 300px;
+			display: flex;
+
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(0deg, rgba(17, 17, 17, 0.60) 16.24%, rgba(17, 17, 17, 0.00) 49.85%);
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(180deg, rgba(17, 17, 17, 0.30) -2.82%, rgba(17, 17, 17, 0.00) 24.82%);
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 2px;
+				object-position: center;
+				transition: transform 0.3s ease-in-out;
+			}
+		}
+
+		&__body {
+			display: flex;
+			gap: 30px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			padding: 0 20px 20px 20px;
+			justify-content: flex-end;
+			flex-direction: column;
+			gap: 12px;
+
+			* {
+				transform: none;
+			}
+		}
+
+		&__title {
+			transition: all 0.3s ease-in-out;
+			text-decoration: none;
+			margin: 0px;
+
+			span,
+			a {
+				margin: 0px;
+				background-color: transparent;
+				border-bottom-color: transparent;
+				border-bottom-style: solid;
+				border-bottom-width: px-to-rem(0.5px);
+				display: inline;
+				text-align: left;
+				transition-duration: 0.4s;
+				transition-property: border-bottom-color;
+				transition-timing-function: ease-in-out;
+				overflow-wrap: break-word;
+				white-space: normal;
+				word-break: break-word;
+				text-decoration: none;
+				color: $ui-base-white
+			}
+		}
+
+
+		&__position {
+			color: $ui-base-white;
+			font-size: px-to-rem(14px);
+			font-style: normal;
+			font-weight: 500;
+			line-height: px-to-rem(20px);
+			letter-spacing: px-to-rem(0.14px);
+		}
+
+		.stretched-link-custom {
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		&:focus-visible {
+			box-shadow: 0 0 0 0.25rem $ui-foreground-primary-text-headings;
+		}
+
+		@include media-breakpoint-up(xl) {
+
+			&:active,
+			&:hover {
+				box-shadow: none;
+
+				&::before {
+					background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15.5" fill="%23FBF9F8" stroke="%23FBF9F8"/><path d="M19.8211 12.4645C19.8211 12.0502 19.4853 11.7145 19.0711 11.7145L12.3211 11.7145C11.9069 11.7145 11.5711 12.0502 11.5711 12.4645C11.5711 12.8787 11.9069 13.2145 12.3211 13.2145H18.3211V19.2145C18.3211 19.6287 18.6569 19.9645 19.0711 19.9645C19.4853 19.9645 19.8211 19.6287 19.8211 19.2145L19.8211 12.4645ZM12.5303 20.0659L19.6014 12.9948L18.5407 11.9341L11.4697 19.0052L12.5303 20.0659Z" fill="%23210044"/></svg>');
+				}
+
+				.card {
+					&__image {
+						&-image {
+							transform: scale(1.1);
+						}
+					}
+
+					&__title {
+						text-decoration: none;
+
+						span,
+						a {
+							text-decoration: none;
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	&__swiper {
+		overflow: hidden;
+	}
+
+	.swiper-wrapper {
+		padding-bottom: 30px;
+		align-items: stretch;
+	}
+
+	.swiper-slide {
+		display: flex;
+		justify-content: stretch;
+		align-items: stretch;
+		height: auto;
+	}
+
+	.swiper__container-controls {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		min-height: 20px;
+	}
+
+	.swiper-pagination {
+		padding: 0 15px;
+		position: relative;
+		bottom: unset;
+		transform: translate3d(0, 0, 0) !important;
+		left: 0 !important;
+		top: auto !important;
+		bottom: auto !important;
+
+		@include media-breakpoint-up(md) {
+			padding: 0 30px;
+		}
+
+		&:not(.swiper-pagination-bullets-dynamic) {
+			width: auto !important;
+		}
+
+		&.swiper-pagination-bullets-dynamic {
+			// width: 70px !important;
+			margin: 0 15px;
+			top: 5px;
+
+			.swiper-pagination-bullet {
+				transform: translateX(-15px) scale(0.33);
+			}
+
+			.swiper-pagination-bullet-active {
+				transform: translateX(-15px) scale(1);
+			}
+
+			.swiper-pagination-bullet-active-next {
+				transform: translateX(-15px) scale(0.66);
+			}
+		}
+
+		&-bullet {
+			opacity: 0.4;
+			margin: 0 8px !important;
+
+			&-active {
+				opacity: 1;
+			}
+		}
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		margin-top: 0;
+		position: relative;
+		top: 0;
+		left: unset;
+		right: unset;
+		bottom: unset;
+		width: 20px;
+		height: 20px;
+		background-size: contain;
+		background-position: center;
+		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="9" viewBox="0 0 18 9" fill="none"><path d="M16.4385 4.82914C16.6337 4.63388 16.6337 4.3173 16.4385 4.12203L13.2565 0.940053C13.0612 0.744791 12.7446 0.744791 12.5494 0.940053C12.3541 1.13532 12.3541 1.4519 12.5494 1.64716L15.3778 4.47559L12.5494 7.30401C12.3541 7.49928 12.3541 7.81586 12.5494 8.01112C12.7446 8.20638 13.0612 8.20638 13.2565 8.01112L16.4385 4.82914ZM1.02393 4.97559L16.0849 4.97559L16.0849 3.97559L1.02393 3.97559L1.02393 4.97559Z" fill="%23285F74"/></svg>');
+		background-repeat: no-repeat;
+
+		&::after {
+			content: none;
+		}
+	}
+
+	.swiper-button-prev {
+		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="9" viewBox="0 0 17 9" fill="none"><path d="M0.646017 4.12203C0.450755 4.3173 0.450755 4.63388 0.646017 4.82914L3.828 8.01112C4.02326 8.20638 4.33984 8.20638 4.53511 8.01112C4.73037 7.81586 4.73037 7.49928 4.5351 7.30401L1.70668 4.47559L4.5351 1.64716C4.73037 1.4519 4.73037 1.13532 4.5351 0.940053C4.33984 0.744791 4.02326 0.744791 3.828 0.940053L0.646017 4.12203ZM16.0605 3.97559L0.999571 3.97559L0.999571 4.97559L16.0605 4.97559L16.0605 3.97559Z" fill="%23285F74"/></svg>');
+	}
+
+	&__popup {
+		display: none;
+	}
+
+	&__popup-container {
+		.team-bios-carousel__popup {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+
+			@include media-breakpoint-up(xl) {
+				gap: 70px;
+			}
+		}
+
+		button:where(.swal2-close) {
+			@include font-body;
+			gap: 7px;
+			margin-top: 25px;
+			margin-right: 25px;
+			width: auto;
+			height: auto;
+			border: none;
+			color: $ui-foreground-primary-text-headings;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 130%;
+
+			span {
+				text-decoration: underline;
+			}
+		}
+
+		.swal2-popup {
+			width: 1095px;
+			max-width: 90%;
+			border-radius: 0;
+			padding: 0px;
+		}
+
+		.swal2-html-container {
+			padding: 60px 20px 40px;
+
+			@include media-breakpoint-up(xl) {
+				padding: 80px 74px;
+			}
+		}
+	}
+}

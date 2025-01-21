@@ -14,16 +14,22 @@ global $id;
 
 get_header();
 
-$categories = get_the_terms($id, 'team_categories');
+// $categories = get_the_terms($id, 'team_categories');
 
-$title       = get_the_title($id);
-$description = get_the_content($id);
-$position    = get_field('position', $id);
-$email       = get_field('email', $id);
-$phone       = get_field('phone', $id);
-$website     = get_field('website', $id);
-$social      = get_field('social_network', $id);
+$permalink = get_permalink(get_the_ID());
+$title = get_the_title(get_the_ID());
+$position = get_field('position', get_the_ID());
+$content  = get_the_content();
+$email = get_field('email', get_the_ID());
+$social_network = get_field('social_network', get_the_ID());
 
+if (has_post_thumbnail()) {
+  $image = get_post_thumbnail_id(get_the_ID());
+  $alt_image = sanitize_text_field(get_post_meta($image, '_wp_attachment_image_alt', true));
+} else {
+  $image = get_template_directory_uri() . '/src/assets/images/default.svg';
+  $alt_image = 'default image';
+}
 ?>
 
 <main id="primary" class="site-main container">
@@ -32,92 +38,59 @@ $social      = get_field('social_network', $id);
     the_post();
   ?>
 
-    <div class="team__modal">
-
-      <div class="team__modal__profile">
-
-        <?php if (has_post_thumbnail($id)) : ?>
-          <?php Helpers::global_image(get_post_thumbnail_id($id), ['class' => 'team__modal__image ratio ratio-1x1']); ?>
-        <?php else : ?>
-          <?php Helpers::global_image(get_template_directory_uri() . '/src/assets/images/bios2.jpg', ['class' => 'team__modal__image ratio ratio-1x1']); ?>
-        <?php endif; ?>
-
-        <?php if ($email || $phone || $social) : ?>
-
-          <div class="team__modal__body">
-
-            <?php if ($email || $phone) : ?>
-
-              <span class="team__modal__contact">
-                <?php if (isset($email) && !empty($email)) : ?>
-                  <div class="team__modal__contact--email">
-                    <a href="mailto:<?= esc_html($email); ?>"><?= esc_html($email); ?></a>
-                  </div>
-                <?php endif; ?>
-
-                <?php if (isset($phone) && !empty($phone)) : ?>
-                  <div class="team__modal__contact--phone">
-                    <?= wp_kses_post($phone); ?>
-                  </div>
-                <?php endif; ?>
-              </span>
-
+    <div class="team-bios-modal">
+      <div class="team-bios-modal__left">
+        <div class="team-bios-modal__image">
+          <?= Helpers::global_image(
+            $image,
+            [
+              'is_figure' => false,
+              'size' => 'medium',
+              'alt' => $alt_image,
+              'echo' => false,
+              'class' => 'no-animate card__image'
+            ]
+          ); ?>
+        </div>
+        <?php if ($position || $email || !empty($social_network)) : ?>
+          <div class="info-wrapper">
+            <?php if ($position) : ?>
+              <div class="info-wrapper__contact">
+                <span class="info-wrapper__title">Current Appointments</span>
+                <span class="info-wrapper__position"><?= esc_html($position); ?></span>
+              </div>
             <?php endif; ?>
-
-            <?php if (have_rows('social_network', $id)) : ?>
-              <ul class="card__body__social social-network">
-                <?php while (have_rows('social_network', $id)) : the_row();
-                  $link = get_sub_field('url');
-                  $icon = get_sub_field('icon');
-                  $email = get_sub_field('email');
-                ?>
-                  <li>
-                    <?php if (isset($email) && !empty($email)) : ?>
-                      <a href="mailto:<?= esc_html($email); ?>" target="_blank" class="dark-icon" rel="noopener noreferrer">
-                      <?php else : ?>
-                        <a href="<?= esc_html($url); ?>" target="_blank" class="dark-icon" rel="noopener noreferrer">
-                        <?php endif; ?>
-                        <span class="icon--<?= esc_html($icon); ?>"></span>
-                        <span class="visually-hidden"><?= esc_html($icon); ?></span>
-                        </a>
-                  </li>
-
-                <?php endwhile; ?>
-              </ul>
+            <?php if ($email || !empty($social_network)) : ?>
+              <div class="info-wrapper__contact">
+                <span class="info-wrapper__title">Contact Information</span>
+                <?php if ($email) : ?>
+                  <a href="mailto:<?= esc_html($email); ?>" class="email"><?= esc_html($email); ?></a>
+                <?php endif; ?>
+                <?php if (!empty($social_network)) : ?>
+                  <ul class="social-networks">
+                    <?php foreach ($social_network as $social): ?>
+                      <?php if (isset($social['url']) && !empty($social['url'])) : ?>
+                        <li>
+                          <a href="<?= esc_html($social['url']); ?>" target="_blank" class="dark-icon" rel="noopener noreferrer">
+                            <span class="icon--<?= esc_html($social['icon']); ?>"></span>
+                            <span class="visually-hidden"><?= esc_html($social['icon']); ?></span>
+                          </a>
+                        </li>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                  </ul>
+                <?php endif; ?>
+              </div>
             <?php endif; ?>
-
           </div>
-
         <?php endif; ?>
-
       </div>
-
-      <div class="team__modal__info">
-
-        <?php if (isset($title) && !empty($title)) : ?>
-          <span class="team__modal__title h4">
-            <?= esc_html($title); ?>
-          </span>
-        <?php endif; ?>
-
-        <?php if (isset($position) && !empty($position)) : ?>
-          <span class="team__modal__position"><?= wp_kses_post($position); ?></span>
-        <?php endif; ?>
-
-        <?php if (isset($description) && !empty($description)) : ?>
-          <div class="team__modal__content">
-            <?= wp_kses_post($description); ?>
-          </div>
-        <?php endif; ?>
-
-        <?php if (isset($button) && !empty($button)) : ?>
-          <div class="team__modal__button">
-            <a href="<?= esc_url($button_url); ?>" target="<?= esc_attr($button_target); ?>" class="cta cta--cta-primary"><?= esc_html($button_title); ?></a>
-          </div>
-        <?php endif; ?>
-
+      <div class="team-bios-modal__right no-animate">
+        <h5>
+          <?= esc_html($title) ?>
+        </h5>
+        <?= $content; ?>
       </div>
-
     </div>
 
   <?php
