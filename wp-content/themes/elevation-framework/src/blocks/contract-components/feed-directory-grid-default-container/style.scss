@@ -13,7 +13,7 @@
 			display: flex;
 			position: relative;
 			padding: 0px;
-			gap: 30px;
+			gap: 16px;
 			flex-wrap: wrap;
 		}
 	}
@@ -37,13 +37,12 @@
 		width: 100%;
 
 		@include media-breakpoint-up(md) {
-			width: calc(33.3% - 20px);
+			width: calc(50% - 16px);
 		}
 
-		&:not(.full-width) {
-			@include media-breakpoint-up(md) {
-				max-width: calc(33.3% - (295px / 3));
-			}
+		@include media-breakpoint-up(xl) {
+			width: 0;
+			flex-grow: 1;
 		}
 
 		&::before {
@@ -54,12 +53,22 @@
 			width: 32px;
 			height: 32px;
 			z-index: 2;
-			transition: all .2s;
+			transition: all 0.2s;
 			background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.8211 12.4645C19.8211 12.0502 19.4853 11.7145 19.0711 11.7145L12.3211 11.7145C11.9069 11.7145 11.5711 12.0502 11.5711 12.4645C11.5711 12.8787 11.9069 13.2145 12.3211 13.2145H18.3211V19.2145C18.3211 19.6287 18.6569 19.9645 19.0711 19.9645C19.4853 19.9645 19.8211 19.6287 19.8211 19.2145L19.8211 12.4645ZM12.5303 20.0659L19.6014 12.9948L18.5407 11.9341L11.4697 19.0052L12.5303 20.0659Z" fill="%23FBF9F8"/><circle cx="16" cy="16" r="15.5" stroke="%23FBF9F8"/></svg>');
 		}
 
+		&--border {
+			border: 1px solid $ui-border-bounds;
+			border-radius: 2px;
+			padding: 10px 10px 20px;
+
+			&::before {
+				top: 20px;
+				right: 20px;
+			}
+		}
+
 		&-directory {
-			width: 206px;
 			flex: unset;
 			background-color: $ui-background-light-01;
 			padding: 0 20px 20px 20px;
@@ -68,11 +77,19 @@
 			justify-content: flex-end;
 			gap: 4px;
 			min-height: 352px;
+			width: 100%;
+
+			@include media-breakpoint-up(md) {
+				width: calc(50% - 16px);
+			}
+
+			@include media-breakpoint-up(xl) {
+				width: 206px;
+			}
 
 			&::before {
 				content: none;
 			}
-
 
 			.text {
 				color: $ui-foreground-primary-text-headings;
@@ -116,7 +133,11 @@
 				top: 0;
 				width: 100%;
 				height: 100%;
-				background: linear-gradient(180deg, rgba(17, 17, 17, 0.30) -2.82%, rgba(17, 17, 17, 0.00) 24.82%);
+				background: linear-gradient(
+					180deg,
+					rgba(17, 17, 17, 0.3) -2.82%,
+					rgba(17, 17, 17, 0) 24.82%
+				);
 			}
 
 			img {
@@ -145,7 +166,6 @@
 			}
 		}
 
-
 		&__categories {
 			display: flex;
 			flex-wrap: wrap;
@@ -154,10 +174,6 @@
 		}
 
 		&__category {
-			@include media-breakpoint-down(md) {
-				width: 100%;
-			}
-
 			span {
 				font-size: px-to-rem(14px);
 				font-weight: 500;
@@ -168,9 +184,7 @@
 				border: 1px solid $ui-border-bounds;
 				border-radius: 4px;
 			}
-
 		}
-
 
 		&__title {
 			transition: all 0.3s ease-in-out;
@@ -198,6 +212,11 @@
 			}
 		}
 
+		time {
+			display: block;
+			margin-bottom: 10px;
+		}
+
 		.stretched-link-custom {
 			display: block;
 			height: 100%;
@@ -214,10 +233,8 @@
 		}
 
 		@include media-breakpoint-up(xl) {
-
 			&:active,
 			&:hover {
-
 				&::before {
 					background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15.5" fill="%23FBF9F8" stroke="%23FBF9F8"/><path d="M19.8211 12.4645C19.8211 12.0502 19.4853 11.7145 19.0711 11.7145L12.3211 11.7145C11.9069 11.7145 11.5711 12.0502 11.5711 12.4645C11.5711 12.8787 11.9069 13.2145 12.3211 13.2145H18.3211V19.2145C18.3211 19.6287 18.6569 19.9645 19.0711 19.9645C19.4853 19.9645 19.8211 19.6287 19.8211 19.2145L19.8211 12.4645ZM12.5303 20.0659L19.6014 12.9948L18.5407 11.9341L11.4697 19.0052L12.5303 20.0659Z" fill="%23210044"/></svg>');
 				}
@@ -246,7 +263,6 @@
 						}
 					}
 				}
-
 			}
 		}
 	}

@@ -69,5 +69,10 @@ export const fontSizes = () => {
 			slug: 'special-body',
 			name: 'Special: Body Text',
 		},
+		{
+			size: generateClamp('14px', '14px', '14px'),
+			slug: 'small-labels',
+			name: 'Small Labels',
+		},
 	];
 };

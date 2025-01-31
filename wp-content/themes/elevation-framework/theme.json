@@ -182,6 +182,11 @@
 					"size": "clamp(1rem, 2.213541666666667vw, 1.125rem)",
 					"slug": "special-body",
 					"name": "Special: Body Text"
+				},
+				{
+					"size": "clamp(0.875rem, 1.8229166666666667vw, 0.875rem)",
+					"slug": "small-labels",
+					"name": "Small Labels"
 				}
 			],
 			"fontFamilies": [
@@ -296,22 +301,6 @@
 					"lineHeight": "1.6em",
 					"letterSpacing": "-0.01em",
 					"fontWeight": "700"
-				}
-			}
-		}
-	},
-	"blocks": {
-		"core/button": {
-			"variations": {
-				"Primary": {
-					"spacing": {
-						"padding": {
-							"bottom": "calc(0.6rem - 1px)",
-							"left": "calc(1rem - 1px)",
-							"right": "calc(1rem - 1px)",
-							"top": "calc(0.6rem - 1px)"
-						}
-					}
 				}
 			}
 		}

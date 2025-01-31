@@ -3,11 +3,11 @@
 	"title": "Single Resources - Options",
 	"fields": [
 		{
-			"key": "field_6616bf4805cf8",
-			"label": "Directory URL",
-			"name": "sr_directory_url",
+			"key": "field_679d1f98a6b47",
+			"label": "Directory Subtitle",
+			"name": "sr_directory_subtitle",
 			"aria-label": "",
-			"type": "page_link",
+			"type": "text",
 			"instructions": "",
 			"required": 0,
 			"conditional_logic": 0,
@@ -16,12 +16,12 @@
 				"class": "",
 				"id": ""
 			},
-			"post_type": ["page"],
-			"post_status": "",
-			"taxonomy": "",
-			"allow_archives": 1,
-			"multiple": 0,
-			"allow_null": 0
+			"default_value": "",
+			"maxlength": "",
+			"allow_in_bindings": 0,
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
 		},
 		{
 			"key": "field_6616bf71c36be",
@@ -42,6 +42,27 @@
 			"placeholder": "",
 			"prepend": "",
 			"append": ""
+		},
+		{
+			"key": "field_6616bf4805cf8",
+			"label": "Directory URL",
+			"name": "sr_directory_url",
+			"aria-label": "",
+			"type": "page_link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"post_type": ["page"],
+			"post_status": "",
+			"taxonomy": "",
+			"allow_archives": 1,
+			"multiple": 0,
+			"allow_null": 0
 		},
 		{
 			"key": "field_6617f4e8b1fc6",
@@ -82,5 +103,5 @@
 	"active": true,
 	"description": "",
 	"show_in_rest": 0,
-	"modified": 1712847027
+	"modified": 1738350538
 }
