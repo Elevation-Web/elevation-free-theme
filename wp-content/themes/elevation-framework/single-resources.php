@@ -32,6 +32,7 @@
 
 	$directory_url = get_field('sr_directory_url', 'option');
 	$directory_url_label = get_field('sr_directory_url_label', 'option');
+	$directory_subtitle = get_field('sr_directory_subtitle', 'option');
 
 	?>
 
@@ -305,6 +306,15 @@
 		?>
 
 		<?php
+		$related_resources_version = '';
+		$showDate = false;
+		$withBorder = false;
+		if ($showDate) {
+			$related_resources_version .= '"showDate": "true", ';
+		}
+		if ($withBorder) {
+			$related_resources_version .= '"withBorder": "true", ';
+		}
 
 		$directory_url = get_field('sr_directory_url', 'option');
 		$directory_url_label = get_field('sr_directory_url_label', 'option');
@@ -322,7 +332,7 @@
 		}
 
 		$related_resources = '<!-- wp:elevation/contract-components--feed-directory-grid-default --><div data-block-id="contract-components/feed-directory-grid-default" data-block-js="false" id="feed-directory-grid-default-72079e03-90bf-42c7-9839-043ca3f2d24b" class="wp-block-elevation-contract-components--feed-directory-grid-default feed-directory-grid-default alignfull row-undefined"><!-- wp:elevation/interior-components--spacer {"space":"spacer__large"} --><div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__large line-disable line-type-solid position-top" style="--border-color:ui-border-bounds"></div><!-- /wp:elevation/interior-components--spacer --><!-- wp:elevation/interior-components--custom-container {"containerWidth":"medium","className":""} --><div class="wp-block-elevation-interior-components--custom-container custom-container custom-container--medium"><!-- wp:elevation/interior-components--group --><div data-block-id="interior-components/group" data-block-js="false" class="wp-block-elevation-interior-components--group elevation-interior-components--group group type-default"><!-- wp:heading --><h2 class="wp-block-heading">H3. Heading lorem ipsum euismod</h2><!-- /wp:heading --><!-- wp:elevation/interior-components--spacer {"space":"spacer__extra-small","line":true,"lineType":"dash","linePosition":"bottom","borderColor":"#d5d4dcff"} --><div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__extra-small line-enable line-type-dash position-bottom" style="--border-color:#d5d4dcff"></div><!-- /wp:elevation/interior-components--spacer --><!-- wp:elevation/interior-components--spacer {"space":"spacer__extra-small"} --><div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__extra-small line-disable line-type-solid position-top" style="--border-color:ui-border-bounds"></div><!-- /wp:elevation/interior-components--spacer --></div><!-- /wp:elevation/interior-components--group --><!-- wp:elevation/contract-components--feed-directory-grid-default-container {"titleDirectory": "' . $directory_url_label . '",
-		"urlDirectory": "' . $directory_url . '","textDirectory":"See more from2", "postExclude" : [' . $id . '], "categorySelected": ' . $category_json . '} /--></div><!-- /wp:elevation/interior-components--custom-container --><!-- wp:elevation/interior-components--spacer {"space":"spacer__large"} --><div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__large line-disable line-type-solid position-top" style="--border-color:ui-border-bounds"></div><!-- /wp:elevation/interior-components--spacer --></div><!-- /wp:elevation/contract-components--feed-directory-grid-default -->';
+		"urlDirectory": "' . $directory_url . '","textDirectory":"' . $directory_subtitle . '",' . $related_resources_version . '"postExclude" : [' . $id . '], "categorySelected": ' . $category_json . '} /--></div><!-- /wp:elevation/interior-components--custom-container --><!-- wp:elevation/interior-components--spacer {"space":"spacer__large"} --><div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__large line-disable line-type-solid position-top" style="--border-color:ui-border-bounds"></div><!-- /wp:elevation/interior-components--spacer --></div><!-- /wp:elevation/contract-components--feed-directory-grid-default -->';
 
 		$parsed_blocks = parse_blocks($related_resources);
 

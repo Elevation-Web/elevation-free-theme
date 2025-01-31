@@ -13,6 +13,8 @@ $textDirectory = $attributes['textDirectory'] ?? 'See more from';
 $postType = $attributes['postType'] ?? 'resources';
 $taxonomy = $attributes['taxonomy'] ?? 'resources_categories';
 $postExclude = $attributes['postExclude'] ?? [];
+$showDate = $attributes['showDate'] ?? false;
+$withBorder = $attributes['withBorder'] ?? false;
 ?>
 <div id="<?php echo esc_attr($attributes['id']); ?>" data-block-id="contract-components/feed-directory-grid-default-container" data-block-js="true" class="feed-directory-grid-default-container">
     <div class="feed-directory-grid-default-container__container">
@@ -56,7 +58,8 @@ $postExclude = $attributes['postExclude'] ?? [];
                     $alt_image = 'default image';
                 }
         ?>
-                <article class="card <?php echo !$cardDirectory ? 'full-width' : ''; ?>">
+                <article class="card<?php echo !$cardDirectory ? ' full-width' : '';
+                                    echo $withBorder ? ' card--border' : ''; ?>">
                     <div class="card__image">
                         <?= Helpers::global_image(
                             $image,
@@ -70,21 +73,28 @@ $postExclude = $attributes['postExclude'] ?? [];
                         ); ?>
                     </div>
                     <aside class="card__body">
+                        <?php if ($showDate) : ?>
+                            <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="card__date has-small-labels-font-size">
+                                <?php echo get_the_date('F j, Y'); ?>
+                            </time>
+                        <?php endif; ?>
                         <?php if (isset($title) && !empty($title)) : ?>
                             <<?php echo $headingLevel; ?> class="card__title no-animate">
                                 <a href="<?= esc_url($permalink); ?>" target="_self" class="wp-block-heading"><?= esc_html($title); ?></a>
                             </<?php echo $headingLevel; ?>>
                         <?php endif; ?>
                         <div class="card__categories">
-                            <?php foreach ($categories as $category) : ?>
-                                <?php if (isset($category) && !empty($category)) : ?>
-                                    <div class="card__category">
-                                        <span class="category">
-                                            <?php echo $category->name; ?>
-                                        </span>
-                                    </div>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
+                            <?php if (!empty($categories)) : ?>
+                                <?php foreach ($categories as $category) : ?>
+                                    <?php if (isset($category) && !empty($category)) : ?>
+                                        <div class="card__category">
+                                            <span class="category">
+                                                <?php echo $category->name; ?>
+                                            </span>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                     </aside>
                     <a href="<?= esc_url($permalink); ?>" target="_self" class="stretched-link stretched-link-custom">View <?= esc_html($title) ?></a>

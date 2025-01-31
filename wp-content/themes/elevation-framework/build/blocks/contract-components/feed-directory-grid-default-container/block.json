@@ -72,6 +72,14 @@
     "postExclude": {
       "type": "array",
       "default": []
+    },
+    "showDate": {
+      "type": "boolean",
+      "default": false
+    },
+    "withBorder": {
+      "type": "boolean",
+      "default": false
     }
   },
   "editorScript": [

@@ -1,7 +1,6 @@
 import { getPallete } from './utils/getPallete.mjs';
 import { typography } from './fonts/typography.mjs';
 import { elementsStyles, bodyStyles } from './styles/styles.mjs';
-import { coreBlocks } from './core-blocks/coreBlocks.mjs';
 import fs from 'fs';
 
 const { colors, sassVariables } = getPallete('./dev/figma/figmaTokens.json');
@@ -29,7 +28,6 @@ const theme = {
 		...bodyStyles(),
 		...elementsStyles(),
 	},
-	blocks: coreBlocks(),
 };
 
 fs.writeFile('./theme.json', JSON.stringify(theme, null, 4), (err) => {
