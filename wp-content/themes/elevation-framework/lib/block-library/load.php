@@ -30,9 +30,10 @@ class Load
         // Get a list of all subdirectories in the blocks directory
         $directories = glob($block_path . '*/*', GLOB_ONLYDIR);
 
-        $this->exclude_blocks($directories);
+        // Filter out excluded blocks
+        $filtered_blocks = $this->exclude_blocks($directories);
 
-        return $directories;
+        return $filtered_blocks;
     }
 
     public function load_blocks()
@@ -188,24 +189,27 @@ class Load
         $filePath = get_template_directory() . "/dev/cleanBlocks.mjs"; // Update with the correct file path
         $blocks_to_excluded = $this->getExcludedFolders($filePath);
 
-        echo "<pre>";
-        print_r($blocks);
-        echo "</pre>";
-
-
-        echo "<pre>";
-        print_r($blocks_to_excluded);
-        echo "</pre>";
-
         if ($blocks_to_excluded !== null && is_array($blocks_to_excluded)) {
-            array_push($blocks_to_excluded, 'index.php');
+            // Function to check if a string ends with another string (for PHP < 8)
+            function endsWith($haystack, $needle)
+            {
+                return substr($haystack, -strlen($needle)) === $needle;
+            }
 
-            $filtered_blocks = array_filter($blocks, function ($block) use ($blocks_to_excluded) {
-                return !in_array($block, $blocks_to_excluded);
+            // Filter out paths that end with any of the removePaths
+            $filteredPaths = array_filter($blocks, function ($path) use ($blocks_to_excluded) {
+                foreach ($blocks_to_excluded as $remove) {
+                    if (endsWith($path, $remove)) {
+                        return false;
+                    }
+                }
+                return true;
             });
 
+            // Re-index array to maintain numeric keys
+            $filteredPaths = array_values($filteredPaths);
 
-            return $filtered_blocks;
+            return $filteredPaths;
         }
 
 

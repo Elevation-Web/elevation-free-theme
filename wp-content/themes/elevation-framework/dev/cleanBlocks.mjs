@@ -1,8 +1,8 @@
 const exclude = [
-	blocks.contractComponents.accordion,
-	blocks.contractComponents.feedDefaultBlog,
-	blocks.contractComponents.accordion,
-	blocks.contractComponents.feedDefaultBlog,
+	// blocks.contractComponents.accordion,
+	// blocks.contractComponents.feedDefaultBlog,
+	// blocks.contractComponents.accordion,
+	// blocks.contractComponents.feedDefaultBlog,
 	// blocks.contractComponents.feedDefaultBlogWithContentBoxes,
 	// blocks.contractComponents.feedDefaultEvents,
 	// blocks.contractComponents.feedDirectoryGridDefault,
