@@ -7,6 +7,7 @@ import { useEffect } from '@wordpress/element';
 import { getBlockName } from '../../utils/helpers';
 
 /* Block */
+import './editor.scss';
 import json from './block.json';
 import previewImage from './preview.webp';
 import { TEMPLATE, allowedBlocks } from './template';

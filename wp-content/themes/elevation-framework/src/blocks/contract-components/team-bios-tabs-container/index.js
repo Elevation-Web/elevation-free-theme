@@ -18,8 +18,6 @@ import { registerBlockType } from '@wordpress/blocks';
  */
 import json from './block.json';
 import edit from './edit';
-import save from './save';
-
 import { SVG, Path } from '@wordpress/components';
 
 const { name, title } = json;
@@ -50,9 +48,4 @@ registerBlockType(name, {
 	 * @see ./edit.js
 	 */
 	edit,
-
-	/**
-	 * @see ./save.js
-	 */
-	save,
 });

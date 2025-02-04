@@ -178,7 +178,7 @@ $modal_enable = $attributes['modalEnable'] ?? false;
                 </div>
             <?php endif;
                 else: ?>
-            <h3>Select Teams to display</h3>
+            <p class="has-h-5-font-size team-bios-tabs-container__box">Select a team member in the right sidebar.</p>
         <?php endif; ?>
         </div>
     </div>
