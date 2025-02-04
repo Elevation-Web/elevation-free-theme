@@ -72,8 +72,8 @@ if (has_post_thumbnail()) {
                       <?php if (isset($social['url']) && !empty($social['url'])) : ?>
                         <li>
                           <a href="<?= esc_html($social['url']); ?>" target="_blank" class="dark-icon" rel="noopener noreferrer">
-                            <span class="icon--<?= esc_html($social['icon']); ?>"></span>
-                            <span class="visually-hidden"><?= esc_html($social['icon']); ?></span>
+                            <span class="icon--<?= esc_html($social['icon']); ?>"><span class="visually-hidden"><?= esc_html($social['icon']); ?></span></span>
+
                           </a>
                         </li>
                       <?php endif; ?>

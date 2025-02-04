@@ -102,7 +102,10 @@
 					.swiper-pagination-bullet {
 						background-color: $ui-button-primary-color-01;
 						opacity: 1;
-						transition: 200ms transform, 200ms left, .2s width !important;
+						transition:
+							200ms transform,
+							200ms left,
+							0.2s width !important;
 						position: initial;
 
 						&-active {
@@ -113,7 +116,6 @@
 				}
 			}
 		}
-
 	}
 
 	.card {
@@ -123,14 +125,14 @@
 		flex-direction: column;
 		align-items: stretch;
 		justify-content: stretch;
-		height: auto;
+		height: 100%;
 		gap: 30px;
-		width: auto;
+		width: 100%;
 		padding: 0px;
 		box-shadow: none;
 		min-height: 300px;
 
-		&::before {
+		&::after {
 			content: "";
 			position: absolute;
 			top: 10px;
@@ -138,13 +140,16 @@
 			width: 32px;
 			height: 32px;
 			z-index: 2;
-			transition: all .2s;
+			transition: all 0.2s;
 			background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.8211 12.4646C19.8211 12.0504 19.4853 11.7146 19.0711 11.7146L12.3211 11.7146C11.9069 11.7146 11.5711 12.0504 11.5711 12.4646C11.5711 12.8788 11.9069 13.2146 12.3211 13.2146H18.3211V19.2146C18.3211 19.6288 18.6569 19.9646 19.0711 19.9646C19.4853 19.9646 19.8211 19.6288 19.8211 19.2146L19.8211 12.4646ZM12.5303 20.066L19.6014 12.9949L18.5407 11.9342L11.4697 19.0053L12.5303 20.066Z" fill="%23FBF9F8"/><circle cx="16" cy="16" r="15.5" stroke="%23FBF9F8"/></svg>');
+			cursor: pointer;
+			z-index: 3;
 		}
 
 		&__header {
 			position: relative;
 			width: 100%;
+			z-index: 1;
 		}
 
 		&__image {
@@ -161,7 +166,12 @@
 				top: 0;
 				width: 100%;
 				height: 100%;
-				background: linear-gradient(0deg, rgba(17, 17, 17, 0.60) 16.24%, rgba(17, 17, 17, 0.00) 49.85%);
+				background: linear-gradient(
+					0deg,
+					rgba(17, 17, 17, 0.6) 16.24%,
+					rgba(17, 17, 17, 0) 49.85%
+				);
+				z-index: 2;
 			}
 
 			&::before {
@@ -171,16 +181,23 @@
 				top: 0;
 				width: 100%;
 				height: 100%;
-				background: linear-gradient(180deg, rgba(17, 17, 17, 0.30) -2.82%, rgba(17, 17, 17, 0.00) 24.82%);
+				background: linear-gradient(
+					180deg,
+					rgba(17, 17, 17, 0.3) -2.82%,
+					rgba(17, 17, 17, 0) 24.82%
+				);
+				z-index: 2;
 			}
 
 			img {
+				position: absolute;
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
 				border-radius: 2px;
 				object-position: center;
 				transition: transform 0.3s ease-in-out;
+				z-index: 1;
 			}
 		}
 
@@ -196,6 +213,7 @@
 			justify-content: flex-end;
 			flex-direction: column;
 			gap: 12px;
+			z-index: 3;
 
 			* {
 				transform: none;
@@ -223,10 +241,9 @@
 				white-space: normal;
 				word-break: break-word;
 				text-decoration: none;
-				color: $ui-base-white
+				color: $ui-base-white;
 			}
 		}
-
 
 		&__position {
 			color: $ui-base-white;
@@ -245,7 +262,7 @@
 			position: absolute;
 			top: 0;
 			width: 100%;
-			z-index: 1;
+			z-index: 3;
 		}
 
 		&:focus-visible {
@@ -253,12 +270,11 @@
 		}
 
 		@include media-breakpoint-up(xl) {
-
 			&:active,
 			&:hover {
 				box-shadow: none;
 
-				&::before {
+				&::after {
 					background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15.5" fill="%23FBF9F8" stroke="%23FBF9F8"/><path d="M19.8211 12.4645C19.8211 12.0502 19.4853 11.7145 19.0711 11.7145L12.3211 11.7145C11.9069 11.7145 11.5711 12.0502 11.5711 12.4645C11.5711 12.8787 11.9069 13.2145 12.3211 13.2145H18.3211V19.2145C18.3211 19.6287 18.6569 19.9645 19.0711 19.9645C19.4853 19.9645 19.8211 19.6287 19.8211 19.2145L19.8211 12.4645ZM12.5303 20.0659L19.6014 12.9948L18.5407 11.9341L11.4697 19.0052L12.5303 20.0659Z" fill="%23210044"/></svg>');
 				}
 
@@ -278,7 +294,6 @@
 						}
 					}
 				}
-
 			}
 		}
 	}
