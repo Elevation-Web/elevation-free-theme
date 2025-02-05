@@ -19,8 +19,8 @@ export const TEMPLATE = [
 					[
 						'core/heading',
 						{
-							level: 3,
-							content: 'H3. Heading lorem ipsum euismod',
+							level: 2,
+							content: 'H2. Heading lorem ipsum euismod',
 						},
 					],
 					[

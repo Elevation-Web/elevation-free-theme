@@ -25,6 +25,10 @@
       "type": "string",
       "default": ""
     },
+    "headingLevel": {
+      "type": "string",
+      "default": "h3"
+    },
     "showFilter": {
       "type": "boolean",
       "default": true
@@ -36,6 +40,10 @@
     "modalEnable": {
       "type": "boolean",
       "default": true
+    },
+    "singlePageEnabled": {
+      "type": "boolean",
+      "default": false
     }
   },
   "editorScript": [

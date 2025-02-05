@@ -2,6 +2,7 @@
 
 use ElevationFramework\Lib\BlockLibrary\Helpers;
 
+$headingLevel = $attributes['headingLevel'] ?? 'h3';
 $postsPerPage = -1;
 $showFilter = $attributes['showFilter'] ?? false;
 $taxonomy = $attributes['taxonomy'] ?? 'team_categories';
@@ -11,6 +12,8 @@ $selectedIds = array_map(function ($team) {
     return $team['postId'];
 }, $selectedTeams);
 $modal_enable = $attributes['modalEnable'] ?? false;
+$singlePageEnabled = $attributes['singlePageEnabled'] ?? false;
+$clickable = $modal_enable || $singlePageEnabled ? ' clickable' : '';
 
 ?>
 <div id="<?php echo esc_attr($attributes['id']); ?>" class="team-bios-tabs-container">
@@ -37,7 +40,7 @@ $modal_enable = $attributes['modalEnable'] ?? false;
                 </ul>
             </div>
         <?php endif; ?>
-        <div class="team-bios-tabs-container__wrapper">
+        <div class="team-bios-tabs-container__wrapper<?php echo $clickable; ?>">
             <?php
             if (!empty($selectedIds)) :
                 $args = array(
@@ -100,9 +103,9 @@ $modal_enable = $attributes['modalEnable'] ?? false;
                                     </div>
                                 <?php endif; ?>
                                 <?php if (isset($title) && !empty($title)) : ?>
-                                    <h3 class="card__title no-animate has-h-6-font-size">
+                                    <<?php echo esc_attr($headingLevel) ?> class="card__title no-animate has-h-6-font-size">
                                         <?= esc_html($title); ?>
-                                    </h3>
+                                    </<?php echo esc_attr($headingLevel) ?>>
                                 <?php endif; ?>
                                 <?php if ($position) : ?>
                                     <div class="card__position has-small-labels-font-size">
@@ -114,7 +117,7 @@ $modal_enable = $attributes['modalEnable'] ?? false;
                                 <button class="card__stretched-link">
                                     Read more about <?= esc_html($title) ?>
                                 </button>
-                            <?php else: ?>
+                            <?php elseif ($singlePageEnabled): ?>
                                 <a href="<?= esc_url($permalink); ?>" target="_self" class="card__stretched-link">Read more about <?= esc_html($title) ?></a>
                             <?php endif; ?>
                         </article>

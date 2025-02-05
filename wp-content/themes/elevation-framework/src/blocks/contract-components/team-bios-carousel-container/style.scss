@@ -1,7 +1,7 @@
 @import "../../../assets/styles/scss/utilities/functions";
 @import "../../../assets/styles/scss/utilities/variables";
 @import "../../../assets/styles/scss/utilities/mixins";
-@import "swiper/css/bundle";
+@import "../../../assets/styles/scss/utilities/mixins/cta";
 
 .team-bios-carousel {
 	position: relative;
@@ -17,6 +17,24 @@
 
 		&__swiper {
 			overflow: hidden;
+
+			&.clickable .card {
+				cursor: pointer;
+
+				&::after {
+					content: "";
+					position: absolute;
+					top: 10px;
+					right: 10px;
+					width: 32px;
+					height: 32px;
+					z-index: 2;
+					transition: all 0.2s;
+					background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.8211 12.4646C19.8211 12.0504 19.4853 11.7146 19.0711 11.7146L12.3211 11.7146C11.9069 11.7146 11.5711 12.0504 11.5711 12.4646C11.5711 12.8788 11.9069 13.2146 12.3211 13.2146H18.3211V19.2146C18.3211 19.6288 18.6569 19.9646 19.0711 19.9646C19.4853 19.9646 19.8211 19.6288 19.8211 19.2146L19.8211 12.4646ZM12.5303 20.066L19.6014 12.9949L18.5407 11.9342L11.4697 19.0053L12.5303 20.066Z" fill="%23FBF9F8"/><circle cx="16" cy="16" r="15.5" stroke="%23FBF9F8"/></svg>');
+					cursor: pointer;
+					z-index: 3;
+				}
+			}
 		}
 	}
 
@@ -118,6 +136,22 @@
 		}
 	}
 
+	.clickable {
+		.card {
+			&:focus-within,
+			&:has(:hover) {
+				&::after {
+					background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15.5" fill="%23FBF9F8" stroke="%23FBF9F8"/><path d="M19.8211 12.4645C19.8211 12.0502 19.4853 11.7145 19.0711 11.7145L12.3211 11.7145C11.9069 11.7145 11.5711 12.0502 11.5711 12.4645C11.5711 12.8787 11.9069 13.2145 12.3211 13.2145H18.3211V19.2145C18.3211 19.6287 18.6569 19.9645 19.0711 19.9645C19.4853 19.9645 19.8211 19.6287 19.8211 19.2145L19.8211 12.4645ZM12.5303 20.0659L19.6014 12.9948L18.5407 11.9341L11.4697 19.0052L12.5303 20.0659Z" fill="%23210044"/></svg>');
+				}
+			}
+
+			&:focus-within {
+				box-shadow: 0 0 0 3px
+					rgba($ui-foreground-primary-accent-01, 0.5);
+			}
+		}
+	}
+
 	.card {
 		border-radius: 0 0 6px 6px;
 		transition: box-shadow 0.2s ease-in-out;
@@ -131,20 +165,7 @@
 		padding: 0px;
 		box-shadow: none;
 		min-height: 300px;
-
-		&::after {
-			content: "";
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			width: 32px;
-			height: 32px;
-			z-index: 2;
-			transition: all 0.2s;
-			background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.8211 12.4646C19.8211 12.0504 19.4853 11.7146 19.0711 11.7146L12.3211 11.7146C11.9069 11.7146 11.5711 12.0504 11.5711 12.4646C11.5711 12.8788 11.9069 13.2146 12.3211 13.2146H18.3211V19.2146C18.3211 19.6288 18.6569 19.9646 19.0711 19.9646C19.4853 19.9646 19.8211 19.6288 19.8211 19.2146L19.8211 12.4646ZM12.5303 20.066L19.6014 12.9949L18.5407 11.9342L11.4697 19.0053L12.5303 20.066Z" fill="%23FBF9F8"/><circle cx="16" cy="16" r="15.5" stroke="%23FBF9F8"/></svg>');
-			cursor: pointer;
-			z-index: 3;
-		}
+		position: relative;
 
 		&__header {
 			position: relative;
@@ -224,6 +245,7 @@
 			transition: all 0.3s ease-in-out;
 			text-decoration: none;
 			margin: 0px;
+			color: $ui-base-white;
 
 			span,
 			a {
@@ -254,19 +276,21 @@
 			letter-spacing: px-to-rem(0.14px);
 		}
 
-		.stretched-link-custom {
-			display: block;
-			height: 100%;
-			left: 0;
-			opacity: 0;
-			position: absolute;
-			top: 0;
-			width: 100%;
-			z-index: 3;
-		}
+		&__stretched-link {
+			@include stretched-link;
+			text-indent: -9999px;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			clip: rect(0, 0, 0, 0);
+			white-space: nowrap;
+			border: 0;
+			margin-top: -50%;
 
-		&:focus-visible {
-			box-shadow: 0 0 0 0.25rem $ui-foreground-primary-text-headings;
+			&::after {
+				z-index: 10;
+			}
 		}
 
 		@include media-breakpoint-up(xl) {

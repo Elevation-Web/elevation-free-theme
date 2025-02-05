@@ -1,15 +1,21 @@
 /* Gutenberg Dependencies */
 import { __ } from '@wordpress/i18n';
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, ToggleControl, SearchControl } from '@wordpress/components';
+import {
+	PanelBody,
+	ToggleControl,
+	SearchControl,
+	SelectControl,
+	Draggable,
+} from '@wordpress/components';
 import { useEntityRecords } from '@wordpress/core-data';
 import { useRef, useState } from '@wordpress/element';
-import { Draggable } from '@wordpress/components';
 import { Icon, close } from '@wordpress/icons';
 
 export const Controls = (props) => {
 	const { attributes, setAttributes } = props;
-	const { selectedTeams, modalEnable } = attributes;
+	const { selectedTeams, modalEnable, singlePageEnabled, headingLevel } =
+		attributes;
 	const [search, setSearch] = useState('');
 	const { records: options } = useEntityRecords('postType', 'team');
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -213,6 +219,33 @@ export const Controls = (props) => {
 					onChange={(newValue) => {
 						setAttributes({
 							modalEnable: newValue,
+						});
+					}}
+				/>
+				{!modalEnable && (
+					<ToggleControl
+						label="Enable link to team member page"
+						checked={singlePageEnabled}
+						onChange={(newValue) => {
+							setAttributes({
+								singlePageEnabled: newValue,
+							});
+						}}
+					/>
+				)}
+				<SelectControl
+					label="Select cards heading type"
+					value={headingLevel}
+					options={[
+						{ value: 'h2', label: 'Heading 2' },
+						{ value: 'h3', label: 'Heading 3' },
+						{ value: 'h4', label: 'Heading 4' },
+						{ value: 'h5', label: 'Heading 5' },
+						{ value: 'h6', label: 'Heading 6' },
+					]}
+					onChange={(newHeadingLevel) => {
+						setAttributes({
+							headingLevel: newHeadingLevel,
 						});
 					}}
 				/>

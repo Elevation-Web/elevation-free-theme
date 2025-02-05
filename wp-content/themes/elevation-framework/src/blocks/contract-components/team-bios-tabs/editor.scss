@@ -1,12 +1,11 @@
 @import "../../../assets/styles/scss/utilities/functions";
 @import "../../../assets/styles/scss/utilities/variables";
 @import "../../../assets/styles/scss/utilities/mixins";
-@import "../../../assets/styles/scss/utilities/default-variables"; // check
-@import "../../../assets/styles/scss/utilities/mixins/cta"; // check
+@import "../../../assets/styles/scss/utilities/mixins/cta";
 
 .team-bios-tabs-container {
-	.card__body {
-		width: calc(100% - 40px);
+	&__filters__list {
+		list-style-type: none;
 	}
 
 	&__box {
