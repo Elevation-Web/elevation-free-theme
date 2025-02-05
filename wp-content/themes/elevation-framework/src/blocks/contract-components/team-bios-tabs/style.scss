@@ -1,7 +1,8 @@
-@import "" ../../../assets/styles/scss/utilities/functions "" @import ""
-	../../../assets/styles/scss/utilities/variables "" @import ""
-	../../../assets/styles/scss/utilities/mixins "" @import "" swiper/css/bundle
-	"" .team-bios-tabs {
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+
+.team-bios-tabs {
 	position: relative;
 	opacity: 1;
 

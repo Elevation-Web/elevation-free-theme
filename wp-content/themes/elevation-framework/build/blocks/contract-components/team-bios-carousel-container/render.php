@@ -17,8 +17,7 @@ $swiper_attrs = [
     "disableOnInteraction" => true,
     "loopAdditionalSlides" => 0
 ];
-
-$headingLevel = $attributes['headingLevel'] ?? 'h4';
+$headingLevel = $attributes['headingLevel'] ?? 'h3';
 $postsPerPage = -1;
 $taxonomy = $attributes['taxonomy'] ?? 'team_categories';
 $postExclude = $attributes['postExclude'] ?? [];
@@ -27,14 +26,15 @@ $selectedIds = array_map(function ($team) {
     return $team['postId'];
 }, $selectedTeams);
 $modal_enable = $attributes['modalEnable'] ?? false;
-
+$singlePageEnabled = $attributes['singlePageEnabled'] ?? false;
+$clickable = $modal_enable || $singlePageEnabled ? ' clickable' : '';
 ?>
 <div id="<?php echo esc_attr($attributes['id']); ?>" data-block-id="contract-components/team-bios-carousel-container" data-block-js="true" class="team-bios-carousel-container">
     <div class="team-bios-carousel-container__container">
-        <div class="team-bios-carousel-container__swiper" id="swiper-<?php echo esc_attr($attributes['id']); ?>" data-swiper-options="<?php echo esc_attr(json_encode($swiper_attrs)); ?>">
-            <div class="swiper-wrapper">
-                <?php
-                if (!empty($selectedIds)) :
+        <div class="team-bios-carousel-container__swiper<?php echo $clickable; ?>" id="swiper-<?php echo esc_attr($attributes['id']); ?>" data-swiper-options="<?php echo esc_attr(json_encode($swiper_attrs)); ?>">
+            <?php if (!empty($selectedIds)) : ?>
+                <div class="swiper-wrapper">
+                    <?php
                     $args = array(
                         'post_type'           => 'team',
                         'posts_per_page'      => $postsPerPage,
@@ -62,7 +62,7 @@ $modal_enable = $attributes['modalEnable'] ?? false;
                                 $image = get_template_directory_uri() . '/src/assets/images/default.svg';
                                 $alt_image = 'default image';
                             }
-                ?>
+                    ?>
                             <div class="swiper-slide">
                                 <article class="card">
                                     <div class="card__header">
@@ -79,9 +79,9 @@ $modal_enable = $attributes['modalEnable'] ?? false;
                                     </div>
                                     <aside class="card__body">
                                         <?php if (isset($title) && !empty($title)) : ?>
-                                            <<?php echo $headingLevel; ?> class="card__title no-animate">
-                                                <a href="<?= esc_url($permalink); ?>" target="_self" class="wp-block-heading"><?= esc_html($title); ?></a>
-                                            </<?php echo $headingLevel; ?>>
+                                            <<?php echo esc_attr($headingLevel) ?> class="card__title no-animate has-h-6-font-size">
+                                                <?= esc_html($title); ?>
+                                            </<?php echo esc_attr($headingLevel) ?>>
                                         <?php endif; ?>
                                         <?php if ($position) : ?>
                                             <div class="card__position">
@@ -90,15 +90,14 @@ $modal_enable = $attributes['modalEnable'] ?? false;
                                         <?php endif; ?>
                                     </aside>
                                     <?php if ($modal_enable) : ?>
-                                        <button class="stretched-link stretched-link-custom">
-                                            Read Post <?= esc_html($title) ?>
+                                        <button class="card__stretched-link">
+                                            Read more about <?= esc_html($title) ?>
                                         </button>
-                                    <?php else: ?>
-                                        <a href="<?= esc_url($permalink); ?>" target="_self" class="stretched-link stretched-link-custom">Read Post <?= esc_html($title) ?></a>
+                                    <?php elseif ($singlePageEnabled): ?>
+                                        <a href="<?= esc_url($permalink); ?>" target="_self" class="card__stretched-link">Read more about <?= esc_html($title) ?></a>
                                     <?php endif; ?>
                                 </article>
-                                <?php
-                                if ($modal_enable) : ?>
+                                <?php if ($modal_enable) : ?>
                                     <div class="team-bios-carousel__popup" data-modal-id="popup-<?= get_the_ID(); ?>">
                                         <div class="team-bios-modal">
                                             <div class="team-bios-modal__left">
@@ -167,19 +166,19 @@ $modal_enable = $attributes['modalEnable'] ?? false;
                         endwhile;
                     endif;
                     ?>
-            </div>
-            <?php if ($total_post > 3) : ?>
-                <div class="swiper__container-actions">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
-                <div class="swiper__container-controls">
-                    <div class="swiper-pagination"></div>
-                </div>
-            <?php endif;
-                else: ?>
-            <p class="has-h-5-font-size team-bios-tabs-container__box">Select a team member in the right sidebar.</p>
-        <?php endif; ?>
+                <?php if ($total_post > 3) : ?>
+                    <div class="swiper__container-actions">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="swiper__container-controls">
+                        <div class="swiper-pagination"></div>
+                    </div>
+                <?php endif; ?>
+            <?php else: ?>
+                <p class="has-h-5-font-size team-bios-carousel-container__box">Select a team member in the right sidebar.</p>
+            <?php endif; ?>
         </div>
     </div>
 </div>

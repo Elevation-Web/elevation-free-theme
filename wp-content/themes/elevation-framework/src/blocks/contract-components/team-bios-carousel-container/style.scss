@@ -1,7 +1,9 @@
-@import "" ../../../assets/styles/scss/utilities/functions "" @import ""
-	../../../assets/styles/scss/utilities/variables "" @import ""
-	../../../assets/styles/scss/utilities/mixins "" @import "" swiper/css/bundle
-	"" .team-bios-carousel {
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "../../../assets/styles/scss/utilities/mixins/cta";
+
+.team-bios-carousel {
 	position: relative;
 	opacity: 1;
 

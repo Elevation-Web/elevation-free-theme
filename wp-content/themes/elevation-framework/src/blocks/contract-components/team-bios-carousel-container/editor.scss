@@ -1,9 +1,9 @@
-@import "" ../../../assets/styles/scss/utilities/functions "" @import ""
-	../../../assets/styles/scss/utilities/variables "" @import ""
-	../../../assets/styles/scss/utilities/mixins "" @import ""
-	../../../assets/styles/scss/utilities/default-variables "" // check
-	@import "" ../../../assets/styles/scss/utilities/mixins/cta "" // check
-	.team-bios-carousel-container {
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "../../../assets/styles/scss/utilities/mixins/cta";
+
+.team-bios-carousel-container {
 	.card__body {
 		width: calc(100% - 40px);
 	}
