@@ -27,7 +27,7 @@
     },
     "headingLevel": {
       "type": "string",
-      "default": "h6"
+      "default": "h3"
     },
     "selectedTeams": {
       "type": "array",
@@ -36,6 +36,10 @@
     "modalEnable": {
       "type": "boolean",
       "default": true
+    },
+    "singlePageEnabled": {
+      "type": "boolean",
+      "default": false
     }
   },
   "editorScript": [

@@ -1,11 +1,11 @@
 import Swal from 'sweetalert2';
 
-const cards = document.querySelectorAll(`.team-bios-tabs .card`);
+const cards = document.querySelectorAll(`.team-bios-tabs .card button`);
 var currentPopup;
 
 cards.forEach((card, idx) => {
 	card.addEventListener('click', (e) => {
-		let contentHtml = card.nextElementSibling;
+		let contentHtml = card.closest('.card').nextElementSibling;
 
 		if (!contentHtml) return;
 
