@@ -2,40 +2,11 @@
 @import "../../../assets/styles/scss/utilities/variables";
 @import "../../../assets/styles/scss/utilities/mixins";
 
-.team-bios-gallery {
+.team-bios-default {
 	position: relative;
 	opacity: 1;
 
-	& > .custom-container {
-		display: flex;
-		flex-wrap: wrap;
-		column-gap: 45px;
-		row-gap: 30px;
-	}
-
-	&__left {
-		width: 100%;
-		position: relative;
-
-		@include media-breakpoint-up(lg) {
-			width: 384px;
-		}
-
-		&::before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			right: -22px;
-			width: 1px;
-			height: 100%;
-			background-color: $ui-border-line-divider-on-light;
-		}
-	}
-
 	&-container {
-		flex: 1;
-
 		&__filters {
 			&__list {
 				display: flex;
@@ -92,8 +63,7 @@
 		&__wrapper {
 			display: flex;
 			flex-wrap: wrap;
-			column-gap: 14px;
-			row-gap: 30px;
+			gap: 30px;
 
 			&.clickable {
 				.card {
@@ -107,8 +77,8 @@
 		.card {
 			&:focus-within,
 			&:has(:hover) {
-				.card__title {
-					color: $ui-foreground-primary-text-links;
+				.card__body::before {
+					background-image: url("./images/plus-icon-active.svg");
 				}
 			}
 
@@ -126,23 +96,24 @@
 		padding: 0;
 		display: flex;
 		flex-direction: column;
+		aspect-ratio: 344/350;
 		border-radius: 2px;
 		overflow: hidden;
 
 		@include media-breakpoint-up(md) {
-			width: calc(50% - 7px);
+			width: calc(50% - 15px);
 		}
 
 		@include media-breakpoint-up(lg) {
-			width: calc(33.33% - 0.583rem);
+			width: calc(33.3333% - 20px);
 		}
 
 		&__image {
-			position: relative;
+			position: absolute;
+			z-index: 1;
 			width: 100%;
-			height: auto;
-			aspect-ratio: 205/214;
-			margin-bottom: 20px;
+			height: 100%;
+			margin-bottom: 0;
 			display: block;
 
 			img {
@@ -152,6 +123,22 @@
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
+				z-index: 1;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				background: linear-gradient(
+					0deg,
+					rgba(17, 17, 17, 0.5) 0%,
+					rgba(17, 17, 17, 0) 49.85%
+				);
 			}
 		}
 
@@ -162,16 +149,38 @@
 				display: flex;
 				flex-wrap: wrap;
 				gap: 10px;
-				padding-bottom: 10px;
-				margin-bottom: 10px;
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+				border-bottom: 2px dotted $ui-border-line-divider-dots-divider;
 			}
 		}
 
 		&__title {
-			color: $ui-foreground-primary-text-headings;
+			color: $ui-base-white;
 		}
 
 		&__body {
+			position: relative;
+			z-index: 3;
+			padding: 20px 64px 20px 20px;
+			color: $ui-base-white;
+			margin-top: auto;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				right: 20px;
+				transform: translateY(-50%);
+				background-image: url("./images/plus-icon.svg");
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				width: 32px;
+				height: 32px;
+				z-index: 2;
+			}
+
 			*:last-child {
 				margin-bottom: 0;
 			}
@@ -187,6 +196,7 @@
 			clip: rect(0, 0, 0, 0);
 			white-space: nowrap;
 			border: 0;
+			z-index: 5;
 
 			&:focus-visible {
 				box-shadow: none;
@@ -199,7 +209,7 @@
 	}
 
 	&__popup-container {
-		.team-bios-gallery__popup {
+		.team-bios-default__popup {
 			display: flex;
 			flex-direction: column;
 			gap: 30px;

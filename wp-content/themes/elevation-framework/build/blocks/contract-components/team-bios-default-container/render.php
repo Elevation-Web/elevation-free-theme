@@ -17,13 +17,13 @@ $clickable = $modal_enable || $singlePageEnabled ? ' clickable' : '';
 $show_category = false; // this is a hardcode value, if you want to show the category, you can change it to true
 
 ?>
-<div id="<?php echo esc_attr($attributes['id']); ?>" class="team-bios-tabs-container">
-    <div class="team-bios-tabs-container__container container--medium">
+<div id="<?php echo esc_attr($attributes['id']); ?>" class="team-bios-default-container">
+    <div class="team-bios-default-container__container container--medium">
         <?php if ($showFilter): ?>
-            <div class="team-bios-tabs-container__filters">
-                <ul class="team-bios-tabs-container__filters__list">
-                    <li class="team-bios-tabs-container__filters__list__item">
-                        <button class="team-bios-tabs-container__filters__list__item__button active has-small-labels-font-size" data-filter="all">All</button>
+            <div class="team-bios-default-container__filters">
+                <ul class="team-bios-default-container__filters__list">
+                    <li class="team-bios-default-container__filters__list__item">
+                        <button class="team-bios-default-container__filters__list__item__button active has-small-labels-font-size" data-filter="all">All</button>
                     </li>
                     <?php
                     $terms = get_terms([
@@ -34,14 +34,14 @@ $show_category = false; // this is a hardcode value, if you want to show the cat
                         $term_name = $term->name;
                         $term_slug = $term->slug;
                     ?>
-                        <li class="team-bios-tabs-container__filters__list__item">
-                            <button class="team-bios-tabs-container__filters__list__item__button has-small-labels-font-size" data-filter="<?= esc_attr($term_slug); ?>"><?= esc_html($term_name); ?></button>
+                        <li class="team-bios-default-container__filters__list__item">
+                            <button class="team-bios-default-container__filters__list__item__button has-small-labels-font-size" data-filter="<?= esc_attr($term_slug); ?>"><?= esc_html($term_name); ?></button>
                         </li>
                     <?php } ?>
                 </ul>
             </div>
         <?php endif; ?>
-        <div class="team-bios-tabs-container__wrapper<?php echo $clickable; ?>">
+        <div class="team-bios-default-container__wrapper<?php echo $clickable; ?>">
             <?php
             if (!empty($selectedIds)) :
                 $args = array(
@@ -124,7 +124,7 @@ $show_category = false; // this is a hardcode value, if you want to show the cat
                         </article>
                         <?php
                         if ($modal_enable) : ?>
-                            <div class="team-bios-tabs__popup" data-modal-id="popup-<?= get_the_ID(); ?>">
+                            <div class="team-bios-default__popup" data-modal-id="popup-<?= get_the_ID(); ?>">
                                 <div class="team-bios-modal">
                                     <div class="team-bios-modal__left">
                                         <div class="team-bios-modal__image">
@@ -194,7 +194,7 @@ $show_category = false; // this is a hardcode value, if you want to show the cat
 
 
             <?php else: ?>
-                <p class="has-h-5-font-size team-bios-tabs-container__box">Select a team member in the right sidebar.</p>
+                <p class="has-h-5-font-size team-bios-default-container__box">Select a team member in the right sidebar.</p>
             <?php endif; ?>
         </div>
     </div>

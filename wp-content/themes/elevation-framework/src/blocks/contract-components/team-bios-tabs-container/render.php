@@ -14,6 +14,7 @@ $selectedIds = array_map(function ($team) {
 $modal_enable = $attributes['modalEnable'] ?? false;
 $singlePageEnabled = $attributes['singlePageEnabled'] ?? false;
 $clickable = $modal_enable || $singlePageEnabled ? ' clickable' : '';
+$show_category = false; // this is a hardcode value, if you want to show the category, you can change it to true
 
 ?>
 <div id="<?php echo esc_attr($attributes['id']); ?>" class="team-bios-tabs-container">
@@ -95,7 +96,7 @@ $clickable = $modal_enable || $singlePageEnabled ? ' clickable' : '';
                                 ); ?>
                             </div>
                             <aside class="card__body">
-                                <?php if (!empty($team_categories_names)): ?>
+                                <?php if (!empty($team_categories_names) && $show_category): ?>
                                     <div class="card__category-wrapper">
                                         <?php foreach ($team_categories_names as $team_category) : ?>
                                             <span class="card__category has-small-labels-font-size"><?= esc_html($team_category); ?></span>
