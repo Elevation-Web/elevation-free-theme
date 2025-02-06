@@ -96,13 +96,13 @@ export const Controls = (props) => {
 					{!!options && (
 						<div
 							style={{ position: 'relative', width: '100%' }}
-							className="team-bios-tabs-container__options"
+							className="team-bios-gallery-container__options"
 						>
 							<div
 								onClick={() =>
 									setIsDropdownOpen(!isDropdownOpen)
 								}
-								className="team-bios-tabs-container__options__selected"
+								className="team-bios-gallery-container__options__selected"
 							>
 								<ul className="draggable-list">
 									{selectedTeams.map((item) => (
@@ -166,12 +166,12 @@ export const Controls = (props) => {
 										}
 										setSearch(e);
 									}}
-									className="team-bios-tabs-container__options__search"
+									className="team-bios-gallery-container__options__search"
 									ref={ref}
 								/>
 							</div>
 							{isDropdownOpen && (
-								<ul className="team-bios-tabs-container__options__dropdown">
+								<ul className="team-bios-gallery-container__options__dropdown">
 									{options
 										.filter((option) => {
 											const selectedTeamsIds =
@@ -208,7 +208,7 @@ export const Controls = (props) => {
 															.rendered,
 													});
 												}}
-												className="team-bios-tabs-container__options__dropdown__item"
+												className="team-bios-gallery-container__options__dropdown__item"
 											>
 												{option.title.rendered}
 											</li>

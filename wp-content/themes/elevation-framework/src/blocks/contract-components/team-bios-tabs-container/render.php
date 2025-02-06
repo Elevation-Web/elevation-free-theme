@@ -73,12 +73,12 @@ $clickable = $modal_enable || $singlePageEnabled ? ' clickable' : '';
                         }
 
                         $team_categories = get_the_terms($team_id, $taxonomy);
-                        $team_categories_slugs = array_map(function ($term) {
+                        $team_categories_slugs = is_array($team_categories) ? array_map(function ($term) {
                             return $term->slug;
-                        }, $team_categories);
-                        $team_categories_names = array_map(function ($term) {
+                        }, $team_categories) : [];
+                        $team_categories_names = is_array($team_categories) ? array_map(function ($term) {
                             return $term->name;
-                        }, $team_categories);
+                        }, $team_categories) : [];
 
             ?>
                         <article class="card" data-category="<?php echo esc_attr(implode(' ', $team_categories_slugs)); ?>">
