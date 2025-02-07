@@ -8,6 +8,9 @@
 	"icon": "button",
 	"description": "Impact Layout: Content Boxes w/Icons Item.",
 	"textdomain": "elevation",
+	"ancestor": [
+		"elevation/interior-components--impact-content-boxes-with-icons"
+	],
 	"supports": {
 		"html": true,
 		"anchor": true,

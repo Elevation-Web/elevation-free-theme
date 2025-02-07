@@ -44,9 +44,9 @@
 			border-radius: 2px;
 			display: flex;
 			width: 100%;
-			height: 237px;
 
 			@include media-breakpoint-up(lg) {
+				height: 237px;
 				width: 294px;
 			}
 
@@ -92,14 +92,12 @@
 				border: 1px solid $ui-border-bounds;
 				border-radius: 4px;
 			}
-
 		}
 
 		&__full-date {
 			display: flex;
 			align-items: center;
 			gap: 8px;
-
 		}
 
 		&__date {
@@ -142,7 +140,6 @@
 			}
 		}
 
-
 		&__title {
 			transition: all 0.3s ease-in-out;
 			text-decoration: none;
@@ -154,7 +151,7 @@
 				background-color: transparent;
 				border-bottom-color: transparent;
 				border-bottom-style: solid;
-				border-bottom-width: px-to-rem(0.5px);
+				border-bottom-width: px-to-rem(2px);
 				display: inline;
 				text-align: left;
 				transition-duration: 0.4s;
@@ -183,7 +180,6 @@
 		}
 
 		@include media-breakpoint-up(xl) {
-
 			&:active,
 			&:hover {
 				box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
@@ -206,7 +202,6 @@
 						}
 					}
 				}
-
 			}
 		}
 	}

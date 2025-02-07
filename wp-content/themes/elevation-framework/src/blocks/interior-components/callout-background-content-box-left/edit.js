@@ -88,6 +88,10 @@ const Edit = (props) => {
 				width: fullSize.width,
 				height: fullSize.height,
 				sizes,
+				focalPoint: {
+					x: 0.5,
+					y: 0.5,
+				},
 			},
 		});
 	};

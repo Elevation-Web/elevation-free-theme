@@ -9,6 +9,21 @@ $block: ".impact-content-boxes-with-icons";
 	opacity: 1;
 	margin-bottom: 30px;
 
+	.group.type-row {
+		display: flex;
+		justify-content: space-between;
+		column-gap: 144px;
+		flex-direction: column;
+
+		@include media-breakpoint-up(lg) {
+			flex-direction: row;
+		}
+
+		.buttons {
+			flex-shrink: 0;
+		}
+	}
+
 	&__row {
 		display: grid;
 		gap: 24px;
@@ -52,12 +67,19 @@ $block: ".impact-content-boxes-with-icons";
 			border-bottom: 3px solid var(--border-color, #e0e0e0);
 			justify-content: space-between;
 			align-items: center;
+			flex-wrap: wrap;
+			gap: 20px;
 		}
 
 		&__icon-container {
 			img {
-				max-width: 65px;
-				max-height: 65px;
+				max-width: 45px;
+				max-height: 45px;
+
+				@include media-breakpoint-up(xl) {
+					max-width: 65px;
+					max-height: 65px;
+				}
 			}
 		}
 
@@ -73,6 +95,8 @@ $block: ".impact-content-boxes-with-icons";
 			img {
 				height: auto;
 				width: auto;
+				object-fit: contain;
+				object-position: left;
 			}
 		}
 	}

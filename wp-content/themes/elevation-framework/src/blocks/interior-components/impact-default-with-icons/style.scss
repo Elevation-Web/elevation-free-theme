@@ -76,7 +76,9 @@ $block: ".impact-default-with-icons";
 
 			img {
 				height: auto;
-				width: auto;
+				width: 45px;
+				object-fit: contain;
+				object-position: left;
 			}
 		}
 	}

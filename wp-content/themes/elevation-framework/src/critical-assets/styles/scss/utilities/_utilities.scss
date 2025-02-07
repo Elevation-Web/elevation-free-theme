@@ -122,3 +122,10 @@ body.logged-in .not-logged {
 body:not(.logged-in) .not-logged {
 	display: none !important;
 }
+
+.text-center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+}

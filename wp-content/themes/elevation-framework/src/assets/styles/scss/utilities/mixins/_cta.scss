@@ -7,7 +7,7 @@
 	background-color: transparent;
 	border-radius: $cta_border_radius;
 	border: none;
-	color: $ui-foreground-primary-text-body-text;
+	color: $ui-foreground-primary-text-body-text !important;
 	column-gap: 10px;
 	display: inline-flex !important;
 	font-size: px-to-rem($cta_font_size);
@@ -38,7 +38,7 @@
 	min-height: $cta_min_height;
 	background-color: $bg-color;
 	border: 1px solid $border-color;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: $cta_padding;
@@ -46,11 +46,11 @@
 	&:hover {
 		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 		box-shadow: 0 0 0 5px $focus-border-color;
 	}
@@ -71,7 +71,7 @@
 	min-height: $cta_min_height;
 	background-color: $bg-color;
 	border: 1px solid $border-color;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: $cta_padding;
@@ -79,11 +79,11 @@
 	&:hover {
 		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 		box-shadow: 0 0 0 5px $focus-border-color;
 	}
@@ -104,7 +104,7 @@
 	min-height: $cta_min_height;
 	background-color: $bg-color;
 	border: 1px solid $border-color;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: $cta_padding;
@@ -112,11 +112,11 @@
 	&:hover {
 		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 		box-shadow: 0 0 0 5px $focus-border-color;
 	}
@@ -137,7 +137,7 @@
 	min-height: $cta_min_height;
 	background-color: $bg-color;
 	border: 1px solid $border-color;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: $cta_padding;
@@ -145,11 +145,11 @@
 	&:hover {
 		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 		box-shadow: 0 0 0 5px $focus-border-color;
 	}
@@ -170,7 +170,7 @@
 	min-height: $cta_min_height;
 	background-color: $bg-color;
 	border: 1px solid $border-color;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: $cta_padding;
@@ -178,11 +178,11 @@
 	&:hover {
 		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 		box-shadow: 0 0 0 5px $focus-border-color;
 	}
@@ -203,18 +203,18 @@
 	min-height: $cta_min_height;
 	background-color: $bg-color;
 	border: 1px solid $border-color;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: $cta_padding;
 	&:hover {
 		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 		box-shadow: 0 0 0 5px $focus-border-color;
 	}
@@ -235,18 +235,18 @@
 	min-height: $cta_min_height;
 	background-color: $bg-color;
 	border: 1px solid $border-color;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: $cta_padding;
 	&:hover {
 		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 		box-shadow: 0 0 0 5px $focus-border-color;
 	}
@@ -268,18 +268,18 @@
 	align-items: center;
 	background-color: $bg-color;
 	border: 1px solid $border-color;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: 21px 28px 21px 53px;
 	&:hover {
 		background-color: $hover-bg-color;
 		border-color: $hover-border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 		box-shadow: 0 0 0 5px $focus-border-color;
 	}
@@ -317,7 +317,7 @@
 	background-color: $bg-color;
 	border-radius: 0;
 	border-bottom: 2px solid $border-color;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: 3px 16px 3px 0;
@@ -338,7 +338,7 @@
 	&:hover {
 		background-color: $hover-bg-color;
 		border-bottom-color: $border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 		text-decoration-line: underline;
 		text-underline-offset: 2px;
 		text-decoration-thickness: 1.5px;
@@ -350,7 +350,7 @@
 		background-color: $focus-bg-color;
 		border-bottom-color: $focus-border-color;
 		box-shadow: none;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 		text-decoration-line: underline;
 		text-underline-offset: 2px;
@@ -374,7 +374,7 @@
 	background-color: $bg-color;
 	border-bottom: 2px solid $border-color;
 	border-radius: 0;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: 3px 16px 3px 0;
@@ -396,7 +396,7 @@
 	&:hover {
 		background-color: $hover-bg-color;
 		border-bottom-color: $border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 		text-decoration-line: underline;
 		text-underline-offset: 2px;
 		text-decoration-thickness: 1.5px;
@@ -405,7 +405,7 @@
 		background-color: $focus-bg-color;
 		border-bottom-color: $focus-border-color;
 		box-shadow: none;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 		text-decoration-line: underline;
 		text-underline-offset: 2px;
@@ -429,7 +429,7 @@
 	background-color: $bg-color;
 	border-radius: $cta_border_radius;
 	border-bottom: 1px solid $border-color;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: 21px 28px 21px 53px;
@@ -481,7 +481,7 @@
 	background-color: $bg-color;
 	border-bottom: 1px solid $border-color;
 	border-radius: $cta_border_radius;
-	color: $text-color;
+	color: $text-color !important;
 	font-weight: $cta_font_weight;
 	justify-content: center;
 	padding: 21px 28px 21px 53px;
@@ -507,13 +507,13 @@
 	&:hover {
 		background-color: $hover-bg-color;
 		border-bottom-color: $border-color;
-		color: $hover-text-color;
+		color: $hover-text-color !important;
 	}
 	&:focus {
 		background-color: $focus-bg-color;
 		border-bottom-color: $focus-border-color;
 		box-shadow: 0 0 0 5px $focus-border-color;
-		color: $focus-text-color;
+		color: $focus-text-color !important;
 		outline: none;
 	}
 }
