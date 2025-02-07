@@ -14,6 +14,7 @@ $selectedIds = array_map(function ($team) {
 $modal_enable = $attributes['modalEnable'] ?? false;
 $singlePageEnabled = $attributes['singlePageEnabled'] ?? false;
 $clickable = $modal_enable || $singlePageEnabled ? ' clickable' : '';
+$show_category = false; // this is a hardcode value, if you want to show the category, you can change it to true
 
 ?>
 <div id="<?php echo esc_attr($attributes['id']); ?>" class="team-bios-tabs-container">
@@ -72,6 +73,16 @@ $clickable = $modal_enable || $singlePageEnabled ? ' clickable' : '';
                             $alt_image = 'default image';
                         }
 
+                        $team_args = [
+                            'image' => $image,
+                            'title' => $title,
+                            'position' => $position,
+                            'content' => $content,
+                            'email' => $email,
+                            'social_network' => $social_network,
+                            'permalink' => $permalink,
+                        ];
+
                         $team_categories = get_the_terms($team_id, $taxonomy);
                         $team_categories_slugs = is_array($team_categories) ? array_map(function ($term) {
                             return $term->slug;
@@ -88,14 +99,13 @@ $clickable = $modal_enable || $singlePageEnabled ? ' clickable' : '';
                                     [
                                         'is_figure' => false,
                                         'size' => 'medium',
-                                        'alt' => $alt_image,
                                         'echo' => false,
                                         'class' => 'no-animate card__image'
                                     ]
                                 ); ?>
                             </div>
                             <aside class="card__body">
-                                <?php if (!empty($team_categories_names)): ?>
+                                <?php if (!empty($team_categories_names) && $show_category): ?>
                                     <div class="card__category-wrapper">
                                         <?php foreach ($team_categories_names as $team_category) : ?>
                                             <span class="card__category has-small-labels-font-size"><?= esc_html($team_category); ?></span>
@@ -124,60 +134,10 @@ $clickable = $modal_enable || $singlePageEnabled ? ' clickable' : '';
                         <?php
                         if ($modal_enable) : ?>
                             <div class="team-bios-tabs__popup" data-modal-id="popup-<?= get_the_ID(); ?>">
-                                <div class="team-bios-modal">
-                                    <div class="team-bios-modal__left">
-                                        <div class="team-bios-modal__image">
-                                            <?= Helpers::global_image(
-                                                $image,
-                                                [
-                                                    'is_figure' => false,
-                                                    'size' => 'medium',
-                                                    'alt' => $alt_image,
-                                                    'echo' => false,
-                                                    'class' => 'no-animate card__image'
-                                                ]
-                                            ); ?>
-                                        </div>
-                                        <?php if ($position || $email || !empty($social_network)) : ?>
-                                            <div class="info-wrapper">
-                                                <?php if ($position) : ?>
-                                                    <div class="info-wrapper__contact">
-                                                        <span class="info-wrapper__title">Current Appointments</span>
-                                                        <span class="info-wrapper__position"><?= esc_html($position); ?></span>
-                                                    </div>
-                                                <?php endif; ?>
-                                                <?php if ($email || !empty($social_network)) : ?>
-                                                    <div class="info-wrapper__contact">
-                                                        <span class="info-wrapper__title">Contact Information</span>
-                                                        <?php if ($email) : ?>
-                                                            <a href="mailto:<?= esc_html($email); ?>" class="email"><?= esc_html($email); ?></a>
-                                                        <?php endif; ?>
-                                                        <?php if (!empty($social_network)) : ?>
-                                                            <ul class="social-networks">
-                                                                <?php foreach ($social_network as $social): ?>
-                                                                    <?php if (isset($social['url']) && !empty($social['url'])) : ?>
-                                                                        <li>
-                                                                            <a href="<?= esc_html($social['url']); ?>" target="_blank" class="dark-icon" rel="noopener noreferrer">
-                                                                                <span class="icon--<?= esc_html($social['icon']); ?>"></span>
-                                                                                <span class="visually-hidden"><?= esc_html($social['icon']); ?></span>
-                                                                            </a>
-                                                                        </li>
-                                                                    <?php endif; ?>
-                                                                <?php endforeach; ?>
-                                                            </ul>
-                                                        <?php endif; ?>
-                                                    </div>
-                                                <?php endif; ?>
-                                            </div>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="team-bios-modal__right no-animate">
-                                        <h5>
-                                            <?= esc_html($title) ?>
-                                        </h5>
-                                        <?= $content; ?>
-                                    </div>
-                                </div>
+                                <?php
+                                // pop up content used in block and single-team template
+                                get_template_part('template-parts/team', 'pop-up', $team_args); ?>
+
                                 <div class="team-bios-modal__footer">
                                     <button class="team-bios-modal__footer__button prev">Prev</button>
                                     <button class="team-bios-modal__footer__button next">Next</button>

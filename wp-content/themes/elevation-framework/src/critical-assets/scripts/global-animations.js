@@ -33,6 +33,7 @@ export const globalAnimations = () => {
 		'.testimonial-single-item__image img',
 		'.timeline-vertical-item *',
 		'.timeline-horizontal-item img',
+		'.team-bios-modal li',
 	];
 
 	function combineSelectors(base, exclusions) {

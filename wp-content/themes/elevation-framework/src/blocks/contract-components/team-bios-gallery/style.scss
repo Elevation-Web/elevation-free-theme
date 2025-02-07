@@ -6,6 +6,26 @@
 	position: relative;
 	opacity: 1;
 
+	&-show {
+		animation: fadeInPopupGallery 0.3s ease-in-out forwards;
+
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+	}
+
+	/* Fade-in animation */
+	@keyframes fadeInPopupGallery {
+		from {
+			opacity: 0;
+			transform: scale(0.8);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
 	& > .custom-container {
 		display: flex;
 		flex-wrap: wrap;
@@ -21,7 +41,7 @@
 			width: 384px;
 		}
 
-		&::after {
+		&::before {
 			content: "";
 			display: block;
 			position: absolute;
@@ -126,6 +146,8 @@
 		padding: 0;
 		display: flex;
 		flex-direction: column;
+		border-radius: 2px;
+		overflow: hidden;
 
 		@include media-breakpoint-up(md) {
 			width: calc(50% - 7px);

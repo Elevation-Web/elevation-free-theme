@@ -23,6 +23,7 @@ cards.forEach((card, idx) => {
 			customClass: {
 				container: `team-bios-gallery__popup-container ${id} `,
 			},
+			showClass: { popup: 'team-bios-gallery-show' },
 		});
 		const next = document.querySelector(
 			`.${currentPopup} .team-bios-modal__footer__button.next`
