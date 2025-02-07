@@ -28,7 +28,7 @@ $show_category = false; // this is a hardcode value, if you want to show the cat
                     <?php
                     $terms = get_terms([
                         'taxonomy' => $taxonomy,
-                        'hide_empty' => false,
+                        'hide_empty' => true,
                     ]);
                     foreach ($terms as $term) {
                         $term_name = $term->name;
