@@ -29,6 +29,10 @@ export const fontFamilies = () => {
 				fontWeight: '700',
 				src: ['file:./src/assets/fonts/Inter-Bold.woff2'],
 			},
+			{
+				fontWeight: '500',
+				src: ['file:./src/assets/fonts/Inter-Meidum.woff2'],
+			},
 		],
 		true
 	);

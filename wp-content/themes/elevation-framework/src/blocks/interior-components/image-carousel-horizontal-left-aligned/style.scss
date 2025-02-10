@@ -10,22 +10,21 @@
 
 		&__container {
 			position: relative;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
 			padding: 0px;
-			gap: 30px;
 
 			.swiper-wrapper {
 				width: 100%;
+				display: flex;
 			}
 
 			&-actions {
 				display: flex;
-				justify-content: flex-end;
+				justify-self: flex-end;
 				order: 2;
 				gap: 32px;
 				margin-top: 0px;
+				width: 72px;
+				margin-top: 30px;
 
 				@include media-breakpoint-up(lg) {
 					justify-content: space-between;
@@ -73,18 +72,16 @@
 				display: flex;
 				height: 10px;
 				order: 1;
+				width: calc(100% - 92px);
+				margin-top: -16px;
 
 				.swiper-pagination {
 					display: flex;
 					align-items: center;
-					justify-content: center;
+					justify-content: flex-start;
 					top: unset;
 					bottom: unset;
 					position: initial;
-
-					@include media-breakpoint-up(xl) {
-						justify-content: flex-start;
-					}
 
 					.swiper-pagination-bullet {
 						background-color: $ui-button-primary-color-01;
@@ -106,13 +103,15 @@
 
 		.image-carousel {
 			transition: all 0.2s;
-			max-width: 100%;
-			width: 100%;
+			// max-width: 100%;
+			// width: 100%;
+			width: fit-content;
 			border-radius: 2px;
+			position: relative;
 
-			@include media-breakpoint-up(xl) {
-				width: auto;
-			}
+			// @include media-breakpoint-up(xl) {
+			// 	width: auto;
+			// }
 
 			&.swiper-slide-active {
 				.media {

@@ -104,7 +104,8 @@ class SliderLayout extends Component {
 	goToLastSlide() {
 		let slides = this.slider?.slides?.length;
 		if (this.slider && slides) {
-			//this.goToSlide(slides);
+			let lastSlideIndex = this.slider.slides.length - 1;
+			this.slider.slideTo(lastSlideIndex);
 		}
 	}
 
@@ -112,6 +113,13 @@ class SliderLayout extends Component {
 		const { options, selectedSlide, activeIndex } = this.props;
 		if (!this.slider) {
 			this.initializeSlider();
+		}
+		// Check if slides count has increased
+		const prevSlidesCount = prevProps.children?.length || 0;
+		const currentSlidesCount = this.props.children?.length || 0;
+
+		if (currentSlidesCount > prevSlidesCount) {
+			setTimeout(() => this.goToLastSlide(), 100);
 		}
 	}
 

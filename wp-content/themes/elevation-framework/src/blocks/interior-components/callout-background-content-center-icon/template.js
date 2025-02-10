@@ -51,14 +51,14 @@ export const template = [
 							[
 								'elevation/interior-components--button',
 								{
-									btnStyle: 'primary--color-03',
+									btnStyle: 'primary--inverse',
 									text: 'Text Button',
 								},
 							],
 							[
 								'elevation/interior-components--button',
 								{
-									btnStyle: 'secondary--outline',
+									btnStyle: 'secondary--inverse',
 									text: 'Text Button',
 								},
 							],

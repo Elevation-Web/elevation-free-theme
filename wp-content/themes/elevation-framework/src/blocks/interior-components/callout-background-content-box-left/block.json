@@ -36,12 +36,10 @@
 			"default": "full"
 		},
 		"imgMobile": {
-			"type": "string",
-			"default": ""
+			"type": "object"
 		},
 		"imgTablet": {
-			"type": "string",
-			"default": ""
+			"type": "object"
 		},
 		"imgDesktop": {
 			"type": "object",

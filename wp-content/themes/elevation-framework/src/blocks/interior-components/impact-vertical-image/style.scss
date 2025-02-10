@@ -25,10 +25,6 @@ $block: ".impact-vertical-image";
 			width: 100%;
 			display: flex;
 
-			@include media-breakpoint-down(lg) {
-				max-height: 400px;
-			}
-
 			img {
 				width: 100%;
 				height: 100%;

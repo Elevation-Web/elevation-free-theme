@@ -18,10 +18,10 @@ const BackgroundPicture = ({
 	return (
 		<picture className={className}>
 			{imgMobile && (
-				<source media="(max-width:575px)" srcset={imgMobile} />
+				<source media="(max-width:575px)" srcSet={imgMobile} />
 			)}
 			{imgTablet && (
-				<source media="(max-width:1200px)" srcset={imgTablet} />
+				<source media="(max-width:1200px)" srcSet={imgTablet} />
 			)}
 			<img
 				decoding="async"

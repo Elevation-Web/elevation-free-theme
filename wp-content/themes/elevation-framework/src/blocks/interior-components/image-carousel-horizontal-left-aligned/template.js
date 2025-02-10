@@ -42,6 +42,12 @@ export const TEMPLATE = [
 					allowedBlocks: [
 						'elevation/interior-components--image-carousel',
 					],
+					slidesPerView: '1',
+					slidesPerViewSm: '1',
+					slidesPerViewMd: '1',
+					slidesPerViewLg: '1',
+					slidesPerViewXl: '1',
+					slidesPerViewXxl: '1',
 				},
 				[
 					['elevation/interior-components--image-carousel', {}],

@@ -172,18 +172,19 @@ h6,
 	color: $ui-foreground-primary-text-headings;
 }
 
-// Facu para que agregaste esto?
+/*--- Facu para que agregaste esto?
 // .wp-block-heading {
 // 	margin: 0 !important;
 // }
 
-.wp-block-heading + p {
-	margin-top: 12px;
-}
+// .wp-block-heading + p {
+// 	margin-top: 12px;
+// }
 
-.wp-block + .wp-block.buttons {
-	margin-top: 24px !important;
-}
+// .wp-block + .wp-block.buttons {
+// 	margin-top: 24px !important;
+// }
+----*/
 
 [id] {
 	scroll-margin-top: $header-height-mobile;

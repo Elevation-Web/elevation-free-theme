@@ -1,4 +1,4 @@
-const exclude = [
+export const exclude = [
 	// blocks.contractComponents.accordion,
 	// blocks.contractComponents.feedDefaultBlog,
 	// blocks.contractComponents.accordion,
@@ -37,7 +37,7 @@ const exclude = [
 	// blocks.interiorComponents.video.default,
 ];
 
-const blocks = {
+export const blocks = {
 	contractComponents: {
 		accordion: [
 			'contract-components/accordion',

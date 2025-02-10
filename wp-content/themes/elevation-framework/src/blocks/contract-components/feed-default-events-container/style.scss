@@ -43,7 +43,6 @@
 				padding: 0;
 				bottom: 0;
 
-
 				@include media-breakpoint-up(lg) {
 					top: 190px;
 					bottom: unset;
@@ -103,7 +102,10 @@
 					.swiper-pagination-bullet {
 						background-color: $ui-button-primary-color-01;
 						opacity: 1;
-						transition: 200ms transform, 200ms left, .2s width !important;
+						transition:
+							200ms transform,
+							200ms left,
+							0.2s width !important;
 						position: initial;
 
 						&-active {
@@ -114,7 +116,6 @@
 				}
 			}
 		}
-
 	}
 
 	.card {
@@ -130,6 +131,10 @@
 		padding: 0px;
 		box-shadow: none;
 		min-height: 399px;
+		position: relative;
+		width: 100%;
+		border-radius: 2px;
+		box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
 
 		&::before {
 			content: "";
@@ -139,10 +144,9 @@
 			width: 32px;
 			height: 32px;
 			z-index: 2;
-			transition: all .2s;
+			transition: all 0.2s;
 			background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15.5" fill="%23FBF9F8" stroke="%23FBF9F8"/><path d="M19.8211 12.4645C19.8211 12.0502 19.4853 11.7145 19.0711 11.7145L12.3211 11.7145C11.9069 11.7145 11.5711 12.0502 11.5711 12.4645C11.5711 12.8787 11.9069 13.2145 12.3211 13.2145H18.3211V19.2145C18.3211 19.6287 18.6569 19.9645 19.0711 19.9645C19.4853 19.9645 19.8211 19.6287 19.8211 19.2145L19.8211 12.4645ZM12.5303 20.0659L19.6014 12.9948L18.5407 11.9341L11.4697 19.0052L12.5303 20.0659Z" fill="%23210044"/></svg>');
 		}
-
 
 		&__header {
 			position: relative;
@@ -163,7 +167,11 @@
 				top: 0;
 				width: 100%;
 				height: 100%;
-				background: linear-gradient(0deg, rgba(17, 17, 17, 0.60) 16.24%, rgba(17, 17, 17, 0.00) 49.85%);
+				background: linear-gradient(
+					0deg,
+					rgba(17, 17, 17, 0.6) 16.24%,
+					rgba(17, 17, 17, 0) 49.85%
+				);
 			}
 
 			img {
@@ -198,7 +206,6 @@
 			display: flex;
 			align-items: center;
 			gap: 8px;
-
 		}
 
 		&__date {
@@ -243,11 +250,14 @@
 			}
 		}
 
-
 		&__title {
 			transition: all 0.3s ease-in-out;
 			text-decoration: none;
 			margin: 0px;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
 
 			span,
 			a {
@@ -265,7 +275,7 @@
 				white-space: normal;
 				word-break: break-word;
 				text-decoration: none;
-				color: $ui-base-white
+				color: $ui-base-white;
 			}
 		}
 
@@ -279,13 +289,12 @@
 				border: none;
 				border-radius: 50px;
 				background-color: $ui-base-white;
-				color: $ui-background-primary ;
+				color: $ui-background-primary;
 				font-size: px-to-rem(14px);
 				font-weight: 500;
 				line-height: 142.857%;
 				letter-spacing: px-to-rem(0.14px);
 			}
-
 		}
 
 		.stretched-link-custom {
@@ -304,7 +313,6 @@
 		}
 
 		@include media-breakpoint-up(xl) {
-
 			&:active,
 			&:hover {
 				box-shadow: none;
@@ -330,7 +338,6 @@
 						}
 					}
 				}
-
 			}
 		}
 	}
