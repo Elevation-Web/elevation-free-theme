@@ -186,7 +186,7 @@ class Load
 
     public function exclude_blocks($blocks)
     {
-        $filePath = get_template_directory() . "/dev/cleanBlocks.mjs"; // Update with the correct file path
+        $filePath = get_template_directory() . "/dev/cleanBlocks.js"; // Update with the correct file path
         $blocks_to_excluded = $this->getExcludedFolders($filePath);
 
         if ($blocks_to_excluded !== null && is_array($blocks_to_excluded)) {

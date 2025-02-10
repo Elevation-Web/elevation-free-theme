@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "Numbered Accordion",
+  "title": "Accordion, Layout: Numbered",
   "name": "elevation/interior-components--numbered-accordion",
   "version": "1.0.0",
   "category": "elevation-blocks",
   "icon": "menu-alt3",
-  "description": "Numbered Accordion",
+  "description": "Accordion, Layout: Numbered",
   "textdomain": "elevation",
   "supports": {
     "html": true,
