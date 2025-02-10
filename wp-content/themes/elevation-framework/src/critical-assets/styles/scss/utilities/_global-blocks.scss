@@ -17,3 +17,24 @@ div[class^="wp-block-elevation"] {
 [data-block-id="interior-components/group"] {
 	opacity: 1;
 }
+
+#primary {
+	.wp-block-media-text {
+		&.is-stacked-on-mobile {
+			@include media-breakpoint-down(lg) {
+				grid-template-columns: 100% !important;
+			}
+		}
+		&.is-image-fill-element > .wp-block-media-text__media {
+			@include media-breakpoint-down(lg) {
+				width: 100%;
+				height: auto;
+
+				img {
+					height: auto;
+					position: relative;
+				}
+			}
+		}
+	}
+}
