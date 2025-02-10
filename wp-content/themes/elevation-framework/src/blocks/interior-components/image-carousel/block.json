@@ -9,7 +9,7 @@
 	"textdomain": "elevation",
 	"ancestor": [
 		"elevation/interior-components--image-carousel-fixed-with-hover",
-		"elevation/interior-components--image-image-carousel-horizontal-centered",
+		"elevation/interior-components--image-carousel-horizontal-centered",
 		"elevation/interior-components--image-carousel-horizontal-left-aligned"
 	],
 	"supports": {
