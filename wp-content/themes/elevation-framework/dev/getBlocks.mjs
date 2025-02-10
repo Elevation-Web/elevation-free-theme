@@ -15,6 +15,6 @@ export const listDirectories = async (dir, depth = 0) => {
 	}
 };
 
-const rootDir = path.resolve('../src/blocks'); // Convert to absolute path
+const rootDir = path.resolve('./src/blocks'); // Convert to absolute path
 console.log(`Listing folders in: ${rootDir}`);
 listDirectories(rootDir, 2);

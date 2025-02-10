@@ -1,7 +1,6 @@
 export const exclude = [
 	// blocks.contractComponents.accordion,
 	// blocks.contractComponents.feedDefaultBlog,
-	// blocks.contractComponents.accordion,
 	// blocks.contractComponents.feedDefaultBlog,
 	// blocks.contractComponents.feedDefaultBlogWithContentBoxes,
 	// blocks.contractComponents.feedDefaultEvents,
@@ -14,6 +13,7 @@ export const exclude = [
 	// blocks.contractComponents.testimonialSingle,
 	// blocks.contractComponents.timelineHorizontal,
 	// blocks.contractComponents.timelineVertical,
+	// blocks.interiorComponents.numberedAccordion,
 	// blocks.interiorComponents.banners,
 	// blocks.interiorComponents.callouts,
 	// blocks.interiorComponents.cards.backgroundImages,
@@ -30,7 +30,7 @@ export const exclude = [
 	// blocks.interiorComponents.lists.headingSubheadingIn2Columns,
 	// blocks.interiorComponents.lists.introTextWithContentBoxes,
 	// blocks.interiorComponents.lists.links,
-	// blocks.interiorComponents.accordion,
+	// blocks.interiorComponents.accordionNumbered,
 	// blocks.interiorComponents.separators,
 	// blocks.interiorComponents.video.carousel,
 	// blocks.interiorComponents.video.fullWidth,
@@ -180,7 +180,7 @@ export const blocks = {
 				'interior-components/lists-links-item',
 			],
 		},
-		accordion: [
+		accordionNumbered: [
 			'interior-components/numbered-accordion',
 			'interior-components/numbered-accordion-item',
 		],
