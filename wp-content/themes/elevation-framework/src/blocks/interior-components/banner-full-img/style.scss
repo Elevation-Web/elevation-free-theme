@@ -4,12 +4,12 @@
 
 .banner-full-img {
 	opacity: 1;
+	overflow: hidden;
 	position: relative;
 	display: flex;
 	align-items: center;
 	padding: var(--banner-full-img-padding) 0;
 	--banner-full-img-padding: 50px;
-	color: $ui-foreground-primary-text-headings;
 
 	@include media-breakpoint-up(xl) {
 		--banner-full-img-padding: 90px;

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Text Block, Layout: Default.",
+  "name": "elevation/interior-components--text-block-default",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "description": "Text Block, Layout: Default.",
+  "textdomain": "elevation",
+  "supports": {
+    "html": true,
+    "align": false,
+    "alignWide": false,
+    "color": {
+      "background": true,
+      "gradients": false,
+      "text": false,
+      "link": false,
+      "border": false
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ]
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ]
+}
