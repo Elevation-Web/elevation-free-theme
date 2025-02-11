@@ -48,6 +48,23 @@ export const TEMPLATE = [
 	['elevation/interior-components--spacer'],
 ];
 
+export const TEMPLATE_ALT = [
+	[
+		'elevation/interior-components--group',
+		{
+			tagName: 'ul',
+			className: 'lists-bullets__container--alt',
+			allowedBlocks: [
+				'elevation/interior-components--lists-bullets-item',
+			],
+		},
+		[
+			['elevation/interior-components--lists-bullets-item', {}],
+			['elevation/interior-components--lists-bullets-item', {}],
+		],
+	],
+];
+
 export const allowedBlocks = [
 	'core/heading',
 	'core/paragraph',

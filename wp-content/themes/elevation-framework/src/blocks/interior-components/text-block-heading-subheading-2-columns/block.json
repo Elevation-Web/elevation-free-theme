@@ -1,33 +1,26 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"title": "Lists, Layout: Bullets",
-	"name": "elevation/interior-components--lists-bullets",
+	"title": "Text Block, Layout: Heading + Subheading in 2 Columns",
+	"name": "elevation/interior-components--text-block-heading-subheading-2-columns",
 	"version": "1.0.0",
 	"category": "elevation-blocks",
-	"icon": "button",
-	"description": "List container.",
+	"description": "Text Block, Layout: Heading + Subheading in 2 Columns",
 	"textdomain": "elevation",
 	"supports": {
 		"html": true,
-		"anchor": true,
-		"align": ["full"],
+		"align": false,
 		"alignWide": false,
-		"ariaLabel": false,
 		"color": {
 			"background": true,
 			"gradients": false,
-			"text": true,
+			"text": false,
 			"link": false,
 			"border": false
 		},
 		"spacing": {
 			"margin": ["top", "bottom"],
-			"blockGap": false
-		},
-		"layout": false,
-		"interactivity": {
-			"clientNavigation": true
+			"padding": ["top", "right", "bottom", "left"]
 		}
 	},
 	"attributes": {
@@ -35,22 +28,13 @@
 			"type": "string",
 			"default": ""
 		},
-		"align": {
-			"type": "array",
-			"default": ""
-		},
 		"preview": {
 			"type": "boolean",
 			"default": false
 		},
-		"altTemplate": {
-			"type": "boolean",
-			"default": false
-		}
-	},
-	"example": {
-		"attributes": {
-			"preview": true
+		"verticalAlignment": {
+			"type": "string",
+			"default": "flex-start"
 		}
 	},
 	"editorScript": ["file:index.js"],
