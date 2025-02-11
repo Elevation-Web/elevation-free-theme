@@ -75,6 +75,14 @@ export const blocks = {
 			'contract-components/team-bios-carousel',
 			'contract-components/team-bios-carousel-container',
 		],
+		teamBiosDefault: [
+			'contract-components/team-bios-default',
+			'contract-components/team-bios-default-container',
+		],
+		teamBiosGallery: [
+			'contract-components/team-bios-gallery',
+			'contract-components/team-bios-gallery-container',
+		],
 		testimonialCarousel: [
 			'contract-components/testimonial-carousel',
 			'contract-components/testimonial-carousel-item',
