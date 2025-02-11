@@ -1,7 +1,7 @@
 #primary {
 	a:not([class*="cta"]):not([class*="page-numbers"]):not(.wp-block-heading) {
 		text-decoration: underline !important;
-		color: $ui-foreground-primary-text-body-text;
+		color: $ui-foreground-primary-text-links;
 
 		&:hover {
 			text-decoration: none !important;
