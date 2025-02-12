@@ -107,3 +107,37 @@ p {
 	display: flex;
 	justify-content: center;
 }
+
+p {
+	margin-bottom: 20px;
+}
+
+.float-right,
+.float-left {
+	margin-bottom: 20px;
+	display: block;
+	z-index: 10;
+
+	@include media-breakpoint-down(lg) {
+		margin: 0 auto 20px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		width: 100% !important;
+		height: auto !important;
+	}
+}
+
+.float-right {
+	@include media-breakpoint-up(lg) {
+		float: right;
+		margin-left: 32px;
+	}
+}
+
+.float-left {
+	@include media-breakpoint-up(lg) {
+		float: left;
+		margin-right: 32px;
+	}
+}

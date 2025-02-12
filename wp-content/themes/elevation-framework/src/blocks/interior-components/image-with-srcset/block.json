@@ -24,7 +24,9 @@
 			"type": "object",
 			"default": {
 				"url": "",
-				"id": ""
+				"id": "",
+				"styledWidth": 0,
+				"styledHeight": 0
 			}
 		},
 		"isLazy": {
@@ -50,6 +52,14 @@
 		"align": {
 			"type": "array",
 			"default": "full"
+		},
+		"showPosition": {
+			"type": "boolean",
+			"default": false
+		},
+		"toogleSelection": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"usesContext": ["elevation/image-classname"],

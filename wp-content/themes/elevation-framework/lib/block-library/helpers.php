@@ -95,7 +95,9 @@ class Helpers
             'loading' => null,
             'size' => 'full',
             'alt' => null,
-            'icon' => false
+            'icon' => false,
+            'styledWidth' => null,
+            'styledHeight' => null,
         ];
 
         // Combinar los argumentos proporcionados con los valores predeterminados
@@ -135,7 +137,13 @@ class Helpers
             $img = wp_get_attachment_image($image_id, $size, $icon, $image_args);
         }
 
-        $image_component = '<' . $figure . ' class="' . $class . '">' . $img . '</' . $figure . '>';
+        $wrapper_style = '';
+
+        if ($styledWidth && $styledHeight) {
+            $wrapper_style = ' style="width: ' . $styledWidth . 'px; height: ' . $styledHeight . 'px;"';
+        }
+
+        $image_component = '<' . $figure . ' class="' . $class . '"' . $wrapper_style . '>' . $img . '</' . $figure . '>';
 
         if ($echo) {
             echo $image_component;

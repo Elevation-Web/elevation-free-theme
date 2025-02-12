@@ -13,6 +13,8 @@ import {
 	Popover,
 	ToggleControl,
 	PanelBody,
+	SelectControl,
+	ResizableBox,
 } from '@wordpress/components';
 import { keyboardReturn } from '@wordpress/icons';
 import { useState, useEffect } from '@wordpress/element';
@@ -29,27 +31,38 @@ const Edit = (props) => {
 	const { name, blockId } = getBlockName(blockName);
 
 	const { attributes, setAttributes, context } = props;
-	const { img, link, isLazy, showCaption } = attributes;
-	const inheritClassName = context['elevation/image-classname'];
+	const {
+		img,
+		link,
+		isLazy,
+		showCaption,
+		showPosition,
+		inheritClassName,
+		toogleSelection,
+	} = attributes;
+
+	const newInheritClassName =
+		context['elevation/image-classname'] || inheritClassName;
 
 	useEffect(() => {
 		setAttributes({
-			inheritClassName: inheritClassName || 'media',
+			inheritClassName: newInheritClassName || 'media',
 		});
-	}, [inheritClassName, setAttributes]);
+	}, [newInheritClassName, setAttributes]);
 
 	const blockProps = useBlockProps({
 		className: `${name} ${inheritClassName}`,
 	});
 
 	const setImageAttributes = (media) => {
-		const { url, id, caption } = media;
-
+		const { url, id, caption, width, height } = media;
 		setAttributes({
 			img: {
 				url,
 				id,
 				caption,
+				styledWidth: width,
+				styledHeight: height,
 			},
 		});
 	};
@@ -70,6 +83,22 @@ const Edit = (props) => {
 						});
 					}}
 				/>
+				{showPosition && (
+					<SelectControl
+						label="Image Position"
+						value={inheritClassName}
+						options={[
+							{ label: 'Default', value: 'media' },
+							{ label: 'Left', value: 'float-left media' },
+							{ label: 'Right', value: 'float-right media' },
+						]}
+						onChange={(newValue) => {
+							setAttributes({
+								inheritClassName: newValue,
+							});
+						}}
+					/>
+				)}
 			</PanelBody>
 		</InspectorControls>
 	);
@@ -131,15 +160,69 @@ const Edit = (props) => {
 				{blockControls}
 				{img?.url ? (
 					<>
-						<img
-							src={img?.url}
-							className={`${name}__img`}
-							loading={isLazy ? 'lazy' : 'eager'}
-						/>
-						{img?.caption && (
-							<span className={`${name}__img--caption`}>
-								{img.caption}
-							</span>
+						{showPosition ? (
+							<ResizableBox
+								size={{
+									width: img?.styledWidth,
+									hegiht: img?.styledHeight,
+								}}
+								minHeight="50"
+								minWidth="50"
+								enable={{
+									top: false,
+									right: true,
+									bottom: true,
+									left: false,
+									topRight: false,
+									bottomRight: true,
+									bottomLeft: false,
+									topLeft: false,
+								}}
+								onResizeStop={(
+									event,
+									direction,
+									elt,
+									delta
+								) => {
+									setAttributes({
+										img: {
+											...img,
+											styledWidth:
+												img.styledWidth + delta.width,
+											styledHeight:
+												img.styledHeight + delta.height,
+										},
+										toogleSelection: false,
+									});
+								}}
+								onResizeStart={() => {
+									setAttributes({ toogleSelection: true });
+								}}
+							>
+								<img
+									src={img?.url}
+									className={`${name}__img`}
+									loading={isLazy ? 'lazy' : 'eager'}
+								/>
+								{img?.caption && (
+									<span className={`${name}__img--caption`}>
+										{img.caption}
+									</span>
+								)}
+							</ResizableBox>
+						) : (
+							<>
+								<img
+									src={img?.url}
+									className={`${name}__img`}
+									loading={isLazy ? 'lazy' : 'eager'}
+								/>
+								{img?.caption && (
+									<span className={`${name}__img--caption`}>
+										{img.caption}
+									</span>
+								)}
+							</>
 						)}
 					</>
 				) : (

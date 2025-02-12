@@ -129,3 +129,32 @@ body:not(.logged-in) .not-logged {
 	margin-right: auto;
 	display: flex;
 }
+
+.float-right,
+.float-left {
+	margin-bottom: 20px;
+	display: block;
+
+	@include media-breakpoint-down(lg) {
+		margin: 0 auto 20px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		width: 100% !important;
+		height: auto !important;
+	}
+}
+
+.float-right {
+	@include media-breakpoint-up(lg) {
+		float: right;
+		margin-left: 32px;
+	}
+}
+
+.float-left {
+	@include media-breakpoint-up(lg) {
+		float: left;
+		margin-right: 32px;
+	}
+}

@@ -21,14 +21,20 @@ if (isset($attributes['img']['id']) || isset($attributes['img']['url'])) :
         $imgInheritClassName .= ($imgInheritClassName ? ' ' : '') . $attributes['inheritClassName'];
     }
 
+    $styledArgs = [];
+
+    if (isset($attributes['img']['styledWidth']) && isset($attributes['img']['styledHeight'])) {
+        $styledArgs = ['styledWidth' => $attributes['img']['styledWidth'], 'styledHeight' => $attributes['img']['styledHeight']];
+    }
+
     if (isset($attributes['link']['url']) && $attributes['link']['url'] !== '') :
         $target = $attributes['link']['target'] ? 'target="_blank"  rel="noopener noreferrer"' : '';
         echo '<a href="' . $attributes['link']['url'] . '" class="' . $imgInheritClassName . '"' . $target . '>';
-        Helpers::global_image($imgId, ['is_figure' => false, 'loading' => $loading]);
+        Helpers::global_image($imgId, ['is_figure' => false, 'loading' => $loading], ...$styledArgs);
         Helpers::global_caption($imgId);
         echo '</a>';
     else :
-        Helpers::global_image($imgId, ['class' => $imgInheritClassName, 'is_figure' => false, 'loading' => $loading]);
+        Helpers::global_image($imgId, ['class' => $imgInheritClassName, 'is_figure' => false, 'loading' => $loading, ...$styledArgs]);
         Helpers::global_caption($imgId);
     endif;
 
