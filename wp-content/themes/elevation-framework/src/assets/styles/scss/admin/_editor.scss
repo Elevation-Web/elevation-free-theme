@@ -108,8 +108,9 @@ p {
 	justify-content: center;
 }
 
-p {
-	margin-bottom: 20px;
+html :where(.editor-styles-wrapper) p,
+html :where(.editor-styles-wrapper) blockquote {
+	margin-bottom: 20px !important;
 }
 
 .float-right,
