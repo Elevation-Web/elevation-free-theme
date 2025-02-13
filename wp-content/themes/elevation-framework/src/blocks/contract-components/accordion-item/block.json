@@ -8,6 +8,7 @@
 	"icon": "text",
 	"description": "Accordion item",
 	"parent": ["elevation/interior-components--custom-container"],
+	"ancestor": ["elevation/contract-components--accordion"],
 	"textdomain": "elevation",
 	"supports": {
 		"anchor": true,

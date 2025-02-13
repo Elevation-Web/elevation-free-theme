@@ -15,7 +15,11 @@ export const exclude = [
 	// blocks.contractComponents.timelineVertical,
 	// blocks.interiorComponents.numberedAccordion,
 	// blocks.interiorComponents.banners,
-	// blocks.interiorComponents.callouts,
+	// blocks.interiorComponents.callouts.calloutBackgroundContentBoxCentered,
+	// blocks.interiorComponents.callouts.calloutBackgroundContentBoxLeft,
+	// blocks.interiorComponents.callouts.calloutBackgroundContentCenter,
+	// blocks.interiorComponents.callouts.calloutBackgroundContentCenterIcon,
+	// blocks.interiorComponents.callouts.calloutImageRight,
 	// blocks.interiorComponents.cards.backgroundImages,
 	// blocks.interiorComponents.cards.default,
 	// blocks.interiorComponents.cards.defaultIcons,
@@ -107,13 +111,21 @@ export const blocks = {
 			'interior-components/banner-full-img',
 			'interior-components/banner-standard',
 		],
-		callouts: [
-			'interior-components/callout-background-content-box-centered',
-			'interior-components/callout-background-content-box-left',
-			'interior-components/callout-background-content-center',
-			'interior-components/callout-background-content-center-icon',
-			'interior-components/callout-image-right',
-		],
+		callouts: {
+			calloutBackgroundContentBoxCentered: [
+				'interior-components/callout-background-content-box-centered',
+			],
+			calloutBackgroundContentBoxLeft: [
+				'interior-components/callout-background-content-box-left',
+			],
+			calloutBackgroundContentCenter: [
+				'interior-components/callout-background-content-center',
+			],
+			calloutBackgroundContentCenterIcon: [
+				'interior-components/callout-background-content-center-icon',
+			],
+			calloutImageRight: ['interior-components/callout-image-right'],
+		},
 		cards: {
 			backgroundImages: [
 				'interior-components/cards-background-images',

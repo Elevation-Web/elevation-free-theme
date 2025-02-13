@@ -8,6 +8,7 @@
 	"icon": "button",
 	"description": "Impact Default Item.",
 	"textdomain": "elevation",
+	"ancestor": ["elevation/interior-components--impact-default"],
 	"supports": {
 		"html": true,
 		"anchor": true,

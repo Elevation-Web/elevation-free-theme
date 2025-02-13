@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Text Block, Layout: Heading + Subheading + List Item.",
+	"name": "elevation/interior-components--text-block-heading-subheading-list-item",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"description": "Text Block, Layout:  Heading + Subheading + List Item.",
+	"textdomain": "elevation",
+	"ancestor": [
+		"elevation/interior-components--text-block-heading-subheading-list"
+	],
+	"supports": {
+		"html": true,
+		"align": false,
+		"alignWide": false,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": false,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": ["top", "right", "bottom", "left"]
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"preview": {
+			"type": "boolean",
+			"default": false
+		},
+		"borderColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"editorScript": ["file:index.js"]
+}

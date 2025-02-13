@@ -7,6 +7,9 @@
   "category": "elevation-blocks",
   "description": "Cards with title, description, background images and icons",
   "textdomain": "elevation",
+  "ancestor": [
+    "elevation/interior-components--cards-images-with-heading-description"
+  ],
   "supports": {
     "html": true,
     "align": false,
