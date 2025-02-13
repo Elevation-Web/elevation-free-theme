@@ -19,6 +19,13 @@ $section: ".text-block-default-image";
 			}
 		}
 	}
+	&.with-border {
+		#{ $section }__container {
+			& > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				gap: 64px;
+			}
+		}
+	}
 
 	&.columns {
 		&-inverse {

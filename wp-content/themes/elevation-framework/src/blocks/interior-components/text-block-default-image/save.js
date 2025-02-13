@@ -16,10 +16,11 @@ const save = (props) => {
 		columnsDirection,
 		verticalAlignment,
 		cropImage,
+		withBorder,
 	} = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `${name} image-${imageSize} columns-${columnsDirection} align-${verticalAlignment}${cropImage ? ' crop-image' : ''}`,
+		className: `${name} image-${imageSize} columns-${columnsDirection} align-${verticalAlignment}${cropImage ? ' crop-image' : ''}${withBorder ? ' with-border' : ''}`,
 	});
 
 	return (

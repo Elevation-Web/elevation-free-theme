@@ -30,6 +30,7 @@ const Edit = (props) => {
 		columnsDirection,
 		verticalAlignment,
 		cropImage,
+		withBorder,
 	} = attributes;
 
 	useEffect(() => {
@@ -37,7 +38,7 @@ const Edit = (props) => {
 	}, [clientId, name, setAttributes]);
 
 	const blockProps = useBlockProps({
-		className: `${name} image-${imageSize} columns-${columnsDirection} align-${verticalAlignment}${cropImage ? ' crop-image' : ''}`,
+		className: `${name} image-${imageSize} columns-${columnsDirection} align-${verticalAlignment}${cropImage ? ' crop-image' : ''}${withBorder ? ' with-border' : ''}`,
 	});
 
 	if (preview) {
@@ -113,6 +114,18 @@ const Edit = (props) => {
 					checked={cropImage}
 					onChange={(newValue) => {
 						setAttributes({ cropImage: newValue });
+					}}
+				/>
+				<ToggleControl
+					label="Border"
+					help={
+						withBorder
+							? 'Border will be added.'
+							: 'Border will not be added.'
+					}
+					checked={withBorder}
+					onChange={(newValue) => {
+						setAttributes({ withBorder: newValue });
 					}}
 				/>
 			</PanelBody>

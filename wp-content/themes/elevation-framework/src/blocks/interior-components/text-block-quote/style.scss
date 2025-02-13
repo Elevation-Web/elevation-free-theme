@@ -26,4 +26,8 @@ $section: ".text-block-quote";
 			transform: translateX(-50%);
 		}
 	}
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
 }

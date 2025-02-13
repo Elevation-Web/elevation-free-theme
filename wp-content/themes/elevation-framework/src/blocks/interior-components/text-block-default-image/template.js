@@ -2,6 +2,7 @@ export const allowedBlocks = [
 	'core/heading',
 	'core/paragraph',
 	'elevation/interior-components--buttons',
+	'elevaiton/interior-components--spacer',
 ];
 
 export const template = [
