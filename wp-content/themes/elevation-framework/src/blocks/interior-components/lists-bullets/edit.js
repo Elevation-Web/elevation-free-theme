@@ -10,21 +10,21 @@ import { getBlockName } from '../../utils/helpers';
 import './editor.scss';
 import json from './block.json';
 import previewImage from './preview.webp';
-import { TEMPLATE, allowedBlocks } from './template';
+import { TEMPLATE, TEMPLATE_ALT, allowedBlocks } from './template';
 
 const Edit = (props) => {
 	const { name: blockName } = json;
 	const { name, blockId } = getBlockName(blockName);
 
 	const { clientId, attributes, setAttributes } = props;
-	const { anchor, id, grid_column, preview } = attributes;
+	const { anchor, id, grid_column, preview, altTemplate } = attributes;
 
 	const blockProps = useBlockProps({
-		className: `${name} alignfull row-${grid_column}`,
+		className: `${name} row-${grid_column}`,
 	});
 
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
-		template: TEMPLATE,
+		template: altTemplate ? TEMPLATE_ALT : TEMPLATE,
 		templateInsertUpdatesSelection: true,
 		allowedBlocks: allowedBlocks,
 		orientation: 'horizontal',

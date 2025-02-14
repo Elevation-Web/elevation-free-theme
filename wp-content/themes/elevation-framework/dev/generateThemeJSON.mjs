@@ -1,6 +1,7 @@
 import { getPallete } from './utils/getPallete.mjs';
 import { typography } from './fonts/typography.mjs';
 import { elementsStyles, bodyStyles } from './styles/styles.mjs';
+import spacing from './styles/spacing.mjs';
 import fs from 'fs';
 
 const { colors, sassVariables } = getPallete('./dev/figma/figmaTokens.json');
@@ -15,9 +16,7 @@ const theme = {
 			customGradient: false,
 			palette: colors,
 		},
-		spacing: {
-			units: ['%', 'px', 'em', 'rem', 'vh', 'vw'],
-		},
+		spacing: spacing(),
 		typography: typography(),
 		layout: {
 			contentSize: 'clamp(320px,1440px,90%)',

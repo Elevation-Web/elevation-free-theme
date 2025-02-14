@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Text Block, Layout: Heading + Subheading in 2 Columns",
+	"name": "elevation/interior-components--text-block-heading-subheading-2-columns",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"description": "Text Block, Layout: Heading + Subheading in 2 Columns",
+	"textdomain": "elevation",
+	"supports": {
+		"html": true,
+		"align": false,
+		"alignWide": false,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": false,
+			"link": false,
+			"border": false
+		},
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": ["top", "right", "bottom", "left"]
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"preview": {
+			"type": "boolean",
+			"default": false
+		},
+		"verticalAlignment": {
+			"type": "string",
+			"default": "flex-start"
+		}
+	},
+	"editorScript": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"]
+}

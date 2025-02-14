@@ -27,6 +27,25 @@
 		.wp-block-heading {
 			margin: 0px;
 		}
+
+		&--alt {
+			flex-direction: column;
+		}
+	}
+
+	.lists-bullets__container--alt {
+		.lists-bullets-item {
+			position: relative;
+			padding-left: 15px;
+
+			@include media-breakpoint-up(md) {
+				width: 100%;
+			}
+
+			@include media-breakpoint-up(xl) {
+				width: 100%;
+			}
+		}
 	}
 
 	&-item {

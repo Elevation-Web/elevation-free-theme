@@ -10,10 +10,10 @@
 	.lists-bullets__container {
 		border: none;
 
-		>.block-editor-inner-blocks {
+		> .block-editor-inner-blocks {
 			width: 100%;
 
-			>.block-editor-block-list__layout {
+			> .block-editor-block-list__layout {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -23,6 +23,17 @@
 				@include media-breakpoint-down(xl) {
 					flex-direction: column;
 				}
+			}
+		}
+	}
+
+	.lists-bullets__container--alt {
+		.lists-bullets-item {
+			position: relative;
+			padding-left: 15px;
+
+			@include media-breakpoint-up(xl) {
+				width: 100%;
 			}
 		}
 	}

@@ -15,7 +15,7 @@ const save = (props) => {
 	const { anchor, id, grid_column } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `${name} alignfull row-${grid_column}`,
+		className: `${name} row-${grid_column}`,
 	});
 
 	return (

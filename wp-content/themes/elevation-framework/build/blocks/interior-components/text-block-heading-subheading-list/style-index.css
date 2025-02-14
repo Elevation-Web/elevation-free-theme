@@ -1,0 +1,1 @@
+.text-block-heading-subheading-list{opacity:1;position:relative}.text-block-heading-subheading-list__list-wrapper{display:flex;flex-wrap:wrap;gap:32px}.text-block-heading-subheading-list-item{border-left-style:solid;border-left-width:4px;padding-left:30px;width:100%}@media(min-width:992px){.text-block-heading-subheading-list-item{width:calc(50% - 16px)}}

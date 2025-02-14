@@ -11,6 +11,9 @@
     "elevation/interior-components--custom-container"
   ],
   "textdomain": "elevation",
+  "ancestor": [
+    "elevation/contract-components--numbered-accordion"
+  ],
   "supports": {
     "anchor": true,
     "html": true,

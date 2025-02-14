@@ -24,6 +24,12 @@
       "margin": [
         "top",
         "bottom"
+      ],
+      "padding": [
+        "top",
+        "right",
+        "bottom",
+        "left"
       ]
     }
   },

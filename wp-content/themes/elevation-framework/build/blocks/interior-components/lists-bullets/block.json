@@ -11,6 +11,9 @@
   "supports": {
     "html": true,
     "anchor": true,
+    "align": [
+      "full"
+    ],
     "alignWide": false,
     "ariaLabel": false,
     "color": {
@@ -39,9 +42,13 @@
     },
     "align": {
       "type": "array",
-      "default": "full"
+      "default": ""
     },
     "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "altTemplate": {
       "type": "boolean",
       "default": false
     }
