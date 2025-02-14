@@ -8,6 +8,9 @@
   "icon": "button",
   "description": "Impact Layout: Default Content Centered Item.",
   "textdomain": "elevation",
+  "ancestor": [
+    "elevation/interior-components--impact-default-content-centered"
+  ],
   "supports": {
     "html": true,
     "anchor": true,
