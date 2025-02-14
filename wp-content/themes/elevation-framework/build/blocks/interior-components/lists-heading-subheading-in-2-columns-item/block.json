@@ -7,6 +7,9 @@
   "category": "elevation-blocks",
   "description": "List Item: Heading + Description.",
   "textdomain": "elevation",
+  "ancestor": [
+    "elevation/interior-components--lists-heading-subheading-in-2-columns"
+  ],
   "supports": {
     "html": true,
     "align": false,
