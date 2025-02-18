@@ -23,6 +23,7 @@ export const template = [
 						{
 							showPosition: true,
 							inheritClassName: 'float-right media',
+							saveWidthAndHeight: true,
 						},
 					],
 					[

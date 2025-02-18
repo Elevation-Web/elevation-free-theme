@@ -39,6 +39,7 @@ const Edit = (props) => {
 		showPosition,
 		inheritClassName,
 		toogleSelection,
+		saveWidthAndHeight,
 	} = attributes;
 
 	const newInheritClassName =
@@ -61,10 +62,17 @@ const Edit = (props) => {
 				url,
 				id,
 				caption,
-				styledWidth: width,
-				styledHeight: height,
 			},
 		});
+		if (saveWidthAndHeight) {
+			setAttributes({
+				img: {
+					...img,
+					styledWidth: width,
+					styledHeight: height,
+				},
+			});
+		}
 	};
 
 	const [visible, setVisible] = useState(false);
