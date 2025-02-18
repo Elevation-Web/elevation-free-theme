@@ -30,6 +30,7 @@ const Edit = (props) => {
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
 		template: TEMPLATE,
 		templateInsertUpdatesSelection: true,
+		templateLock: false,
 		allowedBlocks: allowedBlocks,
 		orientation: 'horizontal',
 	});
