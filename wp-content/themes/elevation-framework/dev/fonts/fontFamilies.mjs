@@ -31,7 +31,7 @@ export const fontFamilies = () => {
 			},
 			{
 				fontWeight: '500',
-				src: ['file:./src/assets/fonts/Inter-Meidum.woff2'],
+				src: ['file:./src/assets/fonts/Inter-Medium.woff2'],
 			},
 		],
 		true
