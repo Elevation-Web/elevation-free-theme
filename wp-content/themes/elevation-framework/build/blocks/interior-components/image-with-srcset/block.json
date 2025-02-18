@@ -60,6 +60,10 @@
     "toogleSelection": {
       "type": "boolean",
       "default": false
+    },
+    "saveWidthAndHeight": {
+      "type": "boolean",
+      "default": false
     }
   },
   "usesContext": [
