@@ -124,6 +124,5 @@ export const TEMPLATE = [
 
 export const allowedBlocks = [
 	'core/heading',
-	'core/paragraph',
 	'elevation/interior-components--buttons',
 ];
