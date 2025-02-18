@@ -17,6 +17,10 @@ export const TEMPLATE = [
 				{
 					className: '',
 					type: 'type-row',
+					allowedBlocks: [
+						'core/heading',
+						'elevation/interior-components--buttons',
+					],
 				},
 				[
 					[
