@@ -1,14 +1,14 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "title": "List Item: Heading + Subheading.",
-  "name": "elevation/interior-components--lists-heading-subheading-in-2-columns-item",
+  "title": "Text Block, Layout: List w/Button Item.",
+  "name": "elevation/interior-components--text-block-list-w-button-item",
   "version": "1.0.0",
   "category": "elevation-blocks",
-  "description": "List Item: Heading + Description.",
+  "description": "Text Block, Layout: List w/Button Item.",
   "textdomain": "elevation",
   "ancestor": [
-    "elevation/interior-components--lists-heading-subheading-in-2-columns"
+    "elevation/interior-components--text-block-heading-subheading-list"
   ],
   "supports": {
     "html": true,
@@ -25,6 +25,12 @@
       "margin": [
         "top",
         "bottom"
+      ],
+      "padding": [
+        "top",
+        "right",
+        "bottom",
+        "left"
       ]
     }
   },

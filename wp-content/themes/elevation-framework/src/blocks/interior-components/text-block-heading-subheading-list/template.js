@@ -48,6 +48,9 @@ export const template = [
 				{
 					className:
 						'text-block-heading-subheading-list__list-wrapper',
+					allowedBlocks: [
+						'elevation/interior-components--text-block-heading-subheading-list-item',
+					],
 				},
 				[
 					[
