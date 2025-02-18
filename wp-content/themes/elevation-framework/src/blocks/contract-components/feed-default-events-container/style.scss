@@ -41,7 +41,7 @@
 				position: absolute;
 				width: 100%;
 				padding: 0;
-				bottom: 0;
+				bottom: -50px;
 
 				@include media-breakpoint-up(lg) {
 					top: 190px;
