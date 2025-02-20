@@ -32,7 +32,6 @@ $block: ".impact-default-with-icons";
 	&-item {
 		opacity: 1;
 		position: relative;
-		border-radius: 2px;
 		overflow: hidden;
 		width: 100%;
 		border: none;
@@ -43,7 +42,7 @@ $block: ".impact-default-with-icons";
 		padding-bottom: 15px;
 
 		&:not(:last-of-type) {
-			border-bottom: 1px solid $ui-border-line-divider-on-dark;
+			border-bottom: 2px solid $ui-border-line-divider-on-dark;
 		}
 
 		&:not(:first-of-type) {

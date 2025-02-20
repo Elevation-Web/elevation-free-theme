@@ -4,11 +4,19 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 
 	&::before {
 		content: "";
 		display: block;
 		opacity: 0.2;
+		width: 100%;
+		text-align: center;
+	}
+
+	&.position-top,
+	&.position-bottom {
+		align-items: center;
 	}
 
 	&__extra-small {

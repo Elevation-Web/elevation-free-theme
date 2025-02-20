@@ -4,8 +4,9 @@
 
 .image-carousel-horizontal-centered {
 	.wp-block-elevation-interior-components--swiper {
-		overflow-x: hidden;
 		max-width: 100%;
+		width: 100%;
+		left: unset;
 		display: flex;
 		flex-direction: column;
 		padding-top: 40px;

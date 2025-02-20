@@ -44,7 +44,6 @@ $block: ".impact-default";
 	&-item {
 		opacity: 1;
 		position: relative;
-		border-radius: 2px;
 		overflow: hidden;
 		width: 100%;
 		border: none;
@@ -55,8 +54,14 @@ $block: ".impact-default";
 		padding-bottom: 15px;
 
 		&:not(:last-of-type) {
-			border-bottom: 1px solid $ui-border-line-divider-dots-divider;
-			border-bottom-style: dashed;
+			// Convert SASS color to a valid SVG string
+			$escaped-circle-color: "%23" +
+				str-slice(#{$ui-border-line-divider-dots-divider}, 2);
+
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Ccircle cx='5' cy='1' r='1' fill='#{$escaped-circle-color}' /%3E%3C/svg%3E");
+			background-repeat: repeat-x;
+			background-position: bottom;
+			background-size: 10px 2px;
 		}
 
 		&:not(:first-of-type) {
