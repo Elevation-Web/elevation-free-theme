@@ -19,12 +19,7 @@ const save = (props) => {
 	});
 
 	return (
-		<div
-			data-block-id={blockId}
-			data-block-js="false"
-			id={anchor || id}
-			{...blockProps}
-		>
+		<div id={anchor || id} {...blockProps}>
 			<div className={`${name}__header`}>
 				<h2 className={`${name}__value has-${title_size}-font-size`}>
 					{remove_comma ? (

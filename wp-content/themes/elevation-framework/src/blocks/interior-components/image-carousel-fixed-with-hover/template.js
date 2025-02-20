@@ -46,6 +46,7 @@ export const TEMPLATE = [
 					slidesPerViewLg: 'auto',
 					slidesPerViewXl: 'auto',
 					slidesPerViewXxl: 'auto',
+					centeredSlides: true,
 					allowedBlocks: [
 						'elevation/interior-components--image-carousel',
 					],

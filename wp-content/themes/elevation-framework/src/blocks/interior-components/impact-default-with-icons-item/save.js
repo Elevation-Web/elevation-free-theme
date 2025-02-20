@@ -20,12 +20,7 @@ const save = (props) => {
 	});
 
 	return (
-		<div
-			data-block-id={blockId}
-			data-block-js="false"
-			id={anchor || id}
-			{...blockProps}
-		>
+		<div id={anchor || id} {...blockProps}>
 			<div className={`${name}__icon-container no-hover`}>
 				<ImageWithFocalPoint
 					img={icon}

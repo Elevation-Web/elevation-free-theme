@@ -160,8 +160,8 @@ export default function initSwiper(swiperSelector, childSelector = null) {
 				} = getSwiperParams(
 					carousel.getAttribute('data-swiper-options')
 				);
-				// const slides = carousel.querySelectorAll('.swiper-slide');
-				// const numberOfSlides = slides.length;
+				const slides = carousel.querySelectorAll('.swiper-slide');
+				const numberOfSlides = slides.length;
 				// let rewind = false;
 
 				// if (
@@ -178,7 +178,7 @@ export default function initSwiper(swiperSelector, childSelector = null) {
 				const swiperOptions = {
 					// Optional parameters
 					// rewind,
-					loop: true,
+					// loop: true,
 					centeredSlides,
 					grabCursor,
 					spaceBetween,
@@ -217,6 +217,7 @@ export default function initSwiper(swiperSelector, childSelector = null) {
 							if (this.isLocked) {
 								toggleControls(this, 'hide');
 							}
+							this.params.loop = true;
 						},
 						lock: function () {
 							toggleControls(this, 'hide');

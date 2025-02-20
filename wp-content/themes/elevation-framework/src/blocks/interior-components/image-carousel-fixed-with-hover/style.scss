@@ -6,7 +6,16 @@
 	opacity: 1;
 
 	.swiper {
-		overflow: visible;
+		@include media-breakpoint-up(md) {
+			width: 100vw;
+			left: calc(-50vw + 50%);
+		}
+
+		&-horizontal {
+			@include media-breakpoint-up(xl) {
+				padding-bottom: 40px;
+			}
+		}
 
 		&__container {
 			position: relative;
@@ -41,6 +50,13 @@
 				.swiper-button-next,
 				.swiper-button-prev {
 					position: initial;
+					width: 40px;
+					height: 40px;
+
+					@include media-breakpoint-up(lg) {
+						width: 76px;
+						height: 76px;
+					}
 
 					&::after {
 						content: "";
@@ -65,10 +81,11 @@
 			}
 
 			&-controls {
-				display: flex;
+				display: none;
 				height: 10px;
 
 				@include media-breakpoint-up(xl) {
+					display: flex;
 					width: 100vw;
 					position: absolute;
 					bottom: 0;
@@ -122,7 +139,7 @@
 			&.swiper-slide-active {
 				.media {
 					&-image {
-						filter: none;
+						filter: grayscale(0);
 					}
 
 					&-caption {
@@ -151,6 +168,7 @@
 						height: 500px;
 						width: auto;
 						filter: grayscale(1);
+						transition: filter 0.3s;
 					}
 				}
 

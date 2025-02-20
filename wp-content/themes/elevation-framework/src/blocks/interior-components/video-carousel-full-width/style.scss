@@ -46,6 +46,13 @@ $swal2-width: 100%;
 				.swiper-button-prev {
 					position: initial;
 					margin-top: 0px;
+					width: 40px;
+					height: 40px;
+
+					@include media-breakpoint-up(lg) {
+						width: 76px;
+						height: 76px;
+					}
 
 					&::after {
 						content: "";
