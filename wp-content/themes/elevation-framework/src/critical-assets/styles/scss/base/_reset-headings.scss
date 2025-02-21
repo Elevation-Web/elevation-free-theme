@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $headingsMarginBottom: (
 	"h1": 14px,
 	"h2": 14px,
@@ -24,14 +26,14 @@ $line-height: generate-css($headingsLineHeight, "line-height");
 // Output the generated CSS
 @at-root {
 	@each $rule in $margin-bottom {
-		#{map-get($rule, selector)} {
-			#{map-get($rule, property)}: #{map-get($rule, value)};
+		#{map.get($rule, selector)} {
+			#{map.get($rule, property)}: #{map.get($rule, value)};
 		}
 	}
 
 	@each $rule in $line-height {
-		#{map-get($rule, selector)} {
-			#{map-get($rule, property)}: #{map-get($rule, value)};
+		#{map.get($rule, selector)} {
+			#{map.get($rule, property)}: #{map.get($rule, value)};
 		}
 	}
 }

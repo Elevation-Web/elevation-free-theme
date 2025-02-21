@@ -10,8 +10,7 @@
  * @package elevation
  */
 
-use ElevationFramework\Lib\Admin\Menu\WalkerNav;
-use ElevationFramework\Lib\BlockLibrary\Helpers;
+use ElevationFramework\Lib\Admin\Menu\WalkerNavMenuRegular;
 use ElevationFramework\Lib\Frontend\Settings\Helpers as SettingsHelpers;
 
 ?>
@@ -25,38 +24,41 @@ use ElevationFramework\Lib\Frontend\Settings\Helpers as SettingsHelpers;
 	<?php wp_head(); ?>
 </head>
 
-<?php
-$nav_class = '';
-$header_class = '';
-$menu_type = '';
-$logo = get_field('header_logo_dark', 'option');
-if (get_field('header_mega_menu', 'option')) {
-	$menu_type = get_field('choose_type_menu', 'option');
-	$mega_menu_on = ' mega-menu-active ' . $menu_type;
-} else {
-	$mega_menu_on = ' ';
-}
+<body <?php body_class(); ?>>
 
-
-$header_transparent = get_field('header_transparent', get_the_ID());
-$body_classes = $header_transparent == true || (isset($args['header_type']) && $args['header_type'] === 'transparent') ? ['header__transparent'] : '';
-?>
-
-<body <?php body_class($body_classes); ?>>
 	<?php SettingsHelpers::body_open(); ?>
+
 	<div id="page" class="site">
 		<a class="skiplink cta cta__blue visually-hidden-focusable" href="#primary"><?php esc_html_e('Skip to content', 'elevation'); ?></a>
-		<header class="header<?= esc_attr($header_class); ?>">
+		<header class="header">
 			<div class="container">
-				<?php
-				wp_nav_menu([
-					'theme_location'  => 'menu-1',
-					'container' => false,
-					'fallback_cb' => '__return_false',
-					'items_wrap' => '<ul id="%1$s" class="nav %2$s" aria-label="Menu">%3$s</ul>',
-					'depth' => 1,
-					'walker' => WalkerNav::instance()
-				]);
-				?>
+				<div class="header__branding">
+					<?php
+					if (is_front_page()) :
+					?>
+						<h1 class="site-title">
+							<?php the_custom_logo(); ?>
+							<span class="visually-hidden"> <?php bloginfo('name'); ?></span>
+						</h1>
+					<?php else : ?>
+						<p class="site-title visually-hidden">
+							<?php the_custom_logo(); ?>
+							<span class="visually-hidden"> <?php bloginfo('name'); ?></span>
+						</p>
+					<?php endif; ?>
+				</div>
+				<nav class="header__nav">
+					<button class="header__toggle-menu" aria-expanded="false" aria-label="<?php echo __('Open Menu', 'elevation'); ?>"></button>
+					<?php
+					wp_nav_menu([
+						'theme_location'  => 'menu-1',
+						'container' => false,
+						'fallback_cb' => '__return_false',
+						'items_wrap' => '<ul id="%1$s" class="nav %2$s" aria-label="Menu">%3$s</ul>',
+						'depth' => 3,
+						'walker' => WalkerNavMenuRegular::instance(),
+					]);
+					?>
+				</nav>
 			</div>
 		</header>

@@ -103,13 +103,13 @@ div[class*="row-gap-"] {
 
 // Body login
 
-body.admin-bar .header {
-	top: 32px;
+// body.admin-bar .header {
+// 	top: 32px;
 
-	@media (max-width: 782px) {
-		top: 46px;
-	}
-}
+// 	@media (max-width: 782px) {
+// 		top: 46px;
+// 	}
+// }
 
 body.logged-in .user-logged {
 	display: none !important;
