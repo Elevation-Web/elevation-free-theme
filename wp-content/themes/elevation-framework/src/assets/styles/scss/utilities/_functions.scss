@@ -1,6 +1,8 @@
 @use "sass:math";
 @use "sass:string";
 @use "sass:meta";
+@use "sass:list";
+
 // Remove the unit of a length
 @function strip-unit($number) {
 	@if meta.type-of($number) == "number" and not math.is-unitless($number) {
@@ -34,7 +36,7 @@
 	// Iterate over each selector in the map
 	@each $selector, $value in $selectors-map {
 		// Append the generated CSS rule to the result list
-		$result: append(
+		$result: list.append(
 			$result,
 			(
 				selector: $selector,

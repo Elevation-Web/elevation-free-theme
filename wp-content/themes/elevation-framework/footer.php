@@ -11,7 +11,6 @@
  */
 
 use ElevationFramework\Lib\BlockLibrary\Helpers;
-use ElevationFramework\Lib\Admin\Menu\WalkerNav;
 
 $logo = get_field('footer_logo', 'option');
 $socials = get_field('footer_social_network', 'option');
@@ -36,7 +35,8 @@ $ein = get_field('footer_ein', 'option');
 
 						<div class="footer__logo">
 							<a href="<?php echo esc_url(home_url('/')); ?>">
-								<?php Helpers::global_image($logo, true, 'footer__media', null, false); ?>
+								<?php $footer_logo = get_theme_mod('footer_logo'); ?>
+								<?php Helpers::global_image($footer_logo, true, 'footer__media', null, false); ?>
 								<span class="visually-hidden"><?php bloginfo('name'); ?></span>
 							</a>
 						</div>

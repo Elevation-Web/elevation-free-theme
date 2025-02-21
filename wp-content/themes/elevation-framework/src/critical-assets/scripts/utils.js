@@ -15,35 +15,3 @@ export const addJS = (path, name = 'index') => {
 
 // Set the base path for the CSS and JS files
 export const base = `${window.location.origin}/wp-content/themes/elevation-framework`;
-
-export const blocksWithNoScript = [
-	'accordion',
-	'buttons',
-	'callout',
-	'cards',
-	'column',
-	'columns',
-	'directory',
-	'directory-map',
-	'directory-post',
-	'feed-directory',
-	'feed-event',
-	'feed-post',
-	'image-carousel',
-	'related-posts',
-	'single-page-container',
-	'single-page-container-column',
-	'sponsors',
-	'statistics',
-	'team-bios',
-	'template-cards',
-	'template-contact-box',
-	'template-media-contacts',
-	'template-presskit',
-	'template-sponsors',
-	'testimonials',
-	'text-photo',
-	'timeline-horizontal',
-	'timeline-vertical',
-	'video',
-];

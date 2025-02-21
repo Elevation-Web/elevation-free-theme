@@ -10,6 +10,7 @@ class Customizer
     {
         add_action('customize_register', [$this, 'customize_register']);
         add_action('customize_preview_init', [$this, 'customize_preview_js']);
+        add_action('customize_register', [$this, 'elevation_customize_register']);
     }
 
     function customize_register($wp_customize)
@@ -49,6 +50,28 @@ class Customizer
     function customize_preview_js()
     {
         wp_enqueue_script('elevation-customizer', ELEVATION_THEME_URL . 'aseets/scripts/components/customizer.js', array('customize-preview'), ELEVATION_VERSION, true);
+    }
+
+    function elevation_customize_register($wp_customize)
+    {
+        // Add a section for the footer logo
+        $wp_customize->add_section('footer_logo_section', array(
+            'title'    => __('Footer Logo', 'mytheme'),
+            'priority' => 30,
+        ));
+
+        // Add setting for the footer logo
+        $wp_customize->add_setting('footer_logo', array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+
+        // Add control for the footer logo
+        $wp_customize->add_control(new \WP_Customize_Image_Control($wp_customize, 'footer_logo', array(
+            'label'    => __('Footer Logo', 'mytheme'),
+            'section'  => 'footer_logo_section',
+            'settings' => 'footer_logo',
+        )));
     }
 
 
