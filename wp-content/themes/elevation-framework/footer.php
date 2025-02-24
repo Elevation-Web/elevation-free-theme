@@ -126,31 +126,9 @@ $ein = get_field('footer_ein', 'option');
 			<div class="footer__bottom">
 				<div class="footer__bottom--left">
 					<span class="footer__copyrigth">Copyright © <?php echo date("Y"); ?>. <?php bloginfo('name'); ?>.</span>
-					<?php if ($ein) : ?>
-						<span class="footer__ein"><?= esc_html($ein); ?>.</span>
-					<?php endif; ?>
 					<span class="footer__createdby">
-						Nonprofit Website Design by <a href="https://www.elevationweb.org/portfolio/" target="_blank" title="Nonprofit Website Design ELEVATION" rel="noopener noreferrer">Elevation Web</a>
+						<?php echo esc_html__('Nonprofit Website Design by'); ?> <a href="<?php echo esc_url('https://www.elevationweb.org/portfolio/'); ?>" target="_blank" title="<?php echo esc_attr__('Nonprofit Website Design ELEVATION'); ?>" rel="noopener noreferrer"><?php echo esc_html__('Elevation Web'); ?></a>
 					</span>
-				</div>
-				<div class="footer__bottom--right">
-					<?php if (have_rows('footer_links', 'option')) : ?>
-						<span class="footer__links">
-							<?php
-							while (have_rows('footer_links', 'option')) : the_row();
-								$footer_links = get_sub_field('link');
-								if ($footer_links) {
-									$footer_link_url = $footer_links['url'];
-									$footer_link_title = $footer_links['title'];
-									$footer_link_target = $footer_links['target'] ? $footer_links['target'] : '_self';
-								}
-							?>
-								<?php if ($footer_links) : ?>
-									<a href="<?php echo esc_url($footer_link_url); ?>" target="<?php echo esc_attr($footer_link_target); ?>" role="button"><?php echo esc_html($footer_link_title); ?></a>
-								<?php endif; ?>
-							<?php endwhile; ?>
-						</span>
-					<?php endif; ?>
 				</div>
 			</div>
 		</div>
