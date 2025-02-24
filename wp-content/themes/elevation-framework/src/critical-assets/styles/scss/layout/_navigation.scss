@@ -48,19 +48,33 @@ $nav: ".nav";
 		@include media-breakpoint-up(lg) {
 			width: auto;
 			flex-direction: row;
+
+			&.menu-item-has-children {
+				& > a {
+					padding-right: px-to-rem(30px);
+				}
+
+				#{$nav}__sub-menu {
+					.menu-item {
+						#{$nav}__sub-menu {
+							top: px-to-rem(-20px);
+						}
+					}
+				}
+			}
 		}
 
 		a {
 			display: block;
 			padding: px-to-rem(20px);
 			text-decoration: none;
-			color: $ui-base-black;
+			color: $ui-foreground-primary-text-headings;
 			flex: 1;
+			font-weight: 500;
 
 			&:hover,
 			&:focus-visible {
-				background-color: $ui-foreground-primary-accent-01;
-				color: $ui-base-white;
+				color: $ui-foreground-secondary-indicator;
 			}
 		}
 	}
@@ -78,23 +92,28 @@ $nav: ".nav";
 		left: unset;
 
 		@include media-breakpoint-up(lg) {
+			position: relative;
 			right: unset;
-			padding: px-to-rem(20px);
-			background-color: transparent;
-			border: none;
+			padding: 0;
+			left: px-to-rem(-20px);
 		}
 
 		&::before {
 			content: "";
-			background-image: url('data:image/svg+xml,<svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.7071 9.20711C14.0976 8.81658 14.0976 8.18342 13.7071 7.79289L7.34315 1.42893C6.95262 1.03841 6.31946 1.03841 5.92893 1.42893C5.53841 1.81946 5.53841 2.45262 5.92893 2.84315L11.5858 8.5L5.92893 14.1569C5.53841 14.5474 5.53841 15.1805 5.92893 15.5711C6.31946 15.9616 6.95262 15.9616 7.34315 15.5711L13.7071 9.20711ZM-8.74228e-08 9.5L13 9.5L13 7.5L8.74228e-08 7.5L-8.74228e-08 9.5Z" fill="%23210044"/></svg>');
-			background-repeat: no-repeat;
-			background-size: 14px 17px;
-			width: px-to-rem(14px);
-			height: px-to-rem(17px);
+			background-color: $ui-foreground-primary-text-headings;
+			mask: url('data:image/svg+xml,<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9L5 5L1 1" stroke="currentColor" stroke-linecap="round"/></svg>')
+				no-repeat center / contain;
+			width: px-to-rem(6px);
+			height: px-to-rem(10px);
+
+			@include media-breakpoint-up(lg) {
+				transform: rotate(90deg);
+			}
 		}
 
 		&[aria-expanded="true"] {
 			&::before {
+				background-color: $ui-foreground-secondary-indicator;
 				transform: rotate(90deg);
 			}
 		}
@@ -109,18 +128,22 @@ $nav: ".nav";
 		transition: opacity 0.3s;
 		position: relative;
 		width: 100%;
+		padding: px-to-rem(20px);
 
 		@include media-breakpoint-up(lg) {
-			min-width: px-to-rem(220px);
-			max-width: px-to-rem(300px);
-			width: auto; /* Adjusts to content */
+			min-width: px-to-rem(245px);
+			max-width: px-to-rem(305px);
+			width: auto;
 			top: 100%;
 			position: absolute;
+
+			&--level-1 {
+				padding: px-to-rem(20px);
+			}
 		}
 
 		.menu-item {
 			width: 100%;
-			border-bottom: $ui-border-line-divider-on-light 1px solid;
 
 			&.menu-item-has-children {
 				position: relative;
@@ -129,7 +152,21 @@ $nav: ".nav";
 					padding-right: calc(54px + 1.5rem);
 
 					@include media-breakpoint-up(lg) {
-						padding-right: 0;
+						padding-right: 3rem;
+					}
+				}
+
+				#{$nav}__button {
+					@include media-breakpoint-up(lg) {
+						position: absolute;
+						right: 1rem;
+						top: 50%;
+						transform: translateY(-50%);
+						left: unset;
+
+						&::before {
+							transform: rotate(0deg);
+						}
 					}
 				}
 			}
@@ -140,7 +177,13 @@ $nav: ".nav";
 
 			a {
 				width: 100%;
-				padding: px-to-rem(12px) px-to-rem(20px);
+				padding: px-to-rem(10px);
+				font-weight: 400;
+
+				&:hover,
+				&:focus-visible {
+					background-color: $ui-background-light-01;
+				}
 			}
 		}
 	}
@@ -153,7 +196,7 @@ $nav: ".nav";
 
 			@include media-breakpoint-up(lg) {
 				&--level-1 {
-					left: 100%;
+					left: calc(100% + px-to-rem(20px));
 					top: 0;
 				}
 			}
@@ -164,7 +207,7 @@ $nav: ".nav";
 		@include media-breakpoint-up(lg) {
 			& #{$nav}__sub-menu--level-1 {
 				left: unset;
-				right: 100%;
+				right: calc(100% + px-to-rem(20px));
 			}
 		}
 	}

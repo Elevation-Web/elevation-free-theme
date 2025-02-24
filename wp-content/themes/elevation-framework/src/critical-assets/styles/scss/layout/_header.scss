@@ -7,6 +7,7 @@
 	width: 100%;
 	z-index: 99999;
 	background-color: $ui-base-white;
+	@include font-heading;
 
 	&__toggle-menu {
 		background-color: $ui-button-primary-color-01;
@@ -48,8 +49,7 @@
 	}
 
 	&__branding {
-		min-width: px-to-rem(100px);
-		max-width: px-to-rem(200px);
+		max-width: px-to-rem(150px);
 		width: auto; /* Adjusts to content */
 
 		.site-title {
