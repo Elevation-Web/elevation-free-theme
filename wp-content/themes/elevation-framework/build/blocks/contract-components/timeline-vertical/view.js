@@ -1,1 +1,0 @@
-(()=>{const e=document.querySelectorAll(".timeline-vertical-year");if(e?.length>0){let t=!1;e.forEach((e=>{const i=e.querySelectorAll(".timeline-vertical-item");t?e.classList.add("timeline-vertical-year__invert-position"):e.classList.remove("timeline-vertical-year__invert-position"),t=i.length%2!=0?!t:t}))}})();

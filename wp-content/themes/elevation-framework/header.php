@@ -48,7 +48,7 @@ use ElevationFramework\Lib\Frontend\Settings\Helpers as SettingsHelpers;
 					<?php endif; ?>
 				</div>
 				<nav class="header__nav">
-					<button class="header__toggle-menu" aria-expanded="false" aria-label="<?php echo __('Open Menu', 'elevation'); ?>"></button>
+					<button class="header__toggle-menu" aria-expanded="false" aria-label="<?php echo esc_attr__('Open Menu', 'elevation'); ?>"></button>
 					<?php
 					wp_nav_menu([
 						'theme_location'  => 'menu-1',

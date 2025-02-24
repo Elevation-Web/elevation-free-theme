@@ -1,1 +1,0 @@
-document.querySelectorAll(".accordion__button").forEach((t=>{t.addEventListener("click",(()=>{t.classList.toggle("active"),t.setAttribute("aria-expanded",t.classList.contains("active"));const e=t.nextElementSibling;e.style.maxHeight?e.style.maxHeight=null:e.style.maxHeight=e.scrollHeight+"px"}))}));

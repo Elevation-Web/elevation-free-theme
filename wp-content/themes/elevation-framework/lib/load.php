@@ -13,11 +13,7 @@ final class Load
         spl_autoload_register([$this, 'autoload']);
         Admin\Load::instance();
         Frontend\Load::instance();
-        if (defined('ACF_PRO') && ACF_PRO) {
-            BlockLibrary\Load::instance();
-            Directory\Load::instance();
-        }
-        Plugins\Load::instance();
+        BlockLibrary\Load::instance();
     }
 
     public function autoload($class_to_load)
