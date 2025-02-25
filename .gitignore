@@ -15,7 +15,7 @@
 !/wp-content/themes/elevation-framework/**/*
 
 # composer vendor folder and files
-/vendor
+/wp-content/themes/elevation-framework/vendor
 composer.lock
 
 # Logs

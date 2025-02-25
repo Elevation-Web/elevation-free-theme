@@ -1,15 +1,20 @@
 <?php
+/**
+ * File Name: helpers.php
+ *
+ * Description: Helper functions for the theme
+ *
+ * @package elevation
+ */
 
 namespace  ElevationFramework\Lib\Frontend\Settings;
 
-class Helpers
+class Class_Helpers
 {
 
     protected static $_instance;
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public static function posted_on()
     {

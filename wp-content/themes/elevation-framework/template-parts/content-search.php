@@ -7,7 +7,7 @@
  *
  * @package elevation
  */
-use ElevationFramework\Lib\Frontend\Settings\Helpers;
+use ElevationFramework\Lib\Frontend\Settings\Class_Helpers;
 
 ?>
 

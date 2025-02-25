@@ -1,8 +1,16 @@
 <?php
+/**
+ * File Name: load.php
+ *
+ * Description: set the instance of the class and register the settings
+ *
+ * @package elevation
+ */
+
 
 namespace  ElevationFramework\Lib\Frontend\Settings;
 
-use ElevationFramework\Lib\Frontend\Settings\Helpers;
+use ElevationFramework\Lib\Frontend\Settings\Class_Helpers as Helpers;
 
 class Load
 {

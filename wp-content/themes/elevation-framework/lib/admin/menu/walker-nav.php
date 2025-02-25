@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * File Name: walker-nav.php
+ *
+ * Description: walker class for the navigation menu
+ *
+ * @package elevation
+ */
+
 namespace ElevationFramework\Lib\Admin\Menu;
 
 class WalkerNavMenuRegular extends \Walker_Nav_Menu
