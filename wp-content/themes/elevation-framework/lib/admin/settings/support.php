@@ -27,10 +27,6 @@ class Support
         add_theme_support('post-thumbnails');
         add_theme_support('custom-logo');
 
-        add_image_size('hd', 1920, 1080);
-        add_image_size('lg', 900, 600);
-        add_image_size('md', 600, 400);
-
         add_theme_support(
             'html5',
             array(
@@ -43,6 +39,10 @@ class Support
                 'script',
             )
         );
+
+        add_theme_support('widgets');
+
+        add_theme_support('responsive-embeds');
 
         add_theme_support('block-templates');
         remove_theme_support('core-block-patterns');

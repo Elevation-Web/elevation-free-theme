@@ -8,7 +8,9 @@ class Load
 
     public function __construct()
     {
+        Helpers::instance();
     }
+
 
     public function is_login()
     {

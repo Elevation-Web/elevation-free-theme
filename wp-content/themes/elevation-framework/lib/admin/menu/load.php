@@ -22,15 +22,6 @@ class Load
         \register_nav_menus(
             array(
                 'menu-1' => esc_html__('Main Menu', 'elevation'),
-                'menu-2' => esc_html__('Sub Menu', 'elevation'),
-                'menu-3' => esc_html__('Footer Menu', 'elevation'),
-                'menu-4' => esc_html__('Portal Menu', 'elevation'),
-                'menu-type-1' => esc_html__('Menu 1 - Default + Main Nav Description', 'elevation'),
-                'menu-type-2' => esc_html__('Menu 2 - Contained + Media', 'elevation'),
-                'menu-type-3' => esc_html__('Menu 3 - All Variants', 'elevation'),
-                'menu-type-4' => esc_html__('Menu 4 - All Variants w/o Main Nav Button', 'elevation'),
-                'menu-type-5' => esc_html__('Menu 5 - All Variants + Icons w/o Main Nav Button', 'elevation'),
-                'menu-type-6' => esc_html__('Menu 6 - All Variants + Icons', 'elevation'),
             )
         );
     }

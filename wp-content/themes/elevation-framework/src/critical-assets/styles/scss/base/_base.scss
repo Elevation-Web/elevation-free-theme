@@ -247,6 +247,9 @@ textarea {
 	font-weight: inherit;
 }
 
+main#primary {
+	min-height: 100vh;
+}
 // :root :where(.is-layout-flow)>*,
 // :root :where(.is-layout-flow)> :last-child {
 // 	margin-block-start: 0px;

@@ -1,1 +1,97 @@
-.text-block-quote{opacity:1;padding-right:34px;position:relative}.text-block-quote__border{border-right-style:solid;border-right-width:3px;bottom:0;height:calc(100% - 35px);right:9px;position:absolute;width:3px;width:21px}.text-block-quote__border svg{margin-bottom:13px;position:absolute;top:-29px;transform:translateX(50%)}.text-block-quote p:last-of-type{margin-bottom:0}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/interior-components/text-block-quote/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.text-block-quote {
+  opacity: 1;
+  position: relative;
+  padding-right: 34px;
+}
+.text-block-quote__border {
+  width: 3px;
+  height: calc(100% - 35px);
+  border-right-width: 3px;
+  border-right-style: solid;
+  position: absolute;
+  width: 21px;
+  right: 9px;
+  bottom: 0;
+}
+.text-block-quote__border svg {
+  margin-bottom: 13px;
+  position: absolute;
+  top: -29px;
+  transform: translateX(50%);
+}
+.text-block-quote p:last-of-type {
+  margin-bottom: 0;
+}

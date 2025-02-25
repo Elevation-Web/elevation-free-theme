@@ -12,6 +12,9 @@
 
 use ElevationFramework\Lib\Admin\Menu\WalkerNavMenuRegular;
 use ElevationFramework\Lib\Frontend\Settings\Helpers as SettingsHelpers;
+use ElevationFramework\Lib\BlockLibrary\Helpers;
+
+$custom_logo = get_theme_mod('custom_logo');
 
 ?>
 <!doctype html>
@@ -33,19 +36,10 @@ use ElevationFramework\Lib\Frontend\Settings\Helpers as SettingsHelpers;
 		<header class="header">
 			<div class="container">
 				<div class="header__branding">
-					<?php
-					if (is_front_page()) :
-					?>
-						<h1 class="site-title">
-							<?php the_custom_logo(); ?>
-							<span class="visually-hidden"> <?php bloginfo('name'); ?></span>
-						</h1>
-					<?php else : ?>
-						<p class="site-title visually-hidden">
-							<?php the_custom_logo(); ?>
-							<span class="visually-hidden"> <?php bloginfo('name'); ?></span>
-						</p>
-					<?php endif; ?>
+					<span class="site-title">
+						<?php Helpers::global_image($custom_logo, true, 'footer__media', null, false); ?>
+						<span class="visually-hidden"> <?php echo bloginfo('name'); ?></span>
+					</span>
 				</div>
 				<nav class="header__nav">
 					<button class="header__toggle-menu" aria-expanded="false" aria-label="<?php echo esc_attr__('Open Menu', 'elevation'); ?>"></button>

@@ -1,1 +1,136 @@
-.custom-container{margin:0 auto;max-width:100%}.custom-container:not(.container .custom-container:not(.container .alignfull .custom-container)){padding:0 1rem}@media(min-width:576px){.custom-container{width:575px}.custom-container:not(.container .custom-container:not(.container .alignfull .custom-container)){padding:0 1.5rem}}@media(min-width:768px){.custom-container{width:768px}}@media(min-width:992px){.custom-container{width:992px}.custom-container--small{width:870px}.custom-container--small:not(.container .custom-container:not(.container .alignfull .custom-container)){padding:0}}@media(min-width:992px)and (max-width:1199.98px){.custom-container{padding:0 .46875rem}}@media(min-width:1200px){.custom-container--medium{width:1095px}.custom-container--medium:not(.container .custom-container:not(.container .alignfull .custom-container)){padding:0}.custom-container--default{width:100%}.custom-container--large{width:1320px}.custom-container--large:not(.container .custom-container:not(.container .alignfull .custom-container)){padding:0}}.wp-block-elevation-custom-container{border:2px solid #210044;min-height:100px;position:relative}
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/interior-components/custom-container/editor.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*
+* Breakpoints
+*/
+/*
+* Header Dimensions
+*/
+/*
+*    Header Properties
+*/
+/* Selector */
+/*
+* Accessibility
+*/
+/*
+* Inputs
+*/
+/*
+* Parapraph <p>
+*/
+/*
+*    Buttons Properties
+*/
+/*
+ * Primary Button
+ */
+/*
+ * Secondary Button
+ */
+/*
+ * Tertiary Button
+ */
+/*
+ * Fourth Button
+ */
+/*400;800*/
+/*500;700*/
+.custom-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+.custom-container:not(.container .custom-container:not(.container .alignfull .custom-container)) {
+  padding: 0 1rem;
+}
+@media (min-width: 576px) {
+  .custom-container {
+    width: 575px;
+  }
+  .custom-container:not(.container .custom-container:not(.container .alignfull .custom-container)) {
+    padding: 0 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .custom-container {
+    width: 768px;
+  }
+}
+@media (min-width: 992px) {
+  .custom-container {
+    width: 992px;
+  }
+  .custom-container--small {
+    width: 870px;
+  }
+  .custom-container--small:not(.container .custom-container:not(.container .alignfull .custom-container)) {
+    padding: 0;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .custom-container {
+    padding: 0 0.46875rem;
+  }
+}
+@media (min-width: 1200px) {
+  .custom-container--medium {
+    width: 1095px;
+  }
+  .custom-container--medium:not(.container .custom-container:not(.container .alignfull .custom-container)) {
+    padding: 0;
+  }
+  .custom-container--default {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .custom-container--large {
+    width: 1320px;
+  }
+  .custom-container--large:not(.container .custom-container:not(.container .alignfull .custom-container)) {
+    padding: 0;
+  }
+}
+
+.wp-block-elevation-custom-container {
+  position: relative;
+  border: 2px solid #210044;
+  min-height: 100px;
+}
+
+/*# sourceMappingURL=index.css.map*/

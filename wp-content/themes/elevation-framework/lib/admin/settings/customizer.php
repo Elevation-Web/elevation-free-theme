@@ -56,7 +56,7 @@ class Customizer
     {
         // Add a section for the footer logo
         $wp_customize->add_section('footer_logo_section', array(
-            'title'    => __('Footer Logo', 'mytheme'),
+            'title'    => __('Footer Logo', 'elevation'),
             'priority' => 30,
         ));
 
@@ -68,7 +68,7 @@ class Customizer
 
         // Add control for the footer logo
         $wp_customize->add_control(new \WP_Customize_Image_Control($wp_customize, 'footer_logo', array(
-            'label'    => __('Footer Logo', 'mytheme'),
+            'label'    => __('Footer Logo', 'elevation'),
             'section'  => 'footer_logo_section',
             'settings' => 'footer_logo',
         )));

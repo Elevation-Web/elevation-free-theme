@@ -13,10 +13,10 @@ use ElevationFramework\Lib\BlockLibrary\Helpers;
 get_header('', [
 	'header_type' => 'transparent'
 ]);
-$title = get_field('four_o_four_heading', 'option');
-$subtitle = get_field('four_o_four_subheading', 'option');
-$description = get_field('four_o_four_description', 'option');
-$link =  get_field('four_o_four_go_back_link', 'option');
+$title = '404';
+$subtitle = 'Nothing found';
+$description = 'It looks like nothing was found at this location. Maybe try one of the links below or a search?';
+$link =  site_url();
 ?>
 
 <main id="primary" class="site-main">
@@ -29,12 +29,7 @@ $link =  get_field('four_o_four_go_back_link', 'option');
 
 			<div class="error-404__content">
 				<p class="body-1"><?= esc_html($description); ?></p>
-				<?php if ($link['link_text'] == '' || empty($link)) : ?>
-					<a href="<?php echo home_url(); ?> " class="cta cta--cta-dark">Back</a>
 
-				<?php else : ?>
-					<?= Helpers::global_link($link); ?>
-				<?php endif; ?>
 			</div><!-- .page-content -->
 		</div>
 	</section><!-- .error-404 -->

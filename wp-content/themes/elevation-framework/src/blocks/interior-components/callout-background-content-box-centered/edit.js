@@ -14,6 +14,7 @@ import { RemoveImageButton, UploadMedia } from '../../components/UploadMedia';
 import { getBlockName } from '../../utils/helpers';
 import { getImageAttributes } from '../../utils/getImageAttributes';
 import { template, allowedBlocks } from './template';
+import { ColorPicker } from '../../components/ColorPicker';
 
 /* Blocks */
 import json from './block.json';
@@ -34,6 +35,7 @@ const Edit = (props) => {
 		imgAlt,
 		style,
 		focalPointDesktop,
+		boxBgColor,
 	} = attributes;
 
 	const blockProps = useBlockProps({
@@ -168,6 +170,13 @@ const Edit = (props) => {
 					/>
 				)}
 			</PanelBody>
+			<PanelBody title={__('Box Background Color')}>
+				<ColorPicker
+					onChange={(color) => setAttributes({ boxBgColor: color })}
+					color={boxBgColor}
+					label="Box Background Color"
+				/>
+			</PanelBody>
 		</InspectorControls>
 	);
 
@@ -187,6 +196,8 @@ const Edit = (props) => {
 		);
 	}
 
+	const boxStyle = boxBgColor ? { backgroundColor: boxBgColor } : {};
+
 	return (
 		<>
 			{controls}
@@ -202,7 +213,7 @@ const Edit = (props) => {
 					focalPointDesktop={focalPointDesktop}
 				/>
 				<div className={`${withContainer}${name}__container`}>
-					<div className={`${name}__wrapper`}>
+					<div className={`${name}__wrapper`} style={boxStyle}>
 						<InnerBlocks
 							template={template}
 							allowedBlocks={allowedBlocks}

@@ -2,8 +2,6 @@
 
 namespace  ElevationFramework\Lib\BlockLibrary;
 
-use ElevationFramework\Lib\BlockLibrary\Controls\ACF;
-
 class Load
 {
     protected static $_instance;
