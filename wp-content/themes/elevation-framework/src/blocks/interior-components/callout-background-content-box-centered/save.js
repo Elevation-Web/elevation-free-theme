@@ -21,6 +21,7 @@ const save = (props) => {
 		imgAlt,
 		style,
 		focalPointDesktop,
+		boxBgColor,
 	} = attributes;
 
 	const blockProps = useBlockProps.save({
@@ -30,6 +31,8 @@ const save = (props) => {
 	const withContainer = blockProps.className.includes('alignfull')
 		? 'container '
 		: '';
+
+	const boxStyle = boxBgColor ? { backgroundColor: boxBgColor } : {};
 
 	return (
 		<div data-block-id={blockId} {...blockProps} {...style}>
@@ -44,7 +47,7 @@ const save = (props) => {
 				focalPointDesktop={focalPointDesktop}
 			/>
 			<div className={`${withContainer}${name}__container`}>
-				<div className={`${name}__wrapper`}>
+				<div className={`${name}__wrapper`} style={boxStyle}>
 					<InnerBlocks.Content />
 				</div>
 			</div>

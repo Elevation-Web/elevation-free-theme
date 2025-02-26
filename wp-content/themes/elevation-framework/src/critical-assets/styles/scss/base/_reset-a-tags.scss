@@ -1,9 +1,9 @@
 #primary {
 	a:not([class*="cta"]):not([class*="page-numbers"]):not(.wp-block-heading) {
-		text-decoration: underline !important;
+		text-decoration: underline;
 
 		&:hover {
-			text-decoration: none !important;
+			text-decoration: none;
 		}
 
 		&:not(.has-link-color a) {

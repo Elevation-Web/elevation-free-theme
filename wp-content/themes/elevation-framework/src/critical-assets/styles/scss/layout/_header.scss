@@ -7,7 +7,12 @@
 	width: 100%;
 	z-index: 99999;
 	background-color: $ui-base-white;
+	padding: 5px 0;
 	@include font-heading;
+
+	@include media-breakpoint-up(lg) {
+		padding: 0;
+	}
 
 	&__toggle-menu {
 		background-color: $ui-button-primary-color-01;
@@ -54,6 +59,8 @@
 
 		.site-title {
 			margin-bottom: 0;
+			display: block;
+			line-height: 1em;
 		}
 	}
 

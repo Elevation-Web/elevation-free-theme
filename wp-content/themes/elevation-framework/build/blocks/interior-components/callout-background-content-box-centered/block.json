@@ -59,6 +59,10 @@
           "y": 0.5
         }
       }
+    },
+    "boxBgColor": {
+      "type": "string",
+      "default": ""
     }
   },
   "example": {

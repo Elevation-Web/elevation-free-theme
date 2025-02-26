@@ -27,11 +27,11 @@ export const fontFamilies = () => {
 		[
 			{
 				fontWeight: '700',
-				src: ['file:./src/assets/fonts/Inter-Bold.woff2'],
+				src: ['file:./assets/fonts/Inter-Bold.woff2'],
 			},
 			{
 				fontWeight: '500',
-				src: ['file:./src/assets/fonts/Inter-Medium.woff2'],
+				src: ['file:./assets/fonts/Inter-Medium.woff2'],
 			},
 		],
 		true
@@ -42,11 +42,11 @@ export const fontFamilies = () => {
 		[
 			{
 				fontWeight: '400',
-				src: ['file:./src/assets/fonts/Inter-Regular.woff2'],
+				src: ['file:./assets/fonts/Inter-Regular.woff2'],
 			},
 			{
 				fontWeight: '700',
-				src: ['file:./src/assets/fonts/Inter-Bold.woff2'],
+				src: ['file:./assets/fonts/Inter-Bold.woff2'],
 			},
 		],
 		false
