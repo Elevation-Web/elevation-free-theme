@@ -10,7 +10,7 @@
 
 namespace  ElevationFramework\Lib\Frontend\Settings;
 
-use ElevationFramework\Lib\Frontend\Settings\Class_Helpers as Helpers;
+use ElevationFramework\Lib\Frontend\Settings\Helpers as Helpers;
 
 class Load
 {

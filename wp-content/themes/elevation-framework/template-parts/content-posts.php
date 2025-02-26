@@ -8,7 +8,7 @@
  * @package elevation
  */
 
-use ElevationFramework\Lib\Frontend\Settings\Class_Helpers;
+use ElevationFramework\Lib\Frontend\Settings\Helpers;
 use ElevationFramework\Lib\BlockLibrary\Helpers as BlockHelpers;
 
 ?>

@@ -11,7 +11,7 @@
  */
 
 use ElevationFramework\Lib\Admin\Menu\WalkerNavMenuRegular;
-use ElevationFramework\Lib\Frontend\Settings\Class_Helpers as SettingsHelpers;
+use ElevationFramework\Lib\Frontend\Settings\Helpers as SettingsHelpers;
 use ElevationFramework\Lib\BlockLibrary\Helpers;
 
 $custom_logo = get_theme_mod('custom_logo');

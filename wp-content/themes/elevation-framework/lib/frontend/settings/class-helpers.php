@@ -9,7 +9,7 @@
 
 namespace  ElevationFramework\Lib\Frontend\Settings;
 
-class Class_Helpers
+class Helpers
 {
 
     protected static $_instance;
@@ -145,28 +145,6 @@ class Class_Helpers
 
 <?php
         endif; // End is_singular().
-    }
-
-    public static function determine_url($link, $anchor, $type)
-    {
-        $urlSrc =
-            ($type == 'internal' || $type == 'internal-anchor') ? $link['internal_link'] : ($type == 'external' ? $link['external_link'] : ($type == 'file' ? $link['file'] : $link['internal_taxonomy']));
-        if ($type == 'internal-taxonomy') {
-            if ($urlSrc) {
-                $urlSrc = get_term_link($urlSrc);
-            } else {
-                $urlSrc = '';
-            }
-        }
-        if ($anchor != '') {
-            $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-            if ($urlSrc == $actual_link) {
-                $urlSrc = '';
-            } else {
-                $urlSrc = rtrim($urlSrc, '/');
-            }
-        }
-        return $urlSrc;
     }
 
     public static function body_open()

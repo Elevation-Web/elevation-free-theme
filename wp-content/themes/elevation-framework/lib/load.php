@@ -18,15 +18,13 @@ final class Load
 
     public function autoload($class_to_load)
     {
-
         if (0 !== strpos($class_to_load, __NAMESPACE__)) {
             return;
         }
-
-        if (!class_exists($class_to_load)) {
-
+           
+        if (!class_exists($class_to_load)) {          
             $class_file = $this->class_file($class_to_load);
-
+            
             if (is_readable($class_file)) {
                 include_once($class_file);
             } else {
@@ -41,7 +39,17 @@ final class Load
     public static function class_file($class_name)
     {
         $class_name = str_replace(__NAMESPACE__, '', $class_name);
-        $filename = strtolower(preg_replace(['/([a-z])([A-Z])/', '/_/', '/\\\/'], ['$1-$2', '-', DIRECTORY_SEPARATOR], $class_name));
+        // First, modify the class name with preg_replace
+        $class_name = strtolower(preg_replace(['/([a-z])([A-Z])/', '/_/', '/\\\/'], ['$1-$2', '-', DIRECTORY_SEPARATOR], $class_name));
+
+        // Replace backslashes (if on Windows or similar) to forward slashes for uniformity
+        $class_name = str_replace('\\', '/', $class_name);
+
+        // Extract the directory path and the class name
+        $path_parts = pathinfo($class_name);
+
+        // Add 'class-' prefix only to the file name
+        $filename = $path_parts['dirname'] . '/' . 'class-' . $path_parts['basename'];
 
         if (strpos($filename, 'build') !== false) {
             return ELEVATION_THEME_DIR . $filename . '.php';
