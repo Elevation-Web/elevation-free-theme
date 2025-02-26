@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The main template file
  *
@@ -17,7 +16,7 @@ get_header();
 
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="site-main container main-index">
 	<?php if ( have_posts() ) : ?>
 
 		<?php
@@ -48,5 +47,4 @@ get_header();
 </main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -239,7 +239,7 @@
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"fontDisplay": "swap",
-							"src": ["file:./src/assets/fonts/Inter-Bold.woff2"]
+							"src": ["file:./assets/fonts/Inter-Bold.woff2"]
 						},
 						{
 							"fontFamily": "Heading Font",
@@ -247,9 +247,7 @@
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"fontDisplay": "swap",
-							"src": [
-								"file:./src/assets/fonts/Inter-Medium.woff2"
-							]
+							"src": ["file:./assets/fonts/Inter-Medium.woff2"]
 						}
 					]
 				},
@@ -264,9 +262,7 @@
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"fontDisplay": "swap",
-							"src": [
-								"file:./src/assets/fonts/Inter-Regular.woff2"
-							]
+							"src": ["file:./assets/fonts/Inter-Regular.woff2"]
 						},
 						{
 							"fontFamily": "Body Font",
@@ -274,7 +270,7 @@
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"fontDisplay": "swap",
-							"src": ["file:./src/assets/fonts/Inter-Bold.woff2"]
+							"src": ["file:./assets/fonts/Inter-Bold.woff2"]
 						}
 					]
 				}

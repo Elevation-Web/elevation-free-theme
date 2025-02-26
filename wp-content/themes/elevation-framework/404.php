@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The template for displaying 404 pages (not found)
  *
@@ -16,17 +15,17 @@ get_header(
 		'header_type' => 'transparent',
 	)
 );
-$title       = '404';
+$title_404   = '404';
 $subtitle    = 'Nothing found';
 $description = 'It looks like nothing was found at this location. Maybe try one of the links below or a search?';
-$link        = site_url();
+$link_404    = site_url();
 ?>
 
 <main id="primary" class="site-main">
 	<section class="error-404 not-found">
 		<div class="container">
 			<header class="error-404__header">
-				<h1 class="error-404__title"><?php echo esc_html( $title ); ?></h1>
+				<h1 class="error-404__title"><?php echo esc_html( $title_404 ); ?></h1>
 				<h2 class="error-404__subtitle h3"><?php echo esc_html( $subtitle ); ?></h1>
 			</header><!-- .page-header -->
 

@@ -1,85 +1,124 @@
 <?php
+/**
+ * File Name: class-customizer.php
+ *
+ * Description: This file is used to add customizer settings.
+ *
+ * @package elevation
+ */
 
-namespace  ElevationFramework\Lib\Admin\Settings;
+namespace ElevationFramework\Lib\Admin\Settings;
 
-class Customizer
-{
-    protected static $_instance;
+/**
+ * Customizer class
+ */
+class Customizer {
 
-    public function __construct()
-    {
-        add_action('customize_register', [$this, 'customize_register']);
-        add_action('customize_preview_init', [$this, 'customize_preview_js']);
-        add_action('customize_register', [$this, 'elevation_customize_register']);
-    }
+	/**
+	 * Instance of the class
+	 *
+	 * @var object
+	 */
+	protected static $instance;
 
-    function customize_register($wp_customize)
-    {
-        $wp_customize->get_setting('blogname')->transport         = 'postMessage';
-        $wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
-        $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		add_action( 'customize_register', array( $this, 'customize_register' ) );
+		add_action( 'customize_register', array( $this, 'elevation_customize_register' ) );
+	}
 
-        if (isset($wp_customize->selective_refresh)) {
-            $wp_customize->selective_refresh->add_partial(
-                'blogname',
-                array(
-                    'selector'        => '.site-title a',
-                    'render_callback' => [$this, 'customize_partial_blogname'],
-                )
-            );
-            $wp_customize->selective_refresh->add_partial(
-                'blogdescription',
-                array(
-                    'selector'        => '.site-description',
-                    'render_callback' => [$this, 'customize_partial_blogdescription'],
-                )
-            );
-        }
-    }
+	/**
+	 * Register customizer settings
+	 *
+	 * @param object $wp_customize WP_Customize_Manager.
+	 */
+	public function customize_register( $wp_customize ) {
+		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-    function customize_partial_blogname()
-    {
-        bloginfo('name');
-    }
+		if ( isset( $wp_customize->selective_refresh ) ) {
+			$wp_customize->selective_refresh->add_partial(
+				'blogname',
+				array(
+					'selector'        => '.site-title a',
+					'render_callback' => array( $this, 'customize_partial_blogname' ),
+				)
+			);
+			$wp_customize->selective_refresh->add_partial(
+				'blogdescription',
+				array(
+					'selector'        => '.site-description',
+					'render_callback' => array( $this, 'customize_partial_blogdescription' ),
+				)
+			);
+		}
+	}
 
-    function customize_partial_blogdescription()
-    {
-        bloginfo('description');
-    }
+	/**
+	 * Render the site title for the selective refresh partial.
+	 */
+	public function customize_partial_blogname() {
+		bloginfo( 'name' );
+	}
 
-    function customize_preview_js()
-    {
-        wp_enqueue_script('elevation-customizer', ELEVATION_THEME_URL . 'aseets/scripts/components/customizer.js', array('customize-preview'), ELEVATION_VERSION, true);
-    }
+	/**
+	 * Render the site tagline for the selective refresh partial.
+	 */
+	private function customize_partial_blogdescription() {
+		bloginfo( 'description' );
+	}
 
-    function elevation_customize_register($wp_customize)
-    {
-        // Add a section for the footer logo
-        $wp_customize->add_section('footer_logo_section', array(
-            'title'    => __('Footer Logo', 'elevation'),
-            'priority' => 30,
-        ));
+	/**
+	 * Register customizer footer logo settings
+	 *
+	 * @param object $wp_customize WP_Customize_Manager.
+	 */
+	private function elevation_customize_register( $wp_customize ) {
+		// Add a section for the footer logo.
+		$wp_customize->add_section(
+			'footer_logo_section',
+			array(
+				'title'    => __( 'Footer Logo', 'elevation' ),
+				'priority' => 30,
+			)
+		);
 
-        // Add setting for the footer logo
-        $wp_customize->add_setting('footer_logo', array(
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'esc_url_raw',
-        ));
+		// Add setting for the footer logo.
+		$wp_customize->add_setting(
+			'footer_logo',
+			array(
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'esc_url_raw',
+			)
+		);
 
-        // Add control for the footer logo
-        $wp_customize->add_control(new \WP_Customize_Image_Control($wp_customize, 'footer_logo', array(
-            'label'    => __('Footer Logo', 'elevation'),
-            'section'  => 'footer_logo_section',
-            'settings' => 'footer_logo',
-        )));
-    }
+		// Add control for the footer logo.
+		$wp_customize->add_control(
+			new \WP_Customize_Image_Control(
+				$wp_customize,
+				'footer_logo',
+				array(
+					'label'    => __( 'Footer Logo', 'elevation' ),
+					'section'  => 'footer_logo_section',
+					'settings' => 'footer_logo',
+				)
+			)
+		);
+	}
 
 
-    public static function instance()
-    {
-        if (is_null(self::$_instance)) {
-            self::$_instance = new self();
-        }
-        return self::$_instance;
-    }
+	/**
+	 * Get the instance of the class
+	 *
+	 * @return object
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
 }

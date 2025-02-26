@@ -254,3 +254,13 @@ main#primary {
 // :root :where(.is-layout-flow)> :last-child {
 // 	margin-block-start: 0px;
 // }
+
+.wp-block-quote {
+	padding: 1rem;
+	background-color: $ui-background-light-01;
+	margin-bottom: 20px;
+
+	@include media-breakpoint-up(md) {
+		padding: 50px;
+	}
+}

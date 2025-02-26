@@ -1,32 +1,46 @@
 <?php
 /**
- * File Name: load.php
+ * File Name: class-load.php
  *
  * Description: set the instance of the class and register the settings
  *
  * @package elevation
  */
 
+namespace ElevationFramework\Lib\Frontend\Settings;
 
-namespace  ElevationFramework\Lib\Frontend\Settings;
+use ElevationFramework\Lib\Frontend\Settings\Helpers;
 
-use ElevationFramework\Lib\Frontend\Settings\Helpers as Helpers;
+/**
+ * Class Load
+ *
+ * @package ElevationFramework\Lib\Frontend\Settings
+ */
+class Load {
 
-class Load
-{
+	/**
+	 * Instance of the class
+	 *
+	 * @var object
+	 */
+	protected static $instance;
 
-    protected static $_instance;
+	/**
+	 * Load constructor.
+	 */
+	public function __construct() {
+		Helpers::instance();
+	}
 
-    public function __construct()
-    {
-        Helpers::instance();
-    }
-
-    public static function instance()
-    {
-        if (is_null(self::$_instance)) {
-            self::$_instance = new self();
-        }
-        return self::$_instance;
-    }
+	/**
+	 * Get the instance of the class
+	 *
+	 * @return object
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
 }

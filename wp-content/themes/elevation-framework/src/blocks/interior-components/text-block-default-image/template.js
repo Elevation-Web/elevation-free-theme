@@ -23,7 +23,7 @@ export const template = [
 						'elevation/interior-components--image-with-srcset',
 						{
 							img: {
-								url: '/wp-content/themes/elevation-framework/src/blocks/interior-components/text-block-default-image/images/default.webp',
+								url: '/wp-content/themes/elevation-framework/assets/blocks/interior-components/text-block-default-image/images/default.webp',
 							},
 						},
 					],

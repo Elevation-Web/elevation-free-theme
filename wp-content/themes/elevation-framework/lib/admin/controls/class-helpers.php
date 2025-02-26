@@ -1,137 +1,200 @@
 <?php
+/**
+ * File Name: class-helpers.php
+ *
+ * Description: This file contains import demo content functionality.
+ *
+ * @package elevation
+ */
 
 namespace ElevationFramework\Lib\Admin\Controls;
 
-class Helpers
-{
-    protected static $_instance;
+/**
+ * Class Helpers
+ */
+class Helpers {
 
-    public function __construct()
-    {
-        add_action('admin_menu', [$this, 'elevation_import_admin_menu']);
-        add_action('widgets_init', [$this, 'elevation_widgets_init']);
-    }
+	/**
+	 * Instance of Helpers
+	 *
+	 * @var Helpers
+	 */
+	protected static $instance;
 
-    public function elevation_import_page_html()
-    {
-        if (!current_user_can('manage_options')) {
-            return;
-        }
+	/**
+	 * Constructor
+	 *
+	 * @return void
+	 */
+	public function __construct() {
+		add_action( 'admin_menu', array( $this, 'elevation_import_admin_menu' ) );
+		add_action( 'widgets_init', array( $this, 'elevation_widgets_init' ) );
+	}
 
-        // Handle import action
-        if (isset($_POST['import_demo_content'])) {
-            $this->elevation_import_demo_pages();
-            $this->add_default_widgets_to_sidebars();
-            $this->set_custom_image();
-            $this->elevation_create_custom_menu();
+	/**
+	 * Import demo content page html
+	 *
+	 * @return html
+	 */
+	public function elevation_import_page_html() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
 
-            echo '<div class="updated"><p>Demo pages imported successfully!</p></div>';
-        }
+		// Handle import action.
+		if ( isset( $_POST['import_demo_content'] ) ) {
+			// Unslash the data before verification.
+			$import_demo_nonce = isset( $_POST['import_demo_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['import_demo_nonce'] ) ) : '';
 
-?>
-        <div class="wrap">
-            <h1><?php echo esc_html__('Import Elevation Demo Content'); ?></h1>
-            <p><?php echo esc_html__('Click the button below to import default pages for your theme.'); ?></p>
-            <form method="post">
-                <input type="submit" name="import_demo_content" class="button button-primary" value="<?php echo esc_attr__('Import Pages'); ?>">
-            </form>
-        </div>
-<?php
-    }
+			// Verify the nonce after unslashing.
+			if ( ! wp_verify_nonce( $import_demo_nonce, 'import_demo_nonce_action' ) ) {
+				wp_die( esc_html__( 'Nonce verification failed', 'elevation' ) );
+			}
 
-    public function elevation_import_admin_menu()
-    {
-        add_management_page(
-            'Import Elevation Demo Content', // Page title
-            'Import Elevation Demo Content',      // Menu title
-            'manage_options',      // Capability
-            'elevation-import',      // Menu slug
-            [$this, 'elevation_import_page_html'], // Callback function
-        );
-    }
+			$this->elevation_import_demo_pages();
+			$this->add_default_widgets_to_sidebars();
+			$this->set_custom_image();
+			$this->elevation_create_custom_menu();
 
-    public function elevation_import_demo_pages()
-    {
+			echo '<div class="updated"><p>Demo pages imported successfully!</p></div>';
+		}
 
-        $image_paths = [
-            'home-banner'    => get_template_directory() . '/lib/admin/controls/images/home-banner.webp',
-            'home-second-section'    => get_template_directory() . '/lib/admin/controls/images/home-second-section.webp',
-            'about-banner'   => get_template_directory() . '/lib/admin/controls/images/about-banner.webp',
-            'contact-banner' => get_template_directory() . '/lib/admin/controls/images/contact-banner.webp',
-        ];
+		?>
+		<div class="wrap">
+			<h1><?php echo esc_html__( 'Import Elevation Demo Content' ); ?></h1>
+			<p><?php echo esc_html__( 'Click the button below to import default pages for your theme.' ); ?></p>
+			<form method="post">
+			<?php wp_nonce_field( 'import_demo_nonce_action', 'import_demo_nonce' ); ?>
+				<input type="submit" name="import_demo_content" class="button button-primary" value="<?php echo esc_attr__( 'Import Pages', 'elevation' ); ?>">
+			</form>
+		</div>
+		<?php
+	}
 
-        $uploaded_images = [];
-        foreach ($image_paths as $key => $image_path) {
-            $uploaded_images[$key] = $this->elevation_upload_image($image_path);
-        }
+	/**
+	 * Register manage page
+	 *
+	 * @return void
+	 */
+	public function elevation_import_admin_menu() {
+		add_management_page(
+			'Import Elevation Demo Content', // Page title.
+			'Import Elevation Demo Content',      // Menu title.
+			'manage_options',      // Capability.
+			'elevation-import',      // Menu slug.
+			array( $this, 'elevation_import_page_html' ), // Callback function.
+		);
+	}
 
-        $default_pages = [
-            [
-                'title'   => 'Home',
-                'content' => $this->elevation_home_page($uploaded_images),
-            ],
-            [
-                'title'   => 'About',
-                'content' => $this->elevation_about_page($uploaded_images),
-            ],
-            [
-                'title'   => 'Contact',
-                'content' => $this->elevation_contact_page($uploaded_images),
-            ],
-        ];
+	/**
+	 * Import demo content
+	 *
+	 * @return void
+	 */
+	public function elevation_import_demo_pages() {
 
-        foreach ($default_pages as $page) {
-            // Check if the page already exists
-            $existing_page = get_page_by_title($page['title']);
-            if (!$existing_page) {
-                $page_id = wp_insert_post([
-                    'post_title'   => $page['title'],
-                    'post_content' => $page['content'],
-                    'post_status'  => 'publish',
-                    'post_type'    => 'page',
-                ]);
-                if ($page['title'] === 'Home') {
-                    update_option('show_on_front', 'page'); // Set static page mode
-                    update_option('page_on_front', $page_id); // Set the front page
-                }
-            }
-        }
-    }
+		$image_paths = array(
+			'home-banner'         => get_template_directory() . '/lib/admin/controls/images/home-banner.webp',
+			'home-second-section' => get_template_directory() . '/lib/admin/controls/images/home-second-section.webp',
+			'about-banner'        => get_template_directory() . '/lib/admin/controls/images/about-banner.webp',
+			'contact-banner'      => get_template_directory() . '/lib/admin/controls/images/contact-banner.webp',
+		);
 
-    private function elevation_upload_image($file_path)
-    {
-        if (!file_exists($file_path)) {
-            return false;
-        }
+		$uploaded_images = array();
+		foreach ( $image_paths as $key => $image_path ) {
+			$uploaded_images[ $key ] = $this->elevation_upload_image( $image_path );
+		}
 
-        $file_name = basename($file_path);
-        $upload_dir = wp_upload_dir();
-        $new_file_path = $upload_dir['path'] . '/' . $file_name;
+		$default_pages = array(
+			array(
+				'title'   => 'Home',
+				'content' => $this->elevation_home_page( $uploaded_images ),
+			),
+			array(
+				'title'   => 'About',
+				'content' => $this->elevation_about_page( $uploaded_images ),
+			),
+			array(
+				'title'   => 'Contact',
+				'content' => $this->elevation_contact_page( $uploaded_images ),
+			),
+		);
 
-        if (!copy($file_path, $new_file_path)) {
-            return false;
-        }
+		foreach ( $default_pages as $page ) {
+			// Check if the page already exists.
+			$page_query = new WP_Query(
+				array(
+					'post_type'      => 'page',
+					'title'          => $page['title'],
+					'post_status'    => 'publish',
+					'posts_per_page' => 1,
+				)
+			);
 
-        $file_type = wp_check_filetype($new_file_path, null);
-        $attachment = [
-            'post_mime_type' => $file_type['type'],
-            'post_title'     => sanitize_file_name($file_name),
-            'post_content'   => '',
-            'post_status'    => 'inherit',
-        ];
+			$existing_page = $page_query->have_posts();
 
-        $attach_id = wp_insert_attachment($attachment, $new_file_path);
-        require_once(ABSPATH . 'wp-admin/includes/image.php');
-        $attach_data = wp_generate_attachment_metadata($attach_id, $new_file_path);
-        wp_update_attachment_metadata($attach_id, $attach_data);
+			if ( ! $existing_page ) {
+				$page_id = wp_insert_post(
+					array(
+						'post_title'   => $page['title'],
+						'post_content' => $page['content'],
+						'post_status'  => 'publish',
+						'post_type'    => 'page',
+					)
+				);
+				if ( 'Home' === $page['title'] ) {
+					update_option( 'show_on_front', 'page' ); // Set static page mode.
+					update_option( 'page_on_front', $page_id ); // Set the front page.
+				}
+			}
+		}
+	}
 
-        return [$attach_id, wp_get_attachment_url($attach_id)]; // Return the image URL
+	/**
+	 * Upload image function
+	 *
+	 * @param string $file_path The path to the file being uploaded.
+	 *
+	 * @return array
+	 */
+	private function elevation_upload_image( $file_path ) {
+		if ( ! file_exists( $file_path ) ) {
+			return false;
+		}
 
-    }
+		$file_name     = basename( $file_path );
+		$upload_dir    = wp_upload_dir();
+		$new_file_path = $upload_dir['path'] . '/' . $file_name;
 
-    private function elevation_home_page($uploaded_images)
-    {
-        return '
+		if ( ! copy( $file_path, $new_file_path ) ) {
+			return false;
+		}
+
+		$file_type  = wp_check_filetype( $new_file_path, null );
+		$attachment = array(
+			'post_mime_type' => $file_type['type'],
+			'post_title'     => sanitize_file_name( $file_name ),
+			'post_content'   => '',
+			'post_status'    => 'inherit',
+		);
+
+		$attach_id = wp_insert_attachment( $attachment, $new_file_path );
+		require_once ABSPATH . 'wp-admin/includes/image.php';
+		$attach_data = wp_generate_attachment_metadata( $attach_id, $new_file_path );
+		wp_update_attachment_metadata( $attach_id, $attach_data );
+
+		return array( $attach_id, wp_get_attachment_url( $attach_id ) ); // Return the image URL.
+	}
+
+	/**
+	 * Static front page
+	 *
+	 * @param array $uploaded_images An array with id and url of the uploaded images.
+	 *
+	 * @return string
+	 */
+	private function elevation_home_page( $uploaded_images ) {
+		return '
         <!-- wp:elevation/interior-components--banner-full-img {"imgDesktop":{"url":"' . $uploaded_images['home-banner'][1] . '","alt":"","id":' . $uploaded_images['home-banner'][0] . ',"srcset":"' . $uploaded_images['home-banner'][1] . ' 150w, ' . $uploaded_images['home-banner'][1] . ' 300w, ' . $uploaded_images['home-banner'][1] . ' 1024w, ' . $uploaded_images['home-banner'][1] . ' 1920w","width":1920,"height":1281,"sizes":"(max-width: 1920px) 100vw, 1920px","focalPoint":{"x":0.68,"y":0.1}}} -->
 <div data-block-id="interior-components/banner-full-img" class="wp-block-elevation-interior-components--banner-full-img alignfull banner-full-img"><picture class="banner-full-img__background"><img decoding="async" lazyload="lazy" src="' . $uploaded_images['home-banner'][1] . '" width="1920" height="1080" class="banner-full-img__background" style="object-position:68% 10%"/></picture><div class="container banner-full-img__container"><div class="banner-full-img__wrapper"><!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">Elevation Free Theme</h1>
@@ -248,11 +311,17 @@ class Helpers
 <p></p>
 <!-- /wp:paragraph -->
 ';
-    }
+	}
 
-    private function elevation_about_page($uploaded_images)
-    {
-        return '
+	/**
+	 * About page
+	 *
+	 * @param array $uploaded_images An array with id and url of the uploaded images.
+	 *
+	 * @return string
+	 */
+	private function elevation_about_page( $uploaded_images ) {
+		return '
         <!-- wp:elevation/interior-components--banner-full-img {"imgDesktop":{"url":"' . $uploaded_images['about-banner'][1] . '","alt":"","id":' . $uploaded_images['about-banner'][0] . ',"srcset":"' . $uploaded_images['about-banner'][1] . ' 150w, ' . $uploaded_images['about-banner'][1] . ' 300w, ' . $uploaded_images['about-banner'][1] . ' 1024w, ' . $uploaded_images['about-banner'][1] . ' 1920w","width":1920,"height":854,"sizes":"(max-width: 1920px) 100vw, 1920px","focalPoint":{"x":0.75,"y":0.29}}} -->
 <div data-block-id="interior-components/banner-full-img" class="wp-block-elevation-interior-components--banner-full-img alignfull banner-full-img"><picture class="banner-full-img__background"><img decoding="async" lazyload="lazy" src="' . $uploaded_images['about-banner'][1] . '" width="1920" height="1080" class="banner-full-img__background" style="object-position:75% 28.999999999999996%"/></picture><div class="container banner-full-img__container"><div class="banner-full-img__wrapper"><!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">About Us</h1>
@@ -379,11 +448,17 @@ class Helpers
 <div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__large line-disable line-type-solid position-top" style="--border-color:ui-border-bounds"></div>
 <!-- /wp:elevation/interior-components--spacer -->
 ';
-    }
+	}
 
-    private function elevation_contact_page($uploaded_images)
-    {
-        return '
+	/**
+	 * Contact page
+	 *
+	 * @param array $uploaded_images An array with id and url of the uploaded images.
+	 *
+	 * @return string
+	 */
+	private function elevation_contact_page( $uploaded_images ) {
+		return '
         <!-- wp:elevation/interior-components--spacer {"space":"spacer__large"} -->
 <div data-block-id="interior-components/spacer" aria-hidden="true" class="wp-block-elevation-interior-components--spacer spacer spacer__large line-disable line-type-solid position-top" style="--border-color:ui-border-bounds"></div>
 <!-- /wp:elevation/interior-components--spacer -->
@@ -496,46 +571,67 @@ class Helpers
 <!-- /wp:elevation/interior-components--custom-container --></div>
 <!-- /wp:elevation/interior-components--impact-default -->
         ';
-    }
+	}
 
-    public function elevation_widgets_init()
-    {
-        register_sidebar(array(
-            'name'          => __('Footer second column', 'elevation'),
-            'id'            => 'footer-1',
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        ));
-        register_sidebar(array(
-            'name'          => __('Footer third column', 'elevation'),
-            'id'            => 'footer-2',
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        ));
-        register_sidebar(array(
-            'name'          => __('Footer fourth column', 'elevation'),
-            'id'            => 'footer-3',
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        ));
-    }
+	/**
+	 * Register footer widgets
+	 *
+	 * @return void
+	 */
+	public function elevation_widgets_init() {
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Footer second column', 'elevation' ),
+				'id'            => 'footer-1',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Footer third column', 'elevation' ),
+				'id'            => 'footer-2',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Footer fourth column', 'elevation' ),
+				'id'            => 'footer-3',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+	}
 
-    public function add_default_widgets_to_sidebars()
-    {
-        $this->update_option_wiget_block();
-        $this->update_option_sidebar_widgets();
-    }
+	/**
+	 * Add default widgets to sidebars
+	 *
+	 * @return void
+	 */
+	public function add_default_widgets_to_sidebars() {
+		$this->update_option_wiget_block();
+		$this->update_option_sidebar_widgets();
+	}
 
-    public function update_option_wiget_block()
-    {
+	/**
+	 * Update option wiget block
+	 *
+	 * @return void
+	 */
+	public function update_option_wiget_block() {
 
-        $content_2 = preg_replace('/\s+/', ' ', '<!-- wp:group {"layout":{"type":"default"}} -->
+		$content_2 = preg_replace(
+			'/\s+/',
+			' ',
+			'<!-- wp:group {"layout":{"type":"default"}} -->
                     <div class="wp-block-group"><!-- wp:heading {"fontSize":"h6"} -->
                     <h2 class="wp-block-heading has-h-6-font-size">Contact</h2>
                     <!-- /wp:heading -->
@@ -559,109 +655,137 @@ class Helpers
                     <!-- wp:paragraph -->
                     <p>Address Line 1 <br>Address Line 2 <br>City, State, Zipcode</p>
                     <!-- /wp:paragraph --></div>
-                    <!-- /wp:group -->');
+                    <!-- /wp:group -->'
+		);
 
-        $content_3 = preg_replace('/\s+/', ' ', '<!-- wp:elevation/interior-components--buttons -->
+		$content_3 = preg_replace(
+			'/\s+/',
+			' ',
+			'<!-- wp:elevation/interior-components--buttons -->
                 <div class="wp-block-elevation-interior-components--buttons buttons"><!-- wp:elevation/interior-components--button {"url":"/contact/","text":"Reach out","btnStyle":"primary\u002d\u002dinverse"} -->
                 <a class="wp-block-elevation-interior-components--button button cta cta--primary--inverse" href="/contact/" aria-label="Reach out">Reach out</a>
                 <!-- /wp:elevation/interior-components--button --></div>
-                <!-- /wp:elevation/interior-components--buttons -->');
+                <!-- /wp:elevation/interior-components--buttons -->'
+		);
 
-        $widget_block = array(
-            2 =>
-            array(
-                'content' => $content_2,
-            ),
-            3 =>
-            array(
-                'content' => $content_3,
-            ),
-            '_multiwidget' => 1,
-        );
+		$widget_block = array(
+			2              =>
+			array(
+				'content' => $content_2,
+			),
+			3              =>
+			array(
+				'content' => $content_3,
+			),
+			'_multiwidget' => 1,
+		);
 
+		update_option( 'widget_block', $widget_block );
+	}
 
-        update_option('widget_block', $widget_block);
-    }
+	/**
+	 * Update option sidebar widgets
+	 *
+	 * @return void
+	 */
+	public function update_option_sidebar_widgets() {
+		$sidebar_widgets = array(
+			'wp_inactive_widgets' =>
+			array(),
+			'footer-1'            =>
+			array(),
+			'footer-2'            =>
+			array(
+				0 => 'block-2',
+			),
+			'footer-3'            =>
+			array(
+				0 => 'block-3',
+			),
+			'array_version'       => 3,
+		);
 
-    public function update_option_sidebar_widgets()
-    {
-        $sidebar_widgets = array(
-            'wp_inactive_widgets' =>
-            array(),
-            'footer-1' =>
-            array(),
-            'footer-2' =>
-            array(
-                0 => 'block-2',
-            ),
-            'footer-3' =>
-            array(
-                0 => 'block-3',
-            ),
-            'array_version' => 3,
-        );
+		update_option( 'sidebar_widgets', $sidebar_widgets );
+	}
 
-        update_option('sidebar_widgets', $sidebar_widgets);
-    }
+	/**
+	 * Set custom images
+	 *
+	 * @return void
+	 */
+	private function set_custom_image() {
+		// Define the image URL.
+		$header_image_url = get_template_directory_uri() . '/lib/admin/controls/images/logo-elevation.webp';
+		$footer_image_url = get_template_directory_uri() . '/lib/admin/controls/images/logo-footer.svg';
 
-    private function set_custom_image()
-    {
-        // // Define the image URL
-        $header_image_url = get_template_directory_uri() . '/lib/admin/controls/images/logo-elevation.webp';
-        $footer_image_url = get_template_directory_uri() . '/lib/admin/controls/images/logo-footer.svg';
+		// Set the image URL programmatically in the customizer.
+		set_theme_mod( 'custom_logo', $header_image_url );
+		set_theme_mod( 'footer_logo', $footer_image_url );
+	}
 
-        // error_log(json_encode(get_theme_mods()), JSON_PRETTY_PRINT);
+	/**
+	 * Create custom menu
+	 *
+	 * @return void
+	 */
+	public function elevation_create_custom_menu() {
+		// Define the menu name.
+		$menu_name = 'Main Menu';
 
-        // // Set the image URL programmatically in the customizer
-        set_theme_mod('custom_logo', $header_image_url);
-        set_theme_mod('footer_logo', $footer_image_url);
-    }
+		// Check if the menu already exists.
+		$menu_exists = wp_get_nav_menu_object( $menu_name );
 
-    public function elevation_create_custom_menu()
-    {
-        // Define the menu name
-        $menu_name = 'Main Menu';
+		// Create menu if it doesn't exist.
+		if ( ! $menu_exists ) {
+			$menu_id = wp_create_nav_menu( $menu_name );
 
-        // Check if the menu already exists
-        $menu_exists = wp_get_nav_menu_object($menu_name);
+			// Add menu items.
+			wp_update_nav_menu_item(
+				$menu_id,
+				0,
+				array(
+					'menu-item-title'  => esc_html__( 'Home', 'elevation' ),
+					'menu-item-url'    => home_url( '/' ),
+					'menu-item-status' => 'publish',
+				)
+			);
 
-        // Create menu if it doesn't exist
-        if (!$menu_exists) {
-            $menu_id = wp_create_nav_menu($menu_name);
+			wp_update_nav_menu_item(
+				$menu_id,
+				0,
+				array(
+					'menu-item-title'  => esc_html__( 'About', 'elevation' ),
+					'menu-item-url'    => home_url( '/about/' ),
+					'menu-item-status' => 'publish',
+				)
+			);
 
-            // Add menu items
-            wp_update_nav_menu_item($menu_id, 0, array(
-                'menu-item-title' => __('Home', 'elevation'),
-                'menu-item-url' => home_url('/'),
-                'menu-item-status' => 'publish',
-            ));
+			wp_update_nav_menu_item(
+				$menu_id,
+				0,
+				array(
+					'menu-item-title'  => esc_html__( 'Contact', 'elevation' ),
+					'menu-item-url'    => home_url( '/contact/' ),
+					'menu-item-status' => 'publish',
+				)
+			);
 
-            wp_update_nav_menu_item($menu_id, 0, array(
-                'menu-item-title' => __('About', 'elevation'),
-                'menu-item-url' => home_url('/about/'),
-                'menu-item-status' => 'publish',
-            ));
+			// Assign menu to a theme location (update with your theme location).
+			$locations           = get_theme_mod( 'nav_menu_locations' );
+			$locations['menu-1'] = $menu_id; // Change 'menu-1' to the correct theme location.
+			set_theme_mod( 'nav_menu_locations', $locations );
+		}
+	}
 
-            wp_update_nav_menu_item($menu_id, 0, array(
-                'menu-item-title' => __('Contact', 'elevation'),
-                'menu-item-url' => home_url('/contact/'),
-                'menu-item-status' => 'publish',
-            ));
-
-            // Assign menu to a theme location (update with your theme location)
-            $locations = get_theme_mod('nav_menu_locations');
-            $locations['menu-1'] = $menu_id; // Change 'menu-1' to the correct theme location
-            set_theme_mod('nav_menu_locations', $locations);
-        }
-    }
-
-
-
-    public static function instance()
-    {
-        if (is_null(self::$_instance)) {
-            self::$_instance = new self();
-        }
-        return self::$_instance;
-    }
+	/**
+	 * Get the instance of the class
+	 *
+	 * @return object
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
 }

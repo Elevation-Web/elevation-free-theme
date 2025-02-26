@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-25T20:12:47+00:00\n"
+"POT-Creation-Date: 2025-02-26T20:22:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: elevation\n"
@@ -40,148 +40,152 @@ msgid "https://elevationweb.com/"
 msgstr ""
 
 #. translators: 1: title.
-#: comments.php:36
+#: comments.php:35
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. translators: 1: comment count number, 2: title.
-#: comments.php:42
+#: comments.php:41
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:69
+#: comments.php:68
 msgid "Comments are closed."
 msgstr ""
 
-#: header.php:35
+#: header.php:34
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:45
+#: header.php:44
 msgid "Open Menu"
 msgstr ""
 
-#: lib/admin/controls/helpers.php:504
+#: lib/admin/controls/class-helpers.php:51
+msgid "Nonce verification failed"
+msgstr ""
+
+#: lib/admin/controls/class-helpers.php:68
+msgid "Import Pages"
+msgstr ""
+
+#: lib/admin/controls/class-helpers.php:584
 msgid "Footer second column"
 msgstr ""
 
-#: lib/admin/controls/helpers.php:512
+#: lib/admin/controls/class-helpers.php:594
 msgid "Footer third column"
 msgstr ""
 
-#: lib/admin/controls/helpers.php:520
+#: lib/admin/controls/class-helpers.php:604
 msgid "Footer fourth column"
 msgstr ""
 
-#: lib/admin/controls/helpers.php:634
+#: lib/admin/controls/class-helpers.php:747
 msgid "Home"
 msgstr ""
 
-#: lib/admin/controls/helpers.php:640
+#: lib/admin/controls/class-helpers.php:757
 msgid "About"
 msgstr ""
 
-#: lib/admin/controls/helpers.php:646
+#: lib/admin/controls/class-helpers.php:767
 msgid "Contact"
 msgstr ""
 
-#: lib/admin/menu/load.php:24
+#: lib/admin/menu/class-load.php:42
 msgid "Main Menu"
 msgstr ""
 
-#: lib/admin/settings/customizer.php:59
-#: lib/admin/settings/customizer.php:71
+#: lib/admin/settings/class-customizer.php:84
+#: lib/admin/settings/class-customizer.php:104
 msgid "Footer Logo"
 msgstr ""
 
+#. translators: %1$s is the class file, %2$s is the class to load, %3$s is the namespace.
+#: lib/class-load.php:54
+msgid "\"Can't find %1$s\" for \"%2$s\" in \"%3$s\"."
+msgstr ""
+
 #. translators: %s: post date.
-#: lib/frontend/settings/helpers.php:31
+#: lib/frontend/settings/class-helpers.php:47
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
 #. translators: %s: post author.
-#: lib/frontend/settings/helpers.php:43
+#: lib/frontend/settings/class-helpers.php:62
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: lib/frontend/settings/helpers.php:56
+#: lib/frontend/settings/class-helpers.php:78
 msgid ", "
 msgstr ""
 
 #. translators: 1: list of categories.
-#: lib/frontend/settings/helpers.php:59
+#: lib/frontend/settings/class-helpers.php:81
 msgid "Posted in %1$s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: lib/frontend/settings/helpers.php:63
+#: lib/frontend/settings/class-helpers.php:85
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
 #. translators: 1: list of tags.
-#: lib/frontend/settings/helpers.php:66
+#: lib/frontend/settings/class-helpers.php:88
 msgid "Tagged %1$s"
 msgstr ""
 
 #. translators: %s: post title
-#: lib/frontend/settings/helpers.php:76
+#: lib/frontend/settings/class-helpers.php:98
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: lib/frontend/settings/helpers.php:93
+#: lib/frontend/settings/class-helpers.php:115
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: lib/load.php:34
-msgid "\"Can't find %s\" for \"%s\" in \"%s\"."
-msgstr ""
-
 #. translators: %s: search query.
-#: search.php:25
+#: search.php:27
 msgid "Search Results for: %s"
 msgstr ""
 
-#: template-parts/content-none.php:15
+#: template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
-#: template-parts/content-none.php:25
+#: template-parts/content-none.php:24
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:38
+#: template-parts/content-none.php:37
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:45
+#: template-parts/content-none.php:44
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: template-parts/content.php:22
+#: template-parts/content.php:21
 msgid " | "
 msgstr ""
 
-#. translators: 1: list of categories.
-#: template-parts/content.php:25
-msgid "%1$s"
-msgstr ""
-
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content.php:53
+#: template-parts/content.php:52
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content.php:66
+#: template-parts/content.php:65
 msgid "Pages:"
 msgstr ""
 

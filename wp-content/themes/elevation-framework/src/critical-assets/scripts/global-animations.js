@@ -14,6 +14,7 @@ export const globalAnimations = () => {
 		'#primary h6',
 		'.fade-in-bottom',
 		'.timeline-vertical-item',
+		'.card',
 	];
 	const exclusionSelectors = [
 		'.accordion-item__item p',
@@ -34,6 +35,7 @@ export const globalAnimations = () => {
 		'.timeline-vertical-item *',
 		'.timeline-horizontal-item img',
 		'.team-bios-modal li',
+		'.card *',
 	];
 
 	function combineSelectors(base, exclusions) {
