@@ -1,0 +1,14 @@
+.image-with-srcset {
+	&__form {
+		display: flex;
+		width: 300px;
+
+		.block-editor-url-input {
+			width: calc(100% - 40px);
+
+			input[type="text"] {
+				width: 100% !important;
+			}
+		}
+	}
+}

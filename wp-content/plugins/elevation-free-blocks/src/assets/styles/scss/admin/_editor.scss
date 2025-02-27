@@ -1,0 +1,144 @@
+@import "../utilities/functions";
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+.container {
+	max-width: 100%;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+
+	@include media-breakpoint-up(sm) {
+		width: 540px;
+	}
+
+	@include media-breakpoint-up(md) {
+		width: 720px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		width: 960px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		width: 1140px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		width: 1320px;
+	}
+}
+
+.important-text {
+	background-color: rgba(22, 63, 123, 0.08);
+	border-radius: 1px;
+	display: block;
+	padding: 36px 46px;
+}
+
+.important-text > * {
+	color: #163f7b !important;
+}
+
+blockquote {
+	font-family: "Martel", sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 27px;
+	letter-spacing: 0.03em;
+	color: #cb4b3b;
+	margin: 20px 0;
+}
+
+.font-bold {
+	font-weight: bold;
+}
+
+.column-list-2 {
+	-moz-column-count: 2;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 20px;
+	column-count: 2;
+	column-gap: 20px;
+	display: block;
+}
+
+@media (min-width: 782px) {
+	.block-editor-inserter__quick-inserter {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.block-editor-inserter__preview-container {
+	width: 100%;
+	max-width: 100%;
+}
+
+p {
+	color: $ui-foreground-primary-text-body-text;
+}
+.editor {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.has-h-1-font-size,
+	.has-h-2-font-size,
+	.has-h-3-font-size,
+	.has-h-4-font-size,
+	.has-h-5-font-size,
+	.has-h-6-font-size,
+	.wp-block-heading {
+		&:not(.is-white) {
+			color: $ui-foreground-primary-text-headings;
+		}
+	}
+}
+
+.text-center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+}
+
+html :where(.editor-styles-wrapper) p,
+html :where(.editor-styles-wrapper) blockquote {
+	margin-bottom: 20px !important;
+}
+
+.float-right,
+.float-left {
+	margin-bottom: 20px;
+	display: block;
+	z-index: 10;
+
+	@include media-breakpoint-down(lg) {
+		margin: 0 auto 20px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		width: 100% !important;
+		height: auto !important;
+	}
+}
+
+.float-right {
+	@include media-breakpoint-up(lg) {
+		float: right;
+		margin-left: 32px;
+	}
+}
+
+.float-left {
+	@include media-breakpoint-up(lg) {
+		float: left;
+		margin-right: 32px;
+	}
+}

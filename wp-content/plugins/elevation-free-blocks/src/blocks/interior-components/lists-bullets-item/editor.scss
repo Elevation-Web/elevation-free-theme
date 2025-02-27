@@ -1,0 +1,10 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+@import "../../../critical-assets/styles/scss/layout/custom-container";
+
+.lists-bullets-item {
+	.wp-block-heading {
+		margin: 0px;
+	}
+}

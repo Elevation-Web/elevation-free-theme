@@ -1,0 +1,25 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+
+
+.elevation-interior-components--group {
+    &.type-row {
+        .block-editor-block-list__layout {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: 144px;
+
+            .buttons {
+                flex-shrink: 0;
+            }
+
+            >*:not(.buttons) {
+                max-width: 644px;
+            }
+        }
+    }
+
+}

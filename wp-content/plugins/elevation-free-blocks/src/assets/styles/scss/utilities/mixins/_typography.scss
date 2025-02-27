@@ -1,0 +1,8 @@
+/*400;800*/
+@mixin font-body {
+	font-family: "Body Font", serif;
+}
+/*500;700*/
+@mixin font-heading {
+	font-family: "Heading Font", sans-serif;
+}

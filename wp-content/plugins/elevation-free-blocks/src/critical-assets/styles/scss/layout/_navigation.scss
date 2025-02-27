@@ -1,0 +1,214 @@
+@import "../../../../assets/styles/scss/utilities/functions";
+@import "../../../../assets/styles/scss/utilities/variables";
+@import "../../../../assets/styles/scss/utilities/mixins";
+
+$nav-height: 63px;
+$nav: ".nav";
+
+#{$nav} {
+	list-style-type: none;
+	display: none;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	height: calc(100vh - $nav-height);
+	overflow-y: auto;
+
+	&.open {
+		background-color: $ui-base-white;
+		position: absolute;
+		top: $nav-height;
+		display: flex;
+		flex-direction: column;
+		right: 0;
+		width: 100%;
+	}
+
+	@include media-breakpoint-up(sm) {
+		padding: 0 calc((100vw - 575px) / 2);
+	}
+
+	@include media-breakpoint-up(md) {
+		padding: 0 calc((100vw - 768px + 60px) / 2);
+	}
+
+	@include media-breakpoint-up(lg) {
+		overflow-y: unset;
+		justify-content: flex-end;
+		height: auto;
+		padding: 0;
+		box-shadow: none;
+		display: flex;
+	}
+
+	.menu-item {
+		position: relative;
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+
+		@include media-breakpoint-up(lg) {
+			width: auto;
+			flex-direction: row;
+
+			&.menu-item-has-children {
+				& > a {
+					padding-right: px-to-rem(30px);
+				}
+
+				#{$nav}__sub-menu {
+					.menu-item {
+						#{$nav}__sub-menu {
+							top: px-to-rem(-20px);
+						}
+					}
+				}
+			}
+		}
+
+		a {
+			display: block;
+			padding: px-to-rem(20px);
+			text-decoration: none;
+			color: $ui-foreground-primary-text-headings;
+			flex: 1;
+			font-weight: 500;
+
+			&:hover,
+			&:focus-visible {
+				color: $ui-foreground-secondary-indicator;
+			}
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: px-to-rem(20px);
+		background-color: transparent;
+		border: none;
+		position: absolute;
+		top: 0;
+		right: 1.5rem;
+		left: unset;
+
+		@include media-breakpoint-up(lg) {
+			position: relative;
+			right: unset;
+			padding: 0;
+			left: px-to-rem(-20px);
+		}
+
+		&::before {
+			content: "";
+			background-color: $ui-foreground-primary-text-headings;
+			mask: url('data:image/svg+xml,<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9L5 5L1 1" stroke="currentColor" stroke-linecap="round"/></svg>')
+				no-repeat center / contain;
+			width: px-to-rem(6px);
+			height: px-to-rem(10px);
+
+			@include media-breakpoint-up(lg) {
+				transform: rotate(90deg);
+			}
+		}
+
+		&[aria-expanded="true"] {
+			&::before {
+				background-color: $ui-foreground-secondary-indicator;
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	&__sub-menu {
+		opacity: 0;
+		list-style-type: none;
+		display: none;
+		background-color: $ui-base-white;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		transition: opacity 0.3s;
+		position: relative;
+		width: 100%;
+		padding: px-to-rem(20px);
+
+		@include media-breakpoint-up(lg) {
+			min-width: px-to-rem(245px);
+			max-width: px-to-rem(305px);
+			width: auto;
+			top: 100%;
+			position: absolute;
+
+			&--level-1 {
+				padding: px-to-rem(20px);
+			}
+		}
+
+		.menu-item {
+			width: 100%;
+
+			&.menu-item-has-children {
+				position: relative;
+
+				a {
+					padding-right: calc(54px + 1.5rem);
+
+					@include media-breakpoint-up(lg) {
+						padding-right: 3rem;
+					}
+				}
+
+				#{$nav}__button {
+					@include media-breakpoint-up(lg) {
+						position: absolute;
+						right: 1rem;
+						top: 50%;
+						transform: translateY(-50%);
+						left: unset;
+
+						&::before {
+							transform: rotate(0deg);
+						}
+					}
+				}
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			a {
+				width: 100%;
+				padding: px-to-rem(10px);
+				font-weight: 400;
+
+				&:hover,
+				&:focus-visible {
+					background-color: $ui-background-light-01;
+				}
+			}
+		}
+	}
+
+	.open {
+		& > #{$nav}__sub-menu {
+			display: flex;
+			flex-direction: column;
+			opacity: 1;
+
+			@include media-breakpoint-up(lg) {
+				&--level-1 {
+					left: calc(100% + px-to-rem(20px));
+					top: 0;
+				}
+			}
+		}
+	}
+
+	& > .menu-item-has-children.open:last-child {
+		@include media-breakpoint-up(lg) {
+			& #{$nav}__sub-menu--level-1 {
+				left: unset;
+				right: calc(100% + px-to-rem(20px));
+			}
+		}
+	}
+}

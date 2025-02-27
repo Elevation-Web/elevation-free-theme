@@ -1,0 +1,17 @@
+@import "../../../assets/styles/scss/utilities/functions";
+@import "../../../assets/styles/scss/utilities/variables";
+@import "../../../assets/styles/scss/utilities/mixins";
+
+.main-single {
+	padding-bottom: 50px;
+
+	.card {
+		&__title {
+			&-wrapper {
+				padding: 100px 0;
+				margin-bottom: 50px;
+				background-color: $ui-background-light-01;
+			}
+		}
+	}
+}

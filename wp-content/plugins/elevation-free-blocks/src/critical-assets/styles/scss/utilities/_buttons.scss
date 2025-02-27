@@ -1,0 +1,173 @@
+$cta: ".cta";
+
+#{$cta} {
+	@include cta;
+
+	&--primary {
+		&--color-01 {
+			@include cta-primary-01((
+        'bg-color': $cta-primary-01-bg-color,
+        'border-color': $cta-primary-01-border-color,
+        'text-color': $cta-primary-01-text-color,
+        'hover-bg-color': $cta-primary-01-hover-bg-color,
+				'hover-border-color': $cta-primary-01-hover-border-color,
+        'hover-text-color': $cta-primary-01-hover-text-color,
+        'focus-bg-color': $cta-primary-01-focus-bg-color,
+        'focus-border-color': $cta-primary-01-focus-border-color,
+				'focus-text-color': $cta-primary-01-focus-text-color
+    	));
+		}
+		&--color-02 {
+			@include cta-primary-02((
+        'bg-color': $cta-primary-02-bg-color,
+        'border-color': $cta-primary-02-border-color,
+        'text-color': $cta-primary-02-text-color,
+        'hover-bg-color': $cta-primary-02-hover-bg-color,
+				'hover-border-color': $cta-primary-02-hover-border-color,
+        'hover-text-color': $cta-primary-02-hover-text-color,
+        'focus-bg-color': $cta-primary-02-focus-bg-color,
+        'focus-border-color': $cta-primary-02-focus-border-color,
+				'focus-text-color': $cta-primary-02-focus-text-color
+    	));
+		}
+		&--color-03 {
+			@include cta-primary-03((
+        'bg-color': $cta-primary-03-bg-color,
+        'border-color': $cta-primary-03-border-color,
+        'text-color': $cta-primary-03-text-color,
+        'hover-bg-color': $cta-primary-03-hover-bg-color,
+				'hover-border-color': $cta-primary-03-hover-border-color,
+        'hover-text-color': $cta-primary-03-hover-text-color,
+        'focus-bg-color': $cta-primary-03-focus-bg-color,
+        'focus-border-color': $cta-primary-03-focus-border-color,
+				'focus-text-color': $cta-primary-03-focus-text-color
+    	));
+		}
+		&--color-04 {
+			@include cta-primary-04((
+        'bg-color': $cta-primary-04-bg-color,
+        'border-color': $cta-primary-04-border-color,
+        'text-color': $cta-primary-04-text-color,
+        'hover-bg-color': $cta-primary-04-hover-bg-color,
+				'hover-border-color': $cta-primary-04-hover-border-color,
+        'hover-text-color': $cta-primary-04-hover-text-color,
+        'focus-bg-color': $cta-primary-04-focus-bg-color,
+        'focus-border-color': $cta-primary-04-focus-border-color,
+				'focus-text-color': $cta-primary-04-focus-text-color
+    	));
+		}
+		&--inverse {
+			@include cta-inverse-primary((
+        'bg-color': $cta-inverse-primary-bg-color,
+        'border-color': $cta-inverse-primary-border-color,
+        'text-color': $cta-inverse-primary-text-color,
+        'hover-bg-color': $cta-inverse-primary-hover-bg-color,
+				'hover-border-color': $cta-inverse-primary-hover-border-color,
+        'hover-text-color': $cta-inverse-primary-hover-text-color,
+        'focus-bg-color': $cta-inverse-primary-focus-bg-color,
+        'focus-border-color': $cta-inverse-primary-focus-border-color,
+				'focus-text-color': $cta-inverse-primary-focus-text-color
+    	));
+		}
+	}
+
+	&--secondary {
+		&--outline {
+			@include cta-secondary((
+        'bg-color': $cta-secondary-bg-color,
+        'border-color': $cta-secondary-border-color,
+        'text-color': $cta-secondary-text-color,
+        'hover-bg-color': $cta-secondary-hover-bg-color,
+				'hover-border-color': $cta-secondary-hover-border-color,
+        'hover-text-color': $cta-secondary-hover-text-color,
+        'focus-bg-color': $cta-secondary-focus-bg-color,
+        'focus-border-color': $cta-secondary-focus-border-color,
+        'focus-text-color': $cta-secondary-focus-text-color
+    	));
+		}
+		&--download {
+			@include cta-secondary-download((
+        'bg-color': $cta-secondary-bg-color,
+        'border-color': $cta-secondary-border-color,
+        'text-color': $cta-secondary-text-color,
+        'hover-bg-color': $cta-secondary-hover-bg-color,
+				'hover-border-color': $cta-secondary-hover-border-color,
+        'hover-text-color': $cta-secondary-hover-text-color,
+        'focus-bg-color': $cta-secondary-focus-bg-color,
+        'focus-border-color': $cta-secondary-focus-border-color,
+        'focus-text-color': $cta-secondary-focus-text-color
+    	));
+		}
+		&--inverse {
+			@include cta-inverse-secondary((
+        'bg-color': $cta-inverse-secondary-bg-color,
+        'border-color': $cta-inverse-secondary-border-color,
+        'text-color': $cta-inverse-secondary-text-color,
+        'hover-bg-color': $cta-inverse-secondary-hover-bg-color,
+				'hover-border-color': $cta-inverse-secondary-hover-border-color,
+        'hover-text-color': $cta-inverse-secondary-hover-text-color,
+        'focus-bg-color': $cta-inverse-secondary-focus-bg-color,
+        'focus-border-color': $cta-inverse-secondary-focus-border-color,
+        'focus-text-color': $cta-inverse-secondary-focus-text-color
+    	));
+		}
+	}
+
+	&--tertiary {
+		&--color-01 {
+			@include cta-tertiary((
+        'bg-color': $cta-tertiary-bg-color,
+        'border-color': $cta-tertiary-border-color,
+        'text-color': $cta-tertiary-text-color,
+        'hover-bg-color': $cta-tertiary-hover-bg-color,
+				'hover-border-color': $cta-tertiary-hover-border-color,
+        'hover-text-color': $cta-tertiary-hover-text-color,
+        'focus-bg-color': $cta-tertiary-focus-bg-color,
+				'focus-border-color': $cta-tertiary-focus-border-color,
+        'focus-text-color': $cta-tertiary-focus-text-color
+    	));
+		}
+		&--inverse {
+			@include cta-inverse-tertiary((
+        'bg-color': $cta-inverse-tertiary-bg-color,
+        'border-color': $cta-inverse-tertiary-border-color,
+        'text-color': $cta-inverse-tertiary-text-color,
+        'hover-bg-color': $cta-inverse-tertiary-hover-bg-color,
+				'hover-border-color': $cta-inverse-tertiary-hover-border-color,
+        'hover-text-color': $cta-inverse-tertiary-hover-text-color,
+        'focus-bg-color': $cta-inverse-tertiary-focus-bg-color,
+        'focus-border-color': $cta-inverse-tertiary-focus-border-color,
+        'focus-text-color': $cta-inverse-tertiary-focus-text-color
+    	));
+		}
+	}
+
+	&--fourth {
+		&--color-01 {
+			@include cta-fourth((
+        'bg-color': $cta-fourth-bg-color,
+        'border-color': $cta-fourth-border-color,
+        'text-color': $cta-fourth-text-color,
+        'hover-bg-color': $cta-fourth-hover-bg-color,
+				'hover-border-color': $cta-fourth-hover-border-color,
+        'hover-text-color': $cta-fourth-hover-text-color,
+        'focus-bg-color': $cta-fourth-focus-bg-color,
+				'focus-border-color': $cta-fourth-focus-border-color,
+        'focus-text-color': $cta-fourth-focus-text-color
+    	));
+		}
+		&--inverse {
+			@include cta-inverse-fourth((
+        'bg-color': $cta-inverse-fourth-bg-color,
+        'border-color': $cta-inverse-fourth-border-color,
+        'text-color': $cta-inverse-fourth-text-color,
+        'hover-bg-color': $cta-inverse-fourth-hover-bg-color,
+				'hover-border-color': $cta-inverse-fourth-hover-border-color,
+        'hover-text-color': $cta-inverse-fourth-hover-text-color,
+        'focus-bg-color': $cta-inverse-fourth-focus-bg-color,
+        'focus-border-color': $cta-inverse-fourth-focus-border-color,
+        'focus-text-color': $cta-inverse-fourth-focus-text-color
+    	));
+		}
+	}
+}

@@ -1,4 +1,4 @@
-# Ignore all files and folders except for: /wp-content/themes/elevation-framework
+# Ignore all files and folders except for: /wp-content/themes/elevation-free
 *
 
 # Readme file
@@ -10,12 +10,19 @@
 # Wordpress files
 !/wp-content/
 !/wp-content/themes/
-!/wp-content/themes/elevation-framework/
-!/wp-content/themes/elevation-framework/*
-!/wp-content/themes/elevation-framework/**/*
+!/wp-content/themes/elevation-free/
+!/wp-content/themes/elevation-free/*
+!/wp-content/themes/elevation-free/**/*
+
+!/wp-content/plugins/
+!/wp-content/plugins/elevation-free-blocks/
+!/wp-content/plugins/elevation-free-blocks/*
+!/wp-content/plugins/elevation-free-blocks/**/*
+!/wp-content/plugins/elevation-free-blocks/**/**/*
 
 # composer vendor folder and files
-/wp-content/themes/elevation-framework/vendor
+/wp-content/themes/elevation-free/vendor
+/wp-content/plugins/elevation-free-blocks/vendor
 composer.lock
 
 # Logs

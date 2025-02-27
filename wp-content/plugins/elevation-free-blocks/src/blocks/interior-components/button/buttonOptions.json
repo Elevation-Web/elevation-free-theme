@@ -1,0 +1,52 @@
+{
+	"buttonOptions": [
+		{
+			"label": "Primary 01",
+			"value": "primary--color-01"
+		},
+		{
+			"label": "Primary 02",
+			"value": "primary--color-02"
+		},
+		{
+			"label": "Primary 03",
+			"value": "primary--color-03"
+		},
+		{
+			"label": "Primary 04",
+			"value": "primary--color-04"
+		},
+		{
+			"label": "Primary Inverse",
+			"value": "primary--inverse"
+		},
+		{
+			"label": "Secondary Outline",
+			"value": "secondary--outline"
+		},
+		{
+			"label": "Secondary Inverse",
+			"value": "secondary--inverse"
+		},
+		{
+			"label": "Secondary Download",
+			"value": "secondary--download"
+		},
+		{
+			"label": "Tertiary",
+			"value": "tertiary--color-01"
+		},
+		{
+			"label": "Tertiary Inverse",
+			"value": "tertiary--inverse"
+		},
+		{
+			"label": "Fourth",
+			"value": "fourth--color-01"
+		},
+		{
+			"label": "Fourth Inverse",
+			"value": "fourth--inverse"
+		}
+	]
+}

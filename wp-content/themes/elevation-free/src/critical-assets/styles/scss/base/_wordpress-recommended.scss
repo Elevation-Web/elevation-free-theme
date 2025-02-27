@@ -1,0 +1,63 @@
+/* WordPress Caption */
+.wp-caption {
+	max-width: 100%;
+	text-align: center;
+	background: $ui-background-light-01;
+	padding: px-to-rem(10px);
+	border: 1px solid $ui-border-line-divider-dots-divider;
+	border-radius: 4px;
+}
+
+.wp-caption-text {
+	font-size: px-to-rem(14px);
+	color: $ui-foreground-primary-text-body-text;
+	margin-top: px-to-rem(5px);
+}
+
+/* Sticky Post */
+.sticky {
+	border-left: 4px solid $ui-foreground-primary-text-headings-span;
+	background: $ui-background-light-01;
+	padding: px-to-rem(10px);
+}
+
+/* Gallery Caption */
+.gallery-caption {
+	font-size: px-to-rem(14px);
+	color: $ui-foreground-primary-text-body-text;
+	text-align: center;
+	margin-top: 5px;
+}
+
+/* Author Comments */
+.bypostauthor {
+	border-left: 3px solid $ui-foreground-primary-text-headings-span;
+	background: $ui-background-light-01;
+	padding: px-to-rem(8px);
+	font-weight: bold;
+}
+
+/* Alignment */
+.alignright {
+	float: right;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 10px;
+}
+
+/* Clearfix for floated elements */
+.alignright::after,
+.alignleft::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.screen-reader-text {
+	@include visually-hidden;
+}
