@@ -1,0 +1,20 @@
+@import "../../assets/styles/scss/utilities/functions";
+@import "../../assets/styles/scss/utilities/variables";
+@import "../../assets/styles/scss/utilities/mixins";
+
+@import "../../assets/styles/scss/utilities/default-variables";
+@import "./scss/base/reset";
+
+@import "./scss/utilities/utilities";
+@import "./scss/utilities/buttons";
+@import "./scss/utilities/global-blocks";
+
+@import "./scss/layout/container";
+@import "./scss/layout/custom-container";
+@import "./scss/layout/header";
+@import "./scss/layout/navigation";
+@import "./scss/layout/mega-menu";
+@import "./scss/layout/animations";
+
+@import "./scss/plugins/gTranslate";
+@import "./scss/pages/page";

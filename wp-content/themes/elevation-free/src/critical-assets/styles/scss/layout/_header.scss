@@ -1,0 +1,79 @@
+@import "../../../../assets/styles/scss/utilities/functions";
+@import "../../../../assets/styles/scss/utilities/variables";
+@import "../../../../assets/styles/scss/utilities/mixins";
+
+.header {
+	position: relative;
+	width: 100%;
+	z-index: 99999;
+	background-color: $ui-base-white;
+	padding: 5px 0;
+	@include font-heading;
+
+	@include media-breakpoint-up(lg) {
+		padding: 0;
+	}
+
+	&__toggle-menu {
+		background-color: $ui-button-primary-color-01;
+		color: $ui-base-white;
+		width: 50px;
+		height: 45px;
+		padding: 5px;
+		border-radius: 3px;
+		border: none;
+		font-size: px-to-rem(20px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+
+		&::before {
+			content: "";
+			background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M76.4,53.7h-53c-2.1,0-3.8-1.7-3.8-3.8v0c0-2.1,1.7-3.8,3.8-3.8h53c2.1,0,3.8,1.7,3.8,3.8v0C80.3,52,78.5,53.7,76.4,53.7z" fill="white"/><path d="M84.7,23.7H15.1c-2.1,0-3.8-1.7-3.8-3.8v0c0-2.1,1.7-3.8,3.8-3.8h69.7c2.1,0,3.8,1.7,3.8,3.8v0C88.6,22,86.9,23.7,84.7,23.7 z" fill="white"/><path d="M84.7,83.7H15.1c-2.1,0-3.8-1.7-3.8-3.8v0c0-2.1,1.7-3.8,3.8-3.8h69.7c2.1,0,3.8,1.7,3.8,3.8v0C88.6,82,86.9,83.7,84.7,83.7 z" fill="white"/></svg>');
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: px-to-rem(25px);
+			height: px-to-rem(25px);
+		}
+
+		&[aria-expanded="true"] {
+			&::before {
+				background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" x="0px" y="0px"><path d="M53.54,50,76.77,26.77a2.5,2.5,0,0,0-3.54-3.54L50,46.46,26.77,23.23a2.5,2.5,0,0,0-3.54,3.54L46.46,50,23.23,73.23a2.52,2.52,0,0,0,0,3.54,2.51,2.51,0,0,0,3.54,0L50,53.54,73.23,76.77a2.51,2.51,0,0,0,3.54,0,2.52,2.52,0,0,0,0-3.54Z" fill="white"/></svg>');
+			}
+		}
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&__branding {
+		max-width: px-to-rem(150px);
+		width: auto; /* Adjusts to content */
+
+		.site-title {
+			margin-bottom: 0;
+			display: block;
+			line-height: 1em;
+		}
+	}
+
+	&__nav {
+		flex: 1;
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+body.fixed .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}

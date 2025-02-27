@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Custom Container",
+  "name": "elevation/interior-components--custom-container",
+  "version": "1.0.0",
+  "category": "elevation-free-blocks",
+  "description": "Container with option styles",
+  "textdomain": "elevation",
+  "supports": {
+    "html": true,
+    "align": [
+      "full"
+    ],
+    "alignWide": false,
+    "color": {
+      "background": true,
+      "gradients": false,
+      "text": false,
+      "link": false,
+      "border": false
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ]
+    }
+  },
+  "attributes": {
+    "containerWidth": {
+      "type": "string",
+      "default": "default"
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ]
+}

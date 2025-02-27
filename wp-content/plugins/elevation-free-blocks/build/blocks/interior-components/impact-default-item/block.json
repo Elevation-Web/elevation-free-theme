@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Impact, Layout: Default Item.",
+  "name": "elevation/interior-components--impact-default-item",
+  "version": "1.0.0",
+  "category": "elevation-free-blocks",
+  "icon": "button",
+  "description": "Impact Default Item.",
+  "textdomain": "elevation",
+  "ancestor": [
+    "elevation/interior-components--impact-default"
+  ],
+  "supports": {
+    "html": true,
+    "anchor": true,
+    "alignWide": false,
+    "ariaLabel": false,
+    "color": {
+      "background": true,
+      "gradients": false,
+      "text": true,
+      "link": false,
+      "border": false
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "blockGap": false
+    },
+    "layout": false,
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "attributes": {
+    "id": {
+      "type": "string",
+      "default": ""
+    },
+    "value": {
+      "type": "string",
+      "default": "0"
+    },
+    "remove_comma": {
+      "type": "boolean",
+      "default": false
+    },
+    "title_size": {
+      "type": "string",
+      "default": "h-1"
+    }
+  },
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ]
+}

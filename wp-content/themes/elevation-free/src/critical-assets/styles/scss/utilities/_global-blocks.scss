@@ -1,0 +1,19 @@
+div[class^="wp-block-elevation"] {
+	&.has-background {
+		a:not(.cta) {
+			color: inherit !important;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+[data-block-id] {
+	opacity: 0;
+}
+[data-block-id="interior-components/group"] {
+	opacity: 1;
+}

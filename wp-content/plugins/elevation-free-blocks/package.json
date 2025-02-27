@@ -1,0 +1,46 @@
+{
+	"name": "elevation-free-blocks",
+	"version": "1.0.0",
+	"author": "Elevation",
+	"private": true,
+	"keywords": [
+		"WordPress",
+		"Plugin"
+	],
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"homepage": "https://github.com/Elevation-Web/elevation-free#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Elevation-Web/elevation-free.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Elevation-Web/elevation-free/issues"
+	},
+	"scripts": {
+		"format": "wp-scripts format",
+		"dev": "wp-scripts start --webpack-copy-php",
+		"build": "yarn format & yarn wp-scripts build --webpack-copy-php",
+		"lint:scss": "wp-scripts lint-style 'blocks/**/*.scss' & wp-scripts lint-style 'assets/**/*.scss'",
+		"lint:js": "wp-scripts lint-js 'blocks/**/*.js' & wp-scripts lint-js 'assets/**/*.js'",
+		"check-engines": "wp-scripts check-engines",
+		"themejson": "node ./dev/generateThemeJSON.mjs"
+	},
+	"dependencies": {
+		"sharer.js": "^0.5.2",
+		"sticky-sidebar": "^3.3.1",
+		"sweetalert2": "^11.15.10",
+		"swiper": "^11.2.1"
+	},
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "^22.3.0",
+		"@wordpress/icons": "^10.17.0",
+		"@wordpress/prettier-config": "^4.17.0",
+		"@wordpress/scripts": "^30.10.0",
+		"@wordpress/server-side-render": "^5.17.0",
+		"clsx": "^2.1.1",
+		"prettier": "^3.4.2"
+	},
+	"prettier": "@wordpress/prettier-config"
+}
