@@ -1,5 +1,5 @@
 === Elevation Free ===
-Contributors: Elevation Team
+Contributors: elevation1support, msuarez25  
 Requires at least: 6.0
 Tested up to: 6.7
 Stable tag: 1.0.0
@@ -37,3 +37,6 @@ Use it as your springboard to building a site with **_ELEVATION_**.
 = 1.0.0 - 2025-02-27 =
 
 - Initial Public Release
+
+== Credits ==  
+Developed with ❤️ by the Elevation Team (@elevation1support). Learn more at [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme) or [https://www.elevationweb.org](https://www.elevationweb.org)

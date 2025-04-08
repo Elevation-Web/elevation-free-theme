@@ -9,6 +9,10 @@
 
 namespace ElevationFreeBlocks\Lib\Admin;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 use ElevationFreeBlocks\Lib\Admin\Controls\Load as Controls;
 
 /**

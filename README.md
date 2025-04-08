@@ -1,58 +1,83 @@
-# Elevation Wordpress Theme
+# Elevation Free: Theme & Blocks for Nonprofits
 
-It's a starter theme made by Elevation.
+A modern, accessible WordPress solution crafted for nonprofits, advocacy groups, and mission-driven organizations. This repository includes both the **Elevation Free Theme** and the **Elevation Free Blocks Plugin** to empower your site with flexibility, performance, and ease of use.
 
-## Installation
+---
 
-### Requirements
+## 🌱 Elevation Free Theme
 
-`Elevation Wordpress Theme ` requires the following dependencies:
+A beautifully designed, mission-driven WordPress theme built specifically for nonprofits, charities, and organizations striving to make a difference.
 
-- [Node.js](https://nodejs.org/)
+### Key Features
 
-### Quick Start
+- **Responsive & Mobile-Friendly** – Looks great on all devices
+- **SEO Optimized** – Built-in best practices for search engine visibility
+- **Accessibility Ready** – WCAG-compliant for inclusive user experiences
+- **Fast & Lightweight** – Minimal load times and high performance
+- **Translation & RTL Ready** – Multilingual and RTL-compatible
 
-### Setup
+Whether you're running a local initiative or a global nonprofit, Elevation Free helps you share your mission with clarity and impact.
 
-To start using all the tools that come with `elevation` you need to install the necessary Node.js dependencies :
+📄 **License:** [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)  
+📅 **Version:** 1.0.0  
+💡 **Tested up to WordPress:** 6.7  
+⚙️ **Requires PHP:** 8.1+
 
-```sh
-$ yarn
+---
+
+## 🧩 Elevation Free Blocks Plugin
+
+A collection of powerful Gutenberg blocks designed to extend the Elevation Free Theme (and work with others too). Perfect for storytelling, donations, events, and more.
+
+### Features
+
+- Custom Gutenberg blocks tailored for nonprofit needs
+- Fully responsive and accessibility-friendly
+- Seamless integration with most WordPress themes
+- Lightweight and performance-focused
+- No coding required – easy drag-and-drop customization
+
+### Installation
+
+1. Upload the plugin to `/wp-content/plugins/elevation-free-blocks/`, or install from the WordPress Plugin Repository.
+2. Activate the plugin via the **Plugins** screen in WordPress.
+3. In the block editor, look under **Elevation Blocks** to use the new blocks.
+
+📄 **License:** [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)  
+📅 **Version:** 1.0.0  
+🧩 **Requires WordPress:** 6.0+  
+⚙️ **Requires PHP:** 8.1+
+
+---
+
+## 🛠️ Developer Notes
+
+### Theme & Plugin Source Structure
+
+- All readable, editable source files (JavaScript, SCSS, PHP) are in the `/src` directory (plugin).
+- Optimized and compiled assets used in production are in the `/build` directory.
+
+### Development Tools
+
+- Built using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
+- To install dependencies and rebuild assets:
+
+```bash
+npm install
+npm run build       # Production
+npm run start       # Development
 ```
 
-### Available CLI commands
+== Frequently Asked Questions ==
 
-#### Use Node 20 (v20.10.0) or above
+= Does this plugin work with any theme? =  
+Elevation Free Blocks is specifically designed to enhance the Elevation Free Theme by adding essential custom blocks.
 
-#### Use Yarn (v1.22.19)
+= Will this slow down my site? =  
+No. The plugin is built for performance, ensuring minimal impact on page speed.
 
-`elevation-framework` comes packed with CLI commands tailored for WordPress theme development :
+= Do I need coding knowledge to use this? =  
+Not at all! Simply drag and drop the blocks in the Gutenberg editor and customize them to your needs.
 
-- `yarn build` : lavarage wp-script and compiles SASS files and js files in src folder
-- `yarn dev` : watches all SASS and JS files in src folders.
-- `yarn themejson` : create theme.json file.
-
-## Files Required for Blocks
-
-This theme lavarege ACF Blocks and in order to create a block it is needed to follow the next files structure:
-
-- Folder with BLOCKNAME
-  - block.json
-  - index.php (optional)
-  - index.js
-  - edit.js
-  - save.js
-  - style.scss
-  - edit.scss
-
-For more reference check out the folder **./blocks/**
-
-## theme.json file
-
-Color Pallete, Font family and some presets settings are located in the theme.json file
-
-### Automatically create theme.json file
-
-Run `yarn themejson`.
-
-To edit, modify files inside `dev` folder.
+👥 Contributors
+[Elevation Team](https://wordpress.org/support/users/elevation1support/)

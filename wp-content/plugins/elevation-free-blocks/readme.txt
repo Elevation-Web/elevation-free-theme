@@ -1,12 +1,12 @@
 === Elevation Free Blocks ===
-Contributors: elevationteam  
+Contributors: elevation1support, msuarez25  
 Tags: nonprofit, accessible, responsive, seo-friendly, gutenberg
 Requires at least: 6.0  
 Tested up to: 6.7  
 Requires PHP: 8.1  
 Stable tag: 1.0.0  
 License: GPLv3 or later  
-License URI: https://www.gnu.org/licenses/gpl-3.0.html 
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 A collection of powerful Gutenberg blocks designed to help nonprofit organizations build beautiful, accessible, and effective websites with ease.  
 
@@ -31,6 +31,16 @@ Nonprofits often struggle with complex website builders. Elevation Free Blocks s
 3. Open the WordPress block editor and explore the new custom blocks under "Elevation Blocks."  
 4. Drag, drop, and customize blocks to build your content.  
 
+== Development Notes ==
+
+All human-readable and uncompressed source files (JavaScript, SCSS, etc.) are located in the `/src` directory.
+
+The plugin uses optimized and bundled files located in the `/build` directory for production.
+
+Asset compilation and optimization are handled using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/). To rebuild assets during development, run: yarn or npm i. There are also dev and build scripts available on package.json file. 
+
+Also there are in place composer libraries to check the code. Review composer.json file to check available scripts.
+
 == Frequently Asked Questions ==  
 
 = Does this plugin work with any theme? =  
@@ -53,4 +63,4 @@ Not at all! Simply drag and drop the blocks in the Gutenberg editor and customiz
 First stable version – install to access custom blocks for nonprofit websites.  
 
 == Credits ==  
-Developed with ❤️ by the Elevation Team. Learn more at [https://www.elevationweb.org/](https://www.elevationweb.org/)  
+Developed with ❤️ by the Elevation Team (@elevation1support). Learn more at [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme) or [https://www.elevationweb.org](https://www.elevationweb.org)

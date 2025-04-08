@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 * {
 	font-synthesis: none !important;
 	box-sizing: border-box;
@@ -172,20 +168,6 @@ h6,
 	color: $ui-foreground-primary-text-headings;
 }
 
-/*--- Facu para que agregaste esto?
-// .wp-block-heading {
-// 	margin: 0 !important;
-// }
-
-// .wp-block-heading + p {
-// 	margin-top: 12px;
-// }
-
-// .wp-block + .wp-block.buttons {
-// 	margin-top: 24px !important;
-// }
-----*/
-
 [id] {
 	scroll-margin-top: $header-height-mobile;
 
@@ -195,8 +177,6 @@ h6,
 }
 
 body.logged-in {
-	// overflow-x: clip;
-
 	header.fixed-top {
 		margin-top: 0 !important;
 	}
@@ -250,10 +230,6 @@ textarea {
 main#primary {
 	min-height: 100vh;
 }
-// :root :where(.is-layout-flow)>*,
-// :root :where(.is-layout-flow)> :last-child {
-// 	margin-block-start: 0px;
-// }
 
 .wp-block-quote {
 	padding: 1rem;

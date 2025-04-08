@@ -9,6 +9,10 @@
 
 namespace ElevationFreeBlocks\Lib\Admin\Controls;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class Load
  *
