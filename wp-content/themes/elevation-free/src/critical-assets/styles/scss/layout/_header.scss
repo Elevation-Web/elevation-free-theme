@@ -9,9 +9,16 @@
 	background-color: $ui-base-white;
 	padding: 5px 0;
 	@include font-heading;
+	align-items: center;
+	display: flex;
+	min-height: $header-height-mobile;
 
 	@include media-breakpoint-up(lg) {
 		padding: 0;
+	}
+
+	@include media-breakpoint-up(xl) {
+		min-height: $header-height-desktop;
 	}
 
 	&__toggle-menu {

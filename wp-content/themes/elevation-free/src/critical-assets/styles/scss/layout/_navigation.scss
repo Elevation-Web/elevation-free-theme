@@ -2,24 +2,31 @@
 @import "../../../../assets/styles/scss/utilities/variables";
 @import "../../../../assets/styles/scss/utilities/mixins";
 
-$nav-height: 63px;
 $nav: ".nav";
 
 #{$nav} {
 	list-style-type: none;
 	display: none;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	height: calc(100vh - $nav-height);
 	overflow-y: auto;
+	height: calc(100vh - $header-height-mobile);
+
+	@include media-breakpoint-up(xl) {
+		height: calc(100vh - $header-height-desktop);
+	}
 
 	&.open {
 		background-color: $ui-base-white;
 		position: absolute;
-		top: $nav-height;
 		display: flex;
 		flex-direction: column;
 		right: 0;
 		width: 100%;
+		top: $header-height-mobile;
+
+		@include media-breakpoint-up(xl) {
+			top: $header-height-desktop;
+		}
 	}
 
 	@include media-breakpoint-up(sm) {

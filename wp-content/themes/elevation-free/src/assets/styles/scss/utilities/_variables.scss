@@ -18,10 +18,10 @@ $grid-breakpoints: (
 * Header Dimensions
 */
 
-$header-height-desktop-xl: 120px;
-$header-height-desktop: 120px;
-$header-height-tablet: 80px;
-$header-height-mobile: 80px;
+$header-height-desktop-xl: 66px;
+$header-height-desktop: 66px;
+$header-height-tablet: 55px;
+$header-height-mobile: 55px;
 
 /*
 *    Header Properties
@@ -198,7 +198,7 @@ $cta-tertiary-hover-border-color: transparent;
 $cta-tertiary-hover-text-color: $ui-button-tertiary-hover;
 
 $cta-tertiary-focus-bg-color: transparent;
-$cta-tertiary-focus-border-color: rgba($ui-button-tertiary-color-01, 0.5) ;
+$cta-tertiary-focus-border-color: rgba($ui-button-tertiary-color-01, 0.5);
 $cta-tertiary-focus-text-color: $ui-button-tertiary-color-01;
 
 //cta-inverse-tertiary
