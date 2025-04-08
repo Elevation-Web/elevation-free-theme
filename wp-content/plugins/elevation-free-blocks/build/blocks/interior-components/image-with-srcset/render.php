@@ -7,6 +7,10 @@
  * @package elevation-free-blocks
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 use ElevationFreeBlocks\Lib\BlockLibrary\Helpers;
 
 $img_id = 0;

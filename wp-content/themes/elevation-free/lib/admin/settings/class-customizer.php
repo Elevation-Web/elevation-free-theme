@@ -76,7 +76,7 @@ class Customizer {
 	 *
 	 * @param object $wp_customize WP_Customize_Manager.
 	 */
-	private function elevation_customize_register( $wp_customize ) {
+	public function elevation_customize_register( $wp_customize ) {
 		// Add a section for the footer logo.
 		$wp_customize->add_section(
 			'footer_logo_section',

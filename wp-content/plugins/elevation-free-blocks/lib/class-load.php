@@ -9,6 +9,10 @@
 
 namespace ElevationFreeBlocks\Lib;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class Load
  *

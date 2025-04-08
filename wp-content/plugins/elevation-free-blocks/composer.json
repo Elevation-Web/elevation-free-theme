@@ -1,10 +1,10 @@
 {
 	"name": "elevation/elevation-free-blocks",
 	"type": "wordpress-theme",
-	"description": "Hi. I'm a starter theme called Elevation Free.",
+	"description": "Hi. I'm a plugin called Elevation Free Blocks.",
 	"keywords": [
 		"WordPress",
-		"Themes"
+		"Plugins"
 	],
 	"homepage": "https://github.com/Elevation-Web",
 	"license": "GPL-2.0-or-later",

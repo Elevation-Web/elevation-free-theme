@@ -9,6 +9,10 @@
 
 namespace ElevationFreeBlocks\Lib\BlockLibrary;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class Helpers
  *

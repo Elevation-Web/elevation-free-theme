@@ -15,9 +15,9 @@ get_header(
 		'header_type' => 'transparent',
 	)
 );
-$title_404   = '404';
-$subtitle    = 'Nothing found';
-$description = 'It looks like nothing was found at this location. Maybe try one of the links below or a search?';
+$title_404   = __('404','elevation-free');
+$subtitle    = __('Nothing found','elevation-free');
+$description = __('It looks like nothing was found at this location. Maybe try one of the links below or a search?','elevation-free');
 $link_404    = home_url();
 ?>
 
