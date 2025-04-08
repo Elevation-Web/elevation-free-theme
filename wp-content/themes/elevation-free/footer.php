@@ -61,7 +61,7 @@ $footer_logo = get_theme_mod( 'footer_logo' );
 
 		<div class="footer__bottom">
 			<div class="footer__bottom--left">
-				<span class="footer__copyrigth"><?php echo esc_html__('Copyright © ', 'elevation-free') . esc_html( gmdate( 'Y' ) ); ?>. <?php bloginfo( 'name' ); ?>.</span>
+				<span class="footer__copyrigth"><?php echo esc_html__( 'Copyright © ', 'elevation-free' ) . esc_html( gmdate( 'Y' ) ); ?>. <?php bloginfo( 'name' ); ?>.</span>
 				<span class="footer__createdby">
 					<?php echo esc_html__( 'Nonprofit Website Design by', 'elevation-free' ); ?> <a href="<?php echo esc_url( 'https://www.elevationweb.org/portfolio/' ); ?>" target="_blank" title="<?php echo esc_attr__( 'Nonprofit Website Design ELEVATION', 'elevation-free' ); ?>" rel="noopener noreferrer"><?php echo esc_html__( 'Elevation Web', 'elevation-free' ); ?></a>
 				</span>
