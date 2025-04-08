@@ -7,9 +7,6 @@
  * @package elevation-free
  */
 
-use ElevationFree\Lib\Frontend\Settings\Helpers;
-use ElevationFree\Lib\BlockLibrary\Helpers as BlockHelpers;
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

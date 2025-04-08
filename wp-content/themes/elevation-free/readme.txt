@@ -25,7 +25,7 @@ With full **Gutenberg compatibility**, a clean and modern design, and a strong f
 
 Whether you're running a small local charity or a global nonprofit, **Elevation Free Theme** gives you the tools to share your story and engage your supporters—without the technical hassle.  
 
-Visit [https://www.elevationweb.org/](https://www.elevationweb.org/) for more details, documentation, and community support.
+Visit [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme) for more details, documentation, and community support.
 
 == Copyright ==
 
@@ -39,4 +39,10 @@ Use it as your springboard to building a site with **_ELEVATION_**.
 - Initial Public Release
 
 == Credits ==  
-Developed with ❤️ by the Elevation Team (@elevation1support). Learn more at [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme) or [https://www.elevationweb.org](https://www.elevationweb.org)
+- Developed with ❤️ by the Elevation Team [@elevation1support](https://wordpress.org/support/users/elevation1support/). Learn more at [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme) or [https://www.elevationweb.org](https://www.elevationweb.org)
+- Fonts by Google Fonts
+- - Inter: https://fonts.google.com/specimen/Inter
+- - Matel: https://fonts.google.com/specimen/Martel
+- Swiper JS Library used for sliders. [Swiper](https://swiperjs.com/)
+- sharer.js Library used for share component on blog posts. [sharer.js](https://ellisonleao.github.io/sharer.js/)
+- sweetalert2 JS Library used for pop ups. [sweetalert2](https://sweetalert2.github.io/)

@@ -63,4 +63,7 @@ Not at all! Simply drag and drop the blocks in the Gutenberg editor and customiz
 First stable version – install to access custom blocks for nonprofit websites.  
 
 == Credits ==  
-Developed with ❤️ by the Elevation Team (@elevation1support). Learn more at [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme) or [https://www.elevationweb.org](https://www.elevationweb.org)
+- Developed with ❤️ by the Elevation Team [@elevation1support](https://wordpress.org/support/users/elevation1support/). Learn more at [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme) or [https://www.elevationweb.org](https://www.elevationweb.org)
+- Swiper JS Library used for block sliders. [Swiper](https://swiperjs.com/)
+- sharer.js Library used for share component on blog posts. [sharer.js](https://ellisonleao.github.io/sharer.js/)
+- sweetalert2 JS Library used for pop up video block. [sweetalert2](https://sweetalert2.github.io/)

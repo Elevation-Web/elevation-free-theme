@@ -67,6 +67,8 @@ class Support {
 
 		add_theme_support( 'block-templates' );
 
+		add_theme_support( 'align-wide' );
+
 		remove_theme_support( 'core-block-patterns' );
 	}
 

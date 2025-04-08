@@ -38,7 +38,7 @@ class Blocks {
 	 * Display an admin notice if the Elevation Blocks plugin is not active
 	 */
 	public function elevation_admin_notice() {
-		$class          = 'notice notice-error';
+		$class          = 'notice notice-error is-dismissible';
 		$message_part_1 = __( 'Please install and activate the ', 'elevation-free' );
 		$url            = home_url() . '/wp-admin/plugin-install.php?s=Elevation%2520Free%2520Blocks&tab=search&type=term';
 		$message_part_2 = __( 'Elevation Free Blocks', 'elevation-free' );
