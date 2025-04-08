@@ -27,6 +27,17 @@ Whether you're running a small local charity or a global nonprofit, **Elevation 
 
 Visit [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme) for more details, documentation, and community support.
 
+== Development Notes ==
+
+All human-readable and uncompressed source files (JavaScript, SCSS, etc.) are located in the `/src` directory.
+
+The plugin uses optimized and bundled files located in the `/build` directory for production.
+
+Asset compilation and optimization are handled using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/). To rebuild assets during development, run: yarn or npm i. There are also dev and build scripts available on package.json file. 
+
+Also there are in place composer libraries to check the code. Review composer.json file to check available scripts.
+
+
 == Copyright ==
 
 This theme, like WordPress, is distributed under the terms of GPL.
