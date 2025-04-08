@@ -95,15 +95,19 @@ class Helpers {
 	 */
 	public function elevation_free_blocks_import_demo_pages() {
 
+		$plugin_dir = trailingslashit( WP_PLUGIN_DIR . '/elevation-free-blocks' );
+		
+		// Define the paths to the images.
 		$image_paths = array(
-			'home-banner'         => get_template_directory() . '/lib/admin/controls/images/home-banner.webp',
-			'home-second-section' => get_template_directory() . '/lib/admin/controls/images/home-second-section.webp',
-			'about-banner'        => get_template_directory() . '/lib/admin/controls/images/about-banner.webp',
-			'contact-banner'      => get_template_directory() . '/lib/admin/controls/images/contact-banner.webp',
+			'home-banner'         => $plugin_dir . '/lib/admin/controls/images/home-banner.webp',
+			'home-second-section' => $plugin_dir . '/lib/admin/controls/images/home-second-section.webp',
+			'about-banner'        => $plugin_dir . '/lib/admin/controls/images/about-banner.webp',
+			'contact-banner'      => $plugin_dir . '/lib/admin/controls/images/contact-banner.webp',
 		);
 
 		$uploaded_images = array();
 		foreach ( $image_paths as $key => $image_path ) {
+			error_log('image_path: ' . json_encode( $image_path ) );
 			$uploaded_images[ $key ] = $this->elevation_free_blocks_upload_image( $image_path );
 		}
 
@@ -144,6 +148,10 @@ class Helpers {
 						'post_type'    => 'page',
 					)
 				);
+				error_log( 'Page title: ' . $page['title'] );
+				error_log( 'page_id: ' . json_encode( $page_id ) );
+				error_log( 'content: ' . json_encode( $page['content'] ) );
+	
 				if ( 'Home' === $page['title'] ) {
 					update_option( 'show_on_front', 'page' ); // Set static page mode.
 					update_option( 'page_on_front', $page_id ); // Set the front page.
@@ -184,7 +192,7 @@ class Helpers {
 		require_once ABSPATH . 'wp-admin/includes/image.php';
 		$attach_data = wp_generate_attachment_metadata( $attach_id, $new_file_path );
 		wp_update_attachment_metadata( $attach_id, $attach_data );
-
+		error_log( 'attach_id: ' . json_encode( $attach_id ) );
 		return array( $attach_id, wp_get_attachment_url( $attach_id ) ); // Return the image URL.
 	}
 

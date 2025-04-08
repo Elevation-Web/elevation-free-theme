@@ -14,7 +14,9 @@ use ElevationFree\Lib\Frontend\Settings\Helpers as SettingsHelpers;
 use ElevationFree\Lib\BlockLibrary\Helpers;
 
 $custom_logo = get_theme_mod( 'custom_logo' );
-
+if( ! $custom_logo ) {
+	$custom_logo = get_template_directory_uri() . '/assets/fonts/images/logo-elevation.webp';
+}
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
