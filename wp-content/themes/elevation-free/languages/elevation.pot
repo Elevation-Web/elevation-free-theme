@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Elevation Free 3.0.0\n"
+"Project-Id-Version: Elevation Free 3.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/elevation-free\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-27T15:49:26+00:00\n"
+"POT-Creation-Date: 2025-04-08T17:54:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: elevation-free\n"
@@ -39,6 +39,18 @@ msgstr ""
 msgid "https://elevationweb.com/"
 msgstr ""
 
+#: 404.php:18
+msgid "404"
+msgstr ""
+
+#: 404.php:19
+msgid "Nothing found"
+msgstr ""
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
 #. translators: 1: title.
 #: comments.php:35
 msgid "One thought on &ldquo;%1$s&rdquo;"
@@ -56,6 +68,10 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
+#: footer.php:64
+msgid "Copyright © "
+msgstr ""
+
 #: footer.php:66
 msgid "Nonprofit Website Design by"
 msgstr ""
@@ -64,58 +80,32 @@ msgstr ""
 msgid "Nonprofit Website Design ELEVATION"
 msgstr ""
 
-#: header.php:34
+#: footer.php:66
+msgid "Elevation Web"
+msgstr ""
+
+#: header.php:36
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:44
+#: header.php:46
 msgid "Open Menu"
-msgstr ""
-
-#: lib/admin/controls/class-helpers.php:51
-msgid "Nonce verification failed"
-msgstr ""
-
-#: lib/admin/controls/class-helpers.php:64
-#: lib/admin/controls/class-helpers.php:81
-#: lib/admin/controls/class-helpers.php:82
-msgid "Import Elevation Demo Content"
-msgstr ""
-
-#: lib/admin/controls/class-helpers.php:65
-msgid "Click the button below to import default pages for your theme."
-msgstr ""
-
-#: lib/admin/controls/class-helpers.php:68
-msgid "Import Pages"
-msgstr ""
-
-#: lib/admin/controls/class-helpers.php:584
-msgid "Footer second column"
-msgstr ""
-
-#: lib/admin/controls/class-helpers.php:594
-msgid "Footer third column"
-msgstr ""
-
-#: lib/admin/controls/class-helpers.php:604
-msgid "Footer fourth column"
-msgstr ""
-
-#: lib/admin/controls/class-helpers.php:747
-msgid "Home"
-msgstr ""
-
-#: lib/admin/controls/class-helpers.php:757
-msgid "About"
-msgstr ""
-
-#: lib/admin/controls/class-helpers.php:767
-msgid "Contact"
 msgstr ""
 
 #: lib/admin/menu/class-load.php:42
 msgid "Main Menu"
+msgstr ""
+
+#: lib/admin/settings/class-blocks.php:42
+msgid "Please install and activate the "
+msgstr ""
+
+#: lib/admin/settings/class-blocks.php:44
+msgid "Elevation Free Blocks"
+msgstr ""
+
+#: lib/admin/settings/class-blocks.php:45
+msgid " plugin to enable custom blocks."
 msgstr ""
 
 #: lib/admin/settings/class-cleanup.php:84
@@ -125,6 +115,26 @@ msgstr ""
 #: lib/admin/settings/class-customizer.php:84
 #: lib/admin/settings/class-customizer.php:104
 msgid "Footer Logo"
+msgstr ""
+
+#: lib/admin/settings/class-support.php:81
+msgid "Contact Template"
+msgstr ""
+
+#: lib/admin/settings/class-support.php:85
+msgid "Media Center"
+msgstr ""
+
+#: lib/admin/widgets/class-load.php:43
+msgid "Footer second column"
+msgstr ""
+
+#: lib/admin/widgets/class-load.php:53
+msgid "Footer third column"
+msgstr ""
+
+#: lib/admin/widgets/class-load.php:63
+msgid "Footer fourth column"
 msgstr ""
 
 #. translators: %1$s is the class file, %2$s is the class to load, %3$s is the namespace.
@@ -195,147 +205,6 @@ msgstr ""
 
 #: template-parts/content-none.php:44
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: build/blocks/interior-components/button/index.js:1
-#: src/blocks/interior-components/button/edit.js:45
-msgid "Button Styles"
-msgstr ""
-
-#: build/blocks/interior-components/button/index.js:1
-#: src/blocks/interior-components/button/edit.js:47
-msgid "Button Style"
-msgstr ""
-
-#: build/blocks/interior-components/button/index.js:1
-#: src/blocks/interior-components/button/edit.js:55
-msgid "Button Link"
-msgstr ""
-
-#: build/blocks/interior-components/button/index.js:1
-#: src/blocks/interior-components/button/edit.js:69
-msgid "Button URL..."
-msgstr ""
-
-#: build/blocks/interior-components/button/index.js:1
-#: src/blocks/interior-components/button/edit.js:84
-msgid "Button Aria Label"
-msgstr ""
-
-#: build/blocks/interior-components/button/index.js:1
-#: src/blocks/interior-components/button/edit.js:101
-msgid "Button text..."
-msgstr ""
-
-#: build/blocks/interior-components/impact-default-item/index.js:1
-#: src/blocks/interior-components/impact-default-item/controls.js:18
-msgid "Impact Settings"
-msgstr ""
-
-#: build/blocks/interior-components/impact-default-item/index.js:1
-#: src/blocks/interior-components/impact-default-item/controls.js:20
-msgid "Value"
-msgstr ""
-
-#: build/blocks/interior-components/impact-default-item/index.js:1
-#: src/blocks/interior-components/impact-default-item/controls.js:25
-msgid "Remove Comma"
-msgstr ""
-
-#: build/blocks/interior-components/impact-default-item/index.js:1
-#: src/blocks/interior-components/impact-default-item/controls.js:33
-msgid "Title Size"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: build/blocks/interior-components/text-block-heading-subheading-2-columns/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:63
-#: src/blocks/interior-components/text-block-heading-subheading-2-columns/edit.js:54
-msgid "Settings"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:67
-msgid "Image Size"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:71
-msgid "Small"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:75
-msgid "Medium"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:79
-msgid "Large"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:86
-msgid "Image Position"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:90
-msgid "Left"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:94
-msgid "Right"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: build/blocks/interior-components/text-block-heading-subheading-2-columns/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:104
-#: src/blocks/interior-components/text-block-heading-subheading-2-columns/edit.js:58
-msgid "Vertical Alignment"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: build/blocks/interior-components/text-block-heading-subheading-2-columns/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:108
-#: src/blocks/interior-components/text-block-heading-subheading-2-columns/edit.js:62
-msgid "Top"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: build/blocks/interior-components/text-block-heading-subheading-2-columns/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:112
-#: src/blocks/interior-components/text-block-heading-subheading-2-columns/edit.js:66
-msgid "Middle"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-default-image/index.js:1
-#: build/blocks/interior-components/text-block-heading-subheading-2-columns/index.js:1
-#: src/blocks/interior-components/text-block-default-image/edit.js:116
-#: src/blocks/interior-components/text-block-heading-subheading-2-columns/edit.js:70
-msgid "Bottom"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-heading-subheading-list-item/index.js:1
-#: build/blocks/interior-components/text-block-list-w-button/index.js:1
-#: src/blocks/interior-components/text-block-heading-subheading-list-item/edit.js:56
-#: src/blocks/interior-components/text-block-list-w-button/edit.js:85
-msgid "List Item Settings"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-heading-subheading-list-item/index.js:1
-#: build/blocks/interior-components/text-block-list-w-button/index.js:1
-#: build/blocks/interior-components/text-block-quote/index.js:1
-#: src/blocks/interior-components/text-block-heading-subheading-list-item/edit.js:60
-#: src/blocks/interior-components/text-block-list-w-button/edit.js:89
-#: src/blocks/interior-components/text-block-quote/edit.js:59
-msgid "Border Color"
-msgstr ""
-
-#: build/blocks/interior-components/text-block-quote/index.js:1
-#: src/blocks/interior-components/text-block-quote/edit.js:55
-msgid "Quote Settings"
 msgstr ""
 
 #: build/archive/block.json
