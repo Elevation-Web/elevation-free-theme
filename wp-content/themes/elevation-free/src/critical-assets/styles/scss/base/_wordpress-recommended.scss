@@ -15,8 +15,13 @@
 }
 
 /* Sticky Post */
-.sticky {
+.sticky:not(article) {
 	border-left: 4px solid $ui-foreground-primary-text-headings-span;
+	background: $ui-background-light-01;
+	padding: px-to-rem(10px);
+}
+
+article.sticky {
 	background: $ui-background-light-01;
 	padding: px-to-rem(10px);
 }
@@ -60,4 +65,8 @@
 
 .screen-reader-text {
 	@include visually-hidden;
+}
+
+.navigation.posts-navigation {
+	margin-bottom: 50px;
 }

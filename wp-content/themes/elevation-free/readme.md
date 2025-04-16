@@ -3,7 +3,7 @@
 **A WordPress theme designed with purpose, for purpose.**
 
 Brought to you with ❤️ by the **Elevation Team**  
-🔗 [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme)
+🔗 [https://github.com/Elevation-Web/elevation-free-theme/tree/main/wp-content/themes/elevation-free](https://github.com/Elevation-Web/elevation-free-theme/tree/main/wp-content/themes/elevation-free)
 
 ## 🎁 A Gift to the Nonprofit Community
 
@@ -44,7 +44,7 @@ We’ve worked with nonprofits for years and understand the challenges they face
 ## 🛠️ Need Support?
 
 We’re here for you! Visit our website for **documentation, FAQs, and community support**:  
-🔗 [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme)
+🔗 [https://github.com/Elevation-Web/elevation-free-theme/tree/main/wp-content/themes/elevation-free](https://github.com/Elevation-Web/elevation-free-theme/tree/main/wp-content/themes/elevation-free)
 
 For advanced customization or premium features, check out our **pro services**.
 

@@ -4,11 +4,7 @@ import waitForUserInteraction from './scripts/waitForUserInteraction';
 import getFirstsBlock from './scripts/getFirstBlock';
 import { globalAnimations } from './scripts/global-animations';
 
-const firstBlocks = [
-	'interior-components/spacer',
-	'interior-components/swiper',
-	'interior-components/group',
-];
+const firstBlocks = ['interior-components/spacer', 'interior-components/group'];
 
 // set to only add if exist
 const addIfExist = ['interior-components/swiper'];

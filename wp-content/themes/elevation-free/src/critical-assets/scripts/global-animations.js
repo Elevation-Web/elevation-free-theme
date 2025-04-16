@@ -1,4 +1,4 @@
-import { observeResize } from '../../blocks/utils/resize';
+import { observeResize } from './resize';
 
 export const globalAnimations = () => {
 	const baseSelectors = [
