@@ -19,7 +19,7 @@ A beautifully designed, mission-driven WordPress theme built specifically for no
 Whether you're running a local initiative or a global nonprofit, Elevation Free helps you share your mission with clarity and impact.
 
 📄 **License:** [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)  
-📅 **Version:** 1.0.0  
+📅 **Version:** 3.0.3 
 💡 **Tested up to WordPress:** 6.7  
 ⚙️ **Requires PHP:** 8.1+
 
