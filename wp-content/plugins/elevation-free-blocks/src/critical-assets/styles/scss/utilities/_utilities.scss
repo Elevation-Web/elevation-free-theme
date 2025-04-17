@@ -82,7 +82,12 @@ div[class*="row-gap-"] {
 .alignfull {
 	width: 100vw;
 	position: relative;
-	left: calc(-50vw + 50%);
+	// left: calc(-50vw + 50%);
+}
+
+.is-layout-constrained
+	> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	max-width: 1440px;
 }
 
 .aligncenter {

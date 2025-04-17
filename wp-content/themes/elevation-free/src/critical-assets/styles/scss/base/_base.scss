@@ -194,10 +194,10 @@ h6,
 	}
 }
 body {
-	padding-top: $header-height-mobile;
+	padding-top: $header-height-mobile !important;
 
 	@include media-breakpoint-up(xl) {
-		padding-top: $header-height-desktop;
+		padding-top: $header-height-desktop !important;
 	}
 }
 

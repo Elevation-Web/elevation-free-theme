@@ -34,7 +34,6 @@ class Load {
 		add_filter( 'styles_inline_size_limit', '__return_zero' );
 		add_filter( 'block_categories_all', array( $this, 'block_categories' ), 10, 2 );
 		add_action( 'init', array( $this, 'load_blocks' ), 10 );
-		add_action( 'allowed_block_types_all', array( $this, 'unregister_specific_core_blocks' ) );
 	}
 
 	/**
@@ -95,28 +94,6 @@ class Load {
 		}
 
 		return $categories;
-	}
-
-	/**
-	 * Unregister specific core blocks
-	 *
-	 * @return array
-	 */
-	public function unregister_specific_core_blocks() {
-		$registry         = \WP_Block_Type_Registry::get_instance();
-		$registerd_blocks = $registry->get_all_registered();
-		$registerd_blocks = array_keys( $registerd_blocks );
-
-		$blocks_to_remove = array(
-			'core/buttons',
-			'core/button',
-			'core/spacer',
-		);
-
-		$allowed_block_types = array_diff( $registerd_blocks, $blocks_to_remove );
-		$allowed_block_types = array_values( $allowed_block_types );
-
-		return $allowed_block_types;
 	}
 
 	/**

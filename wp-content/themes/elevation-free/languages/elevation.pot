@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-16T17:47:31+00:00\n"
+"POT-Creation-Date: 2025-04-17T16:32:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: elevation-free\n"
@@ -68,19 +68,19 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:67
+#: footer.php:66
 msgid "Copyright © "
 msgstr ""
 
-#: footer.php:69
+#: footer.php:68
 msgid "Nonprofit Website Design by"
 msgstr ""
 
-#: footer.php:69
+#: footer.php:68
 msgid "Nonprofit Website Design ELEVATION"
 msgstr ""
 
-#: footer.php:69
+#: footer.php:68
 msgid "Elevation Web"
 msgstr ""
 
@@ -108,7 +108,7 @@ msgstr ""
 msgid " plugin to enable custom blocks."
 msgstr ""
 
-#: lib/admin/settings/class-cleanup.php:86
+#: lib/admin/settings/class-cleanup.php:80
 msgid "The WordPress REST API users endpoint has been disabled."
 msgstr ""
 

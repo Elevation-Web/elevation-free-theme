@@ -34,6 +34,7 @@ final class Load {
 		spl_autoload_register( array( $this, 'autoload' ) );
 		Admin\Load::instance();
 		BlockLibrary\Load::instance();
+		Frontend\Load::instance();
 	}
 
 	/**
