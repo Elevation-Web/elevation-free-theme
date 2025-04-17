@@ -18,7 +18,7 @@ A beautifully designed, mission-driven WordPress theme built specifically for no
 
 Whether you're running a local initiative or a global nonprofit, Elevation Free helps you share your mission with clarity and impact.
 
-📄 **License:** [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)  
+📄 **License:** [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)  
 📅 **Version:** 1.0.0  
 💡 **Tested up to WordPress:** 6.7  
 ⚙️ **Requires PHP:** 8.1+
@@ -44,7 +44,7 @@ A collection of powerful Gutenberg blocks designed to extend the Elevation Free 
 3. In the block editor, look under **Elevation Blocks** to use the new blocks.
 
 📄 **License:** [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)  
-📅 **Version:** 1.0.0  
+📅 **Version:** 1.0.1  
 🧩 **Requires WordPress:** 6.0+  
 ⚙️ **Requires PHP:** 8.1+
 
