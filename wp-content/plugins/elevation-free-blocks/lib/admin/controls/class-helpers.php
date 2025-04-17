@@ -466,7 +466,7 @@ class Helpers {
 
 <!-- wp:elevation/interior-components--group {"tagName":"ul","allowedBlocks":["elevation/interior-components\u002d\u002dlists-bullets-item"],"className":"lists-bullets__container"} -->
 <ul data-block-id="interior-components/group" data-block-js="false" class="wp-block-elevation-interior-components--group elevation-interior-components--group group type-default lists-bullets__container"><!-- wp:elevation/interior-components--lists-bullets-item {"id":"lists-bullets-item-ad99d531-edf1-418d-8dcd-ed4daedc0194"} -->
-<li data-block-id="interior-components/lists-bullets-item" id="lists-bullets-item-ad99d531-edf1-418d-8dcd-ed4daedc0194" class="wp-block-elevation-interior-components--lists-bullets-item lists-bullets-item"><div class="lists-bullets-item__container"><!-- wp:heading {"level":4,"fontSize":"h6"} -->
+<li id="lists-bullets-item-ad99d531-edf1-418d-8dcd-ed4daedc0194" class="wp-block-elevation-interior-components--lists-bullets-item lists-bullets-item"><div class="lists-bullets-item__container"><!-- wp:heading {"level":4,"fontSize":"h6"} -->
 <h4 class="wp-block-heading has-h-6-font-size">Drag-and-drop editing</h4>
 <!-- /wp:heading -->
 
@@ -476,7 +476,7 @@ class Helpers {
 <!-- /wp:elevation/interior-components--lists-bullets-item -->
 
 <!-- wp:elevation/interior-components--lists-bullets-item {"id":"lists-bullets-item-16981518-3f0e-4fae-9532-445266e284d3"} -->
-<li data-block-id="interior-components/lists-bullets-item" id="lists-bullets-item-16981518-3f0e-4fae-9532-445266e284d3" class="wp-block-elevation-interior-components--lists-bullets-item lists-bullets-item"><div class="lists-bullets-item__container"><!-- wp:heading {"level":4,"fontSize":"h6"} -->
+<li id="lists-bullets-item-16981518-3f0e-4fae-9532-445266e284d3" class="wp-block-elevation-interior-components--lists-bullets-item lists-bullets-item"><div class="lists-bullets-item__container"><!-- wp:heading {"level":4,"fontSize":"h6"} -->
 <h4 class="wp-block-heading has-h-6-font-size">Fully responsive design</h4>
 <!-- /wp:heading -->
 
@@ -486,7 +486,7 @@ class Helpers {
 <!-- /wp:elevation/interior-components--lists-bullets-item -->
 
 <!-- wp:elevation/interior-components--lists-bullets-item {"id":"lists-bullets-item-a440a397-d96c-4260-a380-f9eb35d72291"} -->
-<li data-block-id="interior-components/lists-bullets-item" id="lists-bullets-item-a440a397-d96c-4260-a380-f9eb35d72291" class="wp-block-elevation-interior-components--lists-bullets-item lists-bullets-item"><div class="lists-bullets-item__container"><!-- wp:heading {"level":4,"fontSize":"h6"} -->
+<li id="lists-bullets-item-a440a397-d96c-4260-a380-f9eb35d72291" class="wp-block-elevation-interior-components--lists-bullets-item lists-bullets-item"><div class="lists-bullets-item__container"><!-- wp:heading {"level":4,"fontSize":"h6"} -->
 <h4 class="wp-block-heading has-h-6-font-size">SEO-friendly structure</h4>
 <!-- /wp:heading -->
 

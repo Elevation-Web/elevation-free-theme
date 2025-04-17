@@ -1,5 +1,3 @@
-import { observeResize } from './resize';
-
 export const globalAnimations = () => {
 	const baseSelectors = [
 		'#primary p',
