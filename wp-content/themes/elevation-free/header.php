@@ -14,9 +14,7 @@ use ElevationFree\Lib\Frontend\Settings\Helpers as SettingsHelpers;
 use ElevationFree\Lib\BlockLibrary\Helpers;
 
 $custom_logo = get_theme_mod( 'custom_logo' );
-if ( ! $custom_logo ) {
-	$custom_logo = get_template_directory_uri() . '/assets/fonts/images/logo-elevation.webp';
-}
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -38,8 +36,12 @@ if ( ! $custom_logo ) {
 			<div class="container">
 				<div class="header__branding">
 					<a href="<?php echo esc_url( home_url() ); ?>" class="site-title">
-						<?php Helpers::global_image( $custom_logo, true, 'footer__media', null, false ); ?>
+						<?php if ( $custom_logo ) : ?>
+							<?php Helpers::global_image( $custom_logo, true, 'footer__media', null, false ); ?>
 						<span class="visually-hidden"> <?php echo bloginfo( 'name' ); ?></span>
+						<?php else : ?>
+							<span><?php echo bloginfo( 'name' ); ?></span>
+						<?php endif; ?>
 					</a>
 				</div>
 				<nav class="header__nav">

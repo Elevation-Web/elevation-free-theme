@@ -44,7 +44,7 @@ class Notices {
 	 * Check if the active theme is Elevation Free
 	 */
 	public function elevation_free_blocks_check_active_theme() {
-			$class          = 'notice notice-error';
+			$class          = 'notice notice-error is-dismissible';
 			$message_part_1 = __( 'Elevation Free Blocks ', 'elevation-free-blocks' );
 			$message_part_2 = __( 'requires the ', 'elevation-free-blocks' );
 			$url            = home_url() . '/wp-admin/theme-install.php?search=Elevation%20Free';

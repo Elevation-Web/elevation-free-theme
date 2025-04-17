@@ -2,11 +2,11 @@
 Contributors: elevation1support, msuarez25  
 Tags: nonprofit, accessible, responsive, seo-friendly, gutenberg
 Requires at least: 6.0  
-Tested up to: 6.7  
-Requires PHP: 8.1  
-Stable tag: 1.0.0  
-License: GPLv3 or later  
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tested up to: 6.8  
+Requires PHP: 8.0  
+Stable tag: 1.0.1 
+License: GPLv2 or later  
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 A collection of powerful Gutenberg blocks designed to help nonprofit organizations build beautiful, accessible, and effective websites with ease.  
 
@@ -62,8 +62,50 @@ Not at all! Simply drag and drop the blocks in the Gutenberg editor and customiz
 = 1.0.0 =  
 First stable version – install to access custom blocks for nonprofit websites.  
 
+=== Javascript Libraries ===
+
+Swiper JS
+Copyright (c) 2019 Vladimir Kharlampidi
+License: MIT License https://github.com/nolimits4web/swiper/blob/master/LICENSE
+Source: https://swiperjs.com
+
+SweetAlert2
+Copyright (c) 2014 Tristan Edwards & Limon Monte
+License: MIT License https://github.com/sweetalert2/sweetalert2/blob/main/LICENSE
+Source: https://sweetalert2.github.io
+
+=== Images ===
+
+Images in this theme come from https://picsum.photos/ which come from Unsplash (https://unsplash.com/license)
+Copyright (c) 2014-2024 David Marby & Nijiko Yonskai
+License: The MIT License (MIT) https://github.com/DMarby/picsum-photos/blob/main/LICENSE.md
+
+Pug covered with blanket on bedspread.
+Copyright (c) 2016 Matthew Henry (https://unsplash.com/@matthewhenry)
+Reference: https://unsplash.com/photos/pug-covered-with-blanket-on-bedspread-2Ts5HnA67k8
+Source: https://picsum.photos/id/1062/1920/1280.webp
+
+Boy reading Holy Bible while lying on bed.
+Copyright (c) 2015 Samantha Sophia (https://unsplash.com/@samanthasophia)
+Reference: https://unsplash.com/photos/boy-reading-holy-bible-while-lying-on-bed-NaWKMlp3tVs
+Source: https://picsum.photos/id/1010/840/680.webp
+
+Aerial photography of roads on hill.
+Copyright (c) 2015 Paulo Simões Mendes (https://unsplash.com/@paulozono)
+Reference: https://unsplash.com/photos/boy-reading-holy-bible-while-lying-on-bed-NaWKMlp3tVs
+Source: https://picsum.photos/id/960/1920/850.webp
+
+Fawn pug covered by Burberry textile between plants.
+Copyright (c) 2015 Matthew Henry (https://unsplash.com/@matthewhenry)
+Reference: https://unsplash.com/photos/fawn-pug-covered-by-burberry-textile-between-plants-U5rMrSI7Pn4
+Source: https://picsum.photos/id/1025/1920/1280.webp
+
+
+The next images were made by the Elevation Team [@elevation1support](https://wordpress.org/support/users/elevation1support/) and it has the right to use them for this plugin.
+- All preview.webp images for each block
+- banner-772x250.jpg 
+- logo-elevation.webp
+- logo-footer.svg
+
 == Credits ==  
-- Developed with ❤️ by the Elevation Team [@elevation1support](https://wordpress.org/support/users/elevation1support/). Learn more at [https://github.com/Elevation-Web/elevation-free-theme](https://github.com/Elevation-Web/elevation-free-theme) or [https://www.elevationweb.org](https://www.elevationweb.org)
-- Swiper JS Library used for block sliders. [Swiper](https://swiperjs.com/)
-- sharer.js Library used for share component on blog posts. [sharer.js](https://ellisonleao.github.io/sharer.js/)
-- sweetalert2 JS Library used for pop up video block. [sweetalert2](https://sweetalert2.github.io/)
+- Developed with ❤️ by the Elevation Team [@elevation1support](https://wordpress.org/support/users/elevation1support/). Learn more at [https://github.com/Elevation-Web/elevation-free-theme/tree/main/wp-content/plugins/elevation-free-blocks](https://github.com/Elevation-Web/elevation-free-theme/tree/main/wp-content/plugins/elevation-free-blocks) or [https://www.elevationweb.org](https://www.elevationweb.org)

@@ -2,10 +2,11 @@
 /**
  * Plugin Name: Elevation Free Blocks
  * Description: Custom blocks for the Elevation theme.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Elevation Team
- * License: GNU General Public License v3 or later
- * License URI: https://www.gnu.org/licenses/gpl-3.0.html
+ * License: GNU General Public License v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: elevation-free-blocks
  *
  * @package elevation-free-blocks
  */
@@ -16,13 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use ElevationFreeBlocks\Lib\Load;
 
-if ( ! defined( 'ELEVATION_FREE_BLOCKS_DIR' ) ) {
-	DEFINE( 'ELEVATION_FREE_BLOCKS_DIR', plugin_dir_path( __FILE__ ) );
-}
 
-if ( ! defined( 'ELEVATION_FREE_BLOCKS_DIR_URL' ) ) {
+	DEFINE( 'ELEVATION_FREE_BLOCKS_PLUGIN_VERSION', '1.0.1' );
+	DEFINE( 'ELEVATION_FREE_BLOCKS_DIR', plugin_dir_path( __FILE__ ) );
 	DEFINE( 'ELEVATION_FREE_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
-}
+
+
+
 
 /**
  * Initialize class function

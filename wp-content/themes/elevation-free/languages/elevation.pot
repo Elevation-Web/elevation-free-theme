@@ -1,15 +1,15 @@
 # Copyright (C) 2025 Elevation
-# This file is distributed under the GNU General Public License v3 or later.
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Elevation Free 3.0.1\n"
+"Project-Id-Version: Elevation Free 3.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/elevation-free\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-08T17:54:12+00:00\n"
+"POT-Creation-Date: 2025-04-17T16:32:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: elevation-free\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #. Theme URI of the theme
 #: style.css
-msgid "https://www.elevationweb.org/free-wordpress-theme/"
+msgid "https://github.com/Elevation-Web/elevation-free-theme/tree/main/wp-content/themes/elevation-free"
 msgstr ""
 
 #. Description of the theme
@@ -68,27 +68,27 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:64
+#: footer.php:66
 msgid "Copyright © "
 msgstr ""
 
-#: footer.php:66
+#: footer.php:68
 msgid "Nonprofit Website Design by"
 msgstr ""
 
-#: footer.php:66
+#: footer.php:68
 msgid "Nonprofit Website Design ELEVATION"
 msgstr ""
 
-#: footer.php:66
+#: footer.php:68
 msgid "Elevation Web"
 msgstr ""
 
-#: header.php:36
+#: header.php:34
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:46
+#: header.php:48
 msgid "Open Menu"
 msgstr ""
 
@@ -108,7 +108,7 @@ msgstr ""
 msgid " plugin to enable custom blocks."
 msgstr ""
 
-#: lib/admin/settings/class-cleanup.php:84
+#: lib/admin/settings/class-cleanup.php:80
 msgid "The WordPress REST API users endpoint has been disabled."
 msgstr ""
 

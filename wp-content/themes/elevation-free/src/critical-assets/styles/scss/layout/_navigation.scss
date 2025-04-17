@@ -143,6 +143,8 @@ $nav: ".nav";
 			width: auto;
 			top: 100%;
 			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
 
 			&--level-1 {
 				padding: px-to-rem(20px);

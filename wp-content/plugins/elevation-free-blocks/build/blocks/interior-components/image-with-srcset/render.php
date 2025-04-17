@@ -16,7 +16,7 @@ use ElevationFreeBlocks\Lib\BlockLibrary\Helpers;
 $img_id = 0;
 
 if ( isset( $attributes['img']['id'] ) || isset( $attributes['img']['url'] ) ) :
-	$img_id                 = isset( $attributes['img']['id'] ) ? $attributes['img']['id'] : home_url() . $attributes['img']['url'];
+	$img_id                 = isset( $attributes['img']['id'] ) ? $attributes['img']['id'] : ( Helpers::is_external_url( $attributes['img']['url'] ) ? $attributes['img']['url'] : home_url() . $attributes['img']['url'] );
 	$img_inherit_class_name = '';
 	$loading                = $attributes['isLazy'] ? 'lazy' : 'eager';
 

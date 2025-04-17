@@ -36,6 +36,31 @@ class Helpers {
 	}
 
 	/**
+	 * Check if url is different from the current site
+	 *
+	 * @param string $url The URL to check.
+	 * @return bool
+	 */
+	public static function is_external_url( $url ) {
+		if ( ! $url ) {
+			return false;
+		}
+
+		$parsed_url         = wp_parse_url( $url );
+		$parsed_current_url = wp_parse_url( home_url() );
+
+		if ( ! isset( $parsed_url['host'] ) ) {
+			return false;
+		}
+
+		if ( $parsed_url['host'] === $parsed_current_url['host'] ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Get Image from URL, ID or ACF field.
 	 *
 	 * @param string|array $image The image URL, ID or ACF field.
@@ -122,7 +147,7 @@ class Helpers {
 		$wrapper_style = '';
 
 		if ( $styled_width && $styled_height ) {
-			$wrapper_style = ' style="width: ' . $styled_width . 'px; height: ' . $styled_height . 'px;"';
+			$wrapper_style = ' style=width:' . $styled_width . 'px;height:' . $styled_height . 'px;';
 		}
 
 		$image_component = '<' . esc_attr( $figure ) . ' class="' . esc_attr( $class ) . '"' . esc_attr( $wrapper_style ) . '>' . wp_kses_post( $img ) . '</' . esc_attr( $figure ) . '>';

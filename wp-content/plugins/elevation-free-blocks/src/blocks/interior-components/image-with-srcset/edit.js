@@ -57,6 +57,7 @@ const Edit = (props) => {
 
 	const setImageAttributes = (media) => {
 		const { url, id, caption, width, height } = media;
+
 		setAttributes({
 			img: {
 				url,
@@ -67,7 +68,9 @@ const Edit = (props) => {
 		if (saveWidthAndHeight) {
 			setAttributes({
 				img: {
-					...img,
+					url,
+					id,
+					caption,
 					styledWidth: width,
 					styledHeight: height,
 				},
@@ -81,7 +84,6 @@ const Edit = (props) => {
 		<InspectorControls>
 			<PanelBody title={__('Image Settings')}>
 				<ToggleControl
-					__nextHasNoMarginBottom
 					label="Defer image loading?"
 					help={isLazy ? 'Yes' : 'No'}
 					checked={isLazy}
@@ -114,8 +116,6 @@ const Edit = (props) => {
 	const blockControls = (
 		<BlockControls group={'inline'}>
 			<MediaReplaceFlow
-				mediaId={img?.id}
-				mediaUrl={img?.url}
 				allowedTypes={['image']}
 				onSelect={setImageAttributes}
 				name={!img?.url ? __('Add Image') : __('Replace Image')}
@@ -178,13 +178,13 @@ const Edit = (props) => {
 								minWidth="50"
 								enable={{
 									top: false,
-									right: true,
-									bottom: true,
+									right: false,
+									bottom: false,
 									left: false,
-									topRight: false,
+									topRight: true,
 									bottomRight: true,
-									bottomLeft: false,
-									topLeft: false,
+									bottomLeft: true,
+									topLeft: true,
 								}}
 								onResizeStop={(
 									event,

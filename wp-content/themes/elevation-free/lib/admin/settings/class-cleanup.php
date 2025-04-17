@@ -9,12 +9,11 @@
 
 namespace ElevationFree\Lib\Admin\Settings;
 
-use ElevationFree\Lib\Admin\Controls\Load as Controls;
-
 /**
  * Cleanup class
  */
 class Cleanup {
+
 
 	/**
 	 * Instance of the class
@@ -43,13 +42,10 @@ class Cleanup {
 		// Clean up comment styles in the head.
 		add_action( 'wp_head', array( $this, 'wp_remove_recent_comments_style' ), 1 );
 
-		// Remove inline width attribute from figure tag.
-		add_filter( 'img_caption_shortcode', array( $this, 'wp_remove_figure_inline_style' ), 10, 3 );
-
 		// Remove default Users Sitemap.
 		add_filter( 'wp_sitemaps_add_provider', array( $this, 'wp_remove_users_sitemap' ), 10, 2 );
 
-		// Remove default Users JSON API.
+		// Remove default Users JSON API for user endpoint.
 		add_filter( 'rest_authentication_errors', array( $this, 'wp_snippet_disable_rest_api' ) );
 	}
 

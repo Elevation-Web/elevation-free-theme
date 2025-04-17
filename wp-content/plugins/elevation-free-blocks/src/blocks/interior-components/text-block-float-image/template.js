@@ -24,6 +24,11 @@ export const template = [
 							showPosition: true,
 							inheritClassName: 'float-right media',
 							saveWidthAndHeight: true,
+							img: {
+								url: 'https://picsum.photos/id/1010/350/350.webp',
+								styledWidth: '350',
+								styledHeight: '350',
+							},
 						},
 					],
 					[

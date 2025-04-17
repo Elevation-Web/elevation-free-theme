@@ -9850,11 +9850,6 @@ shallow-clone@^3.0.0:
   dependencies:
     kind-of "^6.0.2"
 
-sharer.js@^0.5.2:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/sharer.js/-/sharer.js-0.5.3.tgz#bdb938a948a581c4e2da6be56fcbd657b92cc128"
-  integrity sha512-Xi8nWppPSH3YbsqZlY0CnrxiY+QlSSoAlub0ai3Cyu2wZt0kWH405vIzoixDQb3n+BswuogZ5fwp4qL+448Ocw==
-
 shebang-command@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"
@@ -10462,16 +10457,6 @@ svgo@^3.0.2, svgo@^3.2.0:
     css-what "^6.1.0"
     csso "^5.0.5"
     picocolors "^1.0.0"
-
-sweetalert2@^11.15.10:
-  version "11.17.2"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.17.2.tgz#a11852713c8eea274d9e1d233522322cc63cf5be"
-  integrity sha512-HKxDr1IyV3Lxr3W6sb61qm/p2epFIEdr5EKwteRFHnIg6f8nHFl2kX++DBVz16Mac+fFiU3hMpjq1L6yE2Ge5w==
-
-swiper@^11.2.1:
-  version "11.2.6"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-11.2.6.tgz#826943bf87158518ca0b1f57d387272b12a07c52"
-  integrity sha512-8aXpYKtjy3DjcbzZfz+/OX/GhcU5h+looA6PbAzHMZT6ESSycSp9nAjPCenczgJyslV+rUGse64LMGpWE3PX9Q==
 
 symbol-tree@^3.2.4:
   version "3.2.4"

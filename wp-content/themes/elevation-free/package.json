@@ -24,13 +24,7 @@
 		"build": "yarn format & yarn wp-scripts build --webpack-copy-php",
 		"lint:scss": "wp-scripts lint-style 'blocks/**/*.scss' & wp-scripts lint-style 'assets/**/*.scss'",
 		"lint:js": "wp-scripts lint-js 'blocks/**/*.js' & wp-scripts lint-js 'assets/**/*.js'",
-		"check-engines": "wp-scripts check-engines",
-		"themejson": "node ./dev/generateThemeJSON.mjs"
-	},
-	"dependencies": {
-		"sharer.js": "^0.5.2",
-		"sweetalert2": "^11.15.10",
-		"swiper": "^11.2.1"
+		"check-engines": "wp-scripts check-engines"
 	},
 	"devDependencies": {
 		"@wordpress/eslint-plugin": "^22.3.0",

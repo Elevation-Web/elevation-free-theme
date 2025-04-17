@@ -87,11 +87,6 @@ video {
 	padding: 0;
 	border: 0;
 	vertical-align: baseline;
-
-	&::selection {
-		background-color: $selector_color;
-		color: white;
-	}
 }
 
 img {
@@ -148,24 +143,7 @@ html {
 
 body {
 	opacity: 1 !important;
-	color: $ui-foreground-primary-text-body-text;
 	overflow-x: hidden;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.has-h-1-font-size,
-.has-h-2-font-size,
-.has-h-3-font-size,
-.has-h-4-font-size,
-.has-h-5-font-size,
-.has-h-6-font-size,
-.wp-block-heading {
-	color: $ui-foreground-primary-text-headings;
 }
 
 [id] {
@@ -173,30 +151,6 @@ h6,
 
 	@include media-breakpoint-up(xl) {
 		scroll-margin-top: $header-height-desktop;
-	}
-}
-
-body.logged-in {
-	header.fixed-top {
-		margin-top: 0 !important;
-	}
-
-	.admin-view {
-		padding: 5px;
-		background-color: #000;
-		color: #fff;
-		display: inline-flex;
-		border-radius: 2px;
-		opacity: 0.4;
-		margin: 0 auto 30px;
-		position: relative;
-
-		&::after {
-			content: "[only admin can view this button]";
-			display: inline-block;
-			font-size: 11px;
-			margin-left: 5px;
-		}
 	}
 }
 

@@ -3,15 +3,19 @@
 @import "../../../../assets/styles/scss/utilities/mixins";
 
 .header {
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	width: 100%;
-	z-index: 99999;
+	z-index: 1050;
 	background-color: $ui-base-white;
 	padding: 5px 0;
 	@include font-heading;
 	align-items: center;
 	display: flex;
 	min-height: $header-height-mobile;
+	transition: 0.3s top;
 
 	@include media-breakpoint-up(lg) {
 		padding: 0;
@@ -68,6 +72,10 @@
 			margin-bottom: 0;
 			display: block;
 			line-height: 1em;
+			font-size: px-to-rem(18px);
+			color: $ui-foreground-primary-text-headings-span;
+			text-decoration: none;
+			font-weight: 700;
 		}
 	}
 
@@ -75,6 +83,12 @@
 		flex: 1;
 		display: flex;
 		justify-content: flex-end;
+	}
+}
+
+body.logged-in {
+	.header {
+		top: var(--wp-admin--admin-bar--height);
 	}
 }
 

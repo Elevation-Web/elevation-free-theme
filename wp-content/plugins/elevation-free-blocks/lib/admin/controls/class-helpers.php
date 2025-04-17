@@ -99,15 +99,15 @@ class Helpers {
 
 		// Define the paths to the images.
 		$image_paths = array(
-			'home-banner'         => $plugin_dir . '/lib/admin/controls/images/home-banner.webp',
-			'home-second-section' => $plugin_dir . '/lib/admin/controls/images/home-second-section.webp',
-			'about-banner'        => $plugin_dir . '/lib/admin/controls/images/about-banner.webp',
-			'contact-banner'      => $plugin_dir . '/lib/admin/controls/images/contact-banner.webp',
+			'home-banner'         => 'https://picsum.photos/id/1062/1920/1280.webp',
+			'home-second-section' => 'https://picsum.photos/id/1010/840/680.webp',
+			'about-banner'        => 'https://picsum.photos/id/960/1920/850.webp',
+			'contact-banner'      => 'https://picsum.photos/id/1025/1920/1290.webp',
 		);
 
 		$uploaded_images = array();
 		foreach ( $image_paths as $key => $image_path ) {
-			$uploaded_images[ $key ] = $this->elevation_free_blocks_upload_image( $image_path );
+			$uploaded_images[ $key ] = $this->elevation_free_blocks_upload_image_from_url( $image_path );
 		}
 
 		$default_pages = array(
@@ -157,7 +157,7 @@ class Helpers {
 	}
 
 	/**
-	 * Upload image function
+	 * Upload image from plugin folder
 	 *
 	 * @param string $file_path The path to the file being uploaded.
 	 *
@@ -192,6 +192,68 @@ class Helpers {
 		return array( $attach_id, wp_get_attachment_url( $attach_id ) ); // Return the image URL.
 	}
 
+	/**
+	 * Upload image from url
+	 *
+	 * @param string $image_url The URL of the image to upload.
+	 *
+	 * @return array
+	 */
+	private function elevation_free_blocks_upload_image_from_url( $image_url ) {
+		if ( ! filter_var( $image_url, FILTER_VALIDATE_URL ) ) {
+			return false;
+		}
+
+		// Get file contents.
+		$response = wp_remote_get( $image_url );
+
+		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
+			return false;
+		}
+
+		$image_data = wp_remote_retrieve_body( $response );
+		if ( empty( $image_data ) ) {
+			return false;
+		}
+
+		// Extract filename from URL.
+		$file_name = basename( wp_parse_url( $image_url, PHP_URL_PATH ) );
+
+		// Get upload directory.
+		$upload_dir    = wp_upload_dir();
+		$new_file_path = trailingslashit( $upload_dir['path'] ) . $file_name;
+
+		// Use WP_Filesystem to save the file.
+		require_once ABSPATH . '/wp-admin/includes/file.php';
+		global $wp_filesystem;
+
+		WP_Filesystem();
+
+		if ( ! $wp_filesystem->put_contents( $new_file_path, $image_data, FS_CHMOD_FILE ) ) {
+			return false;
+		}
+
+		// Get file type.
+		$file_type = wp_check_filetype( $file_name, null );
+
+		// Create attachment.
+		$attachment = array(
+			'post_mime_type' => $file_type['type'],
+			'post_title'     => sanitize_file_name( $file_name ),
+			'post_content'   => '',
+			'post_status'    => 'inherit',
+		);
+
+		$attach_id = wp_insert_attachment( $attachment, $new_file_path );
+		require_once ABSPATH . 'wp-admin/includes/image.php';
+		$attach_data = wp_generate_attachment_metadata( $attach_id, $new_file_path );
+		wp_update_attachment_metadata( $attach_id, $attach_data );
+
+		return array( $attach_id, wp_get_attachment_url( $attach_id ) ); // Return the image URL.
+	}
+
+
+
 	// phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 
 	/**
@@ -209,7 +271,7 @@ class Helpers {
 		return '
         <!-- wp:elevation/interior-components--banner-full-img {"imgDesktop":{"url":"' . $uploaded_images['home-banner'][1] . '","alt":"","id":' . $uploaded_images['home-banner'][0] . ',"srcset":"' . $uploaded_images['home-banner'][1] . ' 150w, ' . $uploaded_images['home-banner'][1] . ' 300w, ' . $uploaded_images['home-banner'][1] . ' 1024w, ' . $uploaded_images['home-banner'][1] . ' 1920w","width":1920,"height":1281,"sizes":"(max-width: 1920px) 100vw, 1920px","focalPoint":{"x":0.68,"y":0.1}}} -->
 <div data-block-id="interior-components/banner-full-img" class="wp-block-elevation-interior-components--banner-full-img alignfull banner-full-img"><picture class="banner-full-img__background"><img decoding="async" lazyload="lazy" src="' . $uploaded_images['home-banner'][1] . '" width="1920" height="1080" class="banner-full-img__background" style="object-position:68% 10%"/></picture><div class="container banner-full-img__container"><div class="banner-full-img__wrapper"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Elevation Free Theme</h1>
+<h1 class="wp-block-heading">Elevation Free Plugin</h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"placeholder":"Type description here"} -->

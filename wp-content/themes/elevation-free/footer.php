@@ -19,16 +19,18 @@ $footer_logo = get_theme_mod( 'footer_logo' );
 		<div class="footer__top">
 
 			<div class="footer__col">
-				<?php if ( $footer_logo ) : ?>
 					<div class="footer__inner-col">
 						<div class="footer__logo">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-								<?php Helpers::global_image( $footer_logo, true, 'footer__media', null, false ); ?>
-								<span class="visually-hidden"><?php bloginfo( 'name' ); ?></span>
+								<?php if ( $footer_logo ) : ?>
+									<?php Helpers::global_image( $footer_logo, true, 'footer__media', null, false ); ?>
+									<span class="visually-hidden"><?php echo esc_html( bloginfo( 'name' ) ); ?></span>
+								<?php else : ?>
+									<span><?php echo esc_html( bloginfo( 'name' ) ); ?></span>
+								<?php endif; ?>
 							</a>
 						</div>
 					</div>
-				<?php endif; ?>
 
 				<?php if ( is_active_sidebar( 'footer-1' ) ) { ?>
 					<div class="footer__inner-col">
