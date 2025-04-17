@@ -20,7 +20,7 @@ const save = (props) => {
 	});
 
 	return (
-		<li data-block-id={blockId} id={anchor || id} {...blockProps}>
+		<li id={anchor || id} {...blockProps}>
 			<div className={`${name}__container`}>
 				<InnerBlocks.Content />
 			</div>

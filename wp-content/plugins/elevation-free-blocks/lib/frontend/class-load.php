@@ -40,8 +40,9 @@ class Load {
 
 			wp_enqueue_style( 'elevation-free-blocks-critical-css', ELEVATION_FREE_BLOCKS_DIR_URL . '/build/critical-assets/style-index.css', array(), ELEVATION_FREE_BLOCKS_PLUGIN_VERSION );
 
-			wp_enqueue_script( 'elevation-free-blocks-critical-scripts', ELEVATION_FREE_BLOCKS_DIR_URL . '/build/critical-assets/script.js', array(), ELEVATION_FREE_BLOCKS_PLUGIN_VERSION, true );
 		}
+
+		wp_enqueue_script( 'elevation-free-blocks-critical-scripts', ELEVATION_FREE_BLOCKS_DIR_URL . '/build/critical-assets/script.js', array(), ELEVATION_FREE_BLOCKS_PLUGIN_VERSION, true );
 	}
 
 	/**
