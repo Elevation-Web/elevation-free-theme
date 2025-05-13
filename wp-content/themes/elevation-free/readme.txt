@@ -3,7 +3,7 @@ Contributors: elevation1support, msuarez25
 Requires at least: 6.0
 Tested up to: 6.7
 Stable tag: 1.0.0
-Version: 3.0.3
+Version: 3.0.4
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -39,6 +39,9 @@ Also there are in place composer libraries to check the code. Review composer.js
 
 == Changelog ==
 
+= 3.0.4 - 2025-05-13 =
+
+- Fix recommended plugin name  
 
 = 3.0.3 - 2025-04-15 =
 

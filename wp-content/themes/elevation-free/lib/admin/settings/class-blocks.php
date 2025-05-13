@@ -18,6 +18,7 @@ require_once ABSPATH . 'wp-admin/includes/plugin.php';
  */
 class Blocks {
 
+
 	/**
 	 * Instance of the class
 	 *
@@ -29,7 +30,7 @@ class Blocks {
 	 * Support constructor.
 	 */
 	public function __construct() {
-		if ( ! is_plugin_active( 'elevation-free-blocks/elevation-free-blocks.php' ) ) {
+		if ( ! is_plugin_active( 'elevation-blocks/elevation-blocks.php' ) ) {
 			add_action( 'admin_notices', array( $this, 'elevation_admin_notice' ) );
 		}
 	}
