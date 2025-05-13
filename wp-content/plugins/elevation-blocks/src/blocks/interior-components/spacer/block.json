@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"title": "Spacer",
+	"name": "elevation/interior-components--spacer",
+	"version": "1.0.0",
+	"category": "elevation-blocks",
+	"icon": "editor-expand",
+	"description": "Spacer block with responsive height",
+	"textdomain": "elevation",
+	"supports": {
+		"anchor": true,
+		"align": ["full"],
+		"alignWide": false,
+		"renaming": false
+	},
+	"attributes": {
+		"space": {
+			"type": "string",
+			"default": "spacer__small"
+		},
+		"line": {
+			"type": "boolean",
+			"default": false
+		},
+		"lineType": {
+			"type": "string",
+			"default": "solid"
+		},
+		"linePosition": {
+			"type": "string",
+			"default": "top"
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "ui-border-bounds"
+		}
+	},
+	"editorScript": ["file:index.js"],
+	"style": ["file:style-index.css"],
+	"editorStyle": ["file:index.css"]
+}

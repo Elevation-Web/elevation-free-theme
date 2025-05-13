@@ -15,14 +15,14 @@
 !/wp-content/themes/elevation-free/**/*
 
 !/wp-content/plugins/
-!/wp-content/plugins/elevation-free-blocks/
-!/wp-content/plugins/elevation-free-blocks/*
-!/wp-content/plugins/elevation-free-blocks/**/*
-!/wp-content/plugins/elevation-free-blocks/**/**/*
+!/wp-content/plugins/elevation-blocks/
+!/wp-content/plugins/elevation-blocks/*
+!/wp-content/plugins/elevation-blocks/**/*
+!/wp-content/plugins/elevation-blocks/**/**/*
 
 # composer vendor folder and files
 /wp-content/themes/elevation-free/vendor
-/wp-content/plugins/elevation-free-blocks/vendor
+/wp-content/plugins/elevation-blocks/vendor
 composer.lock
 
 # Logs

@@ -1,0 +1,234 @@
+# Copyright (C) 2025 Elevation Team
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Elevation Blocks 1.0.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/elevation-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-05-13T21:21:12+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: elevation-blocks\n"
+
+#. Plugin Name of the plugin
+#: elevation-blocks.php
+msgid "Elevation Blocks"
+msgstr ""
+
+#. Description of the plugin
+#: elevation-blocks.php
+msgid "Custom blocks for the Elevation theme."
+msgstr ""
+
+#. Author of the plugin
+#: elevation-blocks.php
+msgid "Elevation Team"
+msgstr ""
+
+#: lib/admin/controls/class-helpers.php:54
+msgid "Nonce verification failed"
+msgstr ""
+
+#: lib/admin/controls/class-helpers.php:67
+#: lib/admin/controls/class-helpers.php:84
+#: lib/admin/controls/class-helpers.php:85
+msgid "Import Elevation Demo Content"
+msgstr ""
+
+#: lib/admin/controls/class-helpers.php:68
+msgid "Click the button below to import default pages for your theme."
+msgstr ""
+
+#: lib/admin/controls/class-helpers.php:71
+msgid "Import Pages"
+msgstr ""
+
+#: lib/admin/controls/class-helpers.php:790
+msgid "Home"
+msgstr ""
+
+#: lib/admin/controls/class-helpers.php:800
+msgid "About"
+msgstr ""
+
+#: lib/admin/controls/class-helpers.php:810
+msgid "Contact"
+msgstr ""
+
+#: lib/admin/controls/class-notices.php:49
+msgid "Elevation Blocks "
+msgstr ""
+
+#: lib/admin/controls/class-notices.php:50
+msgid "requires the "
+msgstr ""
+
+#: lib/admin/controls/class-notices.php:52
+msgid "Elevation Free Theme"
+msgstr ""
+
+#: lib/admin/controls/class-notices.php:53
+msgid "  to be activated for full functionality."
+msgstr ""
+
+#. translators: %1$s is the class file, %2$s is the class to load, %3$s is the namespace.
+#: lib/class-load.php:58
+msgid "\"Can't find %1$s\" for \"%2$s\" in \"%3$s\"."
+msgstr ""
+
+#: build/blocks/interior-components/button/index.js:1
+#: src/blocks/interior-components/button/edit.js:45
+msgid "Button Styles"
+msgstr ""
+
+#: build/blocks/interior-components/button/index.js:1
+#: src/blocks/interior-components/button/edit.js:47
+msgid "Button Style"
+msgstr ""
+
+#: build/blocks/interior-components/button/index.js:1
+#: src/blocks/interior-components/button/edit.js:55
+msgid "Button Link"
+msgstr ""
+
+#: build/blocks/interior-components/button/index.js:1
+#: src/blocks/interior-components/button/edit.js:69
+msgid "Button URL..."
+msgstr ""
+
+#: build/blocks/interior-components/button/index.js:1
+#: src/blocks/interior-components/button/edit.js:87
+msgid "Button Aria Label"
+msgstr ""
+
+#: build/blocks/interior-components/button/index.js:1
+#: src/blocks/interior-components/button/edit.js:104
+msgid "Button text..."
+msgstr ""
+
+#: build/blocks/interior-components/impact-default-item/index.js:1
+#: src/blocks/interior-components/impact-default-item/controls.js:18
+msgid "Impact Settings"
+msgstr ""
+
+#: build/blocks/interior-components/impact-default-item/index.js:1
+#: src/blocks/interior-components/impact-default-item/controls.js:20
+msgid "Value"
+msgstr ""
+
+#: build/blocks/interior-components/impact-default-item/index.js:1
+#: src/blocks/interior-components/impact-default-item/controls.js:25
+msgid "Remove Comma"
+msgstr ""
+
+#: build/blocks/interior-components/impact-default-item/index.js:1
+#: src/blocks/interior-components/impact-default-item/controls.js:33
+msgid "Title Size"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: build/blocks/interior-components/text-block-heading-subheading-2-columns/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:63
+#: src/blocks/interior-components/text-block-heading-subheading-2-columns/edit.js:54
+msgid "Settings"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:67
+msgid "Image Size"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:71
+msgid "Small"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:75
+msgid "Medium"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:79
+msgid "Large"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:86
+msgid "Image Position"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:90
+msgid "Left"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:94
+msgid "Right"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: build/blocks/interior-components/text-block-heading-subheading-2-columns/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:104
+#: src/blocks/interior-components/text-block-heading-subheading-2-columns/edit.js:58
+msgid "Vertical Alignment"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: build/blocks/interior-components/text-block-heading-subheading-2-columns/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:108
+#: src/blocks/interior-components/text-block-heading-subheading-2-columns/edit.js:62
+msgid "Top"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: build/blocks/interior-components/text-block-heading-subheading-2-columns/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:112
+#: src/blocks/interior-components/text-block-heading-subheading-2-columns/edit.js:66
+msgid "Middle"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-default-image/index.js:1
+#: build/blocks/interior-components/text-block-heading-subheading-2-columns/index.js:1
+#: src/blocks/interior-components/text-block-default-image/edit.js:116
+#: src/blocks/interior-components/text-block-heading-subheading-2-columns/edit.js:70
+msgid "Bottom"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-heading-subheading-list-item/index.js:1
+#: build/blocks/interior-components/text-block-list-w-button/index.js:1
+#: src/blocks/interior-components/text-block-heading-subheading-list-item/edit.js:56
+#: src/blocks/interior-components/text-block-list-w-button/edit.js:85
+msgid "List Item Settings"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-heading-subheading-list-item/index.js:1
+#: build/blocks/interior-components/text-block-list-w-button/index.js:1
+#: build/blocks/interior-components/text-block-quote/index.js:1
+#: src/blocks/interior-components/text-block-heading-subheading-list-item/edit.js:60
+#: src/blocks/interior-components/text-block-list-w-button/edit.js:89
+#: src/blocks/interior-components/text-block-quote/edit.js:59
+msgid "Border Color"
+msgstr ""
+
+#: build/blocks/interior-components/text-block-quote/index.js:1
+#: src/blocks/interior-components/text-block-quote/edit.js:55
+msgid "Quote Settings"
+msgstr ""
+
+#: build/critical-assets/block.json
+#: src/critical-assets/block.json
+msgctxt "block title"
+msgid "Critical CSS"
+msgstr ""
+
+#: build/critical-assets/block.json
+#: src/critical-assets/block.json
+msgctxt "block description"
+msgid "This is use to compile critical assets."
+msgstr ""

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Background Callout - Content Box Centered",
+  "name": "elevation/interior-components--callout-background-content-box-centered",
+  "version": "1.0.0",
+  "category": "elevation-blocks",
+  "icon": "format-image",
+  "description": "Background Callout, content box centered, with title, ddescription and button.",
+  "textdomain": "elevation",
+  "supports": {
+    "html": true,
+    "align": [
+      "full"
+    ],
+    "alignWide": false,
+    "ariaLabel": true,
+    "color": {
+      "background": true,
+      "gradients": false,
+      "text": true
+    },
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ]
+    }
+  },
+  "attributes": {
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
+    },
+    "imgMobile": {
+      "type": "string",
+      "default": ""
+    },
+    "imgTablet": {
+      "type": "string",
+      "default": ""
+    },
+    "imgDesktop": {
+      "type": "object",
+      "default": {
+        "url": "",
+        "alt": "",
+        "id": 0,
+        "srcset": "",
+        "width": 0,
+        "height": 0,
+        "sizes": "",
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
+    },
+    "boxBgColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "editorScript": [
+    "file:index.js"
+  ],
+  "style": [
+    "file:style-index.css"
+  ],
+  "editorStyle": [
+    "file:index.css"
+  ]
+}
