@@ -41,8 +41,8 @@ class Blocks {
 	public function elevation_admin_notice() {
 		$class          = 'notice notice-error is-dismissible';
 		$message_part_1 = __( 'Please install and activate the ', 'elevation-free' );
-		$url            = home_url() . '/wp-admin/plugin-install.php?s=Elevation%2520Free%2520Blocks&tab=search&type=term';
-		$message_part_2 = __( 'Elevation Free Blocks', 'elevation-free' );
+		$url            = home_url() . '/wp-admin/plugin-install.php?s=Elevation%2520Blocks&tab=search&type=term';
+		$message_part_2 = __( 'Elevation Blocks', 'elevation-free' );
 		$message_part_3 = __( ' plugin to enable custom blocks.', 'elevation-free' );
 
 		printf( '<div class="%1$s"><p>%2$s <a href="%3$s"><strong>%4$s</strong></a> %5$s.</p></div>', esc_attr( $class ), esc_html( $message_part_1 ), esc_url( $url ), esc_html( $message_part_2 ), esc_html( $message_part_3 ) );
