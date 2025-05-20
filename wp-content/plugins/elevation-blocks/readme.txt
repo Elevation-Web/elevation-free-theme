@@ -1,10 +1,11 @@
 === Elevation Blocks ===
+Slug: elevation-blocks
 Contributors: elevation1support, msuarez25  
 Tags: nonprofit, accessible, responsive, seo-friendly, gutenberg
 Requires at least: 6.0  
 Tested up to: 6.8  
 Requires PHP: 8.0  
-Stable tag: 1.0.2 
+Stable tag: 1.0.3 
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,7 +55,7 @@ Not at all! Simply drag and drop the blocks in the Gutenberg editor and customiz
 
 == Changelog ==  
 
-= 1.0.2 =  
+= 1.0.3 =  
 - Changed and/or deleted some files and readme.txt file to meet wordpress criteria.   
 
 
