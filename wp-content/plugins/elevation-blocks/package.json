@@ -10,13 +10,13 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"homepage": "https://github.com/Elevation-Web/elevation-free#readme",
+	"homepage": "https://github.com/Elevation-Web/elevation-free-theme/blob/main/wp-content/plugins/elevation-blocks/readme.txt",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Elevation-Web/elevation-free.git"
+		"url": "git+https://github.com/Elevation-Web/elevation-free-theme.git"
 	},
 	"bugs": {
-		"url": "https://github.com/Elevation-Web/elevation-free/issues"
+		"url": "https://github.com/Elevation-Web/elevation-free-theme/issues"
 	},
 	"scripts": {
 		"format": "wp-scripts format",

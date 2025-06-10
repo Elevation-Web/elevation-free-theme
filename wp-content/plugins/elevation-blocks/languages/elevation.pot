@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-20T16:01:29+00:00\n"
+"POT-Creation-Date: 2025-06-10T15:26:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: elevation-blocks\n"
@@ -29,33 +29,33 @@ msgstr ""
 msgid "Elevation Team"
 msgstr ""
 
-#: lib/admin/controls/class-helpers.php:54
+#: lib/admin/controls/class-helpers.php:58
 msgid "Nonce verification failed"
 msgstr ""
 
-#: lib/admin/controls/class-helpers.php:67
-#: lib/admin/controls/class-helpers.php:84
-#: lib/admin/controls/class-helpers.php:85
+#: lib/admin/controls/class-helpers.php:71
+#: lib/admin/controls/class-helpers.php:89
+#: lib/admin/controls/class-helpers.php:90
 msgid "Import Elevation Demo Content"
 msgstr ""
 
-#: lib/admin/controls/class-helpers.php:68
+#: lib/admin/controls/class-helpers.php:72
 msgid "Click the button below to import default pages for your theme."
 msgstr ""
 
-#: lib/admin/controls/class-helpers.php:71
+#: lib/admin/controls/class-helpers.php:75
 msgid "Import Pages"
 msgstr ""
 
-#: lib/admin/controls/class-helpers.php:790
+#: lib/admin/controls/class-helpers.php:806
 msgid "Home"
 msgstr ""
 
-#: lib/admin/controls/class-helpers.php:800
+#: lib/admin/controls/class-helpers.php:816
 msgid "About"
 msgstr ""
 
-#: lib/admin/controls/class-helpers.php:810
+#: lib/admin/controls/class-helpers.php:826
 msgid "Contact"
 msgstr ""
 

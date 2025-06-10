@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Helpers {
 
+
 	/**
 	 * Instance of Helpers
 	 *
@@ -97,15 +98,15 @@ class Helpers {
 	public function elevation_blocks_import_demo_pages() {
 		// Define the paths to the images.
 		$image_paths = array(
-			'home-banner'         => 'https://picsum.photos/id/1062/1920/1280.webp',
-			'home-second-section' => 'https://picsum.photos/id/1010/840/680.webp',
-			'about-banner'        => 'https://picsum.photos/id/960/1920/850.webp',
-			'contact-banner'      => 'https://picsum.photos/id/1025/1920/1290.webp',
+			'home-banner'         => plugin_dir_url( __DIR__ ) . 'assets/matthew-henry-2Ts5HnA67k8-unsplash.avif',
+			'home-second-section' => plugin_dir_url( __DIR__ ) . 'assets/matthew-henry-U5rMrSI7Pn4-unsplash.avif',
+			'about-banner'        => plugin_dir_url( __DIR__ ) . 'assets/paulo-simoes-mendes-V8YzvXKLwDw-unsplash.avif',
+			'contact-banner'      => plugin_dir_url( __DIR__ ) . 'assets/samantha-sophia-NaWKMlp3tVs-unsplash.avif',
 		);
 
 		$uploaded_images = array();
 		foreach ( $image_paths as $key => $image_path ) {
-			$uploaded_images[ $key ] = $this->elevation_blocks_upload_image_from_url( $image_path );
+			$uploaded_images[ $key ] = $this->elevation_blocks_upload_image( $image_path );
 		}
 
 		$default_pages = array(

@@ -79,34 +79,30 @@ Copyright (c) 2014 Tristan Edwards & Limon Monte
 License: MIT License https://github.com/sweetalert2/sweetalert2/blob/main/LICENSE
 Source: https://sweetalert2.github.io
 
-== External Services ==
-
-This plugin uses placeholder images from the Picsum service to demonstrate block layouts.
-These images come from https://picsum.photos/ which come from Unsplash (https://unsplash.com/license)
-Copyright (c) 2014-2024 David Marby & Nijiko Yonskai
-License: The MIT License (MIT) https://github.com/DMarby/picsum-photos/blob/main/LICENSE.md
 
 === Images ===
+This plugin uses placeholder images from Unsplash and they are listed below.
+License: Unplash License (https://unsplash.com/license)
 
 Pug covered with blanket on bedspread.
 Copyright (c) 2016 Matthew Henry (https://unsplash.com/@matthewhenry)
-Reference: https://unsplash.com/photos/pug-covered-with-blanket-on-bedspread-2Ts5HnA67k8
-Source: https://picsum.photos/id/1062/1920/1280.webp
+Source: https://unsplash.com/photos/pug-covered-with-blanket-on-bedspread-2Ts5HnA67k8
+Reference: elevation-blocks/assets/matthew-henry-2Ts5HnA67k8-unsplash.avif
 
 Boy reading Holy Bible while lying on bed.
 Copyright (c) 2015 Samantha Sophia (https://unsplash.com/@samanthasophia)
-Reference: https://unsplash.com/photos/boy-reading-holy-bible-while-lying-on-bed-NaWKMlp3tVs
-Source: https://picsum.photos/id/1010/840/680.webp
+Source: https://unsplash.com/photos/boy-reading-holy-bible-while-lying-on-bed-NaWKMlp3tVs
+Reference: elevation-blocks/assets/samantha-sophia-NaWKMlp3tVs-unsplash.avif
 
 Aerial photography of roads on hill.
 Copyright (c) 2015 Paulo Simões Mendes (https://unsplash.com/@paulozono)
-Reference: https://unsplash.com/photos/boy-reading-holy-bible-while-lying-on-bed-NaWKMlp3tVs
-Source: https://picsum.photos/id/960/1920/850.webp
+Source: https://unsplash.com/photos/aerial-photography-of-roads-on-hill-V8YzvXKLwDw
+Reference: elevation-blocks/assets/paulo-simoes-mendes-V8YzvXKLwDw-unsplash.avif
 
 Fawn pug covered by Burberry textile between plants.
 Copyright (c) 2015 Matthew Henry (https://unsplash.com/@matthewhenry)
-Reference: https://unsplash.com/photos/fawn-pug-covered-by-burberry-textile-between-plants-U5rMrSI7Pn4
-Source: https://picsum.photos/id/1025/1920/1280.webp
+Source: https://unsplash.com/photos/fawn-pug-covered-by-burberry-textile-between-plants-U5rMrSI7Pn4
+Reference: elevation-blocks/assets/matthew-henry-U5rMrSI7Pn4-unsplash.avif
 
 
 The next images were made by the Elevation Team [@elevation1support](https://wordpress.org/support/users/elevation1support/) and it has the right to use them for this plugin.
