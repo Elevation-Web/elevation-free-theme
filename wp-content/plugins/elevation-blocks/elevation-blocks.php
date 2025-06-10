@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Elevation Blocks
  * Description: Custom blocks for the Elevation theme.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Elevation Team
  * License: GNU General Public License v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
