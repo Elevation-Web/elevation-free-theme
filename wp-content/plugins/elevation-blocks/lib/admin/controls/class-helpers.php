@@ -1,4 +1,5 @@
 <?php
+
 /**
  * File Name: class-helpers.php
  *
@@ -9,14 +10,15 @@
 
 namespace ElevationBlocks\Lib\Admin\Controls;
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit;
 }
 
 /**
  * Class Helpers
  */
-class Helpers {
+class Helpers
+{
 
 
 	/**
@@ -31,8 +33,9 @@ class Helpers {
 	 *
 	 * @return void
 	 */
-	public function __construct() {
-		add_action( 'admin_menu', array( $this, 'elevation_blocks_import_admin_menu' ) );
+	public function __construct()
+	{
+		add_action('admin_menu', array($this, 'elevation_blocks_import_admin_menu'));
 	}
 
 	/**
@@ -40,19 +43,20 @@ class Helpers {
 	 *
 	 * @return html
 	 */
-	public function elevation_blocks_import_page_html() {
-		if ( ! current_user_can( 'manage_options' ) ) {
+	public function elevation_blocks_import_page_html()
+	{
+		if (! current_user_can('manage_options')) {
 			return;
 		}
 
 		// Handle import action.
-		if ( isset( $_POST['import_demo_content'] ) ) {
+		if (isset($_POST['import_demo_content'])) {
 			// Unslash the data before verification.
-			$import_demo_nonce = isset( $_POST['import_demo_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['import_demo_nonce'] ) ) : '';
+			$import_demo_nonce = isset($_POST['import_demo_nonce']) ? sanitize_text_field(wp_unslash($_POST['import_demo_nonce'])) : '';
 
 			// Verify the nonce after unslashing.
-			if ( ! wp_verify_nonce( $import_demo_nonce, 'import_demo_nonce_action' ) ) {
-				wp_die( esc_html__( 'Nonce verification failed', 'elevation-blocks' ) );
+			if (! wp_verify_nonce($import_demo_nonce, 'import_demo_nonce_action')) {
+				wp_die(esc_html__('Nonce verification failed', 'elevation-blocks'));
 			}
 
 			$this->elevation_blocks_import_demo_pages();
@@ -63,16 +67,16 @@ class Helpers {
 			echo '<div class="updated"><p>Demo pages imported successfully!</p></div>';
 		}
 
-		?>
+?>
 		<div class="wrap">
-			<h1><?php echo esc_html__( 'Import Elevation Demo Content', 'elevation-blocks' ); ?></h1>
-			<p><?php echo esc_html__( 'Click the button below to import default pages for your theme.', 'elevation-blocks' ); ?></p>
+			<h1><?php echo esc_html__('Import Elevation Demo Content', 'elevation-blocks'); ?></h1>
+			<p><?php echo esc_html__('Click the button below to import default pages for your theme.', 'elevation-blocks'); ?></p>
 			<form method="post">
-				<?php wp_nonce_field( 'import_demo_nonce_action', 'import_demo_nonce' ); ?>
-				<input type="submit" name="import_demo_content" class="button button-primary" value="<?php echo esc_attr__( 'Import Pages', 'elevation-blocks' ); ?>" onclick="return confirm('Are you sure you want to import demo content? This could overwrite existing content.');">
+				<?php wp_nonce_field('import_demo_nonce_action', 'import_demo_nonce'); ?>
+				<input type="submit" name="import_demo_content" class="button button-primary" value="<?php echo esc_attr__('Import Pages', 'elevation-blocks'); ?>" onclick="return confirm('Are you sure you want to import demo content? This could overwrite existing content.');">
 			</form>
 		</div>
-		<?php
+<?php
 	}
 
 	/**
@@ -80,13 +84,14 @@ class Helpers {
 	 *
 	 * @return void
 	 */
-	public function elevation_blocks_import_admin_menu() {
+	public function elevation_blocks_import_admin_menu()
+	{
 		add_management_page(
-			esc_html__( 'Import Elevation Demo Content', 'elevation-blocks' ), // Page title.
-			esc_html__( 'Import Elevation Demo Content', 'elevation-blocks' ),      // Menu title.
+			esc_html__('Import Elevation Demo Content', 'elevation-blocks'), // Page title.
+			esc_html__('Import Elevation Demo Content', 'elevation-blocks'),      // Menu title.
 			'manage_options',      // Capability.
 			'elevation-import',      // Menu slug.
-			array( $this, 'elevation_blocks_import_page_html' ), // Callback function.
+			array($this, 'elevation_blocks_import_page_html'), // Callback function.
 		);
 	}
 
@@ -95,36 +100,38 @@ class Helpers {
 	 *
 	 * @return void
 	 */
-	public function elevation_blocks_import_demo_pages() {
+	public function elevation_blocks_import_demo_pages()
+	{
 		// Define the paths to the images.
 		$image_paths = array(
-			'home-banner'         => plugin_dir_url( __DIR__ ) . 'assets/matthew-henry-2Ts5HnA67k8-unsplash.avif',
-			'home-second-section' => plugin_dir_url( __DIR__ ) . 'assets/matthew-henry-U5rMrSI7Pn4-unsplash.avif',
-			'about-banner'        => plugin_dir_url( __DIR__ ) . 'assets/paulo-simoes-mendes-V8YzvXKLwDw-unsplash.avif',
-			'contact-banner'      => plugin_dir_url( __DIR__ ) . 'assets/samantha-sophia-NaWKMlp3tVs-unsplash.avif',
+			'home-banner'         => ELEVATION_BLOCKS_DIR . 'assets/matthew-henry-2Ts5HnA67k8-unsplash.avif',
+			'home-second-section' => ELEVATION_BLOCKS_DIR . 'assets/matthew-henry-U5rMrSI7Pn4-unsplash.avif',
+			'about-banner'        => ELEVATION_BLOCKS_DIR . 'assets/paulo-simoes-mendes-V8YzvXKLwDw-unsplash.avif',
+			'contact-banner'      => ELEVATION_BLOCKS_DIR . 'assets/samantha-sophia-NaWKMlp3tVs-unsplash.avif',
 		);
 
+
 		$uploaded_images = array();
-		foreach ( $image_paths as $key => $image_path ) {
-			$uploaded_images[ $key ] = $this->elevation_blocks_upload_image( $image_path );
+		foreach ($image_paths as $key => $image_path) {
+			$uploaded_images[$key] = $this->elevation_blocks_upload_image($image_path);
 		}
 
 		$default_pages = array(
 			array(
 				'title'   => 'Home',
-				'content' => $this->elevation_blocks_home_page( $uploaded_images ),
+				'content' => $this->elevation_blocks_home_page($uploaded_images),
 			),
 			array(
 				'title'   => 'About',
-				'content' => $this->elevation_blocks_about_page( $uploaded_images ),
+				'content' => $this->elevation_blocks_about_page($uploaded_images),
 			),
 			array(
 				'title'   => 'Contact',
-				'content' => $this->elevation_blocks_contact_page( $uploaded_images ),
+				'content' => $this->elevation_blocks_contact_page($uploaded_images),
 			),
 		);
 
-		foreach ( $default_pages as $page ) {
+		foreach ($default_pages as $page) {
 			// Check if the page already exists.
 			$page_query = new \WP_Query(
 				array(
@@ -137,7 +144,7 @@ class Helpers {
 
 			$existing_page = $page_query->have_posts();
 
-			if ( ! $existing_page ) {
+			if (! $existing_page) {
 				$page_id = wp_insert_post(
 					array(
 						'post_title'   => $page['title'],
@@ -147,9 +154,9 @@ class Helpers {
 					)
 				);
 
-				if ( 'Home' === $page['title'] ) {
-					update_option( 'show_on_front', 'page' ); // Set static page mode.
-					update_option( 'page_on_front', $page_id ); // Set the front page.
+				if ('Home' === $page['title']) {
+					update_option('show_on_front', 'page'); // Set static page mode.
+					update_option('page_on_front', $page_id); // Set the front page.
 				}
 			}
 		}
@@ -162,33 +169,34 @@ class Helpers {
 	 *
 	 * @return array
 	 */
-	private function elevation_blocks_upload_image( $file_path ) {
-		if ( ! file_exists( $file_path ) ) {
+	private function elevation_blocks_upload_image($file_path)
+	{
+		if (! file_exists($file_path)) {
 			return false;
 		}
 
-		$file_name     = basename( $file_path );
+		$file_name     = basename($file_path);
 		$upload_dir    = wp_upload_dir();
 		$new_file_path = $upload_dir['path'] . '/' . $file_name;
 
-		if ( ! copy( $file_path, $new_file_path ) ) {
+		if (! copy($file_path, $new_file_path)) {
 			return false;
 		}
 
-		$file_type  = wp_check_filetype( $new_file_path, null );
+		$file_type  = wp_check_filetype($new_file_path, null);
 		$attachment = array(
 			'post_mime_type' => $file_type['type'],
-			'post_title'     => sanitize_file_name( $file_name ),
+			'post_title'     => sanitize_file_name($file_name),
 			'post_content'   => '',
 			'post_status'    => 'inherit',
 		);
 
-		$attach_id = wp_insert_attachment( $attachment, $new_file_path );
+		$attach_id = wp_insert_attachment($attachment, $new_file_path);
 		require_once ABSPATH . 'wp-admin/includes/image.php';
-		$attach_data = wp_generate_attachment_metadata( $attach_id, $new_file_path );
-		wp_update_attachment_metadata( $attach_id, $attach_data );
+		$attach_data = wp_generate_attachment_metadata($attach_id, $new_file_path);
+		wp_update_attachment_metadata($attach_id, $attach_data);
 
-		return array( $attach_id, wp_get_attachment_url( $attach_id ) ); // Return the image URL.
+		return array($attach_id, wp_get_attachment_url($attach_id)); // Return the image URL.
 	}
 
 	/**
@@ -198,29 +206,33 @@ class Helpers {
 	 *
 	 * @return array
 	 */
-	private function elevation_blocks_upload_image_from_url( $image_url ) {
-		if ( ! filter_var( $image_url, FILTER_VALIDATE_URL ) ) {
+	private function elevation_blocks_upload_image_from_url($image_url)
+	{
+
+		if (! filter_var($image_url, FILTER_VALIDATE_URL)) {
 			return false;
 		}
 
 		// Get file contents.
-		$response = wp_remote_get( $image_url );
+		$response = wp_remote_get($image_url);
 
-		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
+
+
+		if (is_wp_error($response) || 200 !== wp_remote_retrieve_response_code($response)) {
 			return false;
 		}
 
-		$image_data = wp_remote_retrieve_body( $response );
-		if ( empty( $image_data ) ) {
+		$image_data = wp_remote_retrieve_body($response);
+		if (empty($image_data)) {
 			return false;
 		}
 
 		// Extract filename from URL.
-		$file_name = basename( wp_parse_url( $image_url, PHP_URL_PATH ) );
+		$file_name = basename(wp_parse_url($image_url, PHP_URL_PATH));
 
 		// Get upload directory.
 		$upload_dir    = wp_upload_dir();
-		$new_file_path = trailingslashit( $upload_dir['path'] ) . $file_name;
+		$new_file_path = trailingslashit($upload_dir['path']) . $file_name;
 
 		// Use WP_Filesystem to save the file.
 		require_once ABSPATH . '/wp-admin/includes/file.php';
@@ -228,27 +240,29 @@ class Helpers {
 
 		WP_Filesystem();
 
-		if ( ! $wp_filesystem->put_contents( $new_file_path, $image_data, FS_CHMOD_FILE ) ) {
+		if (! $wp_filesystem->put_contents($new_file_path, $image_data, FS_CHMOD_FILE)) {
 			return false;
 		}
 
 		// Get file type.
-		$file_type = wp_check_filetype( $file_name, null );
+		$file_type = wp_check_filetype($file_name, null);
 
 		// Create attachment.
 		$attachment = array(
 			'post_mime_type' => $file_type['type'],
-			'post_title'     => sanitize_file_name( $file_name ),
+			'post_title'     => sanitize_file_name($file_name),
 			'post_content'   => '',
 			'post_status'    => 'inherit',
 		);
 
-		$attach_id = wp_insert_attachment( $attachment, $new_file_path );
-		require_once ABSPATH . 'wp-admin/includes/image.php';
-		$attach_data = wp_generate_attachment_metadata( $attach_id, $new_file_path );
-		wp_update_attachment_metadata( $attach_id, $attach_data );
+		$attach_id = wp_insert_attachment($attachment, $new_file_path);
 
-		return array( $attach_id, wp_get_attachment_url( $attach_id ) ); // Return the image URL.
+
+		require_once ABSPATH . 'wp-admin/includes/image.php';
+		$attach_data = wp_generate_attachment_metadata($attach_id, $new_file_path);
+		wp_update_attachment_metadata($attach_id, $attach_data);
+
+		return array($attach_id, wp_get_attachment_url($attach_id)); // Return the image URL.
 	}
 
 
@@ -262,8 +276,9 @@ class Helpers {
 	 *
 	 * @return string
 	 */
-	private function elevation_blocks_home_page( $uploaded_images ) {
-		if ( empty( $uploaded_images['home-banner'] ) || empty( $uploaded_images['home-second-section'] ) ) {
+	private function elevation_blocks_home_page($uploaded_images)
+	{
+		if (empty($uploaded_images['home-banner']) || empty($uploaded_images['home-second-section'])) {
 			return '';
 		}
 
@@ -393,8 +408,9 @@ class Helpers {
 	 *
 	 * @return string
 	 */
-	private function elevation_blocks_about_page( $uploaded_images ) {
-		if ( empty( $uploaded_images['about-banner'] ) ) {
+	private function elevation_blocks_about_page($uploaded_images)
+	{
+		if (empty($uploaded_images['about-banner'])) {
 			return '';
 		}
 
@@ -534,8 +550,9 @@ class Helpers {
 	 *
 	 * @return string
 	 */
-	private function elevation_blocks_contact_page( $uploaded_images ) {
-		if ( empty( $uploaded_images['contact-banner'] ) ) {
+	private function elevation_blocks_contact_page($uploaded_images)
+	{
+		if (empty($uploaded_images['contact-banner'])) {
 			return '';
 		}
 
@@ -661,7 +678,8 @@ class Helpers {
 	 *
 	 * @return void
 	 */
-	public function elevation_blocks_add_default_widgets_to_sidebars() {
+	public function elevation_blocks_add_default_widgets_to_sidebars()
+	{
 		$this->elevation_blocks_update_option_wiget_block();
 		$this->elevation_blocks_update_option_sidebar_widgets();
 	}
@@ -671,7 +689,8 @@ class Helpers {
 	 *
 	 * @return void
 	 */
-	public function elevation_blocks_update_option_wiget_block() {
+	public function elevation_blocks_update_option_wiget_block()
+	{
 		$content_2 = preg_replace(
 			'/\s+/',
 			' ',
@@ -724,7 +743,7 @@ class Helpers {
 			'_multiwidget' => 1,
 		);
 
-		update_option( 'elevation_blocks_widget_block', $widget_block );
+		update_option('elevation_blocks_widget_block', $widget_block);
 	}
 
 	/**
@@ -732,7 +751,8 @@ class Helpers {
 	 *
 	 * @return void
 	 */
-	public function elevation_blocks_update_option_sidebar_widgets() {
+	public function elevation_blocks_update_option_sidebar_widgets()
+	{
 		$sidebar_widgets = array(
 			'wp_inactive_widgets' =>
 			array(),
@@ -749,7 +769,7 @@ class Helpers {
 			'array_version'       => 3,
 		);
 
-		update_option( 'elevation_blocks_sidebar_widgets', $sidebar_widgets );
+		update_option('elevation_blocks_sidebar_widgets', $sidebar_widgets);
 	}
 
 	/**
@@ -757,14 +777,15 @@ class Helpers {
 	 *
 	 * @return void
 	 */
-	private function elevation_blocks_set_custom_image() {
+	private function elevation_blocks_set_custom_image()
+	{
 		// Define the image URL.
 		$header_image_url = ELEVATION_BLOCKS_DIR_URL . '/lib/admin/controls/images/logo-elevation.webp';
 		$footer_image_url = ELEVATION_BLOCKS_DIR_URL . '/lib/admin/controls/images/logo-footer.svg';
 
 		// Set the image URL programmatically in the customizer.
-		set_theme_mod( 'custom_logo', $header_image_url );
-		set_theme_mod( 'footer_logo', $footer_image_url );
+		set_theme_mod('custom_logo', $header_image_url);
+		set_theme_mod('footer_logo', $footer_image_url);
 	}
 
 	/**
@@ -772,24 +793,25 @@ class Helpers {
 	 *
 	 * @return void
 	 */
-	public function elevation_blocks_create_custom_menu() {
+	public function elevation_blocks_create_custom_menu()
+	{
 		// Define the menu name.
 		$menu_name = 'Main Menu';
 
 		// Check if the menu already exists.
-		$menu_exists = wp_get_nav_menu_object( $menu_name );
+		$menu_exists = wp_get_nav_menu_object($menu_name);
 
 		// Create menu if it doesn't exist.
-		if ( ! $menu_exists ) {
-			$menu_id = wp_create_nav_menu( $menu_name );
+		if (! $menu_exists) {
+			$menu_id = wp_create_nav_menu($menu_name);
 
 			// Add menu items.
 			wp_update_nav_menu_item(
 				$menu_id,
 				0,
 				array(
-					'menu-item-title'  => esc_html__( 'Home', 'elevation-blocks' ),
-					'menu-item-url'    => home_url( '/' ),
+					'menu-item-title'  => esc_html__('Home', 'elevation-blocks'),
+					'menu-item-url'    => home_url('/'),
 					'menu-item-status' => 'publish',
 				)
 			);
@@ -798,8 +820,8 @@ class Helpers {
 				$menu_id,
 				0,
 				array(
-					'menu-item-title'  => esc_html__( 'About', 'elevation-blocks' ),
-					'menu-item-url'    => home_url( '/about/' ),
+					'menu-item-title'  => esc_html__('About', 'elevation-blocks'),
+					'menu-item-url'    => home_url('/about/'),
 					'menu-item-status' => 'publish',
 				)
 			);
@@ -808,16 +830,16 @@ class Helpers {
 				$menu_id,
 				0,
 				array(
-					'menu-item-title'  => esc_html__( 'Contact', 'elevation-blocks' ),
-					'menu-item-url'    => home_url( '/contact/' ),
+					'menu-item-title'  => esc_html__('Contact', 'elevation-blocks'),
+					'menu-item-url'    => home_url('/contact/'),
 					'menu-item-status' => 'publish',
 				)
 			);
 
 			// Assign menu to a theme location (update with your theme location).
-			$locations           = get_theme_mod( 'nav_menu_locations' );
+			$locations           = get_theme_mod('nav_menu_locations');
 			$locations['menu-1'] = $menu_id; // Change 'menu-1' to the correct theme location.
-			set_theme_mod( 'nav_menu_locations', $locations );
+			set_theme_mod('nav_menu_locations', $locations);
 		}
 	}
 
@@ -826,8 +848,9 @@ class Helpers {
 	 *
 	 * @return object
 	 */
-	public static function instance() {
-		if ( is_null( self::$instance ) ) {
+	public static function instance()
+	{
+		if (is_null(self::$instance)) {
 			self::$instance = new self();
 		}
 		return self::$instance;
